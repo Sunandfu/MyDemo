@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="JSUIWebViewViewController">
+            <connections>
+                <outlet property="myWebView" destination="jn9-HY-xuS" id="6oj-1U-pRz"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jn9-HY-xuS">
+                    <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                    <color key="backgroundColor" red="0.28958413004875183" green="0.31462949514389038" blue="0.32950475811958313" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="Q5X-D6-VuB"/>
+                    </connections>
+                </webView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xc1-Nr-UqO">
+                    <rect key="frame" x="315" y="621" width="60" height="46"/>
+                    <color key="backgroundColor" red="0.0" green="0.50686961210000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="60" id="9Ob-1N-p63"/>
+                        <constraint firstAttribute="height" constant="46" id="KvE-Kt-ON1"/>
+                    </constraints>
+                    <state key="normal" title="reload">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="loadTouched:" destination="-1" eventType="touchUpInside" id="1Yc-OZ-naf"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="jn9-HY-xuS" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="7If-b6-Uys"/>
+                <constraint firstAttribute="trailing" secondItem="Xc1-Nr-UqO" secondAttribute="trailing" id="8q9-V1-WZZ"/>
+                <constraint firstItem="jn9-HY-xuS" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="64" id="E8w-E3-jP6"/>
+                <constraint firstAttribute="bottom" secondItem="jn9-HY-xuS" secondAttribute="bottom" id="b0P-pa-VHN"/>
+                <constraint firstAttribute="trailing" secondItem="jn9-HY-xuS" secondAttribute="trailing" id="dER-mY-f3T"/>
+                <constraint firstAttribute="bottom" secondItem="Xc1-Nr-UqO" secondAttribute="bottom" id="tLJ-lN-dJd"/>
+            </constraints>
+            <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+            <point key="canvasLocation" x="60" y="-5"/>
+        </view>
+    </objects>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4_7.fullscreen"/>
+    </simulatedMetricsContainer>
+</document>

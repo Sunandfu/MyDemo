@@ -1,0 +1,45 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "B1D51B9DC018AA05F372E737B0DA205B316ECF56",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+    "9483537c-b847-49c3-805d-b05972c36ec1++398" : {
+
+    },
+    "9483537c-b847-49c3-805d-b05972c36ec1++5326" : {
+
+    },
+    "B1D51B9DC018AA05F372E737B0DA205B316ECF56" : {
+
+    }
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "9483537c-b847-49c3-805d-b05972c36ec1++398" : 0,
+    "9483537c-b847-49c3-805d-b05972c36ec1++5326" : 0,
+    "B1D51B9DC018AA05F372E737B0DA205B316ECF56" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "984E842E-1006-4E78-9C03-F41A671F5146",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "9483537c-b847-49c3-805d-b05972c36ec1++398" : "..",
+    "9483537c-b847-49c3-805d-b05972c36ec1++5326" : "..\/..",
+    "B1D51B9DC018AA05F372E737B0DA205B316ECF56" : "printer\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "PrinterDemo",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "PrinterDemoDev\/PrinterDemo.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "svn:\/\/mmd520.cn",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "9483537c-b847-49c3-805d-b05972c36ec1++398"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "svn:\/\/niurenhaiyang.cn",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "9483537c-b847-49c3-805d-b05972c36ec1++5326"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/erduhai%40qq.com@github.com\/newOcean\/printer",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "B1D51B9DC018AA05F372E737B0DA205B316ECF56"
+    }
+  ]
+}

@@ -1,0 +1,744 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9C52A6E31CDAEA3900F42BFF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C52A6E21CDAEA3900F42BFF /* main.m */; };
+		9C52A6E61CDAEA3900F42BFF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C52A6E51CDAEA3900F42BFF /* AppDelegate.m */; };
+		9C52A6E91CDAEA3900F42BFF /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C52A6E81CDAEA3900F42BFF /* ViewController.m */; };
+		9C52A6EC1CDAEA3900F42BFF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C52A6EA1CDAEA3900F42BFF /* Main.storyboard */; };
+		9C52A6EE1CDAEA3900F42BFF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C52A6ED1CDAEA3900F42BFF /* Assets.xcassets */; };
+		9C52A6F11CDAEA3900F42BFF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C52A6EF1CDAEA3900F42BFF /* LaunchScreen.storyboard */; };
+		9C52A6FC1CDAEA3900F42BFF /* OCR_SavingCardTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C52A6FB1CDAEA3900F42BFF /* OCR_SavingCardTests.m */; };
+		9C52A7071CDAEA3900F42BFF /* OCR_SavingCardUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C52A7061CDAEA3900F42BFF /* OCR_SavingCardUITests.m */; };
+		9C52A73E1CDAEAC400F42BFF /* BankBinList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9C52A7151CDAEAC400F42BFF /* BankBinList.plist */; };
+		9C52A73F1CDAEAC400F42BFF /* bincodesearch.java in Sources */ = {isa = PBXBuildFile; fileRef = 9C52A7171CDAEAC400F42BFF /* bincodesearch.java */; };
+		9C52A7401CDAEAC400F42BFF /* BinCodeSearch.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C52A7181CDAEAC400F42BFF /* BinCodeSearch.m */; };
+		9C52A7411CDAEAC400F42BFF /* KSFrameView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C52A71A1CDAEAC400F42BFF /* KSFrameView.m */; };
+		9C52A7421CDAEAC400F42BFF /* KSHCameraController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C52A71C1CDAEAC400F42BFF /* KSHCameraController.m */; };
+		9C52A7431CDAEAC400F42BFF /* KSHContextManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C52A71E1CDAEAC400F42BFF /* KSHContextManager.m */; };
+		9C52A7441CDAEAC400F42BFF /* KSHOverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C52A7211CDAEAC400F42BFF /* KSHOverlayView.m */; };
+		9C52A7451CDAEAC400F42BFF /* KSHPreviewView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C52A7231CDAEAC400F42BFF /* KSHPreviewView.m */; };
+		9C52A7461CDAEAC400F42BFF /* libexidcardios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C52A72A1CDAEAC400F42BFF /* libexidcardios.a */; };
+		9C52A7471CDAEAC400F42BFF /* libexidcardios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C52A72F1CDAEAC400F42BFF /* libexidcardios.a */; };
+		9C52A7481CDAEAC400F42BFF /* zocr0.lib in Resources */ = {isa = PBXBuildFile; fileRef = 9C52A7301CDAEAC400F42BFF /* zocr0.lib */; };
+		9C52A7491CDAEAC400F42BFF /* libexbankcardcore.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C52A7381CDAEAC400F42BFF /* libexbankcardcore.a */; };
+		9C52A74A1CDAEAC400F42BFF /* libexbankcardcore.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C52A73D1CDAEAC400F42BFF /* libexbankcardcore.a */; };
+		9C52A74D1CDAECDF00F42BFF /* ScanCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C52A74C1CDAECDF00F42BFF /* ScanCardViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9C52A6F81CDAEA3900F42BFF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9C52A6D61CDAEA3900F42BFF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9C52A6DD1CDAEA3900F42BFF;
+			remoteInfo = OCR_SavingCard;
+		};
+		9C52A7031CDAEA3900F42BFF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9C52A6D61CDAEA3900F42BFF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9C52A6DD1CDAEA3900F42BFF;
+			remoteInfo = OCR_SavingCard;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		9C52A6DE1CDAEA3900F42BFF /* OCR_SavingCard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OCR_SavingCard.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9C52A6E21CDAEA3900F42BFF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		9C52A6E41CDAEA3900F42BFF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		9C52A6E51CDAEA3900F42BFF /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		9C52A6E71CDAEA3900F42BFF /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		9C52A6E81CDAEA3900F42BFF /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		9C52A6EB1CDAEA3900F42BFF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		9C52A6ED1CDAEA3900F42BFF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9C52A6F01CDAEA3900F42BFF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		9C52A6F21CDAEA3900F42BFF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9C52A6F71CDAEA3900F42BFF /* OCR_SavingCardTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OCR_SavingCardTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9C52A6FB1CDAEA3900F42BFF /* OCR_SavingCardTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OCR_SavingCardTests.m; sourceTree = "<group>"; };
+		9C52A6FD1CDAEA3900F42BFF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9C52A7021CDAEA3900F42BFF /* OCR_SavingCardUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OCR_SavingCardUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9C52A7061CDAEA3900F42BFF /* OCR_SavingCardUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OCR_SavingCardUITests.m; sourceTree = "<group>"; };
+		9C52A7081CDAEA3900F42BFF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9C52A7151CDAEAC400F42BFF /* BankBinList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = BankBinList.plist; sourceTree = "<group>"; };
+		9C52A7161CDAEAC400F42BFF /* BinCodeSearch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BinCodeSearch.h; sourceTree = "<group>"; };
+		9C52A7171CDAEAC400F42BFF /* bincodesearch.java */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.java; path = bincodesearch.java; sourceTree = "<group>"; };
+		9C52A7181CDAEAC400F42BFF /* BinCodeSearch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BinCodeSearch.m; sourceTree = "<group>"; };
+		9C52A7191CDAEAC400F42BFF /* KSFrameView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSFrameView.h; sourceTree = "<group>"; };
+		9C52A71A1CDAEAC400F42BFF /* KSFrameView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSFrameView.m; sourceTree = "<group>"; };
+		9C52A71B1CDAEAC400F42BFF /* KSHCameraController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSHCameraController.h; sourceTree = "<group>"; };
+		9C52A71C1CDAEAC400F42BFF /* KSHCameraController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSHCameraController.m; sourceTree = "<group>"; };
+		9C52A71D1CDAEAC400F42BFF /* KSHContextManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSHContextManager.h; sourceTree = "<group>"; };
+		9C52A71E1CDAEAC400F42BFF /* KSHContextManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSHContextManager.m; sourceTree = "<group>"; };
+		9C52A71F1CDAEAC400F42BFF /* KSHImageTarget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSHImageTarget.h; sourceTree = "<group>"; };
+		9C52A7201CDAEAC400F42BFF /* KSHOverlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSHOverlayView.h; sourceTree = "<group>"; };
+		9C52A7211CDAEAC400F42BFF /* KSHOverlayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSHOverlayView.m; sourceTree = "<group>"; };
+		9C52A7221CDAEAC400F42BFF /* KSHPreviewView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSHPreviewView.h; sourceTree = "<group>"; };
+		9C52A7231CDAEAC400F42BFF /* KSHPreviewView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSHPreviewView.m; sourceTree = "<group>"; };
+		9C52A7251CDAEAC400F42BFF /* IDCardApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDCardApi.h; sourceTree = "<group>"; };
+		9C52A7291CDAEAC400F42BFF /* exidcardios.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = exidcardios.h; sourceTree = "<group>"; };
+		9C52A72A1CDAEAC400F42BFF /* libexidcardios.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libexidcardios.a; sourceTree = "<group>"; };
+		9C52A72E1CDAEAC400F42BFF /* exidcardios.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = exidcardios.h; sourceTree = "<group>"; };
+		9C52A72F1CDAEAC400F42BFF /* libexidcardios.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libexidcardios.a; sourceTree = "<group>"; };
+		9C52A7301CDAEAC400F42BFF /* zocr0.lib */ = {isa = PBXFileReference; lastKnownFileType = file; path = zocr0.lib; sourceTree = "<group>"; };
+		9C52A7321CDAEAC400F42BFF /* BankCard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BankCard.h; sourceTree = "<group>"; };
+		9C52A7331CDAEAC400F42BFF /* exbankcard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = exbankcard.h; sourceTree = "<group>"; };
+		9C52A7371CDAEAC400F42BFF /* exbankcardcore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = exbankcardcore.h; sourceTree = "<group>"; };
+		9C52A7381CDAEAC400F42BFF /* libexbankcardcore.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libexbankcardcore.a; sourceTree = "<group>"; };
+		9C52A73C1CDAEAC400F42BFF /* exbankcardcore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = exbankcardcore.h; sourceTree = "<group>"; };
+		9C52A73D1CDAEAC400F42BFF /* libexbankcardcore.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libexbankcardcore.a; sourceTree = "<group>"; };
+		9C52A74B1CDAECDF00F42BFF /* ScanCardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScanCardViewController.h; sourceTree = "<group>"; };
+		9C52A74C1CDAECDF00F42BFF /* ScanCardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScanCardViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9C52A6DB1CDAEA3900F42BFF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9C52A7491CDAEAC400F42BFF /* libexbankcardcore.a in Frameworks */,
+				9C52A74A1CDAEAC400F42BFF /* libexbankcardcore.a in Frameworks */,
+				9C52A7461CDAEAC400F42BFF /* libexidcardios.a in Frameworks */,
+				9C52A7471CDAEAC400F42BFF /* libexidcardios.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9C52A6F41CDAEA3900F42BFF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9C52A6FF1CDAEA3900F42BFF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9C52A6D51CDAEA3900F42BFF = {
+			isa = PBXGroup;
+			children = (
+				9C52A6E01CDAEA3900F42BFF /* OCR_SavingCard */,
+				9C52A6FA1CDAEA3900F42BFF /* OCR_SavingCardTests */,
+				9C52A7051CDAEA3900F42BFF /* OCR_SavingCardUITests */,
+				9C52A6DF1CDAEA3900F42BFF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9C52A6DF1CDAEA3900F42BFF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9C52A6DE1CDAEA3900F42BFF /* OCR_SavingCard.app */,
+				9C52A6F71CDAEA3900F42BFF /* OCR_SavingCardTests.xctest */,
+				9C52A7021CDAEA3900F42BFF /* OCR_SavingCardUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9C52A6E01CDAEA3900F42BFF /* OCR_SavingCard */ = {
+			isa = PBXGroup;
+			children = (
+				9C52A6E41CDAEA3900F42BFF /* AppDelegate.h */,
+				9C52A6E51CDAEA3900F42BFF /* AppDelegate.m */,
+				9C52A6E71CDAEA3900F42BFF /* ViewController.h */,
+				9C52A6E81CDAEA3900F42BFF /* ViewController.m */,
+				9C52A6EA1CDAEA3900F42BFF /* Main.storyboard */,
+				9C52A74B1CDAECDF00F42BFF /* ScanCardViewController.h */,
+				9C52A74C1CDAECDF00F42BFF /* ScanCardViewController.m */,
+				9C52A6ED1CDAEA3900F42BFF /* Assets.xcassets */,
+				9C52A6EF1CDAEA3900F42BFF /* LaunchScreen.storyboard */,
+				9C52A6F21CDAEA3900F42BFF /* Info.plist */,
+				9C52A6E11CDAEA3900F42BFF /* Supporting Files */,
+			);
+			path = OCR_SavingCard;
+			sourceTree = "<group>";
+		};
+		9C52A6E11CDAEA3900F42BFF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				9C52A7141CDAEAC400F42BFF /* cameraRecInIOS */,
+				9C52A6E21CDAEA3900F42BFF /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9C52A6FA1CDAEA3900F42BFF /* OCR_SavingCardTests */ = {
+			isa = PBXGroup;
+			children = (
+				9C52A6FB1CDAEA3900F42BFF /* OCR_SavingCardTests.m */,
+				9C52A6FD1CDAEA3900F42BFF /* Info.plist */,
+			);
+			path = OCR_SavingCardTests;
+			sourceTree = "<group>";
+		};
+		9C52A7051CDAEA3900F42BFF /* OCR_SavingCardUITests */ = {
+			isa = PBXGroup;
+			children = (
+				9C52A7061CDAEA3900F42BFF /* OCR_SavingCardUITests.m */,
+				9C52A7081CDAEA3900F42BFF /* Info.plist */,
+			);
+			path = OCR_SavingCardUITests;
+			sourceTree = "<group>";
+		};
+		9C52A7141CDAEAC400F42BFF /* cameraRecInIOS */ = {
+			isa = PBXGroup;
+			children = (
+				9C52A7151CDAEAC400F42BFF /* BankBinList.plist */,
+				9C52A7161CDAEAC400F42BFF /* BinCodeSearch.h */,
+				9C52A7171CDAEAC400F42BFF /* bincodesearch.java */,
+				9C52A7181CDAEAC400F42BFF /* BinCodeSearch.m */,
+				9C52A7191CDAEAC400F42BFF /* KSFrameView.h */,
+				9C52A71A1CDAEAC400F42BFF /* KSFrameView.m */,
+				9C52A71B1CDAEAC400F42BFF /* KSHCameraController.h */,
+				9C52A71C1CDAEAC400F42BFF /* KSHCameraController.m */,
+				9C52A71D1CDAEAC400F42BFF /* KSHContextManager.h */,
+				9C52A71E1CDAEAC400F42BFF /* KSHContextManager.m */,
+				9C52A71F1CDAEAC400F42BFF /* KSHImageTarget.h */,
+				9C52A7201CDAEAC400F42BFF /* KSHOverlayView.h */,
+				9C52A7211CDAEAC400F42BFF /* KSHOverlayView.m */,
+				9C52A7221CDAEAC400F42BFF /* KSHPreviewView.h */,
+				9C52A7231CDAEAC400F42BFF /* KSHPreviewView.m */,
+				9C52A7241CDAEAC400F42BFF /* Products */,
+				9C52A7311CDAEAC400F42BFF /* recCore */,
+			);
+			path = cameraRecInIOS;
+			sourceTree = "<group>";
+		};
+		9C52A7241CDAEAC400F42BFF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9C52A7251CDAEAC400F42BFF /* IDCardApi.h */,
+				9C52A7261CDAEAC400F42BFF /* Release-iphoneos */,
+				9C52A72B1CDAEAC400F42BFF /* Release-iphonesimulator */,
+				9C52A7301CDAEAC400F42BFF /* zocr0.lib */,
+			);
+			path = Products;
+			sourceTree = "<group>";
+		};
+		9C52A7261CDAEAC400F42BFF /* Release-iphoneos */ = {
+			isa = PBXGroup;
+			children = (
+				9C52A7271CDAEAC400F42BFF /* include */,
+				9C52A72A1CDAEAC400F42BFF /* libexidcardios.a */,
+			);
+			path = "Release-iphoneos";
+			sourceTree = "<group>";
+		};
+		9C52A7271CDAEAC400F42BFF /* include */ = {
+			isa = PBXGroup;
+			children = (
+				9C52A7281CDAEAC400F42BFF /* exidcardios */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		9C52A7281CDAEAC400F42BFF /* exidcardios */ = {
+			isa = PBXGroup;
+			children = (
+				9C52A7291CDAEAC400F42BFF /* exidcardios.h */,
+			);
+			path = exidcardios;
+			sourceTree = "<group>";
+		};
+		9C52A72B1CDAEAC400F42BFF /* Release-iphonesimulator */ = {
+			isa = PBXGroup;
+			children = (
+				9C52A72C1CDAEAC400F42BFF /* include */,
+				9C52A72F1CDAEAC400F42BFF /* libexidcardios.a */,
+			);
+			path = "Release-iphonesimulator";
+			sourceTree = "<group>";
+		};
+		9C52A72C1CDAEAC400F42BFF /* include */ = {
+			isa = PBXGroup;
+			children = (
+				9C52A72D1CDAEAC400F42BFF /* exidcardios */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		9C52A72D1CDAEAC400F42BFF /* exidcardios */ = {
+			isa = PBXGroup;
+			children = (
+				9C52A72E1CDAEAC400F42BFF /* exidcardios.h */,
+			);
+			path = exidcardios;
+			sourceTree = "<group>";
+		};
+		9C52A7311CDAEAC400F42BFF /* recCore */ = {
+			isa = PBXGroup;
+			children = (
+				9C52A7321CDAEAC400F42BFF /* BankCard.h */,
+				9C52A7331CDAEAC400F42BFF /* exbankcard.h */,
+				9C52A7341CDAEAC400F42BFF /* Release-iphoneos */,
+				9C52A7391CDAEAC400F42BFF /* Release-iphonesimulator */,
+			);
+			path = recCore;
+			sourceTree = "<group>";
+		};
+		9C52A7341CDAEAC400F42BFF /* Release-iphoneos */ = {
+			isa = PBXGroup;
+			children = (
+				9C52A7351CDAEAC400F42BFF /* include */,
+				9C52A7381CDAEAC400F42BFF /* libexbankcardcore.a */,
+			);
+			path = "Release-iphoneos";
+			sourceTree = "<group>";
+		};
+		9C52A7351CDAEAC400F42BFF /* include */ = {
+			isa = PBXGroup;
+			children = (
+				9C52A7361CDAEAC400F42BFF /* exbankcardcore */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		9C52A7361CDAEAC400F42BFF /* exbankcardcore */ = {
+			isa = PBXGroup;
+			children = (
+				9C52A7371CDAEAC400F42BFF /* exbankcardcore.h */,
+			);
+			path = exbankcardcore;
+			sourceTree = "<group>";
+		};
+		9C52A7391CDAEAC400F42BFF /* Release-iphonesimulator */ = {
+			isa = PBXGroup;
+			children = (
+				9C52A73A1CDAEAC400F42BFF /* include */,
+				9C52A73D1CDAEAC400F42BFF /* libexbankcardcore.a */,
+			);
+			path = "Release-iphonesimulator";
+			sourceTree = "<group>";
+		};
+		9C52A73A1CDAEAC400F42BFF /* include */ = {
+			isa = PBXGroup;
+			children = (
+				9C52A73B1CDAEAC400F42BFF /* exbankcardcore */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		9C52A73B1CDAEAC400F42BFF /* exbankcardcore */ = {
+			isa = PBXGroup;
+			children = (
+				9C52A73C1CDAEAC400F42BFF /* exbankcardcore.h */,
+			);
+			path = exbankcardcore;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9C52A6DD1CDAEA3900F42BFF /* OCR_SavingCard */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9C52A70B1CDAEA3900F42BFF /* Build configuration list for PBXNativeTarget "OCR_SavingCard" */;
+			buildPhases = (
+				9C52A6DA1CDAEA3900F42BFF /* Sources */,
+				9C52A6DB1CDAEA3900F42BFF /* Frameworks */,
+				9C52A6DC1CDAEA3900F42BFF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OCR_SavingCard;
+			productName = OCR_SavingCard;
+			productReference = 9C52A6DE1CDAEA3900F42BFF /* OCR_SavingCard.app */;
+			productType = "com.apple.product-type.application";
+		};
+		9C52A6F61CDAEA3900F42BFF /* OCR_SavingCardTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9C52A70E1CDAEA3900F42BFF /* Build configuration list for PBXNativeTarget "OCR_SavingCardTests" */;
+			buildPhases = (
+				9C52A6F31CDAEA3900F42BFF /* Sources */,
+				9C52A6F41CDAEA3900F42BFF /* Frameworks */,
+				9C52A6F51CDAEA3900F42BFF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9C52A6F91CDAEA3900F42BFF /* PBXTargetDependency */,
+			);
+			name = OCR_SavingCardTests;
+			productName = OCR_SavingCardTests;
+			productReference = 9C52A6F71CDAEA3900F42BFF /* OCR_SavingCardTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		9C52A7011CDAEA3900F42BFF /* OCR_SavingCardUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9C52A7111CDAEA3900F42BFF /* Build configuration list for PBXNativeTarget "OCR_SavingCardUITests" */;
+			buildPhases = (
+				9C52A6FE1CDAEA3900F42BFF /* Sources */,
+				9C52A6FF1CDAEA3900F42BFF /* Frameworks */,
+				9C52A7001CDAEA3900F42BFF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9C52A7041CDAEA3900F42BFF /* PBXTargetDependency */,
+			);
+			name = OCR_SavingCardUITests;
+			productName = OCR_SavingCardUITests;
+			productReference = 9C52A7021CDAEA3900F42BFF /* OCR_SavingCardUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9C52A6D61CDAEA3900F42BFF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = linyingwei;
+				TargetAttributes = {
+					9C52A6DD1CDAEA3900F42BFF = {
+						CreatedOnToolsVersion = 7.3;
+					};
+					9C52A6F61CDAEA3900F42BFF = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = 9C52A6DD1CDAEA3900F42BFF;
+					};
+					9C52A7011CDAEA3900F42BFF = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = 9C52A6DD1CDAEA3900F42BFF;
+					};
+				};
+			};
+			buildConfigurationList = 9C52A6D91CDAEA3900F42BFF /* Build configuration list for PBXProject "OCR_SavingCard" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 9C52A6D51CDAEA3900F42BFF;
+			productRefGroup = 9C52A6DF1CDAEA3900F42BFF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9C52A6DD1CDAEA3900F42BFF /* OCR_SavingCard */,
+				9C52A6F61CDAEA3900F42BFF /* OCR_SavingCardTests */,
+				9C52A7011CDAEA3900F42BFF /* OCR_SavingCardUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9C52A6DC1CDAEA3900F42BFF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9C52A73E1CDAEAC400F42BFF /* BankBinList.plist in Resources */,
+				9C52A6F11CDAEA3900F42BFF /* LaunchScreen.storyboard in Resources */,
+				9C52A6EE1CDAEA3900F42BFF /* Assets.xcassets in Resources */,
+				9C52A7481CDAEAC400F42BFF /* zocr0.lib in Resources */,
+				9C52A6EC1CDAEA3900F42BFF /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9C52A6F51CDAEA3900F42BFF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9C52A7001CDAEA3900F42BFF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9C52A6DA1CDAEA3900F42BFF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9C52A7411CDAEAC400F42BFF /* KSFrameView.m in Sources */,
+				9C52A73F1CDAEAC400F42BFF /* bincodesearch.java in Sources */,
+				9C52A7441CDAEAC400F42BFF /* KSHOverlayView.m in Sources */,
+				9C52A6E91CDAEA3900F42BFF /* ViewController.m in Sources */,
+				9C52A74D1CDAECDF00F42BFF /* ScanCardViewController.m in Sources */,
+				9C52A7451CDAEAC400F42BFF /* KSHPreviewView.m in Sources */,
+				9C52A7421CDAEAC400F42BFF /* KSHCameraController.m in Sources */,
+				9C52A7431CDAEAC400F42BFF /* KSHContextManager.m in Sources */,
+				9C52A7401CDAEAC400F42BFF /* BinCodeSearch.m in Sources */,
+				9C52A6E61CDAEA3900F42BFF /* AppDelegate.m in Sources */,
+				9C52A6E31CDAEA3900F42BFF /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9C52A6F31CDAEA3900F42BFF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9C52A6FC1CDAEA3900F42BFF /* OCR_SavingCardTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9C52A6FE1CDAEA3900F42BFF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9C52A7071CDAEA3900F42BFF /* OCR_SavingCardUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9C52A6F91CDAEA3900F42BFF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9C52A6DD1CDAEA3900F42BFF /* OCR_SavingCard */;
+			targetProxy = 9C52A6F81CDAEA3900F42BFF /* PBXContainerItemProxy */;
+		};
+		9C52A7041CDAEA3900F42BFF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9C52A6DD1CDAEA3900F42BFF /* OCR_SavingCard */;
+			targetProxy = 9C52A7031CDAEA3900F42BFF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		9C52A6EA1CDAEA3900F42BFF /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9C52A6EB1CDAEA3900F42BFF /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		9C52A6EF1CDAEA3900F42BFF /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9C52A6F01CDAEA3900F42BFF /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		9C52A7091CDAEA3900F42BFF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		9C52A70A1CDAEA3900F42BFF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9C52A70C1CDAEA3900F42BFF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ENABLE_BITCODE = NO;
+				INFOPLIST_FILE = OCR_SavingCard/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/OCR_SavingCard/cameraRecInIOS/Products/Release-iphoneos",
+					"$(PROJECT_DIR)/OCR_SavingCard/cameraRecInIOS/Products/Release-iphonesimulator",
+					"$(PROJECT_DIR)/OCR_SavingCard/cameraRecInIOS/recCore/Release-iphoneos",
+					"$(PROJECT_DIR)/OCR_SavingCard/cameraRecInIOS/recCore/Release-iphonesimulator",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.key.OCR-SavingCard";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		9C52A70D1CDAEA3900F42BFF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ENABLE_BITCODE = NO;
+				INFOPLIST_FILE = OCR_SavingCard/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/OCR_SavingCard/cameraRecInIOS/Products/Release-iphoneos",
+					"$(PROJECT_DIR)/OCR_SavingCard/cameraRecInIOS/Products/Release-iphonesimulator",
+					"$(PROJECT_DIR)/OCR_SavingCard/cameraRecInIOS/recCore/Release-iphoneos",
+					"$(PROJECT_DIR)/OCR_SavingCard/cameraRecInIOS/recCore/Release-iphonesimulator",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.key.OCR-SavingCard";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		9C52A70F1CDAEA3900F42BFF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = OCR_SavingCardTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.key.OCR-SavingCardTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OCR_SavingCard.app/OCR_SavingCard";
+			};
+			name = Debug;
+		};
+		9C52A7101CDAEA3900F42BFF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = OCR_SavingCardTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.key.OCR-SavingCardTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OCR_SavingCard.app/OCR_SavingCard";
+			};
+			name = Release;
+		};
+		9C52A7121CDAEA3900F42BFF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = OCR_SavingCardUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.key.OCR-SavingCardUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = OCR_SavingCard;
+			};
+			name = Debug;
+		};
+		9C52A7131CDAEA3900F42BFF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = OCR_SavingCardUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.key.OCR-SavingCardUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = OCR_SavingCard;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9C52A6D91CDAEA3900F42BFF /* Build configuration list for PBXProject "OCR_SavingCard" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9C52A7091CDAEA3900F42BFF /* Debug */,
+				9C52A70A1CDAEA3900F42BFF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9C52A70B1CDAEA3900F42BFF /* Build configuration list for PBXNativeTarget "OCR_SavingCard" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9C52A70C1CDAEA3900F42BFF /* Debug */,
+				9C52A70D1CDAEA3900F42BFF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9C52A70E1CDAEA3900F42BFF /* Build configuration list for PBXNativeTarget "OCR_SavingCardTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9C52A70F1CDAEA3900F42BFF /* Debug */,
+				9C52A7101CDAEA3900F42BFF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9C52A7111CDAEA3900F42BFF /* Build configuration list for PBXNativeTarget "OCR_SavingCardUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9C52A7121CDAEA3900F42BFF /* Debug */,
+				9C52A7131CDAEA3900F42BFF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9C52A6D61CDAEA3900F42BFF /* Project object */;
+}

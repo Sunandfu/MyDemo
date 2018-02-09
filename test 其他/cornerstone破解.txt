@@ -1,0 +1,23 @@
+
+
+mac版本cornerstone的无限期破解方法 (2011-06-28 10:39:04)转载▼
+标签： it	
+CornerStone是个人非常喜欢的mac上的一款SVN客户端工具，官方提供了14天的免费试用（trail）版本。我们可以在此基础上提供无限期试用版本。
+
+方法一：如果你从来没有安装过这个trail版本，直接把当前系统时间改成未来的某个时间，比如2020年，然后安装，运行一次。之后退出程序，将系统时间还原。恭喜你，你已经破解完成了。
+方法二：如果你不幸已经安装并运行过软件，那就需要找到安装记录并删除它。步骤如下：
+1，显示系统隐藏文件。
+在终端（Terminal）中输入如下命令：
+defaults write ~/Library/Preferences/com.apple.finder AppleShowAllFiles -bool true
+
+（true 改成 false 就可以不再显示隐藏文件）需要重启，然后在finder中就可以看到隐藏文件了。
+2，打开~/Library/Preferences/ByHost下的GlobalPreferences.XXXX.plist文件，XXXX为一串数字，删掉"com.zennaware.Cornerstone:2.0"这一行，然后保存。（如果安装了XCode，会自动打开plist文件，否则就得自己找个plist文件工具了，比如PlistEdit）
+3，就此，安装记录已经删除，然后请重复方法一的步骤。
+
+心得：对于这类不需要连接服务器进行验证的限期使用软件，都可以采用类似的方法破解。
+1，软件必须要在系统中找一个地方存储安装信息。
+2，在mac文件系统里找到这个地方。
+3，删掉生成的时间记录。
+4，重新运行。
+难点在于第二步，具体以后再说了。
+

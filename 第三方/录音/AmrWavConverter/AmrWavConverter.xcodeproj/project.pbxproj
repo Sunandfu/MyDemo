@@ -1,0 +1,531 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2E58E13C1B2146A50000DE52 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E58E13B1B2146A50000DE52 /* main.m */; };
+		2E58E13F1B2146A50000DE52 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E58E13E1B2146A50000DE52 /* AppDelegate.m */; };
+		2E58E1421B2146A50000DE52 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E58E1411B2146A50000DE52 /* ViewController.m */; };
+		2E58E1451B2146A50000DE52 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E58E1431B2146A50000DE52 /* Main.storyboard */; };
+		2E58E1471B2146A50000DE52 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E58E1461B2146A50000DE52 /* Images.xcassets */; };
+		2E58E14A1B2146A50000DE52 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E58E1481B2146A50000DE52 /* LaunchScreen.xib */; };
+		2E58E1561B2146A50000DE52 /* AmrWavConverterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E58E1551B2146A50000DE52 /* AmrWavConverterTests.m */; };
+		2E58E16E1B214A690000DE52 /* amrFileCodec.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2E58E1621B214A690000DE52 /* amrFileCodec.mm */; };
+		2E58E16F1B214A690000DE52 /* libopencore-amrnb.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E58E1641B214A690000DE52 /* libopencore-amrnb.a */; };
+		2E58E1701B214A690000DE52 /* libopencore-amrwb.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E58E1651B214A690000DE52 /* libopencore-amrwb.a */; };
+		2E58E1711B214A690000DE52 /* VoiceConverter.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2E58E16D1B214A690000DE52 /* VoiceConverter.mm */; };
+		2E58E1731B214EC00000DE52 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E58E1721B214EC00000DE52 /* AVFoundation.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2E58E1501B2146A50000DE52 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2E58E12E1B2146A50000DE52 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2E58E1351B2146A50000DE52;
+			remoteInfo = AmrWavConverter;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		2E58E1361B2146A50000DE52 /* AmrWavConverter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AmrWavConverter.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2E58E13A1B2146A50000DE52 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2E58E13B1B2146A50000DE52 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		2E58E13D1B2146A50000DE52 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		2E58E13E1B2146A50000DE52 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		2E58E1401B2146A50000DE52 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		2E58E1411B2146A50000DE52 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		2E58E1441B2146A50000DE52 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		2E58E1461B2146A50000DE52 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		2E58E1491B2146A50000DE52 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		2E58E14F1B2146A50000DE52 /* AmrWavConverterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AmrWavConverterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2E58E1541B2146A50000DE52 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2E58E1551B2146A50000DE52 /* AmrWavConverterTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AmrWavConverterTests.m; sourceTree = "<group>"; };
+		2E58E1611B214A690000DE52 /* amrFileCodec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = amrFileCodec.h; sourceTree = "<group>"; };
+		2E58E1621B214A690000DE52 /* amrFileCodec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = amrFileCodec.mm; sourceTree = "<group>"; };
+		2E58E1641B214A690000DE52 /* libopencore-amrnb.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libopencore-amrnb.a"; sourceTree = "<group>"; };
+		2E58E1651B214A690000DE52 /* libopencore-amrwb.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libopencore-amrwb.a"; sourceTree = "<group>"; };
+		2E58E1671B214A690000DE52 /* interf_dec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = interf_dec.h; sourceTree = "<group>"; };
+		2E58E1681B214A690000DE52 /* interf_enc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = interf_enc.h; sourceTree = "<group>"; };
+		2E58E16A1B214A690000DE52 /* dec_if.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dec_if.h; sourceTree = "<group>"; };
+		2E58E16B1B214A690000DE52 /* if_rom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = if_rom.h; sourceTree = "<group>"; };
+		2E58E16C1B214A690000DE52 /* VoiceConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VoiceConverter.h; sourceTree = "<group>"; };
+		2E58E16D1B214A690000DE52 /* VoiceConverter.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = VoiceConverter.mm; sourceTree = "<group>"; };
+		2E58E1721B214EC00000DE52 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2E58E1331B2146A50000DE52 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2E58E1731B214EC00000DE52 /* AVFoundation.framework in Frameworks */,
+				2E58E1701B214A690000DE52 /* libopencore-amrwb.a in Frameworks */,
+				2E58E16F1B214A690000DE52 /* libopencore-amrnb.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2E58E14C1B2146A50000DE52 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2E58E12D1B2146A50000DE52 = {
+			isa = PBXGroup;
+			children = (
+				2E58E1721B214EC00000DE52 /* AVFoundation.framework */,
+				2E58E1381B2146A50000DE52 /* AmrWavConverter */,
+				2E58E1521B2146A50000DE52 /* AmrWavConverterTests */,
+				2E58E1371B2146A50000DE52 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2E58E1371B2146A50000DE52 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2E58E1361B2146A50000DE52 /* AmrWavConverter.app */,
+				2E58E14F1B2146A50000DE52 /* AmrWavConverterTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2E58E1381B2146A50000DE52 /* AmrWavConverter */ = {
+			isa = PBXGroup;
+			children = (
+				2E58E13D1B2146A50000DE52 /* AppDelegate.h */,
+				2E58E13E1B2146A50000DE52 /* AppDelegate.m */,
+				2E58E1401B2146A50000DE52 /* ViewController.h */,
+				2E58E1411B2146A50000DE52 /* ViewController.m */,
+				2E58E1431B2146A50000DE52 /* Main.storyboard */,
+				2E58E15F1B214A690000DE52 /* VoiceConvert */,
+				2E58E1461B2146A50000DE52 /* Images.xcassets */,
+				2E58E1481B2146A50000DE52 /* LaunchScreen.xib */,
+				2E58E1391B2146A50000DE52 /* Supporting Files */,
+			);
+			path = AmrWavConverter;
+			sourceTree = "<group>";
+		};
+		2E58E1391B2146A50000DE52 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2E58E13A1B2146A50000DE52 /* Info.plist */,
+				2E58E13B1B2146A50000DE52 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2E58E1521B2146A50000DE52 /* AmrWavConverterTests */ = {
+			isa = PBXGroup;
+			children = (
+				2E58E1551B2146A50000DE52 /* AmrWavConverterTests.m */,
+				2E58E1531B2146A50000DE52 /* Supporting Files */,
+			);
+			path = AmrWavConverterTests;
+			sourceTree = "<group>";
+		};
+		2E58E1531B2146A50000DE52 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2E58E1541B2146A50000DE52 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2E58E15F1B214A690000DE52 /* VoiceConvert */ = {
+			isa = PBXGroup;
+			children = (
+				2E58E1601B214A690000DE52 /* amrwapper */,
+				2E58E1631B214A690000DE52 /* lib */,
+				2E58E1661B214A690000DE52 /* opencore-amrnb */,
+				2E58E1691B214A690000DE52 /* opencore-amrwb */,
+				2E58E16C1B214A690000DE52 /* VoiceConverter.h */,
+				2E58E16D1B214A690000DE52 /* VoiceConverter.mm */,
+			);
+			path = VoiceConvert;
+			sourceTree = "<group>";
+		};
+		2E58E1601B214A690000DE52 /* amrwapper */ = {
+			isa = PBXGroup;
+			children = (
+				2E58E1611B214A690000DE52 /* amrFileCodec.h */,
+				2E58E1621B214A690000DE52 /* amrFileCodec.mm */,
+			);
+			path = amrwapper;
+			sourceTree = "<group>";
+		};
+		2E58E1631B214A690000DE52 /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				2E58E1641B214A690000DE52 /* libopencore-amrnb.a */,
+				2E58E1651B214A690000DE52 /* libopencore-amrwb.a */,
+			);
+			path = lib;
+			sourceTree = "<group>";
+		};
+		2E58E1661B214A690000DE52 /* opencore-amrnb */ = {
+			isa = PBXGroup;
+			children = (
+				2E58E1671B214A690000DE52 /* interf_dec.h */,
+				2E58E1681B214A690000DE52 /* interf_enc.h */,
+			);
+			path = "opencore-amrnb";
+			sourceTree = "<group>";
+		};
+		2E58E1691B214A690000DE52 /* opencore-amrwb */ = {
+			isa = PBXGroup;
+			children = (
+				2E58E16A1B214A690000DE52 /* dec_if.h */,
+				2E58E16B1B214A690000DE52 /* if_rom.h */,
+			);
+			path = "opencore-amrwb";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2E58E1351B2146A50000DE52 /* AmrWavConverter */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2E58E1591B2146A50000DE52 /* Build configuration list for PBXNativeTarget "AmrWavConverter" */;
+			buildPhases = (
+				2E58E1321B2146A50000DE52 /* Sources */,
+				2E58E1331B2146A50000DE52 /* Frameworks */,
+				2E58E1341B2146A50000DE52 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AmrWavConverter;
+			productName = AmrWavConverter;
+			productReference = 2E58E1361B2146A50000DE52 /* AmrWavConverter.app */;
+			productType = "com.apple.product-type.application";
+		};
+		2E58E14E1B2146A50000DE52 /* AmrWavConverterTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2E58E15C1B2146A50000DE52 /* Build configuration list for PBXNativeTarget "AmrWavConverterTests" */;
+			buildPhases = (
+				2E58E14B1B2146A50000DE52 /* Sources */,
+				2E58E14C1B2146A50000DE52 /* Frameworks */,
+				2E58E14D1B2146A50000DE52 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2E58E1511B2146A50000DE52 /* PBXTargetDependency */,
+			);
+			name = AmrWavConverterTests;
+			productName = AmrWavConverterTests;
+			productReference = 2E58E14F1B2146A50000DE52 /* AmrWavConverterTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2E58E12E1B2146A50000DE52 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = gzhu;
+				TargetAttributes = {
+					2E58E1351B2146A50000DE52 = {
+						CreatedOnToolsVersion = 6.3.2;
+						DevelopmentTeam = UNN8UKGZ6J;
+					};
+					2E58E14E1B2146A50000DE52 = {
+						CreatedOnToolsVersion = 6.3.2;
+						TestTargetID = 2E58E1351B2146A50000DE52;
+					};
+				};
+			};
+			buildConfigurationList = 2E58E1311B2146A50000DE52 /* Build configuration list for PBXProject "AmrWavConverter" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2E58E12D1B2146A50000DE52;
+			productRefGroup = 2E58E1371B2146A50000DE52 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2E58E1351B2146A50000DE52 /* AmrWavConverter */,
+				2E58E14E1B2146A50000DE52 /* AmrWavConverterTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2E58E1341B2146A50000DE52 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2E58E1451B2146A50000DE52 /* Main.storyboard in Resources */,
+				2E58E14A1B2146A50000DE52 /* LaunchScreen.xib in Resources */,
+				2E58E1471B2146A50000DE52 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2E58E14D1B2146A50000DE52 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2E58E1321B2146A50000DE52 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2E58E1711B214A690000DE52 /* VoiceConverter.mm in Sources */,
+				2E58E1421B2146A50000DE52 /* ViewController.m in Sources */,
+				2E58E16E1B214A690000DE52 /* amrFileCodec.mm in Sources */,
+				2E58E13F1B2146A50000DE52 /* AppDelegate.m in Sources */,
+				2E58E13C1B2146A50000DE52 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2E58E14B1B2146A50000DE52 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2E58E1561B2146A50000DE52 /* AmrWavConverterTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2E58E1511B2146A50000DE52 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2E58E1351B2146A50000DE52 /* AmrWavConverter */;
+			targetProxy = 2E58E1501B2146A50000DE52 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		2E58E1431B2146A50000DE52 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2E58E1441B2146A50000DE52 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		2E58E1481B2146A50000DE52 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2E58E1491B2146A50000DE52 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		2E58E1571B2146A50000DE52 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		2E58E1581B2146A50000DE52 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2E58E15A1B2146A50000DE52 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Ren Li (V4P97HA2W2)";
+				ENABLE_BITCODE = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_ENABLE_CPP_RTTI = YES;
+				INFOPLIST_FILE = AmrWavConverter/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/AmrWavConverter/VoiceConvert/lib",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = cn.yunxiang.AmrWavConverter;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		2E58E15B1B2146A50000DE52 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Ren Li (V4P97HA2W2)";
+				ENABLE_BITCODE = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_ENABLE_CPP_RTTI = YES;
+				INFOPLIST_FILE = AmrWavConverter/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/AmrWavConverter/VoiceConvert/lib",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = cn.yunxiang.AmrWavConverter;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		2E58E15D1B2146A50000DE52 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = AmrWavConverterTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "cn.edu.gzhu.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AmrWavConverter.app/AmrWavConverter";
+			};
+			name = Debug;
+		};
+		2E58E15E1B2146A50000DE52 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = AmrWavConverterTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "cn.edu.gzhu.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AmrWavConverter.app/AmrWavConverter";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2E58E1311B2146A50000DE52 /* Build configuration list for PBXProject "AmrWavConverter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2E58E1571B2146A50000DE52 /* Debug */,
+				2E58E1581B2146A50000DE52 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2E58E1591B2146A50000DE52 /* Build configuration list for PBXNativeTarget "AmrWavConverter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2E58E15A1B2146A50000DE52 /* Debug */,
+				2E58E15B1B2146A50000DE52 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2E58E15C1B2146A50000DE52 /* Build configuration list for PBXNativeTarget "AmrWavConverterTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2E58E15D1B2146A50000DE52 /* Debug */,
+				2E58E15E1B2146A50000DE52 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2E58E12E1B2146A50000DE52 /* Project object */;
+}

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nu0-wE-KPk">
+                                <rect key="frame" x="0.0" y="100" width="600" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="Rag-N6-8gR"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="textColor" red="0.87843137250000003" green="0.15686274510000001" blue="0.15686274510000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XAp-Dy-Klr">
+                                <rect key="frame" x="263" y="263" width="75" height="75"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="75" id="66d-zw-74I"/>
+                                    <constraint firstAttribute="height" constant="75" id="A6B-9M-Sso"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="fingerprint"/>
+                                <connections>
+                                    <action selector="StartWJTouchID" destination="BYZ-38-t0r" eventType="touchUpInside" id="ACi-js-4DO"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="XAp-Dy-Klr" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="AX3-2Z-GBz"/>
+                            <constraint firstItem="nu0-wE-KPk" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="ko6-3R-xlV"/>
+                            <constraint firstItem="nu0-wE-KPk" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="80" id="qWG-Oa-Gtt"/>
+                            <constraint firstAttribute="trailing" secondItem="nu0-wE-KPk" secondAttribute="trailing" id="tPR-Xd-WlB"/>
+                            <constraint firstItem="XAp-Dy-Klr" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="vph-aq-vm8"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="Notice" destination="nu0-wE-KPk" id="gga-fJ-bXr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="327" y="347"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="fingerprint" width="75" height="75"/>
+    </resources>
+</document>

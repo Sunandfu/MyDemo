@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>307B3194-DAF2-499E-8ADB-78EC73C12346</string>
+	<key>IDESourceControlProjectName</key>
+	<string>HYCalendar</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>550EA4FD-ADCE-4041-8B8F-6334A1A019A5</key>
+		<string>https://github.com/nathanwhy/HYCalendar.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>HYCalendar.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>550EA4FD-ADCE-4041-8B8F-6334A1A019A5</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/nathanwhy/HYCalendar.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>550EA4FD-ADCE-4041-8B8F-6334A1A019A5</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>550EA4FD-ADCE-4041-8B8F-6334A1A019A5</string>
+			<key>IDESourceControlWCCName</key>
+			<string>HYCalendar</string>
+		</dict>
+	</array>
+</dict>
+</plist>

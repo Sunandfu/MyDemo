@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <Group
+      location = "group:AlbumPicker"
+      name = "AlbumPicker">
+      <FileRef
+         location = "group:AlbumPicker.xcodeproj">
+      </FileRef>
+   </Group>
+   <Group
+      location = "group:AlbumPicker_Swift"
+      name = "AlbumPicker_Swift">
+      <FileRef
+         location = "group:AlbumPicker_Swift.xcodeproj">
+      </FileRef>
+   </Group>
+</Workspace>

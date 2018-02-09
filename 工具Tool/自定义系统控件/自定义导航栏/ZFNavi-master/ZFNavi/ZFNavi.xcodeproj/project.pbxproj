@@ -1,0 +1,563 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CC0C2B041BA150CD0022CC65 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CC0C2B031BA150CD0022CC65 /* main.m */; };
+		CC0C2B071BA150CD0022CC65 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CC0C2B061BA150CD0022CC65 /* AppDelegate.m */; };
+		CC0C2B0A1BA150CD0022CC65 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC0C2B091BA150CD0022CC65 /* ViewController.m */; };
+		CC0C2B0D1BA150CD0022CC65 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC0C2B0B1BA150CD0022CC65 /* Main.storyboard */; };
+		CC0C2B0F1BA150CD0022CC65 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC0C2B0E1BA150CD0022CC65 /* Images.xcassets */; };
+		CC0C2B121BA150CD0022CC65 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC0C2B101BA150CD0022CC65 /* LaunchScreen.xib */; };
+		CC0C2B1E1BA150CD0022CC65 /* ZFNaviTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CC0C2B1D1BA150CD0022CC65 /* ZFNaviTests.m */; };
+		CC0C2B2C1BA153D20022CC65 /* CoolNavi.m in Sources */ = {isa = PBXBuildFile; fileRef = CC0C2B291BA153D20022CC65 /* CoolNavi.m */; };
+		CC0C2B2D1BA153D20022CC65 /* UIViewExt.m in Sources */ = {isa = PBXBuildFile; fileRef = CC0C2B2B1BA153D20022CC65 /* UIViewExt.m */; };
+		CC0C2B4F1BA155600022CC65 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = CC0C2B2F1BA155600022CC65 /* LICENSE */; };
+		CC0C2B501BA155600022CC65 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = CC0C2B301BA155600022CC65 /* README.md */; };
+		CC0C2B511BA155600022CC65 /* NSData+ImageContentType.m in Sources */ = {isa = PBXBuildFile; fileRef = CC0C2B331BA155600022CC65 /* NSData+ImageContentType.m */; };
+		CC0C2B521BA155600022CC65 /* SDImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = CC0C2B351BA155600022CC65 /* SDImageCache.m */; };
+		CC0C2B531BA155600022CC65 /* SDWebImageCompat.m in Sources */ = {isa = PBXBuildFile; fileRef = CC0C2B371BA155600022CC65 /* SDWebImageCompat.m */; };
+		CC0C2B541BA155600022CC65 /* SDWebImageDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = CC0C2B391BA155600022CC65 /* SDWebImageDecoder.m */; };
+		CC0C2B551BA155600022CC65 /* SDWebImageDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = CC0C2B3B1BA155600022CC65 /* SDWebImageDownloader.m */; };
+		CC0C2B561BA155600022CC65 /* SDWebImageDownloaderOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = CC0C2B3D1BA155600022CC65 /* SDWebImageDownloaderOperation.m */; };
+		CC0C2B571BA155600022CC65 /* SDWebImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CC0C2B3F1BA155600022CC65 /* SDWebImageManager.m */; };
+		CC0C2B581BA155600022CC65 /* SDWebImagePrefetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = CC0C2B421BA155600022CC65 /* SDWebImagePrefetcher.m */; };
+		CC0C2B591BA155600022CC65 /* UIButton+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = CC0C2B441BA155600022CC65 /* UIButton+WebCache.m */; };
+		CC0C2B5A1BA155600022CC65 /* UIImage+GIF.m in Sources */ = {isa = PBXBuildFile; fileRef = CC0C2B461BA155600022CC65 /* UIImage+GIF.m */; };
+		CC0C2B5B1BA155600022CC65 /* UIImage+MultiFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = CC0C2B481BA155600022CC65 /* UIImage+MultiFormat.m */; };
+		CC0C2B5C1BA155600022CC65 /* UIImageView+HighlightedWebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = CC0C2B4A1BA155600022CC65 /* UIImageView+HighlightedWebCache.m */; };
+		CC0C2B5D1BA155600022CC65 /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = CC0C2B4C1BA155600022CC65 /* UIImageView+WebCache.m */; };
+		CC0C2B5E1BA155600022CC65 /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = CC0C2B4E1BA155600022CC65 /* UIView+WebCacheOperation.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CC0C2B181BA150CD0022CC65 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CC0C2AF61BA150CD0022CC65 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CC0C2AFD1BA150CD0022CC65;
+			remoteInfo = ZFNavi;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		CC0C2AFE1BA150CD0022CC65 /* ZFNavi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZFNavi.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CC0C2B021BA150CD0022CC65 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CC0C2B031BA150CD0022CC65 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		CC0C2B051BA150CD0022CC65 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		CC0C2B061BA150CD0022CC65 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		CC0C2B081BA150CD0022CC65 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		CC0C2B091BA150CD0022CC65 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		CC0C2B0C1BA150CD0022CC65 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		CC0C2B0E1BA150CD0022CC65 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		CC0C2B111BA150CD0022CC65 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		CC0C2B171BA150CD0022CC65 /* ZFNaviTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZFNaviTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CC0C2B1C1BA150CD0022CC65 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CC0C2B1D1BA150CD0022CC65 /* ZFNaviTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZFNaviTests.m; sourceTree = "<group>"; };
+		CC0C2B281BA153D20022CC65 /* CoolNavi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoolNavi.h; sourceTree = "<group>"; };
+		CC0C2B291BA153D20022CC65 /* CoolNavi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoolNavi.m; sourceTree = "<group>"; };
+		CC0C2B2A1BA153D20022CC65 /* UIViewExt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIViewExt.h; sourceTree = "<group>"; };
+		CC0C2B2B1BA153D20022CC65 /* UIViewExt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIViewExt.m; sourceTree = "<group>"; };
+		CC0C2B2F1BA155600022CC65 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		CC0C2B301BA155600022CC65 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		CC0C2B321BA155600022CC65 /* NSData+ImageContentType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+ImageContentType.h"; sourceTree = "<group>"; };
+		CC0C2B331BA155600022CC65 /* NSData+ImageContentType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+ImageContentType.m"; sourceTree = "<group>"; };
+		CC0C2B341BA155600022CC65 /* SDImageCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDImageCache.h; sourceTree = "<group>"; };
+		CC0C2B351BA155600022CC65 /* SDImageCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDImageCache.m; sourceTree = "<group>"; };
+		CC0C2B361BA155600022CC65 /* SDWebImageCompat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDWebImageCompat.h; sourceTree = "<group>"; };
+		CC0C2B371BA155600022CC65 /* SDWebImageCompat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDWebImageCompat.m; sourceTree = "<group>"; };
+		CC0C2B381BA155600022CC65 /* SDWebImageDecoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDWebImageDecoder.h; sourceTree = "<group>"; };
+		CC0C2B391BA155600022CC65 /* SDWebImageDecoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDWebImageDecoder.m; sourceTree = "<group>"; };
+		CC0C2B3A1BA155600022CC65 /* SDWebImageDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDWebImageDownloader.h; sourceTree = "<group>"; };
+		CC0C2B3B1BA155600022CC65 /* SDWebImageDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDWebImageDownloader.m; sourceTree = "<group>"; };
+		CC0C2B3C1BA155600022CC65 /* SDWebImageDownloaderOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDWebImageDownloaderOperation.h; sourceTree = "<group>"; };
+		CC0C2B3D1BA155600022CC65 /* SDWebImageDownloaderOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDWebImageDownloaderOperation.m; sourceTree = "<group>"; };
+		CC0C2B3E1BA155600022CC65 /* SDWebImageManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDWebImageManager.h; sourceTree = "<group>"; };
+		CC0C2B3F1BA155600022CC65 /* SDWebImageManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDWebImageManager.m; sourceTree = "<group>"; };
+		CC0C2B401BA155600022CC65 /* SDWebImageOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDWebImageOperation.h; sourceTree = "<group>"; };
+		CC0C2B411BA155600022CC65 /* SDWebImagePrefetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDWebImagePrefetcher.h; sourceTree = "<group>"; };
+		CC0C2B421BA155600022CC65 /* SDWebImagePrefetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDWebImagePrefetcher.m; sourceTree = "<group>"; };
+		CC0C2B431BA155600022CC65 /* UIButton+WebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+WebCache.h"; sourceTree = "<group>"; };
+		CC0C2B441BA155600022CC65 /* UIButton+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+WebCache.m"; sourceTree = "<group>"; };
+		CC0C2B451BA155600022CC65 /* UIImage+GIF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+GIF.h"; sourceTree = "<group>"; };
+		CC0C2B461BA155600022CC65 /* UIImage+GIF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+GIF.m"; sourceTree = "<group>"; };
+		CC0C2B471BA155600022CC65 /* UIImage+MultiFormat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+MultiFormat.h"; sourceTree = "<group>"; };
+		CC0C2B481BA155600022CC65 /* UIImage+MultiFormat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+MultiFormat.m"; sourceTree = "<group>"; };
+		CC0C2B491BA155600022CC65 /* UIImageView+HighlightedWebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+HighlightedWebCache.h"; sourceTree = "<group>"; };
+		CC0C2B4A1BA155600022CC65 /* UIImageView+HighlightedWebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+HighlightedWebCache.m"; sourceTree = "<group>"; };
+		CC0C2B4B1BA155600022CC65 /* UIImageView+WebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+WebCache.h"; sourceTree = "<group>"; };
+		CC0C2B4C1BA155600022CC65 /* UIImageView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+WebCache.m"; sourceTree = "<group>"; };
+		CC0C2B4D1BA155600022CC65 /* UIView+WebCacheOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+WebCacheOperation.h"; sourceTree = "<group>"; };
+		CC0C2B4E1BA155600022CC65 /* UIView+WebCacheOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WebCacheOperation.m"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CC0C2AFB1BA150CD0022CC65 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CC0C2B141BA150CD0022CC65 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CC0C2AF51BA150CD0022CC65 = {
+			isa = PBXGroup;
+			children = (
+				CC0C2B001BA150CD0022CC65 /* ZFNavi */,
+				CC0C2B1A1BA150CD0022CC65 /* ZFNaviTests */,
+				CC0C2AFF1BA150CD0022CC65 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CC0C2AFF1BA150CD0022CC65 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CC0C2AFE1BA150CD0022CC65 /* ZFNavi.app */,
+				CC0C2B171BA150CD0022CC65 /* ZFNaviTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CC0C2B001BA150CD0022CC65 /* ZFNavi */ = {
+			isa = PBXGroup;
+			children = (
+				CC0C2B051BA150CD0022CC65 /* AppDelegate.h */,
+				CC0C2B061BA150CD0022CC65 /* AppDelegate.m */,
+				CC0C2B081BA150CD0022CC65 /* ViewController.h */,
+				CC0C2B091BA150CD0022CC65 /* ViewController.m */,
+				CC0C2B271BA153D20022CC65 /* CoolNavi */,
+				CC0C2B2E1BA155600022CC65 /* SDWebImage */,
+				CC0C2B0B1BA150CD0022CC65 /* Main.storyboard */,
+				CC0C2B0E1BA150CD0022CC65 /* Images.xcassets */,
+				CC0C2B101BA150CD0022CC65 /* LaunchScreen.xib */,
+				CC0C2B011BA150CD0022CC65 /* Supporting Files */,
+			);
+			path = ZFNavi;
+			sourceTree = "<group>";
+		};
+		CC0C2B011BA150CD0022CC65 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CC0C2B021BA150CD0022CC65 /* Info.plist */,
+				CC0C2B031BA150CD0022CC65 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CC0C2B1A1BA150CD0022CC65 /* ZFNaviTests */ = {
+			isa = PBXGroup;
+			children = (
+				CC0C2B1D1BA150CD0022CC65 /* ZFNaviTests.m */,
+				CC0C2B1B1BA150CD0022CC65 /* Supporting Files */,
+			);
+			path = ZFNaviTests;
+			sourceTree = "<group>";
+		};
+		CC0C2B1B1BA150CD0022CC65 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CC0C2B1C1BA150CD0022CC65 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CC0C2B271BA153D20022CC65 /* CoolNavi */ = {
+			isa = PBXGroup;
+			children = (
+				CC0C2B281BA153D20022CC65 /* CoolNavi.h */,
+				CC0C2B291BA153D20022CC65 /* CoolNavi.m */,
+				CC0C2B2A1BA153D20022CC65 /* UIViewExt.h */,
+				CC0C2B2B1BA153D20022CC65 /* UIViewExt.m */,
+			);
+			path = CoolNavi;
+			sourceTree = "<group>";
+		};
+		CC0C2B2E1BA155600022CC65 /* SDWebImage */ = {
+			isa = PBXGroup;
+			children = (
+				CC0C2B2F1BA155600022CC65 /* LICENSE */,
+				CC0C2B301BA155600022CC65 /* README.md */,
+				CC0C2B311BA155600022CC65 /* SDWebImage */,
+			);
+			path = SDWebImage;
+			sourceTree = "<group>";
+		};
+		CC0C2B311BA155600022CC65 /* SDWebImage */ = {
+			isa = PBXGroup;
+			children = (
+				CC0C2B321BA155600022CC65 /* NSData+ImageContentType.h */,
+				CC0C2B331BA155600022CC65 /* NSData+ImageContentType.m */,
+				CC0C2B341BA155600022CC65 /* SDImageCache.h */,
+				CC0C2B351BA155600022CC65 /* SDImageCache.m */,
+				CC0C2B361BA155600022CC65 /* SDWebImageCompat.h */,
+				CC0C2B371BA155600022CC65 /* SDWebImageCompat.m */,
+				CC0C2B381BA155600022CC65 /* SDWebImageDecoder.h */,
+				CC0C2B391BA155600022CC65 /* SDWebImageDecoder.m */,
+				CC0C2B3A1BA155600022CC65 /* SDWebImageDownloader.h */,
+				CC0C2B3B1BA155600022CC65 /* SDWebImageDownloader.m */,
+				CC0C2B3C1BA155600022CC65 /* SDWebImageDownloaderOperation.h */,
+				CC0C2B3D1BA155600022CC65 /* SDWebImageDownloaderOperation.m */,
+				CC0C2B3E1BA155600022CC65 /* SDWebImageManager.h */,
+				CC0C2B3F1BA155600022CC65 /* SDWebImageManager.m */,
+				CC0C2B401BA155600022CC65 /* SDWebImageOperation.h */,
+				CC0C2B411BA155600022CC65 /* SDWebImagePrefetcher.h */,
+				CC0C2B421BA155600022CC65 /* SDWebImagePrefetcher.m */,
+				CC0C2B431BA155600022CC65 /* UIButton+WebCache.h */,
+				CC0C2B441BA155600022CC65 /* UIButton+WebCache.m */,
+				CC0C2B451BA155600022CC65 /* UIImage+GIF.h */,
+				CC0C2B461BA155600022CC65 /* UIImage+GIF.m */,
+				CC0C2B471BA155600022CC65 /* UIImage+MultiFormat.h */,
+				CC0C2B481BA155600022CC65 /* UIImage+MultiFormat.m */,
+				CC0C2B491BA155600022CC65 /* UIImageView+HighlightedWebCache.h */,
+				CC0C2B4A1BA155600022CC65 /* UIImageView+HighlightedWebCache.m */,
+				CC0C2B4B1BA155600022CC65 /* UIImageView+WebCache.h */,
+				CC0C2B4C1BA155600022CC65 /* UIImageView+WebCache.m */,
+				CC0C2B4D1BA155600022CC65 /* UIView+WebCacheOperation.h */,
+				CC0C2B4E1BA155600022CC65 /* UIView+WebCacheOperation.m */,
+			);
+			path = SDWebImage;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CC0C2AFD1BA150CD0022CC65 /* ZFNavi */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CC0C2B211BA150CD0022CC65 /* Build configuration list for PBXNativeTarget "ZFNavi" */;
+			buildPhases = (
+				CC0C2AFA1BA150CD0022CC65 /* Sources */,
+				CC0C2AFB1BA150CD0022CC65 /* Frameworks */,
+				CC0C2AFC1BA150CD0022CC65 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ZFNavi;
+			productName = ZFNavi;
+			productReference = CC0C2AFE1BA150CD0022CC65 /* ZFNavi.app */;
+			productType = "com.apple.product-type.application";
+		};
+		CC0C2B161BA150CD0022CC65 /* ZFNaviTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CC0C2B241BA150CD0022CC65 /* Build configuration list for PBXNativeTarget "ZFNaviTests" */;
+			buildPhases = (
+				CC0C2B131BA150CD0022CC65 /* Sources */,
+				CC0C2B141BA150CD0022CC65 /* Frameworks */,
+				CC0C2B151BA150CD0022CC65 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CC0C2B191BA150CD0022CC65 /* PBXTargetDependency */,
+			);
+			name = ZFNaviTests;
+			productName = ZFNaviTests;
+			productReference = CC0C2B171BA150CD0022CC65 /* ZFNaviTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CC0C2AF61BA150CD0022CC65 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0640;
+				ORGANIZATIONNAME = "任子丰";
+				TargetAttributes = {
+					CC0C2AFD1BA150CD0022CC65 = {
+						CreatedOnToolsVersion = 6.4;
+					};
+					CC0C2B161BA150CD0022CC65 = {
+						CreatedOnToolsVersion = 6.4;
+						TestTargetID = CC0C2AFD1BA150CD0022CC65;
+					};
+				};
+			};
+			buildConfigurationList = CC0C2AF91BA150CD0022CC65 /* Build configuration list for PBXProject "ZFNavi" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CC0C2AF51BA150CD0022CC65;
+			productRefGroup = CC0C2AFF1BA150CD0022CC65 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CC0C2AFD1BA150CD0022CC65 /* ZFNavi */,
+				CC0C2B161BA150CD0022CC65 /* ZFNaviTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CC0C2AFC1BA150CD0022CC65 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CC0C2B0D1BA150CD0022CC65 /* Main.storyboard in Resources */,
+				CC0C2B121BA150CD0022CC65 /* LaunchScreen.xib in Resources */,
+				CC0C2B4F1BA155600022CC65 /* LICENSE in Resources */,
+				CC0C2B0F1BA150CD0022CC65 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CC0C2B151BA150CD0022CC65 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CC0C2AFA1BA150CD0022CC65 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CC0C2B5C1BA155600022CC65 /* UIImageView+HighlightedWebCache.m in Sources */,
+				CC0C2B501BA155600022CC65 /* README.md in Sources */,
+				CC0C2B581BA155600022CC65 /* SDWebImagePrefetcher.m in Sources */,
+				CC0C2B2C1BA153D20022CC65 /* CoolNavi.m in Sources */,
+				CC0C2B541BA155600022CC65 /* SDWebImageDecoder.m in Sources */,
+				CC0C2B551BA155600022CC65 /* SDWebImageDownloader.m in Sources */,
+				CC0C2B0A1BA150CD0022CC65 /* ViewController.m in Sources */,
+				CC0C2B571BA155600022CC65 /* SDWebImageManager.m in Sources */,
+				CC0C2B591BA155600022CC65 /* UIButton+WebCache.m in Sources */,
+				CC0C2B5B1BA155600022CC65 /* UIImage+MultiFormat.m in Sources */,
+				CC0C2B5D1BA155600022CC65 /* UIImageView+WebCache.m in Sources */,
+				CC0C2B2D1BA153D20022CC65 /* UIViewExt.m in Sources */,
+				CC0C2B5E1BA155600022CC65 /* UIView+WebCacheOperation.m in Sources */,
+				CC0C2B561BA155600022CC65 /* SDWebImageDownloaderOperation.m in Sources */,
+				CC0C2B5A1BA155600022CC65 /* UIImage+GIF.m in Sources */,
+				CC0C2B531BA155600022CC65 /* SDWebImageCompat.m in Sources */,
+				CC0C2B511BA155600022CC65 /* NSData+ImageContentType.m in Sources */,
+				CC0C2B071BA150CD0022CC65 /* AppDelegate.m in Sources */,
+				CC0C2B041BA150CD0022CC65 /* main.m in Sources */,
+				CC0C2B521BA155600022CC65 /* SDImageCache.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CC0C2B131BA150CD0022CC65 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CC0C2B1E1BA150CD0022CC65 /* ZFNaviTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CC0C2B191BA150CD0022CC65 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CC0C2AFD1BA150CD0022CC65 /* ZFNavi */;
+			targetProxy = CC0C2B181BA150CD0022CC65 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		CC0C2B0B1BA150CD0022CC65 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CC0C2B0C1BA150CD0022CC65 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		CC0C2B101BA150CD0022CC65 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CC0C2B111BA150CD0022CC65 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CC0C2B1F1BA150CD0022CC65 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		CC0C2B201BA150CD0022CC65 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CC0C2B221BA150CD0022CC65 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = ZFNavi/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		CC0C2B231BA150CD0022CC65 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = ZFNavi/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		CC0C2B251BA150CD0022CC65 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = ZFNaviTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ZFNavi.app/ZFNavi";
+			};
+			name = Debug;
+		};
+		CC0C2B261BA150CD0022CC65 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = ZFNaviTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ZFNavi.app/ZFNavi";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CC0C2AF91BA150CD0022CC65 /* Build configuration list for PBXProject "ZFNavi" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CC0C2B1F1BA150CD0022CC65 /* Debug */,
+				CC0C2B201BA150CD0022CC65 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CC0C2B211BA150CD0022CC65 /* Build configuration list for PBXNativeTarget "ZFNavi" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CC0C2B221BA150CD0022CC65 /* Debug */,
+				CC0C2B231BA150CD0022CC65 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CC0C2B241BA150CD0022CC65 /* Build configuration list for PBXNativeTarget "ZFNaviTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CC0C2B251BA150CD0022CC65 /* Debug */,
+				CC0C2B261BA150CD0022CC65 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CC0C2AF61BA150CD0022CC65 /* Project object */;
+}

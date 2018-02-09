@@ -1,0 +1,616 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CE4798341CE090FC00DC080D /* AmendCoordinate.m in Sources */ = {isa = PBXBuildFile; fileRef = CE4798331CE090FC00DC080D /* AmendCoordinate.m */; };
+		CEF424551CDC7ADB0086BDC4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CEF424541CDC7ADB0086BDC4 /* main.m */; };
+		CEF424581CDC7ADB0086BDC4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CEF424571CDC7ADB0086BDC4 /* AppDelegate.m */; };
+		CEF4245B1CDC7ADB0086BDC4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEF4245A1CDC7ADB0086BDC4 /* ViewController.m */; };
+		CEF4245E1CDC7ADB0086BDC4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEF4245C1CDC7ADB0086BDC4 /* Main.storyboard */; };
+		CEF424601CDC7ADB0086BDC4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEF4245F1CDC7ADB0086BDC4 /* Assets.xcassets */; };
+		CEF424631CDC7ADB0086BDC4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEF424611CDC7ADB0086BDC4 /* LaunchScreen.storyboard */; };
+		CEF4246E1CDC7ADC0086BDC4 /* MLGeolocationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CEF4246D1CDC7ADC0086BDC4 /* MLGeolocationTests.m */; };
+		CEF424791CDC7ADC0086BDC4 /* MLGeolocationUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = CEF424781CDC7ADC0086BDC4 /* MLGeolocationUITests.m */; };
+		CEF424881CDC7B7C0086BDC4 /* MLGeolocation.m in Sources */ = {isa = PBXBuildFile; fileRef = CEF424871CDC7B7C0086BDC4 /* MLGeolocation.m */; };
+		CEF4248A1CDC7C100086BDC4 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEF424891CDC7C100086BDC4 /* CoreLocation.framework */; };
+		CEF4249F1CDC7C610086BDC4 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = CEF4248D1CDC7C610086BDC4 /* AFHTTPRequestOperation.m */; };
+		CEF424A01CDC7C610086BDC4 /* AFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CEF4248F1CDC7C610086BDC4 /* AFHTTPRequestOperationManager.m */; };
+		CEF424A11CDC7C610086BDC4 /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CEF424911CDC7C610086BDC4 /* AFHTTPSessionManager.m */; };
+		CEF424A21CDC7C610086BDC4 /* AFNetworkReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CEF424941CDC7C610086BDC4 /* AFNetworkReachabilityManager.m */; };
+		CEF424A31CDC7C610086BDC4 /* AFSecurityPolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = CEF424961CDC7C610086BDC4 /* AFSecurityPolicy.m */; };
+		CEF424A41CDC7C610086BDC4 /* AFURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = CEF424981CDC7C610086BDC4 /* AFURLConnectionOperation.m */; };
+		CEF424A51CDC7C610086BDC4 /* AFURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = CEF4249A1CDC7C610086BDC4 /* AFURLRequestSerialization.m */; };
+		CEF424A61CDC7C610086BDC4 /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = CEF4249C1CDC7C610086BDC4 /* AFURLResponseSerialization.m */; };
+		CEF424A71CDC7C610086BDC4 /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CEF4249E1CDC7C610086BDC4 /* AFURLSessionManager.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CEF4246A1CDC7ADC0086BDC4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CEF424481CDC7AD90086BDC4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CEF4244F1CDC7ADA0086BDC4;
+			remoteInfo = MLGeolocation;
+		};
+		CEF424751CDC7ADC0086BDC4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CEF424481CDC7AD90086BDC4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CEF4244F1CDC7ADA0086BDC4;
+			remoteInfo = MLGeolocation;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		CE4798321CE090FC00DC080D /* AmendCoordinate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AmendCoordinate.h; sourceTree = "<group>"; };
+		CE4798331CE090FC00DC080D /* AmendCoordinate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AmendCoordinate.m; sourceTree = "<group>"; };
+		CEF424501CDC7ADA0086BDC4 /* MLGeolocation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MLGeolocation.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CEF424541CDC7ADB0086BDC4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		CEF424561CDC7ADB0086BDC4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		CEF424571CDC7ADB0086BDC4 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		CEF424591CDC7ADB0086BDC4 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		CEF4245A1CDC7ADB0086BDC4 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		CEF4245D1CDC7ADB0086BDC4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		CEF4245F1CDC7ADB0086BDC4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CEF424621CDC7ADB0086BDC4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		CEF424641CDC7ADB0086BDC4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CEF424691CDC7ADC0086BDC4 /* MLGeolocationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MLGeolocationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CEF4246D1CDC7ADC0086BDC4 /* MLGeolocationTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MLGeolocationTests.m; sourceTree = "<group>"; };
+		CEF4246F1CDC7ADC0086BDC4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CEF424741CDC7ADC0086BDC4 /* MLGeolocationUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MLGeolocationUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CEF424781CDC7ADC0086BDC4 /* MLGeolocationUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MLGeolocationUITests.m; sourceTree = "<group>"; };
+		CEF4247A1CDC7ADC0086BDC4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CEF424861CDC7B7C0086BDC4 /* MLGeolocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLGeolocation.h; sourceTree = "<group>"; };
+		CEF424871CDC7B7C0086BDC4 /* MLGeolocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLGeolocation.m; sourceTree = "<group>"; };
+		CEF424891CDC7C100086BDC4 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		CEF4248C1CDC7C610086BDC4 /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
+		CEF4248D1CDC7C610086BDC4 /* AFHTTPRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperation.m; sourceTree = "<group>"; };
+		CEF4248E1CDC7C610086BDC4 /* AFHTTPRequestOperationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperationManager.h; sourceTree = "<group>"; };
+		CEF4248F1CDC7C610086BDC4 /* AFHTTPRequestOperationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperationManager.m; sourceTree = "<group>"; };
+		CEF424901CDC7C610086BDC4 /* AFHTTPSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPSessionManager.h; sourceTree = "<group>"; };
+		CEF424911CDC7C610086BDC4 /* AFHTTPSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPSessionManager.m; sourceTree = "<group>"; };
+		CEF424921CDC7C610086BDC4 /* AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworking.h; sourceTree = "<group>"; };
+		CEF424931CDC7C610086BDC4 /* AFNetworkReachabilityManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworkReachabilityManager.h; sourceTree = "<group>"; };
+		CEF424941CDC7C610086BDC4 /* AFNetworkReachabilityManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFNetworkReachabilityManager.m; sourceTree = "<group>"; };
+		CEF424951CDC7C610086BDC4 /* AFSecurityPolicy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFSecurityPolicy.h; sourceTree = "<group>"; };
+		CEF424961CDC7C610086BDC4 /* AFSecurityPolicy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFSecurityPolicy.m; sourceTree = "<group>"; };
+		CEF424971CDC7C610086BDC4 /* AFURLConnectionOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLConnectionOperation.h; sourceTree = "<group>"; };
+		CEF424981CDC7C610086BDC4 /* AFURLConnectionOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLConnectionOperation.m; sourceTree = "<group>"; };
+		CEF424991CDC7C610086BDC4 /* AFURLRequestSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLRequestSerialization.h; sourceTree = "<group>"; };
+		CEF4249A1CDC7C610086BDC4 /* AFURLRequestSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLRequestSerialization.m; sourceTree = "<group>"; };
+		CEF4249B1CDC7C610086BDC4 /* AFURLResponseSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLResponseSerialization.h; sourceTree = "<group>"; };
+		CEF4249C1CDC7C610086BDC4 /* AFURLResponseSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLResponseSerialization.m; sourceTree = "<group>"; };
+		CEF4249D1CDC7C610086BDC4 /* AFURLSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLSessionManager.h; sourceTree = "<group>"; };
+		CEF4249E1CDC7C610086BDC4 /* AFURLSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLSessionManager.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CEF4244D1CDC7ADA0086BDC4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CEF4248A1CDC7C100086BDC4 /* CoreLocation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CEF424661CDC7ADC0086BDC4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CEF424711CDC7ADC0086BDC4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CEF424471CDC7AD90086BDC4 = {
+			isa = PBXGroup;
+			children = (
+				CEF424521CDC7ADB0086BDC4 /* MLGeolocation */,
+				CEF424A91CDC7EB10086BDC4 /* Frameworks */,
+				CEF4246C1CDC7ADC0086BDC4 /* MLGeolocationTests */,
+				CEF424771CDC7ADC0086BDC4 /* MLGeolocationUITests */,
+				CEF424511CDC7ADA0086BDC4 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CEF424511CDC7ADA0086BDC4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CEF424501CDC7ADA0086BDC4 /* MLGeolocation.app */,
+				CEF424691CDC7ADC0086BDC4 /* MLGeolocationTests.xctest */,
+				CEF424741CDC7ADC0086BDC4 /* MLGeolocationUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CEF424521CDC7ADB0086BDC4 /* MLGeolocation */ = {
+			isa = PBXGroup;
+			children = (
+				CE4798321CE090FC00DC080D /* AmendCoordinate.h */,
+				CE4798331CE090FC00DC080D /* AmendCoordinate.m */,
+				CEF424861CDC7B7C0086BDC4 /* MLGeolocation.h */,
+				CEF424871CDC7B7C0086BDC4 /* MLGeolocation.m */,
+				CEF424561CDC7ADB0086BDC4 /* AppDelegate.h */,
+				CEF424571CDC7ADB0086BDC4 /* AppDelegate.m */,
+				CEF424591CDC7ADB0086BDC4 /* ViewController.h */,
+				CEF4245A1CDC7ADB0086BDC4 /* ViewController.m */,
+				CEF4245C1CDC7ADB0086BDC4 /* Main.storyboard */,
+				CEF4245F1CDC7ADB0086BDC4 /* Assets.xcassets */,
+				CEF424611CDC7ADB0086BDC4 /* LaunchScreen.storyboard */,
+				CEF424641CDC7ADB0086BDC4 /* Info.plist */,
+				CEF4248B1CDC7C610086BDC4 /* NetWork */,
+				CEF424531CDC7ADB0086BDC4 /* Supporting Files */,
+			);
+			path = MLGeolocation;
+			sourceTree = "<group>";
+		};
+		CEF424531CDC7ADB0086BDC4 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CEF424541CDC7ADB0086BDC4 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CEF4246C1CDC7ADC0086BDC4 /* MLGeolocationTests */ = {
+			isa = PBXGroup;
+			children = (
+				CEF4246D1CDC7ADC0086BDC4 /* MLGeolocationTests.m */,
+				CEF4246F1CDC7ADC0086BDC4 /* Info.plist */,
+			);
+			path = MLGeolocationTests;
+			sourceTree = "<group>";
+		};
+		CEF424771CDC7ADC0086BDC4 /* MLGeolocationUITests */ = {
+			isa = PBXGroup;
+			children = (
+				CEF424781CDC7ADC0086BDC4 /* MLGeolocationUITests.m */,
+				CEF4247A1CDC7ADC0086BDC4 /* Info.plist */,
+			);
+			path = MLGeolocationUITests;
+			sourceTree = "<group>";
+		};
+		CEF4248B1CDC7C610086BDC4 /* NetWork */ = {
+			isa = PBXGroup;
+			children = (
+				CEF4248C1CDC7C610086BDC4 /* AFHTTPRequestOperation.h */,
+				CEF4248D1CDC7C610086BDC4 /* AFHTTPRequestOperation.m */,
+				CEF4248E1CDC7C610086BDC4 /* AFHTTPRequestOperationManager.h */,
+				CEF4248F1CDC7C610086BDC4 /* AFHTTPRequestOperationManager.m */,
+				CEF424901CDC7C610086BDC4 /* AFHTTPSessionManager.h */,
+				CEF424911CDC7C610086BDC4 /* AFHTTPSessionManager.m */,
+				CEF424921CDC7C610086BDC4 /* AFNetworking.h */,
+				CEF424931CDC7C610086BDC4 /* AFNetworkReachabilityManager.h */,
+				CEF424941CDC7C610086BDC4 /* AFNetworkReachabilityManager.m */,
+				CEF424951CDC7C610086BDC4 /* AFSecurityPolicy.h */,
+				CEF424961CDC7C610086BDC4 /* AFSecurityPolicy.m */,
+				CEF424971CDC7C610086BDC4 /* AFURLConnectionOperation.h */,
+				CEF424981CDC7C610086BDC4 /* AFURLConnectionOperation.m */,
+				CEF424991CDC7C610086BDC4 /* AFURLRequestSerialization.h */,
+				CEF4249A1CDC7C610086BDC4 /* AFURLRequestSerialization.m */,
+				CEF4249B1CDC7C610086BDC4 /* AFURLResponseSerialization.h */,
+				CEF4249C1CDC7C610086BDC4 /* AFURLResponseSerialization.m */,
+				CEF4249D1CDC7C610086BDC4 /* AFURLSessionManager.h */,
+				CEF4249E1CDC7C610086BDC4 /* AFURLSessionManager.m */,
+			);
+			path = NetWork;
+			sourceTree = "<group>";
+		};
+		CEF424A91CDC7EB10086BDC4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CEF424891CDC7C100086BDC4 /* CoreLocation.framework */,
+			);
+			name = Frameworks;
+			path = MLGeolocation/Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CEF4244F1CDC7ADA0086BDC4 /* MLGeolocation */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CEF4247D1CDC7ADC0086BDC4 /* Build configuration list for PBXNativeTarget "MLGeolocation" */;
+			buildPhases = (
+				CEF4244C1CDC7ADA0086BDC4 /* Sources */,
+				CEF4244D1CDC7ADA0086BDC4 /* Frameworks */,
+				CEF4244E1CDC7ADA0086BDC4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MLGeolocation;
+			productName = MLGeolocation;
+			productReference = CEF424501CDC7ADA0086BDC4 /* MLGeolocation.app */;
+			productType = "com.apple.product-type.application";
+		};
+		CEF424681CDC7ADC0086BDC4 /* MLGeolocationTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CEF424801CDC7ADC0086BDC4 /* Build configuration list for PBXNativeTarget "MLGeolocationTests" */;
+			buildPhases = (
+				CEF424651CDC7ADC0086BDC4 /* Sources */,
+				CEF424661CDC7ADC0086BDC4 /* Frameworks */,
+				CEF424671CDC7ADC0086BDC4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CEF4246B1CDC7ADC0086BDC4 /* PBXTargetDependency */,
+			);
+			name = MLGeolocationTests;
+			productName = MLGeolocationTests;
+			productReference = CEF424691CDC7ADC0086BDC4 /* MLGeolocationTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		CEF424731CDC7ADC0086BDC4 /* MLGeolocationUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CEF424831CDC7ADC0086BDC4 /* Build configuration list for PBXNativeTarget "MLGeolocationUITests" */;
+			buildPhases = (
+				CEF424701CDC7ADC0086BDC4 /* Sources */,
+				CEF424711CDC7ADC0086BDC4 /* Frameworks */,
+				CEF424721CDC7ADC0086BDC4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CEF424761CDC7ADC0086BDC4 /* PBXTargetDependency */,
+			);
+			name = MLGeolocationUITests;
+			productName = MLGeolocationUITests;
+			productReference = CEF424741CDC7ADC0086BDC4 /* MLGeolocationUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CEF424481CDC7AD90086BDC4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = ly;
+				TargetAttributes = {
+					CEF4244F1CDC7ADA0086BDC4 = {
+						CreatedOnToolsVersion = 7.3;
+					};
+					CEF424681CDC7ADC0086BDC4 = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = CEF4244F1CDC7ADA0086BDC4;
+					};
+					CEF424731CDC7ADC0086BDC4 = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = CEF4244F1CDC7ADA0086BDC4;
+					};
+				};
+			};
+			buildConfigurationList = CEF4244B1CDC7AD90086BDC4 /* Build configuration list for PBXProject "MLGeolocation" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CEF424471CDC7AD90086BDC4;
+			productRefGroup = CEF424511CDC7ADA0086BDC4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CEF4244F1CDC7ADA0086BDC4 /* MLGeolocation */,
+				CEF424681CDC7ADC0086BDC4 /* MLGeolocationTests */,
+				CEF424731CDC7ADC0086BDC4 /* MLGeolocationUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CEF4244E1CDC7ADA0086BDC4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CEF424631CDC7ADB0086BDC4 /* LaunchScreen.storyboard in Resources */,
+				CEF424601CDC7ADB0086BDC4 /* Assets.xcassets in Resources */,
+				CEF4245E1CDC7ADB0086BDC4 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CEF424671CDC7ADC0086BDC4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CEF424721CDC7ADC0086BDC4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CEF4244C1CDC7ADA0086BDC4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CEF4245B1CDC7ADB0086BDC4 /* ViewController.m in Sources */,
+				CEF424A31CDC7C610086BDC4 /* AFSecurityPolicy.m in Sources */,
+				CEF424581CDC7ADB0086BDC4 /* AppDelegate.m in Sources */,
+				CEF424A01CDC7C610086BDC4 /* AFHTTPRequestOperationManager.m in Sources */,
+				CEF424A41CDC7C610086BDC4 /* AFURLConnectionOperation.m in Sources */,
+				CEF4249F1CDC7C610086BDC4 /* AFHTTPRequestOperation.m in Sources */,
+				CEF424551CDC7ADB0086BDC4 /* main.m in Sources */,
+				CEF424A51CDC7C610086BDC4 /* AFURLRequestSerialization.m in Sources */,
+				CEF424A11CDC7C610086BDC4 /* AFHTTPSessionManager.m in Sources */,
+				CEF424A21CDC7C610086BDC4 /* AFNetworkReachabilityManager.m in Sources */,
+				CEF424A61CDC7C610086BDC4 /* AFURLResponseSerialization.m in Sources */,
+				CE4798341CE090FC00DC080D /* AmendCoordinate.m in Sources */,
+				CEF424A71CDC7C610086BDC4 /* AFURLSessionManager.m in Sources */,
+				CEF424881CDC7B7C0086BDC4 /* MLGeolocation.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CEF424651CDC7ADC0086BDC4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CEF4246E1CDC7ADC0086BDC4 /* MLGeolocationTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CEF424701CDC7ADC0086BDC4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CEF424791CDC7ADC0086BDC4 /* MLGeolocationUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CEF4246B1CDC7ADC0086BDC4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CEF4244F1CDC7ADA0086BDC4 /* MLGeolocation */;
+			targetProxy = CEF4246A1CDC7ADC0086BDC4 /* PBXContainerItemProxy */;
+		};
+		CEF424761CDC7ADC0086BDC4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CEF4244F1CDC7ADA0086BDC4 /* MLGeolocation */;
+			targetProxy = CEF424751CDC7ADC0086BDC4 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		CEF4245C1CDC7ADB0086BDC4 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CEF4245D1CDC7ADB0086BDC4 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		CEF424611CDC7ADB0086BDC4 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CEF424621CDC7ADB0086BDC4 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CEF4247B1CDC7ADC0086BDC4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		CEF4247C1CDC7ADC0086BDC4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CEF4247E1CDC7ADC0086BDC4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = MLGeolocation/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.test.MLGeolocation;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		CEF4247F1CDC7ADC0086BDC4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				INFOPLIST_FILE = MLGeolocation/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.test.MLGeolocation;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		CEF424811CDC7ADC0086BDC4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = MLGeolocationTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.test.MLGeolocationTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MLGeolocation.app/MLGeolocation";
+			};
+			name = Debug;
+		};
+		CEF424821CDC7ADC0086BDC4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = MLGeolocationTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.test.MLGeolocationTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MLGeolocation.app/MLGeolocation";
+			};
+			name = Release;
+		};
+		CEF424841CDC7ADC0086BDC4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = MLGeolocationUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.test.MLGeolocationUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = MLGeolocation;
+			};
+			name = Debug;
+		};
+		CEF424851CDC7ADC0086BDC4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = MLGeolocationUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.test.MLGeolocationUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = MLGeolocation;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CEF4244B1CDC7AD90086BDC4 /* Build configuration list for PBXProject "MLGeolocation" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CEF4247B1CDC7ADC0086BDC4 /* Debug */,
+				CEF4247C1CDC7ADC0086BDC4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CEF4247D1CDC7ADC0086BDC4 /* Build configuration list for PBXNativeTarget "MLGeolocation" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CEF4247E1CDC7ADC0086BDC4 /* Debug */,
+				CEF4247F1CDC7ADC0086BDC4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CEF424801CDC7ADC0086BDC4 /* Build configuration list for PBXNativeTarget "MLGeolocationTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CEF424811CDC7ADC0086BDC4 /* Debug */,
+				CEF424821CDC7ADC0086BDC4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CEF424831CDC7ADC0086BDC4 /* Build configuration list for PBXNativeTarget "MLGeolocationUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CEF424841CDC7ADC0086BDC4 /* Debug */,
+				CEF424851CDC7ADC0086BDC4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CEF424481CDC7AD90086BDC4 /* Project object */;
+}

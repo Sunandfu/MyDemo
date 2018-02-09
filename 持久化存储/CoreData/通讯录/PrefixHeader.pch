@@ -1,0 +1,23 @@
+//
+//  PrefixHeader.pch
+//  通讯录
+//
+//  Created by 卢鹏肖 on 16/4/22.
+//  Copyright © 2016年 卢鹏肖. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+// 如果是oc语言就执行下面的代码
+#ifdef __OBJC__
+
+#import "LPXCoreDataManager.h"
+#import "ContactsEntity+CoreDataProperties.h"
+#import "NSManagedObject+LPXObject.h"
+
+#import "CommonTool.h"
+
+#endif
+
+#endif /* PrefixHeader_pch */

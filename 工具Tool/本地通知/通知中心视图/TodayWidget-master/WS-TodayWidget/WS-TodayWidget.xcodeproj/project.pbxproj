@@ -1,0 +1,504 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		88C5CDA61DB0CA6200828F49 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 88C5CDA51DB0CA6200828F49 /* main.m */; };
+		88C5CDA91DB0CA6200828F49 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 88C5CDA81DB0CA6200828F49 /* AppDelegate.m */; };
+		88C5CDAC1DB0CA6200828F49 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 88C5CDAB1DB0CA6200828F49 /* ViewController.m */; };
+		88C5CDAF1DB0CA6200828F49 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88C5CDAD1DB0CA6200828F49 /* Main.storyboard */; };
+		88C5CDB11DB0CA6200828F49 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88C5CDB01DB0CA6200828F49 /* Assets.xcassets */; };
+		88C5CDB41DB0CA6200828F49 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88C5CDB21DB0CA6200828F49 /* LaunchScreen.storyboard */; };
+		88C5CDC21DB0CB4500828F49 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88C5CDC11DB0CB4500828F49 /* NotificationCenter.framework */; };
+		88C5CDC61DB0CB4500828F49 /* TodayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 88C5CDC51DB0CB4500828F49 /* TodayViewController.m */; };
+		88C5CDC91DB0CB4500828F49 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88C5CDC71DB0CB4500828F49 /* MainInterface.storyboard */; };
+		88C5CDCD1DB0CB4500828F49 /* WSWidget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 88C5CDBF1DB0CB4500828F49 /* WSWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		88C5CDE61DB0CCE000828F49 /* 0@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 88C5CDE01DB0CCE000828F49 /* 0@2x.png */; };
+		88C5CDE71DB0CCE000828F49 /* 1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 88C5CDE11DB0CCE000828F49 /* 1@2x.png */; };
+		88C5CDE81DB0CCE000828F49 /* 2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 88C5CDE21DB0CCE000828F49 /* 2@2x.png */; };
+		88C5CDE91DB0CCE000828F49 /* 3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 88C5CDE31DB0CCE000828F49 /* 3@2x.png */; };
+		88C5CDEA1DB0CCE000828F49 /* 4@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 88C5CDE41DB0CCE000828F49 /* 4@2x.png */; };
+		88C5CDEB1DB0CCE000828F49 /* 5@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 88C5CDE51DB0CCE000828F49 /* 5@2x.png */; };
+		88C5CDF21DB0D66500828F49 /* asdadasdsdfsdf.gif in Resources */ = {isa = PBXBuildFile; fileRef = 88C5CDF11DB0D66500828F49 /* asdadasdsdfsdf.gif */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		88C5CDCB1DB0CB4500828F49 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 88C5CD991DB0CA6200828F49 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 88C5CDBE1DB0CB4500828F49;
+			remoteInfo = WSWidget;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		88C5CDD11DB0CB4500828F49 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				88C5CDCD1DB0CB4500828F49 /* WSWidget.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		88C5CDA11DB0CA6200828F49 /* WS-TodayWidget.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WS-TodayWidget.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		88C5CDA51DB0CA6200828F49 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		88C5CDA71DB0CA6200828F49 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		88C5CDA81DB0CA6200828F49 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		88C5CDAA1DB0CA6200828F49 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		88C5CDAB1DB0CA6200828F49 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		88C5CDAE1DB0CA6200828F49 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		88C5CDB01DB0CA6200828F49 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		88C5CDB31DB0CA6200828F49 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		88C5CDB51DB0CA6200828F49 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		88C5CDBF1DB0CB4500828F49 /* WSWidget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = WSWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		88C5CDC11DB0CB4500828F49 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		88C5CDC41DB0CB4500828F49 /* TodayViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TodayViewController.h; sourceTree = "<group>"; };
+		88C5CDC51DB0CB4500828F49 /* TodayViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TodayViewController.m; sourceTree = "<group>"; };
+		88C5CDC81DB0CB4500828F49 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		88C5CDCA1DB0CB4500828F49 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		88C5CDE01DB0CCE000828F49 /* 0@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "0@2x.png"; sourceTree = "<group>"; };
+		88C5CDE11DB0CCE000828F49 /* 1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "1@2x.png"; sourceTree = "<group>"; };
+		88C5CDE21DB0CCE000828F49 /* 2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "2@2x.png"; sourceTree = "<group>"; };
+		88C5CDE31DB0CCE000828F49 /* 3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "3@2x.png"; sourceTree = "<group>"; };
+		88C5CDE41DB0CCE000828F49 /* 4@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "4@2x.png"; sourceTree = "<group>"; };
+		88C5CDE51DB0CCE000828F49 /* 5@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "5@2x.png"; sourceTree = "<group>"; };
+		88C5CDF11DB0D66500828F49 /* asdadasdsdfsdf.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = asdadasdsdfsdf.gif; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		88C5CD9E1DB0CA6200828F49 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		88C5CDBC1DB0CB4500828F49 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				88C5CDC21DB0CB4500828F49 /* NotificationCenter.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		88C5CD981DB0CA6200828F49 = {
+			isa = PBXGroup;
+			children = (
+				88C5CDA31DB0CA6200828F49 /* WS-TodayWidget */,
+				88C5CDC31DB0CB4500828F49 /* WSWidget */,
+				88C5CDC01DB0CB4500828F49 /* Frameworks */,
+				88C5CDA21DB0CA6200828F49 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		88C5CDA21DB0CA6200828F49 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				88C5CDA11DB0CA6200828F49 /* WS-TodayWidget.app */,
+				88C5CDBF1DB0CB4500828F49 /* WSWidget.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		88C5CDA31DB0CA6200828F49 /* WS-TodayWidget */ = {
+			isa = PBXGroup;
+			children = (
+				88C5CDA71DB0CA6200828F49 /* AppDelegate.h */,
+				88C5CDA81DB0CA6200828F49 /* AppDelegate.m */,
+				88C5CDAA1DB0CA6200828F49 /* ViewController.h */,
+				88C5CDAB1DB0CA6200828F49 /* ViewController.m */,
+				88C5CDF11DB0D66500828F49 /* asdadasdsdfsdf.gif */,
+				88C5CDAD1DB0CA6200828F49 /* Main.storyboard */,
+				88C5CDB01DB0CA6200828F49 /* Assets.xcassets */,
+				88C5CDB21DB0CA6200828F49 /* LaunchScreen.storyboard */,
+				88C5CDB51DB0CA6200828F49 /* Info.plist */,
+				88C5CDA41DB0CA6200828F49 /* Supporting Files */,
+			);
+			path = "WS-TodayWidget";
+			sourceTree = "<group>";
+		};
+		88C5CDA41DB0CA6200828F49 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				88C5CDA51DB0CA6200828F49 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		88C5CDC01DB0CB4500828F49 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				88C5CDC11DB0CB4500828F49 /* NotificationCenter.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		88C5CDC31DB0CB4500828F49 /* WSWidget */ = {
+			isa = PBXGroup;
+			children = (
+				88C5CDDF1DB0CCE000828F49 /* img */,
+				88C5CDC41DB0CB4500828F49 /* TodayViewController.h */,
+				88C5CDC51DB0CB4500828F49 /* TodayViewController.m */,
+				88C5CDC71DB0CB4500828F49 /* MainInterface.storyboard */,
+				88C5CDCA1DB0CB4500828F49 /* Info.plist */,
+			);
+			path = WSWidget;
+			sourceTree = "<group>";
+		};
+		88C5CDDF1DB0CCE000828F49 /* img */ = {
+			isa = PBXGroup;
+			children = (
+				88C5CDE01DB0CCE000828F49 /* 0@2x.png */,
+				88C5CDE11DB0CCE000828F49 /* 1@2x.png */,
+				88C5CDE21DB0CCE000828F49 /* 2@2x.png */,
+				88C5CDE31DB0CCE000828F49 /* 3@2x.png */,
+				88C5CDE41DB0CCE000828F49 /* 4@2x.png */,
+				88C5CDE51DB0CCE000828F49 /* 5@2x.png */,
+			);
+			path = img;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		88C5CDA01DB0CA6200828F49 /* WS-TodayWidget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 88C5CDB81DB0CA6200828F49 /* Build configuration list for PBXNativeTarget "WS-TodayWidget" */;
+			buildPhases = (
+				88C5CD9D1DB0CA6200828F49 /* Sources */,
+				88C5CD9E1DB0CA6200828F49 /* Frameworks */,
+				88C5CD9F1DB0CA6200828F49 /* Resources */,
+				88C5CDD11DB0CB4500828F49 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				88C5CDCC1DB0CB4500828F49 /* PBXTargetDependency */,
+			);
+			name = "WS-TodayWidget";
+			productName = "WS-TodayWidget";
+			productReference = 88C5CDA11DB0CA6200828F49 /* WS-TodayWidget.app */;
+			productType = "com.apple.product-type.application";
+		};
+		88C5CDBE1DB0CB4500828F49 /* WSWidget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 88C5CDCE1DB0CB4500828F49 /* Build configuration list for PBXNativeTarget "WSWidget" */;
+			buildPhases = (
+				88C5CDBB1DB0CB4500828F49 /* Sources */,
+				88C5CDBC1DB0CB4500828F49 /* Frameworks */,
+				88C5CDBD1DB0CB4500828F49 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WSWidget;
+			productName = WSWidget;
+			productReference = 88C5CDBF1DB0CB4500828F49 /* WSWidget.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		88C5CD991DB0CA6200828F49 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = zws;
+				TargetAttributes = {
+					88C5CDA01DB0CA6200828F49 = {
+						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = J4N9H827FQ;
+					};
+					88C5CDBE1DB0CB4500828F49 = {
+						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = J4N9H827FQ;
+					};
+				};
+			};
+			buildConfigurationList = 88C5CD9C1DB0CA6200828F49 /* Build configuration list for PBXProject "WS-TodayWidget" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 88C5CD981DB0CA6200828F49;
+			productRefGroup = 88C5CDA21DB0CA6200828F49 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				88C5CDA01DB0CA6200828F49 /* WS-TodayWidget */,
+				88C5CDBE1DB0CB4500828F49 /* WSWidget */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		88C5CD9F1DB0CA6200828F49 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				88C5CDB41DB0CA6200828F49 /* LaunchScreen.storyboard in Resources */,
+				88C5CDF21DB0D66500828F49 /* asdadasdsdfsdf.gif in Resources */,
+				88C5CDB11DB0CA6200828F49 /* Assets.xcassets in Resources */,
+				88C5CDAF1DB0CA6200828F49 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		88C5CDBD1DB0CB4500828F49 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				88C5CDE71DB0CCE000828F49 /* 1@2x.png in Resources */,
+				88C5CDC91DB0CB4500828F49 /* MainInterface.storyboard in Resources */,
+				88C5CDE91DB0CCE000828F49 /* 3@2x.png in Resources */,
+				88C5CDEA1DB0CCE000828F49 /* 4@2x.png in Resources */,
+				88C5CDEB1DB0CCE000828F49 /* 5@2x.png in Resources */,
+				88C5CDE61DB0CCE000828F49 /* 0@2x.png in Resources */,
+				88C5CDE81DB0CCE000828F49 /* 2@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		88C5CD9D1DB0CA6200828F49 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				88C5CDAC1DB0CA6200828F49 /* ViewController.m in Sources */,
+				88C5CDA91DB0CA6200828F49 /* AppDelegate.m in Sources */,
+				88C5CDA61DB0CA6200828F49 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		88C5CDBB1DB0CB4500828F49 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				88C5CDC61DB0CB4500828F49 /* TodayViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		88C5CDCC1DB0CB4500828F49 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 88C5CDBE1DB0CB4500828F49 /* WSWidget */;
+			targetProxy = 88C5CDCB1DB0CB4500828F49 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		88C5CDAD1DB0CA6200828F49 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				88C5CDAE1DB0CA6200828F49 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		88C5CDB21DB0CA6200828F49 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				88C5CDB31DB0CA6200828F49 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		88C5CDC71DB0CB4500828F49 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				88C5CDC81DB0CB4500828F49 /* Base */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		88C5CDB61DB0CA6200828F49 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		88C5CDB71DB0CA6200828F49 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		88C5CDB91DB0CA6200828F49 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = J4N9H827FQ;
+				INFOPLIST_FILE = "WS-TodayWidget/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.sinfotek.WS-TodayWidget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		88C5CDBA1DB0CA6200828F49 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = J4N9H827FQ;
+				INFOPLIST_FILE = "WS-TodayWidget/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.sinfotek.WS-TodayWidget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		88C5CDCF1DB0CB4500828F49 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = J4N9H827FQ;
+				INFOPLIST_FILE = WSWidget/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.sinfotek.WS-TodayWidget.WSWidget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		88C5CDD01DB0CB4500828F49 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = J4N9H827FQ;
+				INFOPLIST_FILE = WSWidget/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.sinfotek.WS-TodayWidget.WSWidget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		88C5CD9C1DB0CA6200828F49 /* Build configuration list for PBXProject "WS-TodayWidget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				88C5CDB61DB0CA6200828F49 /* Debug */,
+				88C5CDB71DB0CA6200828F49 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		88C5CDB81DB0CA6200828F49 /* Build configuration list for PBXNativeTarget "WS-TodayWidget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				88C5CDB91DB0CA6200828F49 /* Debug */,
+				88C5CDBA1DB0CA6200828F49 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		88C5CDCE1DB0CB4500828F49 /* Build configuration list for PBXNativeTarget "WSWidget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				88C5CDCF1DB0CB4500828F49 /* Debug */,
+				88C5CDD01DB0CB4500828F49 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 88C5CD991DB0CA6200828F49 /* Project object */;
+}

@@ -1,0 +1,43 @@
+
+第一次使用git
+http://git.oschina.net
+1.创建项目
+2.配置项目git config --global user.name “”
+git config --global user.email””
+
+3下载代码git clone url
+
+4添加文件
+cd
+git add 文件名
+git add . 添加所有
+
+5本地提交
+git commit -am “注释"
+
+6提交到服务器
+git push origin master
+
+7修改提交
+
+8更新本地代码
+git pull
+
+1创建分支
+git branch V2
+2将分支同步到服务器
+git push origin V2
+3切换分支
+git checkout V2
+4修改分支上的文件
+5提交本地修改
+git commit -am “注释"
+6将分支推送服务器
+git push origin V2
+查看:V2修改内容
+7将分支合并到主干
+git checkout master
+git merge V2
+git push
+
+defaults com.apple.finder AppleShowAllFiles -bool tyue KillAll Finder

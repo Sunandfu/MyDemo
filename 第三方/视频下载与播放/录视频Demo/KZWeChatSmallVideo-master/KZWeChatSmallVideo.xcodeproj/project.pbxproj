@@ -1,0 +1,334 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		452CD9901D3386D600EFE534 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452CD98F1D3386D600EFE534 /* AppDelegate.swift */; };
+		452CD9921D3386D600EFE534 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452CD9911D3386D600EFE534 /* ViewController.swift */; };
+		452CD9951D3386D600EFE534 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 452CD9931D3386D600EFE534 /* Main.storyboard */; };
+		452CD9971D3386D600EFE534 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 452CD9961D3386D600EFE534 /* Assets.xcassets */; };
+		452CD99A1D3386D600EFE534 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 452CD9981D3386D600EFE534 /* LaunchScreen.storyboard */; };
+		452CD9A51D33895900EFE534 /* KZVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452CD9A41D33895900EFE534 /* KZVideoViewController.swift */; };
+		452CD9A71D338B8700EFE534 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 452CD9A61D338B8700EFE534 /* AVFoundation.framework */; };
+		455711961D3CD58000D733D0 /* KZVideoPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455711951D3CD58000D733D0 /* KZVideoPlayer.swift */; };
+		455E03D51D389996001034C2 /* KZVideoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455E03D41D389996001034C2 /* KZVideoListViewController.swift */; };
+		458B05F91D34BE730045F2A9 /* KZVideoSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458B05F81D34BE730045F2A9 /* KZVideoSupport.swift */; };
+		458B05FB1D34D6EC0045F2A9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 458B05FA1D34D6EC0045F2A9 /* CoreGraphics.framework */; };
+		4594A2481D38D42600303ACC /* bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 4594A2471D38D42600303ACC /* bg.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		452CD98C1D3386D600EFE534 /* KZWeChatSmallVideo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KZWeChatSmallVideo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		452CD98F1D3386D600EFE534 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		452CD9911D3386D600EFE534 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		452CD9941D3386D600EFE534 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		452CD9961D3386D600EFE534 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		452CD9991D3386D600EFE534 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		452CD99B1D3386D600EFE534 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		452CD9A41D33895900EFE534 /* KZVideoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KZVideoViewController.swift; sourceTree = "<group>"; };
+		452CD9A61D338B8700EFE534 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		455711951D3CD58000D733D0 /* KZVideoPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KZVideoPlayer.swift; sourceTree = "<group>"; };
+		455E03D41D389996001034C2 /* KZVideoListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KZVideoListViewController.swift; sourceTree = "<group>"; };
+		458B05F81D34BE730045F2A9 /* KZVideoSupport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KZVideoSupport.swift; sourceTree = "<group>"; };
+		458B05FA1D34D6EC0045F2A9 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		4594A2471D38D42600303ACC /* bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg.png; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		452CD9891D3386D600EFE534 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				458B05FB1D34D6EC0045F2A9 /* CoreGraphics.framework in Frameworks */,
+				452CD9A71D338B8700EFE534 /* AVFoundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		452CD9831D3386D600EFE534 = {
+			isa = PBXGroup;
+			children = (
+				458B05FA1D34D6EC0045F2A9 /* CoreGraphics.framework */,
+				452CD9A61D338B8700EFE534 /* AVFoundation.framework */,
+				452CD98E1D3386D600EFE534 /* KZWeChatSmallVideo */,
+				452CD98D1D3386D600EFE534 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		452CD98D1D3386D600EFE534 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				452CD98C1D3386D600EFE534 /* KZWeChatSmallVideo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		452CD98E1D3386D600EFE534 /* KZWeChatSmallVideo */ = {
+			isa = PBXGroup;
+			children = (
+				4594A2471D38D42600303ACC /* bg.png */,
+				452CD98F1D3386D600EFE534 /* AppDelegate.swift */,
+				452CD9911D3386D600EFE534 /* ViewController.swift */,
+				452CD9A31D33895900EFE534 /* Classes */,
+				452CD9931D3386D600EFE534 /* Main.storyboard */,
+				452CD9961D3386D600EFE534 /* Assets.xcassets */,
+				452CD9981D3386D600EFE534 /* LaunchScreen.storyboard */,
+				452CD99B1D3386D600EFE534 /* Info.plist */,
+			);
+			path = KZWeChatSmallVideo;
+			sourceTree = "<group>";
+		};
+		452CD9A31D33895900EFE534 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				452CD9A41D33895900EFE534 /* KZVideoViewController.swift */,
+				455E03D41D389996001034C2 /* KZVideoListViewController.swift */,
+				458B05F81D34BE730045F2A9 /* KZVideoSupport.swift */,
+				455711951D3CD58000D733D0 /* KZVideoPlayer.swift */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		452CD98B1D3386D600EFE534 /* KZWeChatSmallVideo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 452CD99E1D3386D600EFE534 /* Build configuration list for PBXNativeTarget "KZWeChatSmallVideo" */;
+			buildPhases = (
+				452CD9881D3386D600EFE534 /* Sources */,
+				452CD9891D3386D600EFE534 /* Frameworks */,
+				452CD98A1D3386D600EFE534 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KZWeChatSmallVideo;
+			productName = KZWeChatSmallVideo;
+			productReference = 452CD98C1D3386D600EFE534 /* KZWeChatSmallVideo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		452CD9841D3386D600EFE534 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "侯康柱";
+				TargetAttributes = {
+					452CD98B1D3386D600EFE534 = {
+						CreatedOnToolsVersion = 7.3;
+					};
+				};
+			};
+			buildConfigurationList = 452CD9871D3386D600EFE534 /* Build configuration list for PBXProject "KZWeChatSmallVideo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 452CD9831D3386D600EFE534;
+			productRefGroup = 452CD98D1D3386D600EFE534 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				452CD98B1D3386D600EFE534 /* KZWeChatSmallVideo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		452CD98A1D3386D600EFE534 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				452CD99A1D3386D600EFE534 /* LaunchScreen.storyboard in Resources */,
+				452CD9971D3386D600EFE534 /* Assets.xcassets in Resources */,
+				4594A2481D38D42600303ACC /* bg.png in Resources */,
+				452CD9951D3386D600EFE534 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		452CD9881D3386D600EFE534 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				458B05F91D34BE730045F2A9 /* KZVideoSupport.swift in Sources */,
+				455711961D3CD58000D733D0 /* KZVideoPlayer.swift in Sources */,
+				455E03D51D389996001034C2 /* KZVideoListViewController.swift in Sources */,
+				452CD9921D3386D600EFE534 /* ViewController.swift in Sources */,
+				452CD9A51D33895900EFE534 /* KZVideoViewController.swift in Sources */,
+				452CD9901D3386D600EFE534 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		452CD9931D3386D600EFE534 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				452CD9941D3386D600EFE534 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		452CD9981D3386D600EFE534 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				452CD9991D3386D600EFE534 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		452CD99C1D3386D600EFE534 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		452CD99D1D3386D600EFE534 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		452CD99F1D3386D600EFE534 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = KZWeChatSmallVideo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.houkangzhu.KZWeChatSmallVideo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		452CD9A01D3386D600EFE534 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = KZWeChatSmallVideo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.houkangzhu.KZWeChatSmallVideo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		452CD9871D3386D600EFE534 /* Build configuration list for PBXProject "KZWeChatSmallVideo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				452CD99C1D3386D600EFE534 /* Debug */,
+				452CD99D1D3386D600EFE534 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		452CD99E1D3386D600EFE534 /* Build configuration list for PBXNativeTarget "KZWeChatSmallVideo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				452CD99F1D3386D600EFE534 /* Debug */,
+				452CD9A01D3386D600EFE534 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 452CD9841D3386D600EFE534 /* Project object */;
+}

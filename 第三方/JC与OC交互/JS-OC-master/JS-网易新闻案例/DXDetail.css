@@ -1,0 +1,23 @@
+.title {
+    text-align : center;
+    font-size : 25px;
+    color : black;
+    font-weight : 5px;
+}
+
+.time {
+    text-align :center;
+    font-size : 15px;
+    color :gray;
+    margin-top : 5px;
+    margin-bottom : 10px;
+}
+
+.img-parent {
+    text-align :center;
+}
+
+/*.img-parent > img {*/
+/*    width :100px;*/
+/*    height : 100px;*/
+/*}*/

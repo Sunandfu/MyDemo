@@ -1,0 +1,25 @@
+//
+//  zws.pch
+//  meituan
+//
+//  Created by iMac on 16/8/26.
+//  Copyright © 2016年 sinfotek. All rights reserved.
+//
+
+#ifndef zws_pch
+#define zws_pch
+
+
+
+
+
+#define SCREEN_WIDTH [UIScreen mainScreen].bounds.size.width
+#define SCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
+#define rgba(r,g,b,a) [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:a]
+
+#import "UIImageView+WebCache.h"
+
+
+
+
+#endif /* zws_pch */

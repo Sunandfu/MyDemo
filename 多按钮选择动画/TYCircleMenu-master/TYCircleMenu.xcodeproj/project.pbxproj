@@ -1,0 +1,638 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		05D9F9C01CA1655B00C73E5A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 05D9F9BF1CA1655B00C73E5A /* main.m */; };
+		05D9F9C31CA1655B00C73E5A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 05D9F9C21CA1655B00C73E5A /* AppDelegate.m */; };
+		05D9F9C61CA1655B00C73E5A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05D9F9C51CA1655B00C73E5A /* ViewController.m */; };
+		05D9F9C91CA1655B00C73E5A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05D9F9C71CA1655B00C73E5A /* Main.storyboard */; };
+		05D9F9CB1CA1655B00C73E5A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 05D9F9CA1CA1655B00C73E5A /* Assets.xcassets */; };
+		05D9F9CE1CA1655B00C73E5A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05D9F9CC1CA1655B00C73E5A /* LaunchScreen.storyboard */; };
+		05D9F9D91CA1655B00C73E5A /* TYCircleMenuTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 05D9F9D81CA1655B00C73E5A /* TYCircleMenuTests.m */; };
+		05D9F9E41CA1655C00C73E5A /* TYCircleMenuUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 05D9F9E31CA1655C00C73E5A /* TYCircleMenuUITests.m */; };
+		05D9F9F41CA16E2900C73E5A /* TYCircleCollectionViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 05D9F9F31CA16E2900C73E5A /* TYCircleCollectionViewLayout.m */; };
+		05D9F9F71CA189C100C73E5A /* TYCircleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 05D9F9F61CA189C100C73E5A /* TYCircleCell.m */; };
+		103FB3861CA6CC7700E226BF /* empty_btn_highlight.png in Resources */ = {isa = PBXBuildFile; fileRef = 103FB3841CA6CC7700E226BF /* empty_btn_highlight.png */; };
+		103FB3871CA6CC7700E226BF /* empty_btn.png in Resources */ = {isa = PBXBuildFile; fileRef = 103FB3851CA6CC7700E226BF /* empty_btn.png */; };
+		106CA3A51CA58CAA0085C9FB /* test_0.png in Resources */ = {isa = PBXBuildFile; fileRef = 106CA3A41CA58CAA0085C9FB /* test_0.png */; };
+		10CC6AD81CA4224E00C82E7A /* TYCircleCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 10CC6AD71CA4224E00C82E7A /* TYCircleCollectionView.m */; };
+		10CC6ADB1CA42C6500C82E7A /* TYCircleMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 10CC6ADA1CA42C6500C82E7A /* TYCircleMenu.m */; };
+		10FA03021CA2D3090092571A /* TYCircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 10FA03011CA2D3090092571A /* TYCircleView.m */; };
+		10FA03041CA2E29F0092571A /* center_btn.png in Resources */ = {isa = PBXBuildFile; fileRef = 10FA03031CA2E29F0092571A /* center_btn.png */; };
+		10FA03111CA2ED870092571A /* test_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 10FA03051CA2ED870092571A /* test_1.png */; };
+		10FA03121CA2ED870092571A /* test_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 10FA03061CA2ED870092571A /* test_2.png */; };
+		10FA03131CA2ED870092571A /* test_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 10FA03071CA2ED870092571A /* test_3.png */; };
+		10FA03141CA2ED870092571A /* test_4.png in Resources */ = {isa = PBXBuildFile; fileRef = 10FA03081CA2ED870092571A /* test_4.png */; };
+		10FA03151CA2ED870092571A /* test_5.png in Resources */ = {isa = PBXBuildFile; fileRef = 10FA03091CA2ED870092571A /* test_5.png */; };
+		10FA03161CA2ED870092571A /* test_6.png in Resources */ = {isa = PBXBuildFile; fileRef = 10FA030A1CA2ED870092571A /* test_6.png */; };
+		10FA03171CA2ED870092571A /* test_7.png in Resources */ = {isa = PBXBuildFile; fileRef = 10FA030B1CA2ED870092571A /* test_7.png */; };
+		10FA03181CA2ED870092571A /* test_8.png in Resources */ = {isa = PBXBuildFile; fileRef = 10FA030C1CA2ED870092571A /* test_8.png */; };
+		10FA03191CA2ED870092571A /* test_9.png in Resources */ = {isa = PBXBuildFile; fileRef = 10FA030D1CA2ED870092571A /* test_9.png */; };
+		10FA031A1CA2ED870092571A /* test_10.png in Resources */ = {isa = PBXBuildFile; fileRef = 10FA030E1CA2ED870092571A /* test_10.png */; };
+		10FA031B1CA2ED870092571A /* test_11.png in Resources */ = {isa = PBXBuildFile; fileRef = 10FA030F1CA2ED870092571A /* test_11.png */; };
+		10FA031E1CA2F5920092571A /* bg_main.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 10FA031D1CA2F5920092571A /* bg_main.jpg */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		05D9F9D51CA1655B00C73E5A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 05D9F9B31CA1655B00C73E5A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 05D9F9BA1CA1655B00C73E5A;
+			remoteInfo = TYCircleMenu;
+		};
+		05D9F9E01CA1655C00C73E5A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 05D9F9B31CA1655B00C73E5A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 05D9F9BA1CA1655B00C73E5A;
+			remoteInfo = TYCircleMenu;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		05D9F9BB1CA1655B00C73E5A /* TYCircleMenu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TYCircleMenu.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		05D9F9BF1CA1655B00C73E5A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		05D9F9C11CA1655B00C73E5A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		05D9F9C21CA1655B00C73E5A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		05D9F9C41CA1655B00C73E5A /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		05D9F9C51CA1655B00C73E5A /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		05D9F9C81CA1655B00C73E5A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		05D9F9CA1CA1655B00C73E5A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		05D9F9CD1CA1655B00C73E5A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		05D9F9CF1CA1655B00C73E5A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		05D9F9D41CA1655B00C73E5A /* TYCircleMenuTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TYCircleMenuTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		05D9F9D81CA1655B00C73E5A /* TYCircleMenuTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TYCircleMenuTests.m; sourceTree = "<group>"; };
+		05D9F9DA1CA1655B00C73E5A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		05D9F9DF1CA1655C00C73E5A /* TYCircleMenuUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TYCircleMenuUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		05D9F9E31CA1655C00C73E5A /* TYCircleMenuUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TYCircleMenuUITests.m; sourceTree = "<group>"; };
+		05D9F9E51CA1655C00C73E5A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		05D9F9F21CA16E2900C73E5A /* TYCircleCollectionViewLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TYCircleCollectionViewLayout.h; path = TYCircle/TYCircleCollectionViewLayout.h; sourceTree = "<group>"; };
+		05D9F9F31CA16E2900C73E5A /* TYCircleCollectionViewLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TYCircleCollectionViewLayout.m; path = TYCircle/TYCircleCollectionViewLayout.m; sourceTree = "<group>"; };
+		05D9F9F51CA189C100C73E5A /* TYCircleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TYCircleCell.h; path = TYCircle/TYCircleCell.h; sourceTree = "<group>"; };
+		05D9F9F61CA189C100C73E5A /* TYCircleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TYCircleCell.m; path = TYCircle/TYCircleCell.m; sourceTree = "<group>"; };
+		103FB3831CA6A04500E226BF /* TYCircleMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TYCircleMacros.h; path = TYCircle/TYCircleMacros.h; sourceTree = "<group>"; };
+		103FB3841CA6CC7700E226BF /* empty_btn_highlight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = empty_btn_highlight.png; path = SourceImage/empty_btn_highlight.png; sourceTree = "<group>"; };
+		103FB3851CA6CC7700E226BF /* empty_btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = empty_btn.png; path = SourceImage/empty_btn.png; sourceTree = "<group>"; };
+		103FB38A1CA6D41400E226BF /* TYCircleProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TYCircleProtocol.h; path = TYCircle/TYCircleProtocol.h; sourceTree = "<group>"; };
+		106CA3A41CA58CAA0085C9FB /* test_0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = test_0.png; path = SourceImage/test_0.png; sourceTree = "<group>"; };
+		10CC6AD61CA4224E00C82E7A /* TYCircleCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TYCircleCollectionView.h; path = TYCircle/TYCircleCollectionView.h; sourceTree = "<group>"; };
+		10CC6AD71CA4224E00C82E7A /* TYCircleCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TYCircleCollectionView.m; path = TYCircle/TYCircleCollectionView.m; sourceTree = "<group>"; };
+		10CC6AD91CA42C6500C82E7A /* TYCircleMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TYCircleMenu.h; path = TYCircle/TYCircleMenu.h; sourceTree = "<group>"; };
+		10CC6ADA1CA42C6500C82E7A /* TYCircleMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TYCircleMenu.m; path = TYCircle/TYCircleMenu.m; sourceTree = "<group>"; };
+		10FA03001CA2D3090092571A /* TYCircleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TYCircleView.h; path = TYCircle/TYCircleView.h; sourceTree = "<group>"; };
+		10FA03011CA2D3090092571A /* TYCircleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TYCircleView.m; path = TYCircle/TYCircleView.m; sourceTree = "<group>"; };
+		10FA03031CA2E29F0092571A /* center_btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = center_btn.png; path = SourceImage/center_btn.png; sourceTree = "<group>"; };
+		10FA03051CA2ED870092571A /* test_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = test_1.png; path = SourceImage/test_1.png; sourceTree = "<group>"; };
+		10FA03061CA2ED870092571A /* test_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = test_2.png; path = SourceImage/test_2.png; sourceTree = "<group>"; };
+		10FA03071CA2ED870092571A /* test_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = test_3.png; path = SourceImage/test_3.png; sourceTree = "<group>"; };
+		10FA03081CA2ED870092571A /* test_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = test_4.png; path = SourceImage/test_4.png; sourceTree = "<group>"; };
+		10FA03091CA2ED870092571A /* test_5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = test_5.png; path = SourceImage/test_5.png; sourceTree = "<group>"; };
+		10FA030A1CA2ED870092571A /* test_6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = test_6.png; path = SourceImage/test_6.png; sourceTree = "<group>"; };
+		10FA030B1CA2ED870092571A /* test_7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = test_7.png; path = SourceImage/test_7.png; sourceTree = "<group>"; };
+		10FA030C1CA2ED870092571A /* test_8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = test_8.png; path = SourceImage/test_8.png; sourceTree = "<group>"; };
+		10FA030D1CA2ED870092571A /* test_9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = test_9.png; path = SourceImage/test_9.png; sourceTree = "<group>"; };
+		10FA030E1CA2ED870092571A /* test_10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = test_10.png; path = SourceImage/test_10.png; sourceTree = "<group>"; };
+		10FA030F1CA2ED870092571A /* test_11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = test_11.png; path = SourceImage/test_11.png; sourceTree = "<group>"; };
+		10FA031D1CA2F5920092571A /* bg_main.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = bg_main.jpg; path = SourceImage/bg_main.jpg; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		05D9F9B81CA1655B00C73E5A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		05D9F9D11CA1655B00C73E5A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		05D9F9DC1CA1655C00C73E5A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		05D9F9B21CA1655B00C73E5A = {
+			isa = PBXGroup;
+			children = (
+				05D9F9BD1CA1655B00C73E5A /* TYCircleMenu */,
+				05D9F9D71CA1655B00C73E5A /* TYCircleMenuTests */,
+				05D9F9E21CA1655C00C73E5A /* TYCircleMenuUITests */,
+				05D9F9BC1CA1655B00C73E5A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		05D9F9BC1CA1655B00C73E5A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				05D9F9BB1CA1655B00C73E5A /* TYCircleMenu.app */,
+				05D9F9D41CA1655B00C73E5A /* TYCircleMenuTests.xctest */,
+				05D9F9DF1CA1655C00C73E5A /* TYCircleMenuUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		05D9F9BD1CA1655B00C73E5A /* TYCircleMenu */ = {
+			isa = PBXGroup;
+			children = (
+				05D9F9F81CA1910D00C73E5A /* SourceImage */,
+				05D9F9F11CA16DE500C73E5A /* TYCircle */,
+				05D9F9C11CA1655B00C73E5A /* AppDelegate.h */,
+				05D9F9C21CA1655B00C73E5A /* AppDelegate.m */,
+				05D9F9C41CA1655B00C73E5A /* ViewController.h */,
+				05D9F9C51CA1655B00C73E5A /* ViewController.m */,
+				05D9F9C71CA1655B00C73E5A /* Main.storyboard */,
+				05D9F9CA1CA1655B00C73E5A /* Assets.xcassets */,
+				05D9F9CC1CA1655B00C73E5A /* LaunchScreen.storyboard */,
+				05D9F9CF1CA1655B00C73E5A /* Info.plist */,
+				05D9F9BE1CA1655B00C73E5A /* Supporting Files */,
+			);
+			path = TYCircleMenu;
+			sourceTree = "<group>";
+		};
+		05D9F9BE1CA1655B00C73E5A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				05D9F9BF1CA1655B00C73E5A /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		05D9F9D71CA1655B00C73E5A /* TYCircleMenuTests */ = {
+			isa = PBXGroup;
+			children = (
+				05D9F9D81CA1655B00C73E5A /* TYCircleMenuTests.m */,
+				05D9F9DA1CA1655B00C73E5A /* Info.plist */,
+			);
+			path = TYCircleMenuTests;
+			sourceTree = "<group>";
+		};
+		05D9F9E21CA1655C00C73E5A /* TYCircleMenuUITests */ = {
+			isa = PBXGroup;
+			children = (
+				05D9F9E31CA1655C00C73E5A /* TYCircleMenuUITests.m */,
+				05D9F9E51CA1655C00C73E5A /* Info.plist */,
+			);
+			path = TYCircleMenuUITests;
+			sourceTree = "<group>";
+		};
+		05D9F9F11CA16DE500C73E5A /* TYCircle */ = {
+			isa = PBXGroup;
+			children = (
+				103FB3831CA6A04500E226BF /* TYCircleMacros.h */,
+				103FB38A1CA6D41400E226BF /* TYCircleProtocol.h */,
+				10CC6AD91CA42C6500C82E7A /* TYCircleMenu.h */,
+				10CC6ADA1CA42C6500C82E7A /* TYCircleMenu.m */,
+				10CC6AD61CA4224E00C82E7A /* TYCircleCollectionView.h */,
+				10CC6AD71CA4224E00C82E7A /* TYCircleCollectionView.m */,
+				05D9F9F21CA16E2900C73E5A /* TYCircleCollectionViewLayout.h */,
+				05D9F9F31CA16E2900C73E5A /* TYCircleCollectionViewLayout.m */,
+				05D9F9F51CA189C100C73E5A /* TYCircleCell.h */,
+				05D9F9F61CA189C100C73E5A /* TYCircleCell.m */,
+				10FA03001CA2D3090092571A /* TYCircleView.h */,
+				10FA03011CA2D3090092571A /* TYCircleView.m */,
+			);
+			name = TYCircle;
+			sourceTree = "<group>";
+		};
+		05D9F9F81CA1910D00C73E5A /* SourceImage */ = {
+			isa = PBXGroup;
+			children = (
+				103FB3841CA6CC7700E226BF /* empty_btn_highlight.png */,
+				103FB3851CA6CC7700E226BF /* empty_btn.png */,
+				10FA031D1CA2F5920092571A /* bg_main.jpg */,
+				10FA03031CA2E29F0092571A /* center_btn.png */,
+				106CA3A41CA58CAA0085C9FB /* test_0.png */,
+				10FA03051CA2ED870092571A /* test_1.png */,
+				10FA03061CA2ED870092571A /* test_2.png */,
+				10FA03071CA2ED870092571A /* test_3.png */,
+				10FA03081CA2ED870092571A /* test_4.png */,
+				10FA03091CA2ED870092571A /* test_5.png */,
+				10FA030A1CA2ED870092571A /* test_6.png */,
+				10FA030B1CA2ED870092571A /* test_7.png */,
+				10FA030C1CA2ED870092571A /* test_8.png */,
+				10FA030D1CA2ED870092571A /* test_9.png */,
+				10FA030E1CA2ED870092571A /* test_10.png */,
+				10FA030F1CA2ED870092571A /* test_11.png */,
+			);
+			name = SourceImage;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		05D9F9BA1CA1655B00C73E5A /* TYCircleMenu */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 05D9F9E81CA1655C00C73E5A /* Build configuration list for PBXNativeTarget "TYCircleMenu" */;
+			buildPhases = (
+				05D9F9B71CA1655B00C73E5A /* Sources */,
+				05D9F9B81CA1655B00C73E5A /* Frameworks */,
+				05D9F9B91CA1655B00C73E5A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TYCircleMenu;
+			productName = TYCircleMenu;
+			productReference = 05D9F9BB1CA1655B00C73E5A /* TYCircleMenu.app */;
+			productType = "com.apple.product-type.application";
+		};
+		05D9F9D31CA1655B00C73E5A /* TYCircleMenuTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 05D9F9EB1CA1655C00C73E5A /* Build configuration list for PBXNativeTarget "TYCircleMenuTests" */;
+			buildPhases = (
+				05D9F9D01CA1655B00C73E5A /* Sources */,
+				05D9F9D11CA1655B00C73E5A /* Frameworks */,
+				05D9F9D21CA1655B00C73E5A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				05D9F9D61CA1655B00C73E5A /* PBXTargetDependency */,
+			);
+			name = TYCircleMenuTests;
+			productName = TYCircleMenuTests;
+			productReference = 05D9F9D41CA1655B00C73E5A /* TYCircleMenuTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		05D9F9DE1CA1655C00C73E5A /* TYCircleMenuUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 05D9F9EE1CA1655C00C73E5A /* Build configuration list for PBXNativeTarget "TYCircleMenuUITests" */;
+			buildPhases = (
+				05D9F9DB1CA1655C00C73E5A /* Sources */,
+				05D9F9DC1CA1655C00C73E5A /* Frameworks */,
+				05D9F9DD1CA1655C00C73E5A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				05D9F9E11CA1655C00C73E5A /* PBXTargetDependency */,
+			);
+			name = TYCircleMenuUITests;
+			productName = TYCircleMenuUITests;
+			productReference = 05D9F9DF1CA1655C00C73E5A /* TYCircleMenuUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		05D9F9B31CA1655B00C73E5A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = Yeekyo;
+				TargetAttributes = {
+					05D9F9BA1CA1655B00C73E5A = {
+						CreatedOnToolsVersion = 7.2.1;
+					};
+					05D9F9D31CA1655B00C73E5A = {
+						CreatedOnToolsVersion = 7.2.1;
+						TestTargetID = 05D9F9BA1CA1655B00C73E5A;
+					};
+					05D9F9DE1CA1655C00C73E5A = {
+						CreatedOnToolsVersion = 7.2.1;
+						TestTargetID = 05D9F9BA1CA1655B00C73E5A;
+					};
+				};
+			};
+			buildConfigurationList = 05D9F9B61CA1655B00C73E5A /* Build configuration list for PBXProject "TYCircleMenu" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 05D9F9B21CA1655B00C73E5A;
+			productRefGroup = 05D9F9BC1CA1655B00C73E5A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				05D9F9BA1CA1655B00C73E5A /* TYCircleMenu */,
+				05D9F9D31CA1655B00C73E5A /* TYCircleMenuTests */,
+				05D9F9DE1CA1655C00C73E5A /* TYCircleMenuUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		05D9F9B91CA1655B00C73E5A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				10FA03141CA2ED870092571A /* test_4.png in Resources */,
+				10FA03041CA2E29F0092571A /* center_btn.png in Resources */,
+				05D9F9CE1CA1655B00C73E5A /* LaunchScreen.storyboard in Resources */,
+				10FA03121CA2ED870092571A /* test_2.png in Resources */,
+				10FA031A1CA2ED870092571A /* test_10.png in Resources */,
+				106CA3A51CA58CAA0085C9FB /* test_0.png in Resources */,
+				05D9F9CB1CA1655B00C73E5A /* Assets.xcassets in Resources */,
+				103FB3871CA6CC7700E226BF /* empty_btn.png in Resources */,
+				10FA03171CA2ED870092571A /* test_7.png in Resources */,
+				10FA03151CA2ED870092571A /* test_5.png in Resources */,
+				10FA03111CA2ED870092571A /* test_1.png in Resources */,
+				10FA03191CA2ED870092571A /* test_9.png in Resources */,
+				10FA03181CA2ED870092571A /* test_8.png in Resources */,
+				05D9F9C91CA1655B00C73E5A /* Main.storyboard in Resources */,
+				103FB3861CA6CC7700E226BF /* empty_btn_highlight.png in Resources */,
+				10FA03161CA2ED870092571A /* test_6.png in Resources */,
+				10FA03131CA2ED870092571A /* test_3.png in Resources */,
+				10FA031B1CA2ED870092571A /* test_11.png in Resources */,
+				10FA031E1CA2F5920092571A /* bg_main.jpg in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		05D9F9D21CA1655B00C73E5A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		05D9F9DD1CA1655C00C73E5A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		05D9F9B71CA1655B00C73E5A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				05D9F9C61CA1655B00C73E5A /* ViewController.m in Sources */,
+				10FA03021CA2D3090092571A /* TYCircleView.m in Sources */,
+				10CC6AD81CA4224E00C82E7A /* TYCircleCollectionView.m in Sources */,
+				05D9F9F41CA16E2900C73E5A /* TYCircleCollectionViewLayout.m in Sources */,
+				05D9F9C31CA1655B00C73E5A /* AppDelegate.m in Sources */,
+				10CC6ADB1CA42C6500C82E7A /* TYCircleMenu.m in Sources */,
+				05D9F9C01CA1655B00C73E5A /* main.m in Sources */,
+				05D9F9F71CA189C100C73E5A /* TYCircleCell.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		05D9F9D01CA1655B00C73E5A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				05D9F9D91CA1655B00C73E5A /* TYCircleMenuTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		05D9F9DB1CA1655C00C73E5A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				05D9F9E41CA1655C00C73E5A /* TYCircleMenuUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		05D9F9D61CA1655B00C73E5A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 05D9F9BA1CA1655B00C73E5A /* TYCircleMenu */;
+			targetProxy = 05D9F9D51CA1655B00C73E5A /* PBXContainerItemProxy */;
+		};
+		05D9F9E11CA1655C00C73E5A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 05D9F9BA1CA1655B00C73E5A /* TYCircleMenu */;
+			targetProxy = 05D9F9E01CA1655C00C73E5A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		05D9F9C71CA1655B00C73E5A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				05D9F9C81CA1655B00C73E5A /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		05D9F9CC1CA1655B00C73E5A /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				05D9F9CD1CA1655B00C73E5A /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		05D9F9E61CA1655C00C73E5A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		05D9F9E71CA1655C00C73E5A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		05D9F9E91CA1655C00C73E5A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = TYCircleMenu/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yeekyo.TYCircleMenu;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		05D9F9EA1CA1655C00C73E5A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = TYCircleMenu/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yeekyo.TYCircleMenu;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		05D9F9EC1CA1655C00C73E5A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = TYCircleMenuTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yeekyo.TYCircleMenuTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TYCircleMenu.app/TYCircleMenu";
+			};
+			name = Debug;
+		};
+		05D9F9ED1CA1655C00C73E5A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = TYCircleMenuTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yeekyo.TYCircleMenuTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TYCircleMenu.app/TYCircleMenu";
+			};
+			name = Release;
+		};
+		05D9F9EF1CA1655C00C73E5A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = TYCircleMenuUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yeekyo.TYCircleMenuUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = TYCircleMenu;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		05D9F9F01CA1655C00C73E5A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = TYCircleMenuUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yeekyo.TYCircleMenuUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = TYCircleMenu;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		05D9F9B61CA1655B00C73E5A /* Build configuration list for PBXProject "TYCircleMenu" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				05D9F9E61CA1655C00C73E5A /* Debug */,
+				05D9F9E71CA1655C00C73E5A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		05D9F9E81CA1655C00C73E5A /* Build configuration list for PBXNativeTarget "TYCircleMenu" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				05D9F9E91CA1655C00C73E5A /* Debug */,
+				05D9F9EA1CA1655C00C73E5A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		05D9F9EB1CA1655C00C73E5A /* Build configuration list for PBXNativeTarget "TYCircleMenuTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				05D9F9EC1CA1655C00C73E5A /* Debug */,
+				05D9F9ED1CA1655C00C73E5A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		05D9F9EE1CA1655C00C73E5A /* Build configuration list for PBXNativeTarget "TYCircleMenuUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				05D9F9EF1CA1655C00C73E5A /* Debug */,
+				05D9F9F01CA1655C00C73E5A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 05D9F9B31CA1655B00C73E5A /* Project object */;
+}

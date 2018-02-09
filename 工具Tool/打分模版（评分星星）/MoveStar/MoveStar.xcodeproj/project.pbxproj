@@ -1,0 +1,555 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2F755DC81C1FB53300EFC277 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F755DC71C1FB53300EFC277 /* main.m */; };
+		2F755DCB1C1FB53300EFC277 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F755DCA1C1FB53300EFC277 /* AppDelegate.m */; };
+		2F755DCE1C1FB53300EFC277 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F755DCD1C1FB53300EFC277 /* ViewController.m */; };
+		2F755DD11C1FB53300EFC277 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F755DCF1C1FB53300EFC277 /* Main.storyboard */; };
+		2F755DD31C1FB53300EFC277 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F755DD21C1FB53300EFC277 /* Assets.xcassets */; };
+		2F755DD61C1FB53300EFC277 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F755DD41C1FB53300EFC277 /* LaunchScreen.storyboard */; };
+		2F755DE11C1FB53300EFC277 /* MoveStarTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F755DE01C1FB53300EFC277 /* MoveStarTests.m */; };
+		2F755DEC1C1FB53300EFC277 /* MoveStarUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F755DEB1C1FB53300EFC277 /* MoveStarUITests.m */; };
+		2F755DFE1C1FB5AC00EFC277 /* MovieAddComment.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F755DFC1C1FB5AC00EFC277 /* MovieAddComment.m */; };
+		2F755DFF1C1FB5AC00EFC277 /* MovieAddComment1.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F755DFD1C1FB5AC00EFC277 /* MovieAddComment1.xib */; };
+		2F755E061C1FB61200EFC277 /* StarSelected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2F755E031C1FB61200EFC277 /* StarSelected@2x.png */; };
+		2F755E071C1FB61200EFC277 /* StarSelectHeaf@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2F755E041C1FB61200EFC277 /* StarSelectHeaf@2x.png */; };
+		2F755E081C1FB61200EFC277 /* StarUnSelect@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2F755E051C1FB61200EFC277 /* StarUnSelect@2x.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2F755DDD1C1FB53300EFC277 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2F755DBB1C1FB53300EFC277 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2F755DC21C1FB53300EFC277;
+			remoteInfo = MoveStar;
+		};
+		2F755DE81C1FB53300EFC277 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2F755DBB1C1FB53300EFC277 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2F755DC21C1FB53300EFC277;
+			remoteInfo = MoveStar;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		2F755DC31C1FB53300EFC277 /* MoveStar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoveStar.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2F755DC71C1FB53300EFC277 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		2F755DC91C1FB53300EFC277 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		2F755DCA1C1FB53300EFC277 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		2F755DCC1C1FB53300EFC277 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		2F755DCD1C1FB53300EFC277 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		2F755DD01C1FB53300EFC277 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		2F755DD21C1FB53300EFC277 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2F755DD51C1FB53300EFC277 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		2F755DD71C1FB53300EFC277 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2F755DDC1C1FB53300EFC277 /* MoveStarTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MoveStarTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2F755DE01C1FB53300EFC277 /* MoveStarTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MoveStarTests.m; sourceTree = "<group>"; };
+		2F755DE21C1FB53300EFC277 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2F755DE71C1FB53300EFC277 /* MoveStarUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MoveStarUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2F755DEB1C1FB53300EFC277 /* MoveStarUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MoveStarUITests.m; sourceTree = "<group>"; };
+		2F755DED1C1FB53300EFC277 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2F755DFB1C1FB5AC00EFC277 /* MovieAddComment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieAddComment.h; sourceTree = "<group>"; };
+		2F755DFC1C1FB5AC00EFC277 /* MovieAddComment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieAddComment.m; sourceTree = "<group>"; };
+		2F755DFD1C1FB5AC00EFC277 /* MovieAddComment1.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MovieAddComment1.xib; sourceTree = "<group>"; };
+		2F755E031C1FB61200EFC277 /* StarSelected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "StarSelected@2x.png"; sourceTree = "<group>"; };
+		2F755E041C1FB61200EFC277 /* StarSelectHeaf@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "StarSelectHeaf@2x.png"; sourceTree = "<group>"; };
+		2F755E051C1FB61200EFC277 /* StarUnSelect@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "StarUnSelect@2x.png"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2F755DC01C1FB53300EFC277 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2F755DD91C1FB53300EFC277 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2F755DE41C1FB53300EFC277 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2F755DBA1C1FB53300EFC277 = {
+			isa = PBXGroup;
+			children = (
+				2F755DC51C1FB53300EFC277 /* MoveStar */,
+				2F755DDF1C1FB53300EFC277 /* MoveStarTests */,
+				2F755DEA1C1FB53300EFC277 /* MoveStarUITests */,
+				2F755DC41C1FB53300EFC277 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2F755DC41C1FB53300EFC277 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2F755DC31C1FB53300EFC277 /* MoveStar.app */,
+				2F755DDC1C1FB53300EFC277 /* MoveStarTests.xctest */,
+				2F755DE71C1FB53300EFC277 /* MoveStarUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2F755DC51C1FB53300EFC277 /* MoveStar */ = {
+			isa = PBXGroup;
+			children = (
+				2F755DC91C1FB53300EFC277 /* AppDelegate.h */,
+				2F755DCA1C1FB53300EFC277 /* AppDelegate.m */,
+				2F755DCC1C1FB53300EFC277 /* ViewController.h */,
+				2F755DCD1C1FB53300EFC277 /* ViewController.m */,
+				2F755DCF1C1FB53300EFC277 /* Main.storyboard */,
+				2F755DFB1C1FB5AC00EFC277 /* MovieAddComment.h */,
+				2F755DFC1C1FB5AC00EFC277 /* MovieAddComment.m */,
+				2F755DFD1C1FB5AC00EFC277 /* MovieAddComment1.xib */,
+				2F755DD21C1FB53300EFC277 /* Assets.xcassets */,
+				2F755DD41C1FB53300EFC277 /* LaunchScreen.storyboard */,
+				2F755DD71C1FB53300EFC277 /* Info.plist */,
+				2F755DC61C1FB53300EFC277 /* Supporting Files */,
+			);
+			path = MoveStar;
+			sourceTree = "<group>";
+		};
+		2F755DC61C1FB53300EFC277 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2F755E001C1FB5E100EFC277 /* img */,
+				2F755DC71C1FB53300EFC277 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2F755DDF1C1FB53300EFC277 /* MoveStarTests */ = {
+			isa = PBXGroup;
+			children = (
+				2F755DE01C1FB53300EFC277 /* MoveStarTests.m */,
+				2F755DE21C1FB53300EFC277 /* Info.plist */,
+			);
+			path = MoveStarTests;
+			sourceTree = "<group>";
+		};
+		2F755DEA1C1FB53300EFC277 /* MoveStarUITests */ = {
+			isa = PBXGroup;
+			children = (
+				2F755DEB1C1FB53300EFC277 /* MoveStarUITests.m */,
+				2F755DED1C1FB53300EFC277 /* Info.plist */,
+			);
+			path = MoveStarUITests;
+			sourceTree = "<group>";
+		};
+		2F755E001C1FB5E100EFC277 /* img */ = {
+			isa = PBXGroup;
+			children = (
+				2F755E031C1FB61200EFC277 /* StarSelected@2x.png */,
+				2F755E041C1FB61200EFC277 /* StarSelectHeaf@2x.png */,
+				2F755E051C1FB61200EFC277 /* StarUnSelect@2x.png */,
+			);
+			name = img;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2F755DC21C1FB53300EFC277 /* MoveStar */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2F755DF01C1FB53300EFC277 /* Build configuration list for PBXNativeTarget "MoveStar" */;
+			buildPhases = (
+				2F755DBF1C1FB53300EFC277 /* Sources */,
+				2F755DC01C1FB53300EFC277 /* Frameworks */,
+				2F755DC11C1FB53300EFC277 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MoveStar;
+			productName = MoveStar;
+			productReference = 2F755DC31C1FB53300EFC277 /* MoveStar.app */;
+			productType = "com.apple.product-type.application";
+		};
+		2F755DDB1C1FB53300EFC277 /* MoveStarTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2F755DF31C1FB53300EFC277 /* Build configuration list for PBXNativeTarget "MoveStarTests" */;
+			buildPhases = (
+				2F755DD81C1FB53300EFC277 /* Sources */,
+				2F755DD91C1FB53300EFC277 /* Frameworks */,
+				2F755DDA1C1FB53300EFC277 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2F755DDE1C1FB53300EFC277 /* PBXTargetDependency */,
+			);
+			name = MoveStarTests;
+			productName = MoveStarTests;
+			productReference = 2F755DDC1C1FB53300EFC277 /* MoveStarTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		2F755DE61C1FB53300EFC277 /* MoveStarUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2F755DF61C1FB53300EFC277 /* Build configuration list for PBXNativeTarget "MoveStarUITests" */;
+			buildPhases = (
+				2F755DE31C1FB53300EFC277 /* Sources */,
+				2F755DE41C1FB53300EFC277 /* Frameworks */,
+				2F755DE51C1FB53300EFC277 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2F755DE91C1FB53300EFC277 /* PBXTargetDependency */,
+			);
+			name = MoveStarUITests;
+			productName = MoveStarUITests;
+			productReference = 2F755DE71C1FB53300EFC277 /* MoveStarUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2F755DBB1C1FB53300EFC277 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = yang;
+				TargetAttributes = {
+					2F755DC21C1FB53300EFC277 = {
+						CreatedOnToolsVersion = 7.1;
+						DevelopmentTeam = J4N9H827FQ;
+					};
+					2F755DDB1C1FB53300EFC277 = {
+						CreatedOnToolsVersion = 7.1;
+						TestTargetID = 2F755DC21C1FB53300EFC277;
+					};
+					2F755DE61C1FB53300EFC277 = {
+						CreatedOnToolsVersion = 7.1;
+						TestTargetID = 2F755DC21C1FB53300EFC277;
+					};
+				};
+			};
+			buildConfigurationList = 2F755DBE1C1FB53300EFC277 /* Build configuration list for PBXProject "MoveStar" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2F755DBA1C1FB53300EFC277;
+			productRefGroup = 2F755DC41C1FB53300EFC277 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2F755DC21C1FB53300EFC277 /* MoveStar */,
+				2F755DDB1C1FB53300EFC277 /* MoveStarTests */,
+				2F755DE61C1FB53300EFC277 /* MoveStarUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2F755DC11C1FB53300EFC277 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2F755DD61C1FB53300EFC277 /* LaunchScreen.storyboard in Resources */,
+				2F755DD31C1FB53300EFC277 /* Assets.xcassets in Resources */,
+				2F755E081C1FB61200EFC277 /* StarUnSelect@2x.png in Resources */,
+				2F755DFF1C1FB5AC00EFC277 /* MovieAddComment1.xib in Resources */,
+				2F755E071C1FB61200EFC277 /* StarSelectHeaf@2x.png in Resources */,
+				2F755DD11C1FB53300EFC277 /* Main.storyboard in Resources */,
+				2F755E061C1FB61200EFC277 /* StarSelected@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2F755DDA1C1FB53300EFC277 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2F755DE51C1FB53300EFC277 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2F755DBF1C1FB53300EFC277 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2F755DFE1C1FB5AC00EFC277 /* MovieAddComment.m in Sources */,
+				2F755DCE1C1FB53300EFC277 /* ViewController.m in Sources */,
+				2F755DCB1C1FB53300EFC277 /* AppDelegate.m in Sources */,
+				2F755DC81C1FB53300EFC277 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2F755DD81C1FB53300EFC277 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2F755DE11C1FB53300EFC277 /* MoveStarTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2F755DE31C1FB53300EFC277 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2F755DEC1C1FB53300EFC277 /* MoveStarUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2F755DDE1C1FB53300EFC277 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2F755DC21C1FB53300EFC277 /* MoveStar */;
+			targetProxy = 2F755DDD1C1FB53300EFC277 /* PBXContainerItemProxy */;
+		};
+		2F755DE91C1FB53300EFC277 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2F755DC21C1FB53300EFC277 /* MoveStar */;
+			targetProxy = 2F755DE81C1FB53300EFC277 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		2F755DCF1C1FB53300EFC277 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2F755DD01C1FB53300EFC277 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		2F755DD41C1FB53300EFC277 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2F755DD51C1FB53300EFC277 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		2F755DEE1C1FB53300EFC277 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		2F755DEF1C1FB53300EFC277 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2F755DF11C1FB53300EFC277 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = J4N9H827FQ;
+				INFOPLIST_FILE = MoveStar/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Renew.qukan.MoveStar;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		2F755DF21C1FB53300EFC277 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = J4N9H827FQ;
+				INFOPLIST_FILE = MoveStar/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Renew.qukan.MoveStar;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		2F755DF41C1FB53300EFC277 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = MoveStarTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Renew.qukan.MoveStarTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MoveStar.app/MoveStar";
+			};
+			name = Debug;
+		};
+		2F755DF51C1FB53300EFC277 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = MoveStarTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Renew.qukan.MoveStarTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MoveStar.app/MoveStar";
+			};
+			name = Release;
+		};
+		2F755DF71C1FB53300EFC277 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = MoveStarUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Renew.qukan.MoveStarUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = MoveStar;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		2F755DF81C1FB53300EFC277 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = MoveStarUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Renew.qukan.MoveStarUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = MoveStar;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2F755DBE1C1FB53300EFC277 /* Build configuration list for PBXProject "MoveStar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2F755DEE1C1FB53300EFC277 /* Debug */,
+				2F755DEF1C1FB53300EFC277 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2F755DF01C1FB53300EFC277 /* Build configuration list for PBXNativeTarget "MoveStar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2F755DF11C1FB53300EFC277 /* Debug */,
+				2F755DF21C1FB53300EFC277 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2F755DF31C1FB53300EFC277 /* Build configuration list for PBXNativeTarget "MoveStarTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2F755DF41C1FB53300EFC277 /* Debug */,
+				2F755DF51C1FB53300EFC277 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2F755DF61C1FB53300EFC277 /* Build configuration list for PBXNativeTarget "MoveStarUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2F755DF71C1FB53300EFC277 /* Debug */,
+				2F755DF81C1FB53300EFC277 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2F755DBB1C1FB53300EFC277 /* Project object */;
+}

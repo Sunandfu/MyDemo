@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+    </dependencies>
+    <scenes>
+        <!--动画-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController title="动画" id="vXZ-lx-hvc" customClass="ViewController" customModule="D3View" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="55z-5D-R9V">
+                                <rect key="frame" x="0.0" y="300" width="600" height="300"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="vXZ-lx-hvc" id="5ml-gB-NQX"/>
+                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="L2Y-wQ-cHA"/>
+                                </connections>
+                            </pickerView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QF9-ab-tP8">
+                                <rect key="frame" x="250" y="100" width="100" height="100"/>
+                                <color key="backgroundColor" red="0.013796687126159668" green="0.47876036167144775" blue="0.98392951488494873" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="043-lS-lBj"/>
+                                    <constraint firstAttribute="height" constant="100" id="D6d-ku-BWZ"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="55z-5D-R9V" secondAttribute="bottom" id="0J2-ss-ARh"/>
+                            <constraint firstItem="55z-5D-R9V" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-20" id="30m-SR-PO0"/>
+                            <constraint firstItem="55z-5D-R9V" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="5qN-xz-Z5S"/>
+                            <constraint firstItem="55z-5D-R9V" firstAttribute="height" secondItem="kh9-bI-dsS" secondAttribute="height" multiplier="1/2" id="7Gs-h5-vjc"/>
+                            <constraint firstAttribute="centerX" secondItem="QF9-ab-tP8" secondAttribute="centerX" id="NWX-E9-gNv"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="55z-5D-R9V" secondAttribute="trailing" constant="-20" id="fU3-Qh-HrK"/>
+                            <constraint firstItem="QF9-ab-tP8" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="80" id="icn-qC-cjU"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="动画" image="tab.png" id="TKq-Au-Tc1"/>
+                    <connections>
+                        <outlet property="d3view" destination="QF9-ab-tP8" id="YrR-Id-oJy"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1963" y="-621"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="tab.png" width="25" height="25"/>
+    </resources>
+</document>

@@ -1,0 +1,565 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		880BCF1A1D87FBA80089744E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 880BCF191D87FBA80089744E /* main.m */; };
+		880BCF1D1D87FBA80089744E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 880BCF1C1D87FBA80089744E /* AppDelegate.m */; };
+		880BCF201D87FBA80089744E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 880BCF1F1D87FBA80089744E /* ViewController.m */; };
+		880BCF231D87FBA80089744E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 880BCF211D87FBA80089744E /* Main.storyboard */; };
+		880BCF251D87FBA80089744E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 880BCF241D87FBA80089744E /* Assets.xcassets */; };
+		880BCF281D87FBA80089744E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 880BCF261D87FBA80089744E /* LaunchScreen.storyboard */; };
+		880BCF331D87FBA80089744E /* ____Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 880BCF321D87FBA80089744E /* ____Tests.m */; };
+		880BCF3E1D87FBA80089744E /* ____UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 880BCF3D1D87FBA80089744E /* ____UITests.m */; };
+		880BCF511D87FC0E0089744E /* LikeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 880BCF501D87FC0E0089744E /* LikeButton.m */; };
+		880BCF8A1D88011A0089744E /* 0.png in Resources */ = {isa = PBXBuildFile; fileRef = 880BCF871D88011A0089744E /* 0.png */; };
+		880BCF8B1D88011A0089744E /* 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 880BCF881D88011A0089744E /* 2.png */; };
+		880BCF8C1D88011A0089744E /* 3.png in Resources */ = {isa = PBXBuildFile; fileRef = 880BCF891D88011A0089744E /* 3.png */; };
+		880BCF8F1D88014A0089744E /* 4.png in Resources */ = {isa = PBXBuildFile; fileRef = 880BCF8D1D88014A0089744E /* 4.png */; };
+		880BCF901D88014A0089744E /* 5.png in Resources */ = {isa = PBXBuildFile; fileRef = 880BCF8E1D88014A0089744E /* 5.png */; };
+		880BCF921D8801660089744E /* btn_high.png in Resources */ = {isa = PBXBuildFile; fileRef = 880BCF911D8801660089744E /* btn_high.png */; };
+		880BCF941D8801870089744E /* btn.png in Resources */ = {isa = PBXBuildFile; fileRef = 880BCF931D8801870089744E /* btn.png */; };
+		880BCF961D8801F10089744E /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 880BCF951D8801F10089744E /* 1.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		880BCF2F1D87FBA80089744E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 880BCF0D1D87FBA80089744E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 880BCF141D87FBA80089744E;
+			remoteInfo = "直播点赞";
+		};
+		880BCF3A1D87FBA80089744E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 880BCF0D1D87FBA80089744E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 880BCF141D87FBA80089744E;
+			remoteInfo = "直播点赞";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		880BCF151D87FBA80089744E /* 直播点赞.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "直播点赞.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		880BCF191D87FBA80089744E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		880BCF1B1D87FBA80089744E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		880BCF1C1D87FBA80089744E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		880BCF1E1D87FBA80089744E /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		880BCF1F1D87FBA80089744E /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		880BCF221D87FBA80089744E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		880BCF241D87FBA80089744E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		880BCF271D87FBA80089744E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		880BCF291D87FBA80089744E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		880BCF2E1D87FBA80089744E /* 直播点赞Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "直播点赞Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		880BCF321D87FBA80089744E /* ____Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "____Tests.m"; sourceTree = "<group>"; };
+		880BCF341D87FBA80089744E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		880BCF391D87FBA80089744E /* 直播点赞UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "直播点赞UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		880BCF3D1D87FBA80089744E /* ____UITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "____UITests.m"; sourceTree = "<group>"; };
+		880BCF3F1D87FBA80089744E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		880BCF4F1D87FC0E0089744E /* LikeButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LikeButton.h; sourceTree = "<group>"; };
+		880BCF501D87FC0E0089744E /* LikeButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LikeButton.m; sourceTree = "<group>"; };
+		880BCF871D88011A0089744E /* 0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 0.png; sourceTree = "<group>"; };
+		880BCF881D88011A0089744E /* 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2.png; sourceTree = "<group>"; };
+		880BCF891D88011A0089744E /* 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3.png; sourceTree = "<group>"; };
+		880BCF8D1D88014A0089744E /* 4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 4.png; sourceTree = "<group>"; };
+		880BCF8E1D88014A0089744E /* 5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 5.png; sourceTree = "<group>"; };
+		880BCF911D8801660089744E /* btn_high.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_high.png; sourceTree = "<group>"; };
+		880BCF931D8801870089744E /* btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn.png; sourceTree = "<group>"; };
+		880BCF951D8801F10089744E /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		880BCF121D87FBA80089744E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		880BCF2B1D87FBA80089744E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		880BCF361D87FBA80089744E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		880BCF0C1D87FBA80089744E = {
+			isa = PBXGroup;
+			children = (
+				880BCF171D87FBA80089744E /* 直播点赞 */,
+				880BCF311D87FBA80089744E /* 直播点赞Tests */,
+				880BCF3C1D87FBA80089744E /* 直播点赞UITests */,
+				880BCF161D87FBA80089744E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		880BCF161D87FBA80089744E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				880BCF151D87FBA80089744E /* 直播点赞.app */,
+				880BCF2E1D87FBA80089744E /* 直播点赞Tests.xctest */,
+				880BCF391D87FBA80089744E /* 直播点赞UITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		880BCF171D87FBA80089744E /* 直播点赞 */ = {
+			isa = PBXGroup;
+			children = (
+				880BCF1B1D87FBA80089744E /* AppDelegate.h */,
+				880BCF1C1D87FBA80089744E /* AppDelegate.m */,
+				880BCF1E1D87FBA80089744E /* ViewController.h */,
+				880BCF1F1D87FBA80089744E /* ViewController.m */,
+				880BCF4E1D87FC0E0089744E /* LikeButton */,
+				880BCF211D87FBA80089744E /* Main.storyboard */,
+				880BCF241D87FBA80089744E /* Assets.xcassets */,
+				880BCF261D87FBA80089744E /* LaunchScreen.storyboard */,
+				880BCF291D87FBA80089744E /* Info.plist */,
+				880BCF181D87FBA80089744E /* Supporting Files */,
+			);
+			path = "直播点赞";
+			sourceTree = "<group>";
+		};
+		880BCF181D87FBA80089744E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				880BCF191D87FBA80089744E /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		880BCF311D87FBA80089744E /* 直播点赞Tests */ = {
+			isa = PBXGroup;
+			children = (
+				880BCF321D87FBA80089744E /* ____Tests.m */,
+				880BCF341D87FBA80089744E /* Info.plist */,
+			);
+			path = "直播点赞Tests";
+			sourceTree = "<group>";
+		};
+		880BCF3C1D87FBA80089744E /* 直播点赞UITests */ = {
+			isa = PBXGroup;
+			children = (
+				880BCF3D1D87FBA80089744E /* ____UITests.m */,
+				880BCF3F1D87FBA80089744E /* Info.plist */,
+			);
+			path = "直播点赞UITests";
+			sourceTree = "<group>";
+		};
+		880BCF4E1D87FC0E0089744E /* LikeButton */ = {
+			isa = PBXGroup;
+			children = (
+				880BCF871D88011A0089744E /* 0.png */,
+				880BCF951D8801F10089744E /* 1.png */,
+				880BCF881D88011A0089744E /* 2.png */,
+				880BCF891D88011A0089744E /* 3.png */,
+				880BCF8D1D88014A0089744E /* 4.png */,
+				880BCF8E1D88014A0089744E /* 5.png */,
+				880BCF931D8801870089744E /* btn.png */,
+				880BCF911D8801660089744E /* btn_high.png */,
+				880BCF4F1D87FC0E0089744E /* LikeButton.h */,
+				880BCF501D87FC0E0089744E /* LikeButton.m */,
+			);
+			path = LikeButton;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		880BCF141D87FBA80089744E /* 直播点赞 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 880BCF421D87FBA80089744E /* Build configuration list for PBXNativeTarget "直播点赞" */;
+			buildPhases = (
+				880BCF111D87FBA80089744E /* Sources */,
+				880BCF121D87FBA80089744E /* Frameworks */,
+				880BCF131D87FBA80089744E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "直播点赞";
+			productName = "直播点赞";
+			productReference = 880BCF151D87FBA80089744E /* 直播点赞.app */;
+			productType = "com.apple.product-type.application";
+		};
+		880BCF2D1D87FBA80089744E /* 直播点赞Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 880BCF451D87FBA80089744E /* Build configuration list for PBXNativeTarget "直播点赞Tests" */;
+			buildPhases = (
+				880BCF2A1D87FBA80089744E /* Sources */,
+				880BCF2B1D87FBA80089744E /* Frameworks */,
+				880BCF2C1D87FBA80089744E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				880BCF301D87FBA80089744E /* PBXTargetDependency */,
+			);
+			name = "直播点赞Tests";
+			productName = "直播点赞Tests";
+			productReference = 880BCF2E1D87FBA80089744E /* 直播点赞Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		880BCF381D87FBA80089744E /* 直播点赞UITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 880BCF481D87FBA80089744E /* Build configuration list for PBXNativeTarget "直播点赞UITests" */;
+			buildPhases = (
+				880BCF351D87FBA80089744E /* Sources */,
+				880BCF361D87FBA80089744E /* Frameworks */,
+				880BCF371D87FBA80089744E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				880BCF3B1D87FBA80089744E /* PBXTargetDependency */,
+			);
+			name = "直播点赞UITests";
+			productName = "直播点赞UITests";
+			productReference = 880BCF391D87FBA80089744E /* 直播点赞UITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		880BCF0D1D87FBA80089744E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = waterLC;
+				TargetAttributes = {
+					880BCF141D87FBA80089744E = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+					880BCF2D1D87FBA80089744E = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = 880BCF141D87FBA80089744E;
+					};
+					880BCF381D87FBA80089744E = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = 880BCF141D87FBA80089744E;
+					};
+				};
+			};
+			buildConfigurationList = 880BCF101D87FBA80089744E /* Build configuration list for PBXProject "直播点赞" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 880BCF0C1D87FBA80089744E;
+			productRefGroup = 880BCF161D87FBA80089744E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				880BCF141D87FBA80089744E /* 直播点赞 */,
+				880BCF2D1D87FBA80089744E /* 直播点赞Tests */,
+				880BCF381D87FBA80089744E /* 直播点赞UITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		880BCF131D87FBA80089744E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				880BCF961D8801F10089744E /* 1.png in Resources */,
+				880BCF8A1D88011A0089744E /* 0.png in Resources */,
+				880BCF8F1D88014A0089744E /* 4.png in Resources */,
+				880BCF941D8801870089744E /* btn.png in Resources */,
+				880BCF281D87FBA80089744E /* LaunchScreen.storyboard in Resources */,
+				880BCF921D8801660089744E /* btn_high.png in Resources */,
+				880BCF8B1D88011A0089744E /* 2.png in Resources */,
+				880BCF8C1D88011A0089744E /* 3.png in Resources */,
+				880BCF901D88014A0089744E /* 5.png in Resources */,
+				880BCF251D87FBA80089744E /* Assets.xcassets in Resources */,
+				880BCF231D87FBA80089744E /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		880BCF2C1D87FBA80089744E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		880BCF371D87FBA80089744E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		880BCF111D87FBA80089744E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				880BCF511D87FC0E0089744E /* LikeButton.m in Sources */,
+				880BCF201D87FBA80089744E /* ViewController.m in Sources */,
+				880BCF1D1D87FBA80089744E /* AppDelegate.m in Sources */,
+				880BCF1A1D87FBA80089744E /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		880BCF2A1D87FBA80089744E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				880BCF331D87FBA80089744E /* ____Tests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		880BCF351D87FBA80089744E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				880BCF3E1D87FBA80089744E /* ____UITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		880BCF301D87FBA80089744E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 880BCF141D87FBA80089744E /* 直播点赞 */;
+			targetProxy = 880BCF2F1D87FBA80089744E /* PBXContainerItemProxy */;
+		};
+		880BCF3B1D87FBA80089744E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 880BCF141D87FBA80089744E /* 直播点赞 */;
+			targetProxy = 880BCF3A1D87FBA80089744E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		880BCF211D87FBA80089744E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				880BCF221D87FBA80089744E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		880BCF261D87FBA80089744E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				880BCF271D87FBA80089744E /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		880BCF401D87FBA80089744E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		880BCF411D87FBA80089744E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		880BCF431D87FBA80089744E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "直播点赞/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.sinfotek.----";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		880BCF441D87FBA80089744E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "直播点赞/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.sinfotek.----";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		880BCF461D87FBA80089744E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "直播点赞Tests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.sinfotek.----Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/直播点赞.app/直播点赞";
+			};
+			name = Debug;
+		};
+		880BCF471D87FBA80089744E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "直播点赞Tests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.sinfotek.----Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/直播点赞.app/直播点赞";
+			};
+			name = Release;
+		};
+		880BCF491D87FBA80089744E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "直播点赞UITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.sinfotek.----UITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "直播点赞";
+			};
+			name = Debug;
+		};
+		880BCF4A1D87FBA80089744E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "直播点赞UITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.sinfotek.----UITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "直播点赞";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		880BCF101D87FBA80089744E /* Build configuration list for PBXProject "直播点赞" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				880BCF401D87FBA80089744E /* Debug */,
+				880BCF411D87FBA80089744E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		880BCF421D87FBA80089744E /* Build configuration list for PBXNativeTarget "直播点赞" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				880BCF431D87FBA80089744E /* Debug */,
+				880BCF441D87FBA80089744E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		880BCF451D87FBA80089744E /* Build configuration list for PBXNativeTarget "直播点赞Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				880BCF461D87FBA80089744E /* Debug */,
+				880BCF471D87FBA80089744E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		880BCF481D87FBA80089744E /* Build configuration list for PBXNativeTarget "直播点赞UITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				880BCF491D87FBA80089744E /* Debug */,
+				880BCF4A1D87FBA80089744E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 880BCF0D1D87FBA80089744E /* Project object */;
+}

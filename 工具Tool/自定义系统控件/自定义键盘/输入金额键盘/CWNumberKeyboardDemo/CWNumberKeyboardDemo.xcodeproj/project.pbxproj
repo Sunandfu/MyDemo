@@ -1,0 +1,327 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3DFBB1E21C9CDADF00A38003 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DFBB1E11C9CDADF00A38003 /* main.m */; };
+		3DFBB1E51C9CDADF00A38003 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DFBB1E41C9CDADF00A38003 /* AppDelegate.m */; };
+		3DFBB1EB1C9CDADF00A38003 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DFBB1E91C9CDADF00A38003 /* Main.storyboard */; };
+		3DFBB1ED1C9CDADF00A38003 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3DFBB1EC1C9CDADF00A38003 /* Assets.xcassets */; };
+		3DFBB1F01C9CDADF00A38003 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DFBB1EE1C9CDADF00A38003 /* LaunchScreen.storyboard */; };
+		3DFBB1FA1C9CDB3E00A38003 /* CWNumberKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DFBB1F91C9CDB3E00A38003 /* CWNumberKeyboard.m */; };
+		3DFBB1FC1C9CDB7200A38003 /* CWNumberKeyboard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3DFBB1FB1C9CDB7200A38003 /* CWNumberKeyboard.xib */; };
+		3DFBB2001C9CE01900A38003 /* CWNumberKeyboard.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3DFBB1FF1C9CE01900A38003 /* CWNumberKeyboard.bundle */; };
+		3DFBB2031C9CE1BB00A38003 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DFBB2021C9CE1BB00A38003 /* MainViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		3DFBB1DD1C9CDADF00A38003 /* CWNumberKeyboardDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CWNumberKeyboardDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3DFBB1E11C9CDADF00A38003 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		3DFBB1E31C9CDADF00A38003 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		3DFBB1E41C9CDADF00A38003 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		3DFBB1EA1C9CDADF00A38003 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3DFBB1EC1C9CDADF00A38003 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3DFBB1EF1C9CDADF00A38003 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		3DFBB1F11C9CDADF00A38003 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3DFBB1F81C9CDB3E00A38003 /* CWNumberKeyboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CWNumberKeyboard.h; sourceTree = "<group>"; };
+		3DFBB1F91C9CDB3E00A38003 /* CWNumberKeyboard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CWNumberKeyboard.m; sourceTree = "<group>"; };
+		3DFBB1FB1C9CDB7200A38003 /* CWNumberKeyboard.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CWNumberKeyboard.xib; sourceTree = "<group>"; };
+		3DFBB1FF1C9CE01900A38003 /* CWNumberKeyboard.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = CWNumberKeyboard.bundle; sourceTree = "<group>"; };
+		3DFBB2011C9CE1BB00A38003 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		3DFBB2021C9CE1BB00A38003 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3DFBB1DA1C9CDADF00A38003 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3DFBB1D41C9CDADF00A38003 = {
+			isa = PBXGroup;
+			children = (
+				3DFBB1DF1C9CDADF00A38003 /* CWNumberKeyboardDemo */,
+				3DFBB1DE1C9CDADF00A38003 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3DFBB1DE1C9CDADF00A38003 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3DFBB1DD1C9CDADF00A38003 /* CWNumberKeyboardDemo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3DFBB1DF1C9CDADF00A38003 /* CWNumberKeyboardDemo */ = {
+			isa = PBXGroup;
+			children = (
+				3DFBB1F71C9CDB1100A38003 /* CWNumberKeyboard */,
+				3DFBB1E31C9CDADF00A38003 /* AppDelegate.h */,
+				3DFBB1E41C9CDADF00A38003 /* AppDelegate.m */,
+				3DFBB2011C9CE1BB00A38003 /* MainViewController.h */,
+				3DFBB2021C9CE1BB00A38003 /* MainViewController.m */,
+				3DFBB1E91C9CDADF00A38003 /* Main.storyboard */,
+				3DFBB1EC1C9CDADF00A38003 /* Assets.xcassets */,
+				3DFBB1EE1C9CDADF00A38003 /* LaunchScreen.storyboard */,
+				3DFBB1F11C9CDADF00A38003 /* Info.plist */,
+				3DFBB1E01C9CDADF00A38003 /* Supporting Files */,
+			);
+			path = CWNumberKeyboardDemo;
+			sourceTree = "<group>";
+		};
+		3DFBB1E01C9CDADF00A38003 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3DFBB1E11C9CDADF00A38003 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3DFBB1F71C9CDB1100A38003 /* CWNumberKeyboard */ = {
+			isa = PBXGroup;
+			children = (
+				3DFBB1F81C9CDB3E00A38003 /* CWNumberKeyboard.h */,
+				3DFBB1F91C9CDB3E00A38003 /* CWNumberKeyboard.m */,
+				3DFBB1FB1C9CDB7200A38003 /* CWNumberKeyboard.xib */,
+				3DFBB1FF1C9CE01900A38003 /* CWNumberKeyboard.bundle */,
+			);
+			path = CWNumberKeyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3DFBB1DC1C9CDADF00A38003 /* CWNumberKeyboardDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3DFBB1F41C9CDADF00A38003 /* Build configuration list for PBXNativeTarget "CWNumberKeyboardDemo" */;
+			buildPhases = (
+				3DFBB1D91C9CDADF00A38003 /* Sources */,
+				3DFBB1DA1C9CDADF00A38003 /* Frameworks */,
+				3DFBB1DB1C9CDADF00A38003 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CWNumberKeyboardDemo;
+			productName = CWNumberKeyboardDemo;
+			productReference = 3DFBB1DD1C9CDADF00A38003 /* CWNumberKeyboardDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3DFBB1D51C9CDADF00A38003 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = "陈大威";
+				TargetAttributes = {
+					3DFBB1DC1C9CDADF00A38003 = {
+						CreatedOnToolsVersion = 7.2.1;
+					};
+				};
+			};
+			buildConfigurationList = 3DFBB1D81C9CDADF00A38003 /* Build configuration list for PBXProject "CWNumberKeyboardDemo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3DFBB1D41C9CDADF00A38003;
+			productRefGroup = 3DFBB1DE1C9CDADF00A38003 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3DFBB1DC1C9CDADF00A38003 /* CWNumberKeyboardDemo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3DFBB1DB1C9CDADF00A38003 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3DFBB1F01C9CDADF00A38003 /* LaunchScreen.storyboard in Resources */,
+				3DFBB1FC1C9CDB7200A38003 /* CWNumberKeyboard.xib in Resources */,
+				3DFBB1ED1C9CDADF00A38003 /* Assets.xcassets in Resources */,
+				3DFBB2001C9CE01900A38003 /* CWNumberKeyboard.bundle in Resources */,
+				3DFBB1EB1C9CDADF00A38003 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3DFBB1D91C9CDADF00A38003 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3DFBB1FA1C9CDB3E00A38003 /* CWNumberKeyboard.m in Sources */,
+				3DFBB1E51C9CDADF00A38003 /* AppDelegate.m in Sources */,
+				3DFBB2031C9CE1BB00A38003 /* MainViewController.m in Sources */,
+				3DFBB1E21C9CDADF00A38003 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		3DFBB1E91C9CDADF00A38003 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3DFBB1EA1C9CDADF00A38003 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		3DFBB1EE1C9CDADF00A38003 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3DFBB1EF1C9CDADF00A38003 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3DFBB1F21C9CDADF00A38003 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		3DFBB1F31C9CDADF00A38003 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3DFBB1F51C9CDADF00A38003 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = CWNumberKeyboardDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.william.CWNumberKeyboardDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		3DFBB1F61C9CDADF00A38003 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = CWNumberKeyboardDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.william.CWNumberKeyboardDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3DFBB1D81C9CDADF00A38003 /* Build configuration list for PBXProject "CWNumberKeyboardDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3DFBB1F21C9CDADF00A38003 /* Debug */,
+				3DFBB1F31C9CDADF00A38003 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3DFBB1F41C9CDADF00A38003 /* Build configuration list for PBXNativeTarget "CWNumberKeyboardDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3DFBB1F51C9CDADF00A38003 /* Debug */,
+				3DFBB1F61C9CDADF00A38003 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3DFBB1D51C9CDADF00A38003 /* Project object */;
+}

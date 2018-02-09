@@ -1,0 +1,66 @@
+PODS:
+  - Alamofire (4.5.1)
+  - AlamofireObjectMapper (5.0.0):
+    - Alamofire (~> 4.1)
+    - ObjectMapper (~> 3.0)
+  - BMPlayer (1.0.1):
+    - BMPlayer/Full (= 1.0.1)
+  - BMPlayer/Core (1.0.1)
+  - BMPlayer/Full (1.0.1):
+    - BMPlayer/Core
+    - NVActivityIndicatorView (~> 4.0.0)
+    - SnapKit (~> 4.0.0)
+  - CHTCollectionViewWaterfallLayout (0.9.7):
+    - CHTCollectionViewWaterfallLayout/ObjC (= 0.9.7)
+  - CHTCollectionViewWaterfallLayout/ObjC (0.9.7)
+  - Kanna (4.0.0)
+  - Kingfisher (4.3.1)
+  - MJRefresh (3.1.15.1)
+  - NVActivityIndicatorView (4.0.0):
+    - NVActivityIndicatorView/Presenter (= 4.0.0)
+  - NVActivityIndicatorView/Presenter (4.0.0)
+  - ObjectMapper (3.1.0)
+  - PKHUD (5.0.0)
+  - SKPhotoBrowser (5.0.0)
+  - SnapKit (4.0.0)
+
+DEPENDENCIES:
+  - Alamofire
+  - AlamofireObjectMapper
+  - BMPlayer (~> 1.0.0)
+  - CHTCollectionViewWaterfallLayout
+  - Kanna (from `https://github.com/tid-kijyun/Kanna.git`, branch `feature/v4.0.0`)
+  - Kingfisher
+  - MJRefresh
+  - ObjectMapper
+  - PKHUD (~> 5.0)
+  - SKPhotoBrowser
+  - SnapKit
+
+EXTERNAL SOURCES:
+  Kanna:
+    :branch: feature/v4.0.0
+    :git: https://github.com/tid-kijyun/Kanna.git
+
+CHECKOUT OPTIONS:
+  Kanna:
+    :commit: 58e3513d20cd16fe8b9ff16b5a2b481fcd643499
+    :git: https://github.com/tid-kijyun/Kanna.git
+
+SPEC CHECKSUMS:
+  Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
+  AlamofireObjectMapper: 5fafc816351cbbc0d486611aaeba7461c0cbad49
+  BMPlayer: 44eebf06eb01450dd14ea74b27d07c5222f0eed1
+  CHTCollectionViewWaterfallLayout: 9d11068fafecac106695bb5a5d6d0f738483b598
+  Kanna: d5ae2a26472f7e7a474e7f36a9cd8aa2c8c63ad3
+  Kingfisher: 75541c4b62f02e1fde6f9772303de3d9ebe8f5b3
+  MJRefresh: 5f8552bc25ca8751c010f621c1098dbdaacbccd6
+  NVActivityIndicatorView: 54c9b93b6f25a4f467512680c0c90c09a1095cf2
+  ObjectMapper: 20505058f54e5c3ca69e1d6de9897d152a5369a6
+  PKHUD: 3c001512c6e002091184197a8de7a20420786e3b
+  SKPhotoBrowser: fe936f878955a568c726bf05d14e1d2717d91ce0
+  SnapKit: a42d492c16e80209130a3379f73596c3454b7694
+
+PODFILE CHECKSUM: 9c5d11a9401a982f88f07a46099527f81baea239
+
+COCOAPODS: 1.1.1

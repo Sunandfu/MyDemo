@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FoldViewController">
+            <connections>
+                <outlet property="Vc" destination="PcN-0c-Lgu" id="Hm5-De-Hv5"/>
+                <outlet property="bottomView" destination="RHX-aw-cal" id="Szk-A0-As5"/>
+                <outlet property="topView" destination="AIe-wW-l4H" id="KRo-xk-9jU"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="阿狸头像" translatesAutoresizingMaskIntoConstraints="NO" id="RHX-aw-cal">
+                    <rect key="frame" x="55" y="130" width="200" height="100"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="阿狸头像" translatesAutoresizingMaskIntoConstraints="NO" id="AIe-wW-l4H">
+                    <rect key="frame" x="55" y="130" width="200" height="100"/>
+                </imageView>
+                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PcN-0c-Lgu">
+                    <rect key="frame" x="55" y="40" width="200" height="200"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sTr-4d-bgt">
+                    <rect key="frame" x="0.0" y="521" width="312" height="47"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="47" id="KhP-Qv-dWW"/>
+                    </constraints>
+                    <string key="text">折叠动画
+@more</string>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" red="0.098039215690000001" green="0.6705882353" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="sTr-4d-bgt" secondAttribute="bottom" id="0B4-Mn-huW"/>
+                <constraint firstItem="sTr-4d-bgt" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="l7M-92-qds"/>
+                <constraint firstAttribute="trailing" secondItem="sTr-4d-bgt" secondAttribute="trailing" constant="8" id="wgq-5W-XHf"/>
+            </constraints>
+            <point key="canvasLocation" x="278" y="357"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="阿狸头像" width="200" height="200"/>
+    </resources>
+</document>

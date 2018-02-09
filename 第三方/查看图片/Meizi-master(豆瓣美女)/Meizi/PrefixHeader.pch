@@ -1,0 +1,23 @@
+//
+//  PrefixHeader.pch
+//  Meizi
+//
+//  Created by Sunnyyoung on 15/4/4.
+//  Copyright (c) 2015年 Sunnyyoung. All rights reserved.
+//
+
+#ifndef Meizi_PrefixHeader_pch
+#define Meizi_PrefixHeader_pch
+
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+
+#import <SDWebImage/UIImageView+WebCache.h>
+#import <MJRefresh/MJRefresh.h>
+#import <MJExtension/MJExtension.h>
+#import "UIImageView+UIActivityIndicatorForSDWebImage.h"
+
+#import "SVProgressHUD.h"
+#import "Constant.h"
+
+#endif

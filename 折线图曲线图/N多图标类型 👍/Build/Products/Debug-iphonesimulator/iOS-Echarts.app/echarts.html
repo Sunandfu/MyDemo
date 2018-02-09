@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<head>
+    <title>ECharts</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<style type="text/CSS">
+      div {background-color: transparent}
+	</style>
+    <!-- ECharts单文件引入 -->
+    <script src="js/echarts-all.js"></script>
+    <script type="text/javascript">
+    var option;
+    var myChart;
+    var ecConfig;
+    function echartViewAction(param) {
+//        alert(JSON.stringify(param));
+        document.location.href = 'pyEchartAction://' + param.type + '#' + JSON.stringify(param) + '';
+    }
+    function preTask(obj) {
+        var result;
+        if(typeof(obj) == 'object') {
+            if(obj instanceof Array) {
+                result = new Array();
+                for (var i = 0, len = obj.length; i < len ; i++) {
+                     result.push(preTask(obj[i]));
+                }
+                return result;
+            } else if(obj instanceof RegExp){
+                return obj;
+            } else {
+                result = new Object();
+                for (var prop in obj) {
+                    result[prop] = preTask(obj[prop]);
+                }
+                return result;
+            }
+        } else if(typeof(obj) == 'string'){
+            try {
+                if(typeof(eval(obj)) == 'function'){
+                    return eval(obj);
+                } else if (typeof(eval(obj) == 'object') && (eval(obj) instanceof Array || eval(obj) instanceof CanvasGradient)) {
+                    return eval(obj);
+                }
+            }catch(e) {
+                return obj;
+            }
+            return obj;
+        } else {
+            return obj;
+        }
+    }
+	/**  
+	 * 构建动态图表  
+	 */  
+	function loadEcharts(echartJson){
+		// 基于准备好的dom，初始化echarts图表
+        myChart = echarts.init(document.getElementById('main'));
+        //alert("json:" + JSON.stringify(echartJson));
+        option = preTask(echartJson);
+        //option = preTask(testdate);
+        // 为echarts对象加载数据
+        myChart.setOption(option);
+	}
+    function refreshWithOption(optionData) {
+        option = preTask(optionData);
+        myChart.setOption(option, true);
+    }
+    function resizeDiv(cssText) {
+        var divMain = document.getElementById("main");
+        divMain.style.cssText = cssText;
+    }
+    function initEchartView() {
+        // 基于准备好的dom，初始化echarts图表
+        myChart = echarts.init(document.getElementById('main'));
+                
+        // 为echarts对象加载数据
+        myChart.setOption(option);
+    }
+    function addEchartActionHandler(eventName) {
+        var ecConfig = echarts.config;
+        myChart.on(eventName, echartViewAction);
+    }
+    function removeEchartActionHandler(name) {
+        myChart.un(name, echartViewAction);
+    }
+    </script>
+</head>
+<body style="background-color: transparent"><!-- transparent-->
+    <div id="main" style="height:270px;width:420px;" ></div><!-- style="height:270px;width:420px;margin-left:-30px;"-->
+</body>

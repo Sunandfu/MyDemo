@@ -1,0 +1,10 @@
+PODS:
+  - RATreeView (2.1.0)
+
+DEPENDENCIES:
+  - RATreeView (~> 2.1.0)
+
+SPEC CHECKSUMS:
+  RATreeView: fc82ec26b8be18cfa0f5f99a5abbe6be68edb21f
+
+COCOAPODS: 0.39.0

@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="2l7-l0-FNI">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AdG-oV-JPU">
+                                <rect key="frame" x="285" y="97" width="30" height="30"/>
+                                <state key="normal" title="录音"/>
+                                <connections>
+                                    <action selector="recorder:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yZP-ao-bwo"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ix9-A8-IGY">
+                                <rect key="frame" x="270" y="135" width="60" height="30"/>
+                                <state key="normal" title="暂停录音"/>
+                                <connections>
+                                    <action selector="pauseRecorder:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TsK-kh-XT6"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BsO-Fl-Yeh">
+                                <rect key="frame" x="270" y="173" width="60" height="30"/>
+                                <state key="normal" title="停止录音"/>
+                                <connections>
+                                    <action selector="stopRecorder:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gzM-Ub-NEC"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K8X-D9-B2P">
+                                <rect key="frame" x="270" y="376" width="60" height="30"/>
+                                <state key="normal" title="删除录音"/>
+                                <connections>
+                                    <action selector="removeRecord:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uyr-rf-c3s"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YPP-zW-3FS">
+                                <rect key="frame" x="247" y="428" width="106" height="30"/>
+                                <state key="normal" title="转换成mp3格式"/>
+                                <connections>
+                                    <action selector="toMp3:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DTW-VS-sRK"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Ti-a4-OBB">
+                                <rect key="frame" x="270" y="484" width="60" height="30"/>
+                                <state key="normal" title="全部录音">
+                                    <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="allRecord:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lg4-dE-QF8"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6h7-hq-YIB">
+                                <rect key="frame" x="285" y="237" width="30" height="30"/>
+                                <state key="normal" title="播放"/>
+                                <connections>
+                                    <action selector="player:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ant-bG-7Od"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yGi-qb-PjM">
+                                <rect key="frame" x="270" y="275" width="60" height="30"/>
+                                <state key="normal" title="暂停播放"/>
+                                <connections>
+                                    <action selector="pausePlayer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Irb-ar-qQt"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Jl-uL-ids">
+                                <rect key="frame" x="270" y="313" width="60" height="30"/>
+                                <state key="normal" title="停止播放"/>
+                                <connections>
+                                    <action selector="stopPlayer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DCO-P8-KNv"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="6h7-hq-YIB" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="173" id="4ct-xi-7ZN"/>
+                            <constraint firstItem="AdG-oV-JPU" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="33" id="6wO-wg-zpJ"/>
+                            <constraint firstItem="3Jl-uL-ids" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7TV-Mp-DMp"/>
+                            <constraint firstItem="yGi-qb-PjM" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8l4-Gw-Tl0"/>
+                            <constraint firstItem="BsO-Fl-Yeh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="99y-tD-fle"/>
+                            <constraint firstItem="yGi-qb-PjM" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="211" id="9hL-4q-xEW"/>
+                            <constraint firstItem="Ix9-A8-IGY" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="71" id="LYd-NY-NtU"/>
+                            <constraint firstItem="AdG-oV-JPU" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Np6-0S-1yg"/>
+                            <constraint firstItem="K8X-D9-B2P" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="NvO-B3-xAq"/>
+                            <constraint firstItem="YPP-zW-3FS" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="364" id="R5E-4g-4gq"/>
+                            <constraint firstItem="Ix9-A8-IGY" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="XAV-Gy-qJs"/>
+                            <constraint firstItem="3Jl-uL-ids" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="249" id="YrX-BQ-qkw"/>
+                            <constraint firstItem="6Ti-a4-OBB" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="420" id="a69-h6-JT4"/>
+                            <constraint firstItem="YPP-zW-3FS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gfH-c2-BNB"/>
+                            <constraint firstItem="K8X-D9-B2P" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="312" id="iz3-Bo-Dlq"/>
+                            <constraint firstItem="6Ti-a4-OBB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="kE2-5m-RLl"/>
+                            <constraint firstItem="6h7-hq-YIB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="rBa-FB-Iw8"/>
+                            <constraint firstItem="BsO-Fl-Yeh" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="109" id="v0n-yU-fR0"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="CTJ-Gp-JT9"/>
+                    <connections>
+                        <outlet property="player" destination="6h7-hq-YIB" id="JZQ-lH-j0b"/>
+                        <outlet property="recorder" destination="AdG-oV-JPU" id="3YM-T5-T2v"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="965" y="-391"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="tIk-5I-ujz">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2l7-l0-FNI" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="KOJ-8X-Pew">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="oGT-43-UsI"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Awh-M1-SVD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="275" y="-391"/>
+        </scene>
+    </scenes>
+</document>

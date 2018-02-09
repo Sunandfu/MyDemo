@@ -1,0 +1,554 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		38CFED1F1CCF3E0400B0448F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 38CFED1E1CCF3E0400B0448F /* main.m */; };
+		38CFED221CCF3E0400B0448F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 38CFED211CCF3E0400B0448F /* AppDelegate.m */; };
+		38CFED251CCF3E0400B0448F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38CFED241CCF3E0400B0448F /* ViewController.m */; };
+		38CFED281CCF3E0400B0448F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38CFED261CCF3E0400B0448F /* Main.storyboard */; };
+		38CFED2A1CCF3E0400B0448F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38CFED291CCF3E0400B0448F /* Assets.xcassets */; };
+		38CFED2D1CCF3E0400B0448F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38CFED2B1CCF3E0400B0448F /* LaunchScreen.storyboard */; };
+		38CFED381CCF3E0400B0448F /* MPWebViewLongTapTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 38CFED371CCF3E0400B0448F /* MPWebViewLongTapTests.m */; };
+		38CFED431CCF3E0400B0448F /* MPWebViewLongTapUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 38CFED421CCF3E0400B0448F /* MPWebViewLongTapUITests.m */; };
+		38CFED521CCF3E8F00B0448F /* MPViewController1.m in Sources */ = {isa = PBXBuildFile; fileRef = 38CFED511CCF3E8F00B0448F /* MPViewController1.m */; };
+		38CFED551CCF3EA500B0448F /* MPViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 38CFED541CCF3EA500B0448F /* MPViewController2.m */; };
+		38CFED581CCF41EC00B0448F /* UnpreventableUILongPressGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 38CFED571CCF41EC00B0448F /* UnpreventableUILongPressGestureRecognizer.m */; };
+		38CFED5B1CCF42DA00B0448F /* UIWebView+WebViewAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 38CFED5A1CCF42DA00B0448F /* UIWebView+WebViewAdditions.m */; };
+		38CFED5D1CCF458500B0448F /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38CFED5C1CCF458500B0448F /* JavaScriptCore.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		38CFED341CCF3E0400B0448F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 38CFED121CCF3E0300B0448F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 38CFED191CCF3E0300B0448F;
+			remoteInfo = MPWebViewLongTap;
+		};
+		38CFED3F1CCF3E0400B0448F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 38CFED121CCF3E0300B0448F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 38CFED191CCF3E0300B0448F;
+			remoteInfo = MPWebViewLongTap;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		38CFED1A1CCF3E0300B0448F /* MPWebViewLongTap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MPWebViewLongTap.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		38CFED1E1CCF3E0400B0448F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		38CFED201CCF3E0400B0448F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		38CFED211CCF3E0400B0448F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		38CFED231CCF3E0400B0448F /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		38CFED241CCF3E0400B0448F /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		38CFED271CCF3E0400B0448F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		38CFED291CCF3E0400B0448F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		38CFED2C1CCF3E0400B0448F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		38CFED2E1CCF3E0400B0448F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		38CFED331CCF3E0400B0448F /* MPWebViewLongTapTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MPWebViewLongTapTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		38CFED371CCF3E0400B0448F /* MPWebViewLongTapTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MPWebViewLongTapTests.m; sourceTree = "<group>"; };
+		38CFED391CCF3E0400B0448F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		38CFED3E1CCF3E0400B0448F /* MPWebViewLongTapUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MPWebViewLongTapUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		38CFED421CCF3E0400B0448F /* MPWebViewLongTapUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MPWebViewLongTapUITests.m; sourceTree = "<group>"; };
+		38CFED441CCF3E0400B0448F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		38CFED501CCF3E8F00B0448F /* MPViewController1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPViewController1.h; sourceTree = "<group>"; };
+		38CFED511CCF3E8F00B0448F /* MPViewController1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPViewController1.m; sourceTree = "<group>"; };
+		38CFED531CCF3EA500B0448F /* MPViewController2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPViewController2.h; sourceTree = "<group>"; };
+		38CFED541CCF3EA500B0448F /* MPViewController2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPViewController2.m; sourceTree = "<group>"; };
+		38CFED561CCF41EC00B0448F /* UnpreventableUILongPressGestureRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UnpreventableUILongPressGestureRecognizer.h; sourceTree = "<group>"; };
+		38CFED571CCF41EC00B0448F /* UnpreventableUILongPressGestureRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UnpreventableUILongPressGestureRecognizer.m; sourceTree = "<group>"; };
+		38CFED591CCF42DA00B0448F /* UIWebView+WebViewAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWebView+WebViewAdditions.h"; sourceTree = "<group>"; };
+		38CFED5A1CCF42DA00B0448F /* UIWebView+WebViewAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWebView+WebViewAdditions.m"; sourceTree = "<group>"; };
+		38CFED5C1CCF458500B0448F /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		38CFED5E1CCF471300B0448F /* JSTools.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = JSTools.js; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		38CFED171CCF3E0300B0448F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				38CFED5D1CCF458500B0448F /* JavaScriptCore.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		38CFED301CCF3E0400B0448F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		38CFED3B1CCF3E0400B0448F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		38CFED111CCF3E0300B0448F = {
+			isa = PBXGroup;
+			children = (
+				38CFED5C1CCF458500B0448F /* JavaScriptCore.framework */,
+				38CFED1C1CCF3E0400B0448F /* MPWebViewLongTap */,
+				38CFED361CCF3E0400B0448F /* MPWebViewLongTapTests */,
+				38CFED411CCF3E0400B0448F /* MPWebViewLongTapUITests */,
+				38CFED1B1CCF3E0300B0448F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		38CFED1B1CCF3E0300B0448F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				38CFED1A1CCF3E0300B0448F /* MPWebViewLongTap.app */,
+				38CFED331CCF3E0400B0448F /* MPWebViewLongTapTests.xctest */,
+				38CFED3E1CCF3E0400B0448F /* MPWebViewLongTapUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		38CFED1C1CCF3E0400B0448F /* MPWebViewLongTap */ = {
+			isa = PBXGroup;
+			children = (
+				38CFED201CCF3E0400B0448F /* AppDelegate.h */,
+				38CFED211CCF3E0400B0448F /* AppDelegate.m */,
+				38CFED231CCF3E0400B0448F /* ViewController.h */,
+				38CFED241CCF3E0400B0448F /* ViewController.m */,
+				38CFED261CCF3E0400B0448F /* Main.storyboard */,
+				38CFED291CCF3E0400B0448F /* Assets.xcassets */,
+				38CFED2B1CCF3E0400B0448F /* LaunchScreen.storyboard */,
+				38CFED2E1CCF3E0400B0448F /* Info.plist */,
+				38CFED1D1CCF3E0400B0448F /* Supporting Files */,
+				38CFED501CCF3E8F00B0448F /* MPViewController1.h */,
+				38CFED511CCF3E8F00B0448F /* MPViewController1.m */,
+				38CFED531CCF3EA500B0448F /* MPViewController2.h */,
+				38CFED541CCF3EA500B0448F /* MPViewController2.m */,
+				38CFED561CCF41EC00B0448F /* UnpreventableUILongPressGestureRecognizer.h */,
+				38CFED571CCF41EC00B0448F /* UnpreventableUILongPressGestureRecognizer.m */,
+				38CFED591CCF42DA00B0448F /* UIWebView+WebViewAdditions.h */,
+				38CFED5A1CCF42DA00B0448F /* UIWebView+WebViewAdditions.m */,
+				38CFED5E1CCF471300B0448F /* JSTools.js */,
+			);
+			path = MPWebViewLongTap;
+			sourceTree = "<group>";
+		};
+		38CFED1D1CCF3E0400B0448F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				38CFED1E1CCF3E0400B0448F /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		38CFED361CCF3E0400B0448F /* MPWebViewLongTapTests */ = {
+			isa = PBXGroup;
+			children = (
+				38CFED371CCF3E0400B0448F /* MPWebViewLongTapTests.m */,
+				38CFED391CCF3E0400B0448F /* Info.plist */,
+			);
+			path = MPWebViewLongTapTests;
+			sourceTree = "<group>";
+		};
+		38CFED411CCF3E0400B0448F /* MPWebViewLongTapUITests */ = {
+			isa = PBXGroup;
+			children = (
+				38CFED421CCF3E0400B0448F /* MPWebViewLongTapUITests.m */,
+				38CFED441CCF3E0400B0448F /* Info.plist */,
+			);
+			path = MPWebViewLongTapUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		38CFED191CCF3E0300B0448F /* MPWebViewLongTap */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 38CFED471CCF3E0400B0448F /* Build configuration list for PBXNativeTarget "MPWebViewLongTap" */;
+			buildPhases = (
+				38CFED161CCF3E0300B0448F /* Sources */,
+				38CFED171CCF3E0300B0448F /* Frameworks */,
+				38CFED181CCF3E0300B0448F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MPWebViewLongTap;
+			productName = MPWebViewLongTap;
+			productReference = 38CFED1A1CCF3E0300B0448F /* MPWebViewLongTap.app */;
+			productType = "com.apple.product-type.application";
+		};
+		38CFED321CCF3E0400B0448F /* MPWebViewLongTapTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 38CFED4A1CCF3E0400B0448F /* Build configuration list for PBXNativeTarget "MPWebViewLongTapTests" */;
+			buildPhases = (
+				38CFED2F1CCF3E0400B0448F /* Sources */,
+				38CFED301CCF3E0400B0448F /* Frameworks */,
+				38CFED311CCF3E0400B0448F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				38CFED351CCF3E0400B0448F /* PBXTargetDependency */,
+			);
+			name = MPWebViewLongTapTests;
+			productName = MPWebViewLongTapTests;
+			productReference = 38CFED331CCF3E0400B0448F /* MPWebViewLongTapTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		38CFED3D1CCF3E0400B0448F /* MPWebViewLongTapUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 38CFED4D1CCF3E0400B0448F /* Build configuration list for PBXNativeTarget "MPWebViewLongTapUITests" */;
+			buildPhases = (
+				38CFED3A1CCF3E0400B0448F /* Sources */,
+				38CFED3B1CCF3E0400B0448F /* Frameworks */,
+				38CFED3C1CCF3E0400B0448F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				38CFED401CCF3E0400B0448F /* PBXTargetDependency */,
+			);
+			name = MPWebViewLongTapUITests;
+			productName = MPWebViewLongTapUITests;
+			productReference = 38CFED3E1CCF3E0400B0448F /* MPWebViewLongTapUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		38CFED121CCF3E0300B0448F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = ManPao;
+				TargetAttributes = {
+					38CFED191CCF3E0300B0448F = {
+						CreatedOnToolsVersion = 7.3;
+					};
+					38CFED321CCF3E0400B0448F = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = 38CFED191CCF3E0300B0448F;
+					};
+					38CFED3D1CCF3E0400B0448F = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = 38CFED191CCF3E0300B0448F;
+					};
+				};
+			};
+			buildConfigurationList = 38CFED151CCF3E0300B0448F /* Build configuration list for PBXProject "MPWebViewLongTap" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 38CFED111CCF3E0300B0448F;
+			productRefGroup = 38CFED1B1CCF3E0300B0448F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				38CFED191CCF3E0300B0448F /* MPWebViewLongTap */,
+				38CFED321CCF3E0400B0448F /* MPWebViewLongTapTests */,
+				38CFED3D1CCF3E0400B0448F /* MPWebViewLongTapUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		38CFED181CCF3E0300B0448F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				38CFED2D1CCF3E0400B0448F /* LaunchScreen.storyboard in Resources */,
+				38CFED2A1CCF3E0400B0448F /* Assets.xcassets in Resources */,
+				38CFED281CCF3E0400B0448F /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		38CFED311CCF3E0400B0448F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		38CFED3C1CCF3E0400B0448F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		38CFED161CCF3E0300B0448F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				38CFED551CCF3EA500B0448F /* MPViewController2.m in Sources */,
+				38CFED581CCF41EC00B0448F /* UnpreventableUILongPressGestureRecognizer.m in Sources */,
+				38CFED251CCF3E0400B0448F /* ViewController.m in Sources */,
+				38CFED221CCF3E0400B0448F /* AppDelegate.m in Sources */,
+				38CFED5B1CCF42DA00B0448F /* UIWebView+WebViewAdditions.m in Sources */,
+				38CFED1F1CCF3E0400B0448F /* main.m in Sources */,
+				38CFED521CCF3E8F00B0448F /* MPViewController1.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		38CFED2F1CCF3E0400B0448F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				38CFED381CCF3E0400B0448F /* MPWebViewLongTapTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		38CFED3A1CCF3E0400B0448F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				38CFED431CCF3E0400B0448F /* MPWebViewLongTapUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		38CFED351CCF3E0400B0448F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 38CFED191CCF3E0300B0448F /* MPWebViewLongTap */;
+			targetProxy = 38CFED341CCF3E0400B0448F /* PBXContainerItemProxy */;
+		};
+		38CFED401CCF3E0400B0448F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 38CFED191CCF3E0300B0448F /* MPWebViewLongTap */;
+			targetProxy = 38CFED3F1CCF3E0400B0448F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		38CFED261CCF3E0400B0448F /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				38CFED271CCF3E0400B0448F /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		38CFED2B1CCF3E0400B0448F /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				38CFED2C1CCF3E0400B0448F /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		38CFED451CCF3E0400B0448F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		38CFED461CCF3E0400B0448F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		38CFED481CCF3E0400B0448F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = MPWebViewLongTap/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.jiatc.MPWebViewLongTap;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		38CFED491CCF3E0400B0448F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = MPWebViewLongTap/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.jiatc.MPWebViewLongTap;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		38CFED4B1CCF3E0400B0448F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = MPWebViewLongTapTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.jiatc.MPWebViewLongTapTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MPWebViewLongTap.app/MPWebViewLongTap";
+			};
+			name = Debug;
+		};
+		38CFED4C1CCF3E0400B0448F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = MPWebViewLongTapTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.jiatc.MPWebViewLongTapTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MPWebViewLongTap.app/MPWebViewLongTap";
+			};
+			name = Release;
+		};
+		38CFED4E1CCF3E0400B0448F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = MPWebViewLongTapUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.jiatc.MPWebViewLongTapUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = MPWebViewLongTap;
+			};
+			name = Debug;
+		};
+		38CFED4F1CCF3E0400B0448F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = MPWebViewLongTapUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.jiatc.MPWebViewLongTapUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = MPWebViewLongTap;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		38CFED151CCF3E0300B0448F /* Build configuration list for PBXProject "MPWebViewLongTap" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				38CFED451CCF3E0400B0448F /* Debug */,
+				38CFED461CCF3E0400B0448F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		38CFED471CCF3E0400B0448F /* Build configuration list for PBXNativeTarget "MPWebViewLongTap" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				38CFED481CCF3E0400B0448F /* Debug */,
+				38CFED491CCF3E0400B0448F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		38CFED4A1CCF3E0400B0448F /* Build configuration list for PBXNativeTarget "MPWebViewLongTapTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				38CFED4B1CCF3E0400B0448F /* Debug */,
+				38CFED4C1CCF3E0400B0448F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		38CFED4D1CCF3E0400B0448F /* Build configuration list for PBXNativeTarget "MPWebViewLongTapUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				38CFED4E1CCF3E0400B0448F /* Debug */,
+				38CFED4F1CCF3E0400B0448F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 38CFED121CCF3E0300B0448F /* Project object */;
+}

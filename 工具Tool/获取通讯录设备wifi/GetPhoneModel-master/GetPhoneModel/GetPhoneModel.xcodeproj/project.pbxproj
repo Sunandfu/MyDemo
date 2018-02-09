@@ -1,0 +1,545 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		888845321D2F52F30038F406 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 888845311D2F52F30038F406 /* main.m */; };
+		888845351D2F52F30038F406 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 888845341D2F52F30038F406 /* AppDelegate.m */; };
+		888845381D2F52F30038F406 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 888845371D2F52F30038F406 /* ViewController.m */; };
+		8888453B1D2F52F30038F406 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 888845391D2F52F30038F406 /* Main.storyboard */; };
+		8888453D1D2F52F30038F406 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8888453C1D2F52F30038F406 /* Assets.xcassets */; };
+		888845401D2F52F30038F406 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8888453E1D2F52F30038F406 /* LaunchScreen.storyboard */; };
+		8888454B1D2F52F30038F406 /* GetPhoneModelTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8888454A1D2F52F30038F406 /* GetPhoneModelTests.m */; };
+		888845561D2F52F30038F406 /* GetPhoneModelUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 888845551D2F52F30038F406 /* GetPhoneModelUITests.m */; };
+		888845661D2F554F0038F406 /* WSGetPhoneTypeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 888845651D2F554F0038F406 /* WSGetPhoneTypeController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		888845471D2F52F30038F406 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 888845251D2F52F30038F406 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8888452C1D2F52F30038F406;
+			remoteInfo = GetPhoneModel;
+		};
+		888845521D2F52F30038F406 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 888845251D2F52F30038F406 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8888452C1D2F52F30038F406;
+			remoteInfo = GetPhoneModel;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		8888452D1D2F52F30038F406 /* GetPhoneModel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GetPhoneModel.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		888845311D2F52F30038F406 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		888845331D2F52F30038F406 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		888845341D2F52F30038F406 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		888845361D2F52F30038F406 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		888845371D2F52F30038F406 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		8888453A1D2F52F30038F406 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		8888453C1D2F52F30038F406 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8888453F1D2F52F30038F406 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		888845411D2F52F30038F406 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		888845461D2F52F30038F406 /* GetPhoneModelTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GetPhoneModelTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8888454A1D2F52F30038F406 /* GetPhoneModelTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GetPhoneModelTests.m; sourceTree = "<group>"; };
+		8888454C1D2F52F30038F406 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		888845511D2F52F30038F406 /* GetPhoneModelUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GetPhoneModelUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		888845551D2F52F30038F406 /* GetPhoneModelUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GetPhoneModelUITests.m; sourceTree = "<group>"; };
+		888845571D2F52F30038F406 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		888845641D2F554F0038F406 /* WSGetPhoneTypeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSGetPhoneTypeController.h; sourceTree = "<group>"; };
+		888845651D2F554F0038F406 /* WSGetPhoneTypeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSGetPhoneTypeController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8888452A1D2F52F30038F406 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		888845431D2F52F30038F406 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8888454E1D2F52F30038F406 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		888845241D2F52F30038F406 = {
+			isa = PBXGroup;
+			children = (
+				8888452F1D2F52F30038F406 /* GetPhoneModel */,
+				888845491D2F52F30038F406 /* GetPhoneModelTests */,
+				888845541D2F52F30038F406 /* GetPhoneModelUITests */,
+				8888452E1D2F52F30038F406 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		8888452E1D2F52F30038F406 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8888452D1D2F52F30038F406 /* GetPhoneModel.app */,
+				888845461D2F52F30038F406 /* GetPhoneModelTests.xctest */,
+				888845511D2F52F30038F406 /* GetPhoneModelUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8888452F1D2F52F30038F406 /* GetPhoneModel */ = {
+			isa = PBXGroup;
+			children = (
+				888845331D2F52F30038F406 /* AppDelegate.h */,
+				888845341D2F52F30038F406 /* AppDelegate.m */,
+				888845631D2F554F0038F406 /* WSGetPhoneTypeController */,
+				888845361D2F52F30038F406 /* ViewController.h */,
+				888845371D2F52F30038F406 /* ViewController.m */,
+				888845391D2F52F30038F406 /* Main.storyboard */,
+				8888453C1D2F52F30038F406 /* Assets.xcassets */,
+				8888453E1D2F52F30038F406 /* LaunchScreen.storyboard */,
+				888845411D2F52F30038F406 /* Info.plist */,
+				888845301D2F52F30038F406 /* Supporting Files */,
+			);
+			path = GetPhoneModel;
+			sourceTree = "<group>";
+		};
+		888845301D2F52F30038F406 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				888845311D2F52F30038F406 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		888845491D2F52F30038F406 /* GetPhoneModelTests */ = {
+			isa = PBXGroup;
+			children = (
+				8888454A1D2F52F30038F406 /* GetPhoneModelTests.m */,
+				8888454C1D2F52F30038F406 /* Info.plist */,
+			);
+			path = GetPhoneModelTests;
+			sourceTree = "<group>";
+		};
+		888845541D2F52F30038F406 /* GetPhoneModelUITests */ = {
+			isa = PBXGroup;
+			children = (
+				888845551D2F52F30038F406 /* GetPhoneModelUITests.m */,
+				888845571D2F52F30038F406 /* Info.plist */,
+			);
+			path = GetPhoneModelUITests;
+			sourceTree = "<group>";
+		};
+		888845631D2F554F0038F406 /* WSGetPhoneTypeController */ = {
+			isa = PBXGroup;
+			children = (
+				888845641D2F554F0038F406 /* WSGetPhoneTypeController.h */,
+				888845651D2F554F0038F406 /* WSGetPhoneTypeController.m */,
+			);
+			path = WSGetPhoneTypeController;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8888452C1D2F52F30038F406 /* GetPhoneModel */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8888455A1D2F52F30038F406 /* Build configuration list for PBXNativeTarget "GetPhoneModel" */;
+			buildPhases = (
+				888845291D2F52F30038F406 /* Sources */,
+				8888452A1D2F52F30038F406 /* Frameworks */,
+				8888452B1D2F52F30038F406 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GetPhoneModel;
+			productName = GetPhoneModel;
+			productReference = 8888452D1D2F52F30038F406 /* GetPhoneModel.app */;
+			productType = "com.apple.product-type.application";
+		};
+		888845451D2F52F30038F406 /* GetPhoneModelTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8888455D1D2F52F30038F406 /* Build configuration list for PBXNativeTarget "GetPhoneModelTests" */;
+			buildPhases = (
+				888845421D2F52F30038F406 /* Sources */,
+				888845431D2F52F30038F406 /* Frameworks */,
+				888845441D2F52F30038F406 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				888845481D2F52F30038F406 /* PBXTargetDependency */,
+			);
+			name = GetPhoneModelTests;
+			productName = GetPhoneModelTests;
+			productReference = 888845461D2F52F30038F406 /* GetPhoneModelTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		888845501D2F52F30038F406 /* GetPhoneModelUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 888845601D2F52F30038F406 /* Build configuration list for PBXNativeTarget "GetPhoneModelUITests" */;
+			buildPhases = (
+				8888454D1D2F52F30038F406 /* Sources */,
+				8888454E1D2F52F30038F406 /* Frameworks */,
+				8888454F1D2F52F30038F406 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				888845531D2F52F30038F406 /* PBXTargetDependency */,
+			);
+			name = GetPhoneModelUITests;
+			productName = GetPhoneModelUITests;
+			productReference = 888845511D2F52F30038F406 /* GetPhoneModelUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		888845251D2F52F30038F406 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = Sinfotek;
+				TargetAttributes = {
+					8888452C1D2F52F30038F406 = {
+						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = J4N9H827FQ;
+					};
+					888845451D2F52F30038F406 = {
+						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 675K46WB46;
+						TestTargetID = 8888452C1D2F52F30038F406;
+					};
+					888845501D2F52F30038F406 = {
+						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 675K46WB46;
+						TestTargetID = 8888452C1D2F52F30038F406;
+					};
+				};
+			};
+			buildConfigurationList = 888845281D2F52F30038F406 /* Build configuration list for PBXProject "GetPhoneModel" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 888845241D2F52F30038F406;
+			productRefGroup = 8888452E1D2F52F30038F406 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8888452C1D2F52F30038F406 /* GetPhoneModel */,
+				888845451D2F52F30038F406 /* GetPhoneModelTests */,
+				888845501D2F52F30038F406 /* GetPhoneModelUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8888452B1D2F52F30038F406 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				888845401D2F52F30038F406 /* LaunchScreen.storyboard in Resources */,
+				8888453D1D2F52F30038F406 /* Assets.xcassets in Resources */,
+				8888453B1D2F52F30038F406 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		888845441D2F52F30038F406 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8888454F1D2F52F30038F406 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		888845291D2F52F30038F406 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				888845381D2F52F30038F406 /* ViewController.m in Sources */,
+				888845351D2F52F30038F406 /* AppDelegate.m in Sources */,
+				888845321D2F52F30038F406 /* main.m in Sources */,
+				888845661D2F554F0038F406 /* WSGetPhoneTypeController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		888845421D2F52F30038F406 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8888454B1D2F52F30038F406 /* GetPhoneModelTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8888454D1D2F52F30038F406 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				888845561D2F52F30038F406 /* GetPhoneModelUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		888845481D2F52F30038F406 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8888452C1D2F52F30038F406 /* GetPhoneModel */;
+			targetProxy = 888845471D2F52F30038F406 /* PBXContainerItemProxy */;
+		};
+		888845531D2F52F30038F406 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8888452C1D2F52F30038F406 /* GetPhoneModel */;
+			targetProxy = 888845521D2F52F30038F406 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		888845391D2F52F30038F406 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8888453A1D2F52F30038F406 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		8888453E1D2F52F30038F406 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8888453F1D2F52F30038F406 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		888845581D2F52F30038F406 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		888845591D2F52F30038F406 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8888455B1D2F52F30038F406 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = J4N9H827FQ;
+				INFOPLIST_FILE = GetPhoneModel/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.sinfotek.GetPhoneModel;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		8888455C1D2F52F30038F406 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = J4N9H827FQ;
+				INFOPLIST_FILE = GetPhoneModel/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.sinfotek.GetPhoneModel;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		8888455E1D2F52F30038F406 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = GetPhoneModelTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.sinfotek.GetPhoneModelTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GetPhoneModel.app/GetPhoneModel";
+			};
+			name = Debug;
+		};
+		8888455F1D2F52F30038F406 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = GetPhoneModelTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.sinfotek.GetPhoneModelTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GetPhoneModel.app/GetPhoneModel";
+			};
+			name = Release;
+		};
+		888845611D2F52F30038F406 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = GetPhoneModelUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.sinfotek.GetPhoneModelUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = GetPhoneModel;
+			};
+			name = Debug;
+		};
+		888845621D2F52F30038F406 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = GetPhoneModelUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.sinfotek.GetPhoneModelUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = GetPhoneModel;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		888845281D2F52F30038F406 /* Build configuration list for PBXProject "GetPhoneModel" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				888845581D2F52F30038F406 /* Debug */,
+				888845591D2F52F30038F406 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8888455A1D2F52F30038F406 /* Build configuration list for PBXNativeTarget "GetPhoneModel" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8888455B1D2F52F30038F406 /* Debug */,
+				8888455C1D2F52F30038F406 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8888455D1D2F52F30038F406 /* Build configuration list for PBXNativeTarget "GetPhoneModelTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8888455E1D2F52F30038F406 /* Debug */,
+				8888455F1D2F52F30038F406 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		888845601D2F52F30038F406 /* Build configuration list for PBXNativeTarget "GetPhoneModelUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				888845611D2F52F30038F406 /* Debug */,
+				888845621D2F52F30038F406 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 888845251D2F52F30038F406 /* Project object */;
+}

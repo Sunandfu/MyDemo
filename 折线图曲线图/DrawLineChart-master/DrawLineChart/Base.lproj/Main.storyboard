@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="20" minValue="20" maxValue="50" translatesAutoresizingMaskIntoConstraints="NO" id="4fc-0D-nhG">
+                                <rect key="frame" x="11" y="28" width="161" height="31"/>
+                                <connections>
+                                    <action selector="sliderValueChange:" destination="BYZ-38-t0r" eventType="valueChanged" id="R3F-dY-gAC"/>
+                                </connections>
+                            </slider>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="60" minValue="30" maxValue="90" translatesAutoresizingMaskIntoConstraints="NO" id="3y3-bf-DRh">
+                                <rect key="frame" x="11" y="61" width="161" height="31"/>
+                                <connections>
+                                    <action selector="horizonWChange:" destination="BYZ-38-t0r" eventType="valueChanged" id="ySb-9S-f5F"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="纵向高度(像素)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="heU-ms-sdR">
+                                <rect key="frame" x="195" y="32" width="114" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="横向宽度(像素)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XP4-7z-3HJ">
+                                <rect key="frame" x="195" y="65" width="114" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="横向虚线条数" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="M2m-gv-I9Q">
+                                <rect key="frame" x="13" y="99" width="104" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="YGK-o5-HUl"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="纵向虚线条数" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gI7-J7-urU">
+                                <rect key="frame" x="13" y="137" width="104" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="GMA-zT-5jm"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N8l-Ev-2AF">
+                                <rect key="frame" x="125" y="99" width="39" height="30"/>
+                                <color key="backgroundColor" white="0.88029572147651003" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="确定"/>
+                                <connections>
+                                    <action selector="lineCount1:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8Lw-Sz-QzJ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MRj-ut-qxB">
+                                <rect key="frame" x="125" y="136" width="39" height="30"/>
+                                <color key="backgroundColor" white="0.87853921979865768" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="确定"/>
+                                <connections>
+                                    <action selector="linecount2:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HYY-nk-Lac"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="坐标系每小格单位(整数)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="S5f-70-C9l">
+                                <rect key="frame" x="13" y="175" width="166" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KJ5-KR-hSN">
+                                <rect key="frame" x="195" y="174" width="40" height="30"/>
+                                <color key="backgroundColor" white="0.88162715517241375" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="确定"/>
+                                <connections>
+                                    <action selector="coordinateH:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mvm-sw-Ye7"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="971-tg-CTO">
+                                <rect key="frame" x="195" y="99" width="103" height="30"/>
+                                <color key="backgroundColor" white="0.88254310344827591" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="随机生成折线"/>
+                                <connections>
+                                    <action selector="createRandomLines:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kwJ-GK-mzQ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="slider1" destination="4fc-0D-nhG" id="o5O-Yo-Va5"/>
+                        <outlet property="slider2" destination="3y3-bf-DRh" id="J40-Pg-0TB"/>
+                        <outlet property="textfield1" destination="M2m-gv-I9Q" id="6Hc-9w-Are"/>
+                        <outlet property="textfield2" destination="gI7-J7-urU" id="Kn3-CB-FzQ"/>
+                        <outlet property="textfield3" destination="S5f-70-C9l" id="6MR-xs-66v"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="376" y="407"/>
+        </scene>
+    </scenes>
+</document>

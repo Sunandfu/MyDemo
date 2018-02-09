@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "5EB95E54E857AB37096546D9B1174E0ECA581E3A",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "A2903E56A2ED58903309CBAE4D22C882F648DAB5" : 0,
+    "5EB95E54E857AB37096546D9B1174E0ECA581E3A" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "B46FA287-21C3-4BB5-BFFF-349DEA46D83A",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "A2903E56A2ED58903309CBAE4D22C882F648DAB5" : "RSTFocusImage\/RSTFocusImage\/",
+    "5EB95E54E857AB37096546D9B1174E0ECA581E3A" : "RSTFocusImage\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "RSTFocusImage",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "RSTFocusImage.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "gitgub.com:rongshutou\/RSTFocusImage.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "5EB95E54E857AB37096546D9B1174E0ECA581E3A"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/rongshutou\/RSTFocusImage.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "A2903E56A2ED58903309CBAE4D22C882F648DAB5"
+    }
+  ]
+}

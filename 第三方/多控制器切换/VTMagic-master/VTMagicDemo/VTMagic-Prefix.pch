@@ -1,0 +1,15 @@
+//
+//  VTMagicView-Prefix.pch
+//  VTMagicView
+//
+//  Created by tianzhuo on 15/1/6.
+//  Copyright (c) 2015年 tianzhuo. All rights reserved.
+//
+
+#ifndef VTMagicView_VTMagicView_Prefix_pch
+#define VTMagicView_VTMagicView_Prefix_pch
+
+#import <VTMagic/VTMagic.h>
+#import "MenuInfo.h"
+
+#endif

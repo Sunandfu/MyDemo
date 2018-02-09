@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="EMu-9q-KiS">
+    <dependencies>
+        <development version="5100" identifier="xcode"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="ZaI-cp-LDY">
+            <objects>
+                <navigationController id="EMu-9q-KiS" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="vPK-n8-M1p">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="OtO-8g-fgd"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TND-xz-WNW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-566" y="299"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="egy-i4-DEH">
+                                <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="635-5f-HLh">
+                                        <rect key="frame" x="50" y="8" width="230" height="30"/>
+                                        <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="按住录音" backgroundImage="login_btn">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted" title="松开发送"/>
+                                        <connections>
+                                            <action selector="endRecord:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="TPb-De-kbI"/>
+                                            <action selector="endRecord:" destination="vXZ-lx-hvc" eventType="touchUpOutside" id="Xnf-hS-ogo"/>
+                                            <action selector="startRecord:" destination="vXZ-lx-hvc" eventType="touchDown" id="qrl-dh-Puh"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="635-5f-HLh" secondAttribute="trailing" constant="40" id="Hgx-ZU-g7O"/>
+                                    <constraint firstItem="635-5f-HLh" firstAttribute="top" secondItem="egy-i4-DEH" secondAttribute="top" constant="8" id="OQY-vn-1p2"/>
+                                    <constraint firstAttribute="height" constant="44" id="Wzu-ts-oVP"/>
+                                    <constraint firstAttribute="bottom" secondItem="635-5f-HLh" secondAttribute="bottom" constant="6" id="mpm-HO-YBg"/>
+                                    <constraint firstItem="635-5f-HLh" firstAttribute="leading" secondItem="egy-i4-DEH" secondAttribute="leading" constant="50" id="yTu-V2-ijO"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="tFb-GN-22S">
+                                <rect key="frame" x="0.0" y="64" width="320" height="460"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Record" id="CnZ-eZ-u2z">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="CnZ-eZ-u2z" id="vfs-pb-AaC">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="vXZ-lx-hvc" id="ubb-zn-Vo0"/>
+                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="hgF-zn-jrZ"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="egy-i4-DEH" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="5d2-0G-jYT"/>
+                            <constraint firstItem="tFb-GN-22S" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="J8s-xQ-ltX"/>
+                            <constraint firstAttribute="trailing" secondItem="tFb-GN-22S" secondAttribute="trailing" id="QTO-cW-Nbc"/>
+                            <constraint firstItem="egy-i4-DEH" firstAttribute="top" secondItem="tFb-GN-22S" secondAttribute="bottom" id="YlB-7w-x0K"/>
+                            <constraint firstAttribute="trailing" secondItem="egy-i4-DEH" secondAttribute="trailing" id="gi9-ni-pbm"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="egy-i4-DEH" secondAttribute="bottom" id="ibT-f1-wbt"/>
+                            <constraint firstItem="tFb-GN-22S" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="srC-Ur-BFJ"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="t8A-dq-CnG"/>
+                    <connections>
+                        <outlet property="tableVIew" destination="tFb-GN-22S" id="vh4-v3-aZ2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-63" y="299"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="login_btn" width="290" height="44"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>

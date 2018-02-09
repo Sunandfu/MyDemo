@@ -1,0 +1,318 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		48C7D6861F32E1E3009A1668 /* SFScaleCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 48C7D6851F32E1E3009A1668 /* SFScaleCenter.m */; };
+		48C7D6871F32E1E3009A1668 /* SFScaleCenter.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 48C7D6841F32E1E3009A1668 /* SFScaleCenter.h */; };
+		48C7D6931F32E20D009A1668 /* BLEDeviceInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 48C7D68E1F32E20D009A1668 /* BLEDeviceInfo.m */; };
+		48C7D6941F32E20D009A1668 /* NSString+Change.m in Sources */ = {isa = PBXBuildFile; fileRef = 48C7D6901F32E20D009A1668 /* NSString+Change.m */; };
+		48C7D6951F32E20D009A1668 /* YXScaleInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 48C7D6921F32E20D009A1668 /* YXScaleInfo.m */; };
+		48C7D6971F32E234009A1668 /* SFScaleCenter.h in Headers */ = {isa = PBXBuildFile; fileRef = 48C7D6841F32E1E3009A1668 /* SFScaleCenter.h */; };
+		48C7D6981F32E23A009A1668 /* YXScaleInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = 48C7D6911F32E20D009A1668 /* YXScaleInfo.h */; };
+		48C7D6991F32E24D009A1668 /* BLEDeviceInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = 48C7D68D1F32E20D009A1668 /* BLEDeviceInfo.h */; };
+		48C7D69C1F32E282009A1668 /* HTBodyfat.h in Headers */ = {isa = PBXBuildFile; fileRef = 48C7D69A1F32E282009A1668 /* HTBodyfat.h */; };
+		48C7D69D1F32E282009A1668 /* libHTBodyfat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 48C7D69B1F32E282009A1668 /* libHTBodyfat.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		48C7D67F1F32E1E3009A1668 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+				48C7D6871F32E1E3009A1668 /* SFScaleCenter.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		48C7D6811F32E1E3009A1668 /* libSFScaleCenter.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSFScaleCenter.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		48C7D6841F32E1E3009A1668 /* SFScaleCenter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SFScaleCenter.h; sourceTree = "<group>"; };
+		48C7D6851F32E1E3009A1668 /* SFScaleCenter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SFScaleCenter.m; sourceTree = "<group>"; };
+		48C7D68D1F32E20D009A1668 /* BLEDeviceInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLEDeviceInfo.h; sourceTree = "<group>"; };
+		48C7D68E1F32E20D009A1668 /* BLEDeviceInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLEDeviceInfo.m; sourceTree = "<group>"; };
+		48C7D68F1F32E20D009A1668 /* NSString+Change.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Change.h"; sourceTree = "<group>"; };
+		48C7D6901F32E20D009A1668 /* NSString+Change.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Change.m"; sourceTree = "<group>"; };
+		48C7D6911F32E20D009A1668 /* YXScaleInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXScaleInfo.h; sourceTree = "<group>"; };
+		48C7D6921F32E20D009A1668 /* YXScaleInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXScaleInfo.m; sourceTree = "<group>"; };
+		48C7D69A1F32E282009A1668 /* HTBodyfat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTBodyfat.h; sourceTree = "<group>"; };
+		48C7D69B1F32E282009A1668 /* libHTBodyfat.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libHTBodyfat.a; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		48C7D67E1F32E1E3009A1668 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				48C7D69D1F32E282009A1668 /* libHTBodyfat.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		48C7D6781F32E1E3009A1668 = {
+			isa = PBXGroup;
+			children = (
+				48C7D6831F32E1E3009A1668 /* SFScaleCenter */,
+				48C7D6821F32E1E3009A1668 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		48C7D6821F32E1E3009A1668 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				48C7D6811F32E1E3009A1668 /* libSFScaleCenter.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		48C7D6831F32E1E3009A1668 /* SFScaleCenter */ = {
+			isa = PBXGroup;
+			children = (
+				48C7D69A1F32E282009A1668 /* HTBodyfat.h */,
+				48C7D69B1F32E282009A1668 /* libHTBodyfat.a */,
+				48C7D6841F32E1E3009A1668 /* SFScaleCenter.h */,
+				48C7D6851F32E1E3009A1668 /* SFScaleCenter.m */,
+				48C7D68D1F32E20D009A1668 /* BLEDeviceInfo.h */,
+				48C7D68E1F32E20D009A1668 /* BLEDeviceInfo.m */,
+				48C7D68F1F32E20D009A1668 /* NSString+Change.h */,
+				48C7D6901F32E20D009A1668 /* NSString+Change.m */,
+				48C7D6911F32E20D009A1668 /* YXScaleInfo.h */,
+				48C7D6921F32E20D009A1668 /* YXScaleInfo.m */,
+			);
+			path = SFScaleCenter;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		48C7D6961F32E22E009A1668 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				48C7D6991F32E24D009A1668 /* BLEDeviceInfo.h in Headers */,
+				48C7D6981F32E23A009A1668 /* YXScaleInfo.h in Headers */,
+				48C7D69C1F32E282009A1668 /* HTBodyfat.h in Headers */,
+				48C7D6971F32E234009A1668 /* SFScaleCenter.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		48C7D6801F32E1E3009A1668 /* SFScaleCenter */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 48C7D68A1F32E1E3009A1668 /* Build configuration list for PBXNativeTarget "SFScaleCenter" */;
+			buildPhases = (
+				48C7D67D1F32E1E3009A1668 /* Sources */,
+				48C7D67E1F32E1E3009A1668 /* Frameworks */,
+				48C7D67F1F32E1E3009A1668 /* CopyFiles */,
+				48C7D6961F32E22E009A1668 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SFScaleCenter;
+			productName = SFScaleCenter;
+			productReference = 48C7D6811F32E1E3009A1668 /* libSFScaleCenter.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		48C7D6791F32E1E3009A1668 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = xiaofu;
+				TargetAttributes = {
+					48C7D6801F32E1E3009A1668 = {
+						CreatedOnToolsVersion = 8.3;
+						DevelopmentTeam = J4N9H827FQ;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 48C7D67C1F32E1E3009A1668 /* Build configuration list for PBXProject "SFScaleCenter" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 48C7D6781F32E1E3009A1668;
+			productRefGroup = 48C7D6821F32E1E3009A1668 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				48C7D6801F32E1E3009A1668 /* SFScaleCenter */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		48C7D67D1F32E1E3009A1668 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				48C7D6861F32E1E3009A1668 /* SFScaleCenter.m in Sources */,
+				48C7D6951F32E20D009A1668 /* YXScaleInfo.m in Sources */,
+				48C7D6941F32E20D009A1668 /* NSString+Change.m in Sources */,
+				48C7D6931F32E20D009A1668 /* BLEDeviceInfo.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		48C7D6881F32E1E3009A1668 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		48C7D6891F32E1E3009A1668 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		48C7D68B1F32E1E3009A1668 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = J4N9H827FQ;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/SFScaleCenter",
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		48C7D68C1F32E1E3009A1668 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = J4N9H827FQ;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/SFScaleCenter",
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		48C7D67C1F32E1E3009A1668 /* Build configuration list for PBXProject "SFScaleCenter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				48C7D6881F32E1E3009A1668 /* Debug */,
+				48C7D6891F32E1E3009A1668 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		48C7D68A1F32E1E3009A1668 /* Build configuration list for PBXNativeTarget "SFScaleCenter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				48C7D68B1F32E1E3009A1668 /* Debug */,
+				48C7D68C1F32E1E3009A1668 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 48C7D6791F32E1E3009A1668 /* Project object */;
+}

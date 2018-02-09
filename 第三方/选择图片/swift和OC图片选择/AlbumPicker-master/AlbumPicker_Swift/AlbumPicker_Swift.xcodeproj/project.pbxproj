@@ -1,0 +1,516 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		ABE184671B78F7CA00756062 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE184661B78F7CA00756062 /* AppDelegate.swift */; };
+		ABE184691B78F7CA00756062 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE184681B78F7CA00756062 /* ViewController.swift */; };
+		ABE1846C1B78F7CA00756062 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABE1846A1B78F7CA00756062 /* Main.storyboard */; };
+		ABE1846E1B78F7CA00756062 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ABE1846D1B78F7CA00756062 /* Images.xcassets */; };
+		ABE184711B78F7CA00756062 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABE1846F1B78F7CA00756062 /* LaunchScreen.xib */; };
+		ABE1847D1B78F7CA00756062 /* AlbumPicker_SwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE1847C1B78F7CA00756062 /* AlbumPicker_SwiftTests.swift */; };
+		ABE184941B78F98D00756062 /* LSYSwiftDefine.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE184871B78F98D00756062 /* LSYSwiftDefine.swift */; };
+		ABE184951B78F98D00756062 /* LSYAlbum.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE184891B78F98D00756062 /* LSYAlbum.swift */; };
+		ABE184961B78F98D00756062 /* LSYAlbumDelegateClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE1848A1B78F98D00756062 /* LSYAlbumDelegateClass.swift */; };
+		ABE184971B78F98D00756062 /* LSYAlbumModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE1848B1B78F98D00756062 /* LSYAlbumModel.swift */; };
+		ABE184981B78F98D00756062 /* LSYAlbumCatalogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE1848D1B78F98D00756062 /* LSYAlbumCatalogView.swift */; };
+		ABE184991B78F98D00756062 /* LSYAlbumPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE1848E1B78F98D00756062 /* LSYAlbumPickerView.swift */; };
+		ABE1849A1B78F98D00756062 /* LSYAssetPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE1848F1B78F98D00756062 /* LSYAssetPreviewView.swift */; };
+		ABE1849B1B78F98D00756062 /* LSYAlbumCatalog.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE184911B78F98D00756062 /* LSYAlbumCatalog.swift */; };
+		ABE1849C1B78F98D00756062 /* LSYAlbumPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE184921B78F98D00756062 /* LSYAlbumPicker.swift */; };
+		ABE1849D1B78F98D00756062 /* LSYAssetPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE184931B78F98D00756062 /* LSYAssetPreview.swift */; };
+		ABE1849F1B78FA6A00756062 /* LSYNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE1849E1B78FA6A00756062 /* LSYNavigationController.swift */; };
+		ABE184A11B78FDAE00756062 /* AlbumPicker.bundle in Resources */ = {isa = PBXBuildFile; fileRef = ABE184A01B78FDAE00756062 /* AlbumPicker.bundle */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		ABE184771B78F7CA00756062 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ABE184591B78F7CA00756062 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ABE184601B78F7CA00756062;
+			remoteInfo = AlbumPicker_Swift;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		ABE184611B78F7CA00756062 /* AlbumPicker_Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AlbumPicker_Swift.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		ABE184651B78F7CA00756062 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ABE184661B78F7CA00756062 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		ABE184681B78F7CA00756062 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		ABE1846B1B78F7CA00756062 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		ABE1846D1B78F7CA00756062 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		ABE184701B78F7CA00756062 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		ABE184761B78F7CA00756062 /* AlbumPicker_SwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AlbumPicker_SwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		ABE1847B1B78F7CA00756062 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ABE1847C1B78F7CA00756062 /* AlbumPicker_SwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumPicker_SwiftTests.swift; sourceTree = "<group>"; };
+		ABE184871B78F98D00756062 /* LSYSwiftDefine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LSYSwiftDefine.swift; sourceTree = "<group>"; };
+		ABE184891B78F98D00756062 /* LSYAlbum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LSYAlbum.swift; sourceTree = "<group>"; };
+		ABE1848A1B78F98D00756062 /* LSYAlbumDelegateClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LSYAlbumDelegateClass.swift; sourceTree = "<group>"; };
+		ABE1848B1B78F98D00756062 /* LSYAlbumModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LSYAlbumModel.swift; sourceTree = "<group>"; };
+		ABE1848D1B78F98D00756062 /* LSYAlbumCatalogView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LSYAlbumCatalogView.swift; sourceTree = "<group>"; };
+		ABE1848E1B78F98D00756062 /* LSYAlbumPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LSYAlbumPickerView.swift; sourceTree = "<group>"; };
+		ABE1848F1B78F98D00756062 /* LSYAssetPreviewView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LSYAssetPreviewView.swift; sourceTree = "<group>"; };
+		ABE184911B78F98D00756062 /* LSYAlbumCatalog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LSYAlbumCatalog.swift; sourceTree = "<group>"; };
+		ABE184921B78F98D00756062 /* LSYAlbumPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LSYAlbumPicker.swift; sourceTree = "<group>"; };
+		ABE184931B78F98D00756062 /* LSYAssetPreview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LSYAssetPreview.swift; sourceTree = "<group>"; };
+		ABE1849E1B78FA6A00756062 /* LSYNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LSYNavigationController.swift; sourceTree = "<group>"; };
+		ABE184A01B78FDAE00756062 /* AlbumPicker.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AlbumPicker.bundle; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		ABE1845E1B78F7CA00756062 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ABE184731B78F7CA00756062 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		ABE184581B78F7CA00756062 = {
+			isa = PBXGroup;
+			children = (
+				ABE184631B78F7CA00756062 /* AlbumPicker_Swift */,
+				ABE184791B78F7CA00756062 /* AlbumPicker_SwiftTests */,
+				ABE184621B78F7CA00756062 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		ABE184621B78F7CA00756062 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				ABE184611B78F7CA00756062 /* AlbumPicker_Swift.app */,
+				ABE184761B78F7CA00756062 /* AlbumPicker_SwiftTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		ABE184631B78F7CA00756062 /* AlbumPicker_Swift */ = {
+			isa = PBXGroup;
+			children = (
+				ABE184861B78F98D00756062 /* LSYAlbumPicker_Swift */,
+				ABE184661B78F7CA00756062 /* AppDelegate.swift */,
+				ABE184681B78F7CA00756062 /* ViewController.swift */,
+				ABE1846A1B78F7CA00756062 /* Main.storyboard */,
+				ABE1846D1B78F7CA00756062 /* Images.xcassets */,
+				ABE1846F1B78F7CA00756062 /* LaunchScreen.xib */,
+				ABE184641B78F7CA00756062 /* Supporting Files */,
+			);
+			path = AlbumPicker_Swift;
+			sourceTree = "<group>";
+		};
+		ABE184641B78F7CA00756062 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				ABE184A01B78FDAE00756062 /* AlbumPicker.bundle */,
+				ABE184651B78F7CA00756062 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		ABE184791B78F7CA00756062 /* AlbumPicker_SwiftTests */ = {
+			isa = PBXGroup;
+			children = (
+				ABE1847C1B78F7CA00756062 /* AlbumPicker_SwiftTests.swift */,
+				ABE1847A1B78F7CA00756062 /* Supporting Files */,
+			);
+			path = AlbumPicker_SwiftTests;
+			sourceTree = "<group>";
+		};
+		ABE1847A1B78F7CA00756062 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				ABE1847B1B78F7CA00756062 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		ABE184861B78F98D00756062 /* LSYAlbumPicker_Swift */ = {
+			isa = PBXGroup;
+			children = (
+				ABE184871B78F98D00756062 /* LSYSwiftDefine.swift */,
+				ABE184881B78F98D00756062 /* Model */,
+				ABE1848C1B78F98D00756062 /* View */,
+				ABE184901B78F98D00756062 /* ViewController */,
+			);
+			path = LSYAlbumPicker_Swift;
+			sourceTree = "<group>";
+		};
+		ABE184881B78F98D00756062 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				ABE184891B78F98D00756062 /* LSYAlbum.swift */,
+				ABE1848A1B78F98D00756062 /* LSYAlbumDelegateClass.swift */,
+				ABE1848B1B78F98D00756062 /* LSYAlbumModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		ABE1848C1B78F98D00756062 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				ABE1848D1B78F98D00756062 /* LSYAlbumCatalogView.swift */,
+				ABE1848E1B78F98D00756062 /* LSYAlbumPickerView.swift */,
+				ABE1848F1B78F98D00756062 /* LSYAssetPreviewView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		ABE184901B78F98D00756062 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				ABE184911B78F98D00756062 /* LSYAlbumCatalog.swift */,
+				ABE184921B78F98D00756062 /* LSYAlbumPicker.swift */,
+				ABE184931B78F98D00756062 /* LSYAssetPreview.swift */,
+				ABE1849E1B78FA6A00756062 /* LSYNavigationController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		ABE184601B78F7CA00756062 /* AlbumPicker_Swift */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ABE184801B78F7CA00756062 /* Build configuration list for PBXNativeTarget "AlbumPicker_Swift" */;
+			buildPhases = (
+				ABE1845D1B78F7CA00756062 /* Sources */,
+				ABE1845E1B78F7CA00756062 /* Frameworks */,
+				ABE1845F1B78F7CA00756062 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AlbumPicker_Swift;
+			productName = AlbumPicker_Swift;
+			productReference = ABE184611B78F7CA00756062 /* AlbumPicker_Swift.app */;
+			productType = "com.apple.product-type.application";
+		};
+		ABE184751B78F7CA00756062 /* AlbumPicker_SwiftTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ABE184831B78F7CA00756062 /* Build configuration list for PBXNativeTarget "AlbumPicker_SwiftTests" */;
+			buildPhases = (
+				ABE184721B78F7CA00756062 /* Sources */,
+				ABE184731B78F7CA00756062 /* Frameworks */,
+				ABE184741B78F7CA00756062 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				ABE184781B78F7CA00756062 /* PBXTargetDependency */,
+			);
+			name = AlbumPicker_SwiftTests;
+			productName = AlbumPicker_SwiftTests;
+			productReference = ABE184761B78F7CA00756062 /* AlbumPicker_SwiftTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		ABE184591B78F7CA00756062 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = com.okwei;
+				TargetAttributes = {
+					ABE184601B78F7CA00756062 = {
+						CreatedOnToolsVersion = 6.4;
+					};
+					ABE184751B78F7CA00756062 = {
+						CreatedOnToolsVersion = 6.4;
+						TestTargetID = ABE184601B78F7CA00756062;
+					};
+				};
+			};
+			buildConfigurationList = ABE1845C1B78F7CA00756062 /* Build configuration list for PBXProject "AlbumPicker_Swift" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = ABE184581B78F7CA00756062;
+			productRefGroup = ABE184621B78F7CA00756062 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				ABE184601B78F7CA00756062 /* AlbumPicker_Swift */,
+				ABE184751B78F7CA00756062 /* AlbumPicker_SwiftTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		ABE1845F1B78F7CA00756062 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ABE1846C1B78F7CA00756062 /* Main.storyboard in Resources */,
+				ABE184A11B78FDAE00756062 /* AlbumPicker.bundle in Resources */,
+				ABE184711B78F7CA00756062 /* LaunchScreen.xib in Resources */,
+				ABE1846E1B78F7CA00756062 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ABE184741B78F7CA00756062 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		ABE1845D1B78F7CA00756062 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ABE184981B78F98D00756062 /* LSYAlbumCatalogView.swift in Sources */,
+				ABE184691B78F7CA00756062 /* ViewController.swift in Sources */,
+				ABE1849B1B78F98D00756062 /* LSYAlbumCatalog.swift in Sources */,
+				ABE1849A1B78F98D00756062 /* LSYAssetPreviewView.swift in Sources */,
+				ABE184941B78F98D00756062 /* LSYSwiftDefine.swift in Sources */,
+				ABE184971B78F98D00756062 /* LSYAlbumModel.swift in Sources */,
+				ABE184961B78F98D00756062 /* LSYAlbumDelegateClass.swift in Sources */,
+				ABE1849F1B78FA6A00756062 /* LSYNavigationController.swift in Sources */,
+				ABE1849C1B78F98D00756062 /* LSYAlbumPicker.swift in Sources */,
+				ABE184991B78F98D00756062 /* LSYAlbumPickerView.swift in Sources */,
+				ABE184951B78F98D00756062 /* LSYAlbum.swift in Sources */,
+				ABE1849D1B78F98D00756062 /* LSYAssetPreview.swift in Sources */,
+				ABE184671B78F7CA00756062 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ABE184721B78F7CA00756062 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ABE1847D1B78F7CA00756062 /* AlbumPicker_SwiftTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		ABE184781B78F7CA00756062 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ABE184601B78F7CA00756062 /* AlbumPicker_Swift */;
+			targetProxy = ABE184771B78F7CA00756062 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		ABE1846A1B78F7CA00756062 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ABE1846B1B78F7CA00756062 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		ABE1846F1B78F7CA00756062 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ABE184701B78F7CA00756062 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		ABE1847E1B78F7CA00756062 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		ABE1847F1B78F7CA00756062 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		ABE184811B78F7CA00756062 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = AlbumPicker_Swift/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "lsy.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		ABE184821B78F7CA00756062 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = AlbumPicker_Swift/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "lsy.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		ABE184841B78F7CA00756062 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = AlbumPicker_SwiftTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "lsy.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AlbumPicker_Swift.app/AlbumPicker_Swift";
+			};
+			name = Debug;
+		};
+		ABE184851B78F7CA00756062 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = AlbumPicker_SwiftTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "lsy.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AlbumPicker_Swift.app/AlbumPicker_Swift";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		ABE1845C1B78F7CA00756062 /* Build configuration list for PBXProject "AlbumPicker_Swift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ABE1847E1B78F7CA00756062 /* Debug */,
+				ABE1847F1B78F7CA00756062 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ABE184801B78F7CA00756062 /* Build configuration list for PBXNativeTarget "AlbumPicker_Swift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ABE184811B78F7CA00756062 /* Debug */,
+				ABE184821B78F7CA00756062 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ABE184831B78F7CA00756062 /* Build configuration list for PBXNativeTarget "AlbumPicker_SwiftTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ABE184841B78F7CA00756062 /* Debug */,
+				ABE184851B78F7CA00756062 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = ABE184591B78F7CA00756062 /* Project object */;
+}

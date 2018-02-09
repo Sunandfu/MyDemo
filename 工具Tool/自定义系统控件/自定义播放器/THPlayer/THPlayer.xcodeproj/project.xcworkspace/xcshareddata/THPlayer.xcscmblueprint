@@ -1,0 +1,35 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "0952bddc-fb18-c24b-b46b-e824dee263fd++6452",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+    "be73ea83-1ef3-4b60-8caa-c8a69a106ff0++9413" : {
+
+    },
+    "0952bddc-fb18-c24b-b46b-e824dee263fd++6452" : {
+
+    }
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "be73ea83-1ef3-4b60-8caa-c8a69a106ff0++9413" : 0,
+    "0952bddc-fb18-c24b-b46b-e824dee263fd++6452" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "89749576-F4BC-49D8-9D3D-0A240E6E563B",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "be73ea83-1ef3-4b60-8caa-c8a69a106ff0++9413" : "kailong.chenOtherProject\/THPlayer\/THPlayer\/ThirdLib\/SDWebImage\/",
+    "0952bddc-fb18-c24b-b46b-e824dee263fd++6452" : "kailong.chenOtherProject\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "THPlayer",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "THPlayer\/THPlayer.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/kailong.chen@192.168.1.11\/svn\/client_code",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "0952bddc-fb18-c24b-b46b-e824dee263fd++6452"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "http:\/\/www.svnchina.com\/svn\/finalversion",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "be73ea83-1ef3-4b60-8caa-c8a69a106ff0++9413"
+    }
+  ]
+}

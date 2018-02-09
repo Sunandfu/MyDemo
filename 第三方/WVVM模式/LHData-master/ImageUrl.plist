@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>6</key>
+	<string>http://interface.build1ng.com:8088/images/xiaomishu.png</string>
+	<key>5</key>
+	<string>http://ejiandu2.oss-cn-beijing.aliyuncs.com/user/file-20151230110113293.png</string>
+	<key>4</key>
+	<string>http://www.build1ng.com/upload/headshot/3fe7772630814748b8ccc8c4d0982ad9_cut.jpg</string>
+	<key>3</key>
+	<string>http://ejiandu2.oss-cn-beijing.aliyuncs.com/user/file-20160201144559259.PNG</string>
+	<key>2</key>
+	<string>http://ejiandu2.oss-cn-beijing.aliyuncs.com/user/file-20160301181957337.png</string>
+	<key>1</key>
+	<string>http://ejiandu2.oss-cn-beijing.aliyuncs.com/1753file-20151222162947829.png</string>
+	<key>0</key>
+	<string>http://ejiandu2.oss-cn-beijing.aliyuncs.com/user/file-20160302190319310.PNG</string>
+</dict>
+</plist>

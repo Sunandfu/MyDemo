@@ -1,0 +1,689 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		00C46A0A53F641E4843D005CD7E69291 /* UIScrollView+VTMagic.m in Sources */ = {isa = PBXBuildFile; fileRef = 87533C3F338183B28179CD88E27B7016 /* UIScrollView+VTMagic.m */; };
+		01536026F9DE46613EE8FD1459D9C25B /* UIButton+VTMagic.m in Sources */ = {isa = PBXBuildFile; fileRef = F966FE4395D4E99993D1AF17273F1116 /* UIButton+VTMagic.m */; };
+		0BC9E3B8C6A09D690AF781706BF3A5EF /* VTMagicProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 428F6D8FF10AF6533C4A887197251C6E /* VTMagicProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1048F1D60EA9A476E382597A309CCECE /* UIColor+VTMagic.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F368DBD85B03EA8C9BAE8E3D11BCCC9 /* UIColor+VTMagic.m */; };
+		12385181749D2E622D0B6EDC576DE3BD /* Pods-VTMagic-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CC4E9284184B70042D07D0A4A3F5D27 /* Pods-VTMagic-dummy.m */; };
+		1330821EB31B906A785F42FE24E9BFEF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2A6FF208CEC4C2861F1E9D42D651453 /* Foundation.framework */; };
+		260C868350C0F9D642D578BB99E997DD /* UIColor+VTMagic.h in Headers */ = {isa = PBXBuildFile; fileRef = 7AE0B58F3FB178BEF8E11D63145320C8 /* UIColor+VTMagic.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		26CF5FBBB0AAF572C5FE09C0450F1BDE /* VTEnumType.h in Headers */ = {isa = PBXBuildFile; fileRef = 7B4D3C8C1055FACC6532DF8732DF89B9 /* VTEnumType.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		397BCDD6B46A3049FA2424CAE4314762 /* VTContentView.h in Headers */ = {isa = PBXBuildFile; fileRef = F156A3A18A2A97ACEBB61EFD46255980 /* VTContentView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		496FA3C10C265509B3D5B17DAD2C549A /* VTMagic-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 460DA5B4F7BF1F3125CF1E842A03F63E /* VTMagic-dummy.m */; };
+		559EEE6EC3450D7C19556810718738C4 /* VTContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 02194CAB11D88904294484C80571E8BA /* VTContentView.m */; };
+		5D80BE85F351DE16D47C936655715EFA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2A6FF208CEC4C2861F1E9D42D651453 /* Foundation.framework */; };
+		7F6D259268D95789C24C67A19EA8C17A /* VTMenuBar.h in Headers */ = {isa = PBXBuildFile; fileRef = FE9B8998790DD26AC3BBD84844383A6A /* VTMenuBar.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		83BFA9E2D720C73F39DD2D9DCA916533 /* VTMenuBar.m in Sources */ = {isa = PBXBuildFile; fileRef = FECFDBB378B09844EEEB5FE9227768DC /* VTMenuBar.m */; };
+		895A162C7FCB7960131F2BFBD4F253C7 /* UIScrollView+VTMagic.h in Headers */ = {isa = PBXBuildFile; fileRef = 61EA7A1E2A52FEC71E5CD9C90194564F /* UIScrollView+VTMagic.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		89E2D677D20E0CE36752C36E78F1E4F7 /* VTMagicController.h in Headers */ = {isa = PBXBuildFile; fileRef = 442BCA3C59224F4D0D4FA177AE6337A6 /* VTMagicController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		91A8924DD3432789212466903E294DBD /* VTMagicView.m in Sources */ = {isa = PBXBuildFile; fileRef = 22ED9B5776E0D9C95D7B76A9E4F11CC3 /* VTMagicView.m */; };
+		9883E2C77F32461D798C0B9B71BD0975 /* VTMagicView.h in Headers */ = {isa = PBXBuildFile; fileRef = 13EAD7C4377729563130E86607AB00DF /* VTMagicView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A397969F22B7E5F337ACD0C7F0BD1A7D /* VTMagic.h in Headers */ = {isa = PBXBuildFile; fileRef = 552CCA018D5F3153BC07B9A3E4D0305A /* VTMagic.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AC7C81199A5241525EA18D5D26F9BD18 /* VTMagicMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = DF9A2528778D15A3AB26A9E61EB7AC22 /* VTMagicMacros.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B0AE3CB3EAE25C82F4E3A9D5CED65A2A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E86668F20F252C440D1015B816BE59C5 /* UIKit.framework */; };
+		B4F0A5C119F2CAF8C924CE19360A490F /* UIViewController+VTMagic.h in Headers */ = {isa = PBXBuildFile; fileRef = 8692EC9CDD8DA52FFAB82F1A08A4B322 /* UIViewController+VTMagic.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C2AAD73D9EAD00D836376789AF8621EB /* Pods-VTMagicTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D918CE10C384F9CF056F68967B1B9726 /* Pods-VTMagicTests-dummy.m */; };
+		CDA5095EE6EA9A8024E308DCAB3B031C /* VTMagicController.m in Sources */ = {isa = PBXBuildFile; fileRef = AECCC7CBA17A91741EFD5CF7014FAD2E /* VTMagicController.m */; };
+		D6F824910DA1F51101E9F7B0C74F43BC /* UIViewController+VTMagic.m in Sources */ = {isa = PBXBuildFile; fileRef = B4B75BEA31B51026A3CAE832A68F8793 /* UIViewController+VTMagic.m */; };
+		E8F71DA2A92B1A99490E0B796F40696F /* UIButton+VTMagic.h in Headers */ = {isa = PBXBuildFile; fileRef = 691F0D5E29940FA0D92C259B9514C499 /* UIButton+VTMagic.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EF856693213A2632B774A39FC2E07FFF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2A6FF208CEC4C2861F1E9D42D651453 /* Foundation.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		26E444AC5DAE75A69094DBB44F0AF9F2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F46AF923E4C9E617067E150B11989AC5;
+			remoteInfo = VTMagic;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		02194CAB11D88904294484C80571E8BA /* VTContentView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = VTContentView.m; sourceTree = "<group>"; };
+		0A2CBBF326F762145AFD96484A649C13 /* Pods-VTMagicTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-VTMagicTests-frameworks.sh"; sourceTree = "<group>"; };
+		13EAD7C4377729563130E86607AB00DF /* VTMagicView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = VTMagicView.h; sourceTree = "<group>"; };
+		18CC42F6A60740E3B70046F3F90E9EED /* Pods-VTMagic-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-VTMagic-resources.sh"; sourceTree = "<group>"; };
+		22ED9B5776E0D9C95D7B76A9E4F11CC3 /* VTMagicView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = VTMagicView.m; sourceTree = "<group>"; };
+		3F368DBD85B03EA8C9BAE8E3D11BCCC9 /* UIColor+VTMagic.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIColor+VTMagic.m"; sourceTree = "<group>"; };
+		3FE10075E36934FB034A43BA21485B4F /* Pods-VTMagic-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-VTMagic-acknowledgements.markdown"; sourceTree = "<group>"; };
+		428F6D8FF10AF6533C4A887197251C6E /* VTMagicProtocol.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = VTMagicProtocol.h; sourceTree = "<group>"; };
+		442BCA3C59224F4D0D4FA177AE6337A6 /* VTMagicController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = VTMagicController.h; sourceTree = "<group>"; };
+		460DA5B4F7BF1F3125CF1E842A03F63E /* VTMagic-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "VTMagic-dummy.m"; sourceTree = "<group>"; };
+		4C4D428E7EDB27FC86F8A36932AADC4A /* VTMagic-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "VTMagic-prefix.pch"; sourceTree = "<group>"; };
+		552CCA018D5F3153BC07B9A3E4D0305A /* VTMagic.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = VTMagic.h; sourceTree = "<group>"; };
+		61EA7A1E2A52FEC71E5CD9C90194564F /* UIScrollView+VTMagic.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+VTMagic.h"; sourceTree = "<group>"; };
+		691F0D5E29940FA0D92C259B9514C499 /* UIButton+VTMagic.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIButton+VTMagic.h"; sourceTree = "<group>"; };
+		6A82DDCE656FCDE171DBA5DC4E069F69 /* VTMagic.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = VTMagic.xcconfig; sourceTree = "<group>"; };
+		6E574C5EE9F1EECE16833B22B1A041FB /* Pods-VTMagic.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-VTMagic.debug.xcconfig"; sourceTree = "<group>"; };
+		706DDDC53AA6CFB092A32ACE325969F8 /* Pods-VTMagic.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-VTMagic.release.xcconfig"; sourceTree = "<group>"; };
+		781FF997B6B52C64ED2BC735239F0A9B /* Pods-VTMagic-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-VTMagic-acknowledgements.plist"; sourceTree = "<group>"; };
+		7AE0B58F3FB178BEF8E11D63145320C8 /* UIColor+VTMagic.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIColor+VTMagic.h"; sourceTree = "<group>"; };
+		7B4D3C8C1055FACC6532DF8732DF89B9 /* VTEnumType.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = VTEnumType.h; sourceTree = "<group>"; };
+		8692EC9CDD8DA52FFAB82F1A08A4B322 /* UIViewController+VTMagic.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIViewController+VTMagic.h"; sourceTree = "<group>"; };
+		87533C3F338183B28179CD88E27B7016 /* UIScrollView+VTMagic.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+VTMagic.m"; sourceTree = "<group>"; };
+		8CC4E9284184B70042D07D0A4A3F5D27 /* Pods-VTMagic-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-VTMagic-dummy.m"; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A234468989EBE668B2355EA20DDBE6EB /* libPods-VTMagicTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-VTMagicTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A2A6FF208CEC4C2861F1E9D42D651453 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		AECCC7CBA17A91741EFD5CF7014FAD2E /* VTMagicController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = VTMagicController.m; sourceTree = "<group>"; };
+		B076BE9F34BDCE12E7F76CBA036727AA /* Pods-VTMagic-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-VTMagic-frameworks.sh"; sourceTree = "<group>"; };
+		B28B935C4A9885E4FEAC618A5089B6A4 /* Pods-VTMagicTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-VTMagicTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		B2D070B45DF7A1D3D929C3362A06E026 /* Pods-VTMagicTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-VTMagicTests.release.xcconfig"; sourceTree = "<group>"; };
+		B4B75BEA31B51026A3CAE832A68F8793 /* UIViewController+VTMagic.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+VTMagic.m"; sourceTree = "<group>"; };
+		C880B9B10F11697376E0576EDBFE92B6 /* Pods-VTMagicTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-VTMagicTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		CBE4F85C833BC0A48C89D489322F2EEB /* libPods-VTMagic.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-VTMagic.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D16A8A8BF4CC947F57A5F4A8D3792364 /* libVTMagic.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libVTMagic.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		D7E601151EEDF33F246FFC5D968931D9 /* Pods-VTMagicTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-VTMagicTests-resources.sh"; sourceTree = "<group>"; };
+		D918CE10C384F9CF056F68967B1B9726 /* Pods-VTMagicTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-VTMagicTests-dummy.m"; sourceTree = "<group>"; };
+		DF9A2528778D15A3AB26A9E61EB7AC22 /* VTMagicMacros.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = VTMagicMacros.h; sourceTree = "<group>"; };
+		E05D286378363CD2CEC779059424022E /* Pods-VTMagicTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-VTMagicTests.debug.xcconfig"; sourceTree = "<group>"; };
+		E86668F20F252C440D1015B816BE59C5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		F156A3A18A2A97ACEBB61EFD46255980 /* VTContentView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = VTContentView.h; sourceTree = "<group>"; };
+		F966FE4395D4E99993D1AF17273F1116 /* UIButton+VTMagic.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIButton+VTMagic.m"; sourceTree = "<group>"; };
+		FE9B8998790DD26AC3BBD84844383A6A /* VTMenuBar.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = VTMenuBar.h; sourceTree = "<group>"; };
+		FECFDBB378B09844EEEB5FE9227768DC /* VTMenuBar.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = VTMenuBar.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		109521176F9B7447313BA84D8D38DB6C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5D80BE85F351DE16D47C936655715EFA /* Foundation.framework in Frameworks */,
+				B0AE3CB3EAE25C82F4E3A9D5CED65A2A /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		18ACBA05F14C10831BE6639F42BBAE2E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1330821EB31B906A785F42FE24E9BFEF /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C5165C28CCF5A097353C8DC44D336BE2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EF856693213A2632B774A39FC2E07FFF /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0A219CC8F1FC1AC58613A19E28337FF6 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				335EDFC9C8C3AED9002F1B17F525EE19 /* Pods-VTMagic */,
+				116D4C1A98CE1FE8982982A8B8036CF5 /* Pods-VTMagicTests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		116D4C1A98CE1FE8982982A8B8036CF5 /* Pods-VTMagicTests */ = {
+			isa = PBXGroup;
+			children = (
+				B28B935C4A9885E4FEAC618A5089B6A4 /* Pods-VTMagicTests-acknowledgements.markdown */,
+				C880B9B10F11697376E0576EDBFE92B6 /* Pods-VTMagicTests-acknowledgements.plist */,
+				D918CE10C384F9CF056F68967B1B9726 /* Pods-VTMagicTests-dummy.m */,
+				0A2CBBF326F762145AFD96484A649C13 /* Pods-VTMagicTests-frameworks.sh */,
+				D7E601151EEDF33F246FFC5D968931D9 /* Pods-VTMagicTests-resources.sh */,
+				E05D286378363CD2CEC779059424022E /* Pods-VTMagicTests.debug.xcconfig */,
+				B2D070B45DF7A1D3D929C3362A06E026 /* Pods-VTMagicTests.release.xcconfig */,
+			);
+			name = "Pods-VTMagicTests";
+			path = "Target Support Files/Pods-VTMagicTests";
+			sourceTree = "<group>";
+		};
+		335EDFC9C8C3AED9002F1B17F525EE19 /* Pods-VTMagic */ = {
+			isa = PBXGroup;
+			children = (
+				3FE10075E36934FB034A43BA21485B4F /* Pods-VTMagic-acknowledgements.markdown */,
+				781FF997B6B52C64ED2BC735239F0A9B /* Pods-VTMagic-acknowledgements.plist */,
+				8CC4E9284184B70042D07D0A4A3F5D27 /* Pods-VTMagic-dummy.m */,
+				B076BE9F34BDCE12E7F76CBA036727AA /* Pods-VTMagic-frameworks.sh */,
+				18CC42F6A60740E3B70046F3F90E9EED /* Pods-VTMagic-resources.sh */,
+				6E574C5EE9F1EECE16833B22B1A041FB /* Pods-VTMagic.debug.xcconfig */,
+				706DDDC53AA6CFB092A32ACE325969F8 /* Pods-VTMagic.release.xcconfig */,
+			);
+			name = "Pods-VTMagic";
+			path = "Target Support Files/Pods-VTMagic";
+			sourceTree = "<group>";
+		};
+		433CD3331B6C3787F473C941B61FC68F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F302CD3B306AF1ED96B9AF31FCDBC26C /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		522407BE6AB487BCC5631C540992F833 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CBE4F85C833BC0A48C89D489322F2EEB /* libPods-VTMagic.a */,
+				A234468989EBE668B2355EA20DDBE6EB /* libPods-VTMagicTests.a */,
+				D16A8A8BF4CC947F57A5F4A8D3792364 /* libVTMagic.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5B4456A8DF7946B08BAB0ABE4613B046 /* VTMagic */ = {
+			isa = PBXGroup;
+			children = (
+				600007D1EFBCEF421B7F390598A7BB56 /* Core */,
+				99712D282A9DE6CB9771CBB5D0B5E5E7 /* Support Files */,
+				F5B375A580B1939534B2DA7626CADF4F /* VTMagic */,
+			);
+			name = VTMagic;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		600007D1EFBCEF421B7F390598A7BB56 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				7DD796F737FB1B70C3F03EBC84184305 /* VTMagic */,
+			);
+			name = Core;
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				C632EF81A84B7377DAED89BF52563D9B /* Development Pods */,
+				433CD3331B6C3787F473C941B61FC68F /* Frameworks */,
+				522407BE6AB487BCC5631C540992F833 /* Products */,
+				0A219CC8F1FC1AC58613A19E28337FF6 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		7DD796F737FB1B70C3F03EBC84184305 /* VTMagic */ = {
+			isa = PBXGroup;
+			children = (
+				691F0D5E29940FA0D92C259B9514C499 /* UIButton+VTMagic.h */,
+				F966FE4395D4E99993D1AF17273F1116 /* UIButton+VTMagic.m */,
+				7AE0B58F3FB178BEF8E11D63145320C8 /* UIColor+VTMagic.h */,
+				3F368DBD85B03EA8C9BAE8E3D11BCCC9 /* UIColor+VTMagic.m */,
+				61EA7A1E2A52FEC71E5CD9C90194564F /* UIScrollView+VTMagic.h */,
+				87533C3F338183B28179CD88E27B7016 /* UIScrollView+VTMagic.m */,
+				8692EC9CDD8DA52FFAB82F1A08A4B322 /* UIViewController+VTMagic.h */,
+				B4B75BEA31B51026A3CAE832A68F8793 /* UIViewController+VTMagic.m */,
+				F156A3A18A2A97ACEBB61EFD46255980 /* VTContentView.h */,
+				02194CAB11D88904294484C80571E8BA /* VTContentView.m */,
+				7B4D3C8C1055FACC6532DF8732DF89B9 /* VTEnumType.h */,
+				442BCA3C59224F4D0D4FA177AE6337A6 /* VTMagicController.h */,
+				AECCC7CBA17A91741EFD5CF7014FAD2E /* VTMagicController.m */,
+				DF9A2528778D15A3AB26A9E61EB7AC22 /* VTMagicMacros.h */,
+				428F6D8FF10AF6533C4A887197251C6E /* VTMagicProtocol.h */,
+				13EAD7C4377729563130E86607AB00DF /* VTMagicView.h */,
+				22ED9B5776E0D9C95D7B76A9E4F11CC3 /* VTMagicView.m */,
+				FE9B8998790DD26AC3BBD84844383A6A /* VTMenuBar.h */,
+				FECFDBB378B09844EEEB5FE9227768DC /* VTMenuBar.m */,
+			);
+			path = VTMagic;
+			sourceTree = "<group>";
+		};
+		99712D282A9DE6CB9771CBB5D0B5E5E7 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				6A82DDCE656FCDE171DBA5DC4E069F69 /* VTMagic.xcconfig */,
+				460DA5B4F7BF1F3125CF1E842A03F63E /* VTMagic-dummy.m */,
+				4C4D428E7EDB27FC86F8A36932AADC4A /* VTMagic-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "Pods/Target Support Files/VTMagic";
+			sourceTree = "<group>";
+		};
+		C632EF81A84B7377DAED89BF52563D9B /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5B4456A8DF7946B08BAB0ABE4613B046 /* VTMagic */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		F302CD3B306AF1ED96B9AF31FCDBC26C /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				A2A6FF208CEC4C2861F1E9D42D651453 /* Foundation.framework */,
+				E86668F20F252C440D1015B816BE59C5 /* UIKit.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		F5B375A580B1939534B2DA7626CADF4F /* VTMagic */ = {
+			isa = PBXGroup;
+			children = (
+				552CCA018D5F3153BC07B9A3E4D0305A /* VTMagic.h */,
+			);
+			path = VTMagic;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		60EE940C8907ACB72A787F2481541D9C /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E8F71DA2A92B1A99490E0B796F40696F /* UIButton+VTMagic.h in Headers */,
+				260C868350C0F9D642D578BB99E997DD /* UIColor+VTMagic.h in Headers */,
+				895A162C7FCB7960131F2BFBD4F253C7 /* UIScrollView+VTMagic.h in Headers */,
+				B4F0A5C119F2CAF8C924CE19360A490F /* UIViewController+VTMagic.h in Headers */,
+				397BCDD6B46A3049FA2424CAE4314762 /* VTContentView.h in Headers */,
+				26CF5FBBB0AAF572C5FE09C0450F1BDE /* VTEnumType.h in Headers */,
+				A397969F22B7E5F337ACD0C7F0BD1A7D /* VTMagic.h in Headers */,
+				89E2D677D20E0CE36752C36E78F1E4F7 /* VTMagicController.h in Headers */,
+				AC7C81199A5241525EA18D5D26F9BD18 /* VTMagicMacros.h in Headers */,
+				0BC9E3B8C6A09D690AF781706BF3A5EF /* VTMagicProtocol.h in Headers */,
+				9883E2C77F32461D798C0B9B71BD0975 /* VTMagicView.h in Headers */,
+				7F6D259268D95789C24C67A19EA8C17A /* VTMenuBar.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		291875C610C7BCCCC1F40306CB888D15 /* Pods-VTMagic */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BBFBD2D6ACB69F7FCD42EF4F216EEB8E /* Build configuration list for PBXNativeTarget "Pods-VTMagic" */;
+			buildPhases = (
+				66FCF534F8F18A6FCA6ADC9AB669AC7C /* Sources */,
+				18ACBA05F14C10831BE6639F42BBAE2E /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				39A9D128D4C2ED8839F1BE2EE843D52C /* PBXTargetDependency */,
+			);
+			name = "Pods-VTMagic";
+			productName = "Pods-VTMagic";
+			productReference = CBE4F85C833BC0A48C89D489322F2EEB /* libPods-VTMagic.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		7A938632579B2EA1BE9165E1486543D7 /* Pods-VTMagicTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2B6520C9BEE4A48046541C116668AA45 /* Build configuration list for PBXNativeTarget "Pods-VTMagicTests" */;
+			buildPhases = (
+				2DAB5C9564E2E6F28BEE37DCF2E4846A /* Sources */,
+				C5165C28CCF5A097353C8DC44D336BE2 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-VTMagicTests";
+			productName = "Pods-VTMagicTests";
+			productReference = A234468989EBE668B2355EA20DDBE6EB /* libPods-VTMagicTests.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		F46AF923E4C9E617067E150B11989AC5 /* VTMagic */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EA4137154A14F03375F320557654D8AF /* Build configuration list for PBXNativeTarget "VTMagic" */;
+			buildPhases = (
+				0FE1D47822ED94092C632204C43903FB /* Sources */,
+				109521176F9B7447313BA84D8D38DB6C /* Frameworks */,
+				60EE940C8907ACB72A787F2481541D9C /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = VTMagic;
+			productName = VTMagic;
+			productReference = D16A8A8BF4CC947F57A5F4A8D3792364 /* libVTMagic.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0920;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = 522407BE6AB487BCC5631C540992F833 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				291875C610C7BCCCC1F40306CB888D15 /* Pods-VTMagic */,
+				7A938632579B2EA1BE9165E1486543D7 /* Pods-VTMagicTests */,
+				F46AF923E4C9E617067E150B11989AC5 /* VTMagic */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0FE1D47822ED94092C632204C43903FB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				01536026F9DE46613EE8FD1459D9C25B /* UIButton+VTMagic.m in Sources */,
+				1048F1D60EA9A476E382597A309CCECE /* UIColor+VTMagic.m in Sources */,
+				00C46A0A53F641E4843D005CD7E69291 /* UIScrollView+VTMagic.m in Sources */,
+				D6F824910DA1F51101E9F7B0C74F43BC /* UIViewController+VTMagic.m in Sources */,
+				559EEE6EC3450D7C19556810718738C4 /* VTContentView.m in Sources */,
+				496FA3C10C265509B3D5B17DAD2C549A /* VTMagic-dummy.m in Sources */,
+				CDA5095EE6EA9A8024E308DCAB3B031C /* VTMagicController.m in Sources */,
+				91A8924DD3432789212466903E294DBD /* VTMagicView.m in Sources */,
+				83BFA9E2D720C73F39DD2D9DCA916533 /* VTMenuBar.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2DAB5C9564E2E6F28BEE37DCF2E4846A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C2AAD73D9EAD00D836376789AF8621EB /* Pods-VTMagicTests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		66FCF534F8F18A6FCA6ADC9AB669AC7C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				12385181749D2E622D0B6EDC576DE3BD /* Pods-VTMagic-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		39A9D128D4C2ED8839F1BE2EE843D52C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = VTMagic;
+			target = F46AF923E4C9E617067E150B11989AC5 /* VTMagic */;
+			targetProxy = 26E444AC5DAE75A69094DBB44F0AF9F2 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		3BE205EEEE1C5CA0C7939589E5E64BAB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E05D286378363CD2CEC779059424022E /* Pods-VTMagicTests.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		3FA2475660FFC880302AD18E29B2E5FC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				ONLY_ACTIVE_ARCH = YES;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		4EFA533A2FE4B31DFAD4A2DF5C31ADE9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B2D070B45DF7A1D3D929C3362A06E026 /* Pods-VTMagicTests.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		8723E210649D9DCE6D9D0E6300CE27AD /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 706DDDC53AA6CFB092A32ACE325969F8 /* Pods-VTMagic.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		902DEE8A70A0F78208F37A1DC61ED752 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6A82DDCE656FCDE171DBA5DC4E069F69 /* VTMagic.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/VTMagic/VTMagic-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		9A1E1F74CD7733693ED81BDD747FDADA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6E574C5EE9F1EECE16833B22B1A041FB /* Pods-VTMagic.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		F325026B55060D3B22BEC0BAB5FA7344 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FDF91D76313F2E01C2A921A0DBF55B9D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6A82DDCE656FCDE171DBA5DC4E069F69 /* VTMagic.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/VTMagic/VTMagic-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2B6520C9BEE4A48046541C116668AA45 /* Build configuration list for PBXNativeTarget "Pods-VTMagicTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3BE205EEEE1C5CA0C7939589E5E64BAB /* Debug */,
+				4EFA533A2FE4B31DFAD4A2DF5C31ADE9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3FA2475660FFC880302AD18E29B2E5FC /* Debug */,
+				F325026B55060D3B22BEC0BAB5FA7344 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BBFBD2D6ACB69F7FCD42EF4F216EEB8E /* Build configuration list for PBXNativeTarget "Pods-VTMagic" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9A1E1F74CD7733693ED81BDD747FDADA /* Debug */,
+				8723E210649D9DCE6D9D0E6300CE27AD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EA4137154A14F03375F320557654D8AF /* Build configuration list for PBXNativeTarget "VTMagic" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FDF91D76313F2E01C2A921A0DBF55B9D /* Debug */,
+				902DEE8A70A0F78208F37A1DC61ED752 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}

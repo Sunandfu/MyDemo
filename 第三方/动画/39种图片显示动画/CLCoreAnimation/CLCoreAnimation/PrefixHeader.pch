@@ -1,0 +1,18 @@
+//
+//  PrefixHeader.pch
+//  CLCoreAnimation
+//
+//  Created by 优聚投 on 16/6/20.
+//  Copyright © 2016年 More. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+#import "UIView+CLExtension.h"
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+#define WIDTH ([[UIScreen mainScreen] bounds].size.width)
+#define HEIGHT ([[UIScreen mainScreen] bounds].size.height)
+#endif /* PrefixHeader_pch */

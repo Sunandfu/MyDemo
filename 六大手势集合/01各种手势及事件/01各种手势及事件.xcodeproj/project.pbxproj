@@ -1,0 +1,351 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FDEDA1C71CBF6FB700EB1815 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FDEDA1C61CBF6FB700EB1815 /* main.m */; };
+		FDEDA1CA1CBF6FB700EB1815 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FDEDA1C91CBF6FB700EB1815 /* AppDelegate.m */; };
+		FDEDA1D21CBF6FB700EB1815 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FDEDA1D11CBF6FB700EB1815 /* Assets.xcassets */; };
+		FDEDA1D51CBF6FB700EB1815 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDEDA1D31CBF6FB700EB1815 /* LaunchScreen.storyboard */; };
+		FDEDA1DE1CBF703A00EB1815 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FDEDA1DD1CBF703A00EB1815 /* BaseViewController.m */; };
+		FDEDA1E11CBF717D00EB1815 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FDEDA1E01CBF717D00EB1815 /* RootViewController.m */; };
+		FDEDA1E41CBF723800EB1815 /* TouchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FDEDA1E31CBF723800EB1815 /* TouchViewController.m */; };
+		FDEDA1E71CBF725000EB1815 /* TapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FDEDA1E61CBF725000EB1815 /* TapViewController.m */; };
+		FDEDA1EA1CBF726E00EB1815 /* LongPressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FDEDA1E91CBF726E00EB1815 /* LongPressViewController.m */; };
+		FDEDA1ED1CBF728A00EB1815 /* SwipeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FDEDA1EC1CBF728A00EB1815 /* SwipeViewController.m */; };
+		FDEDA1F01CBF729F00EB1815 /* PanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FDEDA1EF1CBF729F00EB1815 /* PanViewController.m */; };
+		FDEDA1F31CBF72C300EB1815 /* RotationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FDEDA1F21CBF72C300EB1815 /* RotationViewController.m */; };
+		FDEDA1F61CBF72E100EB1815 /* PinchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FDEDA1F51CBF72E100EB1815 /* PinchViewController.m */; };
+		FDEDA1F81CBF850C00EB1815 /* 01.JPG in Resources */ = {isa = PBXBuildFile; fileRef = FDEDA1F71CBF850C00EB1815 /* 01.JPG */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		FDEDA1C21CBF6FB700EB1815 /* 01各种手势及事件.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "01各种手势及事件.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FDEDA1C61CBF6FB700EB1815 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		FDEDA1C81CBF6FB700EB1815 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		FDEDA1C91CBF6FB700EB1815 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		FDEDA1D11CBF6FB700EB1815 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FDEDA1D41CBF6FB700EB1815 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		FDEDA1D61CBF6FB700EB1815 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FDEDA1DC1CBF703A00EB1815 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
+		FDEDA1DD1CBF703A00EB1815 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
+		FDEDA1DF1CBF717D00EB1815 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		FDEDA1E01CBF717D00EB1815 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		FDEDA1E21CBF723800EB1815 /* TouchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchViewController.h; sourceTree = "<group>"; };
+		FDEDA1E31CBF723800EB1815 /* TouchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TouchViewController.m; sourceTree = "<group>"; };
+		FDEDA1E51CBF725000EB1815 /* TapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TapViewController.h; sourceTree = "<group>"; };
+		FDEDA1E61CBF725000EB1815 /* TapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TapViewController.m; sourceTree = "<group>"; };
+		FDEDA1E81CBF726E00EB1815 /* LongPressViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LongPressViewController.h; sourceTree = "<group>"; };
+		FDEDA1E91CBF726E00EB1815 /* LongPressViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LongPressViewController.m; sourceTree = "<group>"; };
+		FDEDA1EB1CBF728A00EB1815 /* SwipeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwipeViewController.h; sourceTree = "<group>"; };
+		FDEDA1EC1CBF728A00EB1815 /* SwipeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwipeViewController.m; sourceTree = "<group>"; };
+		FDEDA1EE1CBF729F00EB1815 /* PanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PanViewController.h; sourceTree = "<group>"; };
+		FDEDA1EF1CBF729F00EB1815 /* PanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PanViewController.m; sourceTree = "<group>"; };
+		FDEDA1F11CBF72C300EB1815 /* RotationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RotationViewController.h; sourceTree = "<group>"; };
+		FDEDA1F21CBF72C300EB1815 /* RotationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RotationViewController.m; sourceTree = "<group>"; };
+		FDEDA1F41CBF72E100EB1815 /* PinchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PinchViewController.h; sourceTree = "<group>"; };
+		FDEDA1F51CBF72E100EB1815 /* PinchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PinchViewController.m; sourceTree = "<group>"; };
+		FDEDA1F71CBF850C00EB1815 /* 01.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 01.JPG; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FDEDA1BF1CBF6FB700EB1815 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FDEDA1B91CBF6FB700EB1815 = {
+			isa = PBXGroup;
+			children = (
+				FDEDA1C41CBF6FB700EB1815 /* 01各种手势及事件 */,
+				FDEDA1C31CBF6FB700EB1815 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FDEDA1C31CBF6FB700EB1815 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FDEDA1C21CBF6FB700EB1815 /* 01各种手势及事件.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FDEDA1C41CBF6FB700EB1815 /* 01各种手势及事件 */ = {
+			isa = PBXGroup;
+			children = (
+				FDEDA1F71CBF850C00EB1815 /* 01.JPG */,
+				FDEDA1C81CBF6FB700EB1815 /* AppDelegate.h */,
+				FDEDA1C91CBF6FB700EB1815 /* AppDelegate.m */,
+				FDEDA1DC1CBF703A00EB1815 /* BaseViewController.h */,
+				FDEDA1DD1CBF703A00EB1815 /* BaseViewController.m */,
+				FDEDA1DF1CBF717D00EB1815 /* RootViewController.h */,
+				FDEDA1E01CBF717D00EB1815 /* RootViewController.m */,
+				FDEDA1E21CBF723800EB1815 /* TouchViewController.h */,
+				FDEDA1E31CBF723800EB1815 /* TouchViewController.m */,
+				FDEDA1E51CBF725000EB1815 /* TapViewController.h */,
+				FDEDA1E61CBF725000EB1815 /* TapViewController.m */,
+				FDEDA1E81CBF726E00EB1815 /* LongPressViewController.h */,
+				FDEDA1E91CBF726E00EB1815 /* LongPressViewController.m */,
+				FDEDA1EB1CBF728A00EB1815 /* SwipeViewController.h */,
+				FDEDA1EC1CBF728A00EB1815 /* SwipeViewController.m */,
+				FDEDA1EE1CBF729F00EB1815 /* PanViewController.h */,
+				FDEDA1EF1CBF729F00EB1815 /* PanViewController.m */,
+				FDEDA1F11CBF72C300EB1815 /* RotationViewController.h */,
+				FDEDA1F21CBF72C300EB1815 /* RotationViewController.m */,
+				FDEDA1F41CBF72E100EB1815 /* PinchViewController.h */,
+				FDEDA1F51CBF72E100EB1815 /* PinchViewController.m */,
+				FDEDA1D11CBF6FB700EB1815 /* Assets.xcassets */,
+				FDEDA1D31CBF6FB700EB1815 /* LaunchScreen.storyboard */,
+				FDEDA1D61CBF6FB700EB1815 /* Info.plist */,
+				FDEDA1C51CBF6FB700EB1815 /* Supporting Files */,
+			);
+			path = "01各种手势及事件";
+			sourceTree = "<group>";
+		};
+		FDEDA1C51CBF6FB700EB1815 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FDEDA1C61CBF6FB700EB1815 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FDEDA1C11CBF6FB700EB1815 /* 01各种手势及事件 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FDEDA1D91CBF6FB700EB1815 /* Build configuration list for PBXNativeTarget "01各种手势及事件" */;
+			buildPhases = (
+				FDEDA1BE1CBF6FB700EB1815 /* Sources */,
+				FDEDA1BF1CBF6FB700EB1815 /* Frameworks */,
+				FDEDA1C01CBF6FB700EB1815 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "01各种手势及事件";
+			productName = "01各种手势及事件";
+			productReference = FDEDA1C21CBF6FB700EB1815 /* 01各种手势及事件.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FDEDA1BA1CBF6FB700EB1815 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = tencent;
+				TargetAttributes = {
+					FDEDA1C11CBF6FB700EB1815 = {
+						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = UNN8UKGZ6J;
+					};
+				};
+			};
+			buildConfigurationList = FDEDA1BD1CBF6FB700EB1815 /* Build configuration list for PBXProject "01各种手势及事件" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FDEDA1B91CBF6FB700EB1815;
+			productRefGroup = FDEDA1C31CBF6FB700EB1815 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FDEDA1C11CBF6FB700EB1815 /* 01各种手势及事件 */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FDEDA1C01CBF6FB700EB1815 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FDEDA1D51CBF6FB700EB1815 /* LaunchScreen.storyboard in Resources */,
+				FDEDA1F81CBF850C00EB1815 /* 01.JPG in Resources */,
+				FDEDA1D21CBF6FB700EB1815 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FDEDA1BE1CBF6FB700EB1815 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FDEDA1F31CBF72C300EB1815 /* RotationViewController.m in Sources */,
+				FDEDA1CA1CBF6FB700EB1815 /* AppDelegate.m in Sources */,
+				FDEDA1E41CBF723800EB1815 /* TouchViewController.m in Sources */,
+				FDEDA1E71CBF725000EB1815 /* TapViewController.m in Sources */,
+				FDEDA1DE1CBF703A00EB1815 /* BaseViewController.m in Sources */,
+				FDEDA1E11CBF717D00EB1815 /* RootViewController.m in Sources */,
+				FDEDA1EA1CBF726E00EB1815 /* LongPressViewController.m in Sources */,
+				FDEDA1F01CBF729F00EB1815 /* PanViewController.m in Sources */,
+				FDEDA1C71CBF6FB700EB1815 /* main.m in Sources */,
+				FDEDA1F61CBF72E100EB1815 /* PinchViewController.m in Sources */,
+				FDEDA1ED1CBF728A00EB1815 /* SwipeViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		FDEDA1D31CBF6FB700EB1815 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FDEDA1D41CBF6FB700EB1815 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FDEDA1D71CBF6FB700EB1815 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		FDEDA1D81CBF6FB700EB1815 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FDEDA1DA1CBF6FB700EB1815 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = "01各种手势及事件/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.tencent.-1-------";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "32ed4284-fe3c-4b13-9d63-c34f646339c4";
+			};
+			name = Debug;
+		};
+		FDEDA1DB1CBF6FB700EB1815 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = "01各种手势及事件/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.tencent.-1-------";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "32ed4284-fe3c-4b13-9d63-c34f646339c4";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FDEDA1BD1CBF6FB700EB1815 /* Build configuration list for PBXProject "01各种手势及事件" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FDEDA1D71CBF6FB700EB1815 /* Debug */,
+				FDEDA1D81CBF6FB700EB1815 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FDEDA1D91CBF6FB700EB1815 /* Build configuration list for PBXNativeTarget "01各种手势及事件" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FDEDA1DA1CBF6FB700EB1815 /* Debug */,
+				FDEDA1DB1CBF6FB700EB1815 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FDEDA1BA1CBF6FB700EB1815 /* Project object */;
+}

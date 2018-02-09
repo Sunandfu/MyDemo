@@ -1,0 +1,44 @@
+//
+//  NetRequestManager.h
+//  HBGuard
+//
+//  Created by 郝好杰 on 15/10/29.
+//  Copyright © 2015年 YunXiang. All rights reserved.
+//
+
+#import <Foundation/Foundation.h>
+#import "AFNetworking.h"
+
+//网络请求成功回调
+typedef void(^SuccessCallBack)(AFHTTPRequestOperation *operation,id reponseObject);
+//网络请求失败的回调
+typedef void(^FailedCallBack)(AFHTTPRequestOperation *operation,NSError *error);
+
+
+
+
+
+//传输图片二进制流
+typedef void (^constructingBodyBlock)(id<AFMultipartFormData>formData);
+
+@interface NetRequestManager : NSObject
+{
+    AFHTTPRequestOperationManager *_manager;
+}
+//初始化网络请求控制器
++(NetRequestManager *)manager;
+//GET请求
++(void)GET:(NSString *)url parame:(NSDictionary *)dict SUccess:(SuccessCallBack)success failed:(FailedCallBack)failed;
+//POST请求
++(void)POST:(NSString *)url parame:(NSDictionary *)dict SUccess:(SuccessCallBack)success failed:(FailedCallBack)failed;
+
+
+//POST 上传
+
+
+//POST上传图片的请求
++(void)POST:(NSString *)url parame:(NSDictionary *)dict constructingBodyWithBlock:(constructingBodyBlock)constructBody SUccess:(SuccessCallBack)success failed:(FailedCallBack)failed;
+
+
+
+@end

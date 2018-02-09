@@ -1,0 +1,52 @@
+
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+    
+    <head>
+        <meta charset="utf-8">
+            <title>OC与JS互相调用</title>
+            </head>
+    <body>
+        
+            <input type="button" value="JS调用OC方法" onclick="js_call_oc()"/>
+        </div>
+        <!--  这里要清楚，虽然test.js跟index.html不同及目录，实际安装到程序里面后，是在同级目录的，所以这里src不能加目录，同样css也是一样的  -->
+        <script type="text/javascript" src="test.js" charset="UTF-8"></script>
+        <script type="text/javascript">
+            function js_call_oc()
+            {
+                var iFrame;
+                iFrame = document.createElement("iframe");
+                iFrame.setAttribute("src", "ios://showOCAlert");
+                iFrame.setAttribute("style", "display:none;");
+                iFrame.setAttribute("height", "0px");
+                iFrame.setAttribute("width", "0px");
+                iFrame.setAttribute("frameborder", "0");
+                document.body.appendChild(iFrame);
+                // 发起请求后这个iFrame就没用了，所以把它从dom上移除掉
+                iFrame.parentNode.removeChild(iFrame);
+                iFrame = null;
+            }
+        
+        function ocCallJsNoParamsFunction()
+        {
+            alert("OC调用JS中的无参方法");
+            var e = document.getElementById("js_shouw_text");
+            e.options.add(new Option("OC调用JS中的无参方法", 2));
+            console.log("Hello");
+        }
+        
+        function ocCallJsHasParamsFunction(name, url)
+        {
+            alert("这个是JS代码里面的弹窗");
+            var e = document.getElementById("js_shouw_text");
+            e.options.add(new Option("OC调用JS中的有参方法", 2));
+            
+        } 
+        
+            </script>
+    </body>
+    
+</html>
