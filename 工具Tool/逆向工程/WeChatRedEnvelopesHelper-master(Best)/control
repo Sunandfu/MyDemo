@@ -1,9 +1,0 @@
-Package: com.kevll.wechatredenvelopeshelper
-Name: WeChatRedEnvelopesHelper
-Depends: mobilesubstrate
-Version: 2.0.1
-Architecture: iphoneos-arm
-Description: 微信自动抢红包助手
-Maintainer: kevll
-Author: kevll
-Section: Tweaks
