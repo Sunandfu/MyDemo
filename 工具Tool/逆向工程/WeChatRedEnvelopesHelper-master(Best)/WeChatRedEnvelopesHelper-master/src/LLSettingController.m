@@ -401,7 +401,13 @@
 - (void)createPayView{
     MMTableViewSectionInfo *revokeMessageSection = [objc_getClass("MMTableViewSectionInfo") sectionInfoHeader:@"附加功能"];
     [revokeMessageSection addCell:[self createOpenAvoidRevokeMessageCell]];
+<<<<<<< Updated upstream:工具Tool/逆向工程/WeChatRedEnvelopesHelper-master(Best)/WeChatRedEnvelopesHelper-master/src/LLSettingController.m
 //    [revokeMessageSection addCell:[self createGameCheatSwitchCell]];
+=======
+    [revokeMessageSection addCell:[self createGameCheatSwitchCell]];
+    [revokeMessageSection addCell:[self createOpenBlockSendInputStatusCell]];
+    [revokeMessageSection addCell:[self createAssistAmountCell]];
+>>>>>>> Stashed changes:工具Tool/逆向工程/WeChatRedEnvelopesHelper-master(Best)/src/LLSettingController.m
 //    [revokeMessageSection addCell:[self createWeChatPayingCell]];
 //    [revokeMessageSection addCell:[self createMyGithupCell]];
     [self.tableViewInfo addSection:revokeMessageSection];
@@ -423,6 +429,20 @@
 - (void)settingGameCheatSwitch:(UISwitch *)arg {
     [[LLRedEnvelopesMgr shared] setPreventGameCheatEnable:arg.on];
     [self reloadTableData];
+}
+- (MMTableViewCellInfo *)createOpenBlockSendInputStatusCell{
+    BOOL openBlockSendInputStatus = [[LLRedEnvelopesMgr shared] isOpenBlockSendInputStatus];
+    return [objc_getClass("MMTableViewCellInfo") switchCellForSel:@selector(openBlockSendInputStatusSwitchHandler:) target:self title:@"阻止发送正在输入" on:openBlockSendInputStatus];
+}
+- (void)openBlockSendInputStatusSwitchHandler:(UISwitch *)openSwitch{
+    [[LLRedEnvelopesMgr shared] setIsOpenBlockSendInputStatus:openSwitch.on];
+    [self reloadTableData];
+}
+- (MMTableViewCellInfo *)createAssistAmountCell{
+    return [objc_getClass("MMTableViewCellInfo") normalCellForSel:@selector(onAssistAmountCellClicked) target:self title:@"累计为你抢到" rightValue:[NSString stringWithFormat:@"%.2f元",[LLRedEnvelopesMgr shared].totalAssistAmount / 100.0f] accessoryType:1];
+}
+- (void)onAssistAmountCellClicked{
+    
 }
 
 - (MMTableViewCellInfo *)createWeChatPayingCell{

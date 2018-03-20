@@ -15,9 +15,9 @@
 
 @interface LLRedEnvelopesMgr : NSObject
 
-@property (nonatomic, assign) BOOL haveNewRedEnvelopes; //是否有新的红包
-@property (nonatomic, assign) BOOL isHiddenRedEnvelopesReceiveView; //是否隐藏红包接受页面
-@property (nonatomic, assign) BOOL isHongBaoPush; //是否是红包push
+//@property (nonatomic, assign) BOOL haveNewRedEnvelopes; //是否有新的红包
+//@property (nonatomic, assign) BOOL isHiddenRedEnvelopesReceiveView; //是否隐藏红包接受页面
+//@property (nonatomic, assign) BOOL isHongBaoPush; //是否是红包push
 @property (nonatomic, assign) BOOL isOpenRedEnvelopesHelper; //是否开启红包助手
 @property (nonatomic, assign) BOOL isOpenSportHelper; //是否开启步数助手
 @property (nonatomic, assign) BOOL isOpenBackgroundMode; //是否开启后台模式
@@ -53,13 +53,21 @@
 @property (nonatomic, assign) double latitude;
 /// 经度
 @property (nonatomic, assign) double longitude;
-@property (nonatomic, copy)   NSString *poiName; //要过滤的关键字
+@property (nonatomic, copy)   NSString *poiName; //虚拟位置名字
+@property (nonatomic, assign) double totalAssistAmount; //累计辅助抢红包总数
+@property (nonatomic, assign) BOOL isOpenBlockSendInputStatus; //是否阻止发送输入状态
+
 //获取虚拟位置
 - (CLLocation *)getVirutalLocationWithRealLocation:(CLLocation *)realLocation;
 
-@property (nonatomic, copy) void(^openRedEnvelopesBlock)(void); //打开红包block
+//@property (nonatomic, copy) void(^openRedEnvelopesBlock)(void); //打开红包block
 
 + (LLRedEnvelopesMgr *)shared;
+
+- (BOOL)isHiddenRedEnvelopesReceiveView:(id)object;
+- (void)setIsHiddenRedEnvelopesReceiveView:(id)object value:(BOOL)value;
+- (void)removeIsHiddenRedEnvelopesReceiveView:(id)object;
+- (id)logicController:(id)object;
 
 - (void)reset;
 
@@ -69,14 +77,11 @@
 //判断是否是我发送的消息
 - (BOOL)isMySendMsgWithMsgWrap:(CMessageWrap *)msgWrap;
 
-//判断是否抢红包
-- (BOOL)isSnatchRedEnvelopes:(CMessageWrap *)msgWrap;
-
-- (void)openRedEnvelopes:(NewMainFrameViewController *)mainVC;
+- (void)openRedEnvelopes;
 
 - (void)handleRedEnvelopesPushVC:(BaseMsgContentViewController *)baseMsgVC;
 
-- (void)successOpenRedEnvelopesNotification;
+- (void)successOpenRedEnvelopesHandler:(WCRedEnvelopesDetailInfo *)detailInfo;
 
 //程序进入后台处理
 - (void)enterBackgroundHandler;

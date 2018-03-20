@@ -22,25 +22,20 @@
 @property(nonatomic) unsigned int m_uiAppMsgInnerType; // @dynamic m_uiAppMsgInnerType;
 @property (assign, nonatomic) NSUInteger m_uiStatus;
 
+- (id)initWithMsgType:(long long)arg1 nsFromUsr:(id)arg2;
+- (id)initWithMsgType:(long long)arg1;
 - (WCPayInfoItem *)m_oWCPayInfoItem;
 - (id)nativeUrl;
 - (NSString *)wishingString;
 - (BOOL)IsSendBySendMsg;
 + (BOOL)isSenderFromMsgWrap:(CMessageWrap *)msgWrap;
-- (id)initWithMsgType:(long long)arg1;
-
-@end
-
-@interface CMessageMgr : NSObject
-
-- (void)AddLocalMsg:(id)arg1 MsgWrap:(id)arg2 fixTime:(_Bool)arg3 NewMsgArriveNotify:(_Bool)arg4;
-- (void)AddEmoticonMsg:(NSString *)msg MsgWrap:(CMessageWrap *)msgWrap;
 
 @end
 
 @interface CBaseContact : NSObject
 
 @property(retain, nonatomic) NSString *m_nsAliasName; // @synthesize m_nsAliasName;
+@property(retain, nonatomic) NSString *m_nsNickName; // @synthesize m_nsNickName;
 @property(retain, nonatomic) NSString *m_nsUsrName; // @synthesize m_nsUsrName;
 @property(nonatomic) unsigned int m_uiSex; // @synthesize m_uiSex;
 @property(retain, nonatomic) NSString *m_nsHeadImgUrl; // @synthesize m_nsHeadImgUrl;
@@ -65,7 +60,24 @@
 @property(retain, nonatomic) CMessageWrap *m_msgWrap; // @synthesize m_msgWrap;
 @property(retain, nonatomic) CContact *m_contact; // @synthesize m_contact;
 
-@end 
+@end
+
+@interface BaseChatViewModel : NSObject
+
+@property(readonly, nonatomic) CMessageWrap *messageWrap;
+@property(retain, nonatomic) CBaseContact *chatContact; // @synthesize chatContact=m_chatContact;
+//@property(nonatomic,weak) id <ChatViewModelDelegate> delegate; // @synthesize delegate=_delegate;
+
+- (id)cellDataForRow:(unsigned long long)arg1;
+
+@end
+
+@interface BaseChatCellView : UIView
+
+@property(readonly, nonatomic) BaseChatViewModel *viewModel; // @synthesize viewModel=m_viewModel;
+//@property(nonatomic,weak) id <MessageNodeViewDelegate> delegate; // @synthesize delegate=m_delegate;
+
+@end
 
 @interface UIViewController (ModalView)
 
@@ -106,6 +118,25 @@
 @interface UINavigationController (LogicController)
 
 - (void)PushViewController:(id)arg1 animated:(_Bool)arg2;
+
+@end
+
+@interface WCRedEnvelopesDetailInfo : NSObject
+
+@property(nonatomic) long long m_lTotalNum; // @synthesize m_lTotalNum;
+@property(nonatomic) long long m_lTotalAmount; // @synthesize m_lTotalAmount;
+@property(nonatomic) long long m_lRecNum; // @synthesize m_lRecNum;
+@property(nonatomic) long long m_lRecAmount; // @synthesize m_lRecAmount;
+@property(nonatomic) long long m_lAmount; // @synthesize m_lAmount;
+
+@end
+
+@interface WCRedEnvelopesControlData : NSObject
+
+@property(retain, nonatomic) CMessageWrap *m_oSelectedMessageWrap; // @synthesize m_oSelectedMessageWrap;
+@property(retain, nonatomic) WCRedEnvelopesDetailInfo *m_oWCRedEnvelopesDetailInfo; // @synthesize m_oWCRedEnvelopesDetailInfo;
+
+- (void)setM_oSelectedMessageWrap:(CMessageWrap *)msgWrap;
 
 @end
 
@@ -179,25 +210,6 @@
 
 @end
 
-#pragma mark - QRCode
-
-@interface ScanQRCodeLogicController: NSObject
-
-@property(nonatomic) unsigned int fromScene;
-- (id)initWithViewController:(id)arg1 CodeType:(int)arg2;
-- (void)tryScanOnePicture:(id)arg1;
-- (void)doScanQRCode:(id)arg1;
-- (void)showScanResult;
-
-@end
-
-@interface NewQRCodeScanner: NSObject
-
-- (id)initWithDelegate:(id)arg1 CodeType:(int)arg2;
-- (void)notifyResult:(id)arg1 type:(id)arg2 version:(int)arg3;
-
-@end
-
 @interface MMTableViewSectionInfo : NSObject
 
 + (id)sectionInfoDefaut;
@@ -240,13 +252,7 @@
 
 @end
 
-@interface WCRedEnvelopesControlData: NSObject
-
-- (void)setM_oSelectedMessageWrap:(CMessageWrap *)msgWrap;
-
-@end
-
-@interface MMServiceCenter 
+@interface MMServiceCenter
 
 + (id)defaultCenter;
 - (id)getService:(Class)aClass;
@@ -320,7 +326,15 @@
 
 @interface CAppViewControllerManager: NSObject
 
++ (id)topViewControllerOfWindow:(id)arg1;
++ (id)topViewControllerOfMainWindow;
++ (id)topMostController;
++ (id)getCurrentNavigationController;
 + (UITabBarController *)getTabBarController;
++ (CAppViewControllerManager *)getAppViewControllerManager;
++ (_Bool)hasEnterWechatMain;
+
+- (NewMainFrameViewController *)getNewMainFrameViewController;
 
 @end
 
@@ -358,7 +372,72 @@
 
 @end
 
+@interface MMMsgLogicManager: NSObject
+
+- (void)PushLogicController:(id)logic navigationController:(id)navigation animated:(BOOL)animated;
+
+@end
+
+@interface CUtility : NSObject
+
++ (id)GetExcutablePath;
++ (unsigned long long)genCurrentTimeInMsFrom1970;
++ (unsigned long long)genCurrentTimeInMs;
++ (unsigned int)genCurrentTime;
++ (unsigned int)genServerCurrentTime;
+
+@end
+
+@interface CMessageDB : NSObject
+
+- (void)AddBackupMsg:(id)arg1 MsgWrap:(id)arg2;
+- (void)AddMsg:(id)arg1 MsgWrap:(id)arg2 withTimeFixed:(_Bool)arg3;
+- (void)AddMsg:(id)arg1 MsgWrap:(id)arg2;
+- (_Bool)RemoveOldRevokeMessagesBefore:(unsigned int)arg1;
+- (_Bool)InsertRevokeMessage:(id)arg1;
+- (id)GetRevokeMessage:(long long)arg1;
+
+@end
+
+@interface CMessageMgr : NSObject
+
+- (void)AddEmoticonMsg:(NSString *)msg MsgWrap:(CMessageWrap *)msgWrap;
+
+- (id)GetMsg:(id)arg1 n64SvrID:(long long)arg2;
+- (id)GetMsg:(id)arg1 LocalID:(unsigned int)arg2;
+- (void)AddLocalMsg:(id)arg1 MsgWrap:(id)arg2 fixTime:(_Bool)arg3 NewMsgArriveNotify:(_Bool)arg4;
+- (void)AddLocalMsg:(id)arg1 MsgWrap:(id)arg2 fixTime:(_Bool)arg3 NewMsgArriveNotify:(_Bool)arg4 Unique:(_Bool)arg5;
+- (void)AddLocalMsg:(id)arg1 MsgWrap:(id)arg2;
+
+@end
+
+@interface RevokeMessage : NSObject
+
+@property(nonatomic) unsigned int m_uiCreateTime; // @synthesize m_uiCreateTime;
+@property(retain, nonatomic) NSString *m_nsContent; // @synthesize m_nsContent;
+@property(nonatomic) long long m_n64SvrId; // @synthesize m_n64SvrId;
+
+@end
+
 @interface GameController : NSObject
 + (NSString*)getMD5ByGameContent:(NSInteger) content;
 @end
 
+#pragma mark - QRCode
+
+@interface ScanQRCodeLogicController: NSObject
+
+@property(nonatomic) unsigned int fromScene;
+- (id)initWithViewController:(id)arg1 CodeType:(int)arg2;
+- (void)tryScanOnePicture:(id)arg1;
+- (void)doScanQRCode:(id)arg1;
+- (void)showScanResult;
+
+@end
+
+@interface NewQRCodeScanner: NSObject
+
+- (id)initWithDelegate:(id)arg1 CodeType:(int)arg2;
+- (void)notifyResult:(id)arg1 type:(id)arg2 version:(int)arg3;
+
+@end

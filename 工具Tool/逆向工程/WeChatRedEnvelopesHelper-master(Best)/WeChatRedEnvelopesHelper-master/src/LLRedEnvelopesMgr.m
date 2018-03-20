@@ -7,6 +7,7 @@
 //
 
 #import "LLRedEnvelopesMgr.h"
+#import <objc/runtime.h>
 
 static NSString * const isOpenRedEnvelopesHelperKey = @"isOpenRedEnvelopesHelperKey";
 static NSString * const isOpenSportHelperKey = @"isOpenSportHelperKey";
@@ -30,6 +31,11 @@ static NSString * const filterRoomDicKey = @"filterRoomDicKey";
 static NSString * const XYLatitudeValueKey = @"latitude";
 static NSString * const XYLongitudeValueKey = @"longitude";
 static NSString * const KTKPreventGameCheatEnableKey = @"KTKPreventGameCheatEnableKey";
+static NSString * const totalAssistAmountKey = @"totalAssistAmountKey";
+static NSString * const isOpenBlockSendInputStatusKey = @"isOpenBlockSendInputStatusKey";
+
+static const char isHiddenRedEnvelopesReceiveViewKey;
+static const char logicControllerKey;
 
 @implementation LLRedEnvelopesMgr
 
@@ -65,41 +71,41 @@ static NSString * const KTKPreventGameCheatEnableKey = @"KTKPreventGameCheatEnab
         _wantSportStepCount = [userDefaults integerForKey:wantSportStepCountKey];
         _filterRoomDic = [userDefaults objectForKey:filterRoomDicKey];
         _preventGameCheatEnable = [[NSUserDefaults standardUserDefaults] boolForKey:KTKPreventGameCheatEnableKey];
+        _totalAssistAmount = [userDefaults integerForKey:totalAssistAmountKey];
+        _isOpenBlockSendInputStatus = [userDefaults boolForKey:isOpenBlockSendInputStatusKey];
     }
     return self;
 }
 
 - (void)reset{
-    _haveNewRedEnvelopes = NO;
-    _isHiddenRedEnvelopesReceiveView = NO;
-    _isHongBaoPush = NO;
+    self.logicController = nil;
 }
 
 #pragma mark SET GET METHOD
 
-- (void)setHaveNewRedEnvelopes:(BOOL)haveNewRedEnvelopes{
-    _haveNewRedEnvelopes = haveNewRedEnvelopes;
-}
+//- (void)setHaveNewRedEnvelopes:(BOOL)haveNewRedEnvelopes{
+//    _haveNewRedEnvelopes = haveNewRedEnvelopes;
+//}
+//
+//- (void)setIsHongBaoPush:(BOOL)isHongBaoPush{
+//    _isHongBaoPush = isHongBaoPush;
+//}
+//
+//- (void)setIsHiddenRedEnvelopesReceiveView:(BOOL)isHiddenRedEnvelopesReceiveView{
+//    _isHiddenRedEnvelopesReceiveView = isHiddenRedEnvelopesReceiveView;
+//}
 
-- (void)setIsHongBaoPush:(BOOL)isHongBaoPush{
-    _isHongBaoPush = isHongBaoPush;
-}
+//- (void)setBgTaskIdentifier:(UIBackgroundTaskIdentifier)bgTaskIdentifier{
+//    _bgTaskIdentifier = bgTaskIdentifier;
+//}
+//
+//- (void)setBgTaskTimer:(NSTimer *)bgTaskTimer{
+//    _bgTaskTimer = bgTaskTimer;
+//}
 
-- (void)setIsHiddenRedEnvelopesReceiveView:(BOOL)isHiddenRedEnvelopesReceiveView{
-    _isHiddenRedEnvelopesReceiveView = isHiddenRedEnvelopesReceiveView;
-}
-
-- (void)setBgTaskIdentifier:(UIBackgroundTaskIdentifier)bgTaskIdentifier{
-    _bgTaskIdentifier = bgTaskIdentifier;
-}
-
-- (void)setBgTaskTimer:(NSTimer *)bgTaskTimer{
-    _bgTaskTimer = bgTaskTimer;
-}
-
-- (void)setOpenRedEnvelopesBlock:(void (^)(void))openRedEnvelopesBlock{
-    _openRedEnvelopesBlock = [openRedEnvelopesBlock copy];
-}
+//- (void)setOpenRedEnvelopesBlock:(void (^)(void))openRedEnvelopesBlock{
+//    _openRedEnvelopesBlock = [openRedEnvelopesBlock copy];
+//}
 
 - (void)setIsOpenRedEnvelopesHelper:(BOOL)isOpenRedEnvelopesHelper{
     _isOpenRedEnvelopesHelper = isOpenRedEnvelopesHelper;
@@ -184,16 +190,52 @@ static NSString * const KTKPreventGameCheatEnableKey = @"KTKPreventGameCheatEnab
     _sportStepCountUpperLimit = sportStepCountUpperLimit;
     [[NSUserDefaults standardUserDefaults] setInteger:sportStepCountUpperLimit forKey:sportStepCountUpperLimitKey];
 }
+- (void)setTotalAssistAmount:(double)totalAssistAmount{
+    _totalAssistAmount = totalAssistAmount;
+    [[NSUserDefaults standardUserDefaults] setInteger:totalAssistAmount forKey:totalAssistAmountKey];
+}
+- (void)setIsOpenBlockSendInputStatus:(BOOL)isOpenBlockSendInputStatus{
+    _isOpenBlockSendInputStatus = isOpenBlockSendInputStatus;
+    [[NSUserDefaults standardUserDefaults] setBool:isOpenBlockSendInputStatus forKey:isOpenBlockSendInputStatusKey];
+}
+
+//new
+
+- (void)setBgTaskIdentifier:(UIBackgroundTaskIdentifier)bgTaskIdentifier{
+    _bgTaskIdentifier = bgTaskIdentifier;
+}
+
+- (void)setBgTaskTimer:(NSTimer *)bgTaskTimer{
+    _bgTaskTimer = bgTaskTimer;
+}
+
+- (BOOL)isHiddenRedEnvelopesReceiveView:(id)object{
+    return [objc_getAssociatedObject(object, &isHiddenRedEnvelopesReceiveViewKey) boolValue];
+}
+
+- (void)setIsHiddenRedEnvelopesReceiveView:(id)object value:(BOOL)value{
+    objc_setAssociatedObject(object, &isHiddenRedEnvelopesReceiveViewKey, @(value), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+- (void)removeIsHiddenRedEnvelopesReceiveView:(id)object{
+    objc_removeAssociatedObjects(object);
+}
+
+- (id)logicController:(id)object{
+    return objc_getAssociatedObject(object, &logicControllerKey);
+}
+
 //处理微信消息,过滤红包消息
 - (void)handleMessageWithMessageWrap:(CMessageWrap *)msgWrap isBackground:(BOOL)isBackground{
     if (msgWrap && msgWrap.m_uiMessageType == 49 && [self isSnatchRedEnvelopes:msgWrap]){
         //红包消息
         self.lastMsgWrap = self.msgWrap;
         self.msgWrap = msgWrap;
-        self.haveNewRedEnvelopes = YES;
-        if(isBackground && self.openRedEnvelopesBlock){
-            self.openRedEnvelopesBlock();
-        }
+        [self openRedEnvelopes];
+//        self.haveNewRedEnvelopes = YES;
+//        if(isBackground && self.openRedEnvelopesBlock){
+//            self.openRedEnvelopesBlock();
+//        }
     }
 }
 
@@ -240,50 +282,73 @@ static NSString * const KTKPreventGameCheatEnableKey = @"KTKPreventGameCheatEnab
 
 #pragma mark HANDLER METHOD
 
-- (void)openRedEnvelopes:(NewMainFrameViewController *)mainVC{
+- (void)openRedEnvelopes{
+    NewMainFrameViewController *mainVC = [[NSClassFromString(@"CAppViewControllerManager") getAppViewControllerManager] getNewMainFrameViewController];
     NSArray *controllers = mainVC.navigationController.viewControllers;
-    UIViewController *msgContentVC = nil;
+    BaseMsgContentViewController *msgContentVC = nil;
     for (UIViewController *aController in controllers) {
         if ([aController isMemberOfClass:NSClassFromString(@"BaseMsgContentViewController")]) {
-            msgContentVC = aController;
+            msgContentVC = (BaseMsgContentViewController *)aController;
             break;
         }
     }
-    if (msgContentVC) {
-        [mainVC.navigationController PushViewController:msgContentVC animated:YES];
+    CContactMgr *contactMgr = [[NSClassFromString(@"MMServiceCenter") defaultCenter] getService:NSClassFromString(@"CContactMgr")];
+    CContact *fromContact = [contactMgr getContactByName:self.msgWrap.m_nsFromUsr];
+    BOOL isMySendMsg = [self isMySendMsgWithMsgWrap:self.msgWrap];
+    BaseMsgContentViewController *baseMsgVC = nil;
+    if(!isMySendMsg && ![[msgContentVC getChatContact] isEqualToContact:fromContact]){
+        BaseMsgContentLogicController *logicController = [[NSClassFromString(@"BaseMsgContentLogicController") alloc] initWithLocalID:self.msgWrap.m_uiMesLocalID CreateTime:self.msgWrap.m_uiCreateTime ContentViewDisshowStatus:0x4];
+        [logicController setM_contact:fromContact];
+        [logicController setM_dicExtraInfo:nil];
+        [logicController onWillEnterRoom];
+        objc_setAssociatedObject(self.msgWrap,&logicControllerKey,logicController,OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+        //self.logicController = logicController;
+        //MMMsgLogicManager *logicMgr = [[NSClassFromString(@"MMServiceCenter") defaultCenter] getService:NSClassFromString(@"MMMsgLogicManager")];
+        //[logicMgr PushLogicController:logicController navigationController:mainVC.navigationController animated:NO];
+        baseMsgVC = [logicController getMsgContentViewController];
     } else {
-        [mainVC tableView:[mainVC valueForKey:@"m_tableView"] didSelectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:1]];
+        //self.logicController = nil;
+        baseMsgVC = msgContentVC;
     }
+    [self handleRedEnvelopesPushVC:baseMsgVC];
+    //if (msgContentVC) {
+    //    [mainVC.navigationController PushViewController:msgContentVC animated:YES];
+    //} else {
+    //    [mainVC tableView:[mainVC valueForKey:@"m_tableView"] didSelectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:1]];
+    //}
 }
 
 - (void)handleRedEnvelopesPushVC:(BaseMsgContentViewController *)baseMsgVC{
     //红包push
     if(![[self.msgWrap nativeUrl] containsString:@"weixin://openNativeUrl/weixinHB/startreceivebizhbrequest?"]){
-        CContactMgr *contactMgr = [[NSClassFromString(@"MMServiceCenter") defaultCenter] getService:NSClassFromString(@"CContactMgr")];
-        CContact *fromContact = [contactMgr getContactByName:self.msgWrap.m_nsFromUsr];
-        BOOL isMySendMsg = [self isMySendMsgWithMsgWrap:self.msgWrap];
-        if(!isMySendMsg && ![[baseMsgVC getChatContact] isEqualToContact:fromContact]){
-            BaseMsgContentLogicController *logicController = [[NSClassFromString(@"BaseMsgContentLogicController") alloc] initWithLocalID:self.msgWrap.m_uiMesLocalID CreateTime:self.msgWrap.m_uiCreateTime ContentViewDisshowStatus:0x4];
-            [logicController setM_contact:fromContact];
-            [logicController setM_dicExtraInfo:nil];
-            [logicController onWillEnterRoom];
-            self.logicController = logicController;
-            baseMsgVC = [logicController getMsgContentViewController];
-        } else {
-            self.logicController = nil;
-        }
+        
+        /*if(!isMySendMsg && ![[baseMsgVC getChatContact] isEqualToContact:fromContact]){
+         BaseMsgContentLogicController *logicController = [[NSClassFromString(@"BaseMsgContentLogicController") alloc] initWithLocalID:self.msgWrap.m_uiMesLocalID CreateTime:self.msgWrap.m_uiCreateTime ContentViewDisshowStatus:0x4];
+         [logicController setM_contact:fromContact];
+         [logicController setM_dicExtraInfo:nil];
+         [logicController onWillEnterRoom];
+         self.logicController = logicController;
+         baseMsgVC = [logicController getMsgContentViewController];
+         } else {
+         self.logicController = nil;
+         }*/
         WCRedEnvelopesControlData *data = [[NSClassFromString(@"WCRedEnvelopesControlData") alloc] init];
         [data setM_oSelectedMessageWrap:self.msgWrap];
         WCRedEnvelopesControlMgr *controlMgr = [[NSClassFromString(@"MMServiceCenter") defaultCenter] getService:NSClassFromString(@"WCRedEnvelopesControlMgr")];
-        self.isHiddenRedEnvelopesReceiveView = YES;
+        //self.isHiddenRedEnvelopesReceiveView = YES;
+        [self setIsHiddenRedEnvelopesReceiveView:self.msgWrap value:YES];
         [controlMgr startReceiveRedEnvelopesLogic:baseMsgVC Data:data];
     }
 }
 
-- (void)successOpenRedEnvelopesNotification{
+- (void)successOpenRedEnvelopesHandler:(WCRedEnvelopesDetailInfo *)detailInfo{
+    long long m_lAmount = detailInfo.m_lAmount;
+    self.totalAssistAmount += m_lAmount;
+    [[NSUserDefaults standardUserDefaults] setInteger:self.totalAssistAmount forKey:totalAssistAmountKey];
+    [[NSUserDefaults standardUserDefaults] synchronize];
     if(self.isOpenRedEnvelopesAlert){
         UILocalNotification *localNotification = [[UILocalNotification alloc] init];
-        localNotification.alertBody = @"帮您领了一个大红包！快去查看吧~";
+        localNotification.alertBody = [NSString stringWithFormat:@"帮您领了%.2f元红包！快去查看吧~",m_lAmount / 100.0f];
         localNotification.soundName = UILocalNotificationDefaultSoundName;
         [[UIApplication sharedApplication] presentLocalNotificationNow:localNotification];
         [self playCashReceivedAudio];
