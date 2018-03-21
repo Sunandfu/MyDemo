@@ -8,7 +8,7 @@
 
 #import "CLLocation+XYLocationExtensions.h"
 #import <objc/runtime.h>
-#import "WBRedEnvelopConfig.h"
+#import "LLRedEnvelopesMgr.h"
 
 #pragma mark *** 用于修改微信内部经纬度的分类 ***
 
@@ -48,17 +48,17 @@
 - (CLLocationCoordinate2D)xy_coordinate {
     
     CLLocationCoordinate2D oldCoordinate = [self xy_coordinate];
-    BOOL shouldChangeCoordinate = [[WBRedEnvelopConfig sharedConfig] shouldChangeCoordinate];
-    BOOL useOriginalCordinate = [WBRedEnvelopConfig sharedConfig].useOriginalCordinate;
+    BOOL shouldChangeCoordinate = [[LLRedEnvelopesMgr shared] isOpenVirtualLocation];
+    BOOL useOriginalCordinate = [LLRedEnvelopesMgr shared].useOriginalCordinate;
     if (!shouldChangeCoordinate || useOriginalCordinate) {
         if (useOriginalCordinate) {
-            [WBRedEnvelopConfig sharedConfig].useOriginalCordinate = NO;
+            [LLRedEnvelopesMgr shared].useOriginalCordinate = NO;
         }
         return oldCoordinate;
     }
     
-    double longitude = [[WBRedEnvelopConfig sharedConfig] longitude];
-    double latitude = [[WBRedEnvelopConfig sharedConfig] latitude];
+    double longitude = [[LLRedEnvelopesMgr shared] longitude];
+    double latitude = [[LLRedEnvelopesMgr shared] latitude];
     if (latitude <= 0.0 || latitude <= 0.0) {
         return oldCoordinate;
     }
@@ -71,7 +71,7 @@
 }
 
 - (CLLocationCoordinate2D)xy_originalCoordinate {
-    [WBRedEnvelopConfig sharedConfig].useOriginalCordinate = YES;
+    [LLRedEnvelopesMgr shared].useOriginalCordinate = YES;
     return [self xy_coordinate];
 }
 

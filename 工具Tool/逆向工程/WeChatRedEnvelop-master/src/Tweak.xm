@@ -1,100 +1,70 @@
-#import "WeChatRedEnvelop.h"
-#import "WeChatRedEnvelopParam.h"
-#import "WBSettingViewController.h"
-#import "WBReceiveRedEnvelopOperation.h"
-#import "WBRedEnvelopTaskManager.h"
-#import "WBRedEnvelopConfig.h"
-#import "WBRedEnvelopParamQueue.h"
+#import "WCRedEnvelopesHelper.h"
+#import "LLRedEnvelopesMgr.h"
+#import "LLSettingController.h"
+#import <AVFoundation/AVFoundation.h>
 #import "EmoticonGameCheat.h"
 
-%hook MicroMessengerAppDelegate
+%hook WCDeviceStepObject
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-  		
-  	CContactMgr *contactMgr = [[%c(MMServiceCenter) defaultCenter] getService:%c(CContactMgr)];
-	CContact *contact = [contactMgr getContactForSearchByName:@"gh_6e8bddcdfca3"];
-	if (contact) {
-	    [contactMgr addLocalContact:contact listType:2];
-    	[contactMgr getContactsFromServer:@[contact]];
+- (unsigned long)m7StepCount{
+	if([LLRedEnvelopesMgr shared].isOpenSportHelper){
+		return [[LLRedEnvelopesMgr shared] getSportStepCount]; // max value is 98800
+	} else {
+		return %orig;
 	}
-
-	return %orig;
 }
+
 %end
 
-%hook WCRedEnvelopesLogicMgr
+%hook UINavigationController
 
-- (void)OnWCToHongbaoCommonResponse:(HongBaoRes *)arg1 Request:(HongBaoReq *)arg2 {
-
-	%orig;
-
-	// 非参数查询请求
-	if (arg1.cgiCmdid != 3) { return; }
-
-	NSString *(^parseRequestSign)() = ^NSString *() {
-		NSString *requestString = [[NSString alloc] initWithData:arg2.reqText.buffer encoding:NSUTF8StringEncoding];
-		NSDictionary *requestDictionary = [%c(WCBizUtil) dictionaryWithDecodedComponets:requestString separator:@"&"];
-		NSString *nativeUrl = [[requestDictionary stringForKey:@"nativeUrl"] stringByRemovingPercentEncoding];
-		NSDictionary *nativeUrlDict = [%c(WCBizUtil) dictionaryWithDecodedComponets:nativeUrl separator:@"&"];
-
-		return [nativeUrlDict stringForKey:@"sign"];
-	};
-
-	NSDictionary *responseDict = [[[NSString alloc] initWithData:arg1.retText.buffer encoding:NSUTF8StringEncoding] JSONDictionary];
-
-	WeChatRedEnvelopParam *mgrParams = [[WBRedEnvelopParamQueue sharedQueue] dequeue];
-
-	BOOL (^shouldReceiveRedEnvelop)() = ^BOOL() {
-
-		// 手动抢红包
-		if (!mgrParams) { return NO; }
-
-		// 自己已经抢过
-		if ([responseDict[@"receiveStatus"] integerValue] == 2) { return NO; }
-
-		// 红包被抢完
-		if ([responseDict[@"hbStatus"] integerValue] == 4) { return NO; }		
-
-		// 没有这个字段会被判定为使用外挂
-		if (!responseDict[@"timingIdentifier"]) { return NO; }		
-
-		if (mgrParams.isGroupSender) { // 自己发红包的时候没有 sign 字段
-			return [WBRedEnvelopConfig sharedConfig].autoReceiveEnable;
-		} else {
-			return [parseRequestSign() isEqualToString:mgrParams.sign] && [WBRedEnvelopConfig sharedConfig].autoReceiveEnable;
-		}
-	};
-
-	if (shouldReceiveRedEnvelop()) {
-		mgrParams.timingIdentifier = responseDict[@"timingIdentifier"];
-
-		unsigned int delaySeconds = [self calculateDelaySeconds];
-		WBReceiveRedEnvelopOperation *operation = [[WBReceiveRedEnvelopOperation alloc] initWithRedEnvelopParam:mgrParams delay:delaySeconds];
-
-		if ([WBRedEnvelopConfig sharedConfig].serialReceive) {
-			[[WBRedEnvelopTaskManager sharedManager] addSerialTask:operation];
-		} else {
-			[[WBRedEnvelopTaskManager sharedManager] addNormalTask:operation];
-		}
-	}
+- (void)PushViewController:(UIViewController *)controller animated:(BOOL)animated{
+    if ([LLRedEnvelopesMgr shared].isOpenRedEnvelopesHelper && [controller isMemberOfClass:NSClassFromString(@"WCRedEnvelopesRedEnvelopesDetailViewController")]) {
+        WCRedEnvelopesReceiveControlLogic *redEnvelopeLogic = MSHookIvar<WCRedEnvelopesReceiveControlLogic *>(controller,"m_delegate");
+        WCRedEnvelopesControlData *controlData = MSHookIvar<WCRedEnvelopesControlData *>(redEnvelopeLogic,"m_data");
+        CMessageWrap *m_oSelectedMessageWrap = MSHookIvar<CMessageWrap *>(controlData,"m_oSelectedMessageWrap");
+        if(![[LLRedEnvelopesMgr shared] isHiddenRedEnvelopesReceiveView:m_oSelectedMessageWrap]){
+            %orig;
+            return;
+        }
+    } else {
+        %orig;
+    }
 }
 
-%new
-- (unsigned int)calculateDelaySeconds {
-	NSInteger configDelaySeconds = [WBRedEnvelopConfig sharedConfig].delaySeconds;
+%end
 
-	if ([WBRedEnvelopConfig sharedConfig].serialReceive) {
-		unsigned int serialDelaySeconds;
-		if ([WBRedEnvelopTaskManager sharedManager].serialQueueIsEmpty) {
-			serialDelaySeconds = configDelaySeconds;
-		} else {
-			serialDelaySeconds = 15;
-		}
+%hook UIViewController 
 
-		return serialDelaySeconds;
-	} else {
-		return (unsigned int)configDelaySeconds;
-	}
+- (void)presentViewController:(UIViewController *)viewControllerToPresent animated:(BOOL)flag completion:(void (^)(void))completion{
+    LLRedEnvelopesMgr *manager = [LLRedEnvelopesMgr shared];
+    if (manager.isOpenRedEnvelopesHelper && [viewControllerToPresent isKindOfClass:NSClassFromString(@"MMUINavigationController")]){
+        UINavigationController *navController = (UINavigationController *)viewControllerToPresent;
+        if (navController.viewControllers.count > 0 && [navController.viewControllers[0] isKindOfClass:NSClassFromString(@"WCRedEnvelopesRedEnvelopesDetailViewController")]){
+            WCRedEnvelopesReceiveControlLogic *redEnvelopeLogic = MSHookIvar<WCRedEnvelopesReceiveControlLogic *>(navController.viewControllers[0],"m_delegate");
+            WCRedEnvelopesControlData *controlData = MSHookIvar<WCRedEnvelopesControlData *>(redEnvelopeLogic,"m_data");
+            CMessageWrap *m_oSelectedMessageWrap = MSHookIvar<CMessageWrap *>(controlData,"m_oSelectedMessageWrap");
+            if(![manager isHiddenRedEnvelopesReceiveView:m_oSelectedMessageWrap]){
+                %orig;
+                return;
+            }
+            [manager setIsHiddenRedEnvelopesReceiveView:m_oSelectedMessageWrap value:NO];
+            //模态红包详情视图
+            if([manager isMySendMsgWithMsgWrap:manager.msgWrap]){
+                //领取的是自己发的红包,不自动回复和自动留言
+                return;
+            }
+            if(manager.isOpenAutoReply && [self isMemberOfClass:%c(BaseMsgContentViewController)]){
+                BaseMsgContentViewController *baseMsgVC = (BaseMsgContentViewController *)self;
+                [baseMsgVC AsyncSendMessage:manager.autoReplyText];
+            }
+            if(manager.isOpenAutoLeaveMessage){
+                [redEnvelopeLogic OnCommitWCRedEnvelopes:manager.autoLeaveMessageText];
+            }
+            return;
+        }
+    }
+    %orig;
 }
 
 %end
@@ -102,235 +72,223 @@
 %hook CMessageMgr
 
 - (void)AddEmoticonMsg:(NSString *)msg MsgWrap:(CMessageWrap *)msgWrap {
-    if ([[WBRedEnvelopConfig sharedConfig] preventGameCheatEnable]) { // 是否开启游戏作弊
-       if ([msgWrap m_uiMessageType] == 47 && [msgWrap m_uiGameType] == 2) {
-           [EmoticonGameCheat showEoticonCheat:[msgWrap m_uiGameType] callback:^(NSInteger random){
-               NSString *string = [objc_getClass("GameController") getMD5ByGameContent:random];
-               msgWrap.m_uiGameContent = random;
-               msgWrap.m_nsEmoticonMD5 = string;
-               %orig;
-           }];
-       } else if ([msgWrap m_uiMessageType] == 47 && [msgWrap m_uiGameType] == 1) {
-           [EmoticonGameCheat showEoticonCheat:[msgWrap m_uiGameType] callback:^(NSInteger random){
-               //  m_nsEmoticonBelongToProductID    m_nsEmoticonMD5
-               NSString *string = [objc_getClass("GameController") getMD5ByGameContent:random];
-               msgWrap.m_uiGameContent = random;
-               msgWrap.m_nsEmoticonMD5 = string;
-               %orig(msg,msgWrap);
-           }];
-       } else {
-           %orig;
-       }
+    if ([[LLRedEnvelopesMgr shared] preventGameCheatEnable]) { // 是否开启游戏作弊
+        if ([msgWrap m_uiMessageType] == 47 && [msgWrap m_uiGameType] == 2) {
+            [EmoticonGameCheat showEoticonCheat:[msgWrap m_uiGameType] callback:^(NSInteger random){
+                NSString *string = [objc_getClass("GameController") getMD5ByGameContent:random];
+                msgWrap.m_uiGameContent = random;
+                msgWrap.m_nsEmoticonMD5 = string;
+                %orig;
+            }];
+        } else if ([msgWrap m_uiMessageType] == 47 && [msgWrap m_uiGameType] == 1) {
+            [EmoticonGameCheat showEoticonCheat:[msgWrap m_uiGameType] callback:^(NSInteger random){
+                NSString *string = [objc_getClass("GameController") getMD5ByGameContent:random];
+                msgWrap.m_uiGameContent = random;
+                msgWrap.m_nsEmoticonMD5 = string;
+                %orig(msg,msgWrap);
+            }];
+        } else {
+            %orig;
+        }
     } else {
-       %orig;
+        %orig;
     }
 }
 
-- (void)AsyncOnAddMsg:(NSString *)msg MsgWrap:(CMessageWrap *)wrap {
-	%orig;
-	
-	switch(wrap.m_uiMessageType) {
-	case 49: { // AppNode
-
-		/** 是否为红包消息 */
-		BOOL (^isRedEnvelopMessage)() = ^BOOL() {
-			return [wrap.m_nsContent rangeOfString:@"wxpay://"].location != NSNotFound;
-		};
-		
-		if (isRedEnvelopMessage()) { // 红包
-			CContactMgr *contactManager = [[%c(MMServiceCenter) defaultCenter] getService:[%c(CContactMgr) class]];
-			CContact *selfContact = [contactManager getSelfContact];
-
-			BOOL (^isSender)() = ^BOOL() {
-				return [wrap.m_nsFromUsr isEqualToString:selfContact.m_nsUsrName];
-			};
-
-			/** 是否别人在群聊中发消息 */
-			BOOL (^isGroupReceiver)() = ^BOOL() {
-				return [wrap.m_nsFromUsr rangeOfString:@"@chatroom"].location != NSNotFound;
-			};
-
-			/** 是否自己在群聊中发消息 */
-			BOOL (^isGroupSender)() = ^BOOL() {
-				return isSender() && [wrap.m_nsToUsr rangeOfString:@"chatroom"].location != NSNotFound;
-			};
-
-			/** 是否抢自己发的红包 */
-			BOOL (^isReceiveSelfRedEnvelop)() = ^BOOL() {
-				return [WBRedEnvelopConfig sharedConfig].receiveSelfRedEnvelop;
-			};
-
-			/** 是否在黑名单中 */
-			BOOL (^isGroupInBlackList)() = ^BOOL() {
-				return [[WBRedEnvelopConfig sharedConfig].blackList containsObject:wrap.m_nsFromUsr];
-			};
-
-			/** 是否自动抢红包 */
-			BOOL (^shouldReceiveRedEnvelop)() = ^BOOL() {
-				if (![WBRedEnvelopConfig sharedConfig].autoReceiveEnable) { return NO; }
-				if (isGroupInBlackList()) { return NO; }
-
-				return isGroupReceiver() || (isGroupSender() && isReceiveSelfRedEnvelop());
-			};
-
-			NSDictionary *(^parseNativeUrl)(NSString *nativeUrl) = ^(NSString *nativeUrl) {
-				nativeUrl = [nativeUrl substringFromIndex:[@"wxpay://c2cbizmessagehandler/hongbao/receivehongbao?" length]];
-				return [%c(WCBizUtil) dictionaryWithDecodedComponets:nativeUrl separator:@"&"];
-			};
-
-			/** 获取服务端验证参数 */
-			void (^queryRedEnvelopesReqeust)(NSDictionary *nativeUrlDict) = ^(NSDictionary *nativeUrlDict) {
-				NSMutableDictionary *params = [@{} mutableCopy];
-				params[@"agreeDuty"] = @"0";
-				params[@"channelId"] = [nativeUrlDict stringForKey:@"channelid"];
-				params[@"inWay"] = @"0";
-				params[@"msgType"] = [nativeUrlDict stringForKey:@"msgtype"];
-				params[@"nativeUrl"] = [[wrap m_oWCPayInfoItem] m_c2cNativeUrl];
-				params[@"sendId"] = [nativeUrlDict stringForKey:@"sendid"];
-
-				WCRedEnvelopesLogicMgr *logicMgr = [[objc_getClass("MMServiceCenter") defaultCenter] getService:[objc_getClass("WCRedEnvelopesLogicMgr") class]];
-				[logicMgr ReceiverQueryRedEnvelopesRequest:params];
-			};
-
-			/** 储存参数 */
-			void (^enqueueParam)(NSDictionary *nativeUrlDict) = ^(NSDictionary *nativeUrlDict) {
-					WeChatRedEnvelopParam *mgrParams = [[WeChatRedEnvelopParam alloc] init];
-					mgrParams.msgType = [nativeUrlDict stringForKey:@"msgtype"];
-					mgrParams.sendId = [nativeUrlDict stringForKey:@"sendid"];
-					mgrParams.channelId = [nativeUrlDict stringForKey:@"channelid"];
-					mgrParams.nickName = [selfContact getContactDisplayName];
-					mgrParams.headImg = [selfContact m_nsHeadImgUrl];
-					mgrParams.nativeUrl = [[wrap m_oWCPayInfoItem] m_c2cNativeUrl];
-					mgrParams.sessionUserName = isGroupSender() ? wrap.m_nsToUsr : wrap.m_nsFromUsr;
-					mgrParams.sign = [nativeUrlDict stringForKey:@"sign"];
-
-					mgrParams.isGroupSender = isGroupSender();
-
-					[[WBRedEnvelopParamQueue sharedQueue] enqueue:mgrParams];
-			};
-
-			if (shouldReceiveRedEnvelop()) {
-				NSString *nativeUrl = [[wrap m_oWCPayInfoItem] m_c2cNativeUrl];			
-				NSDictionary *nativeUrlDict = parseNativeUrl(nativeUrl);
-
-				queryRedEnvelopesReqeust(nativeUrlDict);
-				enqueueParam(nativeUrlDict);
-			}
-		}	
-		break;
-	}
-	default:
-		break;
-	}
-	
+- (void)AsyncOnAddMsg:(NSString *)from MsgWrap:(id)msgWrap{
+    %orig;
+    if([LLRedEnvelopesMgr shared].isOpenRedEnvelopesHelper){
+        //CMessageWrap *msgWrap = ext[@"3"];
+        [[LLRedEnvelopesMgr shared] handleMessageWithMessageWrap:msgWrap isBackground:NO];
+    }
 }
 
-- (void)onRevokeMsg:(CMessageWrap *)arg1 {
+- (void)onNewSyncShowPush:(NSDictionary *)message{
+    %orig;
+    if ([LLRedEnvelopesMgr shared].isOpenRedEnvelopesHelper && [LLRedEnvelopesMgr shared].isOpenBackgroundMode && [UIApplication sharedApplication].applicationState == UIApplicationStateBackground){
+        //app在后台运行
+        CMessageWrap *msgWrap = (CMessageWrap *)message;
+        [[LLRedEnvelopesMgr shared] handleMessageWithMessageWrap:msgWrap isBackground:YES];
+    }
+}
 
-	if (![WBRedEnvelopConfig sharedConfig].revokeEnable) {
-		%orig;
+%end
+
+%hook WCRedEnvelopesReceiveControlLogic
+
+- (void)OnOpenRedEnvelopesRequest:(id)request Error:(id)error{
+    %orig;
+    if(![LLRedEnvelopesMgr shared].isOpenRedEnvelopesHelper){
+        return;
+    }
+    WCRedEnvelopesControlData *m_data = MSHookIvar<WCRedEnvelopesControlData *>(self,"m_data");
+    CMessageWrap *m_oSelectedMessageWrap = m_data.m_oSelectedMessageWrap;
+    if([[LLRedEnvelopesMgr shared] isHiddenRedEnvelopesReceiveView:m_oSelectedMessageWrap]){
+        WCRedEnvelopesDetailInfo *detailInfo = m_data.m_oWCRedEnvelopesDetailInfo;
+        [[LLRedEnvelopesMgr shared] successOpenRedEnvelopesHandler:detailInfo];
+    }
+}
+
+%end
+
+%hook WCRedEnvelopesReceiveHomeView
+
+- (id)initWithFrame:(CGRect)frame andData:(id)data delegate:(id)delegate{
+    WCRedEnvelopesReceiveHomeView *view = %orig;
+    if([LLRedEnvelopesMgr shared].isOpenRedEnvelopesHelper && [[LLRedEnvelopesMgr shared] isHiddenRedEnvelopesReceiveView:MSHookIvar<CMessageWrap *>(data,"m_oSelectedMessageWrap")]){
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)([LLRedEnvelopesMgr shared].openRedEnvelopesDelaySecond * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            //打开红包
+            [view OnOpenRedEnvelopes];
+        });
+        view.hidden = YES;
+    }
+    return view;
+}
+
+%end 
+
+%hook MMUIWindow 
+
+- (void)addSubview:(UIView *)subView{
+    if ([LLRedEnvelopesMgr shared].isOpenRedEnvelopesHelper && [subView isKindOfClass:NSClassFromString(@"WCRedEnvelopesReceiveHomeView")]){
+        WCRedEnvelopesReceiveControlLogic *redEnvelopeLogic = MSHookIvar<WCRedEnvelopesReceiveControlLogic *>(subView,"m_delegate");
+        WCRedEnvelopesControlData *controlData = MSHookIvar<WCRedEnvelopesControlData *>(redEnvelopeLogic,"m_data");
+        CMessageWrap *m_oSelectedMessageWrap = MSHookIvar<CMessageWrap *>(controlData,"m_oSelectedMessageWrap");
+        if([[LLRedEnvelopesMgr shared] isHiddenRedEnvelopesReceiveView:m_oSelectedMessageWrap]){
+            //隐藏弹出红包领取完成页面所在window
+            ((UIView *)self).hidden = YES;
+        } else {
+            %orig;
+        }
+    } else {
+        %orig;
+    }
+}
+/*
+- (void)dealloc{
+	if ([LLRedEnvelopesMgr shared].isOpenRedEnvelopesHelper && [LLRedEnvelopesMgr shared].isHiddenRedEnvelopesReceiveView){
+		[LLRedEnvelopesMgr shared].isHiddenRedEnvelopesReceiveView = NO;
 	} else {
-		if ([arg1.m_nsContent rangeOfString:@"<session>"].location == NSNotFound) { return; }
-		if ([arg1.m_nsContent rangeOfString:@"<replacemsg>"].location == NSNotFound) { return; }
-
-		NSString *(^parseSession)() = ^NSString *() {
-			NSUInteger startIndex = [arg1.m_nsContent rangeOfString:@"<session>"].location + @"<session>".length;
-			NSUInteger endIndex = [arg1.m_nsContent rangeOfString:@"</session>"].location;
-			NSRange range = NSMakeRange(startIndex, endIndex - startIndex);
-			return [arg1.m_nsContent substringWithRange:range];
-		};
-
-		NSString *(^parseSenderName)() = ^NSString *() {
-		    NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@"<!\\[CDATA\\[(.*?)撤回了一条消息\\]\\]>" options:NSRegularExpressionCaseInsensitive error:nil];
-
-		    NSRange range = NSMakeRange(0, arg1.m_nsContent.length);
-		    NSTextCheckingResult *result = [regex matchesInString:arg1.m_nsContent options:0 range:range].firstObject;
-		    if (result.numberOfRanges < 2) { return nil; }
-
-		    return [arg1.m_nsContent substringWithRange:[result rangeAtIndex:1]];
-		};
-
-		CMessageWrap *msgWrap = [[%c(CMessageWrap) alloc] initWithMsgType:0x2710];	
-		BOOL isSender = [%c(CMessageWrap) isSenderFromMsgWrap:arg1];
-
-		NSString *sendContent;
-		if (isSender) {
-			[msgWrap setM_nsFromUsr:arg1.m_nsToUsr];
-			[msgWrap setM_nsToUsr:arg1.m_nsFromUsr];
-			sendContent = @"你撤回一条消息";
-		} else {
-			[msgWrap setM_nsToUsr:arg1.m_nsToUsr];
-			[msgWrap setM_nsFromUsr:arg1.m_nsFromUsr];
-
-			NSString *name = parseSenderName();
-			sendContent = [NSString stringWithFormat:@"拦截 %@ 的一条撤回消息", name ? name : arg1.m_nsFromUsr];
-		}
-		[msgWrap setM_uiStatus:0x4];
-		[msgWrap setM_nsContent:sendContent];
-		[msgWrap setM_uiCreateTime:[arg1 m_uiCreateTime]];
-
-		[self AddLocalMsg:parseSession() MsgWrap:msgWrap fixTime:0x1 NewMsgArriveNotify:0x0];
+		%orig;
 	}
+}
+*/
+%end
+/*
+%hook NewMainFrameViewController
+
+- (void)viewDidLoad{
+	%orig;
+	[LLRedEnvelopesMgr shared].openRedEnvelopesBlock = ^{
+		if([LLRedEnvelopesMgr shared].isOpenRedEnvelopesHelper && [LLRedEnvelopesMgr shared].haveNewRedEnvelopes){
+			[LLRedEnvelopesMgr shared].haveNewRedEnvelopes = NO;
+			[LLRedEnvelopesMgr shared].isHongBaoPush = YES;
+			[[LLRedEnvelopesMgr shared] openRedEnvelopes:self];
+		}
+	};
+}
+
+- (void)reloadSessions{
+	%orig;
+	if([LLRedEnvelopesMgr shared].isOpenRedEnvelopesHelper && [LLRedEnvelopesMgr shared].openRedEnvelopesBlock){
+		[LLRedEnvelopesMgr shared].openRedEnvelopesBlock();
+	}
+}
+
+%end
+*/
+%hook WCRedEnvelopesControlLogic
+
+- (void)startLoading{
+    if ([LLRedEnvelopesMgr shared].isOpenRedEnvelopesHelper){
+        WCRedEnvelopesControlData *controlData = MSHookIvar<WCRedEnvelopesControlData *>(self,"m_data");
+        CMessageWrap *m_oSelectedMessageWrap = MSHookIvar<CMessageWrap *>(controlData,"m_oSelectedMessageWrap");
+        if([[LLRedEnvelopesMgr shared] isHiddenRedEnvelopesReceiveView:m_oSelectedMessageWrap]){
+            //隐藏加载菊花
+            //do nothing
+            return;
+        }
+    }
+    %orig;
 }
 
 %end
 
 %hook NewSettingViewController
 
-- (void)reloadTableData {
+- (void)reloadTableData{
 	%orig;
-
-	MMTableViewInfo *tableViewInfo = MSHookIvar<id>(self, "m_tableViewInfo");
-
-	MMTableViewSectionInfo *sectionInfo = [%c(MMTableViewSectionInfo) sectionInfoDefaut];
-
-	MMTableViewCellInfo *settingCell = [%c(MMTableViewCellInfo) normalCellForSel:@selector(setting) target:self title:@"微信小助手" accessoryType:1];
-	[sectionInfo addCell:settingCell];
-
-	[tableViewInfo insertSection:sectionInfo At:0];
-
-	MMTableView *tableView = [tableViewInfo getTableView];
-	[tableView reloadData];
+    MMTableViewCellInfo *configCell = [%c(MMTableViewCellInfo) normalCellForSel:@selector(configHandler) target:self title:@"微信小助手" accessoryType:1];
+    MMTableViewSectionInfo *sectionInfo = [%c(MMTableViewSectionInfo) sectionInfoDefaut];
+    [sectionInfo addCell:configCell];
+    MMTableViewInfo *tableViewInfo = [self valueForKey:@"m_tableViewInfo"];
+    [tableViewInfo insertSection:sectionInfo At:0];
+    [[tableViewInfo getTableView] reloadData];
 }
 
 %new
-- (void)setting {
-	WBSettingViewController *settingViewController = [WBSettingViewController new];
-	[self.navigationController PushViewController:settingViewController animated:YES];
-}
-
-%new
-- (void)followMyOfficalAccount {
-	CContactMgr *contactMgr = [[%c(MMServiceCenter) defaultCenter] getService:%c(CContactMgr)];
-
-	CContact *contact = [contactMgr getContactByName:@"gh_6e8bddcdfca3"];
-
-	ContactInfoViewController *contactViewController = [[%c(ContactInfoViewController) alloc] init];
-	[contactViewController setM_contact:contact];
-
-	[self.navigationController PushViewController:contactViewController animated:YES]; 
+- (void)configHandler{
+    LLSettingController *settingVC = [[LLSettingController alloc] init];
+    [((UIViewController *)self).navigationController PushViewController:settingVC animated:YES];
 }
 
 %end
 
-%hook WCDeviceStepObject
--(NSInteger)m7StepCount {
-    NSInteger stepCount = %orig;
-    NSInteger newStepCount = [WBRedEnvelopConfig sharedConfig].deviceStep;
-    BOOL changeStepEnable = [WBRedEnvelopConfig sharedConfig].changeStepEnable;
+%hook MicroMessengerAppDelegate
 
-    return changeStepEnable ? newStepCount : stepCount;
+- (void)applicationWillEnterForeground:(UIApplication *)application {
+	%orig;
+	[[LLRedEnvelopesMgr shared] reset];
 }
 
--(NSInteger)hkStepCount {
-    NSInteger stepCount = %orig;
-    NSInteger newStepCount = [WBRedEnvelopConfig sharedConfig].deviceStep;
-    BOOL changeStepEnable = [WBRedEnvelopConfig sharedConfig].changeStepEnable;
-
-    return changeStepEnable ? newStepCount : stepCount;
+- (void)applicationDidEnterBackground:(UIApplication *)application{
+  %orig;
+  [[LLRedEnvelopesMgr shared] enterBackgroundHandler];
 }
 
 %end
 
+static const char selectedMessageWrapKey = '\0';
 
+%hook WCRedEnvelopesReceiveControlLogic
 
+- (void)startLogic{
+    WCRedEnvelopesControlData *controlData = MSHookIvar<WCRedEnvelopesControlData *>(self,"m_data");
+    CMessageWrap *m_oSelectedMessageWrap = MSHookIvar<CMessageWrap *>(controlData,"m_oSelectedMessageWrap");
+    MMMsgLogicManager *logicMgr = [[NSClassFromString(@"MMServiceCenter") defaultCenter] getService:NSClassFromString(@"MMMsgLogicManager")];
+    objc_setAssociatedObject(logicMgr,&selectedMessageWrapKey,m_oSelectedMessageWrap,OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    %orig;
+}
+
+%end
+
+%hook MMMsgLogicManager
+
+- (id)GetCurrentLogicController{
+    CMessageWrap *m_oSelectedMessageWrap = objc_getAssociatedObject(self,&selectedMessageWrapKey);
+    if(m_oSelectedMessageWrap){
+        //id logic = [LLRedEnvelopesMgr shared].logicController;
+        //[LLRedEnvelopesMgr shared].logicController = nil;
+        BaseMsgContentLogicController *logicController = [[LLRedEnvelopesMgr shared] logicController:m_oSelectedMessageWrap];
+        return logicController?:%orig;
+    }
+    return %orig;
+}
+
+%end
+
+%hook BaseMsgContentViewController
+
+- (void)tapAppNodeView:(id)cellView{
+    if([cellView isKindOfClass:%c(BaseChatCellView)]){
+        BaseChatCellView *chatCellView = (BaseChatCellView *)cellView;
+        BaseChatViewModel *viewModel = [chatCellView viewModel];
+        CMessageWrap *msgWrap = [viewModel messageWrap];
+        if([[LLRedEnvelopesMgr shared] isHiddenRedEnvelopesReceiveView:msgWrap]){
+            [[LLRedEnvelopesMgr shared] removeIsHiddenRedEnvelopesReceiveView:msgWrap];
+        }
+    }
+    %orig;
+}
+
+%end

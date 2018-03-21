@@ -7,11 +7,13 @@ include $(THEOS)/makefiles/common.mk
 
 SRC = $(wildcard src/*.m)
 
-TWEAK_NAME = WeChatRedEnvelop
-WeChatRedEnvelop_FILES = $(wildcard src/*.m) src/Tweak.xm
-WeChatRedEnvelop_FRAMEWORKS = UIKit
-
+TWEAK_NAME = WeChatRedEnvelopesHelper
+WeChatRedEnvelopesHelper_FILES = $(wildcard src/*.m) $(wildcard src/*.xm)
+WeChatRedEnvelopesHelper_FRAMEWORKS = UIKit
+                     
 include $(THEOS_MAKE_PATH)/tweak.mk
 
 after-install::
 	install.exec "killall -9 WeChat"
+
+

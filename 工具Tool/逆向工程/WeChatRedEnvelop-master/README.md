@@ -1,62 +1,55 @@
-# iOS版微信抢红包插件
+## WeChatRedEnvelopesHelper
+iOS版微信抢红包插件 tweak源文件
 
-目前市面上最稳定、功能最全的 iOS 版微信抢红包插件。
+## V2.0.1版本更新内容
+- 增加好友消息防撤回
+- 增加虚拟定位功能
+- 增加领取红包后自动回复
+- 增加微信运动步数范围随机和固定步数两种模式
+- 增加是否自动领取自己发的红包
 
-## 功能特色
+## Futures
+- [x] 支持微信在后台和锁屏状态下自动抢红包
+- [x] 支持自定义延迟抢红包
+- [x] 支持群聊过滤功能
+- [x] 完全模拟用户点击红包，可有效防止微信发现作弊封号
+- [x] 兼容最新版本微信，跟随微信更新及时更新迭代
+- [x] 支持修改微信运动步数
+- [x] 支持虚拟定位
+- [x] 支持好友消息防撤回
 
-- **完全原生体验**
+## ScreenShots
+- 微信在前台情况演示</br>
+  ![image](https://github.com/kevll/WeChatRedEnvelopesHelper/blob/master/screenshots/foregroundstatus.gif)
 
-    完美嵌入微信设置中，无需安装其它无关应用。开启插件后，所有抢红包工作都会默默进行，不会影响微信的正常使用流程。
+- 微信在后台情况演示</br>
+  ![image](https://github.com/kevll/WeChatRedEnvelopesHelper/blob/master/screenshots/backgroundstatus.gif)
 
-- **可自由设置延迟抢红包时间**
+- 手机锁屏情况演示</br>
+  ![image](https://github.com/kevll/WeChatRedEnvelopesHelper/blob/master/screenshots/lockscreenstatus.gif)
 
-    有效防止抢红包速度太快而被拉黑或者踢出群聊。
+- 高清演示视频</br>
+  [优酷链接](http://v.youku.com/v_show/id_XMzI3NDI3MzE2NA==.html)</br>
+  [youtube链接](https://www.youtube.com/watch?v=cZH16LGaOko)
 
-- **可设置防止同时抢多个红包**
-
-    最大程度避免被系统检测出使用插件，红包抢得更安心。
-
-- **可设置过滤特定的群聊**
-
-    防止落入公司群或者点餐群抢红包的尴尬境地。
-
-- **更新速度快**
- 
-    紧跟微信更新，社区活跃，失效后第一时间进行修复。
-
-- **安全、值得信赖**
-
-    源码完全公开透明，Cydia 市场超过万次下载，值得你拥有
-
-## 安装方法
+## How to install
 
 - 越狱手机
-    1. cydia 市场：直接在 cydia 市场搜索 `WeChatRedEnvelop`，下载安装即可
-    2. 手动编译安装：参考 [iOS微信抢红包Tweak安装教程](http://www.swiftyper.com/2016/01/25/ios-tweak-install-guide/) 教程
-- 非越狱手机：参考 [免越狱版 iOS 抢红包插件](http://www.swiftyper.com/2016/12/26/wechat-redenvelop-tweak-for-non-jailbroken-iphone/) 教程
+    1.  前往cydia市场，搜索 "WeChatRedEnvelopesHelper" 进行安装 （推荐）
+    2.  clone到本地，手动 make package install
 
-## 更新日志
+- 非越狱手机
+    1. 下载已打包好的ipa，使用[impactor](http://www.cydiaimpactor.com/)工具自行安装 （推荐）</br>
+        ipa百度网盘[下载链接](https://pan.baidu.com/s/1mkd0ymc)  密码: sfjs </br>
+      ![image](https://github.com/kevll/WeChatRedEnvelopesHelper/blob/master/screenshots/stepone.gif)</br>
+      ![image](https://github.com/kevll/WeChatRedEnvelopesHelper/blob/master/screenshots/steptwo.gif)</br>
+    2. 从XX助手上面下载越狱版ipa --> 解压缩 --> 拷贝WeChatRedEnvelopesHelper.dylib和libsubstate.dylib到Frameworks目录 --> 向WeChat二进制文件注入dylib -> 更改 WeChatRedEnvelopesHelper.dylib 依赖 --> 打包重签名安装
 
-完整的更新日志请参考[CHANGELOG](./CHANGELOG.md)。
+## How to Setting
+前往微信 “设置” —-> “微信助手设置” —-> 开启助手并保存</br>
+![image](https://github.com/kevll/WeChatRedEnvelopesHelper/blob/master/screenshots/stepthree.gif)
 
-## 版权及免责声明
+## Hope
 
-本插件是由本人学习[iOS应用逆向工程](https://www.amazon.cn/gp/product/B00VFDVY7E/ref=as_li_tf_tl?ie=UTF8&camp=536&creative=3200&creativeASIN=B00VFDVY7E&linkCode=as2&tag=buginux-23)后并由[该书作者](https://github.com/iosre)进行指导后开发的，所有代码都由本人完成。
-
-外挂有风险，使用需谨慎。
-
-要使用本插件，请使用者自行承担各种状况，包括但不限于“禁用红包功能”以及“微信封号”。
-
-## 应用截图
-
-<img src="./ScreenShots/Setting.jpeg" height="568" hspace="20">
-<img src="./ScreenShots/AssistantSetting.jpeg" height="568" hspace="20">
-
-## 支持作者
-
-本项目的所有逆向分析工作，代码编写工作都由本人一人完成。
-
-插件的开发占用了我大量的时间和精力，如果你觉得这个插件对你有帮助（帮你抢到了比之前更多的红包），不妨进行一下小额捐赠，这样我会有更大的动力去完善、优化它。
-
-<img src="./ScreenShots/WechatPay.jpeg" height="300" hspace="20">
-<img src="./ScreenShots/AliPay.jpeg" height="300" hspace="20">
+如果觉得有用，欢迎star</br>
+如果使用发现问题，欢迎issue
