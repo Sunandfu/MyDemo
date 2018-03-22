@@ -401,13 +401,9 @@
 - (void)createPayView{
     MMTableViewSectionInfo *revokeMessageSection = [objc_getClass("MMTableViewSectionInfo") sectionInfoHeader:@"附加功能"];
     [revokeMessageSection addCell:[self createOpenAvoidRevokeMessageCell]];
-<<<<<<< Updated upstream:工具Tool/逆向工程/WeChatRedEnvelopesHelper-master(Best)/WeChatRedEnvelopesHelper-master/src/LLSettingController.m
-//    [revokeMessageSection addCell:[self createGameCheatSwitchCell]];
-=======
     [revokeMessageSection addCell:[self createGameCheatSwitchCell]];
     [revokeMessageSection addCell:[self createOpenBlockSendInputStatusCell]];
     [revokeMessageSection addCell:[self createAssistAmountCell]];
->>>>>>> Stashed changes:工具Tool/逆向工程/WeChatRedEnvelopesHelper-master(Best)/src/LLSettingController.m
 //    [revokeMessageSection addCell:[self createWeChatPayingCell]];
 //    [revokeMessageSection addCell:[self createMyGithupCell]];
     [self.tableViewInfo addSection:revokeMessageSection];
