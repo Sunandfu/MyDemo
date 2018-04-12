@@ -217,19 +217,19 @@
     [self openScanVCWithStyle:[StyleDIY ZhiFuBaoStyle]];
 }
 
-#pragma mark -无边框，内嵌4个角
+#pragma mark - 无边框，内嵌4个角
 - (void)InnerStyle
 {
     [self openScanVCWithStyle:[StyleDIY InnerStyle]];
 }
 
-#pragma mark -无边框，内嵌4个角
+#pragma mark - 模仿微信
 - (void)weixinStyle
 {
     [self openScanVCWithStyle:[StyleDIY weixinStyle]];
 }
 
-#pragma mark -框内区域识别
+#pragma mark - 框内区域识别
 - (void)recoCropRect
 {
     LBXScanViewController *vc = [LBXScanViewController new];

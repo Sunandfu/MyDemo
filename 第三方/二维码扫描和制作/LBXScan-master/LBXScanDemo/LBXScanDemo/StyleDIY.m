@@ -97,7 +97,7 @@
     return style;
 }
 
-#pragma mark -无边框，内嵌4个角
+#pragma mark - 模仿微信
 + (LBXScanViewStyle*)weixinStyle
 {
     //设置扫码区域参数

@@ -28,6 +28,9 @@ $:python -m http.server
 $:python -m http.server 2333
 //就把端口改为了2333。
 
+获取某个APP .h 文件命令
+class-dump -H /Users/daredos/Desktop/WeChat.app -o /Users/daredos/Desktop/WeChatHeader
+
 #TabbarController
 //github： https://github.com/renzifeng/ZFTabBar/issues/2
 

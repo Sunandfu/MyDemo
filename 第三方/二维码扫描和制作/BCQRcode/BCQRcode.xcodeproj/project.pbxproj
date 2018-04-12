@@ -440,14 +440,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: 岁富 史 (HQ5KZN38G9)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Ren Li (23Y3X6G95K)";
 				DEVELOPMENT_TEAM = J4N9H827FQ;
 				GCC_PREFIX_HEADER = BCQRcode/BCQRcode.pch;
 				INFOPLIST_FILE = BCQRcode/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = HBSS.BCQRcode;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "d9ff9c25-d352-49f7-952b-157482995973";
+				PROVISIONING_PROFILE = "c36b4416-49cb-4bc2-a1f8-95ff7c876956";
 				PROVISIONING_PROFILE_SPECIFIER = mySelfTongyong;
 			};
 			name = Debug;
@@ -456,7 +456,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: 岁富 史 (HQ5KZN38G9)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Ren Li (23Y3X6G95K)";
 				DEVELOPMENT_TEAM = J4N9H827FQ;
 				GCC_PREFIX_HEADER = BCQRcode/BCQRcode.pch;
 				INFOPLIST_FILE = BCQRcode/Info.plist;
