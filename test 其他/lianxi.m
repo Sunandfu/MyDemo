@@ -3,6 +3,9 @@ NSAppTransportSecurity
 $(SRCROOT)
 OS_ACTIVITY_MODE : disable
 
+合并frameWork
+lipo -create 【模拟器打包path】 【真机打包path】 -output 【导出兼容版本path】
+
 //  打包地址  /Users/zhaoyunzhou/Library/Developer/Xcode/Archives/
 更换包的路径 ->  应用程序-Xcode–显示包内容-contents–Developer–Platforms–iPhoneOS.platform–DeviceSupport里
 

@@ -32,7 +32,7 @@
     [CYTabBarConfig shared].HidesBottomBarWhenPushedOption = HidesBottomBarWhenPushedTransform;
     
     // 样式
-    switch (0) {
+    switch (1) {
         case 0:
             // 中间按钮突出 ， 设为按钮 , 底部有文字 ， 闲鱼
             [self style1:tabbar];
