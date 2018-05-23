@@ -32,8 +32,8 @@
     return _formatter;
 }
 - (NSString *)myfilePath{
-    NSString *name = [NSString stringWithFormat:@"视频%@",[self.formatter stringFromDate:[NSDate date]]];
-    _myfilePath = [NSString stringWithFormat:@"%@/Documents/%@.%@",NSHomeDirectory(),name,@"dmg"];
+    NSString *name = [NSString stringWithFormat:@"文件%@",[self.formatter stringFromDate:[NSDate date]]];
+    _myfilePath = [NSString stringWithFormat:@"%@/Documents/%@.%@",NSHomeDirectory(),name,@"txt"];
     return _myfilePath;
 }
 - (NSURLSession *)session
@@ -46,7 +46,7 @@
 
 - (NSURLRequest *)request
 {
-    NSString *urlStr = @"http://dldir1.qq.com/qqfile/QQforMac/QQ_V4.2.1.dmg";
+    NSString *urlStr = @"https://cdn.heweather.com/china-city-list.txt";
 //    NSString *urlStr = @"http://data.vod.itc.cn/?rb=1&prot=1&key=jbZhEJhlqlUN-Wj_HEI8BjaVqKNFvDrn&prod=flash&pt=1&new=/42/154/nuLVh3RpRGqzMNmX9WiWAA.mp4";
     //创建请求
     NSURL *url = [NSURL URLWithString:urlStr];

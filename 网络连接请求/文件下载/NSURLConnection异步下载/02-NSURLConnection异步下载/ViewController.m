@@ -48,7 +48,7 @@
 
 - (void)download {
 //    NSString *urlString = @"http://dldir1.qq.com/qqfile/QQforMac/QQ_V4.2.1.dmg";
-    NSString *urlString = @"http://flv2.bn.netease.com/videolib3/1511/19/RiCBl0272/SD/RiCBl0272-mobile.mp4";
+    NSString *urlString = @"https://cdn.heweather.com/china-city-list.txt";
     urlString = [urlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     NSURL *url = [NSURL URLWithString:urlString];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
@@ -69,7 +69,7 @@
     NSLog(@"%s", __FUNCTION__);
     self.expectedContentLength = response.expectedContentLength;
     self.currentLenght = 0;
-    self.targetPath = [NSHomeDirectory() stringByAppendingString:@"/Documents/test_movie.mp4"];
+    self.targetPath = [NSHomeDirectory() stringByAppendingString:@"/Documents/test_movie.txt"];
     [[NSFileManager defaultManager] removeItemAtPath:self.targetPath error:NULL];
 }
 

@@ -38,6 +38,7 @@
 
 @interface YYExampleNavController : UINavigationController
 @end
+
 @implementation YYExampleNavController
 - (BOOL)shouldAutorotate {
     return YES;
