@@ -11,6 +11,8 @@ lipo -create 【模拟器打包path】 【真机打包path】 -output 【导出�
 
 project包路径 : /Users/lurich/Library/Developer/Xcode/DerivedData/
 
+设置-安全性与隐私-里面如果没有任何来源这个选项的话（macOS Sierra 10.12）,打开终端，输入sudo spctl --master-disable然后按回车。然后会看见个password后面还有个钥匙图标，然后不用管他直接再继续输入你自己电脑解锁密码（输入的时候不显示你输入的密码，感觉就是输入不了东西一样，也不用管，凭感觉输入完按回车键）。然后再回到隐私里，就看见任何来源了。
+
 //开启apache:
 sudo apachectl start
 //重启apache:
