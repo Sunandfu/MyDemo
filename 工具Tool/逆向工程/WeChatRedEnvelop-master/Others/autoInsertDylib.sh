@@ -70,3 +70,4 @@ rm -rf ${shell_path}/extracted ${temp_dir}
 # echo "打开 tweak-temp-tk 文件夹"
 open ${shell_path}/../Products/
 # open /Applications/iOS\ App\ Signer.app
+# 注释： 执行 ./Others/autoInsertDylib.sh ipa文件路径 dylib文件路径 即可获得注入dylib的app文件。
