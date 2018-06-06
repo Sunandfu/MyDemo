@@ -223,6 +223,7 @@
 				TargetAttributes = {
 					489395E11CAE622600EC8F83 = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = J4N9H827FQ;
 					};
 					489395FA1CAE622600EC8F83 = {
 						CreatedOnToolsVersion = 7.3;
@@ -433,6 +434,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = J4N9H827FQ;
 				INFOPLIST_FILE = huachi/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yunxiang.huachi;
@@ -444,6 +446,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = J4N9H827FQ;
 				INFOPLIST_FILE = huachi/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yunxiang.huachi;
