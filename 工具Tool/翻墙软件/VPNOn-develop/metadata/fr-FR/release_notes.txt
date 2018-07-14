@@ -1,0 +1,2 @@
+1. Mettre à jour la base de données GeoIP.
+2. Localisée pour l'arabe (Arabie Saoudite).

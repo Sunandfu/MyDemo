@@ -1,0 +1,2 @@
+1. Update GeoIP-Datenbank.
+2. Lokalisierte für Arabisch (Saudi-Arabien).

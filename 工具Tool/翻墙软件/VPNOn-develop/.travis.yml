@@ -1,0 +1,10 @@
+language: objective-c
+osx_image: xcode8
+script:
+  - |
+    xcodebuild \
+    -project VPNOn.xcodeproj \
+    -scheme VPNOn \
+    -sdk iphonesimulator \
+    | xcpretty
+

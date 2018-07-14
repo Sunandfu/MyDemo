@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11232" systemVersion="15G1004" minimumToolsVersion="Xcode 4.3" sourceLanguage="Objective-C" userDefinedModelVersionIdentifier="">
+    <entity name="VPN" representedClassName=".VPN" syncable="YES">
+        <attribute name="account" optional="YES" attributeType="String" maxValueString="256" syncable="YES"/>
+        <attribute name="alwaysOn" attributeType="Boolean" defaultValueString="YES" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="countryCode" optional="YES" attributeType="String" maxValueString="10" syncable="YES"/>
+        <attribute name="group" optional="YES" attributeType="String" maxValueString="256" syncable="YES"/>
+        <attribute name="ikev2" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="remoteID" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="server" attributeType="String" minValueString="1" maxValueString="256" defaultValueString="vpn" spotlightIndexingEnabled="YES" syncable="YES"/>
+        <attribute name="title" attributeType="String" minValueString="1" maxValueString="256" defaultValueString="vpn" spotlightIndexingEnabled="YES" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="VPN" positionX="-3951" positionY="-1827" width="128" height="165"/>
+    </elements>
+</model>
