@@ -8,7 +8,7 @@
  */
 
 #import "KafkaArcLayer.h"
-#import "CALayer+KafkaLayout.h"
+#import "KafkaCategories.h"
 
 #define KafkaColorWithRGBA(r,g,b,a)  \
 [UIColor colorWithRed:(r)/255. green:(g)/255. blue:(b)/255. alpha:(a)]
@@ -49,17 +49,11 @@
 }
 
 - (void)setRingFillColor:(UIColor *)ringFillColor{
-	if (_ringFillColor == ringFillColor) {
-		return;
-	}
 	_ringFillColor = ringFillColor;
 	self.ringShapeLayer.strokeColor = ringFillColor.CGColor;
 }
 
-- (void)setRingBackgroundColor:(UIColor *)ringBackgroundColor{
-	if (_ringBackgroundColor == ringBackgroundColor) {
-		return;
-	}
+- (void)setRingBackgroundColor:(UIColor *)ringBackgroundColor{ 
 	_ringBackgroundColor = ringBackgroundColor;
 	self.ringBackgroundLayer.strokeColor = ringBackgroundColor.CGColor;
 }
@@ -73,7 +67,7 @@
 	self.ringShapeLayer.frame = self.ringBackgroundLayer.bounds;
 	self.ringShapeLayer.position = CGPointMake(CGRectGetMidX(self.ringBackgroundLayer.bounds), CGRectGetMidY(self.ringBackgroundLayer.bounds));
 	
-	self.bezierPath = [UIBezierPath bezierPathWithRoundedRect:self.ringShapeLayer.bounds cornerRadius:self.ringShapeLayer.width/2.];
+	self.bezierPath = [UIBezierPath bezierPathWithRoundedRect:self.ringShapeLayer.bounds cornerRadius:self.ringShapeLayer.kr_width/2.];
 	
 	self.ringBackgroundLayer.path = self.bezierPath.CGPath;
 	self.ringShapeLayer.path = self.bezierPath.CGPath;
@@ -99,6 +93,7 @@
 		_ringShapeLayer.backgroundColor = [UIColor clearColor].CGColor;
 		_ringShapeLayer.fillColor = [UIColor clearColor].CGColor;
 		_ringShapeLayer.strokeColor = self.ringFillColor.CGColor;
+		_ringShapeLayer.strokeEnd = 0;
 	}
 	return _ringShapeLayer;
 }

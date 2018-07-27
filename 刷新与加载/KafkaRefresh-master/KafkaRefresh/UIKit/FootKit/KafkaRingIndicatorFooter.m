@@ -9,6 +9,7 @@
  */
 
 #import "KafkaRingIndicatorFooter.h" 
+#import "KafkaCategories.h"
 
 @implementation KafkaRingIndicatorFooter
 
@@ -20,20 +21,32 @@
 
 - (void)layoutSubviews{
 	[super layoutSubviews];
-	self.arcLayer.frame = CGRectMake(0, 0, self.width, self.height);
-	self.indicator.center = CGPointMake(self.width/2., self.height/2.);
+	self.arcLayer.frame = CGRectMake(0, 0, self.kr_width, self.kr_height);
+	self.indicator.center = CGPointMake(self.kr_width/2., self.kr_height/2.);
 }
 
-- (void)setFillColor:(UIColor *)fillColor{
-	if (super.fillColor == fillColor) {
+- (void)setThemeColor:(UIColor *)fillColor{
+	if (super.themeColor == fillColor) {
 		return;
 	}
-	[super setFillColor:fillColor];
+	[super setThemeColor:fillColor];
 	self.arcLayer.ringFillColor = fillColor; 
 }
 
+- (void)setAnimatedBackgroundColor:(UIColor *)animatedBackgroundColor{
+	if (super.animatedBackgroundColor == animatedBackgroundColor) {
+		return;
+	}
+	[super setAnimatedBackgroundColor:animatedBackgroundColor];
+	self.arcLayer.ringBackgroundColor = animatedBackgroundColor;
+}
+
 - (void)kafkaDidScrollWithProgress:(CGFloat)progress max:(const CGFloat)max{
-	[self.arcLayer setProgress:progress];
+#define kOffset 0.3
+	if (progress >= kOffset) {
+		progress = (progress-kOffset)/(max - kOffset);
+		[self.arcLayer setProgress:progress];
+	}
 }
 
 - (void)kafkaRefreshStateDidChange:(KafkaRefreshState)state{

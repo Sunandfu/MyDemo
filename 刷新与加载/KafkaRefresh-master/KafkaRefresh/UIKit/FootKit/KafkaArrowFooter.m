@@ -10,6 +10,7 @@
 
 #import "KafkaArrowFooter.h" 
 #import "KafkaRefreshDefaults.h"
+#import "KafkaCategories.h"
 
 @interface KafkaArrowFooter()
 
@@ -36,20 +37,18 @@
 	[super layoutSubviews];
 	
 	[self.promptlabel sizeToFit];
-	self.promptlabel.center = CGPointMake(self.width/2.0, self.height/2.);
+	self.promptlabel.center = CGPointMake(self.kr_width/2.0, self.kr_height/2.);
 	
 	self.arrowImgV.frame = CGRectMake(0, 0, 12, 12);
-	self.arrowImgV.right = self.promptlabel.left-20.;
-	self.arrowImgV.top = self.promptlabel.centerY;
+	self.arrowImgV.kr_right = self.promptlabel.kr_left-20.;
+	self.arrowImgV.kr_top = self.promptlabel.kr_centerY;
 	
-	self.indicator.center = self.arrowImgV.center;
+	self.indicator.center = self.arrowImgV.center; 
 }
 
 - (void)kafkaDidScrollWithProgress:(CGFloat)progress max:(const CGFloat)max{
-	__weak typeof(self) weakSelf = self;
-	[UIView animateWithDuration:0.3 animations:^{
-		weakSelf.arrowImgV.transform = CGAffineTransformMakeRotation(M_PI);
-	}];
+	
+	
 }
 
 - (void)kafkaRefreshStateDidChange:(KafkaRefreshState)state{
@@ -58,16 +57,24 @@
 	switch (state) {
 		case KafkaRefreshStateNone:{
 			self.arrowImgV.hidden = NO;
+			[_indicator stopAnimating];
 			[UIView animateWithDuration:0.3 animations:^{
 				weakSelf.arrowImgV.transform = CGAffineTransformMakeRotation(M_PI);
 			}];
 			break;
 		}
 		case KafkaRefreshStateScrolling:{
+			[_indicator stopAnimating];
 			self.promptlabel.text = _pullingText;
+			[self.promptlabel sizeToFit];
+			__weak typeof(self) weakSelf = self;
+			[UIView animateWithDuration:0.3 animations:^{
+				weakSelf.arrowImgV.transform = CGAffineTransformMakeRotation(M_PI);
+			}];
 			break;
 		}
 		case KafkaRefreshStateReady:{
+			[_indicator stopAnimating];
 			self.promptlabel.text = _readyText;
 			[UIView animateWithDuration:0.3 animations:^{
 				weakSelf.arrowImgV.transform = CGAffineTransformMakeRotation(M_PI*2);
@@ -95,13 +102,14 @@
 		NSString *urlString = [path stringByAppendingPathComponent:@"arrow48.png"];
 		UIImage *image = [UIImage imageWithContentsOfFile:urlString];
 		_arrowImgV = [[UIImageView alloc] initWithImage:image];
+		_arrowImgV.layer.anchorPoint = CGPointMake(0.5, 0);
 	}
 	return _arrowImgV;
 }
 
 - (UILabel *)promptlabel{
 	if (!_promptlabel) {
-		_promptlabel = [[UILabel alloc] init];
+		_promptlabel = [UILabel new];
 		_promptlabel.textAlignment = NSTextAlignmentCenter;
 		_promptlabel.textColor = KafkaColorWithRGBA(100.,100.,100.,1.0);
 		if (@available(iOS 8.2, *))

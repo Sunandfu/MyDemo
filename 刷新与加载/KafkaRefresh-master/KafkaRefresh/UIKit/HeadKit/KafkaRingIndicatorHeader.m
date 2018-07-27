@@ -9,6 +9,7 @@
  */
 
 #import "KafkaRingIndicatorHeader.h"
+#import "KafkaCategories.h"
  
 @implementation KafkaRingIndicatorHeader
 
@@ -20,21 +21,30 @@
 
 - (void)layoutSubviews{
 	[super layoutSubviews];
-	self.arcLayer.frame = CGRectMake(0, 0, self.width, self.height);
-	self.indicator.center = CGPointMake(self.width/2., self.height/2.);
+	self.arcLayer.frame = CGRectMake(0, 0, self.kr_width, self.kr_height);
+	self.indicator.center = CGPointMake(self.kr_width/2., self.kr_height/2.);
 }
 
-- (void)setFillColor:(UIColor *)fillColor{
-	if (super.fillColor == fillColor) {
+- (void)setThemeColor:(UIColor *)themeColor{
+	if (super.themeColor == themeColor) {
 		return;
 	}
-	[super setFillColor:fillColor];
-	self.arcLayer.ringFillColor = fillColor;
+	[super setThemeColor:themeColor];
+	self.arcLayer.ringFillColor = themeColor;
 }
 
-- (void)kafkaDidScrollWithProgress:(CGFloat)progress max:(const CGFloat)max{
-	if (progress >= 1.0) {
-		progress = (progress-1.0)/(max - 1.0);
+- (void)setAnimatedBackgroundColor:(UIColor *)animatedBackgroundColor{
+	if (super.animatedBackgroundColor == animatedBackgroundColor) {
+		return;
+	}
+	[super setAnimatedBackgroundColor:animatedBackgroundColor];
+	self.arcLayer.ringBackgroundColor = animatedBackgroundColor;
+}
+
+- (void)kafkaDidScrollWithProgress:(CGFloat)progress max:(const CGFloat)max{ 
+#define kOffset 0.7
+	if (progress >= kOffset) {
+		progress = (progress-kOffset)/(max - kOffset);
 		[self.arcLayer setProgress:progress];
 	}
 }
@@ -42,7 +52,10 @@
 - (void)kafkaRefreshStateDidChange:(KafkaRefreshState)state{
 	[super kafkaRefreshStateDidChange:state];
 	switch (state) {
-		case KafkaRefreshStateNone:
+		case KafkaRefreshStateNone:{
+			[self.arcLayer setProgress:0];
+			break;
+		}
 		case KafkaRefreshStateScrolling:
 		case KafkaRefreshStateReady:{
 			break;

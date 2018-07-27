@@ -9,6 +9,7 @@
  */
 
 #import "KafkaReplicatorHeader.h"  
+#import "KafkaCategories.h"
 
 @implementation KafkaReplicatorHeader
 
@@ -19,27 +20,49 @@
 
 - (void)layoutSubviews{
 	[super layoutSubviews];
-	self.replicatorLayer.frame = CGRectMake(0, 0, self.width, self.height);
+	self.replicatorLayer.frame = CGRectMake(0, 0, self.kr_width, self.kr_height);
 }
 
-- (void)setFillColor:(UIColor *)fillColor{
-	if (super.fillColor == fillColor) {
-		return;
-	}
-	[super setFillColor:fillColor];
-	self.replicatorLayer.tintColor = fillColor;
+- (void)setThemeColor:(UIColor *)themeColor{
+	[super setThemeColor:themeColor];
+    self.replicatorLayer.themeColor = themeColor;
 }
 
-- (void)setAnimationStyle:(KafkaReplicatorLayerAnimationStyle)animationStyle{
-	if (_animationStyle == animationStyle) {
-		return;
-	}
+- (void)setAnimationStyle:(KafkaReplicatorLayerAnimationStyle)animationStyle{ 
 	_animationStyle = animationStyle;
 	self.replicatorLayer.animationStyle = animationStyle;
 }
 
-- (void)kafkaDidScrollWithProgress:(CGFloat)progress max:(const CGFloat)max{ 
-	self.replicatorLayer.opacity = progress;
+- (void)kafkaDidScrollWithProgress:(CGFloat)progress max:(const CGFloat)max{
+#define kOffset 0.7
+	if (progress >= 0.8) {
+		progress = (progress-kOffset)/(max - kOffset);
+	}
+	switch (self.animationStyle) {
+		case KafkaReplicatorLayerAnimationStyleWoody:{
+			break;
+		}
+		case KafkaReplicatorLayerAnimationStyleAllen:{
+			
+			break;
+		}
+		case KafkaReplicatorLayerAnimationStyleCircle:{
+			
+			break;
+		}
+		case KafkaReplicatorLayerAnimationStyleDot:{
+			
+			break;
+		}
+		case KafkaReplicatorLayerAnimationStyleArc:{
+			self.replicatorLayer.indicatorShapeLayer.strokeEnd = progress;
+			break;
+		}
+		case KafkaReplicatorLayerAnimationStyleTriangle:{
+			
+			break;
+		}
+	}
 }
 
 - (void)kafkaRefreshStateDidChange:(KafkaRefreshState)state{
