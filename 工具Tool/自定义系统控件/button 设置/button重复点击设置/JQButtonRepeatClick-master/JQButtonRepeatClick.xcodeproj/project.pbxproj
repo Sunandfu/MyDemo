@@ -1,0 +1,553 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		47303B5D1E091495006C410C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 47303B5C1E091495006C410C /* main.m */; };
+		47303B601E091495006C410C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 47303B5F1E091495006C410C /* AppDelegate.m */; };
+		47303B631E091495006C410C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47303B621E091495006C410C /* ViewController.m */; };
+		47303B661E091495006C410C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47303B641E091495006C410C /* Main.storyboard */; };
+		47303B681E091495006C410C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 47303B671E091495006C410C /* Assets.xcassets */; };
+		47303B6B1E091495006C410C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47303B691E091495006C410C /* LaunchScreen.storyboard */; };
+		47303B761E091495006C410C /* JQButtonRepeatClickTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 47303B751E091495006C410C /* JQButtonRepeatClickTests.m */; };
+		47303B811E091495006C410C /* JQButtonRepeatClickUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 47303B801E091495006C410C /* JQButtonRepeatClickUITests.m */; };
+		47303B911E091571006C410C /* UIControl+JQ.m in Sources */ = {isa = PBXBuildFile; fileRef = 47303B901E091571006C410C /* UIControl+JQ.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		47303B721E091495006C410C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 47303B501E091495006C410C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 47303B571E091495006C410C;
+			remoteInfo = JQButtonRepeatClick;
+		};
+		47303B7D1E091495006C410C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 47303B501E091495006C410C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 47303B571E091495006C410C;
+			remoteInfo = JQButtonRepeatClick;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		47303B581E091495006C410C /* JQButtonRepeatClick.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JQButtonRepeatClick.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		47303B5C1E091495006C410C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		47303B5E1E091495006C410C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		47303B5F1E091495006C410C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		47303B611E091495006C410C /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		47303B621E091495006C410C /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		47303B651E091495006C410C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		47303B671E091495006C410C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		47303B6A1E091495006C410C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		47303B6C1E091495006C410C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		47303B711E091495006C410C /* JQButtonRepeatClickTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JQButtonRepeatClickTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		47303B751E091495006C410C /* JQButtonRepeatClickTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JQButtonRepeatClickTests.m; sourceTree = "<group>"; };
+		47303B771E091495006C410C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		47303B7C1E091495006C410C /* JQButtonRepeatClickUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JQButtonRepeatClickUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		47303B801E091495006C410C /* JQButtonRepeatClickUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JQButtonRepeatClickUITests.m; sourceTree = "<group>"; };
+		47303B821E091495006C410C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		47303B8F1E091571006C410C /* UIControl+JQ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIControl+JQ.h"; sourceTree = "<group>"; };
+		47303B901E091571006C410C /* UIControl+JQ.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIControl+JQ.m"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		47303B551E091495006C410C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		47303B6E1E091495006C410C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		47303B791E091495006C410C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		47303B4F1E091495006C410C = {
+			isa = PBXGroup;
+			children = (
+				47303B5A1E091495006C410C /* JQButtonRepeatClick */,
+				47303B741E091495006C410C /* JQButtonRepeatClickTests */,
+				47303B7F1E091495006C410C /* JQButtonRepeatClickUITests */,
+				47303B591E091495006C410C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		47303B591E091495006C410C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				47303B581E091495006C410C /* JQButtonRepeatClick.app */,
+				47303B711E091495006C410C /* JQButtonRepeatClickTests.xctest */,
+				47303B7C1E091495006C410C /* JQButtonRepeatClickUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		47303B5A1E091495006C410C /* JQButtonRepeatClick */ = {
+			isa = PBXGroup;
+			children = (
+				47303B8E1E0914C3006C410C /* UIControl+JQ */,
+				47303B5E1E091495006C410C /* AppDelegate.h */,
+				47303B5F1E091495006C410C /* AppDelegate.m */,
+				47303B611E091495006C410C /* ViewController.h */,
+				47303B621E091495006C410C /* ViewController.m */,
+				47303B641E091495006C410C /* Main.storyboard */,
+				47303B671E091495006C410C /* Assets.xcassets */,
+				47303B691E091495006C410C /* LaunchScreen.storyboard */,
+				47303B6C1E091495006C410C /* Info.plist */,
+				47303B5B1E091495006C410C /* Supporting Files */,
+			);
+			path = JQButtonRepeatClick;
+			sourceTree = "<group>";
+		};
+		47303B5B1E091495006C410C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				47303B5C1E091495006C410C /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		47303B741E091495006C410C /* JQButtonRepeatClickTests */ = {
+			isa = PBXGroup;
+			children = (
+				47303B751E091495006C410C /* JQButtonRepeatClickTests.m */,
+				47303B771E091495006C410C /* Info.plist */,
+			);
+			path = JQButtonRepeatClickTests;
+			sourceTree = "<group>";
+		};
+		47303B7F1E091495006C410C /* JQButtonRepeatClickUITests */ = {
+			isa = PBXGroup;
+			children = (
+				47303B801E091495006C410C /* JQButtonRepeatClickUITests.m */,
+				47303B821E091495006C410C /* Info.plist */,
+			);
+			path = JQButtonRepeatClickUITests;
+			sourceTree = "<group>";
+		};
+		47303B8E1E0914C3006C410C /* UIControl+JQ */ = {
+			isa = PBXGroup;
+			children = (
+				47303B8F1E091571006C410C /* UIControl+JQ.h */,
+				47303B901E091571006C410C /* UIControl+JQ.m */,
+			);
+			path = "UIControl+JQ";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		47303B571E091495006C410C /* JQButtonRepeatClick */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 47303B851E091495006C410C /* Build configuration list for PBXNativeTarget "JQButtonRepeatClick" */;
+			buildPhases = (
+				47303B541E091495006C410C /* Sources */,
+				47303B551E091495006C410C /* Frameworks */,
+				47303B561E091495006C410C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = JQButtonRepeatClick;
+			productName = JQButtonRepeatClick;
+			productReference = 47303B581E091495006C410C /* JQButtonRepeatClick.app */;
+			productType = "com.apple.product-type.application";
+		};
+		47303B701E091495006C410C /* JQButtonRepeatClickTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 47303B881E091495006C410C /* Build configuration list for PBXNativeTarget "JQButtonRepeatClickTests" */;
+			buildPhases = (
+				47303B6D1E091495006C410C /* Sources */,
+				47303B6E1E091495006C410C /* Frameworks */,
+				47303B6F1E091495006C410C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				47303B731E091495006C410C /* PBXTargetDependency */,
+			);
+			name = JQButtonRepeatClickTests;
+			productName = JQButtonRepeatClickTests;
+			productReference = 47303B711E091495006C410C /* JQButtonRepeatClickTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		47303B7B1E091495006C410C /* JQButtonRepeatClickUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 47303B8B1E091495006C410C /* Build configuration list for PBXNativeTarget "JQButtonRepeatClickUITests" */;
+			buildPhases = (
+				47303B781E091495006C410C /* Sources */,
+				47303B791E091495006C410C /* Frameworks */,
+				47303B7A1E091495006C410C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				47303B7E1E091495006C410C /* PBXTargetDependency */,
+			);
+			name = JQButtonRepeatClickUITests;
+			productName = JQButtonRepeatClickUITests;
+			productReference = 47303B7C1E091495006C410C /* JQButtonRepeatClickUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		47303B501E091495006C410C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = HaRi;
+				TargetAttributes = {
+					47303B571E091495006C410C = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = WTB2BKP7UZ;
+						ProvisioningStyle = Automatic;
+					};
+					47303B701E091495006C410C = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = WTB2BKP7UZ;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 47303B571E091495006C410C;
+					};
+					47303B7B1E091495006C410C = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = WTB2BKP7UZ;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 47303B571E091495006C410C;
+					};
+				};
+			};
+			buildConfigurationList = 47303B531E091495006C410C /* Build configuration list for PBXProject "JQButtonRepeatClick" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 47303B4F1E091495006C410C;
+			productRefGroup = 47303B591E091495006C410C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				47303B571E091495006C410C /* JQButtonRepeatClick */,
+				47303B701E091495006C410C /* JQButtonRepeatClickTests */,
+				47303B7B1E091495006C410C /* JQButtonRepeatClickUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		47303B561E091495006C410C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				47303B6B1E091495006C410C /* LaunchScreen.storyboard in Resources */,
+				47303B681E091495006C410C /* Assets.xcassets in Resources */,
+				47303B661E091495006C410C /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		47303B6F1E091495006C410C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		47303B7A1E091495006C410C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		47303B541E091495006C410C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				47303B631E091495006C410C /* ViewController.m in Sources */,
+				47303B601E091495006C410C /* AppDelegate.m in Sources */,
+				47303B911E091571006C410C /* UIControl+JQ.m in Sources */,
+				47303B5D1E091495006C410C /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		47303B6D1E091495006C410C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				47303B761E091495006C410C /* JQButtonRepeatClickTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		47303B781E091495006C410C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				47303B811E091495006C410C /* JQButtonRepeatClickUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		47303B731E091495006C410C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 47303B571E091495006C410C /* JQButtonRepeatClick */;
+			targetProxy = 47303B721E091495006C410C /* PBXContainerItemProxy */;
+		};
+		47303B7E1E091495006C410C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 47303B571E091495006C410C /* JQButtonRepeatClick */;
+			targetProxy = 47303B7D1E091495006C410C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		47303B641E091495006C410C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				47303B651E091495006C410C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		47303B691E091495006C410C /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				47303B6A1E091495006C410C /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		47303B831E091495006C410C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		47303B841E091495006C410C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		47303B861E091495006C410C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = WTB2BKP7UZ;
+				INFOPLIST_FILE = JQButtonRepeatClick/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = HanJunqiang.JQButtonRepeatClick;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		47303B871E091495006C410C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = WTB2BKP7UZ;
+				INFOPLIST_FILE = JQButtonRepeatClick/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = HanJunqiang.JQButtonRepeatClick;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		47303B891E091495006C410C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = WTB2BKP7UZ;
+				INFOPLIST_FILE = JQButtonRepeatClickTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = HanJunqiang.JQButtonRepeatClickTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JQButtonRepeatClick.app/JQButtonRepeatClick";
+			};
+			name = Debug;
+		};
+		47303B8A1E091495006C410C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = WTB2BKP7UZ;
+				INFOPLIST_FILE = JQButtonRepeatClickTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = HanJunqiang.JQButtonRepeatClickTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JQButtonRepeatClick.app/JQButtonRepeatClick";
+			};
+			name = Release;
+		};
+		47303B8C1E091495006C410C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = WTB2BKP7UZ;
+				INFOPLIST_FILE = JQButtonRepeatClickUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = HanJunqiang.JQButtonRepeatClickUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = JQButtonRepeatClick;
+			};
+			name = Debug;
+		};
+		47303B8D1E091495006C410C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = WTB2BKP7UZ;
+				INFOPLIST_FILE = JQButtonRepeatClickUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = HanJunqiang.JQButtonRepeatClickUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = JQButtonRepeatClick;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		47303B531E091495006C410C /* Build configuration list for PBXProject "JQButtonRepeatClick" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				47303B831E091495006C410C /* Debug */,
+				47303B841E091495006C410C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		47303B851E091495006C410C /* Build configuration list for PBXNativeTarget "JQButtonRepeatClick" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				47303B861E091495006C410C /* Debug */,
+				47303B871E091495006C410C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		47303B881E091495006C410C /* Build configuration list for PBXNativeTarget "JQButtonRepeatClickTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				47303B891E091495006C410C /* Debug */,
+				47303B8A1E091495006C410C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		47303B8B1E091495006C410C /* Build configuration list for PBXNativeTarget "JQButtonRepeatClickUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				47303B8C1E091495006C410C /* Debug */,
+				47303B8D1E091495006C410C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 47303B501E091495006C410C /* Project object */;
+}

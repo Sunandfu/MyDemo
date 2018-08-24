@@ -11,7 +11,14 @@
 #import "SDWebImageOperation.h"
 
 typedef NS_OPTIONS(NSUInteger, SDWebImageDownloaderOptions) {
+    /**
+     * Put the download in the low queue priority and task priority.
+     */
     SDWebImageDownloaderLowPriority = 1 << 0,
+    
+    /**
+     * This flag enables progressive download, the image is displayed progressively during download as a browser would do.
+     */
     SDWebImageDownloaderProgressiveDownload = 1 << 1,
 
     /**
@@ -45,7 +52,7 @@ typedef NS_OPTIONS(NSUInteger, SDWebImageDownloaderOptions) {
     SDWebImageDownloaderAllowInvalidSSLCertificates = 1 << 6,
 
     /**
-     * Put the image in the high priority queue.
+     * Put the download in the high queue priority and task priority.
      */
     SDWebImageDownloaderHighPriority = 1 << 7,
     
@@ -190,12 +197,13 @@ typedef SDHTTPHeadersDictionary * _Nullable (^SDWebImageDownloaderHeadersFilterB
 - (nullable NSString *)valueForHTTPHeaderField:(nullable NSString *)field;
 
 /**
- * Sets a subclass of `SDWebImageDownloaderOperation` as the default
- * `NSOperation` to be used each time SDWebImage constructs a request
+ * Sets a subclass of `NSOperation` and conforms to `SDWebImageDownloaderOperationInterface`.
+ * Default is `SDWebImageDownloaderOperation`.
+ * Can be used each time SDWebImage constructs a request
  * operation to download an image.
  *
- * @param operationClass The subclass of `SDWebImageDownloaderOperation` to set 
- *        as default. Passing `nil` will revert to `SDWebImageDownloaderOperation`.
+ * @param operationClass The subclass of `NSOperation` and conforms to `SDWebImageDownloaderOperationInterface`.
+ * Default is `SDWebImageDownloaderOperation`, Passing `nil` will revert to `SDWebImageDownloaderOperation`.
  */
 - (void)setOperationClass:(nullable Class)operationClass;
 
