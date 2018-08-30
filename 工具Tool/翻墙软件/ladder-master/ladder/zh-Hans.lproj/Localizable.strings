@@ -1,0 +1,55 @@
+//
+//  Localizable.strings
+//  Ladder
+//
+//  Created by Aofei Sheng on 2018/4/3.
+//  Copyright © 2018 Aofei Sheng. All rights reserved.
+//
+
+"Ladder" = "梯子";
+
+"OK" = "好";
+"Cancel" = "取消";
+"Settings" = "设置";
+
+"General" = "通用";
+"Hide VPN Icon" = "隐藏 VPN 图标";
+"Enter PAC URL here" = "在这里输入 PAC URL";
+"Please enter a PAC URL." = "请输入一个 PAC URL。";
+"Please enter a valid PAC URL." = "请输入一个有效的 PAC URL。";
+"PAC Max Age" = "PAC 有效时间";
+"Enter PAC max age here" = "在这里输入 PAC 有效时间";
+"Please enter a PAC max age." = "请输入一个 PAC 有效时间。";
+"PAC max age must greater than or equal to 0." = "PAC 有效时间必须大于或等于 0。";
+"PAC max age must smaller than or equal to 86400." = "PAC 有效时间必须小于或等于 86400。";
+
+"Shadowsocks" = "影梭";
+"Server Address" = "服务器地址";
+"Enter server address here" = "在这里输入服务器地址";
+"Please enter a Shadowsocks server address." = "请输入一个影梭服务器地址。";
+"Server Port" = "服务器端口";
+"Enter server port here" = "在这里输入服务器端口";
+"Please enter a Shadowsocks server port." = "请输入一个影梭服务器端口。";
+"Shadowsocks server port must greater than or equal to 0." = "影梭服务器端口必须大于或等于 0。";
+"Shadowsocks server port must smaller than or equal to 65535." = "影梭服务器端口必须小于或等于 65535。";
+"Local Address" = "本地地址";
+"Enter local address here" = "在这里输入本地地址";
+"Please enter a Shadowsocks local address." = "请输入一个影梭本地地址。";
+"Local Port" = "本地端口";
+"Enter local port here" = "在这里输入本地端口";
+"Please enter a Shadowsocks local port." = "请输入一个影梭本地端口。";
+"Shadowsocks local port must greater than or equal to 0." = "影梭本地端口必须大于或等于 0。";
+"Shadowsocks local port must smaller than or equal to 65535." = "影梭本地端口必须小于或等于 65535。";
+"Password" = "密码";
+"Enter password here" = "在这里输入密码";
+"Please enter a Shadowsocks password." = "请输入一个影梭密码。";
+"Method" = "方法";
+"Shadowsocks Method" = "影梭方法";
+
+"Configure" = "配置";
+"Configuring..." = "配置中……";
+"Configured!" = "已配置！";
+"Configuration Failed" = "配置失败";
+"Please check your network settings and allow Ladder to access your wireless data in the system's \"Settings - Cellular\" option (remember to check the \"WLAN & Cellular Data\")." = "请检查您的网络设置，并在系统的“设置-蜂窝移动网络”选项中，允许梯子访问您的无线数据（记住勾选“WLAN 与蜂窝移动网”）。";
+"Unable to download data from the PAC URL." = "无法从 PAC URL 下载数据。";
+"Please try again." = "请再试一次。";

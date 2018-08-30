@@ -1,0 +1,55 @@
+//
+//  Localizable.strings
+//  Ladder
+//
+//  Created by Aofei Sheng on 2018/4/3.
+//  Copyright © 2018 Aofei Sheng. All rights reserved.
+//
+
+"Ladder" = "Ladder";
+
+"OK" = "OK";
+"Cancel" = "Cancel";
+"Settings" = "Settings";
+
+"General" = "General";
+"Hide VPN Icon" = "Hide VPN Icon";
+"Enter PAC URL here" = "Enter PAC URL here";
+"Please enter a PAC URL." = "Please enter a PAC URL.";
+"Please enter a valid PAC URL." = "Please enter a valid PAC URL.";
+"PAC Max Age" = "PAC Max Age";
+"Enter PAC max age here" = "Enter PAC max age here";
+"Please enter a PAC max age." = "Please enter a PAC max age.";
+"PAC max age must greater than or equal to 0." = "PAC max age must greater than or equal to 0.";
+"PAC max age must smaller than or equal to 86400." = "PAC max age must smaller than or equal to 86400.";
+
+"Shadowsocks" = "Shadowsocks";
+"Server Address" = "Server Address";
+"Enter server address here" = "Enter server address here";
+"Please enter a Shadowsocks server address." = "Please enter a Shadowsocks server address.";
+"Server Port" = "Server Port";
+"Enter server port here" = "Enter server port here";
+"Please enter a Shadowsocks server port." = "Please enter a Shadowsocks server port.";
+"Shadowsocks server port must greater than or equal to 0." = "Shadowsocks server port must greater than or equal to 0.";
+"Shadowsocks server port must smaller than or equal to 65535." = "Shadowsocks server port must smaller than or equal to 65535.";
+"Local Address" = "Local Address";
+"Enter local address here" = "Enter local address here";
+"Please enter a Shadowsocks local address." = "Please enter a Shadowsocks local address.";
+"Local Port" = "Local Port";
+"Enter local port here" = "Enter local port here";
+"Please enter a Shadowsocks local port." = "Please enter a Shadowsocks local port.";
+"Shadowsocks local port must greater than or equal to 0." = "Shadowsocks local port must greater than or equal to 0.";
+"Shadowsocks local port must smaller than or equal to 65535." = "Shadowsocks local port must smaller than or equal to 65535.";
+"Password" = "Password";
+"Enter password here" = "Enter password here";
+"Please enter a Shadowsocks password." = "Please enter a Shadowsocks password.";
+"Method" = "Method";
+"Shadowsocks Method" = "Shadowsocks Method";
+
+"Configure" = "Configure";
+"Configuring..." = "Configuring...";
+"Configured!" = "Configured!";
+"Configuration Failed" = "Configuration Failed";
+"Please check your network settings and allow Ladder to access your wireless data in the system's \"Settings - Cellular\" option (remember to check the \"WLAN & Cellular Data\")." = "Please check your network settings and allow Ladder to access your wireless data in the system's \"Settings - Cellular\" option (remember to check the \"WLAN & Cellular Data\").";
+"Unable to download data from the PAC URL." = "Unable to download data from the PAC URL.";
+"Please try again." = "Please try again.";
