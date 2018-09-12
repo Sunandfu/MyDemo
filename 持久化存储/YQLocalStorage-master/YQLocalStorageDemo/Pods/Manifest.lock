@@ -1,0 +1,16 @@
+PODS:
+  - YQLocalStorage (0.0.1)
+
+DEPENDENCIES:
+  - YQLocalStorage (from `../`)
+
+EXTERNAL SOURCES:
+  YQLocalStorage:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  YQLocalStorage: 4217e997d0a6793b9fbea11da820751189f8ab38
+
+PODFILE CHECKSUM: 107b19a35efb4a2ca7621909167ecbfb31644960
+
+COCOAPODS: 1.2.0

@@ -1,0 +1,1 @@
+../../../../../YQLocalStorage/YQLSSearchResultItem.h

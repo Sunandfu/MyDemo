@@ -1,0 +1,507 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		22E20DEE340CAC76F3A4469EDF2A1B87 /* Pods-YQLocalStorageDemo-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 62B954A1235C5E362F5A1B140856C4A3 /* Pods-YQLocalStorageDemo-dummy.m */; };
+		93ADD8B58271B3A53FE1D02019105302 /* YQLSSearchResultItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 65FA0267DEE2DD99FFE82BA028697B68 /* YQLSSearchResultItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		95CEB21A2B5D1E719910B9BC2D1FE080 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		B6FC35CE75A15EDFFE12F963F2A51206 /* YQLocalStorage.h in Headers */ = {isa = PBXBuildFile; fileRef = D35B124C4E14DBA8622B12692ABA57D6 /* YQLocalStorage.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DE1A71D1CB6EB5640A41E3571DEC7C80 /* YQLocalStorage-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A689505AF30ED2DFB743C0B567ECC1EB /* YQLocalStorage-dummy.m */; };
+		E5846389BB5A95BA090DBD37B092659B /* YQLSSearchResultItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 47A851143F75244BAA6638082ED90169 /* YQLSSearchResultItem.m */; };
+		EF2F1C14CE1238643F345C0D09520FD0 /* YQLocalStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = F5226BE783C69B68043D517650F4BBEE /* YQLocalStorage.m */; };
+		F4509D0DE09006589C0BDA81FA6F47C2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		36C78A1BFBF11C4ACC94DD9DD3656818 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B555EEE7876A20D4FFD07B31D43CD456;
+			remoteInfo = YQLocalStorage;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		2F7E6A4F5BC6A17A9402AB868CAF355B /* Pods-YQLocalStorageDemo-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-YQLocalStorageDemo-acknowledgements.plist"; sourceTree = "<group>"; };
+		4183D665E8E5337EBDFBC65F8F60F740 /* Pods-YQLocalStorageDemo-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-YQLocalStorageDemo-resources.sh"; sourceTree = "<group>"; };
+		42B36272D8B8262643FC158B83E3EFFC /* Pods-YQLocalStorageDemo-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-YQLocalStorageDemo-frameworks.sh"; sourceTree = "<group>"; };
+		47A851143F75244BAA6638082ED90169 /* YQLSSearchResultItem.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = YQLSSearchResultItem.m; sourceTree = "<group>"; };
+		62B954A1235C5E362F5A1B140856C4A3 /* Pods-YQLocalStorageDemo-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-YQLocalStorageDemo-dummy.m"; sourceTree = "<group>"; };
+		65FA0267DEE2DD99FFE82BA028697B68 /* YQLSSearchResultItem.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = YQLSSearchResultItem.h; sourceTree = "<group>"; };
+		6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		756260D14A56F31776B93FB72DC57B72 /* Pods-YQLocalStorageDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-YQLocalStorageDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A060D9F6DD76BF563E1D470F44FCF755 /* libYQLocalStorage.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libYQLocalStorage.a; path = libYQLocalStorage.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		A689505AF30ED2DFB743C0B567ECC1EB /* YQLocalStorage-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "YQLocalStorage-dummy.m"; sourceTree = "<group>"; };
+		C378937F6F400080EE0107D6ABA1CCB3 /* YQLocalStorage-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "YQLocalStorage-prefix.pch"; sourceTree = "<group>"; };
+		D1E011FCCCA2F60D99BFE8E3EAA8836C /* YQLocalStorage.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = YQLocalStorage.xcconfig; sourceTree = "<group>"; };
+		D35B124C4E14DBA8622B12692ABA57D6 /* YQLocalStorage.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = YQLocalStorage.h; sourceTree = "<group>"; };
+		E4B0D178C4E64D5FC891B42D55300E84 /* Pods-YQLocalStorageDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-YQLocalStorageDemo.release.xcconfig"; sourceTree = "<group>"; };
+		F098A2C38FE9B8CE4BCA33B8BCDFF52E /* Pods-YQLocalStorageDemo-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-YQLocalStorageDemo-acknowledgements.markdown"; sourceTree = "<group>"; };
+		F5226BE783C69B68043D517650F4BBEE /* YQLocalStorage.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = YQLocalStorage.m; sourceTree = "<group>"; };
+		F94EBB60DF85F2C954D8A12C32FA8610 /* libPods-YQLocalStorageDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-YQLocalStorageDemo.a"; path = "libPods-YQLocalStorageDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0C18FD7D85A84751603C66C97EB8C38A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F4509D0DE09006589C0BDA81FA6F47C2 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E843EDB9ED6312BC16CA538254B45393 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				95CEB21A2B5D1E719910B9BC2D1FE080 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		07DCF5D0C49543A2B4CB212881F5C90D /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				D1E011FCCCA2F60D99BFE8E3EAA8836C /* YQLocalStorage.xcconfig */,
+				A689505AF30ED2DFB743C0B567ECC1EB /* YQLocalStorage-dummy.m */,
+				C378937F6F400080EE0107D6ABA1CCB3 /* YQLocalStorage-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "YQLocalStorageDemo/Pods/Target Support Files/YQLocalStorage";
+			sourceTree = "<group>";
+		};
+		58A435DC57D13E79444D3748729BAD96 /* YQLocalStorage */ = {
+			isa = PBXGroup;
+			children = (
+				07DCF5D0C49543A2B4CB212881F5C90D /* Support Files */,
+				ECB4ECCFD2E3C073192EF871310737AA /* YQLocalStorage */,
+			);
+			name = YQLocalStorage;
+			path = ../..;
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				C80763807DF56CBF9D34A75671F652C2 /* Development Pods */,
+				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
+				A0BE4F064B799C7AA1B5D7AF78093A41 /* Products */,
+				96CD2785C1C9A5B8B28EF95270BEEA8B /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		96CD2785C1C9A5B8B28EF95270BEEA8B /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				CD952BDF54217B83D302892C2077255B /* Pods-YQLocalStorageDemo */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		A0BE4F064B799C7AA1B5D7AF78093A41 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F94EBB60DF85F2C954D8A12C32FA8610 /* libPods-YQLocalStorageDemo.a */,
+				A060D9F6DD76BF563E1D470F44FCF755 /* libYQLocalStorage.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D35AF013A5F0BAD4F32504907A52519E /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C80763807DF56CBF9D34A75671F652C2 /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				58A435DC57D13E79444D3748729BAD96 /* YQLocalStorage */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		CD952BDF54217B83D302892C2077255B /* Pods-YQLocalStorageDemo */ = {
+			isa = PBXGroup;
+			children = (
+				F098A2C38FE9B8CE4BCA33B8BCDFF52E /* Pods-YQLocalStorageDemo-acknowledgements.markdown */,
+				2F7E6A4F5BC6A17A9402AB868CAF355B /* Pods-YQLocalStorageDemo-acknowledgements.plist */,
+				62B954A1235C5E362F5A1B140856C4A3 /* Pods-YQLocalStorageDemo-dummy.m */,
+				42B36272D8B8262643FC158B83E3EFFC /* Pods-YQLocalStorageDemo-frameworks.sh */,
+				4183D665E8E5337EBDFBC65F8F60F740 /* Pods-YQLocalStorageDemo-resources.sh */,
+				756260D14A56F31776B93FB72DC57B72 /* Pods-YQLocalStorageDemo.debug.xcconfig */,
+				E4B0D178C4E64D5FC891B42D55300E84 /* Pods-YQLocalStorageDemo.release.xcconfig */,
+			);
+			name = "Pods-YQLocalStorageDemo";
+			path = "Target Support Files/Pods-YQLocalStorageDemo";
+			sourceTree = "<group>";
+		};
+		D35AF013A5F0BAD4F32504907A52519E /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		ECB4ECCFD2E3C073192EF871310737AA /* YQLocalStorage */ = {
+			isa = PBXGroup;
+			children = (
+				D35B124C4E14DBA8622B12692ABA57D6 /* YQLocalStorage.h */,
+				F5226BE783C69B68043D517650F4BBEE /* YQLocalStorage.m */,
+				65FA0267DEE2DD99FFE82BA028697B68 /* YQLSSearchResultItem.h */,
+				47A851143F75244BAA6638082ED90169 /* YQLSSearchResultItem.m */,
+			);
+			name = YQLocalStorage;
+			path = YQLocalStorage;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		107D6FC4EB2D48B72B2928CDA1482E07 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B6FC35CE75A15EDFFE12F963F2A51206 /* YQLocalStorage.h in Headers */,
+				93ADD8B58271B3A53FE1D02019105302 /* YQLSSearchResultItem.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		45A226A1D7C2C6CF20FE10258A30E10F /* Pods-YQLocalStorageDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B6F7821609EB112704300A2C88D06D3D /* Build configuration list for PBXNativeTarget "Pods-YQLocalStorageDemo" */;
+			buildPhases = (
+				E78CB5848D34B6B412322B90F7C56274 /* Sources */,
+				E843EDB9ED6312BC16CA538254B45393 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2FE961DDBC25E336E091A5CCB5606CED /* PBXTargetDependency */,
+			);
+			name = "Pods-YQLocalStorageDemo";
+			productName = "Pods-YQLocalStorageDemo";
+			productReference = F94EBB60DF85F2C954D8A12C32FA8610 /* libPods-YQLocalStorageDemo.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		B555EEE7876A20D4FFD07B31D43CD456 /* YQLocalStorage */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FB2D7298B21F6A09D314221B51BD605F /* Build configuration list for PBXNativeTarget "YQLocalStorage" */;
+			buildPhases = (
+				B5EA0FCDE3DD904DE1F381A9A7E0464B /* Sources */,
+				0C18FD7D85A84751603C66C97EB8C38A /* Frameworks */,
+				107D6FC4EB2D48B72B2928CDA1482E07 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = YQLocalStorage;
+			productName = YQLocalStorage;
+			productReference = A060D9F6DD76BF563E1D470F44FCF755 /* libYQLocalStorage.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = A0BE4F064B799C7AA1B5D7AF78093A41 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				45A226A1D7C2C6CF20FE10258A30E10F /* Pods-YQLocalStorageDemo */,
+				B555EEE7876A20D4FFD07B31D43CD456 /* YQLocalStorage */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B5EA0FCDE3DD904DE1F381A9A7E0464B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE1A71D1CB6EB5640A41E3571DEC7C80 /* YQLocalStorage-dummy.m in Sources */,
+				EF2F1C14CE1238643F345C0D09520FD0 /* YQLocalStorage.m in Sources */,
+				E5846389BB5A95BA090DBD37B092659B /* YQLSSearchResultItem.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E78CB5848D34B6B412322B90F7C56274 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				22E20DEE340CAC76F3A4469EDF2A1B87 /* Pods-YQLocalStorageDemo-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2FE961DDBC25E336E091A5CCB5606CED /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = YQLocalStorage;
+			target = B555EEE7876A20D4FFD07B31D43CD456 /* YQLocalStorage */;
+			targetProxy = 36C78A1BFBF11C4ACC94DD9DD3656818 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		1D23278938ADF334174C5BF2A4B6B1B8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		25CD0E62872B897EECA819150F39E284 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E4B0D178C4E64D5FC891B42D55300E84 /* Pods-YQLocalStorageDemo.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				MACH_O_TYPE = staticlib;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		6D902A586CBF18384455BC3AB3F62F8A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		701497D8B094369D58C400244A0B1D30 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 756260D14A56F31776B93FB72DC57B72 /* Pods-YQLocalStorageDemo.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				MACH_O_TYPE = staticlib;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		ABC72D3DA01577C5163739D6786B6875 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D1E011FCCCA2F60D99BFE8E3EAA8836C /* YQLocalStorage.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/YQLocalStorage/YQLocalStorage-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F389E34D6ECC7DF6CCC4B6D126D67557 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D1E011FCCCA2F60D99BFE8E3EAA8836C /* YQLocalStorage.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/YQLocalStorage/YQLocalStorage-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6D902A586CBF18384455BC3AB3F62F8A /* Debug */,
+				1D23278938ADF334174C5BF2A4B6B1B8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B6F7821609EB112704300A2C88D06D3D /* Build configuration list for PBXNativeTarget "Pods-YQLocalStorageDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				701497D8B094369D58C400244A0B1D30 /* Debug */,
+				25CD0E62872B897EECA819150F39E284 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FB2D7298B21F6A09D314221B51BD605F /* Build configuration list for PBXNativeTarget "YQLocalStorage" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ABC72D3DA01577C5163739D6786B6875 /* Debug */,
+				F389E34D6ECC7DF6CCC4B6D126D67557 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}

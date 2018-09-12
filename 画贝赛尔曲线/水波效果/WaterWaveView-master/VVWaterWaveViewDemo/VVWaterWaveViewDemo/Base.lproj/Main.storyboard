@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="8" minValue="5" maxValue="11" translatesAutoresizingMaskIntoConstraints="NO" id="2kZ-No-Zou">
+                                <rect key="frame" x="78" y="498" width="164" height="31"/>
+                                <connections>
+                                    <action selector="amplitudeChangeAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="HNb-Fi-wup"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="振幅:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jNF-yR-ZVD">
+                                <rect key="frame" x="21" y="502.5" width="39" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="nLB-Fv-CwF">
+                                <rect key="frame" x="78" y="438" width="164" height="31"/>
+                                <connections>
+                                    <action selector="percentChangeAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="jpw-sj-0x8"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="百分比:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZjD-K1-how">
+                                <rect key="frame" x="4" y="442.5" width="56" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CXV-VT-wcW" customClass="VVWaterWaveView">
+                                <rect key="frame" x="85" y="220" width="150" height="150"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="aa2-FW-Nj2"/>
+                                    <constraint firstAttribute="width" constant="150" id="oM1-NW-eOy"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KHB-LK-0J5" customClass="VVWaterWaveView">
+                                <rect key="frame" x="85" y="40" width="150" height="150"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="CE1-Lu-mv3"/>
+                                    <constraint firstAttribute="width" constant="150" id="SmV-ee-5fd"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.98039215803146362" green="0.98039215803146362" blue="0.98039215803146362" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="2kZ-No-Zou" firstAttribute="top" secondItem="nLB-Fv-CwF" secondAttribute="bottom" constant="30" id="5P1-e1-1s1"/>
+                            <constraint firstItem="nLB-Fv-CwF" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="1/2" id="5R5-E4-q0U"/>
+                            <constraint firstItem="CXV-VT-wcW" firstAttribute="top" secondItem="KHB-LK-0J5" secondAttribute="bottom" constant="30" id="7V3-5o-8bZ"/>
+                            <constraint firstItem="2kZ-No-Zou" firstAttribute="leading" secondItem="jNF-yR-ZVD" secondAttribute="trailing" constant="20" id="8Rd-We-ggg"/>
+                            <constraint firstItem="nLB-Fv-CwF" firstAttribute="centerY" secondItem="ZjD-K1-how" secondAttribute="centerY" id="FVS-SZ-Sg1"/>
+                            <constraint firstItem="2kZ-No-Zou" firstAttribute="centerY" secondItem="jNF-yR-ZVD" secondAttribute="centerY" id="Mbd-WR-2NY"/>
+                            <constraint firstItem="2kZ-No-Zou" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="MqI-cB-aOs"/>
+                            <constraint firstItem="KHB-LK-0J5" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="SSy-Hs-I4j"/>
+                            <constraint firstItem="2kZ-No-Zou" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.5" id="TQ0-H9-zCl"/>
+                            <constraint firstItem="CXV-VT-wcW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="faa-Ai-hHf"/>
+                            <constraint firstAttribute="bottom" secondItem="2kZ-No-Zou" secondAttribute="bottom" constant="40" id="frQ-46-Wqn"/>
+                            <constraint firstItem="KHB-LK-0J5" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="40" id="nch-o3-PH3"/>
+                            <constraint firstItem="nLB-Fv-CwF" firstAttribute="leading" secondItem="ZjD-K1-how" secondAttribute="trailing" constant="20" id="swF-o9-6YS"/>
+                            <constraint firstItem="nLB-Fv-CwF" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="vt1-xO-6Iv"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="amplitudeSlider" destination="2kZ-No-Zou" id="Lc2-qY-jAh"/>
+                        <outlet property="percentSlider" destination="nLB-Fv-CwF" id="Ep6-Ep-FCY"/>
+                        <outlet property="waterWaveViewBottom" destination="CXV-VT-wcW" id="MPt-qb-sXU"/>
+                        <outlet property="waterWaveViewTop" destination="KHB-LK-0J5" id="rvd-J1-5kc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="178" y="406"/>
+        </scene>
+    </scenes>
+</document>

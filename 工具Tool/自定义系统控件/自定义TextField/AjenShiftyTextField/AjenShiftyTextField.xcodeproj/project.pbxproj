@@ -1,0 +1,588 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FACF554F212166850091FC38 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FACF554E212166850091FC38 /* AppDelegate.m */; };
+		FACF5552212166850091FC38 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FACF5551212166850091FC38 /* ViewController.m */; };
+		FACF5555212166850091FC38 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FACF5553212166850091FC38 /* Main.storyboard */; };
+		FACF5557212166890091FC38 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FACF5556212166890091FC38 /* Assets.xcassets */; };
+		FACF555A212166890091FC38 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FACF5558212166890091FC38 /* LaunchScreen.storyboard */; };
+		FACF555D212166890091FC38 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FACF555C212166890091FC38 /* main.m */; };
+		FACF55672121668A0091FC38 /* AjenShiftyTextFieldTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FACF55662121668A0091FC38 /* AjenShiftyTextFieldTests.m */; };
+		FACF55722121668A0091FC38 /* AjenShiftyTextFieldUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = FACF55712121668A0091FC38 /* AjenShiftyTextFieldUITests.m */; };
+		FACF5581212166BA0091FC38 /* AjenShiftyInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = FACF5580212166BA0091FC38 /* AjenShiftyInputView.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FACF55632121668A0091FC38 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FACF5542212166850091FC38 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FACF5549212166850091FC38;
+			remoteInfo = AjenShiftyTextField;
+		};
+		FACF556E2121668A0091FC38 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FACF5542212166850091FC38 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FACF5549212166850091FC38;
+			remoteInfo = AjenShiftyTextField;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		FACF554A212166850091FC38 /* AjenShiftyTextField.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AjenShiftyTextField.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FACF554D212166850091FC38 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		FACF554E212166850091FC38 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		FACF5550212166850091FC38 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		FACF5551212166850091FC38 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		FACF5554212166850091FC38 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FACF5556212166890091FC38 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FACF5559212166890091FC38 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		FACF555B212166890091FC38 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FACF555C212166890091FC38 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		FACF55622121668A0091FC38 /* AjenShiftyTextFieldTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AjenShiftyTextFieldTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FACF55662121668A0091FC38 /* AjenShiftyTextFieldTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AjenShiftyTextFieldTests.m; sourceTree = "<group>"; };
+		FACF55682121668A0091FC38 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FACF556D2121668A0091FC38 /* AjenShiftyTextFieldUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AjenShiftyTextFieldUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FACF55712121668A0091FC38 /* AjenShiftyTextFieldUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AjenShiftyTextFieldUITests.m; sourceTree = "<group>"; };
+		FACF55732121668A0091FC38 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FACF557F212166BA0091FC38 /* AjenShiftyInputView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AjenShiftyInputView.h; sourceTree = "<group>"; };
+		FACF5580212166BA0091FC38 /* AjenShiftyInputView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AjenShiftyInputView.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FACF5547212166850091FC38 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FACF555F2121668A0091FC38 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FACF556A2121668A0091FC38 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FACF5541212166850091FC38 = {
+			isa = PBXGroup;
+			children = (
+				FACF554C212166850091FC38 /* AjenShiftyTextField */,
+				FACF55652121668A0091FC38 /* AjenShiftyTextFieldTests */,
+				FACF55702121668A0091FC38 /* AjenShiftyTextFieldUITests */,
+				FACF554B212166850091FC38 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FACF554B212166850091FC38 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FACF554A212166850091FC38 /* AjenShiftyTextField.app */,
+				FACF55622121668A0091FC38 /* AjenShiftyTextFieldTests.xctest */,
+				FACF556D2121668A0091FC38 /* AjenShiftyTextFieldUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FACF554C212166850091FC38 /* AjenShiftyTextField */ = {
+			isa = PBXGroup;
+			children = (
+				FACF554D212166850091FC38 /* AppDelegate.h */,
+				FACF554E212166850091FC38 /* AppDelegate.m */,
+				FACF5550212166850091FC38 /* ViewController.h */,
+				FACF5551212166850091FC38 /* ViewController.m */,
+				FACF557F212166BA0091FC38 /* AjenShiftyInputView.h */,
+				FACF5580212166BA0091FC38 /* AjenShiftyInputView.m */,
+				FACF5553212166850091FC38 /* Main.storyboard */,
+				FACF5556212166890091FC38 /* Assets.xcassets */,
+				FACF5558212166890091FC38 /* LaunchScreen.storyboard */,
+				FACF555B212166890091FC38 /* Info.plist */,
+				FACF555C212166890091FC38 /* main.m */,
+			);
+			path = AjenShiftyTextField;
+			sourceTree = "<group>";
+		};
+		FACF55652121668A0091FC38 /* AjenShiftyTextFieldTests */ = {
+			isa = PBXGroup;
+			children = (
+				FACF55662121668A0091FC38 /* AjenShiftyTextFieldTests.m */,
+				FACF55682121668A0091FC38 /* Info.plist */,
+			);
+			path = AjenShiftyTextFieldTests;
+			sourceTree = "<group>";
+		};
+		FACF55702121668A0091FC38 /* AjenShiftyTextFieldUITests */ = {
+			isa = PBXGroup;
+			children = (
+				FACF55712121668A0091FC38 /* AjenShiftyTextFieldUITests.m */,
+				FACF55732121668A0091FC38 /* Info.plist */,
+			);
+			path = AjenShiftyTextFieldUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FACF5549212166850091FC38 /* AjenShiftyTextField */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FACF55762121668A0091FC38 /* Build configuration list for PBXNativeTarget "AjenShiftyTextField" */;
+			buildPhases = (
+				FACF5546212166850091FC38 /* Sources */,
+				FACF5547212166850091FC38 /* Frameworks */,
+				FACF5548212166850091FC38 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AjenShiftyTextField;
+			productName = AjenShiftyTextField;
+			productReference = FACF554A212166850091FC38 /* AjenShiftyTextField.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FACF55612121668A0091FC38 /* AjenShiftyTextFieldTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FACF55792121668A0091FC38 /* Build configuration list for PBXNativeTarget "AjenShiftyTextFieldTests" */;
+			buildPhases = (
+				FACF555E2121668A0091FC38 /* Sources */,
+				FACF555F2121668A0091FC38 /* Frameworks */,
+				FACF55602121668A0091FC38 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FACF55642121668A0091FC38 /* PBXTargetDependency */,
+			);
+			name = AjenShiftyTextFieldTests;
+			productName = AjenShiftyTextFieldTests;
+			productReference = FACF55622121668A0091FC38 /* AjenShiftyTextFieldTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		FACF556C2121668A0091FC38 /* AjenShiftyTextFieldUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FACF557C2121668A0091FC38 /* Build configuration list for PBXNativeTarget "AjenShiftyTextFieldUITests" */;
+			buildPhases = (
+				FACF55692121668A0091FC38 /* Sources */,
+				FACF556A2121668A0091FC38 /* Frameworks */,
+				FACF556B2121668A0091FC38 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FACF556F2121668A0091FC38 /* PBXTargetDependency */,
+			);
+			name = AjenShiftyTextFieldUITests;
+			productName = AjenShiftyTextFieldUITests;
+			productReference = FACF556D2121668A0091FC38 /* AjenShiftyTextFieldUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FACF5542212166850091FC38 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0940;
+				ORGANIZATIONNAME = Ajen;
+				TargetAttributes = {
+					FACF5549212166850091FC38 = {
+						CreatedOnToolsVersion = 9.4.1;
+					};
+					FACF55612121668A0091FC38 = {
+						CreatedOnToolsVersion = 9.4.1;
+						TestTargetID = FACF5549212166850091FC38;
+					};
+					FACF556C2121668A0091FC38 = {
+						CreatedOnToolsVersion = 9.4.1;
+						TestTargetID = FACF5549212166850091FC38;
+					};
+				};
+			};
+			buildConfigurationList = FACF5545212166850091FC38 /* Build configuration list for PBXProject "AjenShiftyTextField" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FACF5541212166850091FC38;
+			productRefGroup = FACF554B212166850091FC38 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FACF5549212166850091FC38 /* AjenShiftyTextField */,
+				FACF55612121668A0091FC38 /* AjenShiftyTextFieldTests */,
+				FACF556C2121668A0091FC38 /* AjenShiftyTextFieldUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FACF5548212166850091FC38 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FACF555A212166890091FC38 /* LaunchScreen.storyboard in Resources */,
+				FACF5557212166890091FC38 /* Assets.xcassets in Resources */,
+				FACF5555212166850091FC38 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FACF55602121668A0091FC38 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FACF556B2121668A0091FC38 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FACF5546212166850091FC38 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FACF5581212166BA0091FC38 /* AjenShiftyInputView.m in Sources */,
+				FACF5552212166850091FC38 /* ViewController.m in Sources */,
+				FACF555D212166890091FC38 /* main.m in Sources */,
+				FACF554F212166850091FC38 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FACF555E2121668A0091FC38 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FACF55672121668A0091FC38 /* AjenShiftyTextFieldTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FACF55692121668A0091FC38 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FACF55722121668A0091FC38 /* AjenShiftyTextFieldUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FACF55642121668A0091FC38 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FACF5549212166850091FC38 /* AjenShiftyTextField */;
+			targetProxy = FACF55632121668A0091FC38 /* PBXContainerItemProxy */;
+		};
+		FACF556F2121668A0091FC38 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FACF5549212166850091FC38 /* AjenShiftyTextField */;
+			targetProxy = FACF556E2121668A0091FC38 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		FACF5553212166850091FC38 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FACF5554212166850091FC38 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		FACF5558212166890091FC38 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FACF5559212166890091FC38 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FACF55742121668A0091FC38 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		FACF55752121668A0091FC38 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FACF55772121668A0091FC38 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = L2F673A4V8;
+				INFOPLIST_FILE = AjenShiftyTextField/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Ajen.AjenShiftyTextField;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FACF55782121668A0091FC38 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = L2F673A4V8;
+				INFOPLIST_FILE = AjenShiftyTextField/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Ajen.AjenShiftyTextField;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		FACF557A2121668A0091FC38 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = L2F673A4V8;
+				INFOPLIST_FILE = AjenShiftyTextFieldTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Ajen.AjenShiftyTextFieldTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AjenShiftyTextField.app/AjenShiftyTextField";
+			};
+			name = Debug;
+		};
+		FACF557B2121668A0091FC38 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = L2F673A4V8;
+				INFOPLIST_FILE = AjenShiftyTextFieldTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Ajen.AjenShiftyTextFieldTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AjenShiftyTextField.app/AjenShiftyTextField";
+			};
+			name = Release;
+		};
+		FACF557D2121668A0091FC38 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = L2F673A4V8;
+				INFOPLIST_FILE = AjenShiftyTextFieldUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Ajen.AjenShiftyTextFieldUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = AjenShiftyTextField;
+			};
+			name = Debug;
+		};
+		FACF557E2121668A0091FC38 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = L2F673A4V8;
+				INFOPLIST_FILE = AjenShiftyTextFieldUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Ajen.AjenShiftyTextFieldUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = AjenShiftyTextField;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FACF5545212166850091FC38 /* Build configuration list for PBXProject "AjenShiftyTextField" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FACF55742121668A0091FC38 /* Debug */,
+				FACF55752121668A0091FC38 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FACF55762121668A0091FC38 /* Build configuration list for PBXNativeTarget "AjenShiftyTextField" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FACF55772121668A0091FC38 /* Debug */,
+				FACF55782121668A0091FC38 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FACF55792121668A0091FC38 /* Build configuration list for PBXNativeTarget "AjenShiftyTextFieldTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FACF557A2121668A0091FC38 /* Debug */,
+				FACF557B2121668A0091FC38 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FACF557C2121668A0091FC38 /* Build configuration list for PBXNativeTarget "AjenShiftyTextFieldUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FACF557D2121668A0091FC38 /* Debug */,
+				FACF557E2121668A0091FC38 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FACF5542212166850091FC38 /* Project object */;
+}

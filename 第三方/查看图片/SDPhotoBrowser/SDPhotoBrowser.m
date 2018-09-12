@@ -28,7 +28,6 @@
     UIScrollView *_scrollView;
     BOOL _hasShowedFistView;
     UILabel *_indexLabel;
-    UILabel *_indexTitleLabel;
     UIButton *_saveButton;
     UIActivityIndicatorView *_indicatorView;
     BOOL _willDisappear;
@@ -60,7 +59,7 @@
 {
     // 1. 序标
     UILabel *indexLabel = [[UILabel alloc] init];
-    indexLabel.bounds = CGRectMake(0, 0, 120, 30);
+    indexLabel.bounds = CGRectMake(0, 0, 80, 30);
     indexLabel.textAlignment = NSTextAlignmentCenter;
     indexLabel.textColor = [UIColor whiteColor];
     indexLabel.font = [UIFont boldSystemFontOfSize:20];
@@ -73,27 +72,11 @@
     _indexLabel = indexLabel;
     [self addSubview:indexLabel];
     
-    //标题
-    UILabel *indexTitleLabel = [[UILabel alloc] init];
-    indexTitleLabel.bounds = CGRectMake(0, 0, 250, 30);
-    indexTitleLabel.textAlignment = NSTextAlignmentCenter;
-    indexTitleLabel.textColor = [UIColor whiteColor];
-    indexTitleLabel.font = [UIFont boldSystemFontOfSize:14];
-    indexTitleLabel.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.5];
-    indexTitleLabel.clipsToBounds = YES;
-    indexTitleLabel.numberOfLines = 0;
-    if (self.titleArray.count > 1) {
-        indexTitleLabel.text = [NSString stringWithFormat:@"%@", self.titleArray[0]];
-    }
-    _indexTitleLabel = indexTitleLabel;
-    [self addSubview:indexTitleLabel];
-    
     // 2.保存按钮
     UIButton *saveButton = [[UIButton alloc] init];
     [saveButton setTitle:@"保存" forState:UIControlStateNormal];
     [saveButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     saveButton.backgroundColor = [UIColor colorWithRed:0.1f green:0.1f blue:0.1f alpha:0.90f];
-    saveButton.titleLabel.font = [UIFont systemFontOfSize:14];
     saveButton.layer.cornerRadius = 5;
     saveButton.clipsToBounds = YES;
     [saveButton addTarget:self action:@selector(saveImage) forControlEvents:UIControlEventTouchUpInside];
@@ -206,7 +189,7 @@
     CGRect targetTemp = [self.sourceImagesContainerView convertRect:sourceView.frame toView:self];
     
     UIImageView *tempView = [[UIImageView alloc] init];
-    tempView.contentMode = UIViewContentModeScaleAspectFit;
+    tempView.contentMode = sourceView.contentMode;
     tempView.clipsToBounds = YES;
     tempView.image = currentImageView.image;
     CGFloat h = (self.bounds.size.width / currentImageView.image.size.width) * currentImageView.image.size.height;
@@ -276,8 +259,7 @@
     }
     
     _indexLabel.center = CGPointMake(self.bounds.size.width * 0.5, 35);
-    _indexTitleLabel.frame = CGRectMake(0, self.bounds.size.height - 50, self.bounds.size.width, 50);
-    _saveButton.frame = CGRectMake(self.bounds.size.width-70, 20, 50, 30);
+    _saveButton.frame = CGRectMake(30, self.bounds.size.height - 70, 50, 25);
 }
 
 - (void)show
@@ -373,9 +355,6 @@
     
     if (!_willDisappear) {
         _indexLabel.text = [NSString stringWithFormat:@"%d/%ld", index + 1, (long)self.imageCount];
-        if (self.titleArray.count>index) {
-            _indexTitleLabel.text = [NSString stringWithFormat:@"%@", self.titleArray[index]];
-        }
     }
     [self setupImageOfImageViewForIndex:index];
 }

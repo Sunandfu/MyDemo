@@ -6,7 +6,7 @@
 //  Copyright (c) 2015年 GSD. All rights reserved.
 //
 
-#import "SDPhotoBrowser.h"
+
 typedef enum {
     SDWaitingViewModeLoopDiagram, // 环形
     SDWaitingViewModePieDiagram // 饼型

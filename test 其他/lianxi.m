@@ -6,6 +6,11 @@ OS_ACTIVITY_MODE : disable
 合并frameWork
 lipo -create 【模拟器打包path】 【真机打包path】 -output 【导出兼容版本path】
 
+//统计项目总行数
+方法1：find . "(" -name "*.m" -or -name "*.mm" -or -name "*.h" -or -name "*.c" -or -name "*.xib" -or -name "*.html" ")" -print | xargs wc -l
+方法2：find . -name "*.m" -or -name "*.mm" -or -name "*.html" -or -name "*.h" -or -name "*.xib" -or -name "*.c" |xargs grep -v "^$"|wc -l
+//grep -v "^$"是去掉空行
+
 //  打包地址  /Users/zhaoyunzhou/Library/Developer/Xcode/Archives/
 更换包的路径 ->  应用程序-Xcode–显示包内容-contents–Developer–Platforms–iPhoneOS.platform–DeviceSupport里
 
@@ -35,9 +40,6 @@ $:python -m http.server 2333
 
 获取某个APP .h 文件命令
 class-dump -H /Users/daredos/Desktop/WeChat.app -o /Users/daredos/Desktop/WeChatHeader
-
-#TabbarController
-//github： https://github.com/renzifeng/ZFTabBar/issues/2
 
 /**
  //获取当前音量，不改变使用者音量
@@ -201,4 +203,4 @@ target "GesturePassword" do
 pod 'Masonry', '~> 0.6.4'
 end
 
-/Users/zhaoyunzhou/Library/MobileDevice/Provisioning Profiles     //描述文件路径
+~/Library/MobileDevice/Provisioning Profiles    //描述文件路径
