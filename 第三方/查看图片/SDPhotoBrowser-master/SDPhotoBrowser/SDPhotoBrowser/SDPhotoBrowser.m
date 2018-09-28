@@ -9,6 +9,8 @@
 #import "SDPhotoBrowser.h"
 #import "UIImageView+WebCache.h"
 #import "SDBrowserImageView.h"
+#import <AssetsLibrary/AssetsLibrary.h>
+#import <Photos/Photos.h>
 
  
 //  ============在这里方便配置样式相关设置===========
@@ -87,10 +89,30 @@
 - (void)saveImage
 {
     int index = _scrollView.contentOffset.x / _scrollView.bounds.size.width;
-    UIImageView *currentImageView = _scrollView.subviews[index];
-    
-    UIImageWriteToSavedPhotosAlbum(currentImageView.image, self, @selector(image:didFinishSavingWithError:contextInfo:), NULL);
-    
+    NSURL * url=[NSURL URLWithString:[NSString stringWithFormat:@"%@",[self highQualityImageURLForIndex:index]]];
+    [[SDWebImageDownloader sharedDownloader] downloadImageWithURL:url options:SDWebImageDownloaderUseNSURLCache progress:nil completed:^(UIImage *image, NSData *data, NSError *error, BOOL finished) {
+        if ([UIDevice currentDevice].systemVersion.floatValue >= 9.0f) {
+            [[PHPhotoLibrary sharedPhotoLibrary] performChanges:^{
+                PHAssetResourceCreationOptions *options = [[PHAssetResourceCreationOptions alloc] init];
+                options.shouldMoveFile = YES;
+                [[PHAssetCreationRequest creationRequestForAsset] addResourceWithType:PHAssetResourceTypePhoto data:data options:options];
+            } completionHandler:^(BOOL success, NSError * _Nullable error) {
+                dispatch_sync(dispatch_get_main_queue(), ^{
+                    //保存成功
+                    [self didFinishSavingWithError:error];
+                });
+            }];
+        }
+        else {
+            ALAssetsLibrary *library = [[ALAssetsLibrary alloc] init];
+            [library writeImageDataToSavedPhotosAlbum:data metadata:nil completionBlock:^(NSURL *assetURL, NSError *error) {
+                dispatch_sync(dispatch_get_main_queue(), ^{
+                    //保存成功
+                    [self didFinishSavingWithError:error];
+                });
+            }];
+        }
+    }];
     UIActivityIndicatorView *indicator = [[UIActivityIndicatorView alloc] init];
     indicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyleWhiteLarge;
     indicator.center = self.center;
@@ -98,11 +120,10 @@
     [[UIApplication sharedApplication].keyWindow addSubview:indicator];
     [indicator startAnimating];
 }
-
-- (void)image:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo;
+//保存结果提示语的出现以及indicator的消失
+- (void)didFinishSavingWithError:(NSError *)error
 {
     [_indicatorView removeFromSuperview];
-    
     UILabel *label = [[UILabel alloc] init];
     label.textColor = [UIColor whiteColor];
     label.backgroundColor = [UIColor colorWithRed:0.1f green:0.1f blue:0.1f alpha:0.90f];
@@ -207,6 +228,7 @@
     
     [UIView animateWithDuration:SDPhotoBrowserHideImageAnimationDuration animations:^{
         tempView.frame = targetTemp;
+        tempView.center = self.center;
         self.backgroundColor = [UIColor clearColor];
         _indexLabel.alpha = 0.1;
     } completion:^(BOOL finished) {
@@ -258,7 +280,8 @@
         [self showFirstImage];
     }
     
-    _indexLabel.center = CGPointMake(self.bounds.size.width * 0.5, 35);
+    CGRect StatusRect = [[UIApplication sharedApplication] statusBarFrame];
+    _indexLabel.center = CGPointMake(self.bounds.size.width * 0.5, StatusRect.size.height+15);
     _saveButton.frame = CGRectMake(30, self.bounds.size.height - 70, 50, 25);
 }
 
@@ -301,7 +324,8 @@
     
     CGRect targetTemp = [_scrollView.subviews[self.currentImageIndex] bounds];
     
-    tempView.frame = rect;
+    tempView.bounds = rect;
+    tempView.center = self.center;
     tempView.contentMode = [_scrollView.subviews[self.currentImageIndex] contentMode];
     _scrollView.hidden = YES;
     

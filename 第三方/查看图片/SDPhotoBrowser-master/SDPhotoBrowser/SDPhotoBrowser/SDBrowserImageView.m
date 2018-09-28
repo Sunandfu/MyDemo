@@ -7,7 +7,6 @@
 //
 
 #import "SDBrowserImageView.h"
-#import "UIImageView+WebCache.h"
 #import "SDPhotoBrowserConfig.h"
 
 @implementation SDBrowserImageView
@@ -15,9 +14,9 @@
     __weak SDWaitingView *_waitingView;
     BOOL _didCheckSize;
     UIScrollView *_scroll;
-    UIImageView *_scrollImageView;
+    FLAnimatedImageView *_scrollImageView;
     UIScrollView *_zoomingScroolView;
-    UIImageView *_zoomingImageView;
+    FLAnimatedImageView *_zoomingImageView;
     CGFloat _totalScale;
 }
 
@@ -57,7 +56,7 @@
         if (!_scroll) {
             UIScrollView *scroll = [[UIScrollView alloc] init];
             scroll.backgroundColor = [UIColor whiteColor];
-            UIImageView *imageView = [[UIImageView alloc] init];
+            FLAnimatedImageView *imageView = [[FLAnimatedImageView alloc] init];
             imageView.image = self.image;
             _scrollImageView = imageView;
             [scroll addSubview:imageView];
@@ -102,10 +101,10 @@
     
     __weak SDBrowserImageView *imageViewWeak = self;
 
-    [self sd_setImageWithURL:url placeholderImage:placeholder options:SDWebImageRetryFailed progress:^(NSInteger receivedSize, NSInteger expectedSize) {
+    [self sd_setImageWithURL:url placeholderImage:placeholder options:SDWebImageRetryFailed progress:^(NSInteger receivedSize, NSInteger expectedSize, NSURL * _Nullable targetURL) {
         imageViewWeak.progress = (CGFloat)receivedSize / expectedSize;
         
-    } completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+    } completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
         [imageViewWeak removeWaitingView];
         
         
@@ -189,7 +188,7 @@
         _zoomingScroolView = [[UIScrollView alloc] initWithFrame:self.bounds];
         _zoomingScroolView.backgroundColor = SDPhotoBrowserBackgrounColor;
         _zoomingScroolView.contentSize = self.bounds.size;
-        UIImageView *zoomingImageView = [[UIImageView alloc] initWithImage:self.image];
+        FLAnimatedImageView *zoomingImageView = [[FLAnimatedImageView alloc] initWithImage:self.image];
         CGSize imageSize = zoomingImageView.image.size;
         CGFloat imageViewH = self.bounds.size.height;
         if (imageSize.width > 0) {

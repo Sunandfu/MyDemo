@@ -8,9 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "SDWaitingView.h"
+#import "FLAnimatedImageView+WebCache.h"
 
 
-@interface SDBrowserImageView : UIImageView <UIGestureRecognizerDelegate>
+@interface SDBrowserImageView : FLAnimatedImageView <UIGestureRecognizerDelegate>
 
 @property (nonatomic, assign) CGFloat progress;
 @property (nonatomic, assign, readonly) BOOL isScaled;
