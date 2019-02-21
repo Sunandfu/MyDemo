@@ -1,0 +1,853 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5A4461D0213549A200BECEB6 /* WMDNativeBannerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A4461CF213549A200BECEB6 /* WMDNativeBannerViewController.m */; };
+		5A4461D3213549B100BECEB6 /* WMDNativeInterstitialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A4461D2213549B100BECEB6 /* WMDNativeInterstitialViewController.m */; };
+		5AD44ADF213645C700043D11 /* WMDFullscreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD44ADE213645C700043D11 /* WMDFullscreenViewController.m */; };
+		5ADD0BBF20255663001BC628 /* WMDRewardedVideoAdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ADD0BBE20255663001BC628 /* WMDRewardedVideoAdViewController.m */; };
+		781B2E7B20862A5F00B40F57 /* WMDRewardCustomEventAdapterDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 781B2E7520862A5F00B40F57 /* WMDRewardCustomEventAdapterDelegate.m */; };
+		781B2E7C20862A5F00B40F57 /* WMDRewardCustomEventAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 781B2E7920862A5F00B40F57 /* WMDRewardCustomEventAdapter.m */; };
+		781B2E7D20862A5F00B40F57 /* WMDRewardVideoCusEventVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 781B2E7A20862A5F00B40F57 /* WMDRewardVideoCusEventVC.m */; };
+		781B2E8C20862EA100B40F57 /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 781B2E8820862EA100B40F57 /* README.txt */; };
+		781B2E8D20862EA100B40F57 /* GoogleMobileAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 781B2E8B20862EA100B40F57 /* GoogleMobileAds.framework */; };
+		7877564C212AC4C400C472C3 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7877564B212AC4C400C472C3 /* AdSupport.framework */; };
+		7877564E212AC4CA00C472C3 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7877564D212AC4CA00C472C3 /* CoreMotion.framework */; };
+		78775650212AC4D100C472C3 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7877564F212AC4D100C472C3 /* libc++.tbd */; };
+		78775652212AC4E000C472C3 /* libresolv.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 78775651212AC4E000C472C3 /* libresolv.9.tbd */; };
+		78CAC899213C0B5000D5ADBB /* WMAdSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 78CAC897213C0B4F00D5ADBB /* WMAdSDK.bundle */; };
+		78CAC89A213C0B5000D5ADBB /* WMAdSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78CAC898213C0B4F00D5ADBB /* WMAdSDK.framework */; };
+		C30503961FD56E2A004DA5A8 /* WMDExampleDefine.m in Sources */ = {isa = PBXBuildFile; fileRef = C30503901FD56E29004DA5A8 /* WMDExampleDefine.m */; };
+		C30503971FD56E2A004DA5A8 /* WMDSlotViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C30503931FD56E2A004DA5A8 /* WMDSlotViewModel.m */; };
+		C30503981FD56E2A004DA5A8 /* WMDSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C30503951FD56E2A004DA5A8 /* WMDSettingViewController.m */; };
+		C305039B1FD56EAF004DA5A8 /* WMDBaseExampleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C305039A1FD56EAF004DA5A8 /* WMDBaseExampleViewController.m */; };
+		C3511BF21FC2CAE7006B96EE /* WMDActionCellDefine.m in Sources */ = {isa = PBXBuildFile; fileRef = C3511BF11FC2CAE6006B96EE /* WMDActionCellDefine.m */; };
+		C35272E61F24CAC70054ACB9 /* WMAdSDKDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C35272E51F24CAC70054ACB9 /* WMAdSDKDemoTests.m */; };
+		C35272F41F24CAD40054ACB9 /* WMAdSDKDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = C35272F31F24CAD40054ACB9 /* WMAdSDKDemoUITests.m */; };
+		C35273141F24CB680054ACB9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C35272FD1F24CB680054ACB9 /* AppDelegate.m */; };
+		C35273151F24CB680054ACB9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C35272FE1F24CB680054ACB9 /* Assets.xcassets */; };
+		C35273171F24CB680054ACB9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C35273011F24CB680054ACB9 /* LaunchScreen.storyboard */; };
+		C352731E1F24CB680054ACB9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C352730D1F24CB680054ACB9 /* main.m */; };
+		C38B73681F4463CF0076EC40 /* WMDAdManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C38B735B1F4463CF0076EC40 /* WMDAdManager.m */; };
+		C38B73691F4463CF0076EC40 /* WMDBannerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C38B735D1F4463CF0076EC40 /* WMDBannerViewController.m */; };
+		C38B736A1F4463CF0076EC40 /* WMDFeedAdTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C38B735F1F4463CF0076EC40 /* WMDFeedAdTableViewCell.m */; };
+		C38B736B1F4463CF0076EC40 /* WMDFeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C38B73611F4463CF0076EC40 /* WMDFeedViewController.m */; };
+		C38B736C1F4463CF0076EC40 /* WMDInterstitialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C38B73631F4463CF0076EC40 /* WMDInterstitialViewController.m */; };
+		C38B736D1F4463CF0076EC40 /* WMDNativeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C38B73651F4463CF0076EC40 /* WMDNativeViewController.m */; };
+		C38B736E1F4463CF0076EC40 /* WMDSplashViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C38B73671F4463CF0076EC40 /* WMDSplashViewController.m */; };
+		C38B73771F4463D60076EC40 /* WMDActionCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = C38B73731F4463D60076EC40 /* WMDActionCellView.m */; };
+		C38B73781F4463D60076EC40 /* WMDMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C38B73751F4463D60076EC40 /* WMDMainViewController.m */; };
+		C38B737C1F4463E10076EC40 /* UIImageView+WMNetWorking.m in Sources */ = {isa = PBXBuildFile; fileRef = C38B737B1F4463E10076EC40 /* UIImageView+WMNetWorking.m */; };
+		C38B737F1F4464210076EC40 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C38B737D1F4464210076EC40 /* Main.storyboard */; };
+		C3B598A62001FFE300821F91 /* WMDFeedStyleHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = C3B598A52001FFE300821F91 /* WMDFeedStyleHelper.m */; };
+		C3B598A9200200B800821F91 /* WMDActionAreaView.m in Sources */ = {isa = PBXBuildFile; fileRef = C3B598A8200200B800821F91 /* WMDActionAreaView.m */; };
+		C3DB068A1F4AEB9D00A37E23 /* Group@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C3DB06881F4AEB9D00A37E23 /* Group@3x.png */; };
+		C3DB068B1F4AEB9D00A37E23 /* Group@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C3DB06891F4AEB9D00A37E23 /* Group@2x.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C35272E81F24CAC70054ACB9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2E32C48A1EE91C4800D7C242 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2E32C4911EE91C4800D7C242;
+			remoteInfo = WMAdSDKDemo;
+		};
+		C35272F61F24CAD40054ACB9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2E32C48A1EE91C4800D7C242 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2E32C4911EE91C4800D7C242;
+			remoteInfo = WMAdSDKDemo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		2E32C4921EE91C4800D7C242 /* WMAdSDKDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WMAdSDKDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5A4461CE213549A200BECEB6 /* WMDNativeBannerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WMDNativeBannerViewController.h; sourceTree = "<group>"; };
+		5A4461CF213549A200BECEB6 /* WMDNativeBannerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WMDNativeBannerViewController.m; sourceTree = "<group>"; };
+		5A4461D1213549B100BECEB6 /* WMDNativeInterstitialViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WMDNativeInterstitialViewController.h; sourceTree = "<group>"; };
+		5A4461D2213549B100BECEB6 /* WMDNativeInterstitialViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WMDNativeInterstitialViewController.m; sourceTree = "<group>"; };
+		5AD44ADD213645C700043D11 /* WMDFullscreenViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WMDFullscreenViewController.h; sourceTree = "<group>"; };
+		5AD44ADE213645C700043D11 /* WMDFullscreenViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WMDFullscreenViewController.m; sourceTree = "<group>"; };
+		5ADD0BBD20255662001BC628 /* WMDRewardedVideoAdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMDRewardedVideoAdViewController.h; sourceTree = "<group>"; };
+		5ADD0BBE20255663001BC628 /* WMDRewardedVideoAdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMDRewardedVideoAdViewController.m; sourceTree = "<group>"; };
+		781B2E7520862A5F00B40F57 /* WMDRewardCustomEventAdapterDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMDRewardCustomEventAdapterDelegate.m; sourceTree = "<group>"; };
+		781B2E7620862A5F00B40F57 /* WMDRewardVideoCusEventVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMDRewardVideoCusEventVC.h; sourceTree = "<group>"; };
+		781B2E7720862A5F00B40F57 /* WMDRewardCustomEventAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMDRewardCustomEventAdapter.h; sourceTree = "<group>"; };
+		781B2E7820862A5F00B40F57 /* WMDRewardCustomEventAdapterDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMDRewardCustomEventAdapterDelegate.h; sourceTree = "<group>"; };
+		781B2E7920862A5F00B40F57 /* WMDRewardCustomEventAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMDRewardCustomEventAdapter.m; sourceTree = "<group>"; };
+		781B2E7A20862A5F00B40F57 /* WMDRewardVideoCusEventVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMDRewardVideoCusEventVC.m; sourceTree = "<group>"; };
+		781B2E8820862EA100B40F57 /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
+		781B2E8B20862EA100B40F57 /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMobileAds.framework; sourceTree = "<group>"; };
+		7877564B212AC4C400C472C3 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		7877564D212AC4CA00C472C3 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		7877564F212AC4D100C472C3 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		78775651212AC4E000C472C3 /* libresolv.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.9.tbd; path = usr/lib/libresolv.9.tbd; sourceTree = SDKROOT; };
+		78CAC897213C0B4F00D5ADBB /* WMAdSDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = WMAdSDK.bundle; sourceTree = "<group>"; };
+		78CAC898213C0B4F00D5ADBB /* WMAdSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = WMAdSDK.framework; sourceTree = "<group>"; };
+		C30503901FD56E29004DA5A8 /* WMDExampleDefine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMDExampleDefine.m; sourceTree = "<group>"; };
+		C30503911FD56E29004DA5A8 /* WMDExampleDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMDExampleDefine.h; sourceTree = "<group>"; };
+		C30503921FD56E2A004DA5A8 /* WMDSlotViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMDSlotViewModel.h; sourceTree = "<group>"; };
+		C30503931FD56E2A004DA5A8 /* WMDSlotViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMDSlotViewModel.m; sourceTree = "<group>"; };
+		C30503941FD56E2A004DA5A8 /* WMDSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMDSettingViewController.h; sourceTree = "<group>"; };
+		C30503951FD56E2A004DA5A8 /* WMDSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMDSettingViewController.m; sourceTree = "<group>"; };
+		C30503991FD56EAF004DA5A8 /* WMDBaseExampleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMDBaseExampleViewController.h; sourceTree = "<group>"; };
+		C305039A1FD56EAF004DA5A8 /* WMDBaseExampleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMDBaseExampleViewController.m; sourceTree = "<group>"; };
+		C3511BF11FC2CAE6006B96EE /* WMDActionCellDefine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMDActionCellDefine.m; sourceTree = "<group>"; };
+		C35272E31F24CAC70054ACB9 /* WMAdSDKDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WMAdSDKDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C35272E51F24CAC70054ACB9 /* WMAdSDKDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WMAdSDKDemoTests.m; sourceTree = "<group>"; };
+		C35272E71F24CAC70054ACB9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C35272F11F24CAD30054ACB9 /* WMAdSDKDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WMAdSDKDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C35272F31F24CAD40054ACB9 /* WMAdSDKDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WMAdSDKDemoUITests.m; sourceTree = "<group>"; };
+		C35272F51F24CAD40054ACB9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C35272FC1F24CB680054ACB9 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		C35272FD1F24CB680054ACB9 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		C35272FE1F24CB680054ACB9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C35273021F24CB680054ACB9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C352730C1F24CB680054ACB9 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C352730D1F24CB680054ACB9 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		C38B735A1F4463CF0076EC40 /* WMDAdManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMDAdManager.h; sourceTree = "<group>"; };
+		C38B735B1F4463CF0076EC40 /* WMDAdManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMDAdManager.m; sourceTree = "<group>"; };
+		C38B735C1F4463CF0076EC40 /* WMDBannerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMDBannerViewController.h; sourceTree = "<group>"; };
+		C38B735D1F4463CF0076EC40 /* WMDBannerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMDBannerViewController.m; sourceTree = "<group>"; };
+		C38B735E1F4463CF0076EC40 /* WMDFeedAdTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMDFeedAdTableViewCell.h; sourceTree = "<group>"; };
+		C38B735F1F4463CF0076EC40 /* WMDFeedAdTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMDFeedAdTableViewCell.m; sourceTree = "<group>"; };
+		C38B73601F4463CF0076EC40 /* WMDFeedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMDFeedViewController.h; sourceTree = "<group>"; };
+		C38B73611F4463CF0076EC40 /* WMDFeedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMDFeedViewController.m; sourceTree = "<group>"; };
+		C38B73621F4463CF0076EC40 /* WMDInterstitialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMDInterstitialViewController.h; sourceTree = "<group>"; };
+		C38B73631F4463CF0076EC40 /* WMDInterstitialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMDInterstitialViewController.m; sourceTree = "<group>"; };
+		C38B73641F4463CF0076EC40 /* WMDNativeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMDNativeViewController.h; sourceTree = "<group>"; };
+		C38B73651F4463CF0076EC40 /* WMDNativeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMDNativeViewController.m; sourceTree = "<group>"; };
+		C38B73661F4463CF0076EC40 /* WMDSplashViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMDSplashViewController.h; sourceTree = "<group>"; };
+		C38B73671F4463CF0076EC40 /* WMDSplashViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMDSplashViewController.m; sourceTree = "<group>"; };
+		C38B73701F4463D60076EC40 /* WMDActionCellDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMDActionCellDefine.h; sourceTree = "<group>"; };
+		C38B73721F4463D60076EC40 /* WMDActionCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMDActionCellView.h; sourceTree = "<group>"; };
+		C38B73731F4463D60076EC40 /* WMDActionCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMDActionCellView.m; sourceTree = "<group>"; };
+		C38B73741F4463D60076EC40 /* WMDMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMDMainViewController.h; sourceTree = "<group>"; };
+		C38B73751F4463D60076EC40 /* WMDMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMDMainViewController.m; sourceTree = "<group>"; };
+		C38B737A1F4463E10076EC40 /* UIImageView+WMNetWorking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+WMNetWorking.h"; sourceTree = "<group>"; };
+		C38B737B1F4463E10076EC40 /* UIImageView+WMNetWorking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+WMNetWorking.m"; sourceTree = "<group>"; };
+		C38B737E1F4464210076EC40 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C3B598A42001FFE300821F91 /* WMDFeedStyleHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMDFeedStyleHelper.h; sourceTree = "<group>"; };
+		C3B598A52001FFE300821F91 /* WMDFeedStyleHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMDFeedStyleHelper.m; sourceTree = "<group>"; };
+		C3B598A7200200B800821F91 /* WMDActionAreaView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMDActionAreaView.h; sourceTree = "<group>"; };
+		C3B598A8200200B800821F91 /* WMDActionAreaView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMDActionAreaView.m; sourceTree = "<group>"; };
+		C3DB06881F4AEB9D00A37E23 /* Group@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Group@3x.png"; sourceTree = "<group>"; };
+		C3DB06891F4AEB9D00A37E23 /* Group@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Group@2x.png"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2E32C48F1EE91C4800D7C242 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				78CAC89A213C0B5000D5ADBB /* WMAdSDK.framework in Frameworks */,
+				78775652212AC4E000C472C3 /* libresolv.9.tbd in Frameworks */,
+				78775650212AC4D100C472C3 /* libc++.tbd in Frameworks */,
+				7877564E212AC4CA00C472C3 /* CoreMotion.framework in Frameworks */,
+				7877564C212AC4C400C472C3 /* AdSupport.framework in Frameworks */,
+				781B2E8D20862EA100B40F57 /* GoogleMobileAds.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C35272E01F24CAC70054ACB9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C35272EE1F24CAD30054ACB9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2E32C4891EE91C4800D7C242 = {
+			isa = PBXGroup;
+			children = (
+				C35272FB1F24CB680054ACB9 /* WMAdSDKDemo */,
+				C35272E41F24CAC70054ACB9 /* WMAdSDKDemoTests */,
+				C35272F21F24CAD40054ACB9 /* WMAdSDKDemoUITests */,
+				2E32C4931EE91C4800D7C242 /* Products */,
+				7877564A212AC4C400C472C3 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		2E32C4931EE91C4800D7C242 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2E32C4921EE91C4800D7C242 /* WMAdSDKDemo.app */,
+				C35272E31F24CAC70054ACB9 /* WMAdSDKDemoTests.xctest */,
+				C35272F11F24CAD30054ACB9 /* WMAdSDKDemoUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		660C4BDD1F2A1D7A000A7814 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				C3DB06881F4AEB9D00A37E23 /* Group@3x.png */,
+				C3DB06891F4AEB9D00A37E23 /* Group@2x.png */,
+				C35272FE1F24CB680054ACB9 /* Assets.xcassets */,
+			);
+			name = Resource;
+			sourceTree = "<group>";
+		};
+		660C4BDE1F2A1EFA000A7814 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				C38B736F1F4463D60076EC40 /* Menu */,
+				C38B73591F4463CF0076EC40 /* Example */,
+				781B2E7420862A5F00B40F57 /* RewardVideoCustomEventAdapter */,
+			);
+			name = App;
+			sourceTree = "<group>";
+		};
+		660C4BDF1F2A1F10000A7814 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				C38B737D1F4464210076EC40 /* Main.storyboard */,
+				C35272FC1F24CB680054ACB9 /* AppDelegate.h */,
+				C35272FD1F24CB680054ACB9 /* AppDelegate.m */,
+				C352730C1F24CB680054ACB9 /* Info.plist */,
+				C35273011F24CB680054ACB9 /* LaunchScreen.storyboard */,
+				C352730D1F24CB680054ACB9 /* main.m */,
+			);
+			name = Support;
+			sourceTree = "<group>";
+		};
+		781B2E7420862A5F00B40F57 /* RewardVideoCustomEventAdapter */ = {
+			isa = PBXGroup;
+			children = (
+				781B2E7720862A5F00B40F57 /* WMDRewardCustomEventAdapter.h */,
+				781B2E7920862A5F00B40F57 /* WMDRewardCustomEventAdapter.m */,
+				781B2E7820862A5F00B40F57 /* WMDRewardCustomEventAdapterDelegate.h */,
+				781B2E7520862A5F00B40F57 /* WMDRewardCustomEventAdapterDelegate.m */,
+				781B2E7620862A5F00B40F57 /* WMDRewardVideoCusEventVC.h */,
+				781B2E7A20862A5F00B40F57 /* WMDRewardVideoCusEventVC.m */,
+			);
+			path = RewardVideoCustomEventAdapter;
+			sourceTree = "<group>";
+		};
+		781B2E8720862EA100B40F57 /* Google-Mobile-Ads-SDK */ = {
+			isa = PBXGroup;
+			children = (
+				781B2E8820862EA100B40F57 /* README.txt */,
+				781B2E8920862EA100B40F57 /* Frameworks */,
+			);
+			path = "Google-Mobile-Ads-SDK";
+			sourceTree = "<group>";
+		};
+		781B2E8920862EA100B40F57 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				781B2E8A20862EA100B40F57 /* frameworks */,
+			);
+			path = Frameworks;
+			sourceTree = "<group>";
+		};
+		781B2E8A20862EA100B40F57 /* frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				781B2E8B20862EA100B40F57 /* GoogleMobileAds.framework */,
+			);
+			path = frameworks;
+			sourceTree = "<group>";
+		};
+		7877564A212AC4C400C472C3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				78775651212AC4E000C472C3 /* libresolv.9.tbd */,
+				7877564F212AC4D100C472C3 /* libc++.tbd */,
+				7877564D212AC4CA00C472C3 /* CoreMotion.framework */,
+				7877564B212AC4C400C472C3 /* AdSupport.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C35272E41F24CAC70054ACB9 /* WMAdSDKDemoTests */ = {
+			isa = PBXGroup;
+			children = (
+				C35272E51F24CAC70054ACB9 /* WMAdSDKDemoTests.m */,
+				C35272E71F24CAC70054ACB9 /* Info.plist */,
+			);
+			path = WMAdSDKDemoTests;
+			sourceTree = "<group>";
+		};
+		C35272F21F24CAD40054ACB9 /* WMAdSDKDemoUITests */ = {
+			isa = PBXGroup;
+			children = (
+				C35272F31F24CAD40054ACB9 /* WMAdSDKDemoUITests.m */,
+				C35272F51F24CAD40054ACB9 /* Info.plist */,
+			);
+			path = WMAdSDKDemoUITests;
+			sourceTree = "<group>";
+		};
+		C35272FB1F24CB680054ACB9 /* WMAdSDKDemo */ = {
+			isa = PBXGroup;
+			children = (
+				C38B73791F4463E10076EC40 /* Util */,
+				660C4BDE1F2A1EFA000A7814 /* App */,
+				660C4BDF1F2A1F10000A7814 /* Support */,
+				660C4BDD1F2A1D7A000A7814 /* Resource */,
+				C35273091F24CB680054ACB9 /* Frameworks */,
+			);
+			path = WMAdSDKDemo;
+			sourceTree = "<group>";
+		};
+		C35273091F24CB680054ACB9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				781B2E8720862EA100B40F57 /* Google-Mobile-Ads-SDK */,
+				78CAC897213C0B4F00D5ADBB /* WMAdSDK.bundle */,
+				78CAC898213C0B4F00D5ADBB /* WMAdSDK.framework */,
+			);
+			path = Frameworks;
+			sourceTree = "<group>";
+		};
+		C38B73591F4463CF0076EC40 /* Example */ = {
+			isa = PBXGroup;
+			children = (
+				C3B598A32001FF9200821F91 /* View */,
+				C30503991FD56EAF004DA5A8 /* WMDBaseExampleViewController.h */,
+				C305039A1FD56EAF004DA5A8 /* WMDBaseExampleViewController.m */,
+				C38B735A1F4463CF0076EC40 /* WMDAdManager.h */,
+				C38B735B1F4463CF0076EC40 /* WMDAdManager.m */,
+				C38B735C1F4463CF0076EC40 /* WMDBannerViewController.h */,
+				C38B735D1F4463CF0076EC40 /* WMDBannerViewController.m */,
+				C30503911FD56E29004DA5A8 /* WMDExampleDefine.h */,
+				C30503901FD56E29004DA5A8 /* WMDExampleDefine.m */,
+				C38B73601F4463CF0076EC40 /* WMDFeedViewController.h */,
+				C38B73611F4463CF0076EC40 /* WMDFeedViewController.m */,
+				C38B73621F4463CF0076EC40 /* WMDInterstitialViewController.h */,
+				C38B73631F4463CF0076EC40 /* WMDInterstitialViewController.m */,
+				C38B73641F4463CF0076EC40 /* WMDNativeViewController.h */,
+				C38B73651F4463CF0076EC40 /* WMDNativeViewController.m */,
+				5A4461CE213549A200BECEB6 /* WMDNativeBannerViewController.h */,
+				5A4461CF213549A200BECEB6 /* WMDNativeBannerViewController.m */,
+				5A4461D1213549B100BECEB6 /* WMDNativeInterstitialViewController.h */,
+				5A4461D2213549B100BECEB6 /* WMDNativeInterstitialViewController.m */,
+				5AD44ADD213645C700043D11 /* WMDFullscreenViewController.h */,
+				5AD44ADE213645C700043D11 /* WMDFullscreenViewController.m */,
+				C30503941FD56E2A004DA5A8 /* WMDSettingViewController.h */,
+				C30503951FD56E2A004DA5A8 /* WMDSettingViewController.m */,
+				C30503921FD56E2A004DA5A8 /* WMDSlotViewModel.h */,
+				C30503931FD56E2A004DA5A8 /* WMDSlotViewModel.m */,
+				C38B73661F4463CF0076EC40 /* WMDSplashViewController.h */,
+				C38B73671F4463CF0076EC40 /* WMDSplashViewController.m */,
+				5ADD0BBD20255662001BC628 /* WMDRewardedVideoAdViewController.h */,
+				5ADD0BBE20255663001BC628 /* WMDRewardedVideoAdViewController.m */,
+			);
+			path = Example;
+			sourceTree = "<group>";
+		};
+		C38B736F1F4463D60076EC40 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				C38B73701F4463D60076EC40 /* WMDActionCellDefine.h */,
+				C3511BF11FC2CAE6006B96EE /* WMDActionCellDefine.m */,
+				C38B73721F4463D60076EC40 /* WMDActionCellView.h */,
+				C38B73731F4463D60076EC40 /* WMDActionCellView.m */,
+				C38B73741F4463D60076EC40 /* WMDMainViewController.h */,
+				C38B73751F4463D60076EC40 /* WMDMainViewController.m */,
+			);
+			path = Menu;
+			sourceTree = "<group>";
+		};
+		C38B73791F4463E10076EC40 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				C38B737A1F4463E10076EC40 /* UIImageView+WMNetWorking.h */,
+				C38B737B1F4463E10076EC40 /* UIImageView+WMNetWorking.m */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		C3B598A32001FF9200821F91 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C3B598A7200200B800821F91 /* WMDActionAreaView.h */,
+				C3B598A8200200B800821F91 /* WMDActionAreaView.m */,
+				C3B598A42001FFE300821F91 /* WMDFeedStyleHelper.h */,
+				C3B598A52001FFE300821F91 /* WMDFeedStyleHelper.m */,
+				C38B735E1F4463CF0076EC40 /* WMDFeedAdTableViewCell.h */,
+				C38B735F1F4463CF0076EC40 /* WMDFeedAdTableViewCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2E32C4911EE91C4800D7C242 /* WMAdSDKDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2E32C4B41EE91C4800D7C242 /* Build configuration list for PBXNativeTarget "WMAdSDKDemo" */;
+			buildPhases = (
+				2E32C48E1EE91C4800D7C242 /* Sources */,
+				2E32C48F1EE91C4800D7C242 /* Frameworks */,
+				2E32C4901EE91C4800D7C242 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WMAdSDKDemo;
+			productName = WMAdSDKDemo;
+			productReference = 2E32C4921EE91C4800D7C242 /* WMAdSDKDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C35272E21F24CAC70054ACB9 /* WMAdSDKDemoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C35272EA1F24CAC70054ACB9 /* Build configuration list for PBXNativeTarget "WMAdSDKDemoTests" */;
+			buildPhases = (
+				C35272DF1F24CAC70054ACB9 /* Sources */,
+				C35272E01F24CAC70054ACB9 /* Frameworks */,
+				C35272E11F24CAC70054ACB9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C35272E91F24CAC70054ACB9 /* PBXTargetDependency */,
+			);
+			name = WMAdSDKDemoTests;
+			productName = WMAdSDKDemoTests;
+			productReference = C35272E31F24CAC70054ACB9 /* WMAdSDKDemoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		C35272F01F24CAD30054ACB9 /* WMAdSDKDemoUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C35272F81F24CAD40054ACB9 /* Build configuration list for PBXNativeTarget "WMAdSDKDemoUITests" */;
+			buildPhases = (
+				C35272ED1F24CAD30054ACB9 /* Sources */,
+				C35272EE1F24CAD30054ACB9 /* Frameworks */,
+				C35272EF1F24CAD30054ACB9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C35272F71F24CAD40054ACB9 /* PBXTargetDependency */,
+			);
+			name = WMAdSDKDemoUITests;
+			productName = WMAdSDKDemoUITests;
+			productReference = C35272F11F24CAD30054ACB9 /* WMAdSDKDemoUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2E32C48A1EE91C4800D7C242 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = WMD;
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = bytedance;
+				TargetAttributes = {
+					2E32C4911EE91C4800D7C242 = {
+						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = J4N9H827FQ;
+						ProvisioningStyle = Automatic;
+					};
+					C35272E21F24CAC70054ACB9 = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = XXHND5J98K;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 2E32C4911EE91C4800D7C242;
+					};
+					C35272F01F24CAD30054ACB9 = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = XXHND5J98K;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 2E32C4911EE91C4800D7C242;
+					};
+				};
+			};
+			buildConfigurationList = 2E32C48D1EE91C4800D7C242 /* Build configuration list for PBXProject "WMAdSDKDemo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2E32C4891EE91C4800D7C242;
+			productRefGroup = 2E32C4931EE91C4800D7C242 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2E32C4911EE91C4800D7C242 /* WMAdSDKDemo */,
+				C35272E21F24CAC70054ACB9 /* WMAdSDKDemoTests */,
+				C35272F01F24CAD30054ACB9 /* WMAdSDKDemoUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2E32C4901EE91C4800D7C242 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C38B737F1F4464210076EC40 /* Main.storyboard in Resources */,
+				78CAC899213C0B5000D5ADBB /* WMAdSDK.bundle in Resources */,
+				C35273151F24CB680054ACB9 /* Assets.xcassets in Resources */,
+				C3DB068B1F4AEB9D00A37E23 /* Group@2x.png in Resources */,
+				C35273171F24CB680054ACB9 /* LaunchScreen.storyboard in Resources */,
+				781B2E8C20862EA100B40F57 /* README.txt in Resources */,
+				C3DB068A1F4AEB9D00A37E23 /* Group@3x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C35272E11F24CAC70054ACB9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C35272EF1F24CAD30054ACB9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2E32C48E1EE91C4800D7C242 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C352731E1F24CB680054ACB9 /* main.m in Sources */,
+				781B2E7C20862A5F00B40F57 /* WMDRewardCustomEventAdapter.m in Sources */,
+				C38B73771F4463D60076EC40 /* WMDActionCellView.m in Sources */,
+				5ADD0BBF20255663001BC628 /* WMDRewardedVideoAdViewController.m in Sources */,
+				C3B598A62001FFE300821F91 /* WMDFeedStyleHelper.m in Sources */,
+				C38B736A1F4463CF0076EC40 /* WMDFeedAdTableViewCell.m in Sources */,
+				C30503971FD56E2A004DA5A8 /* WMDSlotViewModel.m in Sources */,
+				C38B736E1F4463CF0076EC40 /* WMDSplashViewController.m in Sources */,
+				781B2E7B20862A5F00B40F57 /* WMDRewardCustomEventAdapterDelegate.m in Sources */,
+				C3B598A9200200B800821F91 /* WMDActionAreaView.m in Sources */,
+				C38B736D1F4463CF0076EC40 /* WMDNativeViewController.m in Sources */,
+				781B2E7D20862A5F00B40F57 /* WMDRewardVideoCusEventVC.m in Sources */,
+				C38B73691F4463CF0076EC40 /* WMDBannerViewController.m in Sources */,
+				C3511BF21FC2CAE7006B96EE /* WMDActionCellDefine.m in Sources */,
+				5AD44ADF213645C700043D11 /* WMDFullscreenViewController.m in Sources */,
+				C38B737C1F4463E10076EC40 /* UIImageView+WMNetWorking.m in Sources */,
+				C30503961FD56E2A004DA5A8 /* WMDExampleDefine.m in Sources */,
+				C30503981FD56E2A004DA5A8 /* WMDSettingViewController.m in Sources */,
+				C38B73681F4463CF0076EC40 /* WMDAdManager.m in Sources */,
+				C38B736C1F4463CF0076EC40 /* WMDInterstitialViewController.m in Sources */,
+				C35273141F24CB680054ACB9 /* AppDelegate.m in Sources */,
+				C38B73781F4463D60076EC40 /* WMDMainViewController.m in Sources */,
+				5A4461D3213549B100BECEB6 /* WMDNativeInterstitialViewController.m in Sources */,
+				C305039B1FD56EAF004DA5A8 /* WMDBaseExampleViewController.m in Sources */,
+				5A4461D0213549A200BECEB6 /* WMDNativeBannerViewController.m in Sources */,
+				C38B736B1F4463CF0076EC40 /* WMDFeedViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C35272DF1F24CAC70054ACB9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C35272E61F24CAC70054ACB9 /* WMAdSDKDemoTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C35272ED1F24CAD30054ACB9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C35272F41F24CAD40054ACB9 /* WMAdSDKDemoUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C35272E91F24CAC70054ACB9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2E32C4911EE91C4800D7C242 /* WMAdSDKDemo */;
+			targetProxy = C35272E81F24CAC70054ACB9 /* PBXContainerItemProxy */;
+		};
+		C35272F71F24CAD40054ACB9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2E32C4911EE91C4800D7C242 /* WMAdSDKDemo */;
+			targetProxy = C35272F61F24CAD40054ACB9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		C35273011F24CB680054ACB9 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C35273021F24CB680054ACB9 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		C38B737D1F4464210076EC40 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C38B737E1F4464210076EC40 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		2E32C4B21EE91C4800D7C242 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		2E32C4B31EE91C4800D7C242 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2E32C4B51EE91C4800D7C242 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = J4N9H827FQ;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/WMAdSDKDemo",
+					"$(PROJECT_DIR)/WMAdSDKDemo/Frameworks/**",
+					"$(PROJECT_DIR)/WMAdSDKDemo/Frameworks",
+				);
+				INFOPLIST_FILE = WMAdSDKDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.bytedance.WMAdSDKDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		2E32C4B61EE91C4800D7C242 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = J4N9H827FQ;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/WMAdSDKDemo",
+					"$(PROJECT_DIR)/WMAdSDKDemo/Frameworks/**",
+					"$(PROJECT_DIR)/WMAdSDKDemo/Frameworks",
+				);
+				INFOPLIST_FILE = WMAdSDKDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.bytedance.WMAdSDKDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		C35272EB1F24CAC70054ACB9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = XXHND5J98K;
+				INFOPLIST_FILE = WMAdSDKDemoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bytedance.WMAdSDKDemoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WMAdSDKDemo.app/WMAdSDKDemo";
+			};
+			name = Debug;
+		};
+		C35272EC1F24CAC70054ACB9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = XXHND5J98K;
+				INFOPLIST_FILE = WMAdSDKDemoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bytedance.WMAdSDKDemoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WMAdSDKDemo.app/WMAdSDKDemo";
+			};
+			name = Release;
+		};
+		C35272F91F24CAD40054ACB9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = XXHND5J98K;
+				INFOPLIST_FILE = WMAdSDKDemoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bytedance.WMAdSDKDemoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = WMAdSDKDemo;
+			};
+			name = Debug;
+		};
+		C35272FA1F24CAD40054ACB9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = XXHND5J98K;
+				INFOPLIST_FILE = WMAdSDKDemoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bytedance.WMAdSDKDemoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = WMAdSDKDemo;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2E32C48D1EE91C4800D7C242 /* Build configuration list for PBXProject "WMAdSDKDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2E32C4B21EE91C4800D7C242 /* Debug */,
+				2E32C4B31EE91C4800D7C242 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2E32C4B41EE91C4800D7C242 /* Build configuration list for PBXNativeTarget "WMAdSDKDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2E32C4B51EE91C4800D7C242 /* Debug */,
+				2E32C4B61EE91C4800D7C242 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C35272EA1F24CAC70054ACB9 /* Build configuration list for PBXNativeTarget "WMAdSDKDemoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C35272EB1F24CAC70054ACB9 /* Debug */,
+				C35272EC1F24CAC70054ACB9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C35272F81F24CAD40054ACB9 /* Build configuration list for PBXNativeTarget "WMAdSDKDemoUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C35272F91F24CAD40054ACB9 /* Debug */,
+				C35272FA1F24CAD40054ACB9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2E32C48A1EE91C4800D7C242 /* Project object */;
+}
