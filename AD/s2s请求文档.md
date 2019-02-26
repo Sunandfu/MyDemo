@@ -158,3 +158,56 @@ reqDownloadUrl|str|可选|特殊下载请求地址
     "requestId": "173c755c95fe4d99922771345a06e2b7",
     "ret": "0"
 }
+
+{
+    advertiser =     (
+                {
+            adplaces =             (
+                                {
+                    adPlaceId = 900546910;
+                    advertiserId = 71;
+                    appId = 5000546;
+                    type = 3;
+                    version = "3.0";
+                }
+            );
+            advertiserId = 71;
+            frequencyDay = 10000;
+            frequencyHour = 1000;
+            frequencyMin = 100;
+            isChina = 1;
+            isNative = 0;
+            name = "\U5934\U6761";
+            priority = 1;
+            targetCountry = 0;
+            type = 2;
+            weight = 0;
+        },
+                {
+            adplaces =             (
+                                {
+                    adPlaceId = 1080215124193862;
+                    advertiserId = 46;
+                    apiKey = "";
+                    appId = 1105344611;
+                    packageName = "";
+                    type = 3;
+                    version = "2.0";
+                }
+            );
+            advertiserId = 46;
+            isChina = 1;
+            isNative = 0;
+            name = "\U5e7f\U70b9\U901a";
+            priority = 1;
+            targetCountry = 0;
+            type = 2;
+            weight = 0;
+        }
+    );
+    frequencyDay = 99999;
+    frequencyHour = 9999;
+    frequencyMin = 9999;
+    ret = 0;
+    uuid = 88da43d085254b5ab4a1c769bb11bc0c;
+}
