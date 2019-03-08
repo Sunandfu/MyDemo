@@ -14,7 +14,6 @@
 		82144FEB21B7B12A00081AED /* YXMutBannerAdManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 82144FE521B7B12900081AED /* YXMutBannerAdManager.m */; };
 		82144FEC21B7B12A00081AED /* YXMotivationVideoManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 82144FE621B7B12900081AED /* YXMotivationVideoManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		82144FED21B7B12A00081AED /* YXAdSDKManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 82144FE721B7B12A00081AED /* YXAdSDKManager.m */; };
-		82144FF821B7B1DA00081AED /* Tapjoy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82144FF521B7B1DA00081AED /* Tapjoy.framework */; };
 		82144FFF21B7B23800081AED /* YXPGIndexBannerSubiew.h in Headers */ = {isa = PBXBuildFile; fileRef = 82144FFB21B7B23800081AED /* YXPGIndexBannerSubiew.h */; };
 		8214500021B7B23800081AED /* YXNewPagedFlowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 82144FFC21B7B23800081AED /* YXNewPagedFlowView.m */; };
 		8214500121B7B23800081AED /* YXNewPagedFlowView.h in Headers */ = {isa = PBXBuildFile; fileRef = 82144FFD21B7B23800081AED /* YXNewPagedFlowView.h */; };
@@ -80,15 +79,6 @@
 		823338BE2135450C00AF9A93 /* YXGTMBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = 823338B92135450C00AF9A93 /* YXGTMBase64.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		823338BF2135450C00AF9A93 /* YXLCdes.m in Sources */ = {isa = PBXBuildFile; fileRef = 823338BA2135450C00AF9A93 /* YXLCdes.m */; };
 		823338C02135450C00AF9A93 /* YXGTMDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = 823338BB2135450C00AF9A93 /* YXGTMDefines.h */; };
-		8233E4D920F8A69A006DAC31 /* libGDTMobSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 822613BC20C7FEB300D767BD /* libGDTMobSDK.a */; };
-		8233E4DA20F8A6D5006DAC31 /* GDTNativeExpressAdView.h in Headers */ = {isa = PBXBuildFile; fileRef = 822613B420C7FEB300D767BD /* GDTNativeExpressAdView.h */; };
-		8233E4DB20F8A6D5006DAC31 /* GDTMobBannerView.h in Headers */ = {isa = PBXBuildFile; fileRef = 822613B520C7FEB300D767BD /* GDTMobBannerView.h */; };
-		8233E4DC20F8A6D5006DAC31 /* GDTNativeAd.h in Headers */ = {isa = PBXBuildFile; fileRef = 822613B620C7FEB300D767BD /* GDTNativeAd.h */; };
-		8233E4DD20F8A6D5006DAC31 /* GDTSDKConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = 822613B720C7FEB300D767BD /* GDTSDKConfig.h */; };
-		8233E4DE20F8A6D5006DAC31 /* GDTMobInterstitial.h in Headers */ = {isa = PBXBuildFile; fileRef = 822613B820C7FEB300D767BD /* GDTMobInterstitial.h */; };
-		8233E4DF20F8A6D5006DAC31 /* GDTSplashAd.h in Headers */ = {isa = PBXBuildFile; fileRef = 822613B920C7FEB300D767BD /* GDTSplashAd.h */; };
-		8233E4E020F8A6D5006DAC31 /* GDTNativeExpressAd.h in Headers */ = {isa = PBXBuildFile; fileRef = 822613BA20C7FEB300D767BD /* GDTNativeExpressAd.h */; };
-		8233E4E120F8A6D5006DAC31 /* GDTSDKDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = 822613BB20C7FEB300D767BD /* GDTSDKDefines.h */; };
 		826848F92182C2EC00C3131B /* YXInterstitialAdManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 826848F52182C2EB00C3131B /* YXInterstitialAdManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		826848FA2182C2EC00C3131B /* YXFeedAdManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 826848F62182C2EB00C3131B /* YXFeedAdManager.m */; };
 		826848FB2182C2EC00C3131B /* YXInterstitialAdManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 826848F72182C2EB00C3131B /* YXInterstitialAdManager.m */; };
@@ -100,6 +90,21 @@
 		826849082183052100C3131B /* YXLaunchAds.h in Headers */ = {isa = PBXBuildFile; fileRef = 8226134B20C7FD5B00D767BD /* YXLaunchAds.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		826ADCE8216C509E005F0577 /* YXBannerAdManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 826ADCE6216C509E005F0577 /* YXBannerAdManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		826ADCE9216C509E005F0577 /* YXBannerAdManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 826ADCE7216C509E005F0577 /* YXBannerAdManager.m */; };
+		E75FC8192230BC1E0030BF4B /* GDTNativeExpressAdView.h in Headers */ = {isa = PBXBuildFile; fileRef = E75FC80A2230BC1E0030BF4B /* GDTNativeExpressAdView.h */; };
+		E75FC81A2230BC1E0030BF4B /* GDTMobBannerView.h in Headers */ = {isa = PBXBuildFile; fileRef = E75FC80B2230BC1E0030BF4B /* GDTMobBannerView.h */; };
+		E75FC81B2230BC1E0030BF4B /* GDTNativeAd.h in Headers */ = {isa = PBXBuildFile; fileRef = E75FC80C2230BC1E0030BF4B /* GDTNativeAd.h */; };
+		E75FC81C2230BC1E0030BF4B /* GDTSDKConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = E75FC80D2230BC1E0030BF4B /* GDTSDKConfig.h */; };
+		E75FC81D2230BC1E0030BF4B /* GDTMobInterstitial.h in Headers */ = {isa = PBXBuildFile; fileRef = E75FC80E2230BC1E0030BF4B /* GDTMobInterstitial.h */; };
+		E75FC81E2230BC1E0030BF4B /* GDTRewardVideoAd.h in Headers */ = {isa = PBXBuildFile; fileRef = E75FC80F2230BC1E0030BF4B /* GDTRewardVideoAd.h */; };
+		E75FC81F2230BC1E0030BF4B /* GDTSplashAd.h in Headers */ = {isa = PBXBuildFile; fileRef = E75FC8102230BC1E0030BF4B /* GDTSplashAd.h */; };
+		E75FC8202230BC1E0030BF4B /* GDTNativeExpressAd.h in Headers */ = {isa = PBXBuildFile; fileRef = E75FC8112230BC1E0030BF4B /* GDTNativeExpressAd.h */; };
+		E75FC8212230BC1E0030BF4B /* GDTLogoView.h in Headers */ = {isa = PBXBuildFile; fileRef = E75FC8122230BC1E0030BF4B /* GDTLogoView.h */; };
+		E75FC8222230BC1E0030BF4B /* GDTMediaView.h in Headers */ = {isa = PBXBuildFile; fileRef = E75FC8132230BC1E0030BF4B /* GDTMediaView.h */; };
+		E75FC8232230BC1E0030BF4B /* GDTUnifiedNativeAdView.h in Headers */ = {isa = PBXBuildFile; fileRef = E75FC8142230BC1E0030BF4B /* GDTUnifiedNativeAdView.h */; };
+		E75FC8242230BC1E0030BF4B /* GDTUnifiedNativeAdDataObject.h in Headers */ = {isa = PBXBuildFile; fileRef = E75FC8152230BC1E0030BF4B /* GDTUnifiedNativeAdDataObject.h */; };
+		E75FC8252230BC1E0030BF4B /* GDTSDKDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = E75FC8162230BC1E0030BF4B /* GDTSDKDefines.h */; };
+		E75FC8262230BC1E0030BF4B /* libGDTMobSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E75FC8172230BC1E0030BF4B /* libGDTMobSDK.a */; };
+		E75FC8272230BC1E0030BF4B /* GDTUnifiedNativeAd.h in Headers */ = {isa = PBXBuildFile; fileRef = E75FC8182230BC1E0030BF4B /* GDTUnifiedNativeAd.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -121,8 +126,6 @@
 		82144FE521B7B12900081AED /* YXMutBannerAdManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXMutBannerAdManager.m; sourceTree = "<group>"; };
 		82144FE621B7B12900081AED /* YXMotivationVideoManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXMotivationVideoManager.h; sourceTree = "<group>"; };
 		82144FE721B7B12A00081AED /* YXAdSDKManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXAdSDKManager.m; sourceTree = "<group>"; };
-		82144FF521B7B1DA00081AED /* Tapjoy.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Tapjoy.framework; sourceTree = "<group>"; };
-		82144FF721B7B1DA00081AED /* TapjoyResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = TapjoyResources.bundle; sourceTree = "<group>"; };
 		82144FFB21B7B23800081AED /* YXPGIndexBannerSubiew.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXPGIndexBannerSubiew.h; sourceTree = "<group>"; };
 		82144FFC21B7B23800081AED /* YXNewPagedFlowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXNewPagedFlowView.m; sourceTree = "<group>"; };
 		82144FFD21B7B23800081AED /* YXNewPagedFlowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXNewPagedFlowView.h; sourceTree = "<group>"; };
@@ -184,15 +187,6 @@
 		822613B020C7FEB300D767BD /* YXReachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXReachability.h; sourceTree = "<group>"; };
 		822613B120C7FEB300D767BD /* YXImgUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXImgUtil.m; sourceTree = "<group>"; };
 		822613B220C7FEB300D767BD /* Network.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Network.h; sourceTree = "<group>"; };
-		822613B420C7FEB300D767BD /* GDTNativeExpressAdView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTNativeExpressAdView.h; sourceTree = "<group>"; };
-		822613B520C7FEB300D767BD /* GDTMobBannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTMobBannerView.h; sourceTree = "<group>"; };
-		822613B620C7FEB300D767BD /* GDTNativeAd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTNativeAd.h; sourceTree = "<group>"; };
-		822613B720C7FEB300D767BD /* GDTSDKConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTSDKConfig.h; sourceTree = "<group>"; };
-		822613B820C7FEB300D767BD /* GDTMobInterstitial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTMobInterstitial.h; sourceTree = "<group>"; };
-		822613B920C7FEB300D767BD /* GDTSplashAd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTSplashAd.h; sourceTree = "<group>"; };
-		822613BA20C7FEB300D767BD /* GDTNativeExpressAd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTNativeExpressAd.h; sourceTree = "<group>"; };
-		822613BB20C7FEB300D767BD /* GDTSDKDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTSDKDefines.h; sourceTree = "<group>"; };
-		822613BC20C7FEB300D767BD /* libGDTMobSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGDTMobSDK.a; sourceTree = "<group>"; };
 		822613BF20C7FEB300D767BD /* GuOpenUDID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GuOpenUDID.h; sourceTree = "<group>"; };
 		822613C020C7FEB300D767BD /* YXWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXWebViewController.h; sourceTree = "<group>"; };
 		822613C220C7FEB400D767BD /* LaunchAdModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LaunchAdModel.h; sourceTree = "<group>"; };
@@ -215,6 +209,21 @@
 		826848FE2182C36600C3131B /* YXFeedAdData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXFeedAdData.m; sourceTree = "<group>"; };
 		826ADCE6216C509E005F0577 /* YXBannerAdManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXBannerAdManager.h; sourceTree = "<group>"; };
 		826ADCE7216C509E005F0577 /* YXBannerAdManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXBannerAdManager.m; sourceTree = "<group>"; };
+		E75FC80A2230BC1E0030BF4B /* GDTNativeExpressAdView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTNativeExpressAdView.h; sourceTree = "<group>"; };
+		E75FC80B2230BC1E0030BF4B /* GDTMobBannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTMobBannerView.h; sourceTree = "<group>"; };
+		E75FC80C2230BC1E0030BF4B /* GDTNativeAd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTNativeAd.h; sourceTree = "<group>"; };
+		E75FC80D2230BC1E0030BF4B /* GDTSDKConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTSDKConfig.h; sourceTree = "<group>"; };
+		E75FC80E2230BC1E0030BF4B /* GDTMobInterstitial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTMobInterstitial.h; sourceTree = "<group>"; };
+		E75FC80F2230BC1E0030BF4B /* GDTRewardVideoAd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTRewardVideoAd.h; sourceTree = "<group>"; };
+		E75FC8102230BC1E0030BF4B /* GDTSplashAd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTSplashAd.h; sourceTree = "<group>"; };
+		E75FC8112230BC1E0030BF4B /* GDTNativeExpressAd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTNativeExpressAd.h; sourceTree = "<group>"; };
+		E75FC8122230BC1E0030BF4B /* GDTLogoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTLogoView.h; sourceTree = "<group>"; };
+		E75FC8132230BC1E0030BF4B /* GDTMediaView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTMediaView.h; sourceTree = "<group>"; };
+		E75FC8142230BC1E0030BF4B /* GDTUnifiedNativeAdView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTUnifiedNativeAdView.h; sourceTree = "<group>"; };
+		E75FC8152230BC1E0030BF4B /* GDTUnifiedNativeAdDataObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTUnifiedNativeAdDataObject.h; sourceTree = "<group>"; };
+		E75FC8162230BC1E0030BF4B /* GDTSDKDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTSDKDefines.h; sourceTree = "<group>"; };
+		E75FC8172230BC1E0030BF4B /* libGDTMobSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGDTMobSDK.a; sourceTree = "<group>"; };
+		E75FC8182230BC1E0030BF4B /* GDTUnifiedNativeAd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTUnifiedNativeAd.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -222,14 +231,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8233E4D920F8A69A006DAC31 /* libGDTMobSDK.a in Frameworks */,
 				8226137820C7FE1B00D767BD /* AdSupport.framework in Frameworks */,
 				8226137620C7FE1000D767BD /* StoreKit.framework in Frameworks */,
 				8226137420C7FE0800D767BD /* Foundation.framework in Frameworks */,
 				8202E77721A51D2B00586F04 /* BUAdSDK.framework in Frameworks */,
-				82144FF821B7B1DA00081AED /* Tapjoy.framework in Frameworks */,
 				8226137220C7FDFF00D767BD /* UIKit.framework in Frameworks */,
 				8226137020C7FDF600D767BD /* AVFoundation.framework in Frameworks */,
+				E75FC8262230BC1E0030BF4B /* libGDTMobSDK.a in Frameworks */,
 				8226136E20C7FDED00D767BD /* WebKit.framework in Frameworks */,
 				8226136C20C7FDE200D767BD /* Security.framework in Frameworks */,
 				8226136A20C7FDD700D767BD /* CoreTelephony.framework in Frameworks */,
@@ -257,31 +265,6 @@
 				8202E77521A51CFB00586F04 /* BUAdSDK.bundle */,
 			);
 			name = ChuanAD;
-			sourceTree = "<group>";
-		};
-		82144FF321B7B1DA00081AED /* VideoImpel */ = {
-			isa = PBXGroup;
-			children = (
-				82144FF421B7B1DA00081AED /* Tapjoy.embeddedframework */,
-			);
-			path = VideoImpel;
-			sourceTree = "<group>";
-		};
-		82144FF421B7B1DA00081AED /* Tapjoy.embeddedframework */ = {
-			isa = PBXGroup;
-			children = (
-				82144FF521B7B1DA00081AED /* Tapjoy.framework */,
-				82144FF621B7B1DA00081AED /* Resources */,
-			);
-			path = Tapjoy.embeddedframework;
-			sourceTree = "<group>";
-		};
-		82144FF621B7B1DA00081AED /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				82144FF721B7B1DA00081AED /* TapjoyResources.bundle */,
-			);
-			path = Resources;
 			sourceTree = "<group>";
 		};
 		82144FFA21B7B23800081AED /* YXNewPage */ = {
@@ -317,13 +300,13 @@
 		8226134A20C7FD5B00D767BD /* YXLaunchAds */ = {
 			isa = PBXGroup;
 			children = (
+				8226134B20C7FD5B00D767BD /* YXLaunchAds.h */,
 				82144FE221B7B12900081AED /* YXAdSDKManager.h */,
 				82144FE721B7B12A00081AED /* YXAdSDKManager.m */,
 				82144FE621B7B12900081AED /* YXMotivationVideoManager.h */,
 				82144FE321B7B12900081AED /* YXMotivationVideoManager.m */,
 				82144FE421B7B12900081AED /* YXMutBannerAdManager.h */,
 				82144FE521B7B12900081AED /* YXMutBannerAdManager.m */,
-				8226134B20C7FD5B00D767BD /* YXLaunchAds.h */,
 				8226137920C7FE6900D767BD /* YXLaunchAdManager.h */,
 				8226137A20C7FE6900D767BD /* YXLaunchAdManager.m */,
 				822C8B9220CFA6AD00AB25D2 /* YXIconAdManager.h */,
@@ -425,10 +408,9 @@
 		8226139B20C7FEB300D767BD /* Tool */ = {
 			isa = PBXGroup;
 			children = (
-				82144FF321B7B1DA00081AED /* VideoImpel */,
+				E75FC8092230BC1E0030BF4B /* gdtAD */,
 				82669932219596DB00B1EC3E /* Weichat */,
 				82A8256E215A43450030C432 /* ChuanAD */,
-				822613B320C7FEB300D767BD /* gdtAD */,
 				822613A020C7FEB300D767BD /* des */,
 				822613B220C7FEB300D767BD /* Network.h */,
 				8226139C20C7FEB300D767BD /* Network.m */,
@@ -456,22 +438,6 @@
 				823338BA2135450C00AF9A93 /* YXLCdes.m */,
 			);
 			path = des;
-			sourceTree = "<group>";
-		};
-		822613B320C7FEB300D767BD /* gdtAD */ = {
-			isa = PBXGroup;
-			children = (
-				822613B420C7FEB300D767BD /* GDTNativeExpressAdView.h */,
-				822613B520C7FEB300D767BD /* GDTMobBannerView.h */,
-				822613B620C7FEB300D767BD /* GDTNativeAd.h */,
-				822613B720C7FEB300D767BD /* GDTSDKConfig.h */,
-				822613B820C7FEB300D767BD /* GDTMobInterstitial.h */,
-				822613B920C7FEB300D767BD /* GDTSplashAd.h */,
-				822613BA20C7FEB300D767BD /* GDTNativeExpressAd.h */,
-				822613BB20C7FEB300D767BD /* GDTSDKDefines.h */,
-				822613BC20C7FEB300D767BD /* libGDTMobSDK.a */,
-			);
-			path = gdtAD;
 			sourceTree = "<group>";
 		};
 		822613C120C7FEB400D767BD /* model */ = {
@@ -502,6 +468,28 @@
 			path = ChuanAD;
 			sourceTree = "<group>";
 		};
+		E75FC8092230BC1E0030BF4B /* gdtAD */ = {
+			isa = PBXGroup;
+			children = (
+				E75FC80A2230BC1E0030BF4B /* GDTNativeExpressAdView.h */,
+				E75FC80B2230BC1E0030BF4B /* GDTMobBannerView.h */,
+				E75FC80C2230BC1E0030BF4B /* GDTNativeAd.h */,
+				E75FC80D2230BC1E0030BF4B /* GDTSDKConfig.h */,
+				E75FC80E2230BC1E0030BF4B /* GDTMobInterstitial.h */,
+				E75FC80F2230BC1E0030BF4B /* GDTRewardVideoAd.h */,
+				E75FC8102230BC1E0030BF4B /* GDTSplashAd.h */,
+				E75FC8112230BC1E0030BF4B /* GDTNativeExpressAd.h */,
+				E75FC8122230BC1E0030BF4B /* GDTLogoView.h */,
+				E75FC8132230BC1E0030BF4B /* GDTMediaView.h */,
+				E75FC8142230BC1E0030BF4B /* GDTUnifiedNativeAdView.h */,
+				E75FC8152230BC1E0030BF4B /* GDTUnifiedNativeAdDataObject.h */,
+				E75FC8162230BC1E0030BF4B /* GDTSDKDefines.h */,
+				E75FC8172230BC1E0030BF4B /* libGDTMobSDK.a */,
+				E75FC8182230BC1E0030BF4B /* GDTUnifiedNativeAd.h */,
+			);
+			path = gdtAD;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -513,31 +501,34 @@
 				8214500121B7B23800081AED /* YXNewPagedFlowView.h in Headers */,
 				82144FE821B7B12A00081AED /* YXAdSDKManager.h in Headers */,
 				82144FEC21B7B12A00081AED /* YXMotivationVideoManager.h in Headers */,
+				E75FC8242230BC1E0030BF4B /* GDTUnifiedNativeAdDataObject.h in Headers */,
 				826849082183052100C3131B /* YXLaunchAds.h in Headers */,
 				826849072183047D00C3131B /* YXLaunchConfiguration.h in Headers */,
+				E75FC8222230BC1E0030BF4B /* GDTMediaView.h in Headers */,
+				E75FC8232230BC1E0030BF4B /* GDTUnifiedNativeAdView.h in Headers */,
 				826849062183043C00C3131B /* YXLaunchAdManager.h in Headers */,
 				826848FF2182C36600C3131B /* YXFeedAdData.h in Headers */,
+				E75FC8272230BC1E0030BF4B /* GDTUnifiedNativeAd.h in Headers */,
 				826848F92182C2EC00C3131B /* YXInterstitialAdManager.h in Headers */,
 				826848FC2182C2EC00C3131B /* YXFeedAdManager.h in Headers */,
+				E75FC81E2230BC1E0030BF4B /* GDTRewardVideoAd.h in Headers */,
 				826ADCE8216C509E005F0577 /* YXBannerAdManager.h in Headers */,
 				822C8B9420CFA6AD00AB25D2 /* YXIconAdManager.h in Headers */,
 				822613CB20C7FEB400D767BD /* YXLaunchAd.h in Headers */,
 				822613F020C7FEB400D767BD /* YXReachability.h in Headers */,
-				8233E4DA20F8A6D5006DAC31 /* GDTNativeExpressAdView.h in Headers */,
-				8233E4DB20F8A6D5006DAC31 /* GDTMobBannerView.h in Headers */,
+				E75FC8202230BC1E0030BF4B /* GDTNativeExpressAd.h in Headers */,
 				823338BD2135450C00AF9A93 /* YXGTMBase64.h in Headers */,
-				8233E4DC20F8A6D5006DAC31 /* GDTNativeAd.h in Headers */,
-				8233E4DD20F8A6D5006DAC31 /* GDTSDKConfig.h in Headers */,
-				8233E4DE20F8A6D5006DAC31 /* GDTMobInterstitial.h in Headers */,
 				823338BC2135450C00AF9A93 /* YXLCdes.h in Headers */,
-				8233E4DF20F8A6D5006DAC31 /* GDTSplashAd.h in Headers */,
-				8233E4E020F8A6D5006DAC31 /* GDTNativeExpressAd.h in Headers */,
-				8233E4E120F8A6D5006DAC31 /* GDTSDKDefines.h in Headers */,
 				822613F220C7FEB400D767BD /* Network.h in Headers */,
+				E75FC8252230BC1E0030BF4B /* GDTSDKDefines.h in Headers */,
 				822613D120C7FEB400D767BD /* YXLaunchAdCache.h in Headers */,
 				822613DB20C7FEB400D767BD /* YXFLAnimatedImageView.h in Headers */,
+				E75FC81D2230BC1E0030BF4B /* GDTMobInterstitial.h in Headers */,
+				E75FC81C2230BC1E0030BF4B /* GDTSDKConfig.h in Headers */,
+				E75FC8192230BC1E0030BF4B /* GDTNativeExpressAdView.h in Headers */,
 				822613DC20C7FEB400D767BD /* YXFLAnimatedImage.h in Headers */,
 				823338C02135450C00AF9A93 /* YXGTMDefines.h in Headers */,
+				E75FC8212230BC1E0030BF4B /* GDTLogoView.h in Headers */,
 				822613CF20C7FEB400D767BD /* YXLaunchAdButton.h in Headers */,
 				822613D220C7FEB400D767BD /* YXLaunchAdImageManager.h in Headers */,
 				822613CE20C7FEB400D767BD /* YXLaunchAdDownloader.h in Headers */,
@@ -547,10 +538,13 @@
 				822613CC20C7FEB400D767BD /* YXLaunchAdController.h in Headers */,
 				822613E020C7FEB400D767BD /* YXImgUtil.h in Headers */,
 				822613FE20C7FEB400D767BD /* YXWebViewController.h in Headers */,
+				E75FC81B2230BC1E0030BF4B /* GDTNativeAd.h in Headers */,
 				822613C820C7FEB400D767BD /* YXLaunchAdConst.h in Headers */,
+				E75FC81A2230BC1E0030BF4B /* GDTMobBannerView.h in Headers */,
 				822613C720C7FEB400D767BD /* YXLaunchAdView.h in Headers */,
 				822613CD20C7FEB400D767BD /* YXLaunchAdConfiguration.h in Headers */,
 				822613E220C7FEB400D767BD /* NetTool.h in Headers */,
+				E75FC81F2230BC1E0030BF4B /* GDTSplashAd.h in Headers */,
 				822613D720C7FEB400D767BD /* YXLaunchImageView.h in Headers */,
 				822613FF20C7FEB400D767BD /* LaunchAdModel.h in Headers */,
 			);
@@ -761,7 +755,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -816,7 +810,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;

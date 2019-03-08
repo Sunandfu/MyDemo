@@ -48,10 +48,7 @@ static YXAdSDKManager * manager = nil;
     _openLog = NO;
     
     [self hmtSDK];
-    
-    
-    
-    
+    [self getVersion];
 }
 - (void)hmtSDK
 {
@@ -94,7 +91,9 @@ static YXAdSDKManager * manager = nil;
     //    [HMTAgentSDK setLocation:YES];
     [HMTAgentSDK setCrashReportEnabled:YX_DEBUG_MODE];
 }
-
+- (void)getVersion{
+    NSLog(@"V 3.3");
+}
 - (void)tjcConnectSuccess
 {
     

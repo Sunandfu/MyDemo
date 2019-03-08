@@ -390,6 +390,44 @@
         //        NSLog(@"log success");
     });
 }
-
+//请求配置接口
++ (void)requestADSourceFromMediaId:(NSString *)mediaId success:(void(^)(NSDictionary *dataDict))success fail:(void(^)(NSError *error))fail{
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+    CGFloat c_w = [UIScreen mainScreen].bounds.size.width;
+    CGFloat c_h = [UIScreen mainScreen].bounds.size.height;
+    UInt64 recordTime = [[NSDate date] timeIntervalSince1970]*1000;
+    NSString *timeLocal = [[NSString alloc] initWithFormat:@"%llu", recordTime];
+    int netnumber = [NetTool getNetTyepe];
+    
+    NSString *dataStr = [NSString stringWithFormat:@"pkg=%@&idfa=%@&ts=%@&os=%@&osv=%@&w=%@&h=%@&model=%@&nt=%@&mac=%@",[NetTool URLEncodedString:[NetTool getPackageName]],[NetTool getIDFA],timeLocal,@"IOS",[NetTool URLEncodedString:[NetTool getOS]],@(c_w),@(c_h),[NetTool URLEncodedString:[NetTool gettelModel]],@(netnumber),[NetTool URLEncodedString:[NetTool getMac]]];
+    
+    NSString *strURL =  [NSString stringWithFormat:congfigIp,[NetTool URLEncodedString:mediaId], [NetTool getPackageName],@"2",dataStr];
+    [request setURL:[NSURL URLWithString:strURL]];
+    [request setCachePolicy:NSURLRequestUseProtocolCachePolicy];
+    [request setTimeoutInterval:3];
+    [request setHTTPMethod:@"GET"];
+    [NSURLConnection  sendAsynchronousRequest:request queue:[[NSOperationQueue alloc]init] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
+        if(connectionError){
+            _YXGTMDevLog(@"#####%@\error",[connectionError debugDescription]);
+            NSError *errors = [NSError errorWithDomain:@"请求失败" code:400 userInfo:nil];
+            fail(errors);
+        }else{
+            NSString *dataStr = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
+            NSArray *dataArr = [dataStr componentsSeparatedByString:@":"];
+            if (dataArr.count < 2) {
+                NSError *errors = [NSError errorWithDomain:@"请求失败" code:400 userInfo:nil];
+                fail(errors);
+                return ;
+            }
+            NSString *dataDe = dataArr[1];
+            dataDe = [dataDe stringByReplacingOccurrencesOfString:@"\"" withString:@""];
+            dataDe = [dataDe stringByReplacingOccurrencesOfString:@"}" withString:@""];
+            NSString * datadecrypt = [YXLCdes decrypt:dataDe];
+            NSDictionary *dic = [NetTool dictionaryWithJsonString:datadecrypt];
+            success(dic);
+        }
+        
+    }];
+}
 
 @end

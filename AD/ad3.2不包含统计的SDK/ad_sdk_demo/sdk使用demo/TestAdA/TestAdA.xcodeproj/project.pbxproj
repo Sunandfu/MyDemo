@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		8202E77A21A5221E00586F04 /* BUAdSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 8202E77821A5221E00586F04 /* BUAdSDK.bundle */; };
 		8202E77B21A5221E00586F04 /* BUAdSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8202E77921A5221E00586F04 /* BUAdSDK.framework */; };
-		8214500921B7B4DA00081AED /* BUAdSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8214500321B7B4DA00081AED /* BUAdSDK.framework */; };
 		8214500E21B7B5EE00081AED /* YXScrollerBannerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8214500D21B7B5EE00081AED /* YXScrollerBannerViewController.m */; };
 		8214501121B7B7AD00081AED /* YXMotivationVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8214500F21B7B7AD00081AED /* YXMotivationVideoViewController.m */; };
 		82165733209FEB27003A9AC2 /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 82165732209FEB27003A9AC2 /* libxml2.tbd */; };
@@ -80,7 +79,6 @@
 /* Begin PBXFileReference section */
 		8202E77821A5221E00586F04 /* BUAdSDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = BUAdSDK.bundle; sourceTree = "<group>"; };
 		8202E77921A5221E00586F04 /* BUAdSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BUAdSDK.framework; sourceTree = "<group>"; };
-		8214500321B7B4DA00081AED /* BUAdSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BUAdSDK.framework; sourceTree = "<group>"; };
 		8214500C21B7B5EE00081AED /* YXScrollerBannerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXScrollerBannerViewController.h; sourceTree = "<group>"; };
 		8214500D21B7B5EE00081AED /* YXScrollerBannerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXScrollerBannerViewController.m; sourceTree = "<group>"; };
 		8214500F21B7B7AD00081AED /* YXMotivationVideoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXMotivationVideoViewController.m; sourceTree = "<group>"; };
@@ -151,7 +149,6 @@
 				8216573B209FEB60003A9AC2 /* SystemConfiguration.framework in Frameworks */,
 				8266993A21959ADB00B1EC3E /* libWeChatSDK.a in Frameworks */,
 				82165739209FEB4E003A9AC2 /* CoreTelephony.framework in Frameworks */,
-				8214500921B7B4DA00081AED /* BUAdSDK.framework in Frameworks */,
 				82165737209FEB41003A9AC2 /* Security.framework in Frameworks */,
 				82165735209FEB2D003A9AC2 /* WebKit.framework in Frameworks */,
 				8202E77B21A5221E00586F04 /* BUAdSDK.framework in Frameworks */,
@@ -193,7 +190,6 @@
 			isa = PBXGroup;
 			children = (
 				8202E77821A5221E00586F04 /* BUAdSDK.bundle */,
-				8214500321B7B4DA00081AED /* BUAdSDK.framework */,
 				8202E77921A5221E00586F04 /* BUAdSDK.framework */,
 				8266993621959ADB00B1EC3E /* Weichat */,
 			);

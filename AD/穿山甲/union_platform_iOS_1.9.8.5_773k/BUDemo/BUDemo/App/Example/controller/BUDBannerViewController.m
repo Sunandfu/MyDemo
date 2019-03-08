@@ -74,7 +74,7 @@
 //refreshCarousel按钮
 -  (void)refreshCarouselBanner {
     if (self.carouselBannerView == nil) {
-        BUSize *size = [BUSize sizeBy:BUProposalSize_Banner600_150];
+        BUSize *size = [BUSize sizeBy:BUProposalSize_Banner600_500];
         self.carouselBannerView = [[BUBannerAdView alloc] initWithSlotID:self.viewModel.slotID size:size rootViewController:self interval:30];
         const CGFloat screenWidth = CGRectGetWidth([UIScreen mainScreen].bounds);
         const CGFloat screenHeight = CGRectGetHeight([UIScreen mainScreen].bounds);

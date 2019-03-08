@@ -39,9 +39,8 @@
  */
 - (void)initLaunchAd
 {
-    
-   YXAdSDKManager *sdkManager = [YXAdSDKManager defaultManager];
-    sdkManager.cityCode = @"";
+    YXAdSDKManager *sdkManager = [YXAdSDKManager defaultManager];
+    sdkManager.cityCode = @"4CCDBE264F0EB13C";
     YXLaunchAdManager *adManager = [YXLaunchAdManager shareManager];
     adManager.waitDataDuration = 5;
     adManager.duration = 5;

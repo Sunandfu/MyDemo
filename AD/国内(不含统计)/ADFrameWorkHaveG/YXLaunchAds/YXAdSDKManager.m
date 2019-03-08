@@ -40,12 +40,13 @@ static YXAdSDKManager * manager = nil;
     }
     return self;
 }
-
+ 
 
 - (void)setUpConfig
 {
     _openLog = NO;
 }
+  
 - (void)tjcConnectSuccess
 {
     

@@ -44,12 +44,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property(nonatomic,weak) id<YXFeedAdManagerDelegate> delegate;
 
-
 /**
  图片宽
  */
 @property (nonatomic,assign) CGFloat adWidth;
-
 
 /**
  图片高
@@ -69,7 +67,6 @@ NS_ASSUME_NONNULL_BEGIN
  *  详解：[必选]开发者需传入用来弹出目标页的ViewController，一般为当前ViewController
  */
 @property (nonatomic, weak) UIViewController *controller;
-
 
 /**  开始加载广告  */
 - (void)loadFeedAd;

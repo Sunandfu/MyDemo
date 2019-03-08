@@ -7,11 +7,10 @@
 //
 #import "YXIconAdManager.h"
 #import "NetTool.h"
-
 #import "Network.h"
 #import "YXImgUtil.h"
 
-#import "YXGTMDefines.h"
+#import "YXGTMDefines.h" 
 
 #import "YXWebViewController.h"
 
@@ -29,7 +28,7 @@
     
     UIImageView *_imgView;
     UIWebView *_webView;
-    NSString *_mediaId;
+    NSString *_mediaId; 
     
 }
 
@@ -93,7 +92,7 @@
                 NSError *errors = [NSError errorWithDomain:@"请求失败" code:400 userInfo:nil];
                 [self failedError:errors];
             }
-            
+         
         }else{
             NSError *errors = [NSError errorWithDomain:@"请求失败" code:400 userInfo:nil];
             [self failedError:errors];
@@ -131,7 +130,7 @@
     NSString *urlstr = _resultDict[@"img_url"];
     if(urlstr && ![urlstr isEqualToString:@""]){
         // 1.加载
-        [YXImgUtil gifImgWithUrl:urlstr successBlock:^(NSData *data) {
+        [YXImgUtil gifImgWithUrl:urlstr successBlock:^(NSData *data) { 
             
             [self->_webView loadData:data MIMEType:@"image/gif" textEncodingName:@"UTF-8" baseURL:[NSURL URLWithString:urlstr]];
             if (self->_resultDict[@"logo_url"]) {
@@ -214,14 +213,14 @@
     }
     
     _webView = [[UIWebView alloc]initWithFrame:self.bounds];
-    _webView.opaque = NO;
-    _webView.backgroundColor = [UIColor clearColor];
+    
     _webView.userInteractionEnabled = YES;
     _webView.delegate = self ;
     [_webView setScalesPageToFit:YES];
     _webView.scrollView.scrollEnabled = NO;
     _webView.delegate = self;
-    
+    _webView.opaque = NO;
+    _webView.backgroundColor = [UIColor clearColor];
     [self addSubview:_webView];
     
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapImg:)];
@@ -241,7 +240,7 @@
         [_imgView removeFromSuperview];
         _imgView = nil;
     }
-    
+ 
     UIImageView *imgView = [[UIImageView alloc]initWithFrame:self.bounds];
     _imgView = imgView;
     
@@ -335,12 +334,12 @@
                 }
                 
             }
-        }];
+        }]; 
     }else{
         if(urlStr && ![urlStr isEqualToString:@""]){
             
-            //            NSURL *url = [NSURL URLWithString:urlStr];
-            //             [[UIApplication sharedApplication] openURL:url];
+//            NSURL *url = [NSURL URLWithString:urlStr];
+//             [[UIApplication sharedApplication] openURL:url];
             
             
             YXWebViewController *web = [YXWebViewController new];
@@ -382,8 +381,8 @@
 {
     if ([resp isKindOfClass:[WXLaunchMiniProgramResp class]])
     {
-        //        NSString *string = resp.extMsg;
-        //        // 对应小程序组件 <button open-type="launchApp"> 中的 app-parameter 属性
+//        NSString *string = resp.extMsg;
+//        // 对应小程序组件 <button open-type="launchApp"> 中的 app-parameter 属性
     }
 }
 
@@ -415,7 +414,7 @@
 -(BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType{
     
     
-    //    [[UIApplication sharedApplication] openURL:request.URL];
+//    [[UIApplication sharedApplication] openURL:request.URL];
     return YES;
 }
 

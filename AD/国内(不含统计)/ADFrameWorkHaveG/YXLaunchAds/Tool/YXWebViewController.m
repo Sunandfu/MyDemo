@@ -78,7 +78,7 @@ API_AVAILABLE(ios(8.0))
         close = @"close";
     }
     
-    UIImage *leftimage = [UIImage imageNamed:@"YDSource.bundle/yd_leftback"];
+    UIImage *leftimage = [UIImage imageNamed:@"BUAdSDK.bundle/bu_leftback"];
     [button setImage:leftimage forState:UIControlStateNormal];
     
     button.frame = CGRectMake(20,navbarHeight, 30, 44);
@@ -92,7 +92,7 @@ API_AVAILABLE(ios(8.0))
     buttonBack.backgroundColor =[UIColor whiteColor];
     [buttonBack setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     buttonBack.titleLabel.font = [UIFont systemFontOfSize:15];
-    UIImage *closeimage = [UIImage imageNamed:@"YDSource.bundle/yd_close"];
+    UIImage *closeimage = [UIImage imageNamed:@"BUAdSDK.bundle/bu_close"];
     [buttonBack setImage:closeimage forState:UIControlStateNormal];
     
     buttonBack.frame = CGRectMake(60,navbarHeight, 30, 44);

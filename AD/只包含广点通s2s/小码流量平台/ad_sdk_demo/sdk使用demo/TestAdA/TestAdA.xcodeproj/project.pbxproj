@@ -585,9 +585,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
-					"$(PROJECT_DIR)/TestAdA/YXLaunchAD/ThirdAdLibs",
 					"$(PROJECT_DIR)/TestAdA/YXLaunchAD",
-					"$(PROJECT_DIR)/TestAdA/YXLaunchAD/ThirdAdLibs/VideoImpel/Tapjoy.embeddedframework",
 					"$(PROJECT_DIR)/TestAdA/YXLaunchAD/ThirdLib",
 				);
 				INFOPLIST_FILE = TestAdA/Info.plist;
@@ -596,13 +594,12 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
-					"$(PROJECT_DIR)/TestAdA/YXLaunchAD/ThirdAdLibs/Weichat",
 				);
 				OTHER_LDFLAGS = (
 					"-Objc",
 					"-all_load",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.yunw.demo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yunq.demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "6c98abac-4b2e-4ab1-9faf-fc1314841d2a";
 				PROVISIONING_PROFILE_SPECIFIER = mySelfTongyong;
@@ -621,9 +618,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
-					"$(PROJECT_DIR)/TestAdA/YXLaunchAD/ThirdAdLibs",
 					"$(PROJECT_DIR)/TestAdA/YXLaunchAD",
-					"$(PROJECT_DIR)/TestAdA/YXLaunchAD/ThirdAdLibs/VideoImpel/Tapjoy.embeddedframework",
 					"$(PROJECT_DIR)/TestAdA/YXLaunchAD/ThirdLib",
 				);
 				INFOPLIST_FILE = TestAdA/Info.plist;
@@ -632,13 +627,12 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
-					"$(PROJECT_DIR)/TestAdA/YXLaunchAD/ThirdAdLibs/Weichat",
 				);
 				OTHER_LDFLAGS = (
 					"-Objc",
 					"-all_load",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.yunw.demo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yunq.demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "6c98abac-4b2e-4ab1-9faf-fc1314841d2a";
 				PROVISIONING_PROFILE_SPECIFIER = mySelfTongyong;

@@ -98,67 +98,16 @@
 #pragma mark 请求配置
 - (void)requestADSourceFromNet
 {
-    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
-    
-    CGFloat c_w = [UIScreen mainScreen].bounds.size.width;
-    CGFloat c_h = [UIScreen mainScreen].bounds.size.height;
-    
-    
-    UInt64 recordTime = [[NSDate date] timeIntervalSince1970]*1000;
-    
-    NSString *timeLocal = [[NSString alloc] initWithFormat:@"%llu", recordTime];
-    
-    int netnumber = [NetTool getNetTyepe];
-    
-    NSString *dataStr = [NSString stringWithFormat:@"pkg=%@&idfa=%@&ts=%@&os=%@&osv=%@&w=%@&h=%@&model=%@&nt=%@&mac=%@",[NetTool URLEncodedString:[NetTool getPackageName]],[NetTool getIDFA],timeLocal,@"IOS",[NetTool URLEncodedString:[NetTool getOS]],@(c_w),@(c_h),[NetTool URLEncodedString:[NetTool gettelModel]],@(netnumber),[NetTool URLEncodedString:[NetTool getMac]]];
-    
-    
-    NSString *strURL =  [NSString stringWithFormat:congfigIp,[NetTool URLEncodedString:_mediaId], [NetTool getPackageName],@"2",dataStr];
-    
-    
-    [request setURL:[NSURL URLWithString:strURL]];
-    [request setCachePolicy:NSURLRequestUseProtocolCachePolicy];
-    
-    [request setTimeoutInterval:3];
-    
-    [request setHTTPMethod:@"GET"];
-    [NSURLConnection  sendAsynchronousRequest:request queue:[[NSOperationQueue alloc]init] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
-        //            handler(response,data,connectionError);
-        if(connectionError){
-            _YXGTMDevLog(@"#####%@\error",[connectionError debugDescription]);
-            NSError *errors = [NSError errorWithDomain:@"请求失败" code:400 userInfo:nil];
-            [self failedError:errors];
+    [Network requestADSourceFromMediaId:_mediaId success:^(NSDictionary *dataDict) {
+        self->_gdtAD = dataDict;
+        NSArray *advertiser = dataDict[@"advertiser"];
+        if(advertiser && ![advertiser isKindOfClass:[NSNull class]]&& advertiser.count > 0){
+            [self initIDSource];
         }else{
-            
-            NSString *dataStr = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
-            
-            NSArray *dataArr = [dataStr componentsSeparatedByString:@":"];
-            
-            if (dataArr.count < 2) {
-                NSError *errors = [NSError errorWithDomain:@"请求失败" code:400 userInfo:nil];
-                [self failedError:errors];
-                return ;
-            }
-            
-            NSString *dataDe = dataArr[1];
-            
-            dataDe = [dataDe stringByReplacingOccurrencesOfString:@"\"" withString:@""];
-            dataDe = [dataDe stringByReplacingOccurrencesOfString:@"}" withString:@""];
-            
-            NSString * datadecrypt = [YXLCdes decrypt:dataDe];
-            
-            NSDictionary *dic = [self dictionaryWithJsonString:datadecrypt];
-            
-            self->_gdtAD = dic ;
-            NSArray *advertiser = dic[@"advertiser"];
-            
-            if(advertiser && ![advertiser isKindOfClass:[NSNull class]]&& advertiser.count > 0){
-                [self initIDSource];
-            }else{
-                [self initS2S];
-            }
+            [self initS2S];
         }
-        
+    } fail:^(NSError *error) {
+        [self failedError:error];
     }];
 }
 - (NSDictionary *)dictionaryWithJsonString:(NSString *)jsonString {
@@ -880,6 +829,6 @@
         self.wmBannerView = nil;
     }];
 }
- 
+
 
 @end

@@ -109,7 +109,6 @@ static  NSString * feedMediaID = @"xmlc_ios_bonus_banner";
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
     id model = self.dataSource[indexPath.row];
     if ([model isKindOfClass:[YXFeedAdData class]]) {
         YXFeedAdTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"YXFeedAdTableViewCell" forIndexPath:indexPath];
@@ -119,9 +118,7 @@ static  NSString * feedMediaID = @"xmlc_ios_bonus_banner";
         YXFeedAdRegisterView * adregistAdView =  [[[NSBundle mainBundle]loadNibNamed:NSStringFromClass([YXFeedAdRegisterView class]) owner:nil options:nil]firstObject];
         adregistAdView.frame = CGRectMake(0, 0, self.view.bounds.size.width, 220);
         
-        //
 //        [_feedManager registerAdViewForInteraction:indexPath.row adData:model];
-        
         //展示成功的时候要上报 在cell中用此方法s上报
         
         [_feedManager registerAdViewForInCell:cell adData:model];
@@ -168,7 +165,7 @@ static  NSString * feedMediaID = @"xmlc_ios_bonus_banner";
     _feedManager.adHeight = 240;
     _feedManager.controller = self;
     _feedManager.delegate = self;
-    _feedManager.adCount = 3;
+    _feedManager.adCount = 6;
     
     [_feedManager loadFeedAd];
     

@@ -67,12 +67,12 @@ NSString *_gulongitude;
     
     NSString *cityCode = [YXAdSDKManager defaultManager].cityCode;
     
-    [dic setValue:cityCode forKey:@""];
+    [dic setValue:cityCode forKey:@"cityCode"];
     
     [dic setValue:@"3.0" forKey:@"version"] ;
     [dic setValue:@"2" forKey:@"c_type"] ;
     
-    NSString * adCountStr = [NSString stringWithFormat:@"%ld",adCount];
+    NSString * adCountStr = [NSString stringWithFormat:@"%ld",(long)adCount];
     [dic setValue:adCountStr forKey:@"adCount"];
     
     [dic setValue:key forKey:@"mid"];

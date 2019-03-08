@@ -23,9 +23,13 @@
  
  */
 
-#define SEVERIN @"http://47.99.227.46:8081"
+//#define SEVERIN @"http://47.99.227.46:8081"
+//
+//#define TRACKIN @"http://47.99.227.46:8082"
 
-#define TRACKIN @"http://47.99.227.46:8082"
+#define SEVERIN @"http://119.29.146.103:8073"
+
+#define TRACKIN @"http://119.29.146.103:8074"
 
 #define ADSHOW   TRACKIN @"/log/newMimpr/v2"
 #define ADCLICK  TRACKIN @"/log/newMclick"
@@ -35,13 +39,12 @@
 
 #define inLandAD @"inLandAD"
 
-#define congfigIp SEVERIN @"/yd3/mediaconfig/v/2?mediaId=%@&aid=%@&ver=%@&%@&%@"
+#define congfigIp SEVERIN @"/yd3/mediaconfig/v/2?mediaId=%@&aid=%@&ver=%@&%@"
 
 #define USERBLACK SEVERIN @"/yd3/user/black"
 
 #define USERBLACKREMOVE USERBLACK @"/remove"
 
-//#warning 正式去掉/v/2
 #define S2SURL SEVERIN @"/yd3/mview/v/2"
 
 typedef void(^NetworkSucess) (NSDictionary * response);

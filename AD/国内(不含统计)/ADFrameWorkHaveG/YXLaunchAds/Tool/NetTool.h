@@ -9,6 +9,9 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
+#define SF_DEVICE_WIDTH [UIScreen mainScreen].bounds.size.width
+#define SF_DEVICE_HEIGHT [UIScreen mainScreen].bounds.size.height
+
 typedef void(^downloadFinish)(UIImage *image,NSInteger index);
 typedef void(^downloadFailure)(NSError *error);
 
@@ -40,8 +43,8 @@ typedef enum {
 +(NSString *)getPackageName;
 + (NSString *)getOpenUDID;
 + (NSString *)getOS;
-+(NSString *)deviceWANIPAdress;
-+(netType) getNetTyepe;
++ (NSString *)deviceWANIPAdress;
++ (netType) getNetTyepe;
 + (NSInteger)getSpendTimeWithStartDate:(NSString *)start stopDate:(NSString *)stop;
 + (NSString *)getNowDateStr_2;
 + (UIImage *)getLauchImage;
@@ -55,4 +58,6 @@ typedef enum {
 + (BOOL)isInScreenCell:(UITableViewCell*)cell;
 
 + (void)clearNetImageChace;
++ (NSDictionary *)dictionaryWithJsonString:(NSString *)jsonString;
+
 @end

@@ -26,6 +26,7 @@
  */
 @property (nonatomic,copy) NSString *adContent;
 
+
 @property (nonatomic,assign) NSInteger adID;
 
 /**

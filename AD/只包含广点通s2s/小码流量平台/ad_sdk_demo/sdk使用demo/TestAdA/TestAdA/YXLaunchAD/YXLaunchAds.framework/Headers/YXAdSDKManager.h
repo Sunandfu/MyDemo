@@ -29,6 +29,10 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (void)addBlackList:(NSString*)media andTime:(NSInteger)day;
 
+/**
+ 获取版本号
+ */
+- (void)getVersion;
 
 /**
  移除黑名单      显示广告

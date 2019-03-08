@@ -477,8 +477,9 @@
     NSString *timeLocal = [[NSString alloc] initWithFormat:@"%llu", recordTime];
     
     int netnumber = [NetTool getNetTyepe];
+    NSString *cityCode = [YXAdSDKManager defaultManager].cityCode;
     
-    NSString *dataStr = [NSString stringWithFormat:@"pkg=%@&idfa=%@&ts=%@&os=%@&osv=%@&w=%@&h=%@&model=%@&nt=%@&mac=%@",
+    NSString *dataStr = [NSString stringWithFormat:@"pkg=%@&idfa=%@&ts=%@&os=%@&osv=%@&w=%@&h=%@&model=%@&nt=%@&mac=%@&cityCode=%@",
                          [NetTool URLEncodedString:[NetTool getPackageName]],
                          [NetTool getIDFA],
                          timeLocal,
@@ -488,14 +489,11 @@
                          @(c_h),
                          [NetTool URLEncodedString:[NetTool gettelModel]],
                          @(netnumber),
-                         [NetTool URLEncodedString:[NetTool getMac]]];
+                         [NetTool URLEncodedString:[NetTool getMac]],
+                         cityCode];
     
-    
-    NSString *cityCode = [YXAdSDKManager defaultManager].cityCode;
-    
-    NSString *strURL =  [NSString stringWithFormat:congfigIp,[NetTool URLEncodedString:_mediaId], [NetTool getPackageName],@"2",dataStr,cityCode];
-    
-    
+    NSString *strURL =  [NSString stringWithFormat:congfigIp,[NetTool URLEncodedString:_mediaId], [NetTool getPackageName],@"2",dataStr];
+
     [request setURL:[NSURL URLWithString:strURL]];
     [request setCachePolicy:NSURLRequestUseProtocolCachePolicy];
     

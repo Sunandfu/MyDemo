@@ -25,9 +25,9 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (void)didFailedLoadMutBannerAd:(NSError* _Nonnull)error;
 /**
- 广告点击后回调
+ 广告点击后回调的index
  */
-- (void)didClickedMutBannerAd;
+- (void)didClickedMutBannerAdWithIndex:(NSInteger)index;
 
 @end
 @interface YXMutBannerAdManager : NSObject
@@ -36,6 +36,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic,assign)YXADSize  adSize;
 
+/**
+ 轮播图背景占位图
+ */
 @property (nonatomic,strong) UIImage  *placeImage;
 
 /**  媒体位Id  */
@@ -61,6 +64,20 @@ NS_ASSUME_NONNULL_BEGIN
  *  是否开启无限轮播,默认为开启
  */
 @property (nonatomic, assign) BOOL isCarousel;
+
+/**
+ *  是否显示pageControl,默认为开启
+ */
+@property (nonatomic, assign) BOOL isShowPageControl;
+
+/**
+ 改变PageControl位置（位置相对于轮播图），默认在底部中间
+ */
+@property (nonatomic) CGRect pageFrame;
+
+@property (nonatomic, strong) UIColor *pageIndicatorTintColor;
+
+@property (nonatomic, strong) UIColor *currentPageIndicatorTintColor;
 
 /**
  左右间距,默认10
