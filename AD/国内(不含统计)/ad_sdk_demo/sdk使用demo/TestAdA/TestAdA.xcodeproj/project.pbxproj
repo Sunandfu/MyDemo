@@ -18,7 +18,6 @@
 		8216573B209FEB60003A9AC2 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8216573A209FEB60003A9AC2 /* SystemConfiguration.framework */; };
 		8216573D209FEB72003A9AC2 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8216573C209FEB72003A9AC2 /* QuartzCore.framework */; };
 		8216573F209FEB81003A9AC2 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8216573E209FEB81003A9AC2 /* CoreLocation.framework */; };
-		8221C3DC21BA25B300C493F8 /* YDSource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 8221C3DB21BA25B300C493F8 /* YDSource.bundle */; };
 		822D8DFE20CA79D600F018F8 /* YXLaunchAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 822D8DFB20CA79D600F018F8 /* YXLaunchAds.framework */; };
 		82367AA6217D729500B4FB4E /* YXFeedAdRegisterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82367AA1217D729400B4FB4E /* YXFeedAdRegisterView.xib */; };
 		82367AA7217D729500B4FB4E /* YXFeedAdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82367AA2217D729500B4FB4E /* YXFeedAdViewController.m */; };
@@ -90,7 +89,6 @@
 		8216573A209FEB60003A9AC2 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		8216573C209FEB72003A9AC2 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		8216573E209FEB81003A9AC2 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		8221C3DB21BA25B300C493F8 /* YDSource.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = YDSource.bundle; sourceTree = "<group>"; };
 		822D8DFB20CA79D600F018F8 /* YXLaunchAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = YXLaunchAds.framework; sourceTree = "<group>"; };
 		82367AA1217D729400B4FB4E /* YXFeedAdRegisterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YXFeedAdRegisterView.xib; sourceTree = "<group>"; };
 		82367AA2217D729500B4FB4E /* YXFeedAdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXFeedAdViewController.m; sourceTree = "<group>"; };
@@ -179,7 +177,6 @@
 		822D8DF720CA79D600F018F8 /* YXLaunchAD */ = {
 			isa = PBXGroup;
 			children = (
-				8221C3DB21BA25B300C493F8 /* YDSource.bundle */,
 				822D8DF820CA79D600F018F8 /* ThirdAdLibs */,
 				822D8DFB20CA79D600F018F8 /* YXLaunchAds.framework */,
 			);
@@ -414,7 +411,6 @@
 				8270C79B20661EAA005C8545 /* Assets.xcassets in Resources */,
 				8270C79920661EAA005C8545 /* Main.storyboard in Resources */,
 				8202E77A21A5221E00586F04 /* BUAdSDK.bundle in Resources */,
-				8221C3DC21BA25B300C493F8 /* YDSource.bundle in Resources */,
 				82367AA6217D729500B4FB4E /* YXFeedAdRegisterView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

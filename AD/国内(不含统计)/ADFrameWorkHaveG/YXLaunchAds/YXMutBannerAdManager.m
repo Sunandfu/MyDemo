@@ -229,7 +229,7 @@
     self.tmpImageView = [[UIImageView alloc] initWithFrame:view.bounds];
     self.tmpImageView.image = self.placeImage?self.placeImage:nil;
     self.tmpImageView.userInteractionEnabled = YES;
-    self.tmpImageView.contentMode = UIViewContentModeScaleAspectFit;
+    self.tmpImageView.contentMode = UIViewContentModeScaleAspectFill;
     self.tmpImageView.clipsToBounds = YES;
     [view addSubview:self.tmpImageView];
     

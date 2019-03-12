@@ -26,7 +26,7 @@ static  NSString * feedMediaID = @"sjzgj_ios_native";
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     //根据宽高比自定义适配
-    CGFloat height = 388 * self.view.frame.size.width / 690;
+    CGFloat height = 80 * self.view.frame.size.width / 355;
     
     self.BannerView = [[UIView alloc]initWithFrame:CGRectMake(0,100 , self.view.frame.size.width, height)];
     

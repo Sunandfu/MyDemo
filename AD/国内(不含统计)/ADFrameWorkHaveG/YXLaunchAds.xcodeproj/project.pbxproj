@@ -484,8 +484,8 @@
 				E75FC8142230BC1E0030BF4B /* GDTUnifiedNativeAdView.h */,
 				E75FC8152230BC1E0030BF4B /* GDTUnifiedNativeAdDataObject.h */,
 				E75FC8162230BC1E0030BF4B /* GDTSDKDefines.h */,
-				E75FC8172230BC1E0030BF4B /* libGDTMobSDK.a */,
 				E75FC8182230BC1E0030BF4B /* GDTUnifiedNativeAd.h */,
+				E75FC8172230BC1E0030BF4B /* libGDTMobSDK.a */,
 			);
 			path = gdtAD;
 			sourceTree = "<group>";
