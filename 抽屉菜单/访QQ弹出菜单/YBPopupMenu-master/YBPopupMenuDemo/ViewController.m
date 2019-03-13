@@ -64,16 +64,18 @@
 
 - (void)showCustomPopupMenuWithPoint:(CGPoint)point
 {
-    [YBPopupMenu showAtPoint:point titles:TITLES icons:nil menuWidth:110 otherSettings:^(YBPopupMenu *popupMenu) {
+    [YBPopupMenu showAtPoint:point titles:TITLES icons:ICONS menuWidth:80 otherSettings:^(YBPopupMenu *popupMenu) {
         popupMenu.dismissOnSelected = YES;
         popupMenu.isShowShadow = YES;
         popupMenu.delegate = self;
         popupMenu.type = YBPopupMenuTypeDefault;
+        popupMenu.priorityDirection = YBPopupMenuPriorityDirectionLeft;
         popupMenu.cornerRadius = 8;
-        popupMenu.rectCorner = UIRectCornerTopLeft| UIRectCornerTopRight;
+        popupMenu.itemHeight = 100;
+//        popupMenu.rectCorner = UIRectCornerTopLeft| UIRectCornerTopRight;
         popupMenu.tag = 100;
         //如果不加这句默认是 UITableViewCellSeparatorStyleNone 的
-        popupMenu.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
+//        popupMenu.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
     }];
 }
 
@@ -99,26 +101,26 @@
     static NSString * identifier = @"customCell";
     CustomTestCell * cell = [ybPopupMenu.tableView dequeueReusableCellWithIdentifier:identifier];
     if (!cell) {
-        cell = [[[NSBundle mainBundle] loadNibNamed:@"CustomTestCell" owner:self options:nil] firstObject];
+        cell = [[[NSBundle mainBundle] loadNibNamed:@"CustomTestCell" owner:self options:nil] lastObject];
     }
     
-    cell.titleLabel.text = TITLES[index];
-    cell.iconImageView.image = [UIImage imageNamed:ICONS[index]];
+    cell.titleLabel2.text = TITLES[index];
+    cell.iconImageView2.image = [UIImage imageNamed:ICONS[index]];
     
-    switch (index) {
-        case 0:
-            cell.statusLabel.hidden = NO;
-            cell.badge.hidden = YES;
-            break;
-        case 2:
-            cell.statusLabel.hidden = YES;
-            cell.badge.hidden = NO;
-            break;
-        default:
-            cell.statusLabel.hidden = YES;
-            cell.badge.hidden = YES;
-            break;
-    }
+//    switch (index) {
+//        case 0:
+//            cell.statusLabel.hidden = NO;
+//            cell.badge.hidden = YES;
+//            break;
+//        case 2:
+//            cell.statusLabel.hidden = YES;
+//            cell.badge.hidden = NO;
+//            break;
+//        default:
+//            cell.statusLabel.hidden = YES;
+//            cell.badge.hidden = YES;
+//            break;
+//    }
     
     return cell;
 }
@@ -130,7 +132,7 @@
         popupMenu.delegate = self;
         popupMenu.showMaskView = NO;
         popupMenu.priorityDirection = YBPopupMenuPriorityDirectionBottom;
-        popupMenu.maxVisibleCount = 1;
+        popupMenu.maxVisibleCount = 3;
         popupMenu.itemHeight = 60;
         popupMenu.borderWidth = 1;
         popupMenu.fontSize = 12;

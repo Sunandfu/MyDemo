@@ -219,7 +219,6 @@ UITableViewDataSource
     if (_dismissOnSelected) [self dismiss];
     
     if (self.delegate && [self.delegate respondsToSelector:@selector(ybPopupMenuDidSelectedAtIndex:ybPopupMenu:)]) {
-        
         [self.delegate ybPopupMenuDidSelectedAtIndex:indexPath.row ybPopupMenu:self];
     }
     
