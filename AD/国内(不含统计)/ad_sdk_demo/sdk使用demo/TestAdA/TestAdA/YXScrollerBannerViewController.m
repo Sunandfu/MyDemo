@@ -8,7 +8,7 @@
 
 #import "YXScrollerBannerViewController.h" 
 #import <YXLaunchAds/YXMutBannerAdManager.h>
-static  NSString * feedMediaID = @"sjzgj_ios_native";
+static  NSString * feedMediaID = @"wxbus_ios_native";
 
 @interface YXScrollerBannerViewController ()<YXMutBannerAdManagerDelegate>
 {
@@ -26,7 +26,7 @@ static  NSString * feedMediaID = @"sjzgj_ios_native";
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     //根据宽高比自定义适配
-    CGFloat height = 80 * self.view.frame.size.width / 355;
+    CGFloat height = 388 * self.view.frame.size.width / 690;
     
     self.BannerView = [[UIView alloc]initWithFrame:CGRectMake(0,100 , self.view.frame.size.width, height)];
     
@@ -50,11 +50,9 @@ static  NSString * feedMediaID = @"sjzgj_ios_native";
 {
     mutBanner = [YXMutBannerAdManager new];
     mutBanner.delegate = self;
-    mutBanner.adSize = YXADSizeCustom;
-    mutBanner.s2sWidth = 690;
-    mutBanner.s2sHeight = 322;
+    mutBanner.adSize = YXADSize690X388;
     mutBanner.controller = self;
-    mutBanner.adCount = 0; 
+    mutBanner.adCount = 6;
     mutBanner.placeImage = [UIImage imageNamed:@"placeImage"];
     mutBanner.mediaId = feedMediaID;
     mutBanner.orientation = YXNewPagedFlowViewOrientationHorizontal;

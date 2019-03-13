@@ -7,31 +7,24 @@
 //
 #import "YXIconAdManager.h"
 #import "NetTool.h"
-
 #import "Network.h"
 #import "YXImgUtil.h"
-
 #import "YXGTMDefines.h"
-
 #import "YXWebViewController.h"
-
 #import <SafariServices/SafariServices.h>
-
 #import "WXApi.h"
 
 @interface YXIconAdManager()<YXIconAdManagerDelegate,YXWebViewDelegate,UIWebViewDelegate,UIGestureRecognizerDelegate,WXApiDelegate>
 {
     CGFloat _width;
     CGFloat _height;
-    NSDictionary * _adDict;
-    NSDictionary *_resultDict;
-    NSDictionary *_returnDict;
     
     UIImageView *_imgView;
     UIWebView *_webView;
-    NSString *_mediaId;
+    NSString *_mediaId; 
     
 }
+@property (nonatomic, strong) NSDictionary *adDict;
 
 @end
 
@@ -71,8 +64,7 @@
                     [self failedError:errors];
                     return ;
                 }
-                self->_resultDict = arr.lastObject;
-                self->_adDict = arr.lastObject;
+                self.adDict = arr.lastObject;
                 
                 if ([json objectForKey:@"data"]) {
                     if ([[json objectForKey:@"data"] isKindOfClass:[NSArray class]]) {
@@ -93,7 +85,7 @@
                 NSError *errors = [NSError errorWithDomain:@"请求失败" code:400 userInfo:nil];
                 [self failedError:errors];
             }
-            
+         
         }else{
             NSError *errors = [NSError errorWithDomain:@"请求失败" code:400 userInfo:nil];
             [self failedError:errors];
@@ -103,20 +95,19 @@
 
 -(void) showNativeAd
 {
-    //    NSLog(@"showBannerAd_resultDict %@",_resultDict) ;
-    if(!_resultDict){//40041无广告
+    if(!self.adDict){//40041无广告
         NSError *errors = [NSError errorWithDomain:@"暂无填充广告，请重试" code:400 userInfo:nil];
         [self failedError:errors];
         return;
     }
     _YXGTMDevLog(@"Func type 1 start") ;
-    NSString *img_url = _resultDict[@"img_url"];
-    NSString *click_url = _resultDict[@"click_url"];
-    _returnDict = [NSDictionary dictionaryWithObjectsAndKeys:click_url,@"click_url",img_url,@"img_url",@"1",@"type", nil];
-    if (_resultDict[@"logo_url"]) {
-        NSString * logo_url = _resultDict[@"logo_url"] ;
-        _returnDict = [NSDictionary dictionaryWithObjectsAndKeys:logo_url,@"logo_url",click_url,@"click_url",img_url,@"img_url",@"1",@"type", nil];
-    }
+    NSString *img_url = self.adDict[@"img_url"];
+//    NSString *click_url = self.adDict[@"click_url"];
+//    _returnDict = [NSDictionary dictionaryWithObjectsAndKeys:click_url,@"click_url",img_url,@"img_url",@"1",@"type", nil];
+//    if (self.adDict[@"logo_url"]) {
+//        NSString * logo_url = self.adDict[@"logo_url"] ;
+//        _returnDict = [NSDictionary dictionaryWithObjectsAndKeys:logo_url,@"logo_url",click_url,@"click_url",img_url,@"img_url",@"1",@"type", nil];
+//    }
     NSString *lastCompnoments = [[img_url componentsSeparatedByString:@"/"] lastObject];
     if([lastCompnoments hasSuffix:@"gif"]){
         [self showGif];
@@ -128,14 +119,14 @@
 -(void) showGif
 {
     [self addWebView];
-    NSString *urlstr = _resultDict[@"img_url"];
+    NSString *urlstr = self.adDict[@"img_url"];
     if(urlstr && ![urlstr isEqualToString:@""]){
         // 1.加载
-        [YXImgUtil gifImgWithUrl:urlstr successBlock:^(NSData *data) {
+        [YXImgUtil gifImgWithUrl:urlstr successBlock:^(NSData *data) { 
             
             [self->_webView loadData:data MIMEType:@"image/gif" textEncodingName:@"UTF-8" baseURL:[NSURL URLWithString:urlstr]];
-            if (self->_resultDict[@"logo_url"]) {
-                NSString * logo_url = self->_resultDict[@"logo_url"];
+            if (self.adDict[@"logo_url"]) {
+                NSString * logo_url = self.adDict[@"logo_url"];
                 UIImage *logoImage = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:logo_url]]];
                 UIImageView *logoView = [[UIImageView alloc] initWithFrame:CGRectMake(self->_webView.frame.size.width - 24 , self->_webView.frame.size.height - 24, 24, 24)];
                 logoView.image = logoImage ;
@@ -144,10 +135,8 @@
             // 2.显示成功
             // 2.显示成功
             dispatch_async(dispatch_get_main_queue(), ^{
-                
-                if(self->_delegate && [self->_delegate respondsToSelector:@selector(didLoadIconAd:)]){
-                    
-                    [self->_delegate didLoadIconAd:self];
+                if(self.delegate && [self.delegate respondsToSelector:@selector(didLoadIconAd:)]){
+                    [self.delegate didLoadIconAd:self];
                 }
                 // 3.上报
                 [self groupNotify];
@@ -168,7 +157,7 @@
 {
     [self addImgView];
     
-    NSString *urlstr = _resultDict[@"img_url"];
+    NSString *urlstr = self.adDict[@"img_url"];
     if(urlstr && ![urlstr isEqualToString:@""]){
         
         [YXImgUtil imgWithUrl:urlstr successBlock:^(UIImage *img) {
@@ -214,14 +203,14 @@
     }
     
     _webView = [[UIWebView alloc]initWithFrame:self.bounds];
-    _webView.opaque = NO;
-    _webView.backgroundColor = [UIColor clearColor];
+    
     _webView.userInteractionEnabled = YES;
     _webView.delegate = self ;
     [_webView setScalesPageToFit:YES];
     _webView.scrollView.scrollEnabled = NO;
     _webView.delegate = self;
-    
+    _webView.opaque = NO;
+    _webView.backgroundColor = [UIColor clearColor];
     [self addSubview:_webView];
     
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapImg:)];
@@ -241,7 +230,7 @@
         [_imgView removeFromSuperview];
         _imgView = nil;
     }
-    
+ 
     UIImageView *imgView = [[UIImageView alloc]initWithFrame:self.bounds];
     _imgView = imgView;
     
@@ -269,19 +258,19 @@
     NSString *heightStr = [NSString stringWithFormat:@"%f",_height];
     
     //    NSString *dicStr =  [NSString stringWithFormat:@"{%@:%@,%@:%@,%@:%@,%@:%@}",@"down_x",x,@"down_y",y,@"up_x",x,@"up_y",y];
-    if(!_resultDict){
+    if(!self.adDict){
         return;
     }
     // 1.跳转链接
-    NSString *urlStr = _resultDict[@"click_url"];
+    NSString *urlStr = self.adDict[@"click_url"];
     
-    NSString * click_position = [NSString stringWithFormat:@"%@",_resultDict[@"click_position"]];
+    NSString * click_position = [NSString stringWithFormat:@"%@",self.adDict[@"click_position"]];
     if ([click_position isEqualToString:@"1"]) {
-        if (_resultDict[@"width"]) {
-            urlStr = [urlStr stringByReplacingOccurrencesOfString:@"__REQ_WIDTH__" withString:[NSString stringWithFormat:@"%@",_resultDict[@"width"]]];
+        if (self.adDict[@"width"]) {
+            urlStr = [urlStr stringByReplacingOccurrencesOfString:@"__REQ_WIDTH__" withString:[NSString stringWithFormat:@"%@",self.adDict[@"width"]]];
         }
-        if (_resultDict[@"height"]) {
-            urlStr = [urlStr stringByReplacingOccurrencesOfString:@"__REQHEIGHT__" withString:[NSString stringWithFormat:@"%@",_resultDict[@"height"]]];
+        if (self.adDict[@"height"]) {
+            urlStr = [urlStr stringByReplacingOccurrencesOfString:@"__REQHEIGHT__" withString:[NSString stringWithFormat:@"%@",self.adDict[@"height"]]];
         }
         urlStr = [urlStr stringByReplacingOccurrencesOfString:@"__WIDTH__" withString:widthStr];
         urlStr = [urlStr stringByReplacingOccurrencesOfString:@"__HEIGHT__" withString:heightStr];
@@ -293,7 +282,7 @@
         
     }
     
-    NSString * ac_type = [NSString stringWithFormat:@"%@",_resultDict[@"ac_type"]];
+    NSString * ac_type = [NSString stringWithFormat:@"%@",self.adDict[@"ac_type"]];
     
     if ([ac_type isEqualToString:@"1"] || [ac_type isEqualToString:@"2"]) {
         NSURL *url = [NSURL URLWithString:urlStr];
@@ -308,10 +297,9 @@
         }
     }else if ([ac_type isEqualToString:@"7"]){
         
-        NSString * miniPath = [NSString stringWithFormat:@"%@",_resultDict[@"miniPath"] ];
+        NSString * miniPath = [NSString stringWithFormat:@"%@",self.adDict[@"miniPath"] ];
         miniPath = [miniPath stringByReplacingOccurrencesOfString:@" " withString:@""];
-        NSString * miniProgramOriginId = [NSString stringWithFormat:@"%@",_resultDict[@"miniProgramOriginId"]];
-        
+        NSString * miniProgramOriginId = [NSString stringWithFormat:@"%@",self.adDict[@"miniProgramOriginId"]];
         
         WXLaunchMiniProgramReq *launchMiniProgramReq = [WXLaunchMiniProgramReq object];
         launchMiniProgramReq.userName = miniProgramOriginId;  //拉起的小程序的username
@@ -333,15 +321,13 @@
                 if (json) {
                     NSLog(@"%@",json);
                 }
-                
             }
-        }];
+        }]; 
     }else{
         if(urlStr && ![urlStr isEqualToString:@""]){
             
-            //            NSURL *url = [NSURL URLWithString:urlStr];
-            //             [[UIApplication sharedApplication] openURL:url];
-            
+//            NSURL *url = [NSURL URLWithString:urlStr];
+//             [[UIApplication sharedApplication] openURL:url];
             
             YXWebViewController *web = [YXWebViewController new];
             web.URLString = urlStr;
@@ -357,14 +343,14 @@
     if (![[NetTool gettelModel] isEqualToString:@"iPhone Simulator"])
     {
         // 上报服务器
-        NSArray *viewS = _resultDict[@"click_notice_urls"];
+        NSArray *viewS = self.adDict[@"click_notice_urls"];
         if ([click_position isEqualToString:@"1"]) {
             
-            if (_resultDict[@"width"]) {
-                urlStr = [urlStr stringByReplacingOccurrencesOfString:@"__REQ_WIDTH__" withString:[NSString stringWithFormat:@"%@",_resultDict[@"width"]]];
+            if (self.adDict[@"width"]) {
+                urlStr = [urlStr stringByReplacingOccurrencesOfString:@"__REQ_WIDTH__" withString:[NSString stringWithFormat:@"%@",self.adDict[@"width"]]];
             }
-            if (_resultDict[@"height"]) {
-                urlStr = [urlStr stringByReplacingOccurrencesOfString:@"__REQHEIGHT__" withString:[NSString stringWithFormat:@"%@",_resultDict[@"height"]]];
+            if (self.adDict[@"height"]) {
+                urlStr = [urlStr stringByReplacingOccurrencesOfString:@"__REQHEIGHT__" withString:[NSString stringWithFormat:@"%@",self.adDict[@"height"]]];
             }
             urlStr = [urlStr stringByReplacingOccurrencesOfString:@"__WIDTH__" withString:widthStr];
             urlStr = [urlStr stringByReplacingOccurrencesOfString:@"__HEIGHT__" withString:heightStr];
@@ -382,8 +368,8 @@
 {
     if ([resp isKindOfClass:[WXLaunchMiniProgramResp class]])
     {
-        //        NSString *string = resp.extMsg;
-        //        // 对应小程序组件 <button open-type="launchApp"> 中的 app-parameter 属性
+//        NSString *string = resp.extMsg;
+//        // 对应小程序组件 <button open-type="launchApp"> 中的 app-parameter 属性
     }
 }
 
@@ -415,7 +401,7 @@
 -(BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType{
     
     
-    //    [[UIApplication sharedApplication] openURL:request.URL];
+//    [[UIApplication sharedApplication] openURL:request.URL];
     return YES;
 }
 
@@ -425,7 +411,7 @@
 {
     if (![[NetTool gettelModel] isEqualToString:@"iPhone Simulator"])
     {
-        NSArray *viewS = _adDict[@"impress_notice_urls"];
+        NSArray *viewS = self.adDict[@"impress_notice_urls"];
         if(viewS && ![viewS isKindOfClass:[NSNull class]]&& viewS.count){
             [Network groupNotifyToSerVer:viewS];
         }

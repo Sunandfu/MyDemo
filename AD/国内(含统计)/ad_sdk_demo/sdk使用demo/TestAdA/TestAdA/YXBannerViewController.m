@@ -12,7 +12,7 @@
 
 #import "AppDelegate.h"
 
-static  NSString * bannerMediaID = @"xmcx_ios_banner";
+static  NSString * bannerMediaID = @"wxbus_ios_banner";
 
 @interface YXBannerViewController ()<YXBannerAdManagerDelegate>
 
@@ -48,12 +48,12 @@ static  NSString * bannerMediaID = @"xmcx_ios_banner";
     self.bannerView.delegate = self;
     self.bannerView.mediaId = bannerMediaID;
     self.bannerView.bannerType = BottomBannerType;
-    self.bannerView.adSize = YXAD_Banner600_286;
+    self.bannerView.adSize = YXAD_BannerCustom;
     self.bannerView.isLoop = YES;
     self.bannerView.interval = 30;
     [self.view addSubview:self.bannerView];
     NSLog(@"Banner请求");
-    
+    [self.bannerView loadBannerAD];
 }
 - (void)didLoadBannerAd:(UIView *)adView
 {

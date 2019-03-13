@@ -14,40 +14,34 @@ NS_ASSUME_NONNULL_BEGIN
 @protocol YXInterstitialAdManagerDelegate <NSObject>
 
 @optional
+
 /**
  加载成功的回调
  */
 - (void)didLoadInterstitialAd;
+
 /**
  取广告失败调用
- 
  @param error 为错误信息
  */
-- (void)didFailedLoadInterstitialAd:(NSError* _Nonnull)error;
+- (void)didFailedLoadInterstitialAd:(NSError *)error;
+
 /**
  广告点击后回调
  */
 - (void)didClickedInterstitialAd;
 
-
 @end
 
-@interface YXInterstitialAdManager : NSObject
+@interface YXInterstitialAdManager : UIView
 
 @property (nonatomic,weak) id<YXInterstitialAdManagerDelegate> delegate;
-
-/**
- 插屏尺寸
- */
-@property (nonatomic,assign) CGRect frame;
 
 /**  媒体位Id  */
 @property (nonatomic,copy) NSString *mediaId;
 
-@property (nonatomic, strong) UIViewController *showViewController;
-
 /**  开始加载广告  */
-- (void)loadFeedAd;
+- (void)loadInterstitialAd;
 
 @end
 

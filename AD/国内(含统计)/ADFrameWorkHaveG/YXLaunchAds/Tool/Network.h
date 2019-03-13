@@ -22,23 +22,24 @@
  http://www.yunqingugm.com:8082 上报
  
  */
-
+//请求配置接口接口
 #define SEVERIN @"http://www.yunqingugm.com:8081"
 
+//上报接口
 #define TRACKIN @"http://www.yunqingugm.com:8082"
 
-#define ADSHOW   TRACKIN @"/log/newMimpr/v2"
-#define ADCLICK  TRACKIN @"/log/newMclick"
-#define ADError  TRACKIN @"/log/newErrorLog"
+#define ADSHOW   TRACKIN @"/log/newMimpr/v2"//展示成果
+#define ADCLICK  TRACKIN @"/log/newMclick"//点击
+#define ADError  TRACKIN @"/log/newErrorLog"//错误
 
-#define ADRequest SEVERIN @"/yd3/log"
+#define ADRequest SEVERIN @"/yd3/log"//请求第三方上报
 
-#define inLandAD @"inLandAD"
-
+#define inLandAD @"inLandAD"//
+//请求配置接口接口
 #define congfigIp SEVERIN @"/yd3/mediaconfig/v/2?mediaId=%@&aid=%@&ver=%@&%@"
-
+//添加黑名单
 #define USERBLACK SEVERIN @"/yd3/user/black"
-
+//移除黑名单
 #define USERBLACKREMOVE USERBLACK @"/remove"
 
 //#warning 正式去掉/v/2
@@ -58,9 +59,9 @@ typedef void(^NetworkFailure) (NSError *error);
 
 @property (nonatomic,copy) NSString *ipStr;
 
--(NSString *)deviceWANIPAdress;
+- (NSString *)deviceWANIPAdress;
 
--(BOOL) prepareDataAndRequestWithadkeyString:(NSString *)adkey
+- (BOOL)prepareDataAndRequestWithadkeyString:(NSString *)adkey
                                        width:(CGFloat )width
                                       height:(CGFloat )height
                                        macID:(NSString*)macId
@@ -85,24 +86,28 @@ typedef void(^NetworkFailure) (NSError *error);
 + (void)upOutSideToServerRequest:(NSString*)url currentAD:(NSDictionary*)currentAD gdtAD:(NSDictionary*)gdtAD mediaID:(NSString*)mediaID;
 
 
-+ (void) notifyToServer:(NSString *) parmams serverUrl:(NSString *)serverUrl completionHandler:(void (^)(NSURLResponse* response, NSData* data, NSError* connectionError)) handler;
++ (void)notifyToServer:(NSString *) parmams serverUrl:(NSString *)serverUrl completionHandler:(void (^)(NSURLResponse* response, NSData* data, NSError* connectionError)) handler;
 
 /**
  s2s上报
  
  @param arr s2s上报
  */
-+(void) groupNotifyToSerVer:(NSArray *) arr;
++ (void)groupNotifyToSerVer:(NSArray *) arr;
 
 
 /**
  黑名单
- 
+
  @param url 链接
  @param media 媒体位
  @param day 天
  @param isAdd 是否加入
  */
-+ (void)blackListUrl:(NSString*)url andMedia:(NSString*)media andTime:(NSInteger)day isAdd:(BOOL)isAdd;
++ (void)blackListUrl:(NSString *)url andMedia:(NSString *)media andTime:(NSInteger)day isAdd:(BOOL)isAdd;
+
+
+//请求配置接口
++ (void)requestADSourceFromMediaId:(NSString *)mediaId success:(void(^)(NSDictionary *dataDict))success fail:(void(^)(NSError *error))fail;
 
 @end

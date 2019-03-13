@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina5_9" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="EHf-IW-A2E">
+            <objects>
+                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="WuX-yi-tgv"/>
+                        <viewControllerLayoutGuide type="bottom" id="n2g-Qn-ZE0"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nxY-V7-0zy">
+                                <rect key="frame" x="0.0" y="649.66666666666663" width="375" height="162.33333333333337"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="yxadlogo" translatesAutoresizingMaskIntoConstraints="NO" id="T8Q-Mp-pvX">
+                                        <rect key="frame" x="133" y="62" width="108" height="38"/>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="T8Q-Mp-pvX" firstAttribute="centerX" secondItem="nxY-V7-0zy" secondAttribute="centerX" id="3Gy-A6-iNW"/>
+                                    <constraint firstItem="T8Q-Mp-pvX" firstAttribute="centerY" secondItem="nxY-V7-0zy" secondAttribute="centerY" id="nEX-x9-uWO"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="nxY-V7-0zy" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="DYs-7e-Gv0"/>
+                            <constraint firstAttribute="bottom" secondItem="nxY-V7-0zy" secondAttribute="bottom" id="p5e-p4-VtP"/>
+                            <constraint firstAttribute="trailing" secondItem="nxY-V7-0zy" secondAttribute="trailing" id="sY6-Ot-Hub"/>
+                            <constraint firstItem="nxY-V7-0zy" firstAttribute="height" secondItem="Ze5-6b-2t3" secondAttribute="height" multiplier="1:5" id="zdM-RL-oxf"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="53" y="375"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="yxadlogo" width="108" height="38"/>
+    </resources>
+</document>

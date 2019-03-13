@@ -19,6 +19,7 @@ typedef NS_ENUM(NSUInteger, YXADTYPE) {
     /**广告种类  icon  */
     YXIconType = 4
 };
+
 typedef NS_OPTIONS(NSUInteger, YXLaunchAdImageOptions) {
     /** 有缓存,读取缓存,不重新下载,没缓存先下载,并缓存 */
     YXLaunchAdImageDefault = 1 << 0,
@@ -29,6 +30,7 @@ typedef NS_OPTIONS(NSUInteger, YXLaunchAdImageOptions) {
     /** 后台缓存本次不显示,缓存OK后下次再显示(建议使用这种方式)*/
     YXLaunchAdImageCacheInBackground = 1 << 3
 };
+
 /** 显示完成动画时间默认时间 */
 static CGFloat const showFinishAnimateTimeDefault = 0.8;
 
@@ -47,6 +49,7 @@ typedef NS_ENUM(NSInteger , ShowFinishAnimate) {
     /** 向上翻页 */
     ShowFinishAnimateCurlUp = 6,
 };
+
 /**
  *  倒计时类型
  */
@@ -62,6 +65,7 @@ typedef NS_ENUM(NSInteger,SkipType) {
     SkipTypeRoundProgressTime = 7,//圆形:进度圈+倒计时
     SkipTypeRoundProgressText = 8,//圆形:进度圈+跳过
 };
+
 /**
  *  banner位置
  */
@@ -69,7 +73,6 @@ typedef NS_ENUM(NSInteger,BannerLocationType) {
     TopBannerType      = 1,//顶部约束 只需设置距离顶部的距离
     BottomBannerType   = 2,//底部约束 只需设置距离底部的距离
 };
-
 
 /**
  原生广告尺寸
@@ -113,8 +116,6 @@ typedef NS_ENUM(NSInteger,YXAD_Banner){
     YXAD_Banner600_500,
     YXAD_BannerCustom,
 };
-
-
 
 /**
  滚动方向 

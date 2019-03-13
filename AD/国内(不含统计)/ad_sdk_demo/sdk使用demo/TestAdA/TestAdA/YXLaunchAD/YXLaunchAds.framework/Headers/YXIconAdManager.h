@@ -54,7 +54,6 @@
  */
 @property (nonatomic, weak) UIViewController *controller;
 
-
 /**  开始加载广告  */
 - (void)loadIconAd;
 

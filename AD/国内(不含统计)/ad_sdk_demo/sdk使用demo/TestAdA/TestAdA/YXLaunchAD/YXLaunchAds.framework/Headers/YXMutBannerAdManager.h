@@ -34,7 +34,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property(nonatomic,weak) id<YXMutBannerAdManagerDelegate> delegate;
 
-@property (nonatomic,assign)YXADSize  adSize;
+@property (nonatomic,assign) YXADSize  adSize;
 
 /**
  当adSize类型为YXADSizeCustom时，宽高必传，其余模式不用传

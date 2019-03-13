@@ -19,7 +19,6 @@
 		8216573B209FEB60003A9AC2 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8216573A209FEB60003A9AC2 /* SystemConfiguration.framework */; };
 		8216573D209FEB72003A9AC2 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8216573C209FEB72003A9AC2 /* QuartzCore.framework */; };
 		8216573F209FEB81003A9AC2 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8216573E209FEB81003A9AC2 /* CoreLocation.framework */; };
-		8221C3DC21BA25B300C493F8 /* YDSource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 8221C3DB21BA25B300C493F8 /* YDSource.bundle */; };
 		822D8DFE20CA79D600F018F8 /* YXLaunchAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 822D8DFB20CA79D600F018F8 /* YXLaunchAds.framework */; };
 		82367AA6217D729500B4FB4E /* YXFeedAdRegisterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82367AA1217D729400B4FB4E /* YXFeedAdRegisterView.xib */; };
 		82367AA7217D729500B4FB4E /* YXFeedAdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82367AA2217D729500B4FB4E /* YXFeedAdViewController.m */; };
@@ -45,6 +44,7 @@
 		8270C802206625F4005C8545 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8270C801206625F3005C8545 /* AdSupport.framework */; };
 		8270C80420662600005C8545 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8270C80320662600005C8545 /* StoreKit.framework */; };
 		8270C8062066261F005C8545 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 8270C8052066261F005C8545 /* libz.tbd */; };
+		E73697512238E74A000BC26F /* YXInterstitialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E736974F2238E747000BC26F /* YXInterstitialViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,7 +92,6 @@
 		8216573A209FEB60003A9AC2 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		8216573C209FEB72003A9AC2 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		8216573E209FEB81003A9AC2 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		8221C3DB21BA25B300C493F8 /* YDSource.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = YDSource.bundle; sourceTree = "<group>"; };
 		822D8DFB20CA79D600F018F8 /* YXLaunchAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = YXLaunchAds.framework; sourceTree = "<group>"; };
 		82367AA1217D729400B4FB4E /* YXFeedAdRegisterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YXFeedAdRegisterView.xib; sourceTree = "<group>"; };
 		82367AA2217D729500B4FB4E /* YXFeedAdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXFeedAdViewController.m; sourceTree = "<group>"; };
@@ -135,6 +134,8 @@
 		8270C801206625F3005C8545 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		8270C80320662600005C8545 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		8270C8052066261F005C8545 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		E736974F2238E747000BC26F /* YXInterstitialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXInterstitialViewController.m; sourceTree = "<group>"; };
+		E73697502238E74A000BC26F /* YXInterstitialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXInterstitialViewController.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,7 +183,6 @@
 		822D8DF720CA79D600F018F8 /* YXLaunchAD */ = {
 			isa = PBXGroup;
 			children = (
-				8221C3DB21BA25B300C493F8 /* YDSource.bundle */,
 				822D8DF820CA79D600F018F8 /* ThirdAdLibs */,
 				822D8DFB20CA79D600F018F8 /* YXLaunchAds.framework */,
 			);
@@ -239,6 +239,8 @@
 				8270C79220661EAA005C8545 /* AppDelegate.m */,
 				826ADCDD216C4C50005F0577 /* YXBannerViewController.h */,
 				826ADCDE216C4C50005F0577 /* YXBannerViewController.m */,
+				E73697502238E74A000BC26F /* YXInterstitialViewController.h */,
+				E736974F2238E747000BC26F /* YXInterstitialViewController.m */,
 				826ADCE2216C4C50005F0577 /* YXLaunchScreenViewController.h */,
 				826ADCE0216C4C50005F0577 /* YXLaunchScreenViewController.m */,
 				82367AA3217D729500B4FB4E /* YXFeedAdRegisterView.h */,
@@ -418,7 +420,6 @@
 				8270C79B20661EAA005C8545 /* Assets.xcassets in Resources */,
 				8270C79920661EAA005C8545 /* Main.storyboard in Resources */,
 				8202E77A21A5221E00586F04 /* BUAdSDK.bundle in Resources */,
-				8221C3DC21BA25B300C493F8 /* YDSource.bundle in Resources */,
 				82367AA6217D729500B4FB4E /* YXFeedAdRegisterView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -445,6 +446,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8214500E21B7B5EE00081AED /* YXScrollerBannerViewController.m in Sources */,
+				E73697512238E74A000BC26F /* YXInterstitialViewController.m in Sources */,
 				82367AA8217D729500B4FB4E /* YXFeedAdRegisterView.m in Sources */,
 				8238B124217F04C300346C23 /* YXFeedAdTableViewCell.m in Sources */,
 				82367AA7217D729500B4FB4E /* YXFeedAdViewController.m in Sources */,
@@ -645,7 +647,7 @@
 					"-Objc",
 					"-all_load",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.ixiaoma.shijiazhuangIOS0311;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yunx.fitness;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "6c98abac-4b2e-4ab1-9faf-fc1314841d2a";
 				PROVISIONING_PROFILE_SPECIFIER = mySelfTongyong;
@@ -680,7 +682,7 @@
 					"-Objc",
 					"-all_load",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.ixiaoma.shijiazhuangIOS0311;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yunx.fitness;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "6c98abac-4b2e-4ab1-9faf-fc1314841d2a";
 				PROVISIONING_PROFILE_SPECIFIER = mySelfTongyong;

@@ -14,7 +14,7 @@
 
 #import "YXFeedAdTableViewCell.h"
 
-static  NSString * feedMediaID = @"sjzgj_ios_native";
+static  NSString * feedMediaID = @"wxbus_ios_native";
 
 @interface YXFeedAdViewController () <YXFeedAdManagerDelegate ,UITableViewDelegate,UITableViewDataSource>
 
@@ -152,10 +152,8 @@ static  NSString * feedMediaID = @"sjzgj_ios_native";
 - (void)loadFeedAds
 {
     _feedManager = [YXFeedAdManager new];
-    _feedManager.adSize = YXADSizeCustom;
+    _feedManager.adSize = YXADSize690X388;
     _feedManager.mediaId = feedMediaID;
-    _feedManager.s2sWidth = 690;
-    _feedManager.s2sHeight = 322;
     _feedManager.controller = self;
     _feedManager.delegate = self;
     _feedManager.adCount = 3;

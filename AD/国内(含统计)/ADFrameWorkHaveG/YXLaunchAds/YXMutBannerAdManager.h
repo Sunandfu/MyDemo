@@ -25,24 +25,30 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (void)didFailedLoadMutBannerAd:(NSError* _Nonnull)error;
 /**
- 广告点击后回调
+ 广告点击后回调的index
  */
-- (void)didClickedMutBannerAd;
+- (void)didClickedMutBannerAdWithIndex:(NSInteger)index;
 
 @end
 @interface YXMutBannerAdManager : NSObject
 
 @property(nonatomic,weak) id<YXMutBannerAdManagerDelegate> delegate;
 
-@property (nonatomic,assign)YXADSize  adSize;
+@property (nonatomic,assign) YXADSize  adSize;
+
+/**
+ 当adSize类型为YXADSizeCustom时，宽高必传，其余模式不用传
+ */
+@property (nonatomic, assign) CGFloat s2sWidth;
+@property (nonatomic, assign) CGFloat s2sHeight;
+
+/**
+ 轮播图背景占位图
+ */
+@property (nonatomic,strong) UIImage  *placeImage;
 
 /**  媒体位Id  */
 @property (nonatomic,copy) NSString *mediaId;
-
-/**
- 轮播广告占位图
- */
-@property (nonatomic,strong) UIImage  *placeImage;
 
 /**
  广告数量 默认为1
@@ -66,6 +72,30 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) BOOL isCarousel;
 
 /**
+ *  是否显示pageControl,默认为开启
+ */
+@property (nonatomic, assign) BOOL isShowPageControl;
+
+/**
+ 改变PageControl位置（位置相对于轮播图），默认在底部中间
+ */
+@property (nonatomic) CGRect pageFrame;
+
+@property (nonatomic, strong) UIColor *pageIndicatorTintColor;
+
+@property (nonatomic, strong) UIColor *currentPageIndicatorTintColor;
+
+/**
+ 左右间距,默认10
+ */
+@property (nonatomic, assign) CGFloat leftRightMargin;
+
+/**
+ 上下间距,默认10
+ */
+@property (nonatomic, assign) CGFloat topBottomMargin;
+
+/**
  *  自动切换视图的时间,默认是5.0
  */
 @property (nonatomic, assign) CGFloat autoTime;
@@ -85,10 +115,16 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (void)loadMutBannerAdViewsInView:(UIView*)view;
 
+
 /**
  刷新广告数据
  */
 - (void)reloadMutBannerAd;
+
+/**
+ 清空轮播广告缓存数据
+ */
+- (void)clearMutBannerAdImageChace;
 
 @end
 
