@@ -18,16 +18,7 @@
     /*
      Swift version Animations - https://github.com/YouXianMing/Swift-Animations
      
-     Lateast no warning version : Xcode 9.4.1 (9F2000)
-     
-     QQ    705786299
-     Email YouXianMing1987@126.com
-     
-     http://www.cnblogs.com/YouXianMing/
-     https://github.com/YouXianMing
-     https://github.com/YouXianMing/YoCelsius
-     
-     独立开发作品 (感兴趣的朋友支持一下^_^) : https://itunes.apple.com/cn/app/美记/id1390862464
+     Lateast no warning version : Version 10.1 (10B61)
      */
     
 #ifdef DEBUG

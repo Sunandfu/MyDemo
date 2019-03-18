@@ -459,7 +459,6 @@
     
     CGContextRestoreGState(context);
     
-    
     //// 画出表盘刻度
     CGContextSaveGState(context);
     CGContextTranslateCTM(context, centerPoint.x, centerPoint.y);

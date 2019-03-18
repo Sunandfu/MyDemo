@@ -318,92 +318,169 @@ UIWebView *phoneCallWebView;
 //获取当前的设备
 + (NSString *)getCurrentDeviceModel{
     
-    int mib[2];
-    size_t len;
-    char *machine;
+    static NSString *retVal = nil;
     
-    mib[0] = CTL_HW;
-    mib[1] = HW_MACHINE;
-    sysctl(mib, 2, NULL, &len, NULL, 0);
-    machine = malloc(len);
-    sysctl(mib, 2, machine, &len, NULL, 0);
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        
+        // 请查阅 https://www.theiphonewiki.com/wiki/Models 更新设备号
+        
+        struct utsname systemInfo;
+        uname(&systemInfo);
+        NSString *devStr = [NSString stringWithCString:systemInfo.machine encoding:NSUTF8StringEncoding];
+        
+        // iPhone
+        if      ([self devStr:devStr equalTo:@[@"iPhone1,1"]])
+            retVal = @"iPhone";
+        else if ([self devStr:devStr equalTo:@[@"iPhone1,2"]])
+            retVal = @"iPhone 3G";
+        else if ([self devStr:devStr equalTo:@[@"iPhone2,1"]])
+            retVal = @"iPhone 3GS";
+        else if ([self devStr:devStr equalTo:@[@"iPhone3,1", @"iPhone3,2", @"iPhone3,3"]])
+            retVal = @"iPhone 4";
+        else if ([self devStr:devStr equalTo:@[@"iPhone4,1"]])
+            retVal = @"iPhone 4S";
+        else if ([self devStr:devStr equalTo:@[@"iPhone5,1", @"iPhone5,2"]])
+            retVal = @"iPhone 5";
+        else if ([self devStr:devStr equalTo:@[@"iPhone5,3", @"iPhone5,4"]])
+            retVal = @"iPhone 5c";
+        else if ([self devStr:devStr equalTo:@[@"iPhone6,1", @"iPhone6,2"]])
+            retVal = @"iPhone 5s";
+        else if ([self devStr:devStr equalTo:@[@"iPhone7,2"]])
+            retVal = @"iPhone 6";
+        else if ([self devStr:devStr equalTo:@[@"iPhone7,1"]])
+            retVal = @"iPhone 6 Plus";
+        else if ([self devStr:devStr equalTo:@[@"iPhone8,1"]])
+            retVal = @"iPhone 6s";
+        else if ([self devStr:devStr equalTo:@[@"iPhone8,2"]])
+            retVal = @"iPhone 6s Plus";
+        else if ([self devStr:devStr equalTo:@[@"iPhone8,4"]])
+            retVal = @"iPhone SE";
+        else if ([self devStr:devStr equalTo:@[@"iPhone9,1", @"iPhone9,3"]])
+            retVal = @"iPhone 7";
+        else if ([self devStr:devStr equalTo:@[@"iPhone9,2", @"iPhone9,4"]])
+            retVal = @"iPhone 7 Plus";
+        else if ([self devStr:devStr equalTo:@[@"iPhone10,1", @"iPhone10,4"]])
+            retVal = @"iPhone 8";
+        else if ([self devStr:devStr equalTo:@[@"iPhone10,2", @"iPhone10,5"]])
+            retVal = @"iPhone 8 Plus";
+        else if ([self devStr:devStr equalTo:@[@"iPhone10,3", @"iPhone10,6"]])
+            retVal = @"iPhone X";
+        else if ([self devStr:devStr equalTo:@[@"iPhone11,8"]])
+            retVal = @"iPhone XR";
+        else if ([self devStr:devStr equalTo:@[@"iPhone11,2"]])
+            retVal = @"iPhone XS";
+        else if ([self devStr:devStr equalTo:@[@"iPhone11,6"]])
+            retVal = @"iPhone XS Max";
+        
+        // iPod
+        else if ([self devStr:devStr equalTo:@[@"iPod1,1"]])
+            retVal = @"iPod touch";
+        else if ([self devStr:devStr equalTo:@[@"iPod2,1"]])
+            retVal = @"iPod touch (2nd generation)";
+        else if ([self devStr:devStr equalTo:@[@"iPod3,1"]])
+            retVal = @"iPod touch (3rd generation)";
+        else if ([self devStr:devStr equalTo:@[@"iPod4,1"]])
+            retVal = @"iPod touch (4th generation)";
+        else if ([self devStr:devStr equalTo:@[@"iPod5,1"]])
+            retVal = @"iPod touch (5th generation)";
+        else if ([self devStr:devStr equalTo:@[@"iPod7,1"]])
+            retVal = @"iPod touch (6th generation)";
+        
+        // iPad
+        else if ([self devStr:devStr equalTo:@[@"iPad1,1"]])
+            retVal = @"iPad";
+        else if ([self devStr:devStr equalTo:@[@"iPad2,1", @"iPad2,2", @"iPad2,3", @"iPad2,4"]])
+            retVal = @"iPad 2";
+        else if ([self devStr:devStr equalTo:@[@"iPad3,1", @"iPad3,2", @"iPad3,3"]])
+            retVal = @"iPad (3rd generation)";
+        else if ([self devStr:devStr equalTo:@[@"iPad3,4", @"iPad3,5", @"iPad3,6"]])
+            retVal = @"iPad (4th generation)";
+        else if ([self devStr:devStr equalTo:@[@"iPad4,1", @"iPad4,2", @"iPad4,3"]])
+            retVal = @"iPad Air";
+        else if ([self devStr:devStr equalTo:@[@"iPad5,3", @"iPad5,4"]])
+            retVal = @"iPad Air 2";
+        else if ([self devStr:devStr equalTo:@[@"iPad6,7", @"iPad6,8"]])
+            retVal = @"iPad Pro (12.9-inch)";
+        else if ([self devStr:devStr equalTo:@[@"iPad6,3", @"iPad6,4"]])
+            retVal = @"iPad Pro (9.7-inch)";
+        else if ([self devStr:devStr equalTo:@[@"iPad6,11", @"iPad6,12"]])
+            retVal = @"iPad (5th generation)";
+        else if ([self devStr:devStr equalTo:@[@"iPad7,1", @"iPad7,2"]])
+            retVal = @"iPad Pro (12.9-inch, 2nd generation)";
+        else if ([self devStr:devStr equalTo:@[@"iPad7,3", @"iPad7,4"]])
+            retVal = @"iPad Pro (10.5-inch)";
+        else if ([self devStr:devStr equalTo:@[@"iPad7,5", @"iPad7,6"]])
+            retVal = @"iPad (6th generation)";
+        else if ([self devStr:devStr equalTo:@[@"iPad8,1", @"iPad8,2", @"iPad8,3", @"iPad8,4"]])
+            retVal = @"iPad Pro (11-inch)";
+        else if ([self devStr:devStr equalTo:@[@"iPad8,5", @"iPad8,6", @"iPad8,7", @"iPad8,8"]])
+            retVal = @"iPad Pro (12.9-inch) (3rd generation)";
+        else if ([self devStr:devStr equalTo:@[@"iPad7,5", @"iPad7,6"]])
+            retVal = @"iPad (6th generation)";
+        
+        // iPad mini
+        else if ([self devStr:devStr equalTo:@[@"iPad2,5", @"iPad2,6", @"iPad2,7"]])
+            retVal = @"iPad mini";
+        else if ([self devStr:devStr equalTo:@[@"iPad4,4", @"iPad4,5", @"iPad4,6"]])
+            retVal = @"iPad mini 2";
+        else if ([self devStr:devStr equalTo:@[@"iPad4,7", @"iPad4,8", @"iPad4,9"]])
+            retVal = @"iPad mini 3";
+        else if ([self devStr:devStr equalTo:@[@"iPad5,1", @"iPad5,2"]])
+            retVal = @"iPad mini 4";
+        
+        // HomePod
+        else if ([self devStr:devStr equalTo:@[@"AudioAccessory1,1", @"AudioAccessory1,2"]])
+            retVal = @"HomePod";
+        
+        // AirPods
+        else if ([self devStr:devStr equalTo:@[@"AirPods1,1"]])
+            retVal = @"AirPods";
+        
+        // Apple Watch
+        else if ([self devStr:devStr equalTo:@[@"Watch1,1", @"Watch1,2"]])
+            retVal = @"Apple Watch (1st generation)";
+        else if ([self devStr:devStr equalTo:@[@"Watch2,6", @"Watch2,7"]])
+            retVal = @"Apple Watch Series 1";
+        else if ([self devStr:devStr equalTo:@[@"Watch2,3", @"Watch2,4"]])
+            retVal = @"Apple Watch Series 2";
+        else if ([self devStr:devStr equalTo:@[@"Watch3,1", @"Watch3,2", @"Watch3,3", @"Watch3,4"]])
+            retVal = @"Apple Watch Series 3";
+        
+        // Apple TV
+        else if ([self devStr:devStr equalTo:@[@"AppleTV2,1"]])
+            retVal = @"Apple TV (2nd generation)";
+        else if ([self devStr:devStr equalTo:@[@"AppleTV3,1", @"AppleTV3,2"]])
+            retVal = @"Apple TV (3rd generation)";
+        else if ([self devStr:devStr equalTo:@[@"AppleTV5,3"]])
+            retVal = @"Apple TV (4th generation)";
+        else if ([self devStr:devStr equalTo:@[@"AppleTV6,2"]])
+            retVal = @"Apple TV 4K";
+        
+        // Simulator
+        else if ([self devStr:devStr equalTo:@[@"i386", @"x86_64"]])
+            retVal = @"Simulator";
+        
+        // New device.
+        else retVal = devStr;
+    });
     
-    NSString *platform = [NSString stringWithCString:machine encoding:NSASCIIStringEncoding];
-    free(machine);
+    return retVal;
+}
++ (BOOL)devStr:(NSString *)devStr equalTo:(NSArray <NSString *> *)array {
     
-    if ([platform isEqualToString:@"iPhone1,1"]) return @"iPhone 2G";
-    if ([platform isEqualToString:@"iPhone1,2"]) return @"iPhone 3G";
-    if ([platform isEqualToString:@"iPhone2,1"]) return @"iPhone 3GS";
+    __block BOOL equal = NO;
     
-    if ([platform isEqualToString:@"iPhone3,1"]) return @"iPhone 4";
-    if ([platform isEqualToString:@"iPhone3,2"]) return @"iPhone 4";
-    if ([platform isEqualToString:@"iPhone3,3"]) return @"iPhone 4";
-    if ([platform isEqualToString:@"iPhone4,1"]) return @"iPhone 4S";
+    [array enumerateObjectsUsingBlock:^(NSString * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        
+        if ([devStr isEqualToString:obj]) {
+            
+            equal = YES;
+            *stop = YES;
+        }
+    }];
     
-    if ([platform isEqualToString:@"iPhone5,1"]) return @"iPhone 5";
-    if ([platform isEqualToString:@"iPhone5,2"]) return @"iPhone 5";
-    
-    if ([platform isEqualToString:@"iPhone5,3"]) return @"iPhone 5c";
-    if ([platform isEqualToString:@"iPhone5,4"]) return @"iPhone 5c";
-    
-    if ([platform isEqualToString:@"iPhone6,1"]) return @"iPhone 5S";
-    if ([platform isEqualToString:@"iPhone6,2"]) return @"iPhone 5S";
-    
-    if ([platform isEqualToString:@"iPhone7,1"]) return @"iPhone 6 Plus";
-    if ([platform isEqualToString:@"iPhone7,2"]) return @"iPhone 6";
-    
-    if ([platform isEqualToString:@"iPhone8,1"]) return @"iPhone 6S Plus";
-    if ([platform isEqualToString:@"iPhone8,2"]) return @"iPhone 6S";
-    if ([platform isEqualToString:@"iPhone8,3"]) return @"iPhone SE";
-    
-    if ([platform isEqualToString:@"iPod1,1"])   return @"iPod Touch 1G";
-    if ([platform isEqualToString:@"iPod2,1"])   return @"iPod Touch 2G";
-    if ([platform isEqualToString:@"iPod3,1"])   return @"iPod Touch 3G";
-    if ([platform isEqualToString:@"iPod4,1"])   return @"iPod Touch 4G";
-    if ([platform isEqualToString:@"iPod5,1"])   return @"iPod Touch 5G";
-    
-    if ([platform isEqualToString:@"iPad1,1"])   return @"iPad 1G";
-    
-    if ([platform isEqualToString:@"iPad2,1"])   return @"iPad 2";
-    if ([platform isEqualToString:@"iPad2,2"])   return @"iPad 2";
-    if ([platform isEqualToString:@"iPad2,3"])   return @"iPad 2";
-    if ([platform isEqualToString:@"iPad2,4"])   return @"iPad 2";
-    
-    if ([platform isEqualToString:@"iPad2,5"])   return @"iPad Mini 1G";
-    if ([platform isEqualToString:@"iPad2,6"])   return @"iPad Mini 1G";
-    if ([platform isEqualToString:@"iPad2,7"])   return @"iPad Mini 1G";
-    
-    if ([platform isEqualToString:@"iPad3,1"])   return @"iPad 3";
-    if ([platform isEqualToString:@"iPad3,2"])   return @"iPad 3";
-    if ([platform isEqualToString:@"iPad3,3"])   return @"iPad 3";
-    if ([platform isEqualToString:@"iPad3,4"])   return @"iPad 4";
-    if ([platform isEqualToString:@"iPad3,5"])   return @"iPad 4";
-    if ([platform isEqualToString:@"iPad3,6"])   return @"iPad 4";
-    
-    if ([platform isEqualToString:@"iPad4,1"])   return @"iPad Air";
-    if ([platform isEqualToString:@"iPad4,2"])   return @"iPad Air";
-    if ([platform isEqualToString:@"iPad4,3"])   return @"iPad Air";
-    
-    if ([platform isEqualToString:@"iPad4,4"])   return @"iPad Mini 2G ";
-    if ([platform isEqualToString:@"iPad4,5"])   return @"iPad Mini 2G ";
-    if ([platform isEqualToString:@"iPad4,6"])   return @"iPad Mini 2G ";
-    
-    if ([platform isEqualToString:@"iPad4,7"])   return @"iPad Mini 3 ";
-    if ([platform isEqualToString:@"iPad4,8"])   return @"iPad Mini 3 ";
-    if ([platform isEqualToString:@"iPad4,9"])   return @"iPad Mini 3 ";
-    
-    if ([platform isEqualToString:@"iPad5,1"])   return @"iPad Mini 4 WiFi  ";
-    if ([platform isEqualToString:@"iPad5,2"])   return @"iPad Mini 4 WiFi+Cellular ";
-    
-    if ([platform isEqualToString:@"iPad5,3"])   return @"iPad Air2 ";
-    if ([platform isEqualToString:@"iPad5,4"])   return @"iPad Air2 ";
-    
-    if ([platform isEqualToString:@"iPad6,7"])   return @"iPad Pro WiFi ";
-    if ([platform isEqualToString:@"iPad6,8"])   return @"iPad Pro WiFi+Cellular";
-    
-    if ([platform isEqualToString:@"i386"])      return @"iPhone Simulator";
-    if ([platform isEqualToString:@"x86_64"])    return @"iPhone Simulator";
-    return platform;
+    return equal;
 }
 //获取运营商
 + (NSString *)getcarrierName{
