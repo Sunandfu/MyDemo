@@ -346,7 +346,7 @@ static  SourceType _sourceType = SourceTypeLaunchImage;
             UIImage *launchImage = [NetTool getLauchImage];
             if (!launchImage) {
                 
-                NSLog(@"从UILaunchStoryboardName 或者 LaunchScreen 设置启动页 ");
+//                NSLog(@"从UILaunchStoryboardName 或者 LaunchScreen 设置启动页 ");
                 [self removeOnly];
                 return nil ;
             }

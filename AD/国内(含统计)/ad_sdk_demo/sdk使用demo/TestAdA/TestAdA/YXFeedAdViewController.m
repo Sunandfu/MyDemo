@@ -18,7 +18,6 @@ static  NSString * feedMediaID = @"wxbus_ios_native";
 
 @interface YXFeedAdViewController () <YXFeedAdManagerDelegate ,UITableViewDelegate,UITableViewDataSource>
 
-
 @property (nonatomic,strong) YXFeedAdManager *feedManager;
 
 @property (nonatomic, strong) YXFeedAdRegisterView *registAdView;
@@ -54,7 +53,6 @@ static  NSString * feedMediaID = @"wxbus_ios_native";
     if (!_registAdView) {
         _registAdView =  [[[NSBundle mainBundle]loadNibNamed:NSStringFromClass([YXFeedAdRegisterView class]) owner:nil options:nil]firstObject];
         _registAdView.frame = CGRectMake(0, 0, self.view.bounds.size.width, 220);
-        
     }
     return _registAdView;
 }
@@ -156,7 +154,6 @@ static  NSString * feedMediaID = @"wxbus_ios_native";
     _feedManager = [YXFeedAdManager new];
     _feedManager.adSize = YXADSize690X388;
     _feedManager.mediaId = feedMediaID;
-    
     _feedManager.controller = self;
     _feedManager.delegate = self;
     _feedManager.adCount = 3;
@@ -198,6 +195,11 @@ static  NSString * feedMediaID = @"wxbus_ios_native";
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)dealloc
+{
+    NSLog(@"%@ %@",[self class],NSStringFromSelector(_cmd));
 }
 
 /*

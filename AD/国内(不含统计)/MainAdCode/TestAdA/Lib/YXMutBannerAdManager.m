@@ -28,13 +28,14 @@
 
 @interface YXMutBannerAdManager()<BUNativeAdDelegate,BUNativeAdsManagerDelegate,YXNewPagedFlowViewDelegate, YXNewPagedFlowViewDataSource,GDTNativeAdDelegate>
 {
-    NSDictionary*_gdtAD;
     NSDictionary*_currentAD;
     CGFloat _width;
     CGFloat _height;
+    NSInteger _chazhi;
     NSDictionary *_resultDict;
 }
 
+@property (nonatomic, strong) NSDictionary *netAdDict;
 
 @property (nonatomic,strong) NSArray * adArr;
 
@@ -59,6 +60,8 @@
 @property (nonatomic,strong) NSMutableArray *adShowArr;//存储上报 数组
 
 @property (nonatomic,strong) UIImageView  *tmpImageView;
+
+@property (nonatomic, strong) NSMutableArray *feedArray;
 
 @end
 
@@ -165,9 +168,9 @@
 - (void)adShowUpToSever:(NSInteger)index sts:(BOOL)isBU
 {
     if (self.isWMAd) {
-        [Network upOutSideToServer:ADSHOW isError:NO code:nil msg:nil currentAD:self->_currentAD gdtAD:self->_gdtAD mediaID:self.mediaId];
+        [Network upOutSideToServer:ADSHOW isError:NO code:nil msg:nil currentAD:self->_currentAD gdtAD:self.netAdDict mediaID:self.mediaId];
     } else if (self.isGDTLoadOK) {
-        [Network upOutSideToServer:ADSHOW isError:NO code:nil msg:nil currentAD:self->_currentAD gdtAD:self->_gdtAD mediaID:self.mediaId];
+        [Network upOutSideToServer:ADSHOW isError:NO code:nil msg:nil currentAD:self->_currentAD gdtAD:self.netAdDict mediaID:self.mediaId];
     }else{
         
         NSDictionary * dic = self.adArr[index];
@@ -476,17 +479,45 @@
 #pragma mark 请求配置
 - (void)requestADSourceFromNet
 {
-    [Network requestADSourceFromMediaId:self.mediaId success:^(NSDictionary *dataDict) {
-        self->_gdtAD = dataDict ;
-        NSArray *advertiser = dataDict[@"advertiser"];
-        
-        NSString *adNetCount = [NSString stringWithFormat:@"%@",dataDict[@"adCount"]];
-        self.adCount = self.adCount<1?(adNetCount.integerValue>0?adNetCount.integerValue:1):self.adCount;
-        
-        if(advertiser && ![advertiser isKindOfClass:[NSNull class]]&& advertiser.count > 0){
-            [self initIDSource];
-        }else{
-            [self initS2S];
+    [Network requestADSourceFromMediaId:self.mediaId adCount:self.adCount imgWidth:_width imgHeight:_height success:^(NSDictionary *dataDict) {
+        self.netAdDict = dataDict;
+        NSString *adCount = [NSString stringWithFormat:@"%@",self.netAdDict[@"adCount"]];
+        NSArray *adInfosArr = self.netAdDict[@"adInfos"];
+        if (adInfosArr.count == adCount.integerValue) {
+            NSMutableArray * mArr = [[NSMutableArray alloc]initWithCapacity:0];
+            for (NSDictionary *dict in adInfosArr) {
+                YXFeedAdData *backdata = [YXFeedAdData new];
+                backdata.imageUrl = dict[@"img_url"];
+                backdata.IconUrl = dict[@"img_url"];
+                backdata.adContent = dict[@"description"];
+                backdata.adTitle = dict[@"title"];
+                backdata.adID = (NSInteger)dict[@"adid"];
+                [mArr addObject:backdata];
+            }
+            if(self.delegate && [self.delegate respondsToSelector:@selector(didLoadMutBannerAdView)]){
+                [self.delegate didLoadMutBannerAdView];
+            }
+            return ;
+        } else {
+            self->_chazhi = adCount.integerValue - adInfosArr.count;
+            if (self->_chazhi<=0) {
+                return ;
+            }
+            
+            for (NSDictionary *dict in adInfosArr) {
+                YXFeedAdData *backdata = [YXFeedAdData new];
+                backdata.imageUrl = dict[@"img_url"];
+                backdata.IconUrl = dict[@"img_url"];
+                backdata.adContent = dict[@"description"];
+                backdata.adTitle = dict[@"title"];
+                backdata.adID = (NSInteger)dict[@"adid"];
+                [self.feedArray addObject:backdata];
+            }
+            
+            NSArray *advertiser = dataDict[@"advertiser"];
+            if(advertiser && ![advertiser isKindOfClass:[NSNull class]] && advertiser.count > 0){
+                [self initIDSource];
+            }
         }
     } fail:^(NSError *error) {
         [self failedError:error];
@@ -496,7 +527,7 @@
 #pragma mark 分配广告
 - (void)initIDSource
 {
-    NSArray *advertiserArr = _gdtAD[@"advertiser"];
+    NSArray *advertiserArr = self.netAdDict[@"advertiser"];
     
     //    暂时不用priority
     NSMutableArray * mArrPriority = [[NSMutableArray alloc]initWithCapacity:0];
@@ -558,13 +589,12 @@
             [self initS2S];
             return;
         }
-        [Network upOutSideToServerRequest:ADRequest currentAD:self->_currentAD gdtAD:self->_gdtAD mediaID:self.mediaId ];
-        
+        [Network upOutSideToServerRequest:ADRequest currentAD:self->_currentAD gdtAD:self.netAdDict mediaID:self.mediaId ];
         
         self.nativeAd = [[GDTNativeAd alloc] initWithAppId:adplaces[@"appId"] placementId:adplaces[@"adPlaceId"]];
         self.nativeAd.controller = self.controller;
         self.nativeAd.delegate = self;
-        [self.nativeAd loadAd:((int)self.adCount)];
+        [self.nativeAd loadAd:((int)self->_chazhi)];
         
     });
 }
@@ -582,10 +612,10 @@
                 NSDictionary * properties = data.properties;
                 YXFeedAdData *backdata = [YXFeedAdData new];
                 backdata.adContent = [properties objectForKey:GDTNativeAdDataKeyDesc];
-                backdata.adTitle = [properties objectForKey:GDTNativeAdDataKeyTitle];
-                backdata.imageUrl = [properties objectForKey:GDTNativeAdDataKeyImgUrl];
-                backdata.IconUrl = [properties objectForKey:GDTNativeAdDataKeyIconUrl];
-                backdata.adID = index;
+                backdata.adTitle   = [properties objectForKey:GDTNativeAdDataKeyTitle];
+                backdata.imageUrl  = [properties objectForKey:GDTNativeAdDataKeyImgUrl];
+                backdata.IconUrl   = [properties objectForKey:GDTNativeAdDataKeyIconUrl];
+                backdata.adID      = index;
                 [mArr addObject:backdata];
             }
             
@@ -607,7 +637,7 @@
     GDTNativeAdData *currentAdData = self.gdtArr[recognizer.view.tag];
     [self.nativeAd attachAd:currentAdData toView:self.controller.view];
     [self.nativeAd clickAd:currentAdData];
-    [Network upOutSideToServer:ADCLICK isError:NO code:nil msg:nil currentAD:self->_currentAD gdtAD:self->_gdtAD mediaID:self.mediaId];
+    [Network upOutSideToServer:ADCLICK isError:NO code:nil msg:nil currentAD:self->_currentAD gdtAD:self.netAdDict mediaID:self.mediaId];
     if(self.delegate && [self.delegate respondsToSelector:@selector(didClickedMutBannerAdWithIndex:)]){
         
         [self.delegate didClickedMutBannerAdWithIndex:recognizer.view.tag];
@@ -618,7 +648,7 @@
 {
     NSError *errors = [NSError errorWithDomain:error.userInfo[@"NSLocalizedDescription"] code:[[NSString stringWithFormat:@"201%ld",(long)error.code]integerValue] userInfo:nil];
     [self failedError:errors];
-    [Network upOutSideToServer:ADError isError:YES code:[NSString stringWithFormat:@"201%ld",(long)error.code] msg: error.userInfo[@"NSLocalizedDescription"] currentAD:self->_currentAD gdtAD:self->_gdtAD mediaID:self.mediaId];
+    [Network upOutSideToServer:ADError isError:YES code:[NSString stringWithFormat:@"201%ld",(long)error.code] msg: error.userInfo[@"NSLocalizedDescription"] currentAD:self->_currentAD gdtAD:self.netAdDict mediaID:self.mediaId];
 }
 // 原生广告点击之后将要展示内嵌浏览器或应用内AppStore回调
 - (void)nativeAdWillPresentScreen
@@ -645,7 +675,7 @@
             [self initS2S];
             return;
         }
-        [Network upOutSideToServerRequest:ADRequest currentAD:self->_currentAD gdtAD:self->_gdtAD mediaID:self.mediaId ];
+        [Network upOutSideToServerRequest:ADRequest currentAD:self->_currentAD gdtAD:self.netAdDict mediaID:self.mediaId ];
         
         
         [BUAdSDKManager setAppID: adplaces[@"appId"]];
@@ -672,7 +702,7 @@
         nad.delegate = self;
         self.adManager = nad;
         
-        [nad loadAdDataWithCount:self.adCount];
+        [nad loadAdDataWithCount:self->_chazhi];
         
     });
 }
@@ -698,11 +728,11 @@
 - (void)nativeAd:(BUNativeAd *)nativeAd didFailWithError:(NSError *_Nullable)error {
     NSError *errors = [NSError errorWithDomain:@"" code:[[NSString stringWithFormat:@"202%ld",(long)error.code]integerValue] userInfo:nil];
     [self failedError:errors];
-    [Network upOutSideToServer:ADError isError:YES code:[NSString stringWithFormat:@"202%ld",(long)error.code] msg: error.userInfo[@"NSLocalizedDescription"] currentAD:self->_currentAD gdtAD:self->_gdtAD mediaID:self.mediaId];
+    [Network upOutSideToServer:ADError isError:YES code:[NSString stringWithFormat:@"202%ld",(long)error.code] msg: error.userInfo[@"NSLocalizedDescription"] currentAD:self->_currentAD gdtAD:self.netAdDict mediaID:self.mediaId];
 }
 - (void)nativeAdDidClick:(BUNativeAd *)nativeAd withView:(UIView *)view
 {
-    [Network upOutSideToServer:ADCLICK isError:NO code:nil msg:nil currentAD:self->_currentAD gdtAD:self->_gdtAD mediaID:self.mediaId];
+    [Network upOutSideToServer:ADCLICK isError:NO code:nil msg:nil currentAD:self->_currentAD gdtAD:self.netAdDict mediaID:self.mediaId];
     if(self.delegate && [self.delegate respondsToSelector:@selector(didClickedMutBannerAdWithIndex:)]){
         [self.delegate didClickedMutBannerAdWithIndex:view.tag];
     }

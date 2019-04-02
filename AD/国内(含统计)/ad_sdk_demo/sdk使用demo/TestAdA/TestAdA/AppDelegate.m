@@ -11,8 +11,7 @@
 #import <YXLaunchAds/YXLaunchAds.h>
 
 #import "WXApi.h"
-//wx009a523c3077f55e
-//#define WXAPPID @"wx009a523c3077f55e"
+
 #define WXAPPID @"wxb6e91d4c42a22663"
 //向微信终端程序注册第三方应用 （本应用）Appid
 

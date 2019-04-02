@@ -20,9 +20,6 @@ typedef void (^savedFailBlock)(NSError *error);
 
 +(void) imgWithUrl:(NSString *) imgUrl successBlock:(successBlock) sucBlock failBlock:(failBlock) faiBlock;
 
-
-+(void)imgWithUrlWithOutCache:(NSString *)imgUrl successBlock:(successBlock)sucBlock failBlock:(failBlock)faiBlock;
-
 +(void) gifImgWithUrl:(NSString *) imgUrl successBlock:(gifSuccessBlock) sucBlock failBlock:(failBlock) faiBlock;
 
 

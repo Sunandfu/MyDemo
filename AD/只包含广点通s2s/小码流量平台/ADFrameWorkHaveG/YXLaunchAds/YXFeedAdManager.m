@@ -107,15 +107,12 @@
                 return;
             }
             NSString * img = [NSString stringWithFormat:@"%@",dict[@"img_url"]];
-//            NSLog(@"%@",img);
-//            NSLog(@"%@",adData.imageUrl);
             if ([img isEqualToString:adData.imageUrl]) {
                 view.tag = [dict[@"adid"]integerValue];
                 currentAdDict = dict;
             }
         }
         if ([currentAdDict allKeys].count == 0) {
-            NSLog(@"记录为空");
             return;
         }
         NSInteger pageNumber = view.tag;
@@ -151,7 +148,6 @@
         }
         return;
     }
-    NSLog(@"暂无广告数据，请重试!");
 }
 
 - (void)registerAdViewForInCell:(UITableViewCell *)cell adData:(YXFeedAdData*)adData
@@ -179,7 +175,6 @@
             }
         }
         if ([currentAdDict allKeys].count == 0) {
-            NSLog(@"记录为空");
             return;
         }
         /*
@@ -231,38 +226,11 @@
         }
         return;
     }
-    NSLog(@"暂无广告数据，请重试!");
 }
 
 - (void)checkIsInView:(NSInteger)index dicts:(NSDictionary*)dicts sts:(NSString*)currentAD
 {
     [self adShowUpToSever:dicts sts:currentAD];
-//    //     1.获取全局子线程队列
-//    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
-//    //    2.创建timer添加到队列中
-//    dispatch_source_t timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, queue);
-//    __block int timeRet = 30;
-//    [self.timeArr addObject:timer];
-//    //    3.设置首次执行时间、执行间隔和精确度
-//    dispatch_source_set_timer(timer, dispatch_time(DISPATCH_TIME_NOW, 1 * NSEC_PER_SEC), 1 * NSEC_PER_SEC, 0.1 * NSEC_PER_SEC);
-//    dispatch_source_set_event_handler(timer, ^{
-//        // doSomething()
-//        dispatch_async(dispatch_get_main_queue(), ^{
-//            BOOL  isINshow = [NetTool isInScreenView:view];
-//            if (isINshow) {
-//                //                NSLog(@"在屏幕内");
-//                [self adShowUpToSever:dicts sts:currentAD];
-//                dispatch_source_cancel(timer);
-//            }else{
-//                //                NSLog(@"不在屏幕内");
-//                if (timeRet == 0) {
-//                    dispatch_source_cancel(timer);
-//                }
-//            }
-//            timeRet -- ;
-//        });
-//    });
-//    dispatch_resume(timer);
 }
 - (void)checkIsInCell:(UITableViewCell*)cell dicts:(NSDictionary*)dicts sts:(NSString*)currentAD
 {
@@ -308,13 +276,12 @@
  */
 - (void)adShowUpToSever:(NSDictionary*)dict sts:(NSString*)isBU
 {
-    //    NSLog(@"上报:%@",dict);
     //   1:s2s  2:wm  3:gdt
     
     if ([isBU isEqualToString:@"1"]) {
         NSDictionary * dic = dict[@"adDict"];
         if (dic.allKeys.count == 0) {
-            NSLog(@"广告为空");
+//            NSLog(@"广告为空");
             return;
         }
         NSArray * viewS = dic[@"impress_notice_urls"];
@@ -349,8 +316,6 @@
         
         if (isSuccess) {
             if ([json[@"ret"] isEqualToString:@"0"]) {
-                
-//                NSLog(@"%@",json[@"adInfos"]);
                 self.adArr = json[@"adInfos"];
                 
                 if (self.adArr.count <= 0) {
@@ -552,7 +517,6 @@
     NSError *err;
     NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers error:&err];
     if(err) {
-        //        NSLog(@"json解析失败：%@",err);
         return nil;
     }
     return dic;

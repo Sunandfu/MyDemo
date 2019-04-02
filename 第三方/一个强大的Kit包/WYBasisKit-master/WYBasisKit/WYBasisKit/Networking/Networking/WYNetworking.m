@@ -12,6 +12,20 @@
 @implementation WYNetworking
 singleton_implementation(WYNetworking)//单例实现
 
+- (NSURLSessionDataTask * _Nullable)extracted:(NSString * _Nonnull)URLString failure:(Failure)failure parameters:(NSDictionary * _Nonnull)parameters success:(Success)success {
+    return [[self sharedSessionManager] GET:URLString parameters:parameters progress:^(NSProgress * _Nonnull downloadProgress) {
+    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        
+        if (success) {success(responseObject);}
+        [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        
+        if (failure) {failure(error);}
+        [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
+    }];
+}
+
 /**
  *  GET请求(未返回请求进度)
  *
@@ -24,17 +38,7 @@ singleton_implementation(WYNetworking)//单例实现
     
     [self networkMonitoring:^(BOOL hasNetwork) {if(hasNetwork == NO) {return;}}];
     
-    [[self sharedSessionManager] GET:URLString parameters:parameters progress:^(NSProgress * _Nonnull downloadProgress) {
-    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        
-        if (success) {success(responseObject);}
-        [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
-        
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        
-        if (failure) {failure(error);}
-        [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
-    }];
+    [self extracted:URLString failure:failure parameters:parameters success:success];
 }
 
 

@@ -88,6 +88,10 @@
 		E7369AAC22390FF1000BC26F /* Tapjoy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7369A7222390FF1000BC26F /* Tapjoy.framework */; };
 		E7369AAD22390FF1000BC26F /* TapjoyResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E7369A7422390FF1000BC26F /* TapjoyResources.bundle */; };
 		E7369AAE22390FF1000BC26F /* libGDTMobSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E7369A8322390FF1000BC26F /* libGDTMobSDK.a */; };
+		E77419EF2240C18200B2B5ED /* YXPopupMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = E77419E92240C18200B2B5ED /* YXPopupMenu.m */; };
+		E77419F02240C18200B2B5ED /* YXRectConst.m in Sources */ = {isa = PBXBuildFile; fileRef = E77419EC2240C18200B2B5ED /* YXRectConst.m */; };
+		E77419F12240C18200B2B5ED /* YXPopupMenuPath.m in Sources */ = {isa = PBXBuildFile; fileRef = E77419EE2240C18200B2B5ED /* YXPopupMenuPath.m */; };
+		E77419F42240C18E00B2B5ED /* YXMenuViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E77419F22240C18E00B2B5ED /* YXMenuViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -273,6 +277,14 @@
 		E7369A8322390FF1000BC26F /* libGDTMobSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGDTMobSDK.a; sourceTree = "<group>"; };
 		E7369A8422390FF1000BC26F /* GDTUnifiedNativeAd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTUnifiedNativeAd.h; sourceTree = "<group>"; };
 		E7369A8522390FF1000BC26F /* GuOpenUDID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GuOpenUDID.h; sourceTree = "<group>"; };
+		E77419E92240C18200B2B5ED /* YXPopupMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXPopupMenu.m; sourceTree = "<group>"; };
+		E77419EA2240C18200B2B5ED /* YXRectConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXRectConst.h; sourceTree = "<group>"; };
+		E77419EB2240C18200B2B5ED /* YXPopupMenuPath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXPopupMenuPath.h; sourceTree = "<group>"; };
+		E77419EC2240C18200B2B5ED /* YXRectConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXRectConst.m; sourceTree = "<group>"; };
+		E77419ED2240C18200B2B5ED /* YXPopupMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXPopupMenu.h; sourceTree = "<group>"; };
+		E77419EE2240C18200B2B5ED /* YXPopupMenuPath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXPopupMenuPath.m; sourceTree = "<group>"; };
+		E77419F22240C18E00B2B5ED /* YXMenuViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXMenuViewCell.m; sourceTree = "<group>"; };
+		E77419F32240C18E00B2B5ED /* YXMenuViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXMenuViewCell.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -461,6 +473,8 @@
 		E7369A1F22390FF0000BC26F /* model */ = {
 			isa = PBXGroup;
 			children = (
+				E77419F32240C18E00B2B5ED /* YXMenuViewCell.h */,
+				E77419F22240C18E00B2B5ED /* YXMenuViewCell.m */,
 				E7369A2022390FF0000BC26F /* LaunchAdModel.h */,
 				E7369A2122390FF0000BC26F /* YDSource.bundle */,
 				E7369A2222390FF0000BC26F /* LaunchAdModel.m */,
@@ -471,6 +485,7 @@
 		E7369A2922390FF0000BC26F /* lib */ = {
 			isa = PBXGroup;
 			children = (
+				E77419E82240C18200B2B5ED /* YXPopupMenu */,
 				E7369A2A22390FF0000BC26F /* YXFLAnimatedImage */,
 				E7369A2F22390FF0000BC26F /* YXNewPage */,
 			);
@@ -643,6 +658,19 @@
 			path = gdtAD;
 			sourceTree = "<group>";
 		};
+		E77419E82240C18200B2B5ED /* YXPopupMenu */ = {
+			isa = PBXGroup;
+			children = (
+				E77419E92240C18200B2B5ED /* YXPopupMenu.m */,
+				E77419EA2240C18200B2B5ED /* YXRectConst.h */,
+				E77419EB2240C18200B2B5ED /* YXPopupMenuPath.h */,
+				E77419EC2240C18200B2B5ED /* YXRectConst.m */,
+				E77419ED2240C18200B2B5ED /* YXPopupMenu.h */,
+				E77419EE2240C18200B2B5ED /* YXPopupMenuPath.m */,
+			);
+			path = YXPopupMenu;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -797,10 +825,12 @@
 				E7369A9222390FF1000BC26F /* YXLaunchAdImageManager.m in Sources */,
 				82367AA7217D729500B4FB4E /* YXFeedAdViewController.m in Sources */,
 				E7369A8C22390FF1000BC26F /* YXFLAnimatedImage.m in Sources */,
+				E77419F12240C18200B2B5ED /* YXPopupMenuPath.m in Sources */,
 				E7369AA222390FF1000BC26F /* YXReachability.m in Sources */,
 				E7369AA122390FF1000BC26F /* Network.m in Sources */,
 				8238B127217F05E600346C23 /* YXHalfLaunchScreenViewController.m in Sources */,
 				E7369A9D22390FF1000BC26F /* YXLaunchAdConfiguration.m in Sources */,
+				E77419F42240C18E00B2B5ED /* YXMenuViewCell.m in Sources */,
 				8270C79620661EAA005C8545 /* ViewController.m in Sources */,
 				826ADCE3216C4C50005F0577 /* YXBannerViewController.m in Sources */,
 				E7369A9622390FF1000BC26F /* YXLaunchAdView.m in Sources */,
@@ -819,6 +849,7 @@
 				E7369A9322390FF1000BC26F /* YXLaunchAdCache.m in Sources */,
 				826ADCE5216C4C50005F0577 /* YXLaunchScreenViewController.m in Sources */,
 				E7369AA522390FF1000BC26F /* GuOpenUDID.m in Sources */,
+				E77419EF2240C18200B2B5ED /* YXPopupMenu.m in Sources */,
 				E7369A8E22390FF1000BC26F /* YXNewPagedFlowView.m in Sources */,
 				8238B12A217F097000346C23 /* YXIconViewController.m in Sources */,
 				E7369AA722390FF1000BC26F /* NetTool.m in Sources */,
@@ -827,6 +858,7 @@
 				E7369A9822390FF1000BC26F /* YXLaunchAdConst.m in Sources */,
 				E7369A9A22390FF1000BC26F /* YXLaunchAd.m in Sources */,
 				E7369A8722390FF1000BC26F /* YXInterstitialAdManager.m in Sources */,
+				E77419F02240C18200B2B5ED /* YXRectConst.m in Sources */,
 				8214501121B7B7AD00081AED /* YXMotivationVideoViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

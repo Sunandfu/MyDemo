@@ -86,6 +86,14 @@
 {
     [Network requestADSourceFromMediaId:self.mediaId success:^(NSDictionary *dataDict) {
         self.AdDict = dataDict;
+        NSArray *adInfosArr = dataDict[@"adInfos"];
+        if (adInfosArr.count>0) {
+            self.resultDict = adInfosArr.firstObject;
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self showNativeAd];
+            });
+            return ;
+        }
         NSArray *advertiser = dataDict[@"advertiser"];
         if(advertiser && ![advertiser isKindOfClass:[NSNull class]]&& advertiser.count > 0){
             [self initIDSource];

@@ -115,6 +115,12 @@
 {
     [Network requestADSourceFromMediaId:self.mediaId success:^(NSDictionary *dataDict) {
         self.AdDict = dataDict;
+        NSArray *adInfosArr = dataDict[@"adInfos"];
+        if (adInfosArr.count>0) {
+            self.resultDict = adInfosArr.firstObject;
+            [self ShowDirectAd];
+            return ;
+        }
         NSArray *advertiser = dataDict[@"advertiser"];
         if(advertiser && ![advertiser isKindOfClass:[NSNull class]]&& advertiser.count > 0){
             [self initIDSource];
@@ -155,7 +161,7 @@
         }
     }
     
-    double random = 1+ arc4random()%99;
+    double random = 1 + arc4random()%99;
     
     double sumWeight = 0;
     
@@ -222,20 +228,7 @@
                         }
                     }
                 }
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    self.frame = ({
-                        CGRect frame = self.frame;
-                        CGFloat y = frame.origin.y;
-                        if (self.bannerType == BottomBannerType) {
-                            y = [UIScreen mainScreen].bounds.size.height - self->_height - frame.origin.y;
-                        } else {
-                            y = frame.origin.y;
-                        }
-                        frame = CGRectMake(frame.origin.x, y, self->_width, self->_height);
-                        frame;
-                    });
-                    [self showNativeAd];
-                });
+                [self ShowDirectAd];
             }else{
                 NSError *errors = [NSError errorWithDomain:@"请求失败" code:400 userInfo:nil];
                 [self failedError:errors];
@@ -246,7 +239,22 @@
         }
     }];
 }
-
+- (void)ShowDirectAd{
+    dispatch_async(dispatch_get_main_queue(), ^{
+        self.frame = ({
+            CGRect frame = self.frame;
+            CGFloat y = frame.origin.y;
+            if (self.bannerType == BottomBannerType) {
+                y = [UIScreen mainScreen].bounds.size.height - self->_height - frame.origin.y;
+            } else {
+                y = frame.origin.y;
+            }
+            frame = CGRectMake(frame.origin.x, y, self->_width, self->_height);
+            frame;
+        });
+        [self showNativeAd];
+    });
+}
 - (void)showNativeAd
 {
     if(!self.resultDict){//40041无广告

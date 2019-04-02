@@ -527,10 +527,10 @@ BOOL isJailbrokenUser()NS_AVAILABLE_IOS(4_0)
     }
     
     // method 3
-    if ( 0 == system("ls") )
-    {
-        return YES;
-    }
+//    if ( 0 == system("ls") )
+//    {
+//        return YES;
+//    }
     return NO;
 #endif
     return NO;

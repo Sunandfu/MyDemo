@@ -23,13 +23,13 @@
  
  */
 
-//#define SEVERIN @"http://47.99.227.46:8081"
+#define SEVERIN @"http://47.99.227.46:8081"
+
+#define TRACKIN @"http://47.99.227.46:8082"
+
+//#define SEVERIN @"http://119.29.146.103:8073"
 //
-//#define TRACKIN @"http://47.99.227.46:8082"
-
-#define SEVERIN @"http://119.29.146.103:8073"
-
-#define TRACKIN @"http://119.29.146.103:8074"
+//#define TRACKIN @"http://119.29.146.103:8074"
 
 #define ADSHOW   TRACKIN @"/log/newMimpr/v2"
 #define ADCLICK  TRACKIN @"/log/newMclick"

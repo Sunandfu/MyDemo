@@ -315,7 +315,7 @@ static YXLaunchAdManager *instance = nil;
     NSError *err;
     NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers error:&err];
     if(err) {
-        NSLog(@"json解析失败：%@",err);
+//        NSLog(@"json解析失败：%@",err);
         return nil;
     }
     return dic;
@@ -351,10 +351,6 @@ static YXLaunchAdManager *instance = nil;
         [BUAdSDKManager setAppID: adplaces[@"appId"]];
         [BUAdSDKManager setIsPaidApp:NO];
         [BUAdSDKManager setLoglevel:BUAdSDKLogLevelNone];
-        //        NSLog(@"SDKVersion = %@", [BUAdSDKManager SDKVersion]);
-        
-        
-        //        UIWindow *window = [UIApplication sharedApplication].delegate.window;
         
         UIWindow *window = self.showAdWindow;
         
@@ -384,7 +380,6 @@ static YXLaunchAdManager *instance = nil;
 }
 - (void)splashAdDidLoad:(BUSplashAdView *)splashAd
 {
-    //     NSLog(@"spalshAdDidLoad;%s",__FUNCTION__);
     if (launchTimeOut) {
         return;
     }
@@ -430,14 +425,9 @@ static YXLaunchAdManager *instance = nil;
 
 - (void)splashAdWillVisible:(BUSplashAdView *)splashAd
 {
-    
-    //    NSLog(@"spalshAdWillVisible;%s",__FUNCTION__);
-    
-    
 }
 - (void)splashAdDidClick:(BUSplashAdView *)splashAd
 {
-    //    NSLog(@"spalshAdDidClick;%s",__FUNCTION__);
     
     if(_delegate && [_delegate respondsToSelector:@selector(didClickedAdUrl:)]){
         [_delegate didClickedAdUrl:@""];
@@ -452,7 +442,6 @@ static YXLaunchAdManager *instance = nil;
 - (void)splashAdDidClose:(BUSplashAdView *)splashAd {
     
     [splashAd removeFromSuperview];
-    //    NSLog(@"spalshAdDidClose;%s",__FUNCTION__);
     if (cuttentTime > 1) {
         
         [[YXLaunchAd shareLaunchAd]cancleSkip];

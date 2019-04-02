@@ -20,6 +20,19 @@ typedef NS_ENUM(NSUInteger, YXADTYPE) {
     YXIconType = 4
 };
 
+/**
+ 箭头方向优先级
+ 
+ 当控件超出屏幕时会自动调整成反方向
+ */
+typedef NS_ENUM(NSInteger , YXPopupMenuDirection) {
+    YXPopupMenuDirectionTop = 0,  //Default
+    YXPopupMenuDirectionBottom = 1,
+    YXPopupMenuDirectionLeft = 2,
+    YXPopupMenuDirectionRight = 3,
+    YXPopupMenuDirectionNone = 4      //不自动调整
+};
+
 typedef NS_OPTIONS(NSUInteger, YXLaunchAdImageOptions) {
     /** 有缓存,读取缓存,不重新下载,没缓存先下载,并缓存 */
     YXLaunchAdImageDefault = 1 << 0,
@@ -92,7 +105,7 @@ typedef NS_ENUM(NSInteger,YXADSize){
 
 /**
  Banner 尺寸
-
+ 
  - YXAD_Banner600_100: 600 X 100 尺寸
  - YXAD_Banner600_150: 600 X 150 尺寸
  - YXAD_Banner600_260: 600 X 260 尺寸
@@ -118,7 +131,7 @@ typedef NS_ENUM(NSInteger,YXAD_Banner){
 };
 
 /**
- 滚动方向 
+ 滚动方向
  - YXNewPagedFlowViewOrientationHorizontal: 水平
  - YXNewPagedFlowViewOrientationVertical: 垂直
  */

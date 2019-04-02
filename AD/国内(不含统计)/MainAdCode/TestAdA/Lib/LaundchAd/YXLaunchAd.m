@@ -370,7 +370,7 @@ static  SourceType _sourceType = SourceTypeLaunchImage;
     
     //    [self setImage:logoImageView WithURL:[NSURL URLWithString:YXLaunchLogoURL] placeholderImage:nil];
     
-    [YXImgUtil imgWithUrlWithOutCache:YXLaunchLogoURL successBlock:^(UIImage *img) {
+    [YXImgUtil imgWithUrl:YXLaunchLogoURL successBlock:^(UIImage *img) {
         logoImageView.image = img;
     } failBlock:^(NSError *error) {
         
@@ -403,10 +403,11 @@ static  SourceType _sourceType = SourceTypeLaunchImage;
     if(configuration.frame.size.width>0 && configuration.frame.size.height>0) _customAdView.frame = configuration.frame;
     
     [_adWindow addSubview: [self addLogoViewFromFrame:_customAdView.frame]];
-    
-    /** skipButton */
-    [self addSkipButtonForConfiguration:configuration];
-    [self startSkipDispathTimer];
+    if ([YXLaunchAd shareLaunchAd].customAdView) {
+        /** skipButton */
+        [self addSkipButtonForConfiguration:configuration];
+        [self startSkipDispathTimer];
+    }
     /** customView */
     if(configuration.subViews.count>0)  [self addSubViews:configuration.subViews];
     
@@ -442,6 +443,11 @@ static  SourceType _sourceType = SourceTypeLaunchImage;
                 
             } completed:^(UIImage *image,NSData *imageData,NSError *error,NSURL *url){
                 if(!error){
+                    if (![YXLaunchAd shareLaunchAd].customAdView) {
+                        /** skipButton */
+                        [self addSkipButtonForConfiguration:configuration];
+                        [self startSkipDispathTimer];
+                    }
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored"-Wdeprecated-declarations"
                     if ([weakSelf.delegate respondsToSelector:@selector(YXLaunchAd:imageDownLoadFinish:)]) {
@@ -781,7 +787,7 @@ static  SourceType _sourceType = SourceTypeLaunchImage;
                     [self->_skipButton setTitleWithSkipType:configuration.skipButtonType duration:duration];
                 }
             }
-            if(duration==0){
+            if(duration==1){
                 DISPATCH_SOURCE_CANCEL_SAFE(self->_skipTimer);
                 [self removeAndAnimate]; return ;
             }
@@ -802,7 +808,12 @@ static  SourceType _sourceType = SourceTypeLaunchImage;
         }
             break;
         case ShowFinishAnimateFadein:{
-            [self removeAndAnimateDefault];
+            [UIView transitionWithView:_adWindow duration:duration options:UIViewAnimationOptionCurveEaseInOut animations:^{
+                self->_adWindow.transform = CGAffineTransformMakeScale(1.5, 1.5);
+                self->_adWindow.alpha = 0;
+            } completion:^(BOOL finished) {
+                [self remove];
+            }];
         }
             break;
         case ShowFinishAnimateLite:{
@@ -882,7 +893,7 @@ static  SourceType _sourceType = SourceTypeLaunchImage;
     YXLaunchAdConfiguration * configuration = [self commonConfiguration];
     CGFloat duration = showFinishAnimateTimeDefault;
     if(configuration.showFinishAnimateTime>0) duration = configuration.showFinishAnimateTime;
-    [UIView transitionWithView:_adWindow duration:0.3 options:UIViewAnimationOptionTransitionNone animations:^{
+    [UIView transitionWithView:_adWindow duration:0.3 options:UIViewAnimationOptionCurveEaseIn animations:^{
         self->_adWindow.frame = ({
             CGRect frame;
             frame = CGRectMake(0, [UIScreen mainScreen].bounds.size.height, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height);

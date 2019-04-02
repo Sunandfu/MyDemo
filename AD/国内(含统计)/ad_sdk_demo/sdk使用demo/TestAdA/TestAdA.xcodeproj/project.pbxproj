@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		8202E77A21A5221E00586F04 /* BUAdSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 8202E77821A5221E00586F04 /* BUAdSDK.bundle */; };
 		8202E77B21A5221E00586F04 /* BUAdSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8202E77921A5221E00586F04 /* BUAdSDK.framework */; };
-		8214500921B7B4DA00081AED /* BUAdSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8214500321B7B4DA00081AED /* BUAdSDK.framework */; };
 		8214500E21B7B5EE00081AED /* YXScrollerBannerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8214500D21B7B5EE00081AED /* YXScrollerBannerViewController.m */; };
 		8214501121B7B7AD00081AED /* YXMotivationVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8214500F21B7B7AD00081AED /* YXMotivationVideoViewController.m */; };
 		82165733209FEB27003A9AC2 /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 82165732209FEB27003A9AC2 /* libxml2.tbd */; };
@@ -44,7 +43,6 @@
 		8270C802206625F4005C8545 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8270C801206625F3005C8545 /* AdSupport.framework */; };
 		8270C80420662600005C8545 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8270C80320662600005C8545 /* StoreKit.framework */; };
 		8270C8062066261F005C8545 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 8270C8052066261F005C8545 /* libz.tbd */; };
-		E73697512238E74A000BC26F /* YXInterstitialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E736974F2238E747000BC26F /* YXInterstitialViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,7 +78,6 @@
 /* Begin PBXFileReference section */
 		8202E77821A5221E00586F04 /* BUAdSDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = BUAdSDK.bundle; sourceTree = "<group>"; };
 		8202E77921A5221E00586F04 /* BUAdSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BUAdSDK.framework; sourceTree = "<group>"; };
-		8214500321B7B4DA00081AED /* BUAdSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BUAdSDK.framework; sourceTree = "<group>"; };
 		8214500C21B7B5EE00081AED /* YXScrollerBannerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXScrollerBannerViewController.h; sourceTree = "<group>"; };
 		8214500D21B7B5EE00081AED /* YXScrollerBannerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXScrollerBannerViewController.m; sourceTree = "<group>"; };
 		8214500F21B7B7AD00081AED /* YXMotivationVideoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXMotivationVideoViewController.m; sourceTree = "<group>"; };
@@ -134,8 +131,6 @@
 		8270C801206625F3005C8545 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		8270C80320662600005C8545 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		8270C8052066261F005C8545 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
-		E736974F2238E747000BC26F /* YXInterstitialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXInterstitialViewController.m; sourceTree = "<group>"; };
-		E73697502238E74A000BC26F /* YXInterstitialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXInterstitialViewController.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,7 +147,6 @@
 				8216573B209FEB60003A9AC2 /* SystemConfiguration.framework in Frameworks */,
 				8266993A21959ADB00B1EC3E /* libWeChatSDK.a in Frameworks */,
 				82165739209FEB4E003A9AC2 /* CoreTelephony.framework in Frameworks */,
-				8214500921B7B4DA00081AED /* BUAdSDK.framework in Frameworks */,
 				82165737209FEB41003A9AC2 /* Security.framework in Frameworks */,
 				82165735209FEB2D003A9AC2 /* WebKit.framework in Frameworks */,
 				8202E77B21A5221E00586F04 /* BUAdSDK.framework in Frameworks */,
@@ -193,7 +187,6 @@
 			isa = PBXGroup;
 			children = (
 				8202E77821A5221E00586F04 /* BUAdSDK.bundle */,
-				8214500321B7B4DA00081AED /* BUAdSDK.framework */,
 				8202E77921A5221E00586F04 /* BUAdSDK.framework */,
 				8266993621959ADB00B1EC3E /* Weichat */,
 			);
@@ -239,8 +232,6 @@
 				8270C79220661EAA005C8545 /* AppDelegate.m */,
 				826ADCDD216C4C50005F0577 /* YXBannerViewController.h */,
 				826ADCDE216C4C50005F0577 /* YXBannerViewController.m */,
-				E73697502238E74A000BC26F /* YXInterstitialViewController.h */,
-				E736974F2238E747000BC26F /* YXInterstitialViewController.m */,
 				826ADCE2216C4C50005F0577 /* YXLaunchScreenViewController.h */,
 				826ADCE0216C4C50005F0577 /* YXLaunchScreenViewController.m */,
 				82367AA3217D729500B4FB4E /* YXFeedAdRegisterView.h */,
@@ -446,7 +437,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				8214500E21B7B5EE00081AED /* YXScrollerBannerViewController.m in Sources */,
-				E73697512238E74A000BC26F /* YXInterstitialViewController.m in Sources */,
 				82367AA8217D729500B4FB4E /* YXFeedAdRegisterView.m in Sources */,
 				8238B124217F04C300346C23 /* YXFeedAdTableViewCell.m in Sources */,
 				82367AA7217D729500B4FB4E /* YXFeedAdViewController.m in Sources */,

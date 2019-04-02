@@ -149,7 +149,7 @@ static NSString *YXReachabilityFlags_(SCNetworkReachabilityFlags flags) {
 
 static void logYXReachabilityFlags_(const char *name, int line, SCNetworkReachabilityFlags flags) {
 	
-    NSLog(@"%s (%d) \n\t%@", name, line, YXReachabilityFlags_(flags));
+//    NSLog(@"%s (%d) \n\t%@", name, line, YXReachabilityFlags_(flags));
 	
 } // logYXReachabilityFlags_()
 
@@ -171,7 +171,7 @@ static void logNetworkStatus_(const char *name, int line, NetworkStatus status) 
 			break;
 	}
 	
-	NSLog(@"%s (%d) \n\tNetwork Status: %@", name, line, statusString);
+//    NSLog(@"%s (%d) \n\tNetwork Status: %@", name, line, statusString);
 	
 } // logNetworkStatus_()
 

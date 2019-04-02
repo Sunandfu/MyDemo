@@ -15,8 +15,9 @@
 static  NSString * bannerMediaID = @"wxbus_ios_banner";
 
 @interface YXBannerViewController ()<YXBannerAdManagerDelegate>
-
-@property (nonatomic, strong) YXBannerAdManager *bannerView;
+{
+    YXBannerAdManager *bannerView;
+}
 
 @end
 
@@ -38,22 +39,22 @@ static  NSString * bannerMediaID = @"wxbus_ios_banner";
 }
 - (void)bannerBtnClicked:(UIButton*)button
 {
-    if (self.bannerView) {
-        [self.bannerView removeFromSuperview];
-        self.bannerView = nil;
+    if (bannerView) {
+        [bannerView removeFromSuperview];
+        bannerView = nil;
     }
     
     
-    self.bannerView =  [[YXBannerAdManager alloc]initWithFrame:CGRectMake(0,64, [UIScreen mainScreen].bounds.size.width, 50)];
-    self.bannerView.delegate = self;
-    self.bannerView.mediaId = bannerMediaID;
-    self.bannerView.bannerType = BottomBannerType;
-    self.bannerView.adSize = YXAD_BannerCustom;
-    self.bannerView.isLoop = YES;
-    self.bannerView.interval = 30;
-    [self.view addSubview:self.bannerView];
+    bannerView =  [[YXBannerAdManager alloc]initWithFrame:CGRectMake(0,64, [UIScreen mainScreen].bounds.size.width, 50)];
+    bannerView.interval = 30;
+    bannerView.isLoop = YES;
+    bannerView.delegate = self;
+    bannerView.mediaId = bannerMediaID;
+    bannerView.bannerType = BottomBannerType;
+    bannerView.adSize = YXAD_BannerCustom;
+    [self.view addSubview:bannerView];
     NSLog(@"Banner请求");
-    [self.bannerView loadBannerAD];
+    [bannerView loadBannerAD];
 }
 - (void)didLoadBannerAd:(UIView *)adView
 {
@@ -77,6 +78,11 @@ static  NSString * bannerMediaID = @"wxbus_ios_banner";
     // Dispose of any resources that can be recreated.
 }
 
+
+- (void)dealloc
+{
+    NSLog(@"%@ %@",[self class],NSStringFromSelector(_cmd));
+}
 /*
 #pragma mark - Navigation
 

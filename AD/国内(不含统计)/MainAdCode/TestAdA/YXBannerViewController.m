@@ -11,6 +11,7 @@
 #import "YXBannerAdManager.h"
 
 #import "AppDelegate.h"
+#import "NSString+SFAES.h"
 
 static  NSString * bannerMediaID = @"wxbus_ios_banner";
 
@@ -59,17 +60,13 @@ static  NSString * bannerMediaID = @"wxbus_ios_banner";
 - (void)didLoadBannerAd:(UIView *)adView
 {
     NSLog(@"Banner广告请求成功");
-    
 }
 
-
-- (void)didClickedBannerAd
-{
+- (void)didClickedBannerAd{
     NSLog(@"Banner广告点击");
 }
 
-- (void)didFailedLoadIconAd:(NSError *)error
-{
+- (void)didFailedLoadIconAd:(NSError *)error{
     NSLog(@"Banner广告请求失败");
 }
 
@@ -77,7 +74,6 @@ static  NSString * bannerMediaID = @"wxbus_ios_banner";
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
 
 - (void)dealloc
 {

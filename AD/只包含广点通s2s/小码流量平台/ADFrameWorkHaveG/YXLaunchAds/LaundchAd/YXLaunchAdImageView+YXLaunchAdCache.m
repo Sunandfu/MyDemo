@@ -56,7 +56,7 @@
                 weakSelf.animatedImage = nil;
             }
         }
-        NSLog(@"imageDownResult:%@***andURL:%@***loadImage:%@***error%@",error == nil? @"Success":@"Failed",imageURL,image,error);
+//        NSLog(@"imageDownResult:%@***andURL:%@***loadImage:%@***error%@",error == nil? @"Success":@"Failed",imageURL,image,error);
         if(completedBlock) completedBlock(image,imageData,error,imageURL);
     }];
 }

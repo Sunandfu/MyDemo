@@ -9,8 +9,8 @@
 #import "YXIconViewController.h"
 
 #import <YXLaunchAds/YXIconAdManager.h>
-//znsh_ios_dwicon
-//znsh_ios_wlicon
+
+
 static  NSString * iconMediaID = @"znsh_ios_wlicon";
 
 @interface YXIconViewController ()<YXIconAdManagerDelegate>
@@ -47,7 +47,6 @@ static  NSString * iconMediaID = @"znsh_ios_wlicon";
     iconAd.mediaId = iconMediaID;
     iconAd.adType = YXIconType;
     iconAd.delegate = self;
-    iconAd.controller = self;
     [iconAd loadIconAd];
     NSLog(@"Icon请求");
 }
@@ -111,14 +110,16 @@ static  NSString * iconMediaID = @"znsh_ios_wlicon";
     
     //拖动完之后，每次都要用setTranslation:方法制0这样才不至于不受控制般滑动出视图
     [rec setTranslation:CGPointMake(0, 0) inView:[UIApplication sharedApplication].keyWindow];
-    
-    
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
+- (void)dealloc
+{
+    NSLog(@"%@ %@",[self class],NSStringFromSelector(_cmd));
+}
 /*
 #pragma mark - Navigation
 

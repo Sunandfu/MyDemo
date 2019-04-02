@@ -781,7 +781,7 @@ static  SourceType _sourceType = SourceTypeLaunchImage;
                     [self->_skipButton setTitleWithSkipType:configuration.skipButtonType duration:duration];
                 }
             }
-            if(duration==0){
+            if(duration==1){
                 DISPATCH_SOURCE_CANCEL_SAFE(self->_skipTimer);
                 [self removeAndAnimate]; return ;
             }
@@ -802,7 +802,12 @@ static  SourceType _sourceType = SourceTypeLaunchImage;
         }
             break;
         case ShowFinishAnimateFadein:{
-            [self removeAndAnimateDefault];
+            [UIView transitionWithView:_adWindow duration:duration options:UIViewAnimationOptionCurveEaseInOut animations:^{
+                self->_adWindow.transform = CGAffineTransformMakeScale(1.5, 1.5);
+                self->_adWindow.alpha = 0;
+            } completion:^(BOOL finished) {
+                [self remove];
+            }];
         }
             break;
         case ShowFinishAnimateLite:{
@@ -882,7 +887,7 @@ static  SourceType _sourceType = SourceTypeLaunchImage;
     YXLaunchAdConfiguration * configuration = [self commonConfiguration];
     CGFloat duration = showFinishAnimateTimeDefault;
     if(configuration.showFinishAnimateTime>0) duration = configuration.showFinishAnimateTime;
-    [UIView transitionWithView:_adWindow duration:0.3 options:UIViewAnimationOptionTransitionNone animations:^{
+    [UIView transitionWithView:_adWindow duration:0.3 options:UIViewAnimationOptionCurveEaseIn animations:^{
         self->_adWindow.frame = ({
             CGRect frame;
             frame = CGRectMake(0, [UIScreen mainScreen].bounds.size.height, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height);

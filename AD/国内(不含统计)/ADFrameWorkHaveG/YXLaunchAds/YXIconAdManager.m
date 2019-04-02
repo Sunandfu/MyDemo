@@ -13,8 +13,11 @@
 #import "YXWebViewController.h"
 #import <SafariServices/SafariServices.h>
 #import "WXApi.h"
+#import "YXMenuViewCell.h"
+#import "YXPopupMenu.h"
+#import "NetTool.h"
 
-@interface YXIconAdManager()<YXIconAdManagerDelegate,YXWebViewDelegate,UIWebViewDelegate,UIGestureRecognizerDelegate,WXApiDelegate>
+@interface YXIconAdManager()<YXIconAdManagerDelegate,YXWebViewDelegate,UIWebViewDelegate,UIGestureRecognizerDelegate,WXApiDelegate,YXPopupMenuDelegate>
 {
     CGFloat _width;
     CGFloat _height;
@@ -25,6 +28,13 @@
     
 }
 @property (nonatomic, strong) NSDictionary *adDict;
+
+@property (nonatomic, strong) NSMutableArray *adDictArray;
+
+@property (nonatomic, strong) NSMutableArray *iconArray;
+@property (nonatomic, strong) NSMutableArray *titleArray;
+
+@property (nonatomic) CGPoint currentPoint;
 
 @end
 
@@ -47,9 +57,16 @@
 - (void)XZAD
 {
     NSString *macId = [Network sharedInstance].ipStr;
-    
-    [[Network sharedInstance] prepareDataAndRequestWithadkeyString:_mediaId width:_width height:_height macID:macId uid:[NetTool getOpenUDID] adCount:1];
-    [self initXAD];
+    if (self.mediaId) {
+        [[Network sharedInstance] prepareDataAndRequestWithadkeyString:_mediaId width:_width height:_height macID:macId uid:[NetTool getOpenUDID] adCount:1];
+        [self initXAD];
+    } else {
+        self.adDictArray = [NSMutableArray arrayWithCapacity:0];
+        for (NSString *mediaId in self.mediaIdArray) {
+            [[Network sharedInstance] prepareDataAndRequestWithadkeyString:mediaId width:_width height:_height macID:macId uid:[NetTool getOpenUDID] adCount:1];
+            [self initXAD];
+        }
+    }
 }
 
 - (void)initXAD
@@ -64,8 +81,11 @@
                     [self failedError:errors];
                     return ;
                 }
-                self.adDict = arr.lastObject;
-                
+                if (self.mediaId) {
+                    self.adDict = arr.lastObject;
+                } else {
+                    [self.adDictArray addObject:arr.lastObject];
+                }
                 if ([json objectForKey:@"data"]) {
                     if ([[json objectForKey:@"data"] isKindOfClass:[NSArray class]]) {
                         NSMutableArray *muarray = [json objectForKey:@"data"];
@@ -95,25 +115,46 @@
 
 -(void) showNativeAd
 {
-    if(!self.adDict){//40041无广告
-        NSError *errors = [NSError errorWithDomain:@"暂无填充广告，请重试" code:400 userInfo:nil];
-        [self failedError:errors];
-        return;
+    if (self.mediaId) {
+        if(!self.adDict){//40041无广告
+            NSError *errors = [NSError errorWithDomain:@"暂无填充广告，请重试" code:400 userInfo:nil];
+            [self failedError:errors];
+            return;
+        }
+        _YXGTMDevLog(@"Func type 1 start") ;
+        NSString *img_url = self.adDict[@"img_url"];
+        //    NSString *click_url = self.adDict[@"click_url"];
+        //    _returnDict = [NSDictionary dictionaryWithObjectsAndKeys:click_url,@"click_url",img_url,@"img_url",@"1",@"type", nil];
+        //    if (self.adDict[@"logo_url"]) {
+        //        NSString * logo_url = self.adDict[@"logo_url"] ;
+        //        _returnDict = [NSDictionary dictionaryWithObjectsAndKeys:logo_url,@"logo_url",click_url,@"click_url",img_url,@"img_url",@"1",@"type", nil];
+        //    }
+        NSString *lastCompnoments = [[img_url componentsSeparatedByString:@"/"] lastObject];
+        if([lastCompnoments hasSuffix:@"gif"]){
+            [self showGif];
+        }else{
+            [self showJpgImage];
+        }
+    } else {
+        if(self.adDictArray.count==0){//40041无广告
+            NSError *errors = [NSError errorWithDomain:@"暂无填充广告，请重试" code:400 userInfo:nil];
+            [self failedError:errors];
+            return;
+        }
+        _YXGTMDevLog(@"Func type 1 start");
+        self.iconArray = [NSMutableArray arrayWithCapacity:0];
+        self.titleArray = [NSMutableArray arrayWithCapacity:0];
+        for (NSDictionary *dict in self.adDictArray) {
+            NSString *img_url = dict[@"img_url"];
+            [self.iconArray addObject:img_url];
+            NSString *title = dict[@"title"];
+            [self.titleArray addObject:title];
+        }
+        if(self.delegate && [self.delegate respondsToSelector:@selector(didLoadIconAd:)]){
+            [self.delegate didLoadIconAd:self];
+        }
     }
-    _YXGTMDevLog(@"Func type 1 start") ;
-    NSString *img_url = self.adDict[@"img_url"];
-//    NSString *click_url = self.adDict[@"click_url"];
-//    _returnDict = [NSDictionary dictionaryWithObjectsAndKeys:click_url,@"click_url",img_url,@"img_url",@"1",@"type", nil];
-//    if (self.adDict[@"logo_url"]) {
-//        NSString * logo_url = self.adDict[@"logo_url"] ;
-//        _returnDict = [NSDictionary dictionaryWithObjectsAndKeys:logo_url,@"logo_url",click_url,@"click_url",img_url,@"img_url",@"1",@"type", nil];
-//    }
-    NSString *lastCompnoments = [[img_url componentsSeparatedByString:@"/"] lastObject];
-    if([lastCompnoments hasSuffix:@"gif"]){
-        [self showGif];
-    }else{
-        [self showJpgImage];
-    }
+    
 }
 
 -(void) showGif
@@ -332,7 +373,7 @@
             YXWebViewController *web = [YXWebViewController new];
             web.URLString = urlStr;
             web.delegate = self;
-            [self.controller presentViewController:web animated:YES completion:nil];
+            [[NetTool getCurrentViewController] presentViewController:web animated:YES completion:nil];
         }
     }
     
@@ -416,6 +457,186 @@
             [Network groupNotifyToSerVer:viewS];
         }
     }
+}
+- (void)showCustomPopupMenuWithPoint:(CGPoint)point
+{
+    if (self.iconArray.count==0) {
+        return;
+    }
+    self.currentPoint = point;
+    [YXPopupMenu showAtPoint:self.currentPoint titles:self.titleArray icons:self.iconArray menuWidth:(self.itemWidth?self.itemWidth:80) otherSettings:^(YXPopupMenu *popupMenu) {
+        popupMenu.dismissOnSelected = YES;
+        popupMenu.isShowShadow = YES;
+        popupMenu.delegate = self;
+        popupMenu.type = YXPopupMenuTypeDefault;
+        popupMenu.priorityDirection = (int)self.popType;
+        popupMenu.cornerRadius = 8;
+        popupMenu.itemHeight = self.itemHeight?self.itemHeight:100;
+//        popupMenu.rectCorner = UIRectCornerTopLeft| UIRectCornerTopRight;
+        popupMenu.tag = 100;
+        if (self.menuGroundColor) {
+            popupMenu.backColor = self.menuGroundColor;
+        }
+        //如果不加这句默认是 UITableViewCellSeparatorStyleNone 的
+//        popupMenu.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
+    }];
+}
+
+#pragma mark - YXPopupMenuDelegate
+- (void)ybPopupMenu:(YXPopupMenu *)ybPopupMenu didSelectedAtIndex:(NSInteger)index
+{
+    //推荐回调
+    CGPoint point = self.currentPoint;
+    NSString * x =  [NSString stringWithFormat:@"%f",point.x ];
+    NSString * y =  [NSString stringWithFormat:@"%f",point.y ];
+    
+    NSString *widthStr = [NSString stringWithFormat:@"%f",_width];
+    NSString *heightStr = [NSString stringWithFormat:@"%f",_height];
+    
+    //    NSString *dicStr =  [NSString stringWithFormat:@"{%@:%@,%@:%@,%@:%@,%@:%@}",@"down_x",x,@"down_y",y,@"up_x",x,@"up_y",y];
+    if(self.adDictArray.count==0){
+        return;
+    }
+    // 1.跳转链接
+    NSDictionary *adDic = self.adDictArray[index];
+    NSString *urlStr = adDic[@"click_url"];
+    
+    NSString * click_position = [NSString stringWithFormat:@"%@",adDic[@"click_position"]];
+    if ([click_position isEqualToString:@"1"]) {
+        if (adDic[@"width"]) {
+            urlStr = [urlStr stringByReplacingOccurrencesOfString:@"__REQ_WIDTH__" withString:[NSString stringWithFormat:@"%@",adDic[@"width"]]];
+        }
+        if (adDic[@"height"]) {
+            urlStr = [urlStr stringByReplacingOccurrencesOfString:@"__REQHEIGHT__" withString:[NSString stringWithFormat:@"%@",adDic[@"height"]]];
+        }
+        urlStr = [urlStr stringByReplacingOccurrencesOfString:@"__WIDTH__" withString:widthStr];
+        urlStr = [urlStr stringByReplacingOccurrencesOfString:@"__HEIGHT__" withString:heightStr];
+        
+        urlStr = [urlStr stringByReplacingOccurrencesOfString:@"__DOWN_X__" withString:x];
+        urlStr = [urlStr stringByReplacingOccurrencesOfString:@"__DOWN_Y__" withString:y];
+        urlStr = [urlStr stringByReplacingOccurrencesOfString:@"__UP_X__" withString:x];
+        urlStr = [urlStr stringByReplacingOccurrencesOfString:@"__UP_Y__" withString:y];
+        
+    }
+    
+    NSString * ac_type = [NSString stringWithFormat:@"%@",adDic[@"ac_type"]];
+    
+    if ([ac_type isEqualToString:@"1"] || [ac_type isEqualToString:@"2"]) {
+        NSURL *url = [NSURL URLWithString:urlStr];
+        if (@available(iOS 9.0, *)) {
+            SFSafariViewController *safariVC = [[SFSafariViewController alloc] initWithURL:url];
+            UIViewController* rootVC = [[UIApplication sharedApplication].delegate window].rootViewController;
+            [rootVC showViewController:safariVC sender:nil];
+            
+        } else {
+            // Fallback on earlier versions
+            [[UIApplication sharedApplication] openURL:url];
+        }
+    }else if ([ac_type isEqualToString:@"7"]){
+        
+        NSString * miniPath = [NSString stringWithFormat:@"%@",adDic[@"miniPath"] ];
+        miniPath = [miniPath stringByReplacingOccurrencesOfString:@" " withString:@""];
+        NSString * miniProgramOriginId = [NSString stringWithFormat:@"%@",adDic[@"miniProgramOriginId"]];
+        
+        WXLaunchMiniProgramReq *launchMiniProgramReq = [WXLaunchMiniProgramReq object];
+        launchMiniProgramReq.userName = miniProgramOriginId;  //拉起的小程序的username
+        launchMiniProgramReq.path = miniPath;    //拉起小程序页面的可带参路径，不填默认拉起小程序首页
+        launchMiniProgramReq.miniProgramType = WXMiniProgramTypeRelease; //拉起小程序的类型
+        
+        BOOL installWe = [WXApi isWXAppInstalled];
+        if (installWe) {
+            [WXApi sendReq:launchMiniProgramReq];
+        }else{
+            NSLog(@"未安装微信");
+        }
+        
+        [Network notifyToServer:nil serverUrl:urlStr completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
+            if(connectionError){
+                NSLog(@"#####%@\error",[connectionError debugDescription]);
+            }else{
+                NSDictionary *json =  [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
+                if (json) {
+                    NSLog(@"%@",json);
+                }
+            }
+        }];
+    }else{
+        if(urlStr && ![urlStr isEqualToString:@""]){
+            YXWebViewController *web = [YXWebViewController new];
+            web.URLString = urlStr;
+            web.delegate = self;
+            [[NetTool getCurrentViewController] presentViewController:web animated:YES completion:nil];
+        }
+    }
+    
+    // 2.上报服务器
+    if (![[NetTool gettelModel] isEqualToString:@"iPhone Simulator"])
+    {
+        // 上报服务器
+        NSArray *viewS = adDic[@"click_notice_urls"];
+        if ([click_position isEqualToString:@"1"]) {
+            
+            if (adDic[@"width"]) {
+                urlStr = [urlStr stringByReplacingOccurrencesOfString:@"__REQ_WIDTH__" withString:[NSString stringWithFormat:@"%@",adDic[@"width"]]];
+            }
+            if (adDic[@"height"]) {
+                urlStr = [urlStr stringByReplacingOccurrencesOfString:@"__REQHEIGHT__" withString:[NSString stringWithFormat:@"%@",adDic[@"height"]]];
+            }
+            urlStr = [urlStr stringByReplacingOccurrencesOfString:@"__WIDTH__" withString:widthStr];
+            urlStr = [urlStr stringByReplacingOccurrencesOfString:@"__HEIGHT__" withString:heightStr];
+            
+            urlStr = [urlStr stringByReplacingOccurrencesOfString:@"__DOWN_X__" withString:x];
+            urlStr = [urlStr stringByReplacingOccurrencesOfString:@"__DOWN_Y__" withString:y];
+            urlStr = [urlStr stringByReplacingOccurrencesOfString:@"__UP_X__" withString:x];
+            urlStr = [urlStr stringByReplacingOccurrencesOfString:@"__UP_Y__" withString:y];
+        }
+        [Network groupNotifyToSerVer:viewS];
+    }
+    [self clikedADs2sPan];
+}
+- (UITableViewCell *)ybPopupMenu:(YXPopupMenu *)ybPopupMenu cellForRowAtIndex:(NSInteger)index
+{
+    if (ybPopupMenu.tag != 100) {
+        return nil;
+    }
+    static NSString * identifier = @"YXMenuViewCell";
+    YXMenuViewCell * cell = [ybPopupMenu.tableView dequeueReusableCellWithIdentifier:identifier];
+    if (!cell) {
+        cell = [[YXMenuViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:identifier];
+    }
+//    if (self.menuGroundColor) {
+//        cell.backgroundColor = self.menuGroundColor;
+//    }
+    if (self.titleColor) {
+        cell.titleLabel.textColor = self.titleColor;
+    }
+    if (self.titleFont) {
+        cell.titleLabel.font = self.titleFont;
+    }
+    if ([self.titleArray[index] isKindOfClass:[NSAttributedString class]]) {
+        cell.titleLabel.attributedText = self.titleArray[index];
+    }else if ([self.titleArray[index] isKindOfClass:[NSString class]]) {
+        cell.titleLabel.text = self.titleArray[index];
+    }else {
+        cell.titleLabel.text = nil;
+    }
+    if (self.contentMode) {
+        cell.iconImageView.contentMode = self.contentMode;
+    }
+    if (self.iconArray.count >= index + 1) {
+        if ([self.iconArray[index] hasPrefix:@"http"]) {
+            [NetTool setImage:cell.iconImageView WithURLStr:self.iconArray[index] placeholderImage:nil];
+        }else if ([self.iconArray[index] isKindOfClass:[NSString class]]) {
+            cell.iconImageView.image = [UIImage imageNamed:self.iconArray[index]];
+        }else if ([self.iconArray[index] isKindOfClass:[UIImage class]]){
+            cell.iconImageView.image = self.iconArray[index];
+        }else {
+            cell.iconImageView.image = nil;
+        }
+    }else {
+        cell.iconImageView.image = nil;
+    }
+    return cell;
 }
 
 @end

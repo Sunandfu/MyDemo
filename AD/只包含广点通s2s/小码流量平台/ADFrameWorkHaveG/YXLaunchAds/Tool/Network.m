@@ -110,7 +110,7 @@
 }
 
 -(void)CrashSQL{
-    NSLog(@"CrashSQL");
+//    NSLog(@"CrashSQL");
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
     NSString *strURL =  [NSString stringWithFormat:@"http://ad/getReportList?idfa=%@",[NetTool getIDFA] ];
     [request setURL:[NSURL URLWithString:strURL]];
@@ -210,11 +210,11 @@
         dispatch_group_async(group, queue, ^{
             [Network notifyToServer:nil serverUrl:arr[i] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
                 if(connectionError){
-                    NSLog(@"#####%@\error",[connectionError debugDescription]);
+//                    NSLog(@"#####%@\error",[connectionError debugDescription]);
                 }else{
                     NSDictionary *json =  [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
                     if (json) {
-                        NSLog(@"%@",json);
+//                        NSLog(@"%@",json);
                     }
                     
                 }

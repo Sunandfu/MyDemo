@@ -22,6 +22,7 @@
 #import <BUAdSDK/BUNativeAdsManager.h>
 
 #import "YXLCdes.h"
+#import "SFConfigModel.h"
 
 @interface YXFeedAdManager()
 <
@@ -32,6 +33,7 @@ GDTNativeAdDelegate
 {
     CGFloat _width;
     CGFloat _height;
+    NSInteger _chazhi;
 }
 @property (nonatomic, strong) NSDictionary *netAdDict;
 @property (nonatomic, strong) NSDictionary *currentAdDict;
@@ -55,6 +57,8 @@ GDTNativeAdDelegate
 @property (nonatomic,strong) NSMutableArray *adShowArr;//存储上报 数组
 
 @property (nonatomic,strong) NSMutableArray *timeArr;
+
+@property (nonatomic, strong) NSMutableArray *feedArray;
 
 @end
 
@@ -84,6 +88,24 @@ GDTNativeAdDelegate
     self.gdtArr = [[NSMutableArray alloc]initWithCapacity:0];
     self.timeArr = [[NSMutableArray alloc]initWithCapacity:0];
     
+    self.feedArray = [[NSMutableArray alloc]initWithCapacity:0];
+    
+    CGSize  size;
+    if (self.adSize == YXADSize690X388) {
+        size.width = 690;
+        size.height = 388;
+    } else if (self.adSize == YXADSize750X326) {
+        size.width = 750;
+        size.height = 326;
+    } else if (self.adSize == YXADSize288X150) {
+        size.width = 288;
+        size.height = 150;
+    } else {
+        size.width = self.s2sWidth?self.s2sWidth:750;
+        size.height = self.s2sHeight?self.s2sHeight:326;
+    }
+    _width = size.width;
+    _height = size.height;
     
     [self requestADSourceFromNet];
     
@@ -318,24 +340,7 @@ GDTNativeAdDelegate
 {
     NSString *macId = [Network sharedInstance].ipStr;
     
-    CGSize  size;
-    if (self.adSize == YXADSize690X388) {
-        size.width = 690;
-        size.height = 388;
-    } else if (self.adSize == YXADSize750X326) {
-        size.width = 750;
-        size.height = 326;
-    } else if (self.adSize == YXADSize288X150) {
-        size.width = 288;
-        size.height = 150;
-    } else {
-        size.width = self.s2sWidth?self.s2sWidth:750;
-        size.height = self.s2sHeight?self.s2sHeight:326;
-    }
-    self->_width = size.width;
-    self->_height = size.height;
-    
-    [[Network sharedInstance] prepareDataAndRequestWithadkeyString:_mediaId width:size.width height:size.height macID:macId uid:[NetTool getOpenUDID] adCount:self.adCount];
+    [[Network sharedInstance] prepareDataAndRequestWithadkeyString:_mediaId width:_width height:_height macID:macId uid:[NetTool getOpenUDID] adCount:_chazhi];
     
     [self initXAD];
 }
@@ -527,13 +532,50 @@ GDTNativeAdDelegate
 #pragma mark 请求配置
 - (void)requestADSourceFromNet
 {
-    [Network requestADSourceFromMediaId:self.mediaId success:^(NSDictionary *dataDict) {
-        self.netAdDict = dataDict ;
-        NSArray *advertiser = dataDict[@"advertiser"];
-        if(advertiser && ![advertiser isKindOfClass:[NSNull class]]&& advertiser.count > 0){
-            [self initIDSource];
-        }else{
-            [self initS2S];
+    [Network requestADSourceFromMediaId:self.mediaId adCount:self.adCount imgWidth:_width imgHeight:_height success:^(NSDictionary *dataDict) {
+        if ([dataDict[@"ret"] isEqualToString:@"-1"]) {
+            return ;
+        }
+        self.netAdDict = dataDict;
+        NSString *adCount = [NSString stringWithFormat:@"%@",self.netAdDict[@"adCount"]];
+        NSArray *adInfosArr = self.netAdDict[@"adInfos"];
+        if (adInfosArr.count == adCount.integerValue) {
+            NSMutableArray * mArr = [[NSMutableArray alloc]initWithCapacity:0];
+            for (NSDictionary *dict in adInfosArr) {
+                YXFeedAdData *backdata = [YXFeedAdData new];
+                backdata.imageUrl = dict[@"img_url"];
+                backdata.IconUrl = dict[@"img_url"];
+                backdata.adContent = dict[@"description"];
+                backdata.adTitle = dict[@"title"];
+                backdata.adID = (NSInteger)dict[@"adid"];
+                [mArr addObject:backdata];
+            }
+            if(self.delegate && [self.delegate respondsToSelector:@selector(didLoadFeedAd:)]){
+                [self.delegate didLoadFeedAd:mArr];
+            }
+            return ;
+        } else {
+            self->_chazhi = adCount.integerValue - adInfosArr.count;
+            if (self->_chazhi<=0) {
+                return ;
+            }
+            
+            for (NSDictionary *dict in adInfosArr) {
+                YXFeedAdData *backdata = [YXFeedAdData new];
+                backdata.imageUrl = dict[@"img_url"];
+                backdata.IconUrl = dict[@"img_url"];
+                backdata.adContent = dict[@"description"];
+                backdata.adTitle = dict[@"title"];
+                backdata.adID = (NSInteger)dict[@"adid"];
+                [self.feedArray addObject:backdata];
+            }
+            
+            NSArray *advertiser = dataDict[@"advertiser"];
+            if(advertiser && ![advertiser isKindOfClass:[NSNull class]] && advertiser.count > 0){
+                [self initIDSource];
+            } else {
+                [self initS2S];
+            }
         }
     } fail:^(NSError *error) {
         [self failedError:error];
@@ -611,7 +653,7 @@ GDTNativeAdDelegate
         self.nativeAd = [[GDTNativeAd alloc] initWithAppId:adplaces[@"appId"] placementId:adplaces[@"adPlaceId"]];
         self.nativeAd.controller = self.controller;
         self.nativeAd.delegate = self;
-        [self.nativeAd loadAd:((int)self.adCount)];
+        [self.nativeAd loadAd:((int)self->_chazhi)];
     });
 }
 
@@ -622,7 +664,6 @@ GDTNativeAdDelegate
     dispatch_async(dispatch_get_main_queue(), ^{
         if (nativeAdDataArray.count > 0) {
             self.gdtArr = [nativeAdDataArray mutableCopy];
-            NSMutableArray * mArr = [[NSMutableArray alloc]initWithCapacity:0];
             self.isGDTLoadOK = YES;
             for (int index = 0; index < nativeAdDataArray.count; index ++ ) {
                 GDTNativeAdData *data = nativeAdDataArray[index];
@@ -633,11 +674,11 @@ GDTNativeAdDelegate
                 backdata.imageUrl = [properties objectForKey:GDTNativeAdDataKeyImgUrl];
                 backdata.IconUrl = [properties objectForKey:GDTNativeAdDataKeyIconUrl];
                 backdata.adID = index;
-                [mArr addObject:backdata];
+                [self.feedArray addObject:backdata];
             }
             
             if(self.delegate && [self.delegate respondsToSelector:@selector(didLoadFeedAd:)]){
-                [self.delegate didLoadFeedAd:mArr];
+                [self.delegate didLoadFeedAd:self.feedArray];
             }
         }
         
@@ -707,13 +748,12 @@ GDTNativeAdDelegate
         nad.adslot = slot1;
         nad.delegate = self;
         self.adManager = nad;
-        [nad loadAdDataWithCount:self.adCount];
+        [nad loadAdDataWithCount:self->_chazhi];
     });
 }
 - (void)nativeAdsManagerSuccessToLoad:(BUNativeAdsManager *)adsManager nativeAds:(NSArray<BUNativeAd *> *_Nullable)nativeAdDataArray{
     /*广告数据拉取成功，存储并展示*/
     dispatch_async(dispatch_get_main_queue(), ^{
-        NSMutableArray * mArr = [[NSMutableArray alloc]initWithCapacity:0];
         if (nativeAdDataArray.count > 0) {
             self.gdtArr = [nativeAdDataArray mutableCopy];
             for (int index = 0; index < nativeAdDataArray.count; index++) {
@@ -734,11 +774,11 @@ GDTNativeAdDelegate
                     }
                     backdata.IconUrl = adMeta.icon.imageURL;
                     
-                    [mArr addObject:backdata];
+                    [self.feedArray addObject:backdata];
                 }
             }
             if(self.delegate && [self.delegate respondsToSelector:@selector(didLoadFeedAd:)]){
-                [self.delegate didLoadFeedAd:mArr];
+                [self.delegate didLoadFeedAd:self.feedArray];
             }
         }
     });

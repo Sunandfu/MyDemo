@@ -111,6 +111,10 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)dealloc
+{
+    NSLog(@"%@ %@",[self class],NSStringFromSelector(_cmd));
+}
 /*
 #pragma mark - Navigation
 

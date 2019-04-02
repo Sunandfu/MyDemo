@@ -48,13 +48,32 @@
 /** 广告类型 */
 @property(nonatomic,assign) YXADTYPE adType;
 
-/*
- *  viewControllerForPresentingModalView
- *  详解：[必选]开发者需传入用来弹出目标页的ViewController，一般为当前ViewController
- */
-@property (nonatomic, weak) UIViewController *controller;
 
 /**  开始加载广告  */
 - (void)loadIconAd;
+
+/**
+ icon数组形式 与mediaId互斥
+ */
+@property (nonatomic, strong) NSArray<NSString *> *mediaIdArray;
+
+/**
+ 多icon样式时，以下参数可自定义设置
+ */
+//menu的颜色
+@property (nonatomic, strong) UIColor *menuGroundColor;
+//字体颜色
+@property (nonatomic, strong) UIColor *titleColor;
+//字体大小
+@property (nonatomic, strong) UIFont *titleFont;
+//箭头方向
+@property(nonatomic,assign) YXPopupMenuDirection popType;
+
+/**
+ 显示icon数组view
+
+ @param point 传入点击view的point
+ */
+- (void)showCustomPopupMenuWithPoint:(CGPoint)point;
 
 @end

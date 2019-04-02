@@ -80,16 +80,16 @@
     adManager.delegate = self;
     [adManager loadLaunchAdWithShowAdWindow:self.window];
     
-//
-//    UIView *bottom = [[UIView alloc]initWithFrame:CGRectMake(0, [UIScreen mainScreen].bounds.size.height * 0.8, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height * 0.2)];
-////    bottom.backgroundColor = [UIColor whiteColor];
-//    UIImageView *logoImageView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"yxadlogo"]];
-//    //把logo置于 bottom 中心
-//    logoImageView.frame = bottom.bounds;
-//    logoImageView.contentMode =  UIViewContentModeCenter;
-//
-//    [bottom addSubview:logoImageView];
-//    adManager.bottomView = bottom;
+
+    UIView *bottom = [[UIView alloc]initWithFrame:CGRectMake(0, [UIScreen mainScreen].bounds.size.height * 0.8, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height * 0.2)];
+//    bottom.backgroundColor = [UIColor whiteColor];
+    UIImageView *logoImageView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"yxadlogo"]];
+    //把logo置于 bottom 中心
+    logoImageView.frame = bottom.bounds;
+    logoImageView.contentMode =  UIViewContentModeCenter;
+
+    [bottom addSubview:logoImageView];
+    adManager.bottomView = bottom;
     
     
 }
