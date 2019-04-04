@@ -1,0 +1,12 @@
+[submodule "Library/ShadowPath/ShadowPath/libmaxminddb"]
+	path = Library/ShadowPath/ShadowPath/libmaxminddb
+	url = https://github.com/haxpor/libmaxminddb.git
+[submodule "Library/CallbackURLKit"]
+	path = Library/CallbackURLKit
+	url = https://github.com/phimage/CallbackURLKit.git
+[submodule "Library/YAML-Framework"]
+	path = Library/YAML-Framework
+	url = https://github.com/mirek/YAML.framework.git
+[submodule "Library/ShadowPath/ShadowPath/shadowsocks-libev"]
+	path = Library/ShadowPath/ShadowPath/shadowsocks-libev
+	url = https://github.com/haxpor/shadowsocks-libev.git
