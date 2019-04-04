@@ -27,8 +27,8 @@
 ////上报接口
 //#define TRACKIN @"http://www.yunqingugm.com:8082"
 
-#define SEVERIN @"http://119.29.146.103:8086"
-#define TRACKIN @"http://119.29.146.103:8082"
+#define SEVERIN @"http://119.29.86.211:9093"
+#define TRACKIN @"http://119.29.86.211:9095"
 
 #define ADSHOW   TRACKIN @"/log/newMimpr/v3"//展示成果
 #define ADCLICK  TRACKIN @"/log/newMclick/v3"//点击

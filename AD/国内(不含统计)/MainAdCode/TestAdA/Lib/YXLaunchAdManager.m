@@ -32,15 +32,6 @@
 #import <BUAdSDK/BUAdSDKManager.h>
 #import "BUAdSDK/BUSplashAdView.h"
 
-//是否缓存配置
-#define ISCache 0
-//直走s2s
-#define GOS2S 0
-
-#define GOGoogle 0
-
-#define Normal 1
-
 #import "YXLCdes.h"
 
 @interface YXLaunchAdManager()<YXLaunchAdDelegate,YXWebViewDelegate,GDTSplashAdDelegate,SKStoreProductViewControllerDelegate,BUSplashAdDelegate>
@@ -48,7 +39,6 @@
     NSDictionary *_resultDict;
     NSDictionary*_gdtAD;
     NSDictionary*_currentAD;
-    __block NSInteger outTimes;
     
     NSInteger cuttentTime;
     
@@ -57,8 +47,10 @@
     BOOL launchTimeOut;
     
     BOOL isGDLaunchOK;
+    
+    BOOL isOther;
 }
-
+@property (nonatomic, strong) NSDictionary *otherDict;
 @property ( strong , nonatomic ) GDTSplashAd *splash;
 @property (nonatomic,assign) BOOL isgoogleEnd;
 @property(nonatomic,copy)dispatch_source_t skipTimer;
@@ -107,6 +99,7 @@ static YXLaunchAdManager *instance = nil;
     launchTimeOut = NO;
     isGDTClicked = NO;
     isGDLaunchOK = NO;
+    isOther = NO;
     
     [YXLaunchAd setLaunchSource];
     
@@ -132,14 +125,7 @@ static YXLaunchAdManager *instance = nil;
     self.showAdWindow = showAdWindow;
     isGDLaunchOK = NO;
     
-    
-#if GOGoogle
-    [self initGGNativeAd];
-#elif Normal
     [self requestADSource];
-#endif
-    
-    self->outTimes = 1;
     
     //配置广告数据
     _imageAdconfiguration = [YXLaunchImageAdConfiguration new];
@@ -154,28 +140,7 @@ static YXLaunchAdManager *instance = nil;
 
 - (void)requestADSource
 {
-#if ISCache
-    NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
-    
-    NSDictionary *inlandDic = [userDefault objectForKey:inLandAD];
-    
-    if (inlandDic.allKeys.count > 0) {
-        NSString *time = inlandDic[@"time"];
-        NSInteger hour = [NetTool getSpendTimeWithStartDate:time stopDate:[NetTool getNowDateStr_2]];
-        if (hour <= 6) {
-            _gdtAD = inlandDic[inLandAD];
-            [self initIDSource];
-        }else{
-            [self requestADSourceFromNet];
-        }
-    }else{
-        [self requestADSourceFromNet];
-    }
-#else
-    
     [self requestADSourceFromNet];
-    
-#endif
 }
 
 #pragma mark 分配广告
@@ -212,16 +177,22 @@ static YXLaunchAdManager *instance = nil;
     double random = 1+ arc4random()%99;
     
     double sumWeight = 0;
-    //
-#if GOS2S
-    random = 60;
-#endif
+    
     for (int index = 0; index < valueArray.count; index ++ ) {
         NSDictionary *advertiser = valueArray[index];
         sumWeight += [advertiser[@"weight"] doubleValue];
         if (sumWeight >= random) {
             _currentAD = advertiser;
             break;
+        }
+    }
+    if (valueArray.count>1) {
+        isOther = YES;
+        for (int index = 0; index < valueArray.count; index ++ ) {
+            NSDictionary *advertiser = valueArray[index];
+            if (![advertiser isEqualToDictionary:_currentAD]) {
+                self.otherDict = advertiser;
+            }
         }
     }
     
@@ -231,10 +202,9 @@ static YXLaunchAdManager *instance = nil;
         NSString *name = _currentAD[@"name"];
         if ([name isEqualToString:@"广点通"]) {
             [self initGDTAD];
-        }
-        else if ([name isEqualToString:@"头条"]){
+        } else if ([name isEqualToString:@"头条"]){
             [self initChuanAD];
-        }else{
+        } else {
             [self initS2S];
         }
     }
@@ -247,7 +217,6 @@ static YXLaunchAdManager *instance = nil;
         NSArray *advertiser = dataDict[@"advertiser"];
         if(advertiser && ![advertiser isKindOfClass:[NSNull class]]&& advertiser.count > 0){
             [self initIDSource];
-            [self saveInlandInfro];
         }else{
             [self initS2S];
         }
@@ -270,19 +239,6 @@ static YXLaunchAdManager *instance = nil;
     }
     return dic;
 }
-
-
-- (void)saveInlandInfro
-{
-#if ISCache
-    NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
-    NSDictionary *inlandadDic = @{inLandAD:_gdtAD,@"time":[NetTool getNowDateStr_2]};
-    [userDefault setObject:inlandadDic forKey:inLandAD];
-    [userDefault synchronize];
-#else
-#endif
-}
-
 
 #pragma mark 穿山甲
 
@@ -381,10 +337,7 @@ static YXLaunchAdManager *instance = nil;
 
 - (void)splashAdWillVisible:(BUSplashAdView *)splashAd
 {
-    
     //    NSLog(@"spalshAdWillVisible;%s",__FUNCTION__);
-    
-    
 }
 - (void)splashAdDidClick:(BUSplashAdView *)splashAd
 {
@@ -414,6 +367,15 @@ static YXLaunchAdManager *instance = nil;
 - (void)splashAd:(BUSplashAdView *)splashAd didFailWithError:(NSError *)error
 {
     [splashAd removeFromSuperview];
+    if (isOther) {
+        if (![self.otherDict isEqualToDictionary:_currentAD]) {
+            _currentAD = self.otherDict;
+            isOther = NO;
+            [self initGDTAD];
+        }
+    } else {
+        [self initS2S];
+    }
     NSError *errors = [NSError errorWithDomain:@"" code:[[NSString stringWithFormat:@"202%ld",(long)error.code]integerValue] userInfo:nil];
     [self failedError:errors];
     
@@ -513,20 +475,23 @@ static YXLaunchAdManager *instance = nil;
         return;
     }
     launchTimeOut = YES;
-    
+    if (isOther) {
+        if (![self.otherDict isEqualToDictionary:_currentAD]) {
+            _currentAD = self.otherDict;
+            isOther = NO;
+            [self initChuanAD];
+        }
+    } else {
+        [self initS2S];
+    }
     dispatch_async(dispatch_get_main_queue(), ^{
-        
-        self->outTimes ++;
-        if (self->outTimes == 2) {
+        if (error.code == 4011) {
+            NSError *errors = [NSError errorWithDomain:@"" code:[[NSString stringWithFormat:@"201%ld",(long)error.code]integerValue] userInfo:nil];
+            [self failedError:errors];
+            [Network upOutSideToServer:ADError isError:YES code:[NSString stringWithFormat:@"201%ld",(long)error.code] msg:[NSString stringWithFormat:@"%@",error.userInfo[@"NSLocalizedDescription"]] currentAD:self->_currentAD gdtAD:self->_gdtAD mediaID:self.mediaId];
+        } else {
             NSError *errors = [NSError errorWithDomain:@"" code:40043 userInfo:nil];
             [self failedError:errors];
-            
-        }else{
-            if (error.code == 4011) {
-                NSError *errors = [NSError errorWithDomain:@"" code:[[NSString stringWithFormat:@"201%ld",(long)error.code]integerValue] userInfo:nil];
-                [self failedError:errors];
-                [Network upOutSideToServer:ADError isError:YES code:[NSString stringWithFormat:@"201%ld",(long)error.code] msg:[NSString stringWithFormat:@"%@",error.userInfo[@"NSLocalizedDescription"]] currentAD:self->_currentAD gdtAD:self->_gdtAD mediaID:self.mediaId];
-            }
         }
     });
 }

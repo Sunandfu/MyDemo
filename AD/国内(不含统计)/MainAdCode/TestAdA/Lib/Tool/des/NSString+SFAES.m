@@ -36,7 +36,7 @@ static NSString *const AES_IV_PARAMETER = @"";
     tmpStr = [tmpStr stringByReplacingOccurrencesOfString:@"-" withString:@"+"];
     tmpStr = [tmpStr stringByReplacingOccurrencesOfString:@"_" withString:@"/"];
     int a = tmpStr.length%4;
-    for (int i=0; i<a; i++) {
+    for (int i=0; i<(4-a); i++) {
         tmpStr = [tmpStr stringByAppendingString:@"="];
     }
     NSData *data = [tmpStr dataUsingEncoding:NSUTF8StringEncoding];

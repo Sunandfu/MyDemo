@@ -84,45 +84,45 @@
         bannerView = [[YXPGIndexBannerSubiew alloc] init];
         bannerView.tag = index;
         bannerView.mainImageView.tag = index;
-    }
-    if (self.isWMAd) {
-        BUNativeAd *wmAdData = self.adMArry[index];
-        wmAdData.delegate = self;
-        BUMaterialMeta *adMeta = wmAdData.data;
-        NSString * imgUrl;
-        if (adMeta.imageAry.count > 0) {
-            BUImage *adImage = adMeta.imageAry.firstObject;
-            if (adImage.imageURL.length > 0) {
-                imgUrl =  adImage.imageURL;
-                [NetTool setImage:bannerView.mainImageView WithURLStr:imgUrl placeholderImage:self.placeImage?self.placeImage:nil];
-                [wmAdData registerContainer:bannerView withClickableViews:nil];
+        if (self.isWMAd) {
+            BUNativeAd *wmAdData = self.adMArry[index];
+            wmAdData.delegate = self;
+            BUMaterialMeta *adMeta = wmAdData.data;
+            NSString * imgUrl;
+            if (adMeta.imageAry.count > 0) {
+                BUImage *adImage = adMeta.imageAry.firstObject;
+                if (adImage.imageURL.length > 0) {
+                    imgUrl =  adImage.imageURL;
+                    [NetTool setImage:bannerView.mainImageView WithURLStr:imgUrl placeholderImage:self.placeImage?self.placeImage:nil];
+                    [wmAdData registerContainer:bannerView withClickableViews:nil];
+                }
             }
-        }
-    } else if (self.isGDTLoadOK) {
-        GDTNativeAdData *wmAdData = self.gdtArr[index];
-        NSDictionary * properties = wmAdData.properties;
-        YXFeedAdData *backdata = [YXFeedAdData new];
-        backdata.adContent = [properties objectForKey:GDTNativeAdDataKeyDesc];
-        backdata.adTitle = [properties objectForKey:GDTNativeAdDataKeyTitle];
-        backdata.imageUrl = [properties objectForKey:GDTNativeAdDataKeyImgUrl];
-        backdata.IconUrl = [properties objectForKey:GDTNativeAdDataKeyIconUrl];
-        backdata.adID = index;
-        
-        if (backdata.imageUrl.length > 0) {
-            [NetTool setImage:bannerView.mainImageView WithURLStr:[properties objectForKey:GDTNativeAdDataKeyImgUrl] placeholderImage:self.placeImage?self.placeImage:nil];
-            UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(viewTapped:)];
-            [bannerView.mainImageView addGestureRecognizer:tap];
-        }
-    }else{
-        _resultDict = self.adArr[index];
-        if (_resultDict) {
-            NSString * imgUrl = [NSString stringWithFormat:@"%@",_resultDict[@"img_url"]];
-            [NetTool setImage:bannerView.mainImageView WithURLStr:imgUrl placeholderImage:self.placeImage?self.placeImage:nil];
-            UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapImg:)];
-            [bannerView.mainImageView addGestureRecognizer:tap];
+        } else if (self.isGDTLoadOK) {
+            GDTNativeAdData *wmAdData = self.gdtArr[index];
+            NSDictionary * properties = wmAdData.properties;
+            YXFeedAdData *backdata = [YXFeedAdData new];
+            backdata.adContent = [properties objectForKey:GDTNativeAdDataKeyDesc];
+            backdata.adTitle = [properties objectForKey:GDTNativeAdDataKeyTitle];
+            backdata.imageUrl = [properties objectForKey:GDTNativeAdDataKeyImgUrl];
+            backdata.IconUrl = [properties objectForKey:GDTNativeAdDataKeyIconUrl];
+            backdata.adID = index;
+            
+            if (backdata.imageUrl.length > 0) {
+                [NetTool setImage:bannerView.mainImageView WithURLStr:[properties objectForKey:GDTNativeAdDataKeyImgUrl] placeholderImage:self.placeImage?self.placeImage:nil];
+                UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(viewTapped:)];
+                [bannerView.mainImageView addGestureRecognizer:tap];
+            }
+        }else{
+            _resultDict = self.adArr[index];
+            if (_resultDict) {
+                NSString * imgUrl = [NSString stringWithFormat:@"%@",_resultDict[@"img_url"]];
+                [NetTool setImage:bannerView.mainImageView WithURLStr:imgUrl placeholderImage:self.placeImage?self.placeImage:nil];
+                UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapImg:)];
+                [bannerView.mainImageView addGestureRecognizer:tap];
+                
+            }
             
         }
-        
     }
     return bannerView;
 }

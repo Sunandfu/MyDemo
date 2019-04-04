@@ -34,7 +34,9 @@ GDTNativeAdDelegate
     CGFloat _width;
     CGFloat _height;
     NSInteger _chazhi;
+    BOOL isOther;
 }
+@property (nonatomic, strong) NSDictionary *otherDict;
 @property (nonatomic, strong) NSDictionary *netAdDict;
 @property (nonatomic, strong) NSDictionary *currentAdDict;
 
@@ -80,6 +82,7 @@ GDTNativeAdDelegate
     self.isLoadS = NO;
     self.isWMAd = NO;
     self.isGDTLoadOK = NO;
+    isOther = NO;
     
     [self.adShowArr  removeAllObjects];
     self.adShowArr = [[NSMutableArray alloc]initWithCapacity:0];
@@ -624,6 +627,16 @@ GDTNativeAdDelegate
             break;
         }
     }
+    if (valueArray.count>1) {
+        isOther = YES;
+        for (int index = 0; index < valueArray.count; index ++ ) {
+            NSDictionary *advertiser = valueArray[index];
+            if (![advertiser isEqualToDictionary:self.currentAdDict]) {
+                self.otherDict = advertiser;
+            }
+        }
+    }
+    
     if (self.currentAdDict == nil) {
         [self initS2S];
     }else{
@@ -698,6 +711,15 @@ GDTNativeAdDelegate
 
 -(void)nativeAdFailToLoad:(NSError *)error
 {
+    if (isOther) {
+        if (![self.otherDict isEqualToDictionary:self.currentAdDict]) {
+            self.currentAdDict = self.otherDict;
+            isOther = NO;
+            [self initChuanAD];
+        }
+    } else {
+        [self initS2S];
+    }
     NSError *errors = [NSError errorWithDomain:error.userInfo[@"NSLocalizedDescription"] code:[[NSString stringWithFormat:@"201%ld",(long)error.code]integerValue] userInfo:nil];
     [self failedError:errors];
     [Network upOutSideToServer:ADError isError:YES code:[NSString stringWithFormat:@"201%ld",(long)error.code] msg: error.userInfo[@"NSLocalizedDescription"] currentAD:self.currentAdDict gdtAD:self.netAdDict mediaID:self.mediaId];
@@ -790,6 +812,15 @@ GDTNativeAdDelegate
 }
 
 - (void)nativeAd:(BUNativeAd *)nativeAd didFailWithError:(NSError *_Nullable)error {
+    if (isOther) {
+        if (![self.otherDict isEqualToDictionary:self.currentAdDict]) {
+            self.currentAdDict = self.otherDict;
+            isOther = NO;
+            [self initGDTAD];
+        }
+    } else {
+        [self initS2S];
+    }
     NSError *errors = [NSError errorWithDomain:@"" code:[[NSString stringWithFormat:@"202%ld",(long)error.code]integerValue] userInfo:nil];
     [self failedError:errors];
     [Network upOutSideToServer:ADError isError:YES code:[NSString stringWithFormat:@"202%ld",(long)error.code] msg: error.userInfo[@"NSLocalizedDescription"] currentAD:self.currentAdDict gdtAD:self.netAdDict mediaID:self.mediaId];
