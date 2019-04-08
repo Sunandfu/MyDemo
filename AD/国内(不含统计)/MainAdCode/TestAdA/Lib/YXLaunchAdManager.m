@@ -215,7 +215,7 @@ static YXLaunchAdManager *instance = nil;
     [Network requestADSourceFromMediaId:self.mediaId success:^(NSDictionary *dataDict) {
         self->_gdtAD = dataDict ;
         NSArray *advertiser = dataDict[@"advertiser"];
-        if(advertiser && ![advertiser isKindOfClass:[NSNull class]]&& advertiser.count > 0){
+        if(advertiser && ![advertiser isKindOfClass:[NSNull class]] && advertiser.count > 0){
             [self initIDSource];
         }else{
             [self initS2S];

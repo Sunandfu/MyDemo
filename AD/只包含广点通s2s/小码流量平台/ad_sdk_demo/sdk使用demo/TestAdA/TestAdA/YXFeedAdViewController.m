@@ -7,7 +7,7 @@
 //
 
 #import "YXFeedAdViewController.h"
-#import <YXLaunchAds/YXFeedAdManager.h>
+#import <YXLaunchAds/YXLaunchAds.h>
 
 #import "AppDelegate.h"
 #import "YXFeedAdRegisterView.h"

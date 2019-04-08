@@ -8,7 +8,7 @@
 
 #import "YXHalfLaunchScreenViewController.h"
 
-#import <YXLaunchAds/YXLaunchAdManager.h>
+#import <YXLaunchAds/YXLaunchAds.h>
 #import "AppDelegate.h"
 @interface YXHalfLaunchScreenViewController ()<YXLaunchAdManagerDelegate>
 

@@ -17,8 +17,6 @@
 		821CF0A321F593190063775F /* YXFeedAdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 821CF0A221F593180063775F /* YXFeedAdViewController.m */; };
 		821DCE8E21F963A4008F502F /* BUAdSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 821DCE8C21F963A4008F502F /* BUAdSDK.framework */; };
 		821DCE8F21F963A4008F502F /* BUAdSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 821DCE8D21F963A4008F502F /* BUAdSDK.bundle */; };
-		8221C3DC21BA25B300C493F8 /* YDSource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 8221C3DB21BA25B300C493F8 /* YDSource.bundle */; };
-		822D8DFE20CA79D600F018F8 /* YXLaunchAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 822D8DFB20CA79D600F018F8 /* YXLaunchAds.framework */; };
 		82367AA6217D729500B4FB4E /* YXFeedAdRegisterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82367AA1217D729400B4FB4E /* YXFeedAdRegisterView.xib */; };
 		82367AA8217D729500B4FB4E /* YXFeedAdRegisterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 82367AA4217D729500B4FB4E /* YXFeedAdRegisterView.m */; };
 		8238B123217F04C300346C23 /* YXFeedAdTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8238B120217F04C300346C23 /* YXFeedAdTableViewCell.xib */; };
@@ -39,6 +37,7 @@
 		8270C802206625F4005C8545 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8270C801206625F3005C8545 /* AdSupport.framework */; };
 		8270C80420662600005C8545 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8270C80320662600005C8545 /* StoreKit.framework */; };
 		8270C8062066261F005C8545 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 8270C8052066261F005C8545 /* libz.tbd */; };
+		E7D1A62A225B17A900F63518 /* YXLaunchAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7D1A629225B17A900F63518 /* YXLaunchAds.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,8 +82,6 @@
 		821CF0A221F593180063775F /* YXFeedAdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXFeedAdViewController.m; sourceTree = "<group>"; };
 		821DCE8C21F963A4008F502F /* BUAdSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BUAdSDK.framework; sourceTree = "<group>"; };
 		821DCE8D21F963A4008F502F /* BUAdSDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = BUAdSDK.bundle; sourceTree = "<group>"; };
-		8221C3DB21BA25B300C493F8 /* YDSource.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = YDSource.bundle; sourceTree = "<group>"; };
-		822D8DFB20CA79D600F018F8 /* YXLaunchAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = YXLaunchAds.framework; sourceTree = "<group>"; };
 		82367AA1217D729400B4FB4E /* YXFeedAdRegisterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YXFeedAdRegisterView.xib; sourceTree = "<group>"; };
 		82367AA3217D729500B4FB4E /* YXFeedAdRegisterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXFeedAdRegisterView.h; sourceTree = "<group>"; };
 		82367AA4217D729500B4FB4E /* YXFeedAdRegisterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXFeedAdRegisterView.m; sourceTree = "<group>"; };
@@ -117,6 +114,7 @@
 		8270C801206625F3005C8545 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		8270C80320662600005C8545 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		8270C8052066261F005C8545 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		E7D1A629225B17A900F63518 /* YXLaunchAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = YXLaunchAds.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,7 +127,7 @@
 				821DCE8E21F963A4008F502F /* BUAdSDK.framework in Frameworks */,
 				8266993C21959AFF00B1EC3E /* libc++.tbd in Frameworks */,
 				8216573F209FEB81003A9AC2 /* CoreLocation.framework in Frameworks */,
-				822D8DFE20CA79D600F018F8 /* YXLaunchAds.framework in Frameworks */,
+				E7D1A62A225B17A900F63518 /* YXLaunchAds.framework in Frameworks */,
 				8216573D209FEB72003A9AC2 /* QuartzCore.framework in Frameworks */,
 				8216573B209FEB60003A9AC2 /* SystemConfiguration.framework in Frameworks */,
 				82165739209FEB4E003A9AC2 /* CoreTelephony.framework in Frameworks */,
@@ -171,9 +169,8 @@
 		822D8DF720CA79D600F018F8 /* YXLaunchAD */ = {
 			isa = PBXGroup;
 			children = (
+				E7D1A629225B17A900F63518 /* YXLaunchAds.framework */,
 				821DCE8B21F963A4008F502F /* ThirdLib */,
-				8221C3DB21BA25B300C493F8 /* YDSource.bundle */,
-				822D8DFB20CA79D600F018F8 /* YXLaunchAds.framework */,
 			);
 			path = YXLaunchAD;
 			sourceTree = "<group>";
@@ -378,7 +375,6 @@
 				8270C79B20661EAA005C8545 /* Assets.xcassets in Resources */,
 				8270C79920661EAA005C8545 /* Main.storyboard in Resources */,
 				821DCE8F21F963A4008F502F /* BUAdSDK.bundle in Resources */,
-				8221C3DC21BA25B300C493F8 /* YDSource.bundle in Resources */,
 				82367AA6217D729500B4FB4E /* YXFeedAdRegisterView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -502,6 +498,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/TestAdA/YXLaunchAD";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -559,6 +556,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/TestAdA/YXLaunchAD";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -584,7 +582,6 @@
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/TestAdA/YXLaunchAD",
 					"$(PROJECT_DIR)/TestAdA/YXLaunchAD/ThirdLib",
 				);
@@ -617,7 +614,6 @@
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/TestAdA/YXLaunchAD",
 					"$(PROJECT_DIR)/TestAdA/YXLaunchAD/ThirdLib",
 				);

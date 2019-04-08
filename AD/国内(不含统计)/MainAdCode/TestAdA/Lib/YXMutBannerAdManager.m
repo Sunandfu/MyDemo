@@ -19,14 +19,14 @@
 
 #import "YXNewPagedFlowView.h"
 #import "YXPGIndexBannerSubiew.h"
-//
+#import "YXBannerScrollView.h"
 #import "GDTNativeAd.h"
 #import "GDTNativeExpressAdView.h"
 
 #import <BUAdSDK/BUAdSDK.h>
 #import <BUAdSDK/BUNativeAdsManager.h>
 
-@interface YXMutBannerAdManager()<BUNativeAdDelegate,BUNativeAdsManagerDelegate,YXNewPagedFlowViewDelegate, YXNewPagedFlowViewDataSource,GDTNativeAdDelegate>
+@interface YXMutBannerAdManager()<BUNativeAdDelegate,BUNativeAdsManagerDelegate,YXNewPagedFlowViewDelegate, YXNewPagedFlowViewDataSource,GDTNativeAdDelegate,YXBannerScrollViewDelegate>
 {
     NSDictionary*_currentAD;
     CGFloat _width;
@@ -55,7 +55,11 @@
 
 @property (nonatomic,assign) BOOL isGDTLoadOK;//是否广点通加载成功
 
-@property (nonatomic,strong) YXNewPagedFlowView *pageFlowView;
+//@property (nonatomic,strong) YXNewPagedFlowView *pageFlowView;
+
+@property (nonatomic,strong) YXBannerScrollView *bannerScrollView;
+@property (nonatomic, strong) YXHorizontalPageControl *horizontalPageControl;
+@property (nonatomic, strong) UIView *bgHeaderView;
 
 @property (nonatomic,strong) NSMutableArray *adShowArr;//存储上报 数组
 
@@ -135,9 +139,9 @@
     }
 }
 #pragma mark NewPagedFlowView Delegate
-- (CGSize)sizeForPageInFlowView:(YXNewPagedFlowView *)flowView {
-    return CGSizeMake(_pageFlowView.bounds.size.width, _pageFlowView.bounds.size.height);
-}
+//- (CGSize)sizeForPageInFlowView:(YXNewPagedFlowView *)flowView {
+//    return CGSizeMake(_pageFlowView.bounds.size.width, _pageFlowView.bounds.size.height);
+//}
 -(void)didScrollToPage:(NSInteger)pageNumber inFlowView:(YXNewPagedFlowView *)flowView
 {
 //    NSLog(@"didScrollToPage:%ld",pageNumber);
@@ -198,6 +202,8 @@
     self.orientation = YXNewPagedFlowViewOrientationHorizontal;
     self.isShowPageControl = YES;
     self.adCount = 1;
+    self.leftRightMargin = 0;
+    self.topBottomMargin = 0;
     
     self.adArr = [[NSArray alloc]init];
     self.gdtArr = [[NSArray alloc]init];
@@ -218,40 +224,43 @@
     [self.adShowArr  removeAllObjects];
     
     view.userInteractionEnabled = YES;
-    self.tmpImageView = [[UIImageView alloc] initWithFrame:view.bounds];
-    self.tmpImageView.image = self.placeImage?self.placeImage:nil;
-    self.tmpImageView.userInteractionEnabled = YES;
-    self.tmpImageView.contentMode = UIViewContentModeScaleAspectFill;
-    self.tmpImageView.clipsToBounds = YES;
-    [view addSubview:self.tmpImageView];
+    self.bgHeaderView = view;
+//    self.tmpImageView = [[UIImageView alloc] initWithFrame:view.bounds];
+//    self.tmpImageView.image = self.placeImage?self.placeImage:nil;
+//    self.tmpImageView.userInteractionEnabled = YES;
+//    self.tmpImageView.contentMode = UIViewContentModeScaleAspectFill;
+////    self.tmpImageView.clipsToBounds = YES;
+//    [view addSubview:self.tmpImageView];
     
-    _pageFlowView = [[YXNewPagedFlowView alloc] initWithFrame:view.bounds];
-    _pageFlowView.delegate = self;
-    _pageFlowView.dataSource = self;
-    _pageFlowView.minimumPageAlpha = 0;
-    _pageFlowView.isCarousel = self.isCarousel;
-    _pageFlowView.isOpenAutoScroll = self.isOpenAutoScroll;
-    _pageFlowView.autoTime = self.autoTime;
-    _pageFlowView.orientation = self.orientation;
+//    _pageFlowView = [[YXNewPagedFlowView alloc] initWithFrame:view.bounds];
+//    _pageFlowView.delegate = self;
+//    _pageFlowView.dataSource = self;
+//    _pageFlowView.minimumPageAlpha = 0;
+//    _pageFlowView.isCarousel = self.isCarousel;
+//    _pageFlowView.isOpenAutoScroll = self.isOpenAutoScroll;
+//    _pageFlowView.autoTime = self.autoTime;
+//    _pageFlowView.orientation = self.orientation;
+//    _pageFlowView.leftRightMargin = self.leftRightMargin;
+//    _pageFlowView.topBottomMargin = self.topBottomMargin;
     
-    if (self.isShowPageControl) {
-        //初始化pageControl
-        UIPageControl *pageControl = [[UIPageControl alloc] initWithFrame:CGRectMake(0, _pageFlowView.frame.size.height - 30, _pageFlowView.bounds.size.width, 30)];
-        if (CGRectGetWidth(self.pageFrame)) {
-            pageControl.frame = self.pageFrame;
-        }
-        _pageFlowView.pageControl = pageControl;
-        if (self.pageIndicatorTintColor) {
-            pageControl.pageIndicatorTintColor = self.pageIndicatorTintColor;
-        }
-        if (self.currentPageIndicatorTintColor) {
-            pageControl.currentPageIndicatorTintColor = self.currentPageIndicatorTintColor;
-        }
-        [_pageFlowView addSubview:pageControl];
-    }
-    [_pageFlowView reloadData];
-    
-    [view addSubview:_pageFlowView];
+//    if (self.isShowPageControl) {
+//        //初始化pageControl
+//        UIPageControl *pageControl = [[UIPageControl alloc] initWithFrame:CGRectMake(0, _pageFlowView.frame.size.height - 30, _pageFlowView.bounds.size.width, 30)];
+//        if (CGRectGetWidth(self.pageFrame)) {
+//            pageControl.frame = self.pageFrame;
+//        }
+//        _pageFlowView.pageControl = pageControl;
+//        if (self.pageIndicatorTintColor) {
+//            pageControl.pageIndicatorTintColor = self.pageIndicatorTintColor;
+//        }
+//        if (self.currentPageIndicatorTintColor) {
+//            pageControl.currentPageIndicatorTintColor = self.currentPageIndicatorTintColor;
+//        }
+//        [_pageFlowView addSubview:pageControl];
+//    }
+//    [_pageFlowView reloadData];
+//
+//    [view addSubview:_pageFlowView];
     
     
     [self requestADSourceFromNet];
@@ -326,7 +335,7 @@
                         [dataArr addObject:backdata];
                     }
                     
-                    [self.pageFlowView reloadData];
+                    [self reloadDataScrollerView];
                     
                     
                     if(self.delegate && [self.delegate respondsToSelector:@selector(didLoadMutBannerAdView)]){
@@ -619,7 +628,7 @@
                 [mArr addObject:backdata];
             }
             
-            [self.pageFlowView reloadData];
+            [self reloadDataScrollerView];
             if(self.delegate && [self.delegate respondsToSelector:@selector(didLoadMutBannerAdView)]){
                 [self.tmpImageView removeFromSuperview];
                 [self.delegate didLoadMutBannerAdView];
@@ -714,7 +723,7 @@
             
             self.adMArry = [nativeAdDataArray mutableCopy];
             
-            [self.pageFlowView reloadData];
+            [self reloadDataScrollerView];
             if(self.delegate && [self.delegate respondsToSelector:@selector(didLoadMutBannerAdView)]){
                 [self.tmpImageView removeFromSuperview];
                 [self.delegate didLoadMutBannerAdView];
@@ -758,5 +767,62 @@
     }
 }
 
+- (void)reloadDataScrollerView{
+    [self.bannerScrollView removeFromSuperview];
+    self.bannerScrollView = [YXBannerScrollView cycleScrollViewWithFrame:self.bgHeaderView.bounds delegate:self placeholderImage:self.placeImage?self.placeImage:nil];
+    NSMutableArray *imgUrlArr = [NSMutableArray arrayWithCapacity:0];
+    if (self.isWMAd) {
+        for (BUNativeAd *wmAdData in self.adMArry) {
+            BUMaterialMeta *adMeta = wmAdData.data;
+            BUImage *adImage = adMeta.imageAry.firstObject;
+            [imgUrlArr addObject:adImage.imageURL];
+        }
+    } else if (self.isGDTLoadOK) {
+        for (GDTNativeAdData *wmAdData in self.gdtArr) {
+            NSDictionary * properties = wmAdData.properties;
+            [imgUrlArr addObject:[properties objectForKey:GDTNativeAdDataKeyImgUrl]];
+        }
+    }else{
+        for (NSDictionary *dict in self.adArr) {
+            NSString * imgUrl = [NSString stringWithFormat:@"%@",dict[@"img_url"]];
+            [imgUrlArr addObject:imgUrl];
+        }
+    }
+    self.bannerScrollView.imageURLStringsGroup = imgUrlArr;
+    self.bannerScrollView.pageControlAliment = YXBannerScrollViewPageContolAlimentCenter;
+    self.bannerScrollView.pageControlStyle = YXBannerScrollViewPageControlHorizontal;
+    self.bannerScrollView.pageDotColor = UIColor.greenColor;
+    self.bannerScrollView.currentPageDotColor = UIColor.redColor;
+    [self.bgHeaderView addSubview:self.bannerScrollView];
+}
+- (void)cycleScrollView:(YXBannerScrollView *)cycleScrollView didScrollToIndex:(NSInteger)index {
+    [self.horizontalPageControl setCurrentPage:index];
+    if (self.isWMAd) {
+        BUNativeAd *wmAdData = self.adMArry[index];
+        [wmAdData registerContainer:cycleScrollView withClickableViews:nil];
+    } else if (self.isGDTLoadOK) {
+        GDTNativeAdData *currentAdData = self.gdtArr[index];
+        [self.nativeAd attachAd:currentAdData toView:self.controller.view];
+        [self.nativeAd clickAd:currentAdData];
+    }else{
+        cycleScrollView.tag = index;
+        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapImg:)];
+        [cycleScrollView addGestureRecognizer:tap];
+    }
+}
+- (YXHorizontalPageControl *)horizontalPageControl {
+    if (!_horizontalPageControl) {
+        _horizontalPageControl = [[YXHorizontalPageControl alloc]init];
+        _horizontalPageControl.frame = CGRectMake(10, 10, 360, 50);
+        _horizontalPageControl.backgroundColor = UIColor.lightGrayColor;
+        _horizontalPageControl.currentPageColor = [UIColor whiteColor];
+        _horizontalPageControl.normalPageColor = [UIColor grayColor];
+        _horizontalPageControl.dotBigSize = CGSizeMake(60, 20);
+        _horizontalPageControl.dotNomalSize = CGSizeMake(20, 20);
+        _horizontalPageControl.dotMargin = 20;
+        _horizontalPageControl.pages = 5;
+    }
+    return _horizontalPageControl;
+}
 
 @end

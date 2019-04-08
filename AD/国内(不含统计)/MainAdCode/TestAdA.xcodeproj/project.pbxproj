@@ -91,6 +91,15 @@
 		E7369A15223906E6000BC26F /* YXInterstitialAdManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E73699EE223906E6000BC26F /* YXInterstitialAdManager.m */; };
 		E7369A16223906E6000BC26F /* YXFeedAdManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E73699F0223906E6000BC26F /* YXFeedAdManager.m */; };
 		E7369A192239078A000BC26F /* YXInterstitialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7369A1722390788000BC26F /* YXInterstitialViewController.m */; };
+		E736B34E225609D2004E8A1F /* YXPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = E736B33A225609CF004E8A1F /* YXPageControl.m */; };
+		E736B34F225609D2004E8A1F /* YXBannerScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = E736B33E225609D0004E8A1F /* YXBannerScrollView.m */; };
+		E736B350225609D2004E8A1F /* YXAbstractDotView.m in Sources */ = {isa = PBXBuildFile; fileRef = E736B340225609D0004E8A1F /* YXAbstractDotView.m */; };
+		E736B351225609D2004E8A1F /* YXDotView.m in Sources */ = {isa = PBXBuildFile; fileRef = E736B341225609D0004E8A1F /* YXDotView.m */; };
+		E736B352225609D2004E8A1F /* YXHorizontalPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = E736B342225609D0004E8A1F /* YXHorizontalPageControl.m */; };
+		E736B353225609D2004E8A1F /* YXAnimatedDotView.m in Sources */ = {isa = PBXBuildFile; fileRef = E736B344225609D0004E8A1F /* YXAnimatedDotView.m */; };
+		E736B354225609D2004E8A1F /* YXAnimationPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = E736B345225609D0004E8A1F /* YXAnimationPageControl.m */; };
+		E736B356225609D2004E8A1F /* UIView+YXExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = E736B34C225609D1004E8A1F /* UIView+YXExtension.m */; };
+		E736B357225609D2004E8A1F /* YXCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E736B34D225609D2004E8A1F /* YXCollectionViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -283,6 +292,24 @@
 		E73699F0223906E6000BC26F /* YXFeedAdManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXFeedAdManager.m; sourceTree = "<group>"; };
 		E7369A1722390788000BC26F /* YXInterstitialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXInterstitialViewController.m; sourceTree = "<group>"; };
 		E7369A182239078A000BC26F /* YXInterstitialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXInterstitialViewController.h; sourceTree = "<group>"; };
+		E736B33A225609CF004E8A1F /* YXPageControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXPageControl.m; sourceTree = "<group>"; };
+		E736B33B225609CF004E8A1F /* YXDotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXDotView.h; sourceTree = "<group>"; };
+		E736B33C225609CF004E8A1F /* YXBannerScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXBannerScrollView.h; sourceTree = "<group>"; };
+		E736B33D225609CF004E8A1F /* YXAnimatedDotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXAnimatedDotView.h; sourceTree = "<group>"; };
+		E736B33E225609D0004E8A1F /* YXBannerScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXBannerScrollView.m; sourceTree = "<group>"; };
+		E736B33F225609D0004E8A1F /* YXCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXCollectionViewCell.h; sourceTree = "<group>"; };
+		E736B340225609D0004E8A1F /* YXAbstractDotView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXAbstractDotView.m; sourceTree = "<group>"; };
+		E736B341225609D0004E8A1F /* YXDotView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXDotView.m; sourceTree = "<group>"; };
+		E736B342225609D0004E8A1F /* YXHorizontalPageControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXHorizontalPageControl.m; sourceTree = "<group>"; };
+		E736B343225609D0004E8A1F /* YXHorizontalPageControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXHorizontalPageControl.h; sourceTree = "<group>"; };
+		E736B344225609D0004E8A1F /* YXAnimatedDotView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXAnimatedDotView.m; sourceTree = "<group>"; };
+		E736B345225609D0004E8A1F /* YXAnimationPageControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXAnimationPageControl.m; sourceTree = "<group>"; };
+		E736B346225609D0004E8A1F /* YXAnimationPageControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXAnimationPageControl.h; sourceTree = "<group>"; };
+		E736B347225609D1004E8A1F /* UIView+YXExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+YXExtension.h"; sourceTree = "<group>"; };
+		E736B34A225609D1004E8A1F /* YXPageControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXPageControl.h; sourceTree = "<group>"; };
+		E736B34B225609D1004E8A1F /* YXAbstractDotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXAbstractDotView.h; sourceTree = "<group>"; };
+		E736B34C225609D1004E8A1F /* UIView+YXExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+YXExtension.m"; sourceTree = "<group>"; };
+		E736B34D225609D2004E8A1F /* YXCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXCollectionViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -513,6 +540,7 @@
 		E73699AC223906E5000BC26F /* lib */ = {
 			isa = PBXGroup;
 			children = (
+				E736B31B22560987004E8A1F /* YXBannerScrollView */,
 				E7191C7722487A3E00D8FBB4 /* YXPopupMenu */,
 				E73699AD223906E5000BC26F /* YXFLAnimatedImage */,
 				E73699B2223906E5000BC26F /* YXNewPage */,
@@ -632,6 +660,31 @@
 				E73699EC223906E6000BC26F /* GDTUnifiedNativeAd.h */,
 			);
 			path = gdtAD;
+			sourceTree = "<group>";
+		};
+		E736B31B22560987004E8A1F /* YXBannerScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				E736B347225609D1004E8A1F /* UIView+YXExtension.h */,
+				E736B34C225609D1004E8A1F /* UIView+YXExtension.m */,
+				E736B34B225609D1004E8A1F /* YXAbstractDotView.h */,
+				E736B340225609D0004E8A1F /* YXAbstractDotView.m */,
+				E736B33D225609CF004E8A1F /* YXAnimatedDotView.h */,
+				E736B344225609D0004E8A1F /* YXAnimatedDotView.m */,
+				E736B346225609D0004E8A1F /* YXAnimationPageControl.h */,
+				E736B345225609D0004E8A1F /* YXAnimationPageControl.m */,
+				E736B33C225609CF004E8A1F /* YXBannerScrollView.h */,
+				E736B33E225609D0004E8A1F /* YXBannerScrollView.m */,
+				E736B33F225609D0004E8A1F /* YXCollectionViewCell.h */,
+				E736B34D225609D2004E8A1F /* YXCollectionViewCell.m */,
+				E736B33B225609CF004E8A1F /* YXDotView.h */,
+				E736B341225609D0004E8A1F /* YXDotView.m */,
+				E736B343225609D0004E8A1F /* YXHorizontalPageControl.h */,
+				E736B342225609D0004E8A1F /* YXHorizontalPageControl.m */,
+				E736B34A225609D1004E8A1F /* YXPageControl.h */,
+				E736B33A225609CF004E8A1F /* YXPageControl.m */,
+			);
+			path = YXBannerScrollView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -780,7 +833,10 @@
 				E7191C6B2248760100D8FBB4 /* YXLaunchAdDownloader.m in Sources */,
 				E7191C702248760100D8FBB4 /* YXLaunchAdController.m in Sources */,
 				E7369A192239078A000BC26F /* YXInterstitialViewController.m in Sources */,
+				E736B34F225609D2004E8A1F /* YXBannerScrollView.m in Sources */,
+				E736B351225609D2004E8A1F /* YXDotView.m in Sources */,
 				E7369A10223906E6000BC26F /* YXImgUtil.m in Sources */,
+				E736B34E225609D2004E8A1F /* YXPageControl.m in Sources */,
 				E7191C722248760100D8FBB4 /* YXLaunchAd.m in Sources */,
 				E7369A00223906E6000BC26F /* YXNewPagedFlowView.m in Sources */,
 				E7191C892248875800D8FBB4 /* SFMviewModel.m in Sources */,
@@ -788,9 +844,11 @@
 				82367AA8217D729500B4FB4E /* YXFeedAdRegisterView.m in Sources */,
 				E7191C6E2248760100D8FBB4 /* YXLaunchImageView.m in Sources */,
 				E7369A13223906E6000BC26F /* YXWebViewController.m in Sources */,
+				E736B357225609D2004E8A1F /* YXCollectionViewCell.m in Sources */,
 				E7191C6C2248760100D8FBB4 /* YXLaunchAdCache.m in Sources */,
 				8238B124217F04C300346C23 /* YXFeedAdTableViewCell.m in Sources */,
 				82367AA7217D729500B4FB4E /* YXFeedAdViewController.m in Sources */,
+				E736B350225609D2004E8A1F /* YXAbstractDotView.m in Sources */,
 				E7369A0D223906E6000BC26F /* YXGTMBase64.m in Sources */,
 				8238B127217F05E600346C23 /* YXHalfLaunchScreenViewController.m in Sources */,
 				E7191C7F22487A3E00D8FBB4 /* YXRectConst.m in Sources */,
@@ -802,6 +860,7 @@
 				E7191C7E22487A3E00D8FBB4 /* YXPopupMenu.m in Sources */,
 				E7369A01223906E6000BC26F /* YXPGIndexBannerSubiew.m in Sources */,
 				E7369A07223906E6000BC26F /* YXLaunchAdManager.m in Sources */,
+				E736B356225609D2004E8A1F /* UIView+YXExtension.m in Sources */,
 				8270C7A120661EAA005C8545 /* main.m in Sources */,
 				E7369A0F223906E6000BC26F /* NetTool.m in Sources */,
 				E7191C6F2248760100D8FBB4 /* YXLaunchAdImageManager.m in Sources */,
@@ -822,7 +881,10 @@
 				E7369A15223906E6000BC26F /* YXInterstitialAdManager.m in Sources */,
 				E7369A02223906E6000BC26F /* YXAdSDKManager.m in Sources */,
 				E7369A0C223906E6000BC26F /* YXLCdes.m in Sources */,
+				E736B352225609D2004E8A1F /* YXHorizontalPageControl.m in Sources */,
 				E73699FF223906E6000BC26F /* YXFLAnimatedImageView.m in Sources */,
+				E736B354225609D2004E8A1F /* YXAnimationPageControl.m in Sources */,
+				E736B353225609D2004E8A1F /* YXAnimatedDotView.m in Sources */,
 				E7369A0A223906E6000BC26F /* Network.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

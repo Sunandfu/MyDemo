@@ -26,10 +26,11 @@ static  NSString * feedMediaID = @"beta_ios_native";
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
+    CGFloat width = self.view.frame.size.width-60;
     //根据宽高比自定义适配
-    CGFloat height = 388 * self.view.frame.size.width / 690;
+    CGFloat height = 388 * width / 690;
     
-    self.BannerView = [[UIView alloc]initWithFrame:CGRectMake(0,100 , self.view.frame.size.width, height)];
+    self.BannerView = [[UIView alloc]initWithFrame:CGRectMake(30,100 , width, height)];
     
     
     [self.view addSubview:self.BannerView];
@@ -60,6 +61,8 @@ static  NSString * feedMediaID = @"beta_ios_native";
     mutBanner.isOpenAutoScroll = YES;
     mutBanner.isCarousel = YES;
     mutBanner.autoTime = 3;
+    mutBanner.leftRightMargin = 20;
+    mutBanner.topBottomMargin = 20;
     
     [mutBanner loadMutBannerAdViewsInView:self.BannerView];
     NSLog(@"请求多图广告");

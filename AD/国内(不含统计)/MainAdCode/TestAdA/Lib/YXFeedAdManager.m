@@ -452,7 +452,31 @@ GDTNativeAdDelegate
             // Fallback on earlier versions
             [[UIApplication sharedApplication] openURL:url];
         }
-    }else if ([ac_type isEqualToString:@"7"]){
+    } else if ([ac_type isEqualToString:@"6"]) {
+        NSString *deeplick = self.s2sTapAdDict[@"deep_url"];
+        NSURL *deeplickUrl = [NSURL URLWithString:deeplick];
+        if ([[UIApplication sharedApplication] canOpenURL:deeplickUrl]) {
+            if (@available(iOS 10.0, *)) {
+                [[UIApplication sharedApplication] openURL:deeplickUrl options:@{} completionHandler:^(BOOL success) {
+                    NSLog(@"success = %d",success);
+                }];
+            }else{
+                [[UIApplication sharedApplication] openURL:deeplickUrl];
+            }
+        } else {
+            NSURL *url = [NSURL URLWithString:urlStr];
+            if (@available(iOS 9.0, *)) {
+                SFSafariViewController *safariVC = [[SFSafariViewController alloc] initWithURL:url];
+                UIViewController* rootVC = [[UIApplication sharedApplication].delegate window].rootViewController;
+                [rootVC showViewController:safariVC sender:nil];
+                
+            } else {
+                // Fallback on earlier versions
+                [[UIApplication sharedApplication] openURL:url];
+            }
+        }
+        
+    } else if ([ac_type isEqualToString:@"7"]){
         
         NSString * miniPath = [NSString stringWithFormat:@"%@",self.s2sTapAdDict[@"miniPath"] ];
         miniPath = [miniPath stringByReplacingOccurrencesOfString:@" " withString:@""];
