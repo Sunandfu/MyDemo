@@ -733,13 +733,13 @@ UITableViewDataSource
         }
         
     }else if (_arrowDirection == YXPopupMenuArrowDirectionLeft || _arrowDirection == YXPopupMenuArrowDirectionRight) {
-//        if (_point.y + _itemHeight / 2 > YXScreenHeight - _minSpace) {
-//            _arrowPosition = _itemHeight - (YXScreenHeight - _minSpace - _point.y);
-//        }else if (_point.y < _itemHeight / 2 + _minSpace) {
-//            _arrowPosition = _point.y - _minSpace;
-//        }else {
-//            _arrowPosition = _itemHeight / 2;
-//        }
+        if (_point.y + _itemHeight / 2 > YXScreenHeight - _minSpace) {
+            _arrowPosition = _itemHeight - (YXScreenHeight - _minSpace - _point.y);
+        }else if (_point.y < _itemHeight / 2 + _minSpace) {
+            _arrowPosition = _point.y - _minSpace;
+        }else {
+            _arrowPosition = _itemHeight / 2;
+        }
     }
 }
 

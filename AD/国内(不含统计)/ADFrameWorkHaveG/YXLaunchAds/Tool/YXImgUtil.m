@@ -94,32 +94,6 @@
 
 }
 
-+(void)imgWithUrlWithOutCache:(NSString *)imgUrl successBlock:(successBlock)sucBlock failBlock:(failBlock)faiBlock
-{
-      dispatch_async( dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_DEFAULT, 0 ), ^(void)
-                   {
-                       //本地没有从网络获取
-                       NSData *datas = [NSData dataWithContentsOfURL:[NSURL URLWithString:imgUrl]];
-                       if(datas){
-                           
-                           __block  UIImage * image = [[UIImage alloc] initWithData:datas];//这个方法也是异步
-                           
-                           dispatch_async( dispatch_get_main_queue(), ^(void){
-                               if(image)
-                                   sucBlock(image);
-                           });
-                           
-                       }else{
-                           dispatch_async( dispatch_get_main_queue(), ^(void){
-                               NSError *error = [NSError errorWithDomain:@"url 非法,图片不存在" code:999 userInfo:nil];
-                               faiBlock(error);
-                           });
-                       }
-                   }
-                   );
-    
-}
-
 
 +(void)gifImgWithUrl:(NSString *)imgUrl successBlock:(gifSuccessBlock)sucBlock failBlock:(failBlock)faiBlock
 {

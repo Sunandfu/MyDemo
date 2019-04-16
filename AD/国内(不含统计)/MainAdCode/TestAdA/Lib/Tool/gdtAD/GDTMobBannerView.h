@@ -37,8 +37,7 @@
 - (void)bannerViewFailToReceived:(NSError *)error;
 
 /**
- *  应用进入后台时调用
- *  详解:当点击应用下载或者广告调用系统程序打开，应用将被自动切换到后台
+ *  详解:当点击应用下载或者广告调用系统程序打开时调用
  */
 - (void)bannerViewWillLeaveApplication;
 

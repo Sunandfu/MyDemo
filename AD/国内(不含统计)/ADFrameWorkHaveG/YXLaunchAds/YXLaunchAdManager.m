@@ -15,10 +15,8 @@
 
 #import "WXApi.h"
 
-
 #import "GDTSplashAd.h"
 #import "GDTSDKConfig.h"
-
 
 #import "YXGTMDefines.h"
 #import <StoreKit/StoreKit.h>
@@ -26,29 +24,16 @@
 #import "YXLaunchAdController.h"
 #import "YXWebViewController.h"
 
-
 #import <AdSupport/ASIdentifierManager.h>
 
 #import <BUAdSDK/BUAdSDKManager.h>
 #import "BUAdSDK/BUSplashAdView.h"
-
-//是否缓存配置
-#define ISCache 0
-//直走s2s
-#define GOS2S 0
-
-#define GOGoogle 0
-
-#define Normal 1
-
-#import "YXLCdes.h"
 
 @interface YXLaunchAdManager()<YXLaunchAdDelegate,YXWebViewDelegate,GDTSplashAdDelegate,SKStoreProductViewControllerDelegate,BUSplashAdDelegate>
 {
     NSDictionary *_resultDict;
     NSDictionary*_gdtAD;
     NSDictionary*_currentAD;
-    __block NSInteger outTimes;
     
     NSInteger cuttentTime;
     
@@ -57,8 +42,10 @@
     BOOL launchTimeOut;
     
     BOOL isGDLaunchOK;
+    
+    BOOL isOther;
 }
-
+@property (nonatomic, strong) NSDictionary *otherDict;
 @property ( strong , nonatomic ) GDTSplashAd *splash;
 @property (nonatomic,assign) BOOL isgoogleEnd;
 @property(nonatomic,copy)dispatch_source_t skipTimer;
@@ -107,6 +94,7 @@ static YXLaunchAdManager *instance = nil;
     launchTimeOut = NO;
     isGDTClicked = NO;
     isGDLaunchOK = NO;
+    isOther = NO;
     
     [YXLaunchAd setLaunchSource];
     
@@ -132,14 +120,7 @@ static YXLaunchAdManager *instance = nil;
     self.showAdWindow = showAdWindow;
     isGDLaunchOK = NO;
     
-    
-#if GOGoogle
-    [self initGGNativeAd];
-#elif Normal
     [self requestADSource];
-#endif
-    
-    self->outTimes = 1;
     
     //配置广告数据
     _imageAdconfiguration = [YXLaunchImageAdConfiguration new];
@@ -154,28 +135,7 @@ static YXLaunchAdManager *instance = nil;
 
 - (void)requestADSource
 {
-#if ISCache
-    NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
-    
-    NSDictionary *inlandDic = [userDefault objectForKey:inLandAD];
-    
-    if (inlandDic.allKeys.count > 0) {
-        NSString *time = inlandDic[@"time"];
-        NSInteger hour = [NetTool getSpendTimeWithStartDate:time stopDate:[NetTool getNowDateStr_2]];
-        if (hour <= 6) {
-            _gdtAD = inlandDic[inLandAD];
-            [self initIDSource];
-        }else{
-            [self requestADSourceFromNet];
-        }
-    }else{
-        [self requestADSourceFromNet];
-    }
-#else
-    
     [self requestADSourceFromNet];
-    
-#endif
 }
 
 #pragma mark 分配广告
@@ -212,16 +172,22 @@ static YXLaunchAdManager *instance = nil;
     double random = 1+ arc4random()%99;
     
     double sumWeight = 0;
-    //
-#if GOS2S
-    random = 60;
-#endif
+    
     for (int index = 0; index < valueArray.count; index ++ ) {
         NSDictionary *advertiser = valueArray[index];
         sumWeight += [advertiser[@"weight"] doubleValue];
         if (sumWeight >= random) {
             _currentAD = advertiser;
             break;
+        }
+    }
+    if (valueArray.count>1) {
+        isOther = YES;
+        for (int index = 0; index < valueArray.count; index ++ ) {
+            NSDictionary *advertiser = valueArray[index];
+            if (![advertiser isEqualToDictionary:_currentAD]) {
+                self.otherDict = advertiser;
+            }
         }
     }
     
@@ -231,10 +197,9 @@ static YXLaunchAdManager *instance = nil;
         NSString *name = _currentAD[@"name"];
         if ([name isEqualToString:@"广点通"]) {
             [self initGDTAD];
-        }
-        else if ([name isEqualToString:@"头条"]){
+        } else if ([name isEqualToString:@"头条"]){
             [self initChuanAD];
-        }else{
+        } else {
             [self initS2S];
         }
     }
@@ -244,10 +209,17 @@ static YXLaunchAdManager *instance = nil;
 {
     [Network requestADSourceFromMediaId:self.mediaId success:^(NSDictionary *dataDict) {
         self->_gdtAD = dataDict ;
+        NSArray *adInfosArr = dataDict[@"adInfos"];
+        if (adInfosArr.count>0) {
+            self->_resultDict = adInfosArr.firstObject;
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self showLaunchAd];
+            });
+            return ;
+        }
         NSArray *advertiser = dataDict[@"advertiser"];
-        if(advertiser && ![advertiser isKindOfClass:[NSNull class]]&& advertiser.count > 0){
+        if(advertiser && ![advertiser isKindOfClass:[NSNull class]] && advertiser.count > 0){
             [self initIDSource];
-            [self saveInlandInfro];
         }else{
             [self initS2S];
         }
@@ -270,19 +242,6 @@ static YXLaunchAdManager *instance = nil;
     }
     return dic;
 }
-
-
-- (void)saveInlandInfro
-{
-#if ISCache
-    NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
-    NSDictionary *inlandadDic = @{inLandAD:_gdtAD,@"time":[NetTool getNowDateStr_2]};
-    [userDefault setObject:inlandadDic forKey:inLandAD];
-    [userDefault synchronize];
-#else
-#endif
-}
-
 
 #pragma mark 穿山甲
 
@@ -381,10 +340,7 @@ static YXLaunchAdManager *instance = nil;
 
 - (void)splashAdWillVisible:(BUSplashAdView *)splashAd
 {
-    
     //    NSLog(@"spalshAdWillVisible;%s",__FUNCTION__);
-    
-    
 }
 - (void)splashAdDidClick:(BUSplashAdView *)splashAd
 {
@@ -414,6 +370,15 @@ static YXLaunchAdManager *instance = nil;
 - (void)splashAd:(BUSplashAdView *)splashAd didFailWithError:(NSError *)error
 {
     [splashAd removeFromSuperview];
+    if (isOther) {
+        if (![self.otherDict isEqualToDictionary:_currentAD]) {
+            _currentAD = self.otherDict;
+            isOther = NO;
+            [self initGDTAD];
+        }
+    } else {
+        [self initS2S];
+    }
     NSError *errors = [NSError errorWithDomain:@"" code:[[NSString stringWithFormat:@"202%ld",(long)error.code]integerValue] userInfo:nil];
     [self failedError:errors];
     
@@ -513,20 +478,23 @@ static YXLaunchAdManager *instance = nil;
         return;
     }
     launchTimeOut = YES;
-    
+    if (isOther) {
+        if (![self.otherDict isEqualToDictionary:_currentAD]) {
+            _currentAD = self.otherDict;
+            isOther = NO;
+            [self initChuanAD];
+        }
+    } else {
+        [self initS2S];
+    }
     dispatch_async(dispatch_get_main_queue(), ^{
-        
-        self->outTimes ++;
-        if (self->outTimes == 2) {
+        if (error.code == 4011) {
+            NSError *errors = [NSError errorWithDomain:@"" code:[[NSString stringWithFormat:@"201%ld",(long)error.code]integerValue] userInfo:nil];
+            [self failedError:errors];
+            [Network upOutSideToServer:ADError isError:YES code:[NSString stringWithFormat:@"201%ld",(long)error.code] msg:[NSString stringWithFormat:@"%@",error.userInfo[@"NSLocalizedDescription"]] currentAD:self->_currentAD gdtAD:self->_gdtAD mediaID:self.mediaId];
+        } else {
             NSError *errors = [NSError errorWithDomain:@"" code:40043 userInfo:nil];
             [self failedError:errors];
-            
-        }else{
-            if (error.code == 4011) {
-                NSError *errors = [NSError errorWithDomain:@"" code:[[NSString stringWithFormat:@"201%ld",(long)error.code]integerValue] userInfo:nil];
-                [self failedError:errors];
-                [Network upOutSideToServer:ADError isError:YES code:[NSString stringWithFormat:@"201%ld",(long)error.code] msg:[NSString stringWithFormat:@"%@",error.userInfo[@"NSLocalizedDescription"]] currentAD:self->_currentAD gdtAD:self->_gdtAD mediaID:self.mediaId];
-            }
         }
     });
 }
@@ -544,11 +512,11 @@ static YXLaunchAdManager *instance = nil;
     self.splash = nil;
     
     if (isGDTClicked) {
-        [[YXLaunchAd shareLaunchAd]cancleSkip];
+        [[YXLaunchAd shareLaunchAd] cancleSkip];
         [[YXLaunchAd shareLaunchAd] removeAndAnimate];
     }else{
         if (cuttentTime > 1) {
-            [[YXLaunchAd shareLaunchAd]cancleSkip];
+            [[YXLaunchAd shareLaunchAd] cancleSkip];
             [[YXLaunchAd shareLaunchAd] removeAndAnimate];
             [self skipBtnClicked];
         }
@@ -650,36 +618,7 @@ static YXLaunchAdManager *instance = nil;
                         }
                     }
                 }
-                //配置广告数据
-                YXLaunchImageAdConfiguration *imageAdconfiguration = [YXLaunchImageAdConfiguration new];
-                //广告停留时间
-                imageAdconfiguration.duration = self->_duration;
-                imageAdconfiguration.showEnterForeground = NO;
-                //广告frame
-                imageAdconfiguration.frame = self->_frame;
-                //广告图片URLString/或本地图片名(.jpg/.gif请带上后缀)
-                imageAdconfiguration.imageNameOrURLString = self->_resultDict[@"img_url"];
-                //设置GIF动图是否只循环播放一次(仅对动图设置有效)
-                imageAdconfiguration.GIFImageCycleOnce = NO;
-                //缓存机制(仅对网络图片有效)
-                //为告展示效果更好,可设置为YXLaunchAdImageCacheInBackground,先缓存,下次显示
-                imageAdconfiguration.imageOption = self.imageOption;
-                //图片填充模式
-                imageAdconfiguration.contentMode = self.contentMode;
-                //广告点击打开页面参数(openModel可为NSString,模型,字典等任意类型)
-                //                imageAdconfiguration.openModel = model.openUrl;
-                //广告显示完成动画
-                imageAdconfiguration.showFinishAnimate = self.showFinishAnimate;
-                //广告显示完成动画时间
-                imageAdconfiguration.showFinishAnimateTime = self.showFinishAnimate;
-                //跳过按钮类型
-                imageAdconfiguration.skipButtonType = self.skipButtonType;
-                //start********************自定义跳过按钮**************************
-                imageAdconfiguration.customSkipView = nil;
-                //********************自定义跳过按钮*****************************end
-                
-                //显示开屏广告
-                [YXLaunchAd imageAdWithImageAdConfiguration:imageAdconfiguration bottomView:self.bottomView delegate:self];
+                [self showLaunchAd];
                 
             }else{
                 NSError *error = [NSError errorWithDomain:@"" code:40041 userInfo:@{@"NSLocalizedDescription":@"请检查网络"}];
@@ -694,6 +633,38 @@ static YXLaunchAdManager *instance = nil;
     }];
 }
 
+- (void)showLaunchAd{
+    //配置广告数据
+    YXLaunchImageAdConfiguration *imageAdconfiguration = [YXLaunchImageAdConfiguration new];
+    //广告停留时间
+    imageAdconfiguration.duration = self->_duration;
+    imageAdconfiguration.showEnterForeground = NO;
+    //广告frame
+    imageAdconfiguration.frame = self->_frame;
+    //广告图片URLString/或本地图片名(.jpg/.gif请带上后缀)
+    imageAdconfiguration.imageNameOrURLString = self->_resultDict[@"img_url"];
+    //设置GIF动图是否只循环播放一次(仅对动图设置有效)
+    imageAdconfiguration.GIFImageCycleOnce = NO;
+    //缓存机制(仅对网络图片有效)
+    //为告展示效果更好,可设置为YXLaunchAdImageCacheInBackground,先缓存,下次显示
+    imageAdconfiguration.imageOption = self.imageOption;
+    //图片填充模式
+    imageAdconfiguration.contentMode = self.contentMode;
+    //广告点击打开页面参数(openModel可为NSString,模型,字典等任意类型)
+    //                imageAdconfiguration.openModel = model.openUrl;
+    //广告显示完成动画
+    imageAdconfiguration.showFinishAnimate = self.showFinishAnimate;
+    //广告显示完成动画时间
+    imageAdconfiguration.showFinishAnimateTime = self.showFinishAnimate;
+    //跳过按钮类型
+    imageAdconfiguration.skipButtonType = self.skipButtonType;
+    //start********************自定义跳过按钮**************************
+    imageAdconfiguration.customSkipView = nil;
+    //********************自定义跳过按钮*****************************end
+    
+    //显示开屏广告
+    [YXLaunchAd imageAdWithImageAdConfiguration:imageAdconfiguration bottomView:self.bottomView delegate:self];
+}
 #pragma mark 失败
 - (void)failedError:(NSError*)error
 {
@@ -899,14 +870,44 @@ static YXLaunchAdManager *instance = nil;
         NSURL *url = [NSURL URLWithString:urlStr];
         if (@available(iOS 9.0, *)) {
             SFSafariViewController *safariVC = [[SFSafariViewController alloc] initWithURL:url];
-            UIViewController* rootVC = [[UIApplication sharedApplication].delegate window].rootViewController;
-            [rootVC showViewController:safariVC sender:nil];
+            [[NetTool getCurrentViewController] showViewController:safariVC sender:nil];
             
         } else {
             // Fallback on earlier versions
             [[UIApplication sharedApplication] openURL:url];
         }
-    }else if([ac_type isEqualToString:@"7"]){
+    } else if ([ac_type isEqualToString:@"6"]) {
+        NSString *deeplick = _resultDict[@"deep_url"];
+        NSURL *deeplickUrl = [NSURL URLWithString:deeplick];
+        if (@available(iOS 10.0, *)) {
+            [[UIApplication sharedApplication] openURL:deeplickUrl options:@{} completionHandler:^(BOOL success) {
+                if (!success) {
+                    NSURL *url = [NSURL URLWithString:urlStr];
+                    if (@available(iOS 9.0, *)) {
+                        SFSafariViewController *safariVC = [[SFSafariViewController alloc] initWithURL:url];
+                        [[NetTool getCurrentViewController] showViewController:safariVC sender:nil];
+                        
+                    } else {
+                        YXWebViewController *web = [YXWebViewController new];
+                        web.URLString = urlStr;
+                        [[NetTool getCurrentViewController] presentViewController:web animated:YES completion:nil];
+                    }
+                }
+            }];
+        }else{
+            NSURL *url = [NSURL URLWithString:urlStr];
+            if (@available(iOS 9.0, *)) {
+                SFSafariViewController *safariVC = [[SFSafariViewController alloc] initWithURL:url];
+                [[NetTool getCurrentViewController] showViewController:safariVC sender:nil];
+                
+            } else {
+                YXWebViewController *web = [YXWebViewController new];
+                web.URLString = urlStr;
+                [[NetTool getCurrentViewController] presentViewController:web animated:YES completion:nil];
+            }
+        }
+        
+    } else if([ac_type isEqualToString:@"7"]){
         
         NSString * miniPath = [NSString stringWithFormat:@"%@",_resultDict[@"miniPath"] ];
         miniPath = [miniPath stringByReplacingOccurrencesOfString:@" " withString:@""];
@@ -942,8 +943,7 @@ static YXLaunchAdManager *instance = nil;
             VC.delegate = self;
             VC.URLString = urlStr;
             //此处不要直接取keyWindow
-            UIViewController* rootVC = [[UIApplication sharedApplication].delegate window].rootViewController;
-            [rootVC presentViewController:VC animated:NO completion:nil];
+            [[NetTool getCurrentViewController] presentViewController:VC animated:NO completion:nil];
         }
     }
     // 2.上报服务器

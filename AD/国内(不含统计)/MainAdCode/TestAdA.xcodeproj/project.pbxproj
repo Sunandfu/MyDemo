@@ -56,8 +56,6 @@
 		E7191C7F22487A3E00D8FBB4 /* YXRectConst.m in Sources */ = {isa = PBXBuildFile; fileRef = E7191C7B22487A3E00D8FBB4 /* YXRectConst.m */; };
 		E7191C8022487A3E00D8FBB4 /* YXPopupMenuPath.m in Sources */ = {isa = PBXBuildFile; fileRef = E7191C7D22487A3E00D8FBB4 /* YXPopupMenuPath.m */; };
 		E7191C8322487B0200D8FBB4 /* YXMenuViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E7191C8222487B0200D8FBB4 /* YXMenuViewCell.m */; };
-		E7191C862248874100D8FBB4 /* SFConfigModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E7191C852248874100D8FBB4 /* SFConfigModel.m */; };
-		E7191C892248875800D8FBB4 /* SFMviewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E7191C882248875800D8FBB4 /* SFMviewModel.m */; };
 		E73698B72238FF81000BC26F /* libresolv.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E73698B62238FF81000BC26F /* libresolv.9.tbd */; };
 		E73698B922390030000BC26F /* libz.1.1.3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E73698B822390030000BC26F /* libz.1.1.3.tbd */; };
 		E73698BB22390075000BC26F /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E73698BA22390075000BC26F /* AVFoundation.framework */; };
@@ -68,10 +66,7 @@
 		E73699FD223906E6000BC26F /* YXIconAdManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E73699AB223906E5000BC26F /* YXIconAdManager.m */; };
 		E73699FE223906E6000BC26F /* YXFLAnimatedImage.m in Sources */ = {isa = PBXBuildFile; fileRef = E73699B0223906E5000BC26F /* YXFLAnimatedImage.m */; };
 		E73699FF223906E6000BC26F /* YXFLAnimatedImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = E73699B1223906E5000BC26F /* YXFLAnimatedImageView.m */; };
-		E7369A00223906E6000BC26F /* YXNewPagedFlowView.m in Sources */ = {isa = PBXBuildFile; fileRef = E73699B4223906E5000BC26F /* YXNewPagedFlowView.m */; };
-		E7369A01223906E6000BC26F /* YXPGIndexBannerSubiew.m in Sources */ = {isa = PBXBuildFile; fileRef = E73699B6223906E5000BC26F /* YXPGIndexBannerSubiew.m */; };
 		E7369A02223906E6000BC26F /* YXAdSDKManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E73699BA223906E6000BC26F /* YXAdSDKManager.m */; };
-		E7369A03223906E6000BC26F /* YDSource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E73699BD223906E6000BC26F /* YDSource.bundle */; };
 		E7369A04223906E6000BC26F /* LaunchAdModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E73699BE223906E6000BC26F /* LaunchAdModel.m */; };
 		E7369A05223906E6000BC26F /* YXMotivationVideoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E73699BF223906E6000BC26F /* YXMotivationVideoManager.m */; };
 		E7369A06223906E6000BC26F /* YXMutBannerAdManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E73699C0223906E6000BC26F /* YXMutBannerAdManager.m */; };
@@ -80,14 +75,12 @@
 		E7369A09223906E6000BC26F /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E73699C8223906E6000BC26F /* libWeChatSDK.a */; };
 		E7369A0A223906E6000BC26F /* Network.m in Sources */ = {isa = PBXBuildFile; fileRef = E73699CA223906E6000BC26F /* Network.m */; };
 		E7369A0B223906E6000BC26F /* YXReachability.m in Sources */ = {isa = PBXBuildFile; fileRef = E73699CC223906E6000BC26F /* YXReachability.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		E7369A0C223906E6000BC26F /* YXLCdes.m in Sources */ = {isa = PBXBuildFile; fileRef = E73699D0223906E6000BC26F /* YXLCdes.m */; };
 		E7369A0D223906E6000BC26F /* YXGTMBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = E73699D1223906E6000BC26F /* YXGTMBase64.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		E7369A0F223906E6000BC26F /* NetTool.m in Sources */ = {isa = PBXBuildFile; fileRef = E73699D5223906E6000BC26F /* NetTool.m */; };
 		E7369A10223906E6000BC26F /* YXImgUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = E73699D7223906E6000BC26F /* YXImgUtil.m */; };
 		E7369A11223906E6000BC26F /* BUAdSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E73699D9223906E6000BC26F /* BUAdSDK.framework */; };
 		E7369A12223906E6000BC26F /* BUAdSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E73699DA223906E6000BC26F /* BUAdSDK.bundle */; };
 		E7369A13223906E6000BC26F /* YXWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E73699DB223906E6000BC26F /* YXWebViewController.m */; };
-		E7369A14223906E6000BC26F /* libGDTMobSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E73699EB223906E6000BC26F /* libGDTMobSDK.a */; };
 		E7369A15223906E6000BC26F /* YXInterstitialAdManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E73699EE223906E6000BC26F /* YXInterstitialAdManager.m */; };
 		E7369A16223906E6000BC26F /* YXFeedAdManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E73699F0223906E6000BC26F /* YXFeedAdManager.m */; };
 		E7369A192239078A000BC26F /* YXInterstitialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7369A1722390788000BC26F /* YXInterstitialViewController.m */; };
@@ -100,6 +93,7 @@
 		E736B354225609D2004E8A1F /* YXAnimationPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = E736B345225609D0004E8A1F /* YXAnimationPageControl.m */; };
 		E736B356225609D2004E8A1F /* UIView+YXExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = E736B34C225609D1004E8A1F /* UIView+YXExtension.m */; };
 		E736B357225609D2004E8A1F /* YXCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E736B34D225609D2004E8A1F /* YXCollectionViewCell.m */; };
+		E736F1F722607CAC00AE5F11 /* libGDTMobSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E736F1EE22607CAB00AE5F11 /* libGDTMobSDK.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -186,7 +180,7 @@
 		E7191C4222447FFE00D8FBB4 /* NSString+SFAES.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+SFAES.m"; sourceTree = "<group>"; };
 		E7191C52224875FF00D8FBB4 /* YXLaunchAdDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXLaunchAdDownloader.m; sourceTree = "<group>"; };
 		E7191C53224875FF00D8FBB4 /* YXLaunchAdConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXLaunchAdConfiguration.h; sourceTree = "<group>"; };
-		E7191C54224875FF00D8FBB4 /* YXFeedAdData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXFeedAdData.h; sourceTree = "<group>"; };
+		E7191C54224875FF00D8FBB4 /* YXFeedAdData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YXFeedAdData.h; path = ../LaundchAd/YXFeedAdData.h; sourceTree = "<group>"; };
 		E7191C55224875FF00D8FBB4 /* YXLaunchImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXLaunchImageView.h; sourceTree = "<group>"; };
 		E7191C56224875FF00D8FBB4 /* YXLaunchAdCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXLaunchAdCache.m; sourceTree = "<group>"; };
 		E7191C57224875FF00D8FBB4 /* YXLaunchAdDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXLaunchAdDownloader.h; sourceTree = "<group>"; };
@@ -204,9 +198,9 @@
 		E7191C632248760000D8FBB4 /* YXLaunchAdController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXLaunchAdController.h; sourceTree = "<group>"; };
 		E7191C642248760000D8FBB4 /* YXLaunchAdCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXLaunchAdCache.h; sourceTree = "<group>"; };
 		E7191C652248760000D8FBB4 /* YXLaunchAd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXLaunchAd.h; sourceTree = "<group>"; };
-		E7191C662248760000D8FBB4 /* YXFeedAdData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXFeedAdData.m; sourceTree = "<group>"; };
+		E7191C662248760000D8FBB4 /* YXFeedAdData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YXFeedAdData.m; path = ../LaundchAd/YXFeedAdData.m; sourceTree = "<group>"; };
 		E7191C672248760100D8FBB4 /* YXLaunchAdImageView+YXLaunchAdCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "YXLaunchAdImageView+YXLaunchAdCache.m"; sourceTree = "<group>"; };
-		E7191C682248760100D8FBB4 /* YXLaunchConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXLaunchConfiguration.h; sourceTree = "<group>"; };
+		E7191C682248760100D8FBB4 /* YXLaunchConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YXLaunchConfiguration.h; path = ../LaundchAd/YXLaunchConfiguration.h; sourceTree = "<group>"; };
 		E7191C692248760100D8FBB4 /* YXLaunchAdView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXLaunchAdView.h; sourceTree = "<group>"; };
 		E7191C6A2248760100D8FBB4 /* YXLaunchAdButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXLaunchAdButton.m; sourceTree = "<group>"; };
 		E7191C7822487A3E00D8FBB4 /* YXPopupMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXPopupMenu.m; sourceTree = "<group>"; };
@@ -217,10 +211,6 @@
 		E7191C7D22487A3E00D8FBB4 /* YXPopupMenuPath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXPopupMenuPath.m; sourceTree = "<group>"; };
 		E7191C8122487AFF00D8FBB4 /* YXMenuViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXMenuViewCell.h; sourceTree = "<group>"; };
 		E7191C8222487B0200D8FBB4 /* YXMenuViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXMenuViewCell.m; sourceTree = "<group>"; };
-		E7191C842248873E00D8FBB4 /* SFConfigModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFConfigModel.h; sourceTree = "<group>"; };
-		E7191C852248874100D8FBB4 /* SFConfigModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFConfigModel.m; sourceTree = "<group>"; };
-		E7191C872248875500D8FBB4 /* SFMviewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFMviewModel.h; sourceTree = "<group>"; };
-		E7191C882248875800D8FBB4 /* SFMviewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFMviewModel.m; sourceTree = "<group>"; };
 		E73698B62238FF81000BC26F /* libresolv.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.9.tbd; path = usr/lib/libresolv.9.tbd; sourceTree = SDKROOT; };
 		E73698B822390030000BC26F /* libz.1.1.3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.1.3.tbd; path = usr/lib/libz.1.1.3.tbd; sourceTree = SDKROOT; };
 		E73698BA22390075000BC26F /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -236,16 +226,11 @@
 		E73699AF223906E5000BC26F /* YXFLAnimatedImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXFLAnimatedImage.h; sourceTree = "<group>"; };
 		E73699B0223906E5000BC26F /* YXFLAnimatedImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXFLAnimatedImage.m; sourceTree = "<group>"; };
 		E73699B1223906E5000BC26F /* YXFLAnimatedImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXFLAnimatedImageView.m; sourceTree = "<group>"; };
-		E73699B3223906E5000BC26F /* YXPGIndexBannerSubiew.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXPGIndexBannerSubiew.h; sourceTree = "<group>"; };
-		E73699B4223906E5000BC26F /* YXNewPagedFlowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXNewPagedFlowView.m; sourceTree = "<group>"; };
-		E73699B5223906E5000BC26F /* YXNewPagedFlowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXNewPagedFlowView.h; sourceTree = "<group>"; };
-		E73699B6223906E5000BC26F /* YXPGIndexBannerSubiew.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXPGIndexBannerSubiew.m; sourceTree = "<group>"; };
 		E73699B7223906E5000BC26F /* YXAdSDKManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXAdSDKManager.h; sourceTree = "<group>"; };
 		E73699B8223906E5000BC26F /* YXMotivationVideoManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXMotivationVideoManager.h; sourceTree = "<group>"; };
 		E73699B9223906E6000BC26F /* YXBannerAdManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXBannerAdManager.h; sourceTree = "<group>"; };
 		E73699BA223906E6000BC26F /* YXAdSDKManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXAdSDKManager.m; sourceTree = "<group>"; };
 		E73699BC223906E6000BC26F /* LaunchAdModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LaunchAdModel.h; sourceTree = "<group>"; };
-		E73699BD223906E6000BC26F /* YDSource.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = YDSource.bundle; sourceTree = "<group>"; };
 		E73699BE223906E6000BC26F /* LaunchAdModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LaunchAdModel.m; sourceTree = "<group>"; };
 		E73699BF223906E6000BC26F /* YXMotivationVideoManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXMotivationVideoManager.m; sourceTree = "<group>"; };
 		E73699C0223906E6000BC26F /* YXMutBannerAdManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXMutBannerAdManager.m; sourceTree = "<group>"; };
@@ -261,10 +246,8 @@
 		E73699CC223906E6000BC26F /* YXReachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXReachability.m; sourceTree = "<group>"; };
 		E73699CD223906E6000BC26F /* NetTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetTool.h; sourceTree = "<group>"; };
 		E73699CF223906E6000BC26F /* YXGTMDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXGTMDefines.h; sourceTree = "<group>"; };
-		E73699D0223906E6000BC26F /* YXLCdes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXLCdes.m; sourceTree = "<group>"; };
 		E73699D1223906E6000BC26F /* YXGTMBase64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXGTMBase64.m; sourceTree = "<group>"; };
 		E73699D2223906E6000BC26F /* YXGTMBase64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXGTMBase64.h; sourceTree = "<group>"; };
-		E73699D3223906E6000BC26F /* YXLCdes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXLCdes.h; sourceTree = "<group>"; };
 		E73699D5223906E6000BC26F /* NetTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetTool.m; sourceTree = "<group>"; };
 		E73699D6223906E6000BC26F /* YXReachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXReachability.h; sourceTree = "<group>"; };
 		E73699D7223906E6000BC26F /* YXImgUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXImgUtil.m; sourceTree = "<group>"; };
@@ -272,21 +255,6 @@
 		E73699DA223906E6000BC26F /* BUAdSDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = BUAdSDK.bundle; sourceTree = "<group>"; };
 		E73699DB223906E6000BC26F /* YXWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXWebViewController.m; sourceTree = "<group>"; };
 		E73699DC223906E6000BC26F /* Network.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Network.h; sourceTree = "<group>"; };
-		E73699DE223906E6000BC26F /* GDTNativeExpressAdView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTNativeExpressAdView.h; sourceTree = "<group>"; };
-		E73699DF223906E6000BC26F /* GDTMobBannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTMobBannerView.h; sourceTree = "<group>"; };
-		E73699E0223906E6000BC26F /* GDTNativeAd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTNativeAd.h; sourceTree = "<group>"; };
-		E73699E1223906E6000BC26F /* GDTSDKConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTSDKConfig.h; sourceTree = "<group>"; };
-		E73699E2223906E6000BC26F /* GDTMobInterstitial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTMobInterstitial.h; sourceTree = "<group>"; };
-		E73699E3223906E6000BC26F /* GDTRewardVideoAd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTRewardVideoAd.h; sourceTree = "<group>"; };
-		E73699E4223906E6000BC26F /* GDTSplashAd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTSplashAd.h; sourceTree = "<group>"; };
-		E73699E5223906E6000BC26F /* GDTNativeExpressAd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTNativeExpressAd.h; sourceTree = "<group>"; };
-		E73699E6223906E6000BC26F /* GDTLogoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTLogoView.h; sourceTree = "<group>"; };
-		E73699E7223906E6000BC26F /* GDTMediaView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTMediaView.h; sourceTree = "<group>"; };
-		E73699E8223906E6000BC26F /* GDTUnifiedNativeAdView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTUnifiedNativeAdView.h; sourceTree = "<group>"; };
-		E73699E9223906E6000BC26F /* GDTUnifiedNativeAdDataObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTUnifiedNativeAdDataObject.h; sourceTree = "<group>"; };
-		E73699EA223906E6000BC26F /* GDTSDKDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTSDKDefines.h; sourceTree = "<group>"; };
-		E73699EB223906E6000BC26F /* libGDTMobSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGDTMobSDK.a; sourceTree = "<group>"; };
-		E73699EC223906E6000BC26F /* GDTUnifiedNativeAd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTUnifiedNativeAd.h; sourceTree = "<group>"; };
 		E73699EE223906E6000BC26F /* YXInterstitialAdManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXInterstitialAdManager.m; sourceTree = "<group>"; };
 		E73699EF223906E6000BC26F /* YXLaunchAdManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXLaunchAdManager.h; sourceTree = "<group>"; };
 		E73699F0223906E6000BC26F /* YXFeedAdManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXFeedAdManager.m; sourceTree = "<group>"; };
@@ -310,6 +278,24 @@
 		E736B34B225609D1004E8A1F /* YXAbstractDotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXAbstractDotView.h; sourceTree = "<group>"; };
 		E736B34C225609D1004E8A1F /* UIView+YXExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+YXExtension.m"; sourceTree = "<group>"; };
 		E736B34D225609D2004E8A1F /* YXCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXCollectionViewCell.m; sourceTree = "<group>"; };
+		E736F1E522607CAA00AE5F11 /* GDTHybridAd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTHybridAd.h; sourceTree = "<group>"; };
+		E736F1E622607CAA00AE5F11 /* GDTNativeExpressAdView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTNativeExpressAdView.h; sourceTree = "<group>"; };
+		E736F1E722607CAA00AE5F11 /* GDTSplashAd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTSplashAd.h; sourceTree = "<group>"; };
+		E736F1E822607CAA00AE5F11 /* GDTMobInterstitial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTMobInterstitial.h; sourceTree = "<group>"; };
+		E736F1E922607CAA00AE5F11 /* GDTRewardVideoAd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTRewardVideoAd.h; sourceTree = "<group>"; };
+		E736F1EA22607CAA00AE5F11 /* GDTLogoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTLogoView.h; sourceTree = "<group>"; };
+		E736F1EB22607CAA00AE5F11 /* GDTSDKDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTSDKDefines.h; sourceTree = "<group>"; };
+		E736F1EC22607CAB00AE5F11 /* GDTSDKConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTSDKConfig.h; sourceTree = "<group>"; };
+		E736F1ED22607CAB00AE5F11 /* GDTUnifiedBannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTUnifiedBannerView.h; sourceTree = "<group>"; };
+		E736F1EE22607CAB00AE5F11 /* libGDTMobSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGDTMobSDK.a; sourceTree = "<group>"; };
+		E736F1EF22607CAB00AE5F11 /* GDTUnifiedNativeAdView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTUnifiedNativeAdView.h; sourceTree = "<group>"; };
+		E736F1F022607CAB00AE5F11 /* GDTNativeAd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTNativeAd.h; sourceTree = "<group>"; };
+		E736F1F122607CAB00AE5F11 /* GDTUnifiedNativeAdDataObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTUnifiedNativeAdDataObject.h; sourceTree = "<group>"; };
+		E736F1F222607CAB00AE5F11 /* GDTMediaView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTMediaView.h; sourceTree = "<group>"; };
+		E736F1F322607CAB00AE5F11 /* GDTMobBannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTMobBannerView.h; sourceTree = "<group>"; };
+		E736F1F422607CAB00AE5F11 /* GDTNativeExpressAd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTNativeExpressAd.h; sourceTree = "<group>"; };
+		E736F1F522607CAB00AE5F11 /* GDTUnifiedInterstitialAd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTUnifiedInterstitialAd.h; sourceTree = "<group>"; };
+		E736F1F622607CAC00AE5F11 /* GDTUnifiedNativeAd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTUnifiedNativeAd.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -339,7 +325,7 @@
 				8270C8062066261F005C8545 /* libz.tbd in Frameworks */,
 				8270C80420662600005C8545 /* StoreKit.framework in Frameworks */,
 				8270C802206625F4005C8545 /* AdSupport.framework in Frameworks */,
-				E7369A14223906E6000BC26F /* libGDTMobSDK.a in Frameworks */,
+				E736F1F722607CAC00AE5F11 /* libGDTMobSDK.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -468,11 +454,11 @@
 		E7191C7722487A3E00D8FBB4 /* YXPopupMenu */ = {
 			isa = PBXGroup;
 			children = (
-				E7191C7822487A3E00D8FBB4 /* YXPopupMenu.m */,
 				E7191C7922487A3E00D8FBB4 /* YXRectConst.h */,
-				E7191C7A22487A3E00D8FBB4 /* YXPopupMenuPath.h */,
 				E7191C7B22487A3E00D8FBB4 /* YXRectConst.m */,
 				E7191C7C22487A3E00D8FBB4 /* YXPopupMenu.h */,
+				E7191C7822487A3E00D8FBB4 /* YXPopupMenu.m */,
+				E7191C7A22487A3E00D8FBB4 /* YXPopupMenuPath.h */,
 				E7191C7D22487A3E00D8FBB4 /* YXPopupMenuPath.m */,
 			);
 			path = YXPopupMenu;
@@ -508,8 +494,6 @@
 		E736998F223906E5000BC26F /* LaundchAd */ = {
 			isa = PBXGroup;
 			children = (
-				E7191C54224875FF00D8FBB4 /* YXFeedAdData.h */,
-				E7191C662248760000D8FBB4 /* YXFeedAdData.m */,
 				E7191C652248760000D8FBB4 /* YXLaunchAd.h */,
 				E7191C612248760000D8FBB4 /* YXLaunchAd.m */,
 				E7191C5C2248760000D8FBB4 /* YXLaunchAdButton.h */,
@@ -530,7 +514,6 @@
 				E7191C672248760100D8FBB4 /* YXLaunchAdImageView+YXLaunchAdCache.m */,
 				E7191C692248760100D8FBB4 /* YXLaunchAdView.h */,
 				E7191C5F2248760000D8FBB4 /* YXLaunchAdView.m */,
-				E7191C682248760100D8FBB4 /* YXLaunchConfiguration.h */,
 				E7191C55224875FF00D8FBB4 /* YXLaunchImageView.h */,
 				E7191C59224875FF00D8FBB4 /* YXLaunchImageView.m */,
 			);
@@ -543,7 +526,6 @@
 				E736B31B22560987004E8A1F /* YXBannerScrollView */,
 				E7191C7722487A3E00D8FBB4 /* YXPopupMenu */,
 				E73699AD223906E5000BC26F /* YXFLAnimatedImage */,
-				E73699B2223906E5000BC26F /* YXNewPage */,
 			);
 			path = lib;
 			sourceTree = "<group>";
@@ -551,37 +533,24 @@
 		E73699AD223906E5000BC26F /* YXFLAnimatedImage */ = {
 			isa = PBXGroup;
 			children = (
-				E73699AE223906E5000BC26F /* YXFLAnimatedImageView.h */,
 				E73699AF223906E5000BC26F /* YXFLAnimatedImage.h */,
 				E73699B0223906E5000BC26F /* YXFLAnimatedImage.m */,
+				E73699AE223906E5000BC26F /* YXFLAnimatedImageView.h */,
 				E73699B1223906E5000BC26F /* YXFLAnimatedImageView.m */,
 			);
 			path = YXFLAnimatedImage;
 			sourceTree = "<group>";
 		};
-		E73699B2223906E5000BC26F /* YXNewPage */ = {
-			isa = PBXGroup;
-			children = (
-				E73699B3223906E5000BC26F /* YXPGIndexBannerSubiew.h */,
-				E73699B4223906E5000BC26F /* YXNewPagedFlowView.m */,
-				E73699B5223906E5000BC26F /* YXNewPagedFlowView.h */,
-				E73699B6223906E5000BC26F /* YXPGIndexBannerSubiew.m */,
-			);
-			path = YXNewPage;
-			sourceTree = "<group>";
-		};
 		E73699BB223906E6000BC26F /* model */ = {
 			isa = PBXGroup;
 			children = (
+				E7191C682248760100D8FBB4 /* YXLaunchConfiguration.h */,
 				E7191C8122487AFF00D8FBB4 /* YXMenuViewCell.h */,
 				E7191C8222487B0200D8FBB4 /* YXMenuViewCell.m */,
 				E73699BC223906E6000BC26F /* LaunchAdModel.h */,
 				E73699BE223906E6000BC26F /* LaunchAdModel.m */,
-				E7191C842248873E00D8FBB4 /* SFConfigModel.h */,
-				E7191C852248874100D8FBB4 /* SFConfigModel.m */,
-				E7191C872248875500D8FBB4 /* SFMviewModel.h */,
-				E7191C882248875800D8FBB4 /* SFMviewModel.m */,
-				E73699BD223906E6000BC26F /* YDSource.bundle */,
+				E7191C54224875FF00D8FBB4 /* YXFeedAdData.h */,
+				E7191C662248760000D8FBB4 /* YXFeedAdData.m */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -625,8 +594,6 @@
 				E73699D1223906E6000BC26F /* YXGTMBase64.m */,
 				E7191C4122447FFB00D8FBB4 /* NSString+SFAES.h */,
 				E7191C4222447FFE00D8FBB4 /* NSString+SFAES.m */,
-				E73699D3223906E6000BC26F /* YXLCdes.h */,
-				E73699D0223906E6000BC26F /* YXLCdes.m */,
 			);
 			path = des;
 			sourceTree = "<group>";
@@ -643,21 +610,24 @@
 		E73699DD223906E6000BC26F /* gdtAD */ = {
 			isa = PBXGroup;
 			children = (
-				E73699DE223906E6000BC26F /* GDTNativeExpressAdView.h */,
-				E73699DF223906E6000BC26F /* GDTMobBannerView.h */,
-				E73699E0223906E6000BC26F /* GDTNativeAd.h */,
-				E73699E1223906E6000BC26F /* GDTSDKConfig.h */,
-				E73699E2223906E6000BC26F /* GDTMobInterstitial.h */,
-				E73699E3223906E6000BC26F /* GDTRewardVideoAd.h */,
-				E73699E4223906E6000BC26F /* GDTSplashAd.h */,
-				E73699E5223906E6000BC26F /* GDTNativeExpressAd.h */,
-				E73699E6223906E6000BC26F /* GDTLogoView.h */,
-				E73699E7223906E6000BC26F /* GDTMediaView.h */,
-				E73699E8223906E6000BC26F /* GDTUnifiedNativeAdView.h */,
-				E73699E9223906E6000BC26F /* GDTUnifiedNativeAdDataObject.h */,
-				E73699EA223906E6000BC26F /* GDTSDKDefines.h */,
-				E73699EB223906E6000BC26F /* libGDTMobSDK.a */,
-				E73699EC223906E6000BC26F /* GDTUnifiedNativeAd.h */,
+				E736F1E522607CAA00AE5F11 /* GDTHybridAd.h */,
+				E736F1EA22607CAA00AE5F11 /* GDTLogoView.h */,
+				E736F1F222607CAB00AE5F11 /* GDTMediaView.h */,
+				E736F1F322607CAB00AE5F11 /* GDTMobBannerView.h */,
+				E736F1E822607CAA00AE5F11 /* GDTMobInterstitial.h */,
+				E736F1F022607CAB00AE5F11 /* GDTNativeAd.h */,
+				E736F1F422607CAB00AE5F11 /* GDTNativeExpressAd.h */,
+				E736F1E622607CAA00AE5F11 /* GDTNativeExpressAdView.h */,
+				E736F1E922607CAA00AE5F11 /* GDTRewardVideoAd.h */,
+				E736F1EC22607CAB00AE5F11 /* GDTSDKConfig.h */,
+				E736F1EB22607CAA00AE5F11 /* GDTSDKDefines.h */,
+				E736F1E722607CAA00AE5F11 /* GDTSplashAd.h */,
+				E736F1ED22607CAB00AE5F11 /* GDTUnifiedBannerView.h */,
+				E736F1F522607CAB00AE5F11 /* GDTUnifiedInterstitialAd.h */,
+				E736F1F622607CAC00AE5F11 /* GDTUnifiedNativeAd.h */,
+				E736F1F122607CAB00AE5F11 /* GDTUnifiedNativeAdDataObject.h */,
+				E736F1EF22607CAB00AE5F11 /* GDTUnifiedNativeAdView.h */,
+				E736F1EE22607CAB00AE5F11 /* libGDTMobSDK.a */,
 			);
 			path = gdtAD;
 			sourceTree = "<group>";
@@ -797,7 +767,6 @@
 				8270C79E20661EAA005C8545 /* LaunchScreen.storyboard in Resources */,
 				8238B123217F04C300346C23 /* YXFeedAdTableViewCell.xib in Resources */,
 				8270C79B20661EAA005C8545 /* Assets.xcassets in Resources */,
-				E7369A03223906E6000BC26F /* YDSource.bundle in Resources */,
 				E7369A12223906E6000BC26F /* BUAdSDK.bundle in Resources */,
 				8270C79920661EAA005C8545 /* Main.storyboard in Resources */,
 				82367AA6217D729500B4FB4E /* YXFeedAdRegisterView.xib in Resources */,
@@ -838,8 +807,6 @@
 				E7369A10223906E6000BC26F /* YXImgUtil.m in Sources */,
 				E736B34E225609D2004E8A1F /* YXPageControl.m in Sources */,
 				E7191C722248760100D8FBB4 /* YXLaunchAd.m in Sources */,
-				E7369A00223906E6000BC26F /* YXNewPagedFlowView.m in Sources */,
-				E7191C892248875800D8FBB4 /* SFMviewModel.m in Sources */,
 				E7191C752248760100D8FBB4 /* YXLaunchAdImageView+YXLaunchAdCache.m in Sources */,
 				82367AA8217D729500B4FB4E /* YXFeedAdRegisterView.m in Sources */,
 				E7191C6E2248760100D8FBB4 /* YXLaunchImageView.m in Sources */,
@@ -858,7 +825,6 @@
 				826ADCE3216C4C50005F0577 /* YXBannerViewController.m in Sources */,
 				E7369A06223906E6000BC26F /* YXMutBannerAdManager.m in Sources */,
 				E7191C7E22487A3E00D8FBB4 /* YXPopupMenu.m in Sources */,
-				E7369A01223906E6000BC26F /* YXPGIndexBannerSubiew.m in Sources */,
 				E7369A07223906E6000BC26F /* YXLaunchAdManager.m in Sources */,
 				E736B356225609D2004E8A1F /* UIView+YXExtension.m in Sources */,
 				8270C7A120661EAA005C8545 /* main.m in Sources */,
@@ -875,12 +841,10 @@
 				E7369A16223906E6000BC26F /* YXFeedAdManager.m in Sources */,
 				8214501121B7B7AD00081AED /* YXMotivationVideoViewController.m in Sources */,
 				E7191C8322487B0200D8FBB4 /* YXMenuViewCell.m in Sources */,
-				E7191C862248874100D8FBB4 /* SFConfigModel.m in Sources */,
 				E7369A08223906E6000BC26F /* YXBannerAdManager.m in Sources */,
 				E7191C762248760100D8FBB4 /* YXLaunchAdButton.m in Sources */,
 				E7369A15223906E6000BC26F /* YXInterstitialAdManager.m in Sources */,
 				E7369A02223906E6000BC26F /* YXAdSDKManager.m in Sources */,
-				E7369A0C223906E6000BC26F /* YXLCdes.m in Sources */,
 				E736B352225609D2004E8A1F /* YXHorizontalPageControl.m in Sources */,
 				E73699FF223906E6000BC26F /* YXFLAnimatedImageView.m in Sources */,
 				E736B354225609D2004E8A1F /* YXAnimationPageControl.m in Sources */,
@@ -990,7 +954,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -1041,7 +1005,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -1054,8 +1018,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = J4N9H827FQ;
-				ENABLE_BITCODE = NO;
+				DEVELOPMENT_TEAM = YZBRFWH5TP;
+				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -1065,7 +1029,7 @@
 					"$(PROJECT_DIR)/TestAdA/Lib/Tool/ChuanAD",
 				);
 				INFOPLIST_FILE = TestAdA/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1078,10 +1042,10 @@
 					"-Objc",
 					"-all_load",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.yunx.fitness;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gvsoft.gofun;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "6c98abac-4b2e-4ab1-9faf-fc1314841d2a";
-				PROVISIONING_PROFILE_SPECIFIER = mySelfTongyong;
+				PROVISIONING_PROFILE_SPECIFIER = YunQingTest_Development;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -1092,8 +1056,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = J4N9H827FQ;
-				ENABLE_BITCODE = NO;
+				DEVELOPMENT_TEAM = YZBRFWH5TP;
+				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -1103,7 +1067,7 @@
 					"$(PROJECT_DIR)/TestAdA/Lib/Tool/ChuanAD",
 				);
 				INFOPLIST_FILE = TestAdA/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1116,10 +1080,10 @@
 					"-Objc",
 					"-all_load",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.yunx.fitness;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gvsoft.gofun;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "6c98abac-4b2e-4ab1-9faf-fc1314841d2a";
-				PROVISIONING_PROFILE_SPECIFIER = mySelfTongyong;
+				PROVISIONING_PROFILE_SPECIFIER = YunQingTest_Development;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

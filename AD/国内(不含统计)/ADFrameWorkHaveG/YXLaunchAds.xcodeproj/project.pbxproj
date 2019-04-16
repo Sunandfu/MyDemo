@@ -7,17 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8202E77721A51D2B00586F04 /* BUAdSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8202E77421A51CFB00586F04 /* BUAdSDK.framework */; };
-		82144FE821B7B12A00081AED /* YXAdSDKManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 82144FE221B7B12900081AED /* YXAdSDKManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		82144FE921B7B12A00081AED /* YXMotivationVideoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 82144FE321B7B12900081AED /* YXMotivationVideoManager.m */; };
-		82144FEA21B7B12A00081AED /* YXMutBannerAdManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 82144FE421B7B12900081AED /* YXMutBannerAdManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		82144FEB21B7B12A00081AED /* YXMutBannerAdManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 82144FE521B7B12900081AED /* YXMutBannerAdManager.m */; };
-		82144FEC21B7B12A00081AED /* YXMotivationVideoManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 82144FE621B7B12900081AED /* YXMotivationVideoManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		82144FED21B7B12A00081AED /* YXAdSDKManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 82144FE721B7B12A00081AED /* YXAdSDKManager.m */; };
-		82144FFF21B7B23800081AED /* YXPGIndexBannerSubiew.h in Headers */ = {isa = PBXBuildFile; fileRef = 82144FFB21B7B23800081AED /* YXPGIndexBannerSubiew.h */; };
-		8214500021B7B23800081AED /* YXNewPagedFlowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 82144FFC21B7B23800081AED /* YXNewPagedFlowView.m */; };
-		8214500121B7B23800081AED /* YXNewPagedFlowView.h in Headers */ = {isa = PBXBuildFile; fileRef = 82144FFD21B7B23800081AED /* YXNewPagedFlowView.h */; };
-		8214500221B7B23800081AED /* YXPGIndexBannerSubiew.m in Sources */ = {isa = PBXBuildFile; fileRef = 82144FFE21B7B23800081AED /* YXPGIndexBannerSubiew.m */; };
 		8226135220C7FD5B00D767BD /* YXLaunchAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8226134820C7FD5B00D767BD /* YXLaunchAds.framework */; };
 		8226135720C7FD5B00D767BD /* YXLaunchAdsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8226135620C7FD5B00D767BD /* YXLaunchAdsTests.m */; };
 		8226136420C7FDBA00D767BD /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8226136320C7FDBA00D767BD /* CoreLocation.framework */; };
@@ -31,89 +20,112 @@
 		8226137420C7FE0800D767BD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8226137320C7FE0800D767BD /* Foundation.framework */; };
 		8226137620C7FE1000D767BD /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8226137520C7FE1000D767BD /* StoreKit.framework */; };
 		8226137820C7FE1B00D767BD /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8226137720C7FE1B00D767BD /* AdSupport.framework */; };
-		8226137C20C7FE6A00D767BD /* YXLaunchAdManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8226137A20C7FE6900D767BD /* YXLaunchAdManager.m */; };
-		822613C420C7FEB400D767BD /* YXLaunchAdImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8226137E20C7FEB300D767BD /* YXLaunchAdImageManager.m */; };
-		822613C620C7FEB400D767BD /* YXLaunchAdCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 8226138020C7FEB300D767BD /* YXLaunchAdCache.m */; };
-		822613C720C7FEB400D767BD /* YXLaunchAdView.h in Headers */ = {isa = PBXBuildFile; fileRef = 8226138120C7FEB300D767BD /* YXLaunchAdView.h */; };
-		822613C820C7FEB400D767BD /* YXLaunchAdConst.h in Headers */ = {isa = PBXBuildFile; fileRef = 8226138220C7FEB300D767BD /* YXLaunchAdConst.h */; };
-		822613C920C7FEB400D767BD /* YXLaunchAdImageView+YXLaunchAdCache.h in Headers */ = {isa = PBXBuildFile; fileRef = 8226138320C7FEB300D767BD /* YXLaunchAdImageView+YXLaunchAdCache.h */; };
-		822613CA20C7FEB400D767BD /* YXLaunchImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8226138420C7FEB300D767BD /* YXLaunchImageView.m */; };
-		822613CB20C7FEB400D767BD /* YXLaunchAd.h in Headers */ = {isa = PBXBuildFile; fileRef = 8226138520C7FEB300D767BD /* YXLaunchAd.h */; };
-		822613CC20C7FEB400D767BD /* YXLaunchAdController.h in Headers */ = {isa = PBXBuildFile; fileRef = 8226138620C7FEB300D767BD /* YXLaunchAdController.h */; };
-		822613CD20C7FEB400D767BD /* YXLaunchAdConfiguration.h in Headers */ = {isa = PBXBuildFile; fileRef = 8226138720C7FEB300D767BD /* YXLaunchAdConfiguration.h */; };
-		822613CE20C7FEB400D767BD /* YXLaunchAdDownloader.h in Headers */ = {isa = PBXBuildFile; fileRef = 8226138820C7FEB300D767BD /* YXLaunchAdDownloader.h */; };
-		822613CF20C7FEB400D767BD /* YXLaunchAdButton.h in Headers */ = {isa = PBXBuildFile; fileRef = 8226138920C7FEB300D767BD /* YXLaunchAdButton.h */; };
-		822613D020C7FEB400D767BD /* YXLaunchAdView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8226138A20C7FEB300D767BD /* YXLaunchAdView.m */; };
-		822613D120C7FEB400D767BD /* YXLaunchAdCache.h in Headers */ = {isa = PBXBuildFile; fileRef = 8226138B20C7FEB300D767BD /* YXLaunchAdCache.h */; };
-		822613D220C7FEB400D767BD /* YXLaunchAdImageManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 8226138C20C7FEB300D767BD /* YXLaunchAdImageManager.h */; };
-		822613D320C7FEB400D767BD /* YXLaunchAdImageView+YXLaunchAdCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 8226138D20C7FEB300D767BD /* YXLaunchAdImageView+YXLaunchAdCache.m */; };
-		822613D420C7FEB400D767BD /* YXLaunchAdConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 8226138E20C7FEB300D767BD /* YXLaunchAdConst.m */; };
-		822613D520C7FEB400D767BD /* YXLaunchAdController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8226138F20C7FEB300D767BD /* YXLaunchAdController.m */; };
-		822613D620C7FEB400D767BD /* YXLaunchAd.m in Sources */ = {isa = PBXBuildFile; fileRef = 8226139020C7FEB300D767BD /* YXLaunchAd.m */; };
-		822613D720C7FEB400D767BD /* YXLaunchImageView.h in Headers */ = {isa = PBXBuildFile; fileRef = 8226139120C7FEB300D767BD /* YXLaunchImageView.h */; };
-		822613D820C7FEB400D767BD /* YXLaunchAdButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 8226139220C7FEB300D767BD /* YXLaunchAdButton.m */; };
-		822613D920C7FEB400D767BD /* YXLaunchAdDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 8226139320C7FEB300D767BD /* YXLaunchAdDownloader.m */; };
-		822613DA20C7FEB400D767BD /* YXLaunchAdConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 8226139420C7FEB300D767BD /* YXLaunchAdConfiguration.m */; };
-		822613DB20C7FEB400D767BD /* YXFLAnimatedImageView.h in Headers */ = {isa = PBXBuildFile; fileRef = 8226139720C7FEB300D767BD /* YXFLAnimatedImageView.h */; };
-		822613DC20C7FEB400D767BD /* YXFLAnimatedImage.h in Headers */ = {isa = PBXBuildFile; fileRef = 8226139820C7FEB300D767BD /* YXFLAnimatedImage.h */; };
-		822613DD20C7FEB400D767BD /* YXFLAnimatedImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 8226139920C7FEB300D767BD /* YXFLAnimatedImage.m */; };
-		822613DE20C7FEB400D767BD /* YXFLAnimatedImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8226139A20C7FEB300D767BD /* YXFLAnimatedImageView.m */; };
-		822613DF20C7FEB400D767BD /* Network.m in Sources */ = {isa = PBXBuildFile; fileRef = 8226139C20C7FEB300D767BD /* Network.m */; };
-		822613E020C7FEB400D767BD /* YXImgUtil.h in Headers */ = {isa = PBXBuildFile; fileRef = 8226139D20C7FEB300D767BD /* YXImgUtil.h */; };
-		822613E120C7FEB400D767BD /* YXReachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 8226139E20C7FEB300D767BD /* YXReachability.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		822613E220C7FEB400D767BD /* NetTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 8226139F20C7FEB300D767BD /* NetTool.h */; };
-		822613E820C7FEB400D767BD /* GuOpenUDID.m in Sources */ = {isa = PBXBuildFile; fileRef = 822613A620C7FEB300D767BD /* GuOpenUDID.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		822613EB20C7FEB400D767BD /* YXWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 822613AA20C7FEB300D767BD /* YXWebViewController.m */; };
-		822613EF20C7FEB400D767BD /* NetTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 822613AF20C7FEB300D767BD /* NetTool.m */; };
-		822613F020C7FEB400D767BD /* YXReachability.h in Headers */ = {isa = PBXBuildFile; fileRef = 822613B020C7FEB300D767BD /* YXReachability.h */; };
-		822613F120C7FEB400D767BD /* YXImgUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 822613B120C7FEB300D767BD /* YXImgUtil.m */; };
-		822613F220C7FEB400D767BD /* Network.h in Headers */ = {isa = PBXBuildFile; fileRef = 822613B220C7FEB300D767BD /* Network.h */; };
-		822613FD20C7FEB400D767BD /* GuOpenUDID.h in Headers */ = {isa = PBXBuildFile; fileRef = 822613BF20C7FEB300D767BD /* GuOpenUDID.h */; };
-		822613FE20C7FEB400D767BD /* YXWebViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 822613C020C7FEB300D767BD /* YXWebViewController.h */; };
-		822C8B9320CFA6AD00AB25D2 /* YXIconAdManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 822C8B9120CFA6AC00AB25D2 /* YXIconAdManager.m */; };
-		822C8B9420CFA6AD00AB25D2 /* YXIconAdManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 822C8B9220CFA6AD00AB25D2 /* YXIconAdManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		823338BC2135450C00AF9A93 /* YXLCdes.h in Headers */ = {isa = PBXBuildFile; fileRef = 823338B72135450C00AF9A93 /* YXLCdes.h */; };
-		823338BD2135450C00AF9A93 /* YXGTMBase64.h in Headers */ = {isa = PBXBuildFile; fileRef = 823338B82135450C00AF9A93 /* YXGTMBase64.h */; };
-		823338BE2135450C00AF9A93 /* YXGTMBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = 823338B92135450C00AF9A93 /* YXGTMBase64.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		823338BF2135450C00AF9A93 /* YXLCdes.m in Sources */ = {isa = PBXBuildFile; fileRef = 823338BA2135450C00AF9A93 /* YXLCdes.m */; };
-		823338C02135450C00AF9A93 /* YXGTMDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = 823338BB2135450C00AF9A93 /* YXGTMDefines.h */; };
-		826848F92182C2EC00C3131B /* YXInterstitialAdManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 826848F52182C2EB00C3131B /* YXInterstitialAdManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		826848FA2182C2EC00C3131B /* YXFeedAdManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 826848F62182C2EB00C3131B /* YXFeedAdManager.m */; };
-		826848FB2182C2EC00C3131B /* YXInterstitialAdManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 826848F72182C2EB00C3131B /* YXInterstitialAdManager.m */; };
-		826848FC2182C2EC00C3131B /* YXFeedAdManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 826848F82182C2EB00C3131B /* YXFeedAdManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		826848FF2182C36600C3131B /* YXFeedAdData.h in Headers */ = {isa = PBXBuildFile; fileRef = 826848FD2182C36600C3131B /* YXFeedAdData.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		826849002182C36600C3131B /* YXFeedAdData.m in Sources */ = {isa = PBXBuildFile; fileRef = 826848FE2182C36600C3131B /* YXFeedAdData.m */; };
-		826849062183043C00C3131B /* YXLaunchAdManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 8226137920C7FE6900D767BD /* YXLaunchAdManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		826849072183047D00C3131B /* YXLaunchConfiguration.h in Headers */ = {isa = PBXBuildFile; fileRef = 8226137F20C7FEB300D767BD /* YXLaunchConfiguration.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		826849082183052100C3131B /* YXLaunchAds.h in Headers */ = {isa = PBXBuildFile; fileRef = 8226134B20C7FD5B00D767BD /* YXLaunchAds.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		826ADCE8216C509E005F0577 /* YXBannerAdManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 826ADCE6216C509E005F0577 /* YXBannerAdManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		826ADCE9216C509E005F0577 /* YXBannerAdManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 826ADCE7216C509E005F0577 /* YXBannerAdManager.m */; };
-		E75FC8192230BC1E0030BF4B /* GDTNativeExpressAdView.h in Headers */ = {isa = PBXBuildFile; fileRef = E75FC80A2230BC1E0030BF4B /* GDTNativeExpressAdView.h */; };
-		E75FC81A2230BC1E0030BF4B /* GDTMobBannerView.h in Headers */ = {isa = PBXBuildFile; fileRef = E75FC80B2230BC1E0030BF4B /* GDTMobBannerView.h */; };
-		E75FC81B2230BC1E0030BF4B /* GDTNativeAd.h in Headers */ = {isa = PBXBuildFile; fileRef = E75FC80C2230BC1E0030BF4B /* GDTNativeAd.h */; };
-		E75FC81C2230BC1E0030BF4B /* GDTSDKConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = E75FC80D2230BC1E0030BF4B /* GDTSDKConfig.h */; };
-		E75FC81D2230BC1E0030BF4B /* GDTMobInterstitial.h in Headers */ = {isa = PBXBuildFile; fileRef = E75FC80E2230BC1E0030BF4B /* GDTMobInterstitial.h */; };
-		E75FC81E2230BC1E0030BF4B /* GDTRewardVideoAd.h in Headers */ = {isa = PBXBuildFile; fileRef = E75FC80F2230BC1E0030BF4B /* GDTRewardVideoAd.h */; };
-		E75FC81F2230BC1E0030BF4B /* GDTSplashAd.h in Headers */ = {isa = PBXBuildFile; fileRef = E75FC8102230BC1E0030BF4B /* GDTSplashAd.h */; };
-		E75FC8202230BC1E0030BF4B /* GDTNativeExpressAd.h in Headers */ = {isa = PBXBuildFile; fileRef = E75FC8112230BC1E0030BF4B /* GDTNativeExpressAd.h */; };
-		E75FC8212230BC1E0030BF4B /* GDTLogoView.h in Headers */ = {isa = PBXBuildFile; fileRef = E75FC8122230BC1E0030BF4B /* GDTLogoView.h */; };
-		E75FC8222230BC1E0030BF4B /* GDTMediaView.h in Headers */ = {isa = PBXBuildFile; fileRef = E75FC8132230BC1E0030BF4B /* GDTMediaView.h */; };
-		E75FC8232230BC1E0030BF4B /* GDTUnifiedNativeAdView.h in Headers */ = {isa = PBXBuildFile; fileRef = E75FC8142230BC1E0030BF4B /* GDTUnifiedNativeAdView.h */; };
-		E75FC8242230BC1E0030BF4B /* GDTUnifiedNativeAdDataObject.h in Headers */ = {isa = PBXBuildFile; fileRef = E75FC8152230BC1E0030BF4B /* GDTUnifiedNativeAdDataObject.h */; };
-		E75FC8252230BC1E0030BF4B /* GDTSDKDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = E75FC8162230BC1E0030BF4B /* GDTSDKDefines.h */; };
-		E75FC8262230BC1E0030BF4B /* libGDTMobSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E75FC8172230BC1E0030BF4B /* libGDTMobSDK.a */; };
-		E75FC8272230BC1E0030BF4B /* GDTUnifiedNativeAd.h in Headers */ = {isa = PBXBuildFile; fileRef = E75FC8182230BC1E0030BF4B /* GDTUnifiedNativeAd.h */; };
-		E77419C4224086E300B2B5ED /* YXPopupMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = E77419BE224086E300B2B5ED /* YXPopupMenu.m */; };
-		E77419C5224086E300B2B5ED /* YXRectConst.h in Headers */ = {isa = PBXBuildFile; fileRef = E77419BF224086E300B2B5ED /* YXRectConst.h */; };
-		E77419C6224086E300B2B5ED /* YXPopupMenuPath.h in Headers */ = {isa = PBXBuildFile; fileRef = E77419C0224086E300B2B5ED /* YXPopupMenuPath.h */; };
-		E77419C7224086E300B2B5ED /* YXRectConst.m in Sources */ = {isa = PBXBuildFile; fileRef = E77419C1224086E300B2B5ED /* YXRectConst.m */; };
-		E77419C8224086E300B2B5ED /* YXPopupMenu.h in Headers */ = {isa = PBXBuildFile; fileRef = E77419C2224086E300B2B5ED /* YXPopupMenu.h */; };
-		E77419C9224086E300B2B5ED /* YXPopupMenuPath.m in Sources */ = {isa = PBXBuildFile; fileRef = E77419C3224086E300B2B5ED /* YXPopupMenuPath.m */; };
-		E77419D222409BB700B2B5ED /* LaunchAdModel.h in Headers */ = {isa = PBXBuildFile; fileRef = E77419CD22409BB600B2B5ED /* LaunchAdModel.h */; };
-		E77419D322409BB700B2B5ED /* YDSource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E77419CE22409BB600B2B5ED /* YDSource.bundle */; };
-		E77419D422409BB700B2B5ED /* LaunchAdModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E77419CF22409BB600B2B5ED /* LaunchAdModel.m */; };
-		E77419D522409BB700B2B5ED /* YXMenuViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E77419D022409BB600B2B5ED /* YXMenuViewCell.m */; };
-		E77419D622409BB700B2B5ED /* YXMenuViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = E77419D122409BB600B2B5ED /* YXMenuViewCell.h */; };
+		E7A679F7225F49F400643881 /* YXInterstitialAdManager.h in Headers */ = {isa = PBXBuildFile; fileRef = E7A6797F225F49F200643881 /* YXInterstitialAdManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E7A679F8225F49F400643881 /* YXMotivationVideoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E7A67980225F49F200643881 /* YXMotivationVideoManager.m */; };
+		E7A679FC225F49F400643881 /* YXWebViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = E7A67986225F49F200643881 /* YXWebViewController.h */; };
+		E7A679FD225F49F400643881 /* Network.m in Sources */ = {isa = PBXBuildFile; fileRef = E7A67987225F49F200643881 /* Network.m */; };
+		E7A679FE225F49F400643881 /* YXImgUtil.h in Headers */ = {isa = PBXBuildFile; fileRef = E7A67988225F49F200643881 /* YXImgUtil.h */; };
+		E7A679FF225F49F400643881 /* YXReachability.m in Sources */ = {isa = PBXBuildFile; fileRef = E7A67989225F49F200643881 /* YXReachability.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		E7A67A00225F49F400643881 /* NetTool.h in Headers */ = {isa = PBXBuildFile; fileRef = E7A6798A225F49F200643881 /* NetTool.h */; };
+		E7A67A01225F49F400643881 /* NSString+SFAES.h in Headers */ = {isa = PBXBuildFile; fileRef = E7A6798C225F49F200643881 /* NSString+SFAES.h */; };
+		E7A67A02225F49F400643881 /* YXGTMDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = E7A6798D225F49F200643881 /* YXGTMDefines.h */; };
+		E7A67A03225F49F400643881 /* YXGTMBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = E7A6798E225F49F200643881 /* YXGTMBase64.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		E7A67A04225F49F400643881 /* NSString+SFAES.m in Sources */ = {isa = PBXBuildFile; fileRef = E7A6798F225F49F200643881 /* NSString+SFAES.m */; };
+		E7A67A05225F49F400643881 /* YXGTMBase64.h in Headers */ = {isa = PBXBuildFile; fileRef = E7A67990225F49F200643881 /* YXGTMBase64.h */; };
+		E7A67A06225F49F400643881 /* NetTool.m in Sources */ = {isa = PBXBuildFile; fileRef = E7A67991225F49F200643881 /* NetTool.m */; };
+		E7A67A07225F49F400643881 /* YXReachability.h in Headers */ = {isa = PBXBuildFile; fileRef = E7A67992225F49F200643881 /* YXReachability.h */; };
+		E7A67A08225F49F400643881 /* YXImgUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = E7A67993225F49F200643881 /* YXImgUtil.m */; };
+		E7A67A09225F49F400643881 /* BUAdSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7A67995225F49F200643881 /* BUAdSDK.framework */; };
+		E7A67A0A225F49F400643881 /* BUAdSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E7A67996225F49F200643881 /* BUAdSDK.bundle */; };
+		E7A67A0B225F49F400643881 /* YXWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7A67997225F49F200643881 /* YXWebViewController.m */; };
+		E7A67A0C225F49F400643881 /* Network.h in Headers */ = {isa = PBXBuildFile; fileRef = E7A67998225F49F200643881 /* Network.h */; };
+		E7A67A0D225F49F400643881 /* GDTNativeExpressAdView.h in Headers */ = {isa = PBXBuildFile; fileRef = E7A6799A225F49F200643881 /* GDTNativeExpressAdView.h */; };
+		E7A67A0E225F49F400643881 /* GDTMobBannerView.h in Headers */ = {isa = PBXBuildFile; fileRef = E7A6799B225F49F200643881 /* GDTMobBannerView.h */; };
+		E7A67A0F225F49F400643881 /* GDTNativeAd.h in Headers */ = {isa = PBXBuildFile; fileRef = E7A6799C225F49F200643881 /* GDTNativeAd.h */; };
+		E7A67A10225F49F400643881 /* GDTSDKConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = E7A6799D225F49F200643881 /* GDTSDKConfig.h */; };
+		E7A67A11225F49F400643881 /* GDTMobInterstitial.h in Headers */ = {isa = PBXBuildFile; fileRef = E7A6799E225F49F200643881 /* GDTMobInterstitial.h */; };
+		E7A67A12225F49F400643881 /* GDTRewardVideoAd.h in Headers */ = {isa = PBXBuildFile; fileRef = E7A6799F225F49F200643881 /* GDTRewardVideoAd.h */; };
+		E7A67A13225F49F400643881 /* GDTSplashAd.h in Headers */ = {isa = PBXBuildFile; fileRef = E7A679A0225F49F200643881 /* GDTSplashAd.h */; };
+		E7A67A14225F49F400643881 /* GDTNativeExpressAd.h in Headers */ = {isa = PBXBuildFile; fileRef = E7A679A1225F49F200643881 /* GDTNativeExpressAd.h */; };
+		E7A67A15225F49F400643881 /* GDTLogoView.h in Headers */ = {isa = PBXBuildFile; fileRef = E7A679A2225F49F200643881 /* GDTLogoView.h */; };
+		E7A67A16225F49F400643881 /* GDTMediaView.h in Headers */ = {isa = PBXBuildFile; fileRef = E7A679A3225F49F200643881 /* GDTMediaView.h */; };
+		E7A67A17225F49F400643881 /* GDTUnifiedNativeAdView.h in Headers */ = {isa = PBXBuildFile; fileRef = E7A679A4225F49F200643881 /* GDTUnifiedNativeAdView.h */; };
+		E7A67A18225F49F400643881 /* GDTUnifiedNativeAdDataObject.h in Headers */ = {isa = PBXBuildFile; fileRef = E7A679A5225F49F200643881 /* GDTUnifiedNativeAdDataObject.h */; };
+		E7A67A19225F49F400643881 /* GDTSDKDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = E7A679A6225F49F200643881 /* GDTSDKDefines.h */; };
+		E7A67A1A225F49F400643881 /* libGDTMobSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E7A679A7225F49F200643881 /* libGDTMobSDK.a */; };
+		E7A67A1B225F49F400643881 /* GDTUnifiedNativeAd.h in Headers */ = {isa = PBXBuildFile; fileRef = E7A679A8225F49F200643881 /* GDTUnifiedNativeAd.h */; };
+		E7A67A1C225F49F400643881 /* YXIconAdManager.h in Headers */ = {isa = PBXBuildFile; fileRef = E7A679A9225F49F200643881 /* YXIconAdManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E7A67A1D225F49F400643881 /* YXAdSDKManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E7A679AA225F49F300643881 /* YXAdSDKManager.m */; };
+		E7A67A1E225F49F400643881 /* YXMutBannerAdManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E7A679AB225F49F300643881 /* YXMutBannerAdManager.m */; };
+		E7A67A1F225F49F400643881 /* YXBannerAdManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E7A679AC225F49F300643881 /* YXBannerAdManager.m */; };
+		E7A67A20225F49F400643881 /* YXAdSDKManager.h in Headers */ = {isa = PBXBuildFile; fileRef = E7A679AD225F49F300643881 /* YXAdSDKManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E7A67A21225F49F400643881 /* YXMotivationVideoManager.h in Headers */ = {isa = PBXBuildFile; fileRef = E7A679AE225F49F300643881 /* YXMotivationVideoManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E7A67A22225F49F400643881 /* YXBannerAdManager.h in Headers */ = {isa = PBXBuildFile; fileRef = E7A679AF225F49F300643881 /* YXBannerAdManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E7A67A23225F49F400643881 /* YXLaunchAdManager.h in Headers */ = {isa = PBXBuildFile; fileRef = E7A679B0225F49F300643881 /* YXLaunchAdManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E7A67A24225F49F400643881 /* YXMutBannerAdManager.h in Headers */ = {isa = PBXBuildFile; fileRef = E7A679B1225F49F300643881 /* YXMutBannerAdManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E7A67A25225F49F400643881 /* LaunchAdModel.h in Headers */ = {isa = PBXBuildFile; fileRef = E7A679B3225F49F300643881 /* LaunchAdModel.h */; };
+		E7A67A26225F49F400643881 /* YXMenuViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E7A679B4225F49F300643881 /* YXMenuViewCell.m */; };
+		E7A67A27225F49F400643881 /* YXMenuViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = E7A679B5225F49F300643881 /* YXMenuViewCell.h */; };
+		E7A67A28225F49F400643881 /* LaunchAdModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E7A679B6225F49F300643881 /* LaunchAdModel.m */; };
+		E7A67A29225F49F400643881 /* YXLaunchAdManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E7A679B7225F49F300643881 /* YXLaunchAdManager.m */; };
+		E7A67A2A225F49F400643881 /* YXFeedAdManager.h in Headers */ = {isa = PBXBuildFile; fileRef = E7A679B8225F49F400643881 /* YXFeedAdManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E7A67A45225F49F400643881 /* YXFeedAdManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E7A679D4225F49F400643881 /* YXFeedAdManager.m */; };
+		E7A67A46225F49F400643881 /* YXPopupMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = E7A679D7225F49F400643881 /* YXPopupMenu.m */; };
+		E7A67A47225F49F400643881 /* YXRectConst.h in Headers */ = {isa = PBXBuildFile; fileRef = E7A679D8225F49F400643881 /* YXRectConst.h */; };
+		E7A67A48225F49F400643881 /* YXPopupMenuPath.h in Headers */ = {isa = PBXBuildFile; fileRef = E7A679D9225F49F400643881 /* YXPopupMenuPath.h */; };
+		E7A67A49225F49F400643881 /* YXRectConst.m in Sources */ = {isa = PBXBuildFile; fileRef = E7A679DA225F49F400643881 /* YXRectConst.m */; };
+		E7A67A4A225F49F400643881 /* YXPopupMenu.h in Headers */ = {isa = PBXBuildFile; fileRef = E7A679DB225F49F400643881 /* YXPopupMenu.h */; };
+		E7A67A4B225F49F400643881 /* YXPopupMenuPath.m in Sources */ = {isa = PBXBuildFile; fileRef = E7A679DC225F49F400643881 /* YXPopupMenuPath.m */; };
+		E7A67A4C225F49F400643881 /* YXFLAnimatedImageView.h in Headers */ = {isa = PBXBuildFile; fileRef = E7A679DE225F49F400643881 /* YXFLAnimatedImageView.h */; };
+		E7A67A4D225F49F400643881 /* YXFLAnimatedImage.h in Headers */ = {isa = PBXBuildFile; fileRef = E7A679DF225F49F400643881 /* YXFLAnimatedImage.h */; };
+		E7A67A4E225F49F400643881 /* YXFLAnimatedImage.m in Sources */ = {isa = PBXBuildFile; fileRef = E7A679E0225F49F400643881 /* YXFLAnimatedImage.m */; };
+		E7A67A4F225F49F400643881 /* YXFLAnimatedImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = E7A679E1225F49F400643881 /* YXFLAnimatedImageView.m */; };
+		E7A67A50225F49F400643881 /* YXBannerScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = E7A679E3225F49F400643881 /* YXBannerScrollView.m */; };
+		E7A67A51225F49F400643881 /* YXHorizontalPageControl.h in Headers */ = {isa = PBXBuildFile; fileRef = E7A679E4225F49F400643881 /* YXHorizontalPageControl.h */; };
+		E7A67A52225F49F400643881 /* YXAnimationPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = E7A679E5225F49F400643881 /* YXAnimationPageControl.m */; };
+		E7A67A53225F49F400643881 /* UIView+YXExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = E7A679E6225F49F400643881 /* UIView+YXExtension.h */; };
+		E7A67A54225F49F400643881 /* YXAnimatedDotView.m in Sources */ = {isa = PBXBuildFile; fileRef = E7A679E7225F49F400643881 /* YXAnimatedDotView.m */; };
+		E7A67A55225F49F400643881 /* YXPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = E7A679E8225F49F400643881 /* YXPageControl.m */; };
+		E7A67A56225F49F400643881 /* YXCollectionViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = E7A679E9225F49F400643881 /* YXCollectionViewCell.h */; };
+		E7A67A57225F49F400643881 /* YXDotView.m in Sources */ = {isa = PBXBuildFile; fileRef = E7A679EA225F49F400643881 /* YXDotView.m */; };
+		E7A67A58225F49F400643881 /* YXAbstractDotView.h in Headers */ = {isa = PBXBuildFile; fileRef = E7A679EB225F49F400643881 /* YXAbstractDotView.h */; };
+		E7A67A59225F49F400643881 /* YXAnimationPageControl.h in Headers */ = {isa = PBXBuildFile; fileRef = E7A679EC225F49F400643881 /* YXAnimationPageControl.h */; };
+		E7A67A5A225F49F400643881 /* YXHorizontalPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = E7A679ED225F49F400643881 /* YXHorizontalPageControl.m */; };
+		E7A67A5B225F49F400643881 /* YXBannerScrollView.h in Headers */ = {isa = PBXBuildFile; fileRef = E7A679EE225F49F400643881 /* YXBannerScrollView.h */; };
+		E7A67A5C225F49F400643881 /* YXPageControl.h in Headers */ = {isa = PBXBuildFile; fileRef = E7A679EF225F49F400643881 /* YXPageControl.h */; };
+		E7A67A5D225F49F400643881 /* YXAnimatedDotView.h in Headers */ = {isa = PBXBuildFile; fileRef = E7A679F0225F49F400643881 /* YXAnimatedDotView.h */; };
+		E7A67A5E225F49F400643881 /* UIView+YXExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = E7A679F1225F49F400643881 /* UIView+YXExtension.m */; };
+		E7A67A5F225F49F400643881 /* YXCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E7A679F2225F49F400643881 /* YXCollectionViewCell.m */; };
+		E7A67A60225F49F400643881 /* YXAbstractDotView.m in Sources */ = {isa = PBXBuildFile; fileRef = E7A679F3225F49F400643881 /* YXAbstractDotView.m */; };
+		E7A67A61225F49F400643881 /* YXDotView.h in Headers */ = {isa = PBXBuildFile; fileRef = E7A679F4225F49F400643881 /* YXDotView.h */; };
+		E7A67A62225F49F400643881 /* YXIconAdManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E7A679F5225F49F400643881 /* YXIconAdManager.m */; };
+		E7A67A63225F49F400643881 /* YXInterstitialAdManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E7A679F6225F49F400643881 /* YXInterstitialAdManager.m */; };
+		E7A67A7E225F4A0900643881 /* YXLaunchImageView.h in Headers */ = {isa = PBXBuildFile; fileRef = E7A67A64225F4A0700643881 /* YXLaunchImageView.h */; };
+		E7A67A7F225F4A0900643881 /* YXLaunchAdView.h in Headers */ = {isa = PBXBuildFile; fileRef = E7A67A65225F4A0700643881 /* YXLaunchAdView.h */; };
+		E7A67A80225F4A0900643881 /* YXLaunchAdCache.h in Headers */ = {isa = PBXBuildFile; fileRef = E7A67A66225F4A0700643881 /* YXLaunchAdCache.h */; };
+		E7A67A81225F4A0900643881 /* YXLaunchAdImageManager.h in Headers */ = {isa = PBXBuildFile; fileRef = E7A67A67225F4A0700643881 /* YXLaunchAdImageManager.h */; };
+		E7A67A82225F4A0900643881 /* YXLaunchAdImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E7A67A68225F4A0700643881 /* YXLaunchAdImageManager.m */; };
+		E7A67A83225F4A0900643881 /* YXLaunchAd.h in Headers */ = {isa = PBXBuildFile; fileRef = E7A67A69225F4A0700643881 /* YXLaunchAd.h */; };
+		E7A67A84225F4A0900643881 /* YXLaunchAdButton.h in Headers */ = {isa = PBXBuildFile; fileRef = E7A67A6A225F4A0700643881 /* YXLaunchAdButton.h */; };
+		E7A67A85225F4A0900643881 /* YXLaunchAdController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7A67A6B225F4A0700643881 /* YXLaunchAdController.m */; };
+		E7A67A86225F4A0900643881 /* YXFeedAdData.h in Headers */ = {isa = PBXBuildFile; fileRef = E7A67A6C225F4A0700643881 /* YXFeedAdData.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E7A67A87225F4A0900643881 /* YXLaunchAdConfiguration.h in Headers */ = {isa = PBXBuildFile; fileRef = E7A67A6D225F4A0700643881 /* YXLaunchAdConfiguration.h */; };
+		E7A67A88225F4A0900643881 /* YXLaunchAdDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = E7A67A6E225F4A0700643881 /* YXLaunchAdDownloader.m */; };
+		E7A67A89225F4A0900643881 /* YXLaunchAdController.h in Headers */ = {isa = PBXBuildFile; fileRef = E7A67A6F225F4A0700643881 /* YXLaunchAdController.h */; };
+		E7A67A8A225F4A0900643881 /* YXLaunchAdView.m in Sources */ = {isa = PBXBuildFile; fileRef = E7A67A70225F4A0700643881 /* YXLaunchAdView.m */; };
+		E7A67A8B225F4A0900643881 /* YXLaunchAds.h in Headers */ = {isa = PBXBuildFile; fileRef = E7A67A71225F4A0800643881 /* YXLaunchAds.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E7A67A8C225F4A0900643881 /* YXLaunchAdCache.m in Sources */ = {isa = PBXBuildFile; fileRef = E7A67A72225F4A0800643881 /* YXLaunchAdCache.m */; };
+		E7A67A8D225F4A0900643881 /* YXLaunchAdDownloader.h in Headers */ = {isa = PBXBuildFile; fileRef = E7A67A73225F4A0800643881 /* YXLaunchAdDownloader.h */; };
+		E7A67A8E225F4A0900643881 /* YXLaunchAdImageView+YXLaunchAdCache.m in Sources */ = {isa = PBXBuildFile; fileRef = E7A67A74225F4A0800643881 /* YXLaunchAdImageView+YXLaunchAdCache.m */; };
+		E7A67A8F225F4A0900643881 /* YXLaunchAdConst.h in Headers */ = {isa = PBXBuildFile; fileRef = E7A67A75225F4A0800643881 /* YXLaunchAdConst.h */; };
+		E7A67A90225F4A0900643881 /* YXLaunchAdConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = E7A67A76225F4A0900643881 /* YXLaunchAdConfiguration.m */; };
+		E7A67A91225F4A0900643881 /* YXLaunchImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = E7A67A77225F4A0900643881 /* YXLaunchImageView.m */; };
+		E7A67A92225F4A0900643881 /* YXLaunchAdButton.m in Sources */ = {isa = PBXBuildFile; fileRef = E7A67A78225F4A0900643881 /* YXLaunchAdButton.m */; };
+		E7A67A93225F4A0900643881 /* YXLaunchAdConst.m in Sources */ = {isa = PBXBuildFile; fileRef = E7A67A79225F4A0900643881 /* YXLaunchAdConst.m */; };
+		E7A67A94225F4A0900643881 /* YXLaunchAdImageView+YXLaunchAdCache.h in Headers */ = {isa = PBXBuildFile; fileRef = E7A67A7A225F4A0900643881 /* YXLaunchAdImageView+YXLaunchAdCache.h */; };
+		E7A67A95225F4A0900643881 /* YXLaunchAd.m in Sources */ = {isa = PBXBuildFile; fileRef = E7A67A7B225F4A0900643881 /* YXLaunchAd.m */; };
+		E7A67A96225F4A0900643881 /* YXFeedAdData.m in Sources */ = {isa = PBXBuildFile; fileRef = E7A67A7C225F4A0900643881 /* YXFeedAdData.m */; };
+		E7A67A97225F4A0900643881 /* YXLaunchConfiguration.h in Headers */ = {isa = PBXBuildFile; fileRef = E7A67A7D225F4A0900643881 /* YXLaunchConfiguration.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -127,20 +139,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		8202E77421A51CFB00586F04 /* BUAdSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BUAdSDK.framework; sourceTree = "<group>"; };
-		8202E77521A51CFB00586F04 /* BUAdSDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = BUAdSDK.bundle; sourceTree = "<group>"; };
-		82144FE221B7B12900081AED /* YXAdSDKManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXAdSDKManager.h; sourceTree = "<group>"; };
-		82144FE321B7B12900081AED /* YXMotivationVideoManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXMotivationVideoManager.m; sourceTree = "<group>"; };
-		82144FE421B7B12900081AED /* YXMutBannerAdManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXMutBannerAdManager.h; sourceTree = "<group>"; };
-		82144FE521B7B12900081AED /* YXMutBannerAdManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXMutBannerAdManager.m; sourceTree = "<group>"; };
-		82144FE621B7B12900081AED /* YXMotivationVideoManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXMotivationVideoManager.h; sourceTree = "<group>"; };
-		82144FE721B7B12A00081AED /* YXAdSDKManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXAdSDKManager.m; sourceTree = "<group>"; };
-		82144FFB21B7B23800081AED /* YXPGIndexBannerSubiew.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXPGIndexBannerSubiew.h; sourceTree = "<group>"; };
-		82144FFC21B7B23800081AED /* YXNewPagedFlowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXNewPagedFlowView.m; sourceTree = "<group>"; };
-		82144FFD21B7B23800081AED /* YXNewPagedFlowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXNewPagedFlowView.h; sourceTree = "<group>"; };
-		82144FFE21B7B23800081AED /* YXPGIndexBannerSubiew.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXPGIndexBannerSubiew.m; sourceTree = "<group>"; };
 		8226134820C7FD5B00D767BD /* YXLaunchAds.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = YXLaunchAds.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8226134B20C7FD5B00D767BD /* YXLaunchAds.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YXLaunchAds.h; sourceTree = "<group>"; };
 		8226134C20C7FD5B00D767BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8226135120C7FD5B00D767BD /* YXLaunchAdsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YXLaunchAdsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8226135620C7FD5B00D767BD /* YXLaunchAdsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YXLaunchAdsTests.m; sourceTree = "<group>"; };
@@ -156,91 +155,115 @@
 		8226137320C7FE0800D767BD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		8226137520C7FE1000D767BD /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		8226137720C7FE1B00D767BD /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
-		8226137920C7FE6900D767BD /* YXLaunchAdManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXLaunchAdManager.h; sourceTree = "<group>"; };
-		8226137A20C7FE6900D767BD /* YXLaunchAdManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXLaunchAdManager.m; sourceTree = "<group>"; };
-		8226137E20C7FEB300D767BD /* YXLaunchAdImageManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXLaunchAdImageManager.m; sourceTree = "<group>"; };
-		8226137F20C7FEB300D767BD /* YXLaunchConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXLaunchConfiguration.h; sourceTree = "<group>"; };
-		8226138020C7FEB300D767BD /* YXLaunchAdCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXLaunchAdCache.m; sourceTree = "<group>"; };
-		8226138120C7FEB300D767BD /* YXLaunchAdView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXLaunchAdView.h; sourceTree = "<group>"; };
-		8226138220C7FEB300D767BD /* YXLaunchAdConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXLaunchAdConst.h; sourceTree = "<group>"; };
-		8226138320C7FEB300D767BD /* YXLaunchAdImageView+YXLaunchAdCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "YXLaunchAdImageView+YXLaunchAdCache.h"; sourceTree = "<group>"; };
-		8226138420C7FEB300D767BD /* YXLaunchImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXLaunchImageView.m; sourceTree = "<group>"; };
-		8226138520C7FEB300D767BD /* YXLaunchAd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXLaunchAd.h; sourceTree = "<group>"; };
-		8226138620C7FEB300D767BD /* YXLaunchAdController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXLaunchAdController.h; sourceTree = "<group>"; };
-		8226138720C7FEB300D767BD /* YXLaunchAdConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXLaunchAdConfiguration.h; sourceTree = "<group>"; };
-		8226138820C7FEB300D767BD /* YXLaunchAdDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXLaunchAdDownloader.h; sourceTree = "<group>"; };
-		8226138920C7FEB300D767BD /* YXLaunchAdButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXLaunchAdButton.h; sourceTree = "<group>"; };
-		8226138A20C7FEB300D767BD /* YXLaunchAdView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXLaunchAdView.m; sourceTree = "<group>"; };
-		8226138B20C7FEB300D767BD /* YXLaunchAdCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXLaunchAdCache.h; sourceTree = "<group>"; };
-		8226138C20C7FEB300D767BD /* YXLaunchAdImageManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXLaunchAdImageManager.h; sourceTree = "<group>"; };
-		8226138D20C7FEB300D767BD /* YXLaunchAdImageView+YXLaunchAdCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "YXLaunchAdImageView+YXLaunchAdCache.m"; sourceTree = "<group>"; };
-		8226138E20C7FEB300D767BD /* YXLaunchAdConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXLaunchAdConst.m; sourceTree = "<group>"; };
-		8226138F20C7FEB300D767BD /* YXLaunchAdController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXLaunchAdController.m; sourceTree = "<group>"; };
-		8226139020C7FEB300D767BD /* YXLaunchAd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXLaunchAd.m; sourceTree = "<group>"; };
-		8226139120C7FEB300D767BD /* YXLaunchImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXLaunchImageView.h; sourceTree = "<group>"; };
-		8226139220C7FEB300D767BD /* YXLaunchAdButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXLaunchAdButton.m; sourceTree = "<group>"; };
-		8226139320C7FEB300D767BD /* YXLaunchAdDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXLaunchAdDownloader.m; sourceTree = "<group>"; };
-		8226139420C7FEB300D767BD /* YXLaunchAdConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXLaunchAdConfiguration.m; sourceTree = "<group>"; };
-		8226139720C7FEB300D767BD /* YXFLAnimatedImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXFLAnimatedImageView.h; sourceTree = "<group>"; };
-		8226139820C7FEB300D767BD /* YXFLAnimatedImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXFLAnimatedImage.h; sourceTree = "<group>"; };
-		8226139920C7FEB300D767BD /* YXFLAnimatedImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXFLAnimatedImage.m; sourceTree = "<group>"; };
-		8226139A20C7FEB300D767BD /* YXFLAnimatedImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXFLAnimatedImageView.m; sourceTree = "<group>"; };
-		8226139C20C7FEB300D767BD /* Network.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Network.m; sourceTree = "<group>"; };
-		8226139D20C7FEB300D767BD /* YXImgUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXImgUtil.h; sourceTree = "<group>"; };
-		8226139E20C7FEB300D767BD /* YXReachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXReachability.m; sourceTree = "<group>"; };
-		8226139F20C7FEB300D767BD /* NetTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetTool.h; sourceTree = "<group>"; };
-		822613A620C7FEB300D767BD /* GuOpenUDID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GuOpenUDID.m; sourceTree = "<group>"; };
-		822613AA20C7FEB300D767BD /* YXWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXWebViewController.m; sourceTree = "<group>"; };
-		822613AF20C7FEB300D767BD /* NetTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetTool.m; sourceTree = "<group>"; };
-		822613B020C7FEB300D767BD /* YXReachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXReachability.h; sourceTree = "<group>"; };
-		822613B120C7FEB300D767BD /* YXImgUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXImgUtil.m; sourceTree = "<group>"; };
-		822613B220C7FEB300D767BD /* Network.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Network.h; sourceTree = "<group>"; };
-		822613BF20C7FEB300D767BD /* GuOpenUDID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GuOpenUDID.h; sourceTree = "<group>"; };
-		822613C020C7FEB300D767BD /* YXWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXWebViewController.h; sourceTree = "<group>"; };
-		822C8B9120CFA6AC00AB25D2 /* YXIconAdManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXIconAdManager.m; sourceTree = "<group>"; };
-		822C8B9220CFA6AD00AB25D2 /* YXIconAdManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXIconAdManager.h; sourceTree = "<group>"; };
-		823338B72135450C00AF9A93 /* YXLCdes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXLCdes.h; sourceTree = "<group>"; };
-		823338B82135450C00AF9A93 /* YXGTMBase64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXGTMBase64.h; sourceTree = "<group>"; };
-		823338B92135450C00AF9A93 /* YXGTMBase64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXGTMBase64.m; sourceTree = "<group>"; };
-		823338BA2135450C00AF9A93 /* YXLCdes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXLCdes.m; sourceTree = "<group>"; };
-		823338BB2135450C00AF9A93 /* YXGTMDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXGTMDefines.h; sourceTree = "<group>"; };
-		82669933219596DB00B1EC3E /* WXApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WXApi.h; sourceTree = "<group>"; };
-		82669934219596DB00B1EC3E /* WXApiObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WXApiObject.h; sourceTree = "<group>"; };
-		82669935219596DB00B1EC3E /* libWeChatSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeChatSDK.a; sourceTree = "<group>"; };
-		826848F52182C2EB00C3131B /* YXInterstitialAdManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXInterstitialAdManager.h; sourceTree = "<group>"; };
-		826848F62182C2EB00C3131B /* YXFeedAdManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXFeedAdManager.m; sourceTree = "<group>"; };
-		826848F72182C2EB00C3131B /* YXInterstitialAdManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXInterstitialAdManager.m; sourceTree = "<group>"; };
-		826848F82182C2EB00C3131B /* YXFeedAdManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXFeedAdManager.h; sourceTree = "<group>"; };
-		826848FD2182C36600C3131B /* YXFeedAdData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXFeedAdData.h; sourceTree = "<group>"; };
-		826848FE2182C36600C3131B /* YXFeedAdData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXFeedAdData.m; sourceTree = "<group>"; };
-		826ADCE6216C509E005F0577 /* YXBannerAdManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXBannerAdManager.h; sourceTree = "<group>"; };
-		826ADCE7216C509E005F0577 /* YXBannerAdManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXBannerAdManager.m; sourceTree = "<group>"; };
-		E75FC80A2230BC1E0030BF4B /* GDTNativeExpressAdView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTNativeExpressAdView.h; sourceTree = "<group>"; };
-		E75FC80B2230BC1E0030BF4B /* GDTMobBannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTMobBannerView.h; sourceTree = "<group>"; };
-		E75FC80C2230BC1E0030BF4B /* GDTNativeAd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTNativeAd.h; sourceTree = "<group>"; };
-		E75FC80D2230BC1E0030BF4B /* GDTSDKConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTSDKConfig.h; sourceTree = "<group>"; };
-		E75FC80E2230BC1E0030BF4B /* GDTMobInterstitial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTMobInterstitial.h; sourceTree = "<group>"; };
-		E75FC80F2230BC1E0030BF4B /* GDTRewardVideoAd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTRewardVideoAd.h; sourceTree = "<group>"; };
-		E75FC8102230BC1E0030BF4B /* GDTSplashAd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTSplashAd.h; sourceTree = "<group>"; };
-		E75FC8112230BC1E0030BF4B /* GDTNativeExpressAd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTNativeExpressAd.h; sourceTree = "<group>"; };
-		E75FC8122230BC1E0030BF4B /* GDTLogoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTLogoView.h; sourceTree = "<group>"; };
-		E75FC8132230BC1E0030BF4B /* GDTMediaView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTMediaView.h; sourceTree = "<group>"; };
-		E75FC8142230BC1E0030BF4B /* GDTUnifiedNativeAdView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTUnifiedNativeAdView.h; sourceTree = "<group>"; };
-		E75FC8152230BC1E0030BF4B /* GDTUnifiedNativeAdDataObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTUnifiedNativeAdDataObject.h; sourceTree = "<group>"; };
-		E75FC8162230BC1E0030BF4B /* GDTSDKDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTSDKDefines.h; sourceTree = "<group>"; };
-		E75FC8172230BC1E0030BF4B /* libGDTMobSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGDTMobSDK.a; sourceTree = "<group>"; };
-		E75FC8182230BC1E0030BF4B /* GDTUnifiedNativeAd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTUnifiedNativeAd.h; sourceTree = "<group>"; };
-		E77419BE224086E300B2B5ED /* YXPopupMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXPopupMenu.m; sourceTree = "<group>"; };
-		E77419BF224086E300B2B5ED /* YXRectConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXRectConst.h; sourceTree = "<group>"; };
-		E77419C0224086E300B2B5ED /* YXPopupMenuPath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXPopupMenuPath.h; sourceTree = "<group>"; };
-		E77419C1224086E300B2B5ED /* YXRectConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXRectConst.m; sourceTree = "<group>"; };
-		E77419C2224086E300B2B5ED /* YXPopupMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXPopupMenu.h; sourceTree = "<group>"; };
-		E77419C3224086E300B2B5ED /* YXPopupMenuPath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXPopupMenuPath.m; sourceTree = "<group>"; };
-		E77419CD22409BB600B2B5ED /* LaunchAdModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LaunchAdModel.h; sourceTree = "<group>"; };
-		E77419CE22409BB600B2B5ED /* YDSource.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = YDSource.bundle; sourceTree = "<group>"; };
-		E77419CF22409BB600B2B5ED /* LaunchAdModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LaunchAdModel.m; sourceTree = "<group>"; };
-		E77419D022409BB600B2B5ED /* YXMenuViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXMenuViewCell.m; sourceTree = "<group>"; };
-		E77419D122409BB600B2B5ED /* YXMenuViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXMenuViewCell.h; sourceTree = "<group>"; };
+		E7A6797F225F49F200643881 /* YXInterstitialAdManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXInterstitialAdManager.h; sourceTree = "<group>"; };
+		E7A67980225F49F200643881 /* YXMotivationVideoManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXMotivationVideoManager.m; sourceTree = "<group>"; };
+		E7A67983225F49F200643881 /* WXApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApi.h; sourceTree = "<group>"; };
+		E7A67984225F49F200643881 /* WXApiObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiObject.h; sourceTree = "<group>"; };
+		E7A67985225F49F200643881 /* libWeChatSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeChatSDK.a; sourceTree = "<group>"; };
+		E7A67986225F49F200643881 /* YXWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXWebViewController.h; sourceTree = "<group>"; };
+		E7A67987225F49F200643881 /* Network.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Network.m; sourceTree = "<group>"; };
+		E7A67988225F49F200643881 /* YXImgUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXImgUtil.h; sourceTree = "<group>"; };
+		E7A67989225F49F200643881 /* YXReachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXReachability.m; sourceTree = "<group>"; };
+		E7A6798A225F49F200643881 /* NetTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetTool.h; sourceTree = "<group>"; };
+		E7A6798C225F49F200643881 /* NSString+SFAES.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+SFAES.h"; sourceTree = "<group>"; };
+		E7A6798D225F49F200643881 /* YXGTMDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXGTMDefines.h; sourceTree = "<group>"; };
+		E7A6798E225F49F200643881 /* YXGTMBase64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXGTMBase64.m; sourceTree = "<group>"; };
+		E7A6798F225F49F200643881 /* NSString+SFAES.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+SFAES.m"; sourceTree = "<group>"; };
+		E7A67990225F49F200643881 /* YXGTMBase64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXGTMBase64.h; sourceTree = "<group>"; };
+		E7A67991225F49F200643881 /* NetTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetTool.m; sourceTree = "<group>"; };
+		E7A67992225F49F200643881 /* YXReachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXReachability.h; sourceTree = "<group>"; };
+		E7A67993225F49F200643881 /* YXImgUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXImgUtil.m; sourceTree = "<group>"; };
+		E7A67995225F49F200643881 /* BUAdSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BUAdSDK.framework; sourceTree = "<group>"; };
+		E7A67996225F49F200643881 /* BUAdSDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = BUAdSDK.bundle; sourceTree = "<group>"; };
+		E7A67997225F49F200643881 /* YXWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXWebViewController.m; sourceTree = "<group>"; };
+		E7A67998225F49F200643881 /* Network.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Network.h; sourceTree = "<group>"; };
+		E7A6799A225F49F200643881 /* GDTNativeExpressAdView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTNativeExpressAdView.h; sourceTree = "<group>"; };
+		E7A6799B225F49F200643881 /* GDTMobBannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTMobBannerView.h; sourceTree = "<group>"; };
+		E7A6799C225F49F200643881 /* GDTNativeAd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTNativeAd.h; sourceTree = "<group>"; };
+		E7A6799D225F49F200643881 /* GDTSDKConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTSDKConfig.h; sourceTree = "<group>"; };
+		E7A6799E225F49F200643881 /* GDTMobInterstitial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTMobInterstitial.h; sourceTree = "<group>"; };
+		E7A6799F225F49F200643881 /* GDTRewardVideoAd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTRewardVideoAd.h; sourceTree = "<group>"; };
+		E7A679A0225F49F200643881 /* GDTSplashAd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTSplashAd.h; sourceTree = "<group>"; };
+		E7A679A1225F49F200643881 /* GDTNativeExpressAd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTNativeExpressAd.h; sourceTree = "<group>"; };
+		E7A679A2225F49F200643881 /* GDTLogoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTLogoView.h; sourceTree = "<group>"; };
+		E7A679A3225F49F200643881 /* GDTMediaView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTMediaView.h; sourceTree = "<group>"; };
+		E7A679A4225F49F200643881 /* GDTUnifiedNativeAdView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTUnifiedNativeAdView.h; sourceTree = "<group>"; };
+		E7A679A5225F49F200643881 /* GDTUnifiedNativeAdDataObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTUnifiedNativeAdDataObject.h; sourceTree = "<group>"; };
+		E7A679A6225F49F200643881 /* GDTSDKDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTSDKDefines.h; sourceTree = "<group>"; };
+		E7A679A7225F49F200643881 /* libGDTMobSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGDTMobSDK.a; sourceTree = "<group>"; };
+		E7A679A8225F49F200643881 /* GDTUnifiedNativeAd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTUnifiedNativeAd.h; sourceTree = "<group>"; };
+		E7A679A9225F49F200643881 /* YXIconAdManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXIconAdManager.h; sourceTree = "<group>"; };
+		E7A679AA225F49F300643881 /* YXAdSDKManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXAdSDKManager.m; sourceTree = "<group>"; };
+		E7A679AB225F49F300643881 /* YXMutBannerAdManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXMutBannerAdManager.m; sourceTree = "<group>"; };
+		E7A679AC225F49F300643881 /* YXBannerAdManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXBannerAdManager.m; sourceTree = "<group>"; };
+		E7A679AD225F49F300643881 /* YXAdSDKManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXAdSDKManager.h; sourceTree = "<group>"; };
+		E7A679AE225F49F300643881 /* YXMotivationVideoManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXMotivationVideoManager.h; sourceTree = "<group>"; };
+		E7A679AF225F49F300643881 /* YXBannerAdManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXBannerAdManager.h; sourceTree = "<group>"; };
+		E7A679B0225F49F300643881 /* YXLaunchAdManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXLaunchAdManager.h; sourceTree = "<group>"; };
+		E7A679B1225F49F300643881 /* YXMutBannerAdManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXMutBannerAdManager.h; sourceTree = "<group>"; };
+		E7A679B3225F49F300643881 /* LaunchAdModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LaunchAdModel.h; sourceTree = "<group>"; };
+		E7A679B4225F49F300643881 /* YXMenuViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXMenuViewCell.m; sourceTree = "<group>"; };
+		E7A679B5225F49F300643881 /* YXMenuViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXMenuViewCell.h; sourceTree = "<group>"; };
+		E7A679B6225F49F300643881 /* LaunchAdModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LaunchAdModel.m; sourceTree = "<group>"; };
+		E7A679B7225F49F300643881 /* YXLaunchAdManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXLaunchAdManager.m; sourceTree = "<group>"; };
+		E7A679B8225F49F400643881 /* YXFeedAdManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXFeedAdManager.h; sourceTree = "<group>"; };
+		E7A679D4225F49F400643881 /* YXFeedAdManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXFeedAdManager.m; sourceTree = "<group>"; };
+		E7A679D7225F49F400643881 /* YXPopupMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXPopupMenu.m; sourceTree = "<group>"; };
+		E7A679D8225F49F400643881 /* YXRectConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXRectConst.h; sourceTree = "<group>"; };
+		E7A679D9225F49F400643881 /* YXPopupMenuPath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXPopupMenuPath.h; sourceTree = "<group>"; };
+		E7A679DA225F49F400643881 /* YXRectConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXRectConst.m; sourceTree = "<group>"; };
+		E7A679DB225F49F400643881 /* YXPopupMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXPopupMenu.h; sourceTree = "<group>"; };
+		E7A679DC225F49F400643881 /* YXPopupMenuPath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXPopupMenuPath.m; sourceTree = "<group>"; };
+		E7A679DE225F49F400643881 /* YXFLAnimatedImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXFLAnimatedImageView.h; sourceTree = "<group>"; };
+		E7A679DF225F49F400643881 /* YXFLAnimatedImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXFLAnimatedImage.h; sourceTree = "<group>"; };
+		E7A679E0225F49F400643881 /* YXFLAnimatedImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXFLAnimatedImage.m; sourceTree = "<group>"; };
+		E7A679E1225F49F400643881 /* YXFLAnimatedImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXFLAnimatedImageView.m; sourceTree = "<group>"; };
+		E7A679E3225F49F400643881 /* YXBannerScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXBannerScrollView.m; sourceTree = "<group>"; };
+		E7A679E4225F49F400643881 /* YXHorizontalPageControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXHorizontalPageControl.h; sourceTree = "<group>"; };
+		E7A679E5225F49F400643881 /* YXAnimationPageControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXAnimationPageControl.m; sourceTree = "<group>"; };
+		E7A679E6225F49F400643881 /* UIView+YXExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+YXExtension.h"; sourceTree = "<group>"; };
+		E7A679E7225F49F400643881 /* YXAnimatedDotView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXAnimatedDotView.m; sourceTree = "<group>"; };
+		E7A679E8225F49F400643881 /* YXPageControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXPageControl.m; sourceTree = "<group>"; };
+		E7A679E9225F49F400643881 /* YXCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXCollectionViewCell.h; sourceTree = "<group>"; };
+		E7A679EA225F49F400643881 /* YXDotView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXDotView.m; sourceTree = "<group>"; };
+		E7A679EB225F49F400643881 /* YXAbstractDotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXAbstractDotView.h; sourceTree = "<group>"; };
+		E7A679EC225F49F400643881 /* YXAnimationPageControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXAnimationPageControl.h; sourceTree = "<group>"; };
+		E7A679ED225F49F400643881 /* YXHorizontalPageControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXHorizontalPageControl.m; sourceTree = "<group>"; };
+		E7A679EE225F49F400643881 /* YXBannerScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXBannerScrollView.h; sourceTree = "<group>"; };
+		E7A679EF225F49F400643881 /* YXPageControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXPageControl.h; sourceTree = "<group>"; };
+		E7A679F0225F49F400643881 /* YXAnimatedDotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXAnimatedDotView.h; sourceTree = "<group>"; };
+		E7A679F1225F49F400643881 /* UIView+YXExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+YXExtension.m"; sourceTree = "<group>"; };
+		E7A679F2225F49F400643881 /* YXCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXCollectionViewCell.m; sourceTree = "<group>"; };
+		E7A679F3225F49F400643881 /* YXAbstractDotView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXAbstractDotView.m; sourceTree = "<group>"; };
+		E7A679F4225F49F400643881 /* YXDotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXDotView.h; sourceTree = "<group>"; };
+		E7A679F5225F49F400643881 /* YXIconAdManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXIconAdManager.m; sourceTree = "<group>"; };
+		E7A679F6225F49F400643881 /* YXInterstitialAdManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXInterstitialAdManager.m; sourceTree = "<group>"; };
+		E7A67A64225F4A0700643881 /* YXLaunchImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXLaunchImageView.h; sourceTree = "<group>"; };
+		E7A67A65225F4A0700643881 /* YXLaunchAdView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXLaunchAdView.h; sourceTree = "<group>"; };
+		E7A67A66225F4A0700643881 /* YXLaunchAdCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXLaunchAdCache.h; sourceTree = "<group>"; };
+		E7A67A67225F4A0700643881 /* YXLaunchAdImageManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXLaunchAdImageManager.h; sourceTree = "<group>"; };
+		E7A67A68225F4A0700643881 /* YXLaunchAdImageManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXLaunchAdImageManager.m; sourceTree = "<group>"; };
+		E7A67A69225F4A0700643881 /* YXLaunchAd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXLaunchAd.h; sourceTree = "<group>"; };
+		E7A67A6A225F4A0700643881 /* YXLaunchAdButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXLaunchAdButton.h; sourceTree = "<group>"; };
+		E7A67A6B225F4A0700643881 /* YXLaunchAdController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXLaunchAdController.m; sourceTree = "<group>"; };
+		E7A67A6C225F4A0700643881 /* YXFeedAdData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXFeedAdData.h; sourceTree = "<group>"; };
+		E7A67A6D225F4A0700643881 /* YXLaunchAdConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXLaunchAdConfiguration.h; sourceTree = "<group>"; };
+		E7A67A6E225F4A0700643881 /* YXLaunchAdDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXLaunchAdDownloader.m; sourceTree = "<group>"; };
+		E7A67A6F225F4A0700643881 /* YXLaunchAdController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXLaunchAdController.h; sourceTree = "<group>"; };
+		E7A67A70225F4A0700643881 /* YXLaunchAdView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXLaunchAdView.m; sourceTree = "<group>"; };
+		E7A67A71225F4A0800643881 /* YXLaunchAds.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXLaunchAds.h; sourceTree = "<group>"; };
+		E7A67A72225F4A0800643881 /* YXLaunchAdCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXLaunchAdCache.m; sourceTree = "<group>"; };
+		E7A67A73225F4A0800643881 /* YXLaunchAdDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXLaunchAdDownloader.h; sourceTree = "<group>"; };
+		E7A67A74225F4A0800643881 /* YXLaunchAdImageView+YXLaunchAdCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "YXLaunchAdImageView+YXLaunchAdCache.m"; sourceTree = "<group>"; };
+		E7A67A75225F4A0800643881 /* YXLaunchAdConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXLaunchAdConst.h; sourceTree = "<group>"; };
+		E7A67A76225F4A0900643881 /* YXLaunchAdConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXLaunchAdConfiguration.m; sourceTree = "<group>"; };
+		E7A67A77225F4A0900643881 /* YXLaunchImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXLaunchImageView.m; sourceTree = "<group>"; };
+		E7A67A78225F4A0900643881 /* YXLaunchAdButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXLaunchAdButton.m; sourceTree = "<group>"; };
+		E7A67A79225F4A0900643881 /* YXLaunchAdConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXLaunchAdConst.m; sourceTree = "<group>"; };
+		E7A67A7A225F4A0900643881 /* YXLaunchAdImageView+YXLaunchAdCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "YXLaunchAdImageView+YXLaunchAdCache.h"; sourceTree = "<group>"; };
+		E7A67A7B225F4A0900643881 /* YXLaunchAd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXLaunchAd.m; sourceTree = "<group>"; };
+		E7A67A7C225F4A0900643881 /* YXFeedAdData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXFeedAdData.m; sourceTree = "<group>"; };
+		E7A67A7D225F4A0900643881 /* YXLaunchConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXLaunchConfiguration.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -251,15 +274,15 @@
 				8226137820C7FE1B00D767BD /* AdSupport.framework in Frameworks */,
 				8226137620C7FE1000D767BD /* StoreKit.framework in Frameworks */,
 				8226137420C7FE0800D767BD /* Foundation.framework in Frameworks */,
-				8202E77721A51D2B00586F04 /* BUAdSDK.framework in Frameworks */,
 				8226137220C7FDFF00D767BD /* UIKit.framework in Frameworks */,
 				8226137020C7FDF600D767BD /* AVFoundation.framework in Frameworks */,
-				E75FC8262230BC1E0030BF4B /* libGDTMobSDK.a in Frameworks */,
 				8226136E20C7FDED00D767BD /* WebKit.framework in Frameworks */,
+				E7A67A1A225F49F400643881 /* libGDTMobSDK.a in Frameworks */,
 				8226136C20C7FDE200D767BD /* Security.framework in Frameworks */,
 				8226136A20C7FDD700D767BD /* CoreTelephony.framework in Frameworks */,
 				8226136820C7FDCD00D767BD /* SystemConfiguration.framework in Frameworks */,
 				8226136620C7FDC600D767BD /* QuartzCore.framework in Frameworks */,
+				E7A67A09225F49F400643881 /* BUAdSDK.framework in Frameworks */,
 				8226136420C7FDBA00D767BD /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -275,26 +298,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		8202E77321A51CFB00586F04 /* ChuanAD */ = {
-			isa = PBXGroup;
-			children = (
-				8202E77421A51CFB00586F04 /* BUAdSDK.framework */,
-				8202E77521A51CFB00586F04 /* BUAdSDK.bundle */,
-			);
-			name = ChuanAD;
-			sourceTree = "<group>";
-		};
-		82144FFA21B7B23800081AED /* YXNewPage */ = {
-			isa = PBXGroup;
-			children = (
-				82144FFB21B7B23800081AED /* YXPGIndexBannerSubiew.h */,
-				82144FFE21B7B23800081AED /* YXPGIndexBannerSubiew.m */,
-				82144FFD21B7B23800081AED /* YXNewPagedFlowView.h */,
-				82144FFC21B7B23800081AED /* YXNewPagedFlowView.m */,
-			);
-			path = YXNewPage;
-			sourceTree = "<group>";
-		};
 		8226133E20C7FD5B00D767BD = {
 			isa = PBXGroup;
 			children = (
@@ -317,27 +320,26 @@
 		8226134A20C7FD5B00D767BD /* YXLaunchAds */ = {
 			isa = PBXGroup;
 			children = (
-				8226134B20C7FD5B00D767BD /* YXLaunchAds.h */,
-				82144FE221B7B12900081AED /* YXAdSDKManager.h */,
-				82144FE721B7B12A00081AED /* YXAdSDKManager.m */,
-				82144FE621B7B12900081AED /* YXMotivationVideoManager.h */,
-				82144FE321B7B12900081AED /* YXMotivationVideoManager.m */,
-				82144FE421B7B12900081AED /* YXMutBannerAdManager.h */,
-				82144FE521B7B12900081AED /* YXMutBannerAdManager.m */,
-				8226137920C7FE6900D767BD /* YXLaunchAdManager.h */,
-				8226137A20C7FE6900D767BD /* YXLaunchAdManager.m */,
-				822C8B9220CFA6AD00AB25D2 /* YXIconAdManager.h */,
-				822C8B9120CFA6AC00AB25D2 /* YXIconAdManager.m */,
-				826ADCE6216C509E005F0577 /* YXBannerAdManager.h */,
-				826ADCE7216C509E005F0577 /* YXBannerAdManager.m */,
-				826848F82182C2EB00C3131B /* YXFeedAdManager.h */,
-				826848F62182C2EB00C3131B /* YXFeedAdManager.m */,
-				826848F52182C2EB00C3131B /* YXInterstitialAdManager.h */,
-				826848F72182C2EB00C3131B /* YXInterstitialAdManager.m */,
-				8226137D20C7FEB300D767BD /* LaundchAd */,
-				8226139520C7FEB300D767BD /* lib */,
-				822613C120C7FEB400D767BD /* model */,
-				8226139B20C7FEB300D767BD /* Tool */,
+				E7A679B9225F49F400643881 /* LaundchAd */,
+				E7A679D5225F49F400643881 /* lib */,
+				E7A679B2225F49F300643881 /* model */,
+				E7A67981225F49F200643881 /* Tool */,
+				E7A679AD225F49F300643881 /* YXAdSDKManager.h */,
+				E7A679AA225F49F300643881 /* YXAdSDKManager.m */,
+				E7A679AF225F49F300643881 /* YXBannerAdManager.h */,
+				E7A679AC225F49F300643881 /* YXBannerAdManager.m */,
+				E7A679B8225F49F400643881 /* YXFeedAdManager.h */,
+				E7A679D4225F49F400643881 /* YXFeedAdManager.m */,
+				E7A679A9225F49F200643881 /* YXIconAdManager.h */,
+				E7A679F5225F49F400643881 /* YXIconAdManager.m */,
+				E7A6797F225F49F200643881 /* YXInterstitialAdManager.h */,
+				E7A679F6225F49F400643881 /* YXInterstitialAdManager.m */,
+				E7A679B0225F49F300643881 /* YXLaunchAdManager.h */,
+				E7A679B7225F49F300643881 /* YXLaunchAdManager.m */,
+				E7A679AE225F49F300643881 /* YXMotivationVideoManager.h */,
+				E7A67980225F49F200643881 /* YXMotivationVideoManager.m */,
+				E7A679B1225F49F300643881 /* YXMutBannerAdManager.h */,
+				E7A679AB225F49F300643881 /* YXMutBannerAdManager.m */,
 				8226134C20C7FD5B00D767BD /* Info.plist */,
 			);
 			path = YXLaunchAds;
@@ -370,157 +372,181 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		8226137D20C7FEB300D767BD /* LaundchAd */ = {
+		E7A67981225F49F200643881 /* Tool */ = {
 			isa = PBXGroup;
 			children = (
-				8226137F20C7FEB300D767BD /* YXLaunchConfiguration.h */,
-				826848FD2182C36600C3131B /* YXFeedAdData.h */,
-				826848FE2182C36600C3131B /* YXFeedAdData.m */,
-				8226138220C7FEB300D767BD /* YXLaunchAdConst.h */,
-				8226138E20C7FEB300D767BD /* YXLaunchAdConst.m */,
-				8226138520C7FEB300D767BD /* YXLaunchAd.h */,
-				8226139020C7FEB300D767BD /* YXLaunchAd.m */,
-				8226138620C7FEB300D767BD /* YXLaunchAdController.h */,
-				8226138F20C7FEB300D767BD /* YXLaunchAdController.m */,
-				8226138720C7FEB300D767BD /* YXLaunchAdConfiguration.h */,
-				8226139420C7FEB300D767BD /* YXLaunchAdConfiguration.m */,
-				8226138820C7FEB300D767BD /* YXLaunchAdDownloader.h */,
-				8226139320C7FEB300D767BD /* YXLaunchAdDownloader.m */,
-				8226138920C7FEB300D767BD /* YXLaunchAdButton.h */,
-				8226139220C7FEB300D767BD /* YXLaunchAdButton.m */,
-				8226138120C7FEB300D767BD /* YXLaunchAdView.h */,
-				8226138A20C7FEB300D767BD /* YXLaunchAdView.m */,
-				8226138B20C7FEB300D767BD /* YXLaunchAdCache.h */,
-				8226138020C7FEB300D767BD /* YXLaunchAdCache.m */,
-				8226138C20C7FEB300D767BD /* YXLaunchAdImageManager.h */,
-				8226137E20C7FEB300D767BD /* YXLaunchAdImageManager.m */,
-				8226138320C7FEB300D767BD /* YXLaunchAdImageView+YXLaunchAdCache.h */,
-				8226138D20C7FEB300D767BD /* YXLaunchAdImageView+YXLaunchAdCache.m */,
-				8226139120C7FEB300D767BD /* YXLaunchImageView.h */,
-				8226138420C7FEB300D767BD /* YXLaunchImageView.m */,
-			);
-			path = LaundchAd;
-			sourceTree = "<group>";
-		};
-		8226139520C7FEB300D767BD /* lib */ = {
-			isa = PBXGroup;
-			children = (
-				E77419BD224086E300B2B5ED /* YXPopupMenu */,
-				82144FFA21B7B23800081AED /* YXNewPage */,
-				8226139620C7FEB300D767BD /* YXFLAnimatedImage */,
-			);
-			path = lib;
-			sourceTree = "<group>";
-		};
-		8226139620C7FEB300D767BD /* YXFLAnimatedImage */ = {
-			isa = PBXGroup;
-			children = (
-				8226139720C7FEB300D767BD /* YXFLAnimatedImageView.h */,
-				8226139A20C7FEB300D767BD /* YXFLAnimatedImageView.m */,
-				8226139820C7FEB300D767BD /* YXFLAnimatedImage.h */,
-				8226139920C7FEB300D767BD /* YXFLAnimatedImage.m */,
-			);
-			path = YXFLAnimatedImage;
-			sourceTree = "<group>";
-		};
-		8226139B20C7FEB300D767BD /* Tool */ = {
-			isa = PBXGroup;
-			children = (
-				E75FC8092230BC1E0030BF4B /* gdtAD */,
-				82669932219596DB00B1EC3E /* Weichat */,
-				82A8256E215A43450030C432 /* ChuanAD */,
-				822613A020C7FEB300D767BD /* des */,
-				822613B220C7FEB300D767BD /* Network.h */,
-				8226139C20C7FEB300D767BD /* Network.m */,
-				8226139D20C7FEB300D767BD /* YXImgUtil.h */,
-				822613B120C7FEB300D767BD /* YXImgUtil.m */,
-				822613B020C7FEB300D767BD /* YXReachability.h */,
-				8226139E20C7FEB300D767BD /* YXReachability.m */,
-				8226139F20C7FEB300D767BD /* NetTool.h */,
-				822613AF20C7FEB300D767BD /* NetTool.m */,
-				822613BF20C7FEB300D767BD /* GuOpenUDID.h */,
-				822613A620C7FEB300D767BD /* GuOpenUDID.m */,
-				822613C020C7FEB300D767BD /* YXWebViewController.h */,
-				822613AA20C7FEB300D767BD /* YXWebViewController.m */,
+				E7A67982225F49F200643881 /* Weichat */,
+				E7A67986225F49F200643881 /* YXWebViewController.h */,
+				E7A67987225F49F200643881 /* Network.m */,
+				E7A67988225F49F200643881 /* YXImgUtil.h */,
+				E7A67989225F49F200643881 /* YXReachability.m */,
+				E7A6798A225F49F200643881 /* NetTool.h */,
+				E7A6798B225F49F200643881 /* des */,
+				E7A67991225F49F200643881 /* NetTool.m */,
+				E7A67992225F49F200643881 /* YXReachability.h */,
+				E7A67993225F49F200643881 /* YXImgUtil.m */,
+				E7A67994225F49F200643881 /* ChuanAD */,
+				E7A67997225F49F200643881 /* YXWebViewController.m */,
+				E7A67998225F49F200643881 /* Network.h */,
+				E7A67999225F49F200643881 /* gdtAD */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
 		};
-		822613A020C7FEB300D767BD /* des */ = {
+		E7A67982225F49F200643881 /* Weichat */ = {
 			isa = PBXGroup;
 			children = (
-				823338B82135450C00AF9A93 /* YXGTMBase64.h */,
-				823338B92135450C00AF9A93 /* YXGTMBase64.m */,
-				823338BB2135450C00AF9A93 /* YXGTMDefines.h */,
-				823338B72135450C00AF9A93 /* YXLCdes.h */,
-				823338BA2135450C00AF9A93 /* YXLCdes.m */,
-			);
-			path = des;
-			sourceTree = "<group>";
-		};
-		822613C120C7FEB400D767BD /* model */ = {
-			isa = PBXGroup;
-			children = (
-				E77419CD22409BB600B2B5ED /* LaunchAdModel.h */,
-				E77419CF22409BB600B2B5ED /* LaunchAdModel.m */,
-				E77419CE22409BB600B2B5ED /* YDSource.bundle */,
-				E77419D122409BB600B2B5ED /* YXMenuViewCell.h */,
-				E77419D022409BB600B2B5ED /* YXMenuViewCell.m */,
-			);
-			path = model;
-			sourceTree = "<group>";
-		};
-		82669932219596DB00B1EC3E /* Weichat */ = {
-			isa = PBXGroup;
-			children = (
-				82669933219596DB00B1EC3E /* WXApi.h */,
-				82669934219596DB00B1EC3E /* WXApiObject.h */,
-				82669935219596DB00B1EC3E /* libWeChatSDK.a */,
+				E7A67983225F49F200643881 /* WXApi.h */,
+				E7A67984225F49F200643881 /* WXApiObject.h */,
+				E7A67985225F49F200643881 /* libWeChatSDK.a */,
 			);
 			path = Weichat;
 			sourceTree = "<group>";
 		};
-		82A8256E215A43450030C432 /* ChuanAD */ = {
+		E7A6798B225F49F200643881 /* des */ = {
 			isa = PBXGroup;
 			children = (
-				8202E77321A51CFB00586F04 /* ChuanAD */,
+				E7A6798C225F49F200643881 /* NSString+SFAES.h */,
+				E7A6798D225F49F200643881 /* YXGTMDefines.h */,
+				E7A6798E225F49F200643881 /* YXGTMBase64.m */,
+				E7A6798F225F49F200643881 /* NSString+SFAES.m */,
+				E7A67990225F49F200643881 /* YXGTMBase64.h */,
+			);
+			path = des;
+			sourceTree = "<group>";
+		};
+		E7A67994225F49F200643881 /* ChuanAD */ = {
+			isa = PBXGroup;
+			children = (
+				E7A67995225F49F200643881 /* BUAdSDK.framework */,
+				E7A67996225F49F200643881 /* BUAdSDK.bundle */,
 			);
 			path = ChuanAD;
 			sourceTree = "<group>";
 		};
-		E75FC8092230BC1E0030BF4B /* gdtAD */ = {
+		E7A67999225F49F200643881 /* gdtAD */ = {
 			isa = PBXGroup;
 			children = (
-				E75FC80A2230BC1E0030BF4B /* GDTNativeExpressAdView.h */,
-				E75FC80B2230BC1E0030BF4B /* GDTMobBannerView.h */,
-				E75FC80C2230BC1E0030BF4B /* GDTNativeAd.h */,
-				E75FC80D2230BC1E0030BF4B /* GDTSDKConfig.h */,
-				E75FC80E2230BC1E0030BF4B /* GDTMobInterstitial.h */,
-				E75FC80F2230BC1E0030BF4B /* GDTRewardVideoAd.h */,
-				E75FC8102230BC1E0030BF4B /* GDTSplashAd.h */,
-				E75FC8112230BC1E0030BF4B /* GDTNativeExpressAd.h */,
-				E75FC8122230BC1E0030BF4B /* GDTLogoView.h */,
-				E75FC8132230BC1E0030BF4B /* GDTMediaView.h */,
-				E75FC8142230BC1E0030BF4B /* GDTUnifiedNativeAdView.h */,
-				E75FC8152230BC1E0030BF4B /* GDTUnifiedNativeAdDataObject.h */,
-				E75FC8162230BC1E0030BF4B /* GDTSDKDefines.h */,
-				E75FC8182230BC1E0030BF4B /* GDTUnifiedNativeAd.h */,
-				E75FC8172230BC1E0030BF4B /* libGDTMobSDK.a */,
+				E7A6799A225F49F200643881 /* GDTNativeExpressAdView.h */,
+				E7A6799B225F49F200643881 /* GDTMobBannerView.h */,
+				E7A6799C225F49F200643881 /* GDTNativeAd.h */,
+				E7A6799D225F49F200643881 /* GDTSDKConfig.h */,
+				E7A6799E225F49F200643881 /* GDTMobInterstitial.h */,
+				E7A6799F225F49F200643881 /* GDTRewardVideoAd.h */,
+				E7A679A0225F49F200643881 /* GDTSplashAd.h */,
+				E7A679A1225F49F200643881 /* GDTNativeExpressAd.h */,
+				E7A679A2225F49F200643881 /* GDTLogoView.h */,
+				E7A679A3225F49F200643881 /* GDTMediaView.h */,
+				E7A679A4225F49F200643881 /* GDTUnifiedNativeAdView.h */,
+				E7A679A5225F49F200643881 /* GDTUnifiedNativeAdDataObject.h */,
+				E7A679A6225F49F200643881 /* GDTSDKDefines.h */,
+				E7A679A7225F49F200643881 /* libGDTMobSDK.a */,
+				E7A679A8225F49F200643881 /* GDTUnifiedNativeAd.h */,
 			);
 			path = gdtAD;
 			sourceTree = "<group>";
 		};
-		E77419BD224086E300B2B5ED /* YXPopupMenu */ = {
+		E7A679B2225F49F300643881 /* model */ = {
 			isa = PBXGroup;
 			children = (
-				E77419BE224086E300B2B5ED /* YXPopupMenu.m */,
-				E77419BF224086E300B2B5ED /* YXRectConst.h */,
-				E77419C0224086E300B2B5ED /* YXPopupMenuPath.h */,
-				E77419C1224086E300B2B5ED /* YXRectConst.m */,
-				E77419C2224086E300B2B5ED /* YXPopupMenu.h */,
-				E77419C3224086E300B2B5ED /* YXPopupMenuPath.m */,
+				E7A679B3225F49F300643881 /* LaunchAdModel.h */,
+				E7A679B4225F49F300643881 /* YXMenuViewCell.m */,
+				E7A679B5225F49F300643881 /* YXMenuViewCell.h */,
+				E7A679B6225F49F300643881 /* LaunchAdModel.m */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		E7A679B9225F49F400643881 /* LaundchAd */ = {
+			isa = PBXGroup;
+			children = (
+				E7A67A6C225F4A0700643881 /* YXFeedAdData.h */,
+				E7A67A7C225F4A0900643881 /* YXFeedAdData.m */,
+				E7A67A69225F4A0700643881 /* YXLaunchAd.h */,
+				E7A67A7B225F4A0900643881 /* YXLaunchAd.m */,
+				E7A67A6A225F4A0700643881 /* YXLaunchAdButton.h */,
+				E7A67A78225F4A0900643881 /* YXLaunchAdButton.m */,
+				E7A67A66225F4A0700643881 /* YXLaunchAdCache.h */,
+				E7A67A72225F4A0800643881 /* YXLaunchAdCache.m */,
+				E7A67A6D225F4A0700643881 /* YXLaunchAdConfiguration.h */,
+				E7A67A76225F4A0900643881 /* YXLaunchAdConfiguration.m */,
+				E7A67A75225F4A0800643881 /* YXLaunchAdConst.h */,
+				E7A67A79225F4A0900643881 /* YXLaunchAdConst.m */,
+				E7A67A6F225F4A0700643881 /* YXLaunchAdController.h */,
+				E7A67A6B225F4A0700643881 /* YXLaunchAdController.m */,
+				E7A67A73225F4A0800643881 /* YXLaunchAdDownloader.h */,
+				E7A67A6E225F4A0700643881 /* YXLaunchAdDownloader.m */,
+				E7A67A67225F4A0700643881 /* YXLaunchAdImageManager.h */,
+				E7A67A68225F4A0700643881 /* YXLaunchAdImageManager.m */,
+				E7A67A7A225F4A0900643881 /* YXLaunchAdImageView+YXLaunchAdCache.h */,
+				E7A67A74225F4A0800643881 /* YXLaunchAdImageView+YXLaunchAdCache.m */,
+				E7A67A71225F4A0800643881 /* YXLaunchAds.h */,
+				E7A67A65225F4A0700643881 /* YXLaunchAdView.h */,
+				E7A67A70225F4A0700643881 /* YXLaunchAdView.m */,
+				E7A67A7D225F4A0900643881 /* YXLaunchConfiguration.h */,
+				E7A67A64225F4A0700643881 /* YXLaunchImageView.h */,
+				E7A67A77225F4A0900643881 /* YXLaunchImageView.m */,
+			);
+			path = LaundchAd;
+			sourceTree = "<group>";
+		};
+		E7A679D5225F49F400643881 /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				E7A679D6225F49F400643881 /* YXPopupMenu */,
+				E7A679DD225F49F400643881 /* YXFLAnimatedImage */,
+				E7A679E2225F49F400643881 /* YXBannerScrollView */,
+			);
+			path = lib;
+			sourceTree = "<group>";
+		};
+		E7A679D6225F49F400643881 /* YXPopupMenu */ = {
+			isa = PBXGroup;
+			children = (
+				E7A679D7225F49F400643881 /* YXPopupMenu.m */,
+				E7A679D8225F49F400643881 /* YXRectConst.h */,
+				E7A679D9225F49F400643881 /* YXPopupMenuPath.h */,
+				E7A679DA225F49F400643881 /* YXRectConst.m */,
+				E7A679DB225F49F400643881 /* YXPopupMenu.h */,
+				E7A679DC225F49F400643881 /* YXPopupMenuPath.m */,
 			);
 			path = YXPopupMenu;
+			sourceTree = "<group>";
+		};
+		E7A679DD225F49F400643881 /* YXFLAnimatedImage */ = {
+			isa = PBXGroup;
+			children = (
+				E7A679DE225F49F400643881 /* YXFLAnimatedImageView.h */,
+				E7A679DF225F49F400643881 /* YXFLAnimatedImage.h */,
+				E7A679E0225F49F400643881 /* YXFLAnimatedImage.m */,
+				E7A679E1225F49F400643881 /* YXFLAnimatedImageView.m */,
+			);
+			path = YXFLAnimatedImage;
+			sourceTree = "<group>";
+		};
+		E7A679E2225F49F400643881 /* YXBannerScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				E7A679E3225F49F400643881 /* YXBannerScrollView.m */,
+				E7A679E4225F49F400643881 /* YXHorizontalPageControl.h */,
+				E7A679E5225F49F400643881 /* YXAnimationPageControl.m */,
+				E7A679E6225F49F400643881 /* UIView+YXExtension.h */,
+				E7A679E7225F49F400643881 /* YXAnimatedDotView.m */,
+				E7A679E8225F49F400643881 /* YXPageControl.m */,
+				E7A679E9225F49F400643881 /* YXCollectionViewCell.h */,
+				E7A679EA225F49F400643881 /* YXDotView.m */,
+				E7A679EB225F49F400643881 /* YXAbstractDotView.h */,
+				E7A679EC225F49F400643881 /* YXAnimationPageControl.h */,
+				E7A679ED225F49F400643881 /* YXHorizontalPageControl.m */,
+				E7A679EE225F49F400643881 /* YXBannerScrollView.h */,
+				E7A679EF225F49F400643881 /* YXPageControl.h */,
+				E7A679F0225F49F400643881 /* YXAnimatedDotView.h */,
+				E7A679F1225F49F400643881 /* UIView+YXExtension.m */,
+				E7A679F2225F49F400643881 /* YXCollectionViewCell.m */,
+				E7A679F3225F49F400643881 /* YXAbstractDotView.m */,
+				E7A679F4225F49F400643881 /* YXDotView.h */,
+			);
+			path = YXBannerScrollView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -530,60 +556,66 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				82144FEA21B7B12A00081AED /* YXMutBannerAdManager.h in Headers */,
-				8214500121B7B23800081AED /* YXNewPagedFlowView.h in Headers */,
-				82144FE821B7B12A00081AED /* YXAdSDKManager.h in Headers */,
-				82144FEC21B7B12A00081AED /* YXMotivationVideoManager.h in Headers */,
-				E75FC8242230BC1E0030BF4B /* GDTUnifiedNativeAdDataObject.h in Headers */,
-				826849082183052100C3131B /* YXLaunchAds.h in Headers */,
-				826849072183047D00C3131B /* YXLaunchConfiguration.h in Headers */,
-				E75FC8222230BC1E0030BF4B /* GDTMediaView.h in Headers */,
-				E75FC8232230BC1E0030BF4B /* GDTUnifiedNativeAdView.h in Headers */,
-				826849062183043C00C3131B /* YXLaunchAdManager.h in Headers */,
-				826848FF2182C36600C3131B /* YXFeedAdData.h in Headers */,
-				E75FC8272230BC1E0030BF4B /* GDTUnifiedNativeAd.h in Headers */,
-				826848F92182C2EC00C3131B /* YXInterstitialAdManager.h in Headers */,
-				E77419C8224086E300B2B5ED /* YXPopupMenu.h in Headers */,
-				826848FC2182C2EC00C3131B /* YXFeedAdManager.h in Headers */,
-				E75FC81E2230BC1E0030BF4B /* GDTRewardVideoAd.h in Headers */,
-				826ADCE8216C509E005F0577 /* YXBannerAdManager.h in Headers */,
-				822C8B9420CFA6AD00AB25D2 /* YXIconAdManager.h in Headers */,
-				822613CB20C7FEB400D767BD /* YXLaunchAd.h in Headers */,
-				822613F020C7FEB400D767BD /* YXReachability.h in Headers */,
-				E75FC8202230BC1E0030BF4B /* GDTNativeExpressAd.h in Headers */,
-				E77419C6224086E300B2B5ED /* YXPopupMenuPath.h in Headers */,
-				E77419C5224086E300B2B5ED /* YXRectConst.h in Headers */,
-				823338BD2135450C00AF9A93 /* YXGTMBase64.h in Headers */,
-				823338BC2135450C00AF9A93 /* YXLCdes.h in Headers */,
-				822613F220C7FEB400D767BD /* Network.h in Headers */,
-				E75FC8252230BC1E0030BF4B /* GDTSDKDefines.h in Headers */,
-				E77419D622409BB700B2B5ED /* YXMenuViewCell.h in Headers */,
-				822613D120C7FEB400D767BD /* YXLaunchAdCache.h in Headers */,
-				822613DB20C7FEB400D767BD /* YXFLAnimatedImageView.h in Headers */,
-				E75FC81D2230BC1E0030BF4B /* GDTMobInterstitial.h in Headers */,
-				E75FC81C2230BC1E0030BF4B /* GDTSDKConfig.h in Headers */,
-				E75FC8192230BC1E0030BF4B /* GDTNativeExpressAdView.h in Headers */,
-				822613DC20C7FEB400D767BD /* YXFLAnimatedImage.h in Headers */,
-				E77419D222409BB700B2B5ED /* LaunchAdModel.h in Headers */,
-				823338C02135450C00AF9A93 /* YXGTMDefines.h in Headers */,
-				E75FC8212230BC1E0030BF4B /* GDTLogoView.h in Headers */,
-				822613CF20C7FEB400D767BD /* YXLaunchAdButton.h in Headers */,
-				822613D220C7FEB400D767BD /* YXLaunchAdImageManager.h in Headers */,
-				822613CE20C7FEB400D767BD /* YXLaunchAdDownloader.h in Headers */,
-				822613C920C7FEB400D767BD /* YXLaunchAdImageView+YXLaunchAdCache.h in Headers */,
-				822613FD20C7FEB400D767BD /* GuOpenUDID.h in Headers */,
-				82144FFF21B7B23800081AED /* YXPGIndexBannerSubiew.h in Headers */,
-				822613CC20C7FEB400D767BD /* YXLaunchAdController.h in Headers */,
-				822613E020C7FEB400D767BD /* YXImgUtil.h in Headers */,
-				822613FE20C7FEB400D767BD /* YXWebViewController.h in Headers */,
-				E75FC81B2230BC1E0030BF4B /* GDTNativeAd.h in Headers */,
-				822613C820C7FEB400D767BD /* YXLaunchAdConst.h in Headers */,
-				E75FC81A2230BC1E0030BF4B /* GDTMobBannerView.h in Headers */,
-				822613C720C7FEB400D767BD /* YXLaunchAdView.h in Headers */,
-				822613CD20C7FEB400D767BD /* YXLaunchAdConfiguration.h in Headers */,
-				822613E220C7FEB400D767BD /* NetTool.h in Headers */,
-				E75FC81F2230BC1E0030BF4B /* GDTSplashAd.h in Headers */,
-				822613D720C7FEB400D767BD /* YXLaunchImageView.h in Headers */,
+				E7A679F7225F49F400643881 /* YXInterstitialAdManager.h in Headers */,
+				E7A67A8B225F4A0900643881 /* YXLaunchAds.h in Headers */,
+				E7A67A24225F49F400643881 /* YXMutBannerAdManager.h in Headers */,
+				E7A67A21225F49F400643881 /* YXMotivationVideoManager.h in Headers */,
+				E7A67A86225F4A0900643881 /* YXFeedAdData.h in Headers */,
+				E7A67A20225F49F400643881 /* YXAdSDKManager.h in Headers */,
+				E7A67A1C225F49F400643881 /* YXIconAdManager.h in Headers */,
+				E7A67A2A225F49F400643881 /* YXFeedAdManager.h in Headers */,
+				E7A67A97225F4A0900643881 /* YXLaunchConfiguration.h in Headers */,
+				E7A67A23225F49F400643881 /* YXLaunchAdManager.h in Headers */,
+				E7A67A22225F49F400643881 /* YXBannerAdManager.h in Headers */,
+				E7A67A7F225F4A0900643881 /* YXLaunchAdView.h in Headers */,
+				E7A679FE225F49F400643881 /* YXImgUtil.h in Headers */,
+				E7A67A0C225F49F400643881 /* Network.h in Headers */,
+				E7A67A0F225F49F400643881 /* GDTNativeAd.h in Headers */,
+				E7A67A80225F4A0900643881 /* YXLaunchAdCache.h in Headers */,
+				E7A67A14225F49F400643881 /* GDTNativeExpressAd.h in Headers */,
+				E7A67A11225F49F400643881 /* GDTMobInterstitial.h in Headers */,
+				E7A67A0E225F49F400643881 /* GDTMobBannerView.h in Headers */,
+				E7A67A16225F49F400643881 /* GDTMediaView.h in Headers */,
+				E7A67A94225F4A0900643881 /* YXLaunchAdImageView+YXLaunchAdCache.h in Headers */,
+				E7A67A51225F49F400643881 /* YXHorizontalPageControl.h in Headers */,
+				E7A67A15225F49F400643881 /* GDTLogoView.h in Headers */,
+				E7A67A10225F49F400643881 /* GDTSDKConfig.h in Headers */,
+				E7A67A89225F4A0900643881 /* YXLaunchAdController.h in Headers */,
+				E7A67A87225F4A0900643881 /* YXLaunchAdConfiguration.h in Headers */,
+				E7A67A47225F49F400643881 /* YXRectConst.h in Headers */,
+				E7A67A0D225F49F400643881 /* GDTNativeExpressAdView.h in Headers */,
+				E7A67A8D225F4A0900643881 /* YXLaunchAdDownloader.h in Headers */,
+				E7A67A1B225F49F400643881 /* GDTUnifiedNativeAd.h in Headers */,
+				E7A67A48225F49F400643881 /* YXPopupMenuPath.h in Headers */,
+				E7A67A18225F49F400643881 /* GDTUnifiedNativeAdDataObject.h in Headers */,
+				E7A67A7E225F4A0900643881 /* YXLaunchImageView.h in Headers */,
+				E7A67A13225F49F400643881 /* GDTSplashAd.h in Headers */,
+				E7A679FC225F49F400643881 /* YXWebViewController.h in Headers */,
+				E7A67A02225F49F400643881 /* YXGTMDefines.h in Headers */,
+				E7A67A25225F49F400643881 /* LaunchAdModel.h in Headers */,
+				E7A67A58225F49F400643881 /* YXAbstractDotView.h in Headers */,
+				E7A67A53225F49F400643881 /* UIView+YXExtension.h in Headers */,
+				E7A67A17225F49F400643881 /* GDTUnifiedNativeAdView.h in Headers */,
+				E7A67A27225F49F400643881 /* YXMenuViewCell.h in Headers */,
+				E7A67A4C225F49F400643881 /* YXFLAnimatedImageView.h in Headers */,
+				E7A67A84225F4A0900643881 /* YXLaunchAdButton.h in Headers */,
+				E7A67A83225F4A0900643881 /* YXLaunchAd.h in Headers */,
+				E7A67A4A225F49F400643881 /* YXPopupMenu.h in Headers */,
+				E7A67A5D225F49F400643881 /* YXAnimatedDotView.h in Headers */,
+				E7A67A00225F49F400643881 /* NetTool.h in Headers */,
+				E7A67A05225F49F400643881 /* YXGTMBase64.h in Headers */,
+				E7A67A81225F4A0900643881 /* YXLaunchAdImageManager.h in Headers */,
+				E7A67A5B225F49F400643881 /* YXBannerScrollView.h in Headers */,
+				E7A67A19225F49F400643881 /* GDTSDKDefines.h in Headers */,
+				E7A67A8F225F4A0900643881 /* YXLaunchAdConst.h in Headers */,
+				E7A67A4D225F49F400643881 /* YXFLAnimatedImage.h in Headers */,
+				E7A67A5C225F49F400643881 /* YXPageControl.h in Headers */,
+				E7A67A56225F49F400643881 /* YXCollectionViewCell.h in Headers */,
+				E7A67A07225F49F400643881 /* YXReachability.h in Headers */,
+				E7A67A59225F49F400643881 /* YXAnimationPageControl.h in Headers */,
+				E7A67A01225F49F400643881 /* NSString+SFAES.h in Headers */,
+				E7A67A61225F49F400643881 /* YXDotView.h in Headers */,
+				E7A67A12225F49F400643881 /* GDTRewardVideoAd.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -668,7 +700,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E77419D322409BB700B2B5ED /* YDSource.bundle in Resources */,
+				E7A67A0A225F49F400643881 /* BUAdSDK.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -686,43 +718,49 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				822C8B9320CFA6AD00AB25D2 /* YXIconAdManager.m in Sources */,
-				822613D620C7FEB400D767BD /* YXLaunchAd.m in Sources */,
-				8214500221B7B23800081AED /* YXPGIndexBannerSubiew.m in Sources */,
-				822613DF20C7FEB400D767BD /* Network.m in Sources */,
-				E77419C4224086E300B2B5ED /* YXPopupMenu.m in Sources */,
-				E77419D522409BB700B2B5ED /* YXMenuViewCell.m in Sources */,
-				826849002182C36600C3131B /* YXFeedAdData.m in Sources */,
-				822613DA20C7FEB400D767BD /* YXLaunchAdConfiguration.m in Sources */,
-				E77419D422409BB700B2B5ED /* LaunchAdModel.m in Sources */,
-				822613D020C7FEB400D767BD /* YXLaunchAdView.m in Sources */,
-				826848FA2182C2EC00C3131B /* YXFeedAdManager.m in Sources */,
-				822613D420C7FEB400D767BD /* YXLaunchAdConst.m in Sources */,
-				823338BE2135450C00AF9A93 /* YXGTMBase64.m in Sources */,
-				826ADCE9216C509E005F0577 /* YXBannerAdManager.m in Sources */,
-				822613CA20C7FEB400D767BD /* YXLaunchImageView.m in Sources */,
-				822613D820C7FEB400D767BD /* YXLaunchAdButton.m in Sources */,
-				822613DE20C7FEB400D767BD /* YXFLAnimatedImageView.m in Sources */,
-				822613C620C7FEB400D767BD /* YXLaunchAdCache.m in Sources */,
-				822613D320C7FEB400D767BD /* YXLaunchAdImageView+YXLaunchAdCache.m in Sources */,
-				822613EB20C7FEB400D767BD /* YXWebViewController.m in Sources */,
-				822613C420C7FEB400D767BD /* YXLaunchAdImageManager.m in Sources */,
-				E77419C9224086E300B2B5ED /* YXPopupMenuPath.m in Sources */,
-				822613D520C7FEB400D767BD /* YXLaunchAdController.m in Sources */,
-				822613E820C7FEB400D767BD /* GuOpenUDID.m in Sources */,
-				822613EF20C7FEB400D767BD /* NetTool.m in Sources */,
-				E77419C7224086E300B2B5ED /* YXRectConst.m in Sources */,
-				822613D920C7FEB400D767BD /* YXLaunchAdDownloader.m in Sources */,
-				822613E120C7FEB400D767BD /* YXReachability.m in Sources */,
-				822613F120C7FEB400D767BD /* YXImgUtil.m in Sources */,
-				826848FB2182C2EC00C3131B /* YXInterstitialAdManager.m in Sources */,
-				822613DD20C7FEB400D767BD /* YXFLAnimatedImage.m in Sources */,
-				82144FED21B7B12A00081AED /* YXAdSDKManager.m in Sources */,
-				82144FE921B7B12A00081AED /* YXMotivationVideoManager.m in Sources */,
-				823338BF2135450C00AF9A93 /* YXLCdes.m in Sources */,
-				82144FEB21B7B12A00081AED /* YXMutBannerAdManager.m in Sources */,
-				8214500021B7B23800081AED /* YXNewPagedFlowView.m in Sources */,
-				8226137C20C7FE6A00D767BD /* YXLaunchAdManager.m in Sources */,
+				E7A679FD225F49F400643881 /* Network.m in Sources */,
+				E7A67A50225F49F400643881 /* YXBannerScrollView.m in Sources */,
+				E7A67A82225F4A0900643881 /* YXLaunchAdImageManager.m in Sources */,
+				E7A67A28225F49F400643881 /* LaunchAdModel.m in Sources */,
+				E7A67A57225F49F400643881 /* YXDotView.m in Sources */,
+				E7A67A8A225F4A0900643881 /* YXLaunchAdView.m in Sources */,
+				E7A67A06225F49F400643881 /* NetTool.m in Sources */,
+				E7A67A1D225F49F400643881 /* YXAdSDKManager.m in Sources */,
+				E7A67A85225F4A0900643881 /* YXLaunchAdController.m in Sources */,
+				E7A67A8C225F4A0900643881 /* YXLaunchAdCache.m in Sources */,
+				E7A67A29225F49F400643881 /* YXLaunchAdManager.m in Sources */,
+				E7A679FF225F49F400643881 /* YXReachability.m in Sources */,
+				E7A67A95225F4A0900643881 /* YXLaunchAd.m in Sources */,
+				E7A67A26225F49F400643881 /* YXMenuViewCell.m in Sources */,
+				E7A67A91225F4A0900643881 /* YXLaunchImageView.m in Sources */,
+				E7A67A04225F49F400643881 /* NSString+SFAES.m in Sources */,
+				E7A67A49225F49F400643881 /* YXRectConst.m in Sources */,
+				E7A67A5F225F49F400643881 /* YXCollectionViewCell.m in Sources */,
+				E7A67A08225F49F400643881 /* YXImgUtil.m in Sources */,
+				E7A67A1F225F49F400643881 /* YXBannerAdManager.m in Sources */,
+				E7A67A96225F4A0900643881 /* YXFeedAdData.m in Sources */,
+				E7A67A45225F49F400643881 /* YXFeedAdManager.m in Sources */,
+				E7A67A62225F49F400643881 /* YXIconAdManager.m in Sources */,
+				E7A67A4E225F49F400643881 /* YXFLAnimatedImage.m in Sources */,
+				E7A67A46225F49F400643881 /* YXPopupMenu.m in Sources */,
+				E7A67A54225F49F400643881 /* YXAnimatedDotView.m in Sources */,
+				E7A67A4F225F49F400643881 /* YXFLAnimatedImageView.m in Sources */,
+				E7A67A55225F49F400643881 /* YXPageControl.m in Sources */,
+				E7A67A90225F4A0900643881 /* YXLaunchAdConfiguration.m in Sources */,
+				E7A67A88225F4A0900643881 /* YXLaunchAdDownloader.m in Sources */,
+				E7A67A03225F49F400643881 /* YXGTMBase64.m in Sources */,
+				E7A67A52225F49F400643881 /* YXAnimationPageControl.m in Sources */,
+				E7A67A8E225F4A0900643881 /* YXLaunchAdImageView+YXLaunchAdCache.m in Sources */,
+				E7A67A4B225F49F400643881 /* YXPopupMenuPath.m in Sources */,
+				E7A67A0B225F49F400643881 /* YXWebViewController.m in Sources */,
+				E7A67A1E225F49F400643881 /* YXMutBannerAdManager.m in Sources */,
+				E7A67A92225F4A0900643881 /* YXLaunchAdButton.m in Sources */,
+				E7A67A93225F4A0900643881 /* YXLaunchAdConst.m in Sources */,
+				E7A67A60225F49F400643881 /* YXAbstractDotView.m in Sources */,
+				E7A67A5A225F49F400643881 /* YXHorizontalPageControl.m in Sources */,
+				E7A679F8225F49F400643881 /* YXMotivationVideoManager.m in Sources */,
+				E7A67A63225F49F400643881 /* YXInterstitialAdManager.m in Sources */,
+				E7A67A5E225F49F400643881 /* UIView+YXExtension.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -892,6 +930,7 @@
 					"$(PROJECT_DIR)/YXLaunchAds/Tool/panAD",
 					"$(PROJECT_DIR)/YXLaunchAds/Tool/gdtAD",
 					"$(PROJECT_DIR)/YXLaunchAds/Tool/HMT",
+					"$(PROJECT_DIR)/YXLaunchAds/Tool/Weichat",
 				);
 				MACH_O_TYPE = staticlib;
 				ONLY_ACTIVE_ARCH = NO;
@@ -934,6 +973,7 @@
 					"$(PROJECT_DIR)/YXLaunchAds/Tool/panAD",
 					"$(PROJECT_DIR)/YXLaunchAds/Tool/gdtAD",
 					"$(PROJECT_DIR)/YXLaunchAds/Tool/HMT",
+					"$(PROJECT_DIR)/YXLaunchAds/Tool/Weichat",
 				);
 				MACH_O_TYPE = staticlib;
 				ONLY_ACTIVE_ARCH = NO;

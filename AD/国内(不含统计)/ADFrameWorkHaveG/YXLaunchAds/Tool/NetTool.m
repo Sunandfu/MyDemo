@@ -18,11 +18,10 @@
 #import <CoreTelephony/CTTelephonyNetworkInfo.h>
 #import<CoreTelephony/CTCarrier.h>
 #import <sys/utsname.h>
-#import "GuOpenUDID.h"
 #import <SystemConfiguration/SystemConfiguration.h>
 #include "netdb.h"
 #import <CommonCrypto/CommonDigest.h>
-
+#import "NSString+SFAES.h"
 #import <CoreTelephony/CTTelephonyNetworkInfo.h>
 #import <CoreTelephony/CTCarrier.h>
 
@@ -34,8 +33,8 @@ NSString *_gulongitude;
                        width:(NSString *)width
                       height:(NSString *)height
                        macID:(NSString *)macID
-                         uid:(NSString*)uid
-                     adCount:(NSInteger)adCount
+                         uid:(NSString *)uid
+                     adCount:(NSInteger )adCount
 {
     CGFloat c_w = [UIScreen mainScreen].bounds.size.width;
     CGFloat c_h = [UIScreen mainScreen].bounds.size.height;
@@ -58,71 +57,38 @@ NSString *_gulongitude;
     [self getNetTyepe];
     int netNumber = nettype;//网络标示
     NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];
-//    CFShow((__bridge CFTypeRef)(infoDictionary));
     // app名称
     NSString *app_Name = [infoDictionary objectForKey:@"CFBundleDisplayName"];
+
+    UInt64 recordTime = [[NSDate date] timeIntervalSince1970]*1000;
+    NSString *timeLocal = [[NSString alloc] initWithFormat:@"%llu", recordTime];
     
     NSMutableDictionary *dic = [NSMutableDictionary dictionary];
-    [dic setValue:@"3.0" forKey:@"version"] ;
-    [dic setValue:@"2" forKey:@"c_type"] ;
-    
     NSString * adCountStr = [NSString stringWithFormat:@"%ld",adCount];
-    [dic setValue:adCountStr forKey:@"adCount"];
-    
-//    [dic setValue:key forKey:@"cityCode"];
-    [dic setValue:key forKey:@"mid"];
-    
-    [dic setValue:uid forKey:@"uid"];
-    
-    [dic setValue:@"0" forKey:@"support_https"] ;
-    [dic setValue:@"0" forKey:@"support_full_screen_interstitial"] ;
-    
-    NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
-    NSString *adStr = [userDefault objectForKey:@"AD_ID"];
-    if (adStr) {
-        [dic setValue:adStr forKey: @"last_ad_ids"];
-    }
-    
-    [dic setValue:@"IOS" forKey:@"os"];
-    [dic setValue:[self getMac] forKey:@"mac"];
-    [dic setValue:[self getOS] forKey:@"osv"];
-    [dic setValue:[NSString stringWithFormat:@"%d",netNumber] forKey:@"networktype"];
-    
-    [dic setValue:macID forKey:@"remoteip"];
-    
-//    NSLog(@"MAc地址------------%@", macID);
-    [dic setValue:@"apple" forKey: @"make"];
-    [dic setValue:@"apple" forKey:@"brand"];
-    [dic setValue:[self gettelModel] forKey:@"model"];
-    [dic setValue:@"1" forKey:@"devicetype"];
-    
-    [dic setValue:[self getIDFA] forKey:@"idfa"];
-    
-    [dic setValue:[self getDPI] forKey:@"dpi"];
-    
-    
+    [dic setValue:adCountStr                             forKey:@"adCount"];
+    [dic setValue:@"4.0"                                 forKey:@"version"] ;
+    [dic setValue:@"2"                                   forKey:@"c_type"] ;
+    [dic setValue:key                                    forKey:@"mid"];
+    [dic setValue:uid                                    forKey:@"uid"];
+    [dic setValue:@"zh"                                  forKey:@"language"] ;
+    [dic setValue:@"IOS"                                 forKey:@"os"];
+    [dic setValue:[self getMac]                          forKey:@"mac"];
+    [dic setValue:[self getOS]                           forKey:@"osv"];
+    [dic setValue:@(netNumber)                           forKey:@"networktype"];
+    [dic setValue:@"apple"                               forKey:@"make"];
+    [dic setValue:@"apple"                               forKey:@"brand"];
+    [dic setValue:[self gettelModel]                     forKey:@"model"];
+    [dic setValue:@"1"                                   forKey:@"devicetype"];//1 手机  2平板
+    [dic setValue:[self getIDFA]                         forKey:@"idfa"];
+    [dic setValue:[self getDPI]                          forKey:@"dpi"];
     [dic setValue:[NSString stringWithFormat:@"%.f",c_w] forKey:@"width"];
     [dic setValue:[NSString stringWithFormat:@"%.f",c_h] forKey:@"height"];
-    [dic setValue:[self getPackageName] forKey:@"appid"];
-    [dic setValue:app_Name forKey:@"appname"];
-    
-    //    [dic setValue:@"1" forKey:@"geo_type"];
-    //    [dic setValue:[self getlatitude] forKey:@"geo_latitude"];
-    //    [dic setValue:[self getlongitude] forKey:@"geo_longitude"];
-    [dic setValue:orientationStr forKey:@"orientation"];
-    
-    [dic setValue:@{ @"width": width,@"height": height } forKey:@"image"];
-    
-    [dic setValue:@"4" forKey:@"postion"];
-    
-    [dic setValue:@"" forKey:@"imei"];
-
-    [dic setValue:@"" forKey:@"imsi"];
-    
-    [dic setValue:@"" forKey:@"androidid"];
-    
+    [dic setValue:[self getPackageName]                  forKey:@"appid"];
+    [dic setValue:app_Name                               forKey:@"appname"];
+    [dic setValue:orientationStr                         forKey:@"orientation"];
+    [dic setValue:@{@"width": width,@"height": height}   forKey:@"image"];
+    [dic setValue:timeLocal                              forKey:@"ts"];//时间戳
     NSString *yun = [self getYunYingShang];
-    
     if ([yun isEqualToString:@"中国电信"]) {
         [dic setValue:@"2" forKey:@"operator"];
     }else if ([yun isEqualToString:@"中国移动"]) {
@@ -132,14 +98,11 @@ NSString *_gulongitude;
     }else if ([yun isEqualToString:@"无运营商"]) {
         [dic setValue:@"0" forKey:@"operator"];
     }else{
-         [dic setValue:@"4" forKey:@"operator"];
+        [dic setValue:@"4" forKey:@"operator"];
     }
-    
     //    NSJSONSerialization 组json字符串
-    NSData * postDatas = [NSJSONSerialization dataWithJSONObject:dic options:NSJSONWritingPrettyPrinted error:nil];
-    NSString *str = [[NSString alloc] initWithData:postDatas encoding:NSUTF8StringEncoding];
-    NSString *innitStr = str ;
-    return innitStr;
+    NSString *jsonStr = [NSString sf_jsonStringWithJson:dic];
+    return jsonStr;
 }
  
 
@@ -335,8 +298,6 @@ NSString *_gulongitude;
 + (NSString *)getOpenUDID
 {
     NSString *openUDIDStr = [NSUUID UUID].UUIDString;
-    //    NSString *openUDIDStr = [GuOpenUDID value];
-    
     return openUDIDStr;
 }
 
@@ -407,7 +368,7 @@ NSString *_gulongitude;
     free(machine);
     return platform;
 }
-//网络类型
+//设备型号
 + (NSString *)gettelModel
 {
     int mib[2];

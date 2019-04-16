@@ -8,7 +8,6 @@
 //  数据请求类
 #import "Network.h"
 #import "NSString+SFAES.h"
-#import "YXLCdes.h"
 #import "NetTool.h"
 
 @interface Network()
@@ -179,7 +178,7 @@
         });
     }
     dispatch_group_notify(group, queue, ^{
-        _YXGTMDevLog(@"group notify");
+        NSLog(@"group notify");
     });
 }
 
@@ -214,8 +213,8 @@
         [dic setObject:adplaces[@"advertiserId"]        forKey:@"advertiserId"];
         [dic setObject:@"7"                             forKey:@"advtp"];
         [dic setObject:uuid                             forKey:@"pid"];
-        [dic setObject:[YXLCdes UrlValueEncode:mediaID] forKey:@"mid"];
-        [dic setObject:@"iOS"                           forKey:@"os"];
+        [dic setObject:mediaID                          forKey:@"mid"];
+        [dic setObject:@"IOS"                           forKey:@"os"];
         [dic setObject:[NetTool getOS]                  forKey:@"osv"];
         [dic setObject:@"apple"                         forKey:@"make"];
         [dic setObject:[NetTool gettelModel]            forKey:@"model"];
@@ -276,7 +275,7 @@
                              @"type":@"7",
                              @"uid":uuid,
                              @"mid":mediaID,
-                             @"os":@"iOS",
+                             @"os":@"IOS",
                              @"osv":[NetTool getOS],
                              @"make":@"apple",
                              @"brand":@"apple",
@@ -309,15 +308,15 @@
         
         NSString * uid = [NetTool getIDFA];
         
-        NSString * desuuid = [YXLCdes encrypt:uid];
-        
-        NSString * urluid = [YXLCdes UrlValueEncode:desuuid];
+//        NSString * desuuid = [YXLCdes encrypt:uid];
+//
+//        NSString * urluid = [YXLCdes UrlValueEncode:desuuid];
         
         NSString * mid = media;
         
-        NSString * desmid = [YXLCdes encrypt:mid];
-        
-        NSString * urlmid = [YXLCdes UrlValueEncode:desmid];
+//        NSString * desmid = [YXLCdes encrypt:mid];
+//
+//        NSString * urlmid = [YXLCdes UrlValueEncode:desmid];
         
         __block NSInteger dayNow = day;
         
@@ -330,14 +329,14 @@
         NSDictionary *dict;
         if (isAdd) {
             dict = @{
-                    @"uid":urluid,
-                    @"mid":urlmid,
+                    @"uid":uid,
+                    @"mid":mid,
                     @"time":time,
                     };
         }else{
             dict = @{
-                    @"uid":urluid,
-                    @"mid":urlmid,
+                    @"uid":uid,
+                    @"mid":mid,
                     };
         }
         NSString *jsonStr = [NSString sf_jsonStringWithJson:dict];
@@ -363,7 +362,7 @@
                            @"appid":[NetTool getPackageName],
                            @"idfa":[NetTool getIDFA],
                            @"ts":timeLocal,
-                           @"os":@"iOS",
+                           @"os":@"IOS",
                            @"osv":[NetTool getOS],
                            @"width":@(c_w),
                            @"height":@(c_h),
@@ -388,7 +387,6 @@
     [request setHTTPBody:[[NSString sf_jsonStringWithJson:@{@"data":aesStr}] dataUsingEncoding:NSUTF8StringEncoding]];
     [NSURLConnection  sendAsynchronousRequest:request queue:[[NSOperationQueue alloc]init] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
         if(connectionError){
-            _YXGTMDevLog(@"#####%@\error",[connectionError debugDescription]);
             NSError *errors = [NSError errorWithDomain:@"请求失败" code:400 userInfo:nil];
             fail(errors);
         }else{
@@ -421,7 +419,7 @@
                            @"appid":[NetTool getPackageName],
                            @"idfa":[NetTool getIDFA],
                            @"ts":timeLocal,
-                           @"os":@"iOS",
+                           @"os":@"IOS",
                            @"osv":[NetTool getOS],
                            @"width":@(c_w),
                            @"height":@(c_h),
@@ -446,7 +444,6 @@
     [request setHTTPBody:[[NSString sf_jsonStringWithJson:@{@"data":aesStr}] dataUsingEncoding:NSUTF8StringEncoding]];
     [NSURLConnection  sendAsynchronousRequest:request queue:[[NSOperationQueue alloc]init] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
         if(connectionError){
-            _YXGTMDevLog(@"#####%@\error",[connectionError debugDescription]);
             NSError *errors = [NSError errorWithDomain:@"请求失败" code:400 userInfo:nil];
             fail(errors);
         }else{
@@ -464,5 +461,5 @@
         
     }];
 }
-
+//com.yunx.fitness  com.zhongwei.aiweibaby
 @end

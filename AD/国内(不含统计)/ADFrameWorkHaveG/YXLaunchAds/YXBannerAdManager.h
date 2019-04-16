@@ -10,28 +10,27 @@
 #import <Foundation/Foundation.h>
 #import "YXLaunchConfiguration.h"
 
-
 @protocol YXBannerAdManagerDelegate<NSObject>
 @optional
+
 /**
  加载成功的回调
- 
- @param view  回调的view
  */
-- (void)didLoadBannerAd:(UIView*)view;
+- (void)didLoadBannerAd;
+
 /**
  取广告失败调用
  
  @param error 为错误信息
  */
 - (void)didFailedLoadBannerAd:(NSError* _Nonnull)error;
+
 /**
  广告点击后回调
  */
 - (void)didClickedBannerAd;
 
 @end
-
 
 @interface YXBannerAdManager : UIView
 
@@ -58,9 +57,9 @@
 /**
  媒体位ID
  */
-@property (nonatomic, copy) NSString *mediaId;
+@property (nonatomic, copy, nonnull) NSString *mediaId;
 
-@property (nonatomic, assign) id<YXBannerAdManagerDelegate> delegate;
+@property (nonatomic, assign, nullable) id<YXBannerAdManagerDelegate> delegate;
 
 - (void)loadBannerAD;
 

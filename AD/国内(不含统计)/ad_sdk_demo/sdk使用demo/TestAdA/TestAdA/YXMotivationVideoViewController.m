@@ -31,7 +31,6 @@
     self.motivationVideo = [YXMotivationVideoManager new];
     self.motivationVideo.delegate = self;
     self.motivationVideo.showAdController = self;
-    self.motivationVideo.isVertical = YES;
     self.motivationVideo.mediaId = @"beta_ios_video";
     
     UIButton *launchScreenBtn = ({

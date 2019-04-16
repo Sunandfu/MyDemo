@@ -40,4 +40,14 @@
  */
 @property (nonatomic, copy) NSString *buttonText;
 
+/**
+ 广告类型
+ */
+@property (nonatomic,assign) NSInteger adType;
+
+/**
+ 数据
+ */
+@property (nonatomic,strong) id data;
+
 @end

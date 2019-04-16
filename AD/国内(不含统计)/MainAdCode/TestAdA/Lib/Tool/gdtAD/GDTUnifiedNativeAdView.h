@@ -43,8 +43,8 @@ extern NSString* const kGDTUnifiedNativeAdKeyVideoDuration;
 
 
 /**
- 广告进入后台回调
-
+ 当点击应用下载或者广告调用系统程序打开时调用
+ 
  @param unifiedNativeAdView GDTUnifiedNativeAdView 实例
  */
 - (void)gdt_unifiedNativeAdViewApplicationWillEnterBackground:(GDTUnifiedNativeAdView *)unifiedNativeAdView;

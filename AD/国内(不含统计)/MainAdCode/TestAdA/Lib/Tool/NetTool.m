@@ -71,7 +71,7 @@ NSString *_gulongitude;
     [dic setValue:key                                    forKey:@"mid"];
     [dic setValue:uid                                    forKey:@"uid"];
     [dic setValue:@"zh"                                  forKey:@"language"] ;
-    [dic setValue:@"iOS"                                 forKey:@"os"];
+    [dic setValue:@"IOS"                                 forKey:@"os"];
     [dic setValue:[self getMac]                          forKey:@"mac"];
     [dic setValue:[self getOS]                           forKey:@"osv"];
     [dic setValue:@(netNumber)                           forKey:@"networktype"];

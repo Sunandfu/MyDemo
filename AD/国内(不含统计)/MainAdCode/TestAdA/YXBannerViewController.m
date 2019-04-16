@@ -57,7 +57,7 @@ static  NSString * bannerMediaID = @"wxbus_ios_banner";
     NSLog(@"Banner请求");
     [bannerView loadBannerAD];
 }
-- (void)didLoadBannerAd:(UIView *)adView
+- (void)didLoadBannerAd
 {
     NSLog(@"Banner广告请求成功");
 }

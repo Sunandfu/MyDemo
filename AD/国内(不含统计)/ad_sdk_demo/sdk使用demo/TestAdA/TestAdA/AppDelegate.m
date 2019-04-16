@@ -61,9 +61,7 @@
  开屏广告初始化 建议放在 didFinishLaunchingWithOptions中调用
  */
 - (void)initLaunchAd
-{
-    [YXAdSDKManager defaultManager];
-    
+{    
     YXLaunchAdManager *adManager = [YXLaunchAdManager shareManager];
     adManager.waitDataDuration = 5;
     adManager.duration = 5;

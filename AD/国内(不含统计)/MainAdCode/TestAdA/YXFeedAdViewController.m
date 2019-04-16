@@ -14,7 +14,7 @@
 
 #import "YXFeedAdTableViewCell.h"
 
-static  NSString * feedMediaID = @"sdk_i_test";
+static  NSString * feedMediaID = @"dev_ios_native";
 
 @interface YXFeedAdViewController () <YXFeedAdManagerDelegate ,UITableViewDelegate,UITableViewDataSource>
 
@@ -156,7 +156,7 @@ static  NSString * feedMediaID = @"sdk_i_test";
     _feedManager.mediaId = feedMediaID;
     _feedManager.controller = self;
     _feedManager.delegate = self;
-    _feedManager.adCount = 3;
+    _feedManager.adCount = 10;
     
     [_feedManager loadFeedAd];
     
@@ -172,7 +172,9 @@ static  NSString * feedMediaID = @"sdk_i_test";
             [dataSources insertObject:model atIndex:index];
             self.dataSource = [dataSources copy];
         }
-        [self.tableView reloadData];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.tableView reloadData];
+        });
     }
     
     

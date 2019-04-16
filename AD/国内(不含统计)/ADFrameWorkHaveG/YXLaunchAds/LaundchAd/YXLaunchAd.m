@@ -370,7 +370,7 @@ static  SourceType _sourceType = SourceTypeLaunchImage;
     
     //    [self setImage:logoImageView WithURL:[NSURL URLWithString:YXLaunchLogoURL] placeholderImage:nil];
     
-    [YXImgUtil imgWithUrlWithOutCache:YXLaunchLogoURL successBlock:^(UIImage *img) {
+    [YXImgUtil imgWithUrl:YXLaunchLogoURL successBlock:^(UIImage *img) {
         logoImageView.image = img;
     } failBlock:^(NSError *error) {
         
@@ -403,10 +403,11 @@ static  SourceType _sourceType = SourceTypeLaunchImage;
     if(configuration.frame.size.width>0 && configuration.frame.size.height>0) _customAdView.frame = configuration.frame;
     
     [_adWindow addSubview: [self addLogoViewFromFrame:_customAdView.frame]];
-    
-    /** skipButton */
-    [self addSkipButtonForConfiguration:configuration];
-    [self startSkipDispathTimer];
+    if ([YXLaunchAd shareLaunchAd].customAdView) {
+        /** skipButton */
+        [self addSkipButtonForConfiguration:configuration];
+        [self startSkipDispathTimer];
+    }
     /** customView */
     if(configuration.subViews.count>0)  [self addSubViews:configuration.subViews];
     
@@ -442,6 +443,11 @@ static  SourceType _sourceType = SourceTypeLaunchImage;
                 
             } completed:^(UIImage *image,NSData *imageData,NSError *error,NSURL *url){
                 if(!error){
+                    if (![YXLaunchAd shareLaunchAd].customAdView) {
+                        /** skipButton */
+                        [self addSkipButtonForConfiguration:configuration];
+                        [self startSkipDispathTimer];
+                    }
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored"-Wdeprecated-declarations"
                     if ([weakSelf.delegate respondsToSelector:@selector(YXLaunchAd:imageDownLoadFinish:)]) {

@@ -8,7 +8,7 @@
 
 #import "YXScrollerBannerViewController.h" 
 #import <YXLaunchAds/YXMutBannerAdManager.h>
-static  NSString * feedMediaID = @"wxbus_ios_native";
+static  NSString * feedMediaID = @"dev_ios_native";
 
 @interface YXScrollerBannerViewController ()<YXMutBannerAdManagerDelegate>
 {
@@ -53,12 +53,11 @@ static  NSString * feedMediaID = @"wxbus_ios_native";
     mutBanner.adSize = YXADSize690X388;
     mutBanner.controller = self;
     mutBanner.adCount = 6;
-    mutBanner.placeImage = [UIImage imageNamed:@"placeImage"];
+    mutBanner.placeholderImage = [UIImage imageNamed:@"placeImage"];
     mutBanner.mediaId = feedMediaID;
-    mutBanner.orientation = YXNewPagedFlowViewOrientationHorizontal;
-    mutBanner.isOpenAutoScroll = YES;
-    mutBanner.isCarousel = YES;
-    mutBanner.autoTime = 3;
+    mutBanner.autoScroll = YES;
+    mutBanner.autoScrollTimeInterval = 3;
+    mutBanner.pageControlStyle = YXBannerScrollViewPageControlHorizontal;
     
     [mutBanner loadMutBannerAdViewsInView:self.BannerView];
     NSLog(@"请求多图广告");

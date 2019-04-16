@@ -325,18 +325,40 @@
     
     NSString * ac_type = [NSString stringWithFormat:@"%@",self.adDict[@"ac_type"]];
     
-    if ([ac_type isEqualToString:@"1"] || [ac_type isEqualToString:@"2"] || [ac_type isEqualToString:@"6"]) {
+    if ([ac_type isEqualToString:@"1"] || [ac_type isEqualToString:@"2"]) {
         NSURL *url = [NSURL URLWithString:urlStr];
         if (@available(iOS 9.0, *)) {
             SFSafariViewController *safariVC = [[SFSafariViewController alloc] initWithURL:url];
-            UIViewController* rootVC = [[UIApplication sharedApplication].delegate window].rootViewController;
-            [rootVC showViewController:safariVC sender:nil];
+            [[NetTool getCurrentViewController] showViewController:safariVC sender:nil];
             
         } else {
             // Fallback on earlier versions
             [[UIApplication sharedApplication] openURL:url];
         }
-    }else if ([ac_type isEqualToString:@"7"]){//6。app。 7。 小程序
+    } else if ([ac_type isEqualToString:@"6"]) {
+        NSString *deeplick = self.adDict[@"deep_url"];
+        NSURL *deeplickUrl = [NSURL URLWithString:deeplick];
+        if ([[UIApplication sharedApplication] canOpenURL:deeplickUrl]) {
+            if (@available(iOS 10.0, *)) {
+                [[UIApplication sharedApplication] openURL:deeplickUrl options:@{} completionHandler:^(BOOL success) {
+                    NSLog(@"success = %d",success);
+                }];
+            }else{
+                [[UIApplication sharedApplication] openURL:deeplickUrl];
+            }
+        } else {
+            NSURL *url = [NSURL URLWithString:urlStr];
+            if (@available(iOS 9.0, *)) {
+                SFSafariViewController *safariVC = [[SFSafariViewController alloc] initWithURL:url];
+                [[NetTool getCurrentViewController] showViewController:safariVC sender:nil];
+                
+            } else {
+                // Fallback on earlier versions
+                [[UIApplication sharedApplication] openURL:url];
+            }
+        }
+        
+    } else if ([ac_type isEqualToString:@"7"]){//6。app。 7。 小程序
         
         NSString * miniPath = [NSString stringWithFormat:@"%@",self.adDict[@"miniPath"] ];
         miniPath = [miniPath stringByReplacingOccurrencesOfString:@" " withString:@""];
@@ -525,14 +547,44 @@
         NSURL *url = [NSURL URLWithString:urlStr];
         if (@available(iOS 9.0, *)) {
             SFSafariViewController *safariVC = [[SFSafariViewController alloc] initWithURL:url];
-            UIViewController* rootVC = [[UIApplication sharedApplication].delegate window].rootViewController;
-            [rootVC showViewController:safariVC sender:nil];
+            [[NetTool getCurrentViewController] showViewController:safariVC sender:nil];
             
         } else {
             // Fallback on earlier versions
             [[UIApplication sharedApplication] openURL:url];
         }
-    }else if ([ac_type isEqualToString:@"7"]){
+    } else if ([ac_type isEqualToString:@"6"]) {
+        NSString *deeplick = adDic[@"deep_url"];
+        NSURL *deeplickUrl = [NSURL URLWithString:deeplick];
+        if (@available(iOS 10.0, *)) {
+            [[UIApplication sharedApplication] openURL:deeplickUrl options:@{} completionHandler:^(BOOL success) {
+                if (!success) {
+                    NSURL *url = [NSURL URLWithString:urlStr];
+                    if (@available(iOS 9.0, *)) {
+                        SFSafariViewController *safariVC = [[SFSafariViewController alloc] initWithURL:url];
+                        [[NetTool getCurrentViewController] showViewController:safariVC sender:nil];
+                        
+                    } else {
+                        YXWebViewController *web = [YXWebViewController new];
+                        web.URLString = urlStr;
+                        [[NetTool getCurrentViewController] presentViewController:web animated:YES completion:nil];
+                    }
+                }
+            }];
+        }else{
+            NSURL *url = [NSURL URLWithString:urlStr];
+            if (@available(iOS 9.0, *)) {
+                SFSafariViewController *safariVC = [[SFSafariViewController alloc] initWithURL:url];
+                [[NetTool getCurrentViewController] showViewController:safariVC sender:nil];
+                
+            } else {
+                YXWebViewController *web = [YXWebViewController new];
+                web.URLString = urlStr;
+                [[NetTool getCurrentViewController] presentViewController:web animated:YES completion:nil];
+            }
+        }
+        
+    } else if ([ac_type isEqualToString:@"7"]){
         
         NSString * miniPath = [NSString stringWithFormat:@"%@",adDic[@"miniPath"] ];
         miniPath = [miniPath stringByReplacingOccurrencesOfString:@" " withString:@""];

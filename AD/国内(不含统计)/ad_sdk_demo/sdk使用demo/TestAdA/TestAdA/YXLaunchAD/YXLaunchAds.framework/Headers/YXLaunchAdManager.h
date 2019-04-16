@@ -18,13 +18,13 @@
 
  @param view  回调的view（开屏的时候返回nil）
  */
-- (void)didLoadAd:(UIView*)view;
+- (void)didLoadAd:(UIView *_Nullable)view;
 /**
  取广告失败调用
  
  @param error 为错误信息
  */
-- (void)didFailedLoadAd:(NSError* _Nonnull)error;
+- (void)didFailedLoadAd:(NSError *_Nonnull)error;
 
 /**
  广告结束 移除window中的视图
@@ -57,15 +57,15 @@
 
  @return 广告管理器初始化
  */
-+(YXLaunchAdManager *)shareManager;
++(YXLaunchAdManager *_Nonnull)shareManager;
 
-@property(nonatomic,weak) id<YXLaunchAdManagerDelegate> delegate;
+@property(nonatomic, weak) id<YXLaunchAdManagerDelegate> delegate;
 
 /** 设置开屏广告的frame(default [UIScreen mainScreen].bounds) */
 @property (nonatomic,assign) CGRect frame;
 
 /**  媒体位Id  */
-@property (nonatomic,copy) NSString *mediaId;
+@property (nonatomic, copy, nonnull) NSString *mediaId;
  
 
 //
@@ -99,12 +99,12 @@
 @property(nonatomic,assign)UIViewContentMode contentMode;
 
 /** 自定义跳过按钮 (不再使用) */
-@property (nonatomic,strong) UIView *customSkipView;
+@property (nonatomic,strong) UIView * _Nullable customSkipView;
 
-@property (nonatomic,strong) UIView *bottomView; 
+@property (nonatomic,strong) UIView * _Nullable bottomView;
 
 /**  开始加载广告  */
-- (void)loadLaunchAdWithShowAdWindow:(UIWindow*)showAdWindow;
+- (void)loadLaunchAdWithShowAdWindow:(UIWindow *_Nonnull)showAdWindow;
 /**
  设置自定义跳过按钮的时候需要手动 手动移除广告
  

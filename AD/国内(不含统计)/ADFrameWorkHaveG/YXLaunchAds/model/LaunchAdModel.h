@@ -32,15 +32,16 @@
  */
 @property (nonatomic, assign) NSInteger duration;
 
-
 /**
  *  分辨率宽
  */
 @property(nonatomic,assign,readonly)CGFloat width;
+
 /**
  *  分辨率高
  */
 @property(nonatomic,assign,readonly)CGFloat height;
 
 - (instancetype)initWithDict:(NSDictionary *)dict;
+
 @end

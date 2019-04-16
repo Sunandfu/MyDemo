@@ -18,13 +18,13 @@
  
  @param view  回调的view
  */
-- (void)didLoadIconAd:(UIView*)view;
+- (void)didLoadIconAd:(UIView *_Nonnull)view;
 /**
  取广告失败调用
  
  @param error 为错误信息
  */
-- (void)didFailedLoadIconAd:(NSError* _Nonnull)error;
+- (void)didFailedLoadIconAd:(NSError *_Nonnull)error;
 /**
  广告点击后回调
  */
@@ -35,7 +35,7 @@
 
 @interface YXIconAdManager : UIView
 
-@property (nonatomic,weak) id<YXIconAdManagerDelegate> delegate;
+@property (nonatomic,weak) id<YXIconAdManagerDelegate> _Nullable delegate;
 
 /**
  图片frame

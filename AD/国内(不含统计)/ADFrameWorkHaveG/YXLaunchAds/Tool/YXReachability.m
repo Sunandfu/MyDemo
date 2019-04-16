@@ -402,7 +402,7 @@ static void YXReachabilityCallback(SCNetworkReachabilityRef target, SCNetworkRea
 #pragma mark Network Flag Handling Methods
 
 
-#if USE_DDG_EXTENSIONS
+#if USE_YX_EXTENSIONS
 //
 // iPhone condition codes as reported by a 3GS running iPhone OS v3.0.
 // Airplane Mode turned on:  YXReachability Flag Status: -- -------
@@ -665,7 +665,7 @@ static const SCNetworkYXReachabilityFlags kOnDemandConnection = kSCNetworkYXReac
 #pragma mark Apple's Network Flag Handling Methods
 
 
-#if !USE_DDG_EXTENSIONS
+#if !USE_YX_EXTENSIONS
 /*
  *
  *  Apple's Network Status testing code.

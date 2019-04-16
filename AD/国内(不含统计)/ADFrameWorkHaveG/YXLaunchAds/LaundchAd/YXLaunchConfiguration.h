@@ -19,7 +19,6 @@ typedef NS_ENUM(NSUInteger, YXADTYPE) {
     /**广告种类  icon  */
     YXIconType = 4
 };
-
 /**
  箭头方向优先级
  
@@ -32,6 +31,22 @@ typedef NS_ENUM(NSInteger , YXPopupMenuDirection) {
     YXPopupMenuDirectionRight = 3,
     YXPopupMenuDirectionNone = 4      //不自动调整
 };
+
+typedef enum {
+    YXBannerScrollViewPageContolAlimentRight,
+    YXBannerScrollViewPageContolAlimentCenter,
+    YXBannerScrollViewPageContolAlimentLeft
+} YXBannerScrollViewPageContolAliment;
+
+typedef enum {
+    YXBannerScrollViewPageContolStyleClassic,        // 系统自带经典样式
+    YXBannerScrollViewPageContolStyleAnimated,       // 动画效果--直接显示
+    YXBannerScrollViewPageControlHorizontal,         // 水平动态滑块
+    YXBannerScrollViewPageImageRotation,             // 旋转前进
+    YXBannerScrollViewPageImageJump,                 // 以半圆跳跃前进
+    YXBannerScrollViewPageImageAnimated,             // 动画滑动前进
+    YXBannerScrollViewPageContolStyleNone            // 不显示pagecontrol
+} YXBannerScrollViewPageContolStyle;
 
 typedef NS_OPTIONS(NSUInteger, YXLaunchAdImageOptions) {
     /** 有缓存,读取缓存,不重新下载,没缓存先下载,并缓存 */
@@ -129,15 +144,5 @@ typedef NS_ENUM(NSInteger,YXAD_Banner){
     YXAD_Banner600_500,
     YXAD_BannerCustom,
 };
-
-/**
- 滚动方向 
- - YXNewPagedFlowViewOrientationHorizontal: 水平
- - YXNewPagedFlowViewOrientationVertical: 垂直
- */
-typedef NS_ENUM(NSInteger,YXNewPagedFlowViewOrientation){
-    YXNewPagedFlowViewOrientationHorizontal = 0,
-    YXNewPagedFlowViewOrientationVertical
-} ;
 
 #endif /* YXLaunchConfiguration_h */

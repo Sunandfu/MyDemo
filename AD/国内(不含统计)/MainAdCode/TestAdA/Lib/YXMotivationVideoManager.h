@@ -84,8 +84,7 @@ NS_ASSUME_NONNULL_BEGIN
 /* 用于加载视频的控制器  */
 @property (nonatomic,weak) UIViewController *showAdController;
 
-@property (nonatomic, assign) BOOL isVertical;
-
+/* 媒体位 */
 @property (nonatomic, copy) NSString *mediaId;
 
 /**

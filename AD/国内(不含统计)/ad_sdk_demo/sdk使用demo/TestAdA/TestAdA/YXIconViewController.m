@@ -47,7 +47,6 @@ static  NSString * iconMediaID = @"znsh_ios_wlicon";
     iconAd.mediaId = iconMediaID;
     iconAd.adType = YXIconType;
     iconAd.delegate = self;
-    iconAd.controller = self;
     [iconAd loadIconAd];
     NSLog(@"Icon请求");
 }

@@ -13,6 +13,5 @@ static  NSString * splashMediaID = @"xmlc_ios_splash";
 
 @property (strong, nonatomic) UIWindow *window;
 
-
 @end
 

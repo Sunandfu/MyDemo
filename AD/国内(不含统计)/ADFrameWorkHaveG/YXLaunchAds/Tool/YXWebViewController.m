@@ -32,7 +32,6 @@ API_AVAILABLE(ios(8.0))
      */
     [[NSNotificationCenter defaultCenter] postNotificationName:YXLaunchAdDetailPageShowFinishNotification object:nil];
     
-    
     if (@available(iOS 8.0, *)) {
         [self.webView removeObserver:self forKeyPath:@"estimatedProgress"];
     }else{

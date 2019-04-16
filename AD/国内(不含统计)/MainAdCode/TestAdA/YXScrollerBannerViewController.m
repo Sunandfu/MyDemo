@@ -9,7 +9,7 @@
 #import "YXScrollerBannerViewController.h" 
 #import "YXMutBannerAdManager.h"
 
-static  NSString * feedMediaID = @"beta_ios_native";
+static  NSString * feedMediaID = @"gofun_ios_interstitial";
 
 @interface YXScrollerBannerViewController ()<YXMutBannerAdManagerDelegate>
 {
@@ -54,16 +54,24 @@ static  NSString * feedMediaID = @"beta_ios_native";
     mutBanner.delegate = self;
     mutBanner.adSize = YXADSize690X388;
     mutBanner.controller = self;
-    mutBanner.adCount = 9; 
-    mutBanner.placeImage = [UIImage imageNamed:@"placeImage"];
+    mutBanner.adCount = 4;
+    mutBanner.placeholderImage = [UIImage imageNamed:@"placeImage"];
     mutBanner.mediaId = feedMediaID;
-    mutBanner.orientation = YXNewPagedFlowViewOrientationHorizontal;
-    mutBanner.isOpenAutoScroll = YES;
-    mutBanner.isCarousel = YES;
-    mutBanner.autoTime = 3;
-    mutBanner.leftRightMargin = 20;
-    mutBanner.topBottomMargin = 20;
-    
+//    mutBanner.pageControlAliment = YXBannerScrollViewPageContolAlimentCenter;
+    mutBanner.pageControlStyle = YXBannerScrollViewPageContolStyleClassic;
+//    mutBanner.pageDotColor = UIColor.greenColor;
+//    mutBanner.currentPageDotColor = UIColor.redColor;
+//    mutBanner.pageControlBottomOffset = 100;
+    /*
+     YXBannerScrollViewPageContolStyleClassic,        // 系统自带经典样式
+     YXBannerScrollViewPageContolStyleAnimated,       // 动画效果--直接显示
+     YXBannerScrollViewPageControlHorizontal,         // 水平动态滑块
+     YXBannerScrollViewPageImageRotation,             // 旋转前进
+     YXBannerScrollViewPageImageJump,                 // 以半圆跳跃前进
+     YXBannerScrollViewPageImageAnimated,             // 动画滑动前进
+     YXBannerScrollViewPageContolStyleNone            // 不显示pagecontrol
+     */
+    mutBanner.cornerRadius = 8;
     [mutBanner loadMutBannerAdViewsInView:self.BannerView];
     NSLog(@"请求多图广告");
 }

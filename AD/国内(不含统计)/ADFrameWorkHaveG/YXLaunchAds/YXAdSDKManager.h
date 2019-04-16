@@ -13,17 +13,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface YXAdSDKManager : NSObject
 
-
-+(instancetype)defaultManager;
-
-
 /**
  添加黑名单     取消显示广告
  
  @param media 媒体位id
  @param day 时间 单位天 默认3天
  */
-- (void)addBlackList:(NSString*)media andTime:(NSInteger)day;
++ (void)addBlackList:(NSString*)media andTime:(NSInteger)day;
 
 
 /**
@@ -31,7 +27,7 @@ NS_ASSUME_NONNULL_BEGIN
  
  @param media 媒体位id
  */
-- (void)removeBlackList:(NSString*)media;
++ (void)removeBlackList:(NSString*)media;
 
 @end
 

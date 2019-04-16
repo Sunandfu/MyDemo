@@ -9,7 +9,6 @@
 #import "YXMotivationVideoManager.h"
 #import "NetTool.h"
 #import "YXImgUtil.h"
-#import "YXLCdes.h"
 #import "Network.h"
 #import "YXLaunchAdConst.h"
 #import "GDTRewardVideoAd.h"

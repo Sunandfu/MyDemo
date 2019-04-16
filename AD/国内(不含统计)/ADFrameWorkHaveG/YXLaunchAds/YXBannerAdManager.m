@@ -16,7 +16,6 @@
 
 #import "NetTool.h"
 #import "YXImgUtil.h"
-#import "YXLCdes.h"
 #import "Network.h"
 #import "YXWebViewController.h"
 
@@ -113,8 +112,14 @@
 #pragma mark 请求配置
 - (void)requestADSourceFromNet
 {
-    [Network requestADSourceFromMediaId:self.mediaId success:^(NSDictionary *dataDict) {
+    [Network requestADSourceFromMediaId:self.mediaId adCount:1 imgWidth:_width imgHeight:_height success:^(NSDictionary *dataDict) {
         self.AdDict = dataDict;
+        NSArray *adInfosArr = dataDict[@"adInfos"];
+        if (adInfosArr.count>0) {
+            self.resultDict = adInfosArr.firstObject;
+            [self ShowDirectAd];
+            return ;
+        }
         NSArray *advertiser = dataDict[@"advertiser"];
         if(advertiser && ![advertiser isKindOfClass:[NSNull class]]&& advertiser.count > 0){
             [self initIDSource];
@@ -155,7 +160,7 @@
         }
     }
     
-    double random = 1+ arc4random()%99;
+    double random = 1 + arc4random()%99;
     
     double sumWeight = 0;
     
@@ -222,20 +227,7 @@
                         }
                     }
                 }
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    self.frame = ({
-                        CGRect frame = self.frame;
-                        CGFloat y = frame.origin.y;
-                        if (self.bannerType == BottomBannerType) {
-                            y = [UIScreen mainScreen].bounds.size.height - self->_height - frame.origin.y;
-                        } else {
-                            y = frame.origin.y;
-                        }
-                        frame = CGRectMake(frame.origin.x, y, self->_width, self->_height);
-                        frame;
-                    });
-                    [self showNativeAd];
-                });
+                [self ShowDirectAd];
             }else{
                 NSError *errors = [NSError errorWithDomain:@"请求失败" code:400 userInfo:nil];
                 [self failedError:errors];
@@ -246,7 +238,22 @@
         }
     }];
 }
-
+- (void)ShowDirectAd{
+    dispatch_async(dispatch_get_main_queue(), ^{
+        self.frame = ({
+            CGRect frame = self.frame;
+            CGFloat y = frame.origin.y;
+            if (self.bannerType == BottomBannerType) {
+                y = [UIScreen mainScreen].bounds.size.height - self->_height - frame.origin.y;
+            } else {
+                y = frame.origin.y;
+            }
+            frame = CGRectMake(frame.origin.x, y, self->_width, self->_height);
+            frame;
+        });
+        [self showNativeAd];
+    });
+}
 - (void)showNativeAd
 {
     if(!self.resultDict){//40041无广告
@@ -254,7 +261,6 @@
         [self failedError:errors];
         return;
     }
-    _YXGTMDevLog(@"Func type 1 start") ;
     NSString *img_url = self.resultDict[@"img_url"];
 //    NSString *click_url = self.resultDict[@"click_url"];
 //    _returnDict = [NSDictionary dictionaryWithObjectsAndKeys:click_url,@"click_url",img_url,@"img_url",@"1",@"type", nil];
@@ -289,8 +295,8 @@
             // 2.显示成功
             // 2.显示成功
             dispatch_async(dispatch_get_main_queue(), ^{
-                if(self.delegate && [self.delegate respondsToSelector:@selector(didLoadBannerAd:)]){
-                    [self.delegate didLoadBannerAd:self];
+                if(self.delegate && [self.delegate respondsToSelector:@selector(didLoadBannerAd)]){
+                    [self.delegate didLoadBannerAd];
                 }
                 // 3.上报
                 [self groupNotify];
@@ -319,10 +325,8 @@
             self.imgView.image =img;
             // 2.显示成功
             dispatch_async(dispatch_get_main_queue(), ^{
-                
-                if(self.delegate && [self.delegate respondsToSelector:@selector(didLoadBannerAd:)]){
-                    
-                    [self.delegate didLoadBannerAd:self];
+                if(self.delegate && [self.delegate respondsToSelector:@selector(didLoadBannerAd)]){
+                    [self.delegate didLoadBannerAd];
                 }
                 // 3.上报
                 [self groupNotify];
@@ -343,7 +347,7 @@
 - (void)failedError:(NSError*)error
 {
     dispatch_async(dispatch_get_main_queue(), ^{
-        if ([self.delegate respondsToSelector:@selector(didFailedLoadBannerAd:)]) {
+        if (self.delegate && [self.delegate respondsToSelector:@selector(didFailedLoadBannerAd:)]) {
             [self.delegate didFailedLoadBannerAd:error];
         }
     });
@@ -447,14 +451,46 @@
         NSURL *url = [NSURL URLWithString:urlStr];
         if (@available(iOS 9.0, *)) {
             SFSafariViewController *safariVC = [[SFSafariViewController alloc] initWithURL:url];
-            UIViewController* rootVC = [[UIApplication sharedApplication].delegate window].rootViewController;
-            [rootVC showViewController:safariVC sender:nil];
+            [[NetTool getCurrentViewController] showViewController:safariVC sender:nil];
             
         } else {
             // Fallback on earlier versions
-            [[UIApplication sharedApplication] openURL:url];
+            YXWebViewController *web = [YXWebViewController new];
+            web.URLString = urlStr;
+            [[NetTool getCurrentViewController] presentViewController:web animated:YES completion:nil];
         }
-    }else if ([ac_type isEqualToString:@"7"]){
+    } else if ([ac_type isEqualToString:@"6"]) {
+        NSString *deeplick = _resultDict[@"deep_url"];
+        NSURL *deeplickUrl = [NSURL URLWithString:deeplick];
+        if (@available(iOS 10.0, *)) {
+            [[UIApplication sharedApplication] openURL:deeplickUrl options:@{} completionHandler:^(BOOL success) {
+                if (!success) {
+                    NSURL *url = [NSURL URLWithString:urlStr];
+                    if (@available(iOS 9.0, *)) {
+                        SFSafariViewController *safariVC = [[SFSafariViewController alloc] initWithURL:url];
+                        [[NetTool getCurrentViewController] showViewController:safariVC sender:nil];
+                        
+                    } else {
+                        YXWebViewController *web = [YXWebViewController new];
+                        web.URLString = urlStr;
+                        [[NetTool getCurrentViewController] presentViewController:web animated:YES completion:nil];
+                    }
+                }
+            }];
+        }else{
+            NSURL *url = [NSURL URLWithString:urlStr];
+            if (@available(iOS 9.0, *)) {
+                SFSafariViewController *safariVC = [[SFSafariViewController alloc] initWithURL:url];
+                [[NetTool getCurrentViewController] showViewController:safariVC sender:nil];
+                
+            } else {
+                YXWebViewController *web = [YXWebViewController new];
+                web.URLString = urlStr;
+                [[NetTool getCurrentViewController] presentViewController:web animated:YES completion:nil];
+            }
+        }
+        
+    } else if ([ac_type isEqualToString:@"7"]){
         
         NSString * miniPath = [NSString stringWithFormat:@"%@",self.resultDict[@"miniPath"] ];
         miniPath = [miniPath stringByReplacingOccurrencesOfString:@" " withString:@""];
@@ -627,8 +663,8 @@
 - (void)bannerViewDidReceived
 {
     [Network upOutSideToServer:ADSHOW isError:NO code:nil msg:nil currentAD:self.currentAD gdtAD:self.AdDict mediaID:self.mediaId];
-    if(self.delegate && [self.delegate respondsToSelector:@selector(didLoadBannerAd:)]){
-        [self.delegate didLoadBannerAd:self];
+    if(self.delegate && [self.delegate respondsToSelector:@selector(didLoadBannerAd)]){
+        [self.delegate didLoadBannerAd];
     }
 }
 
@@ -636,6 +672,7 @@
 // 详解:当接收服务器返回的广告数据失败后调用该函数
 - (void)bannerViewFailToReceived:(NSError *)error
 {
+    [self initS2S];
     NSError *errors = [NSError errorWithDomain:error.userInfo[@"NSLocalizedDescription"] code:[[NSString stringWithFormat:@"201%ld",(long)error.code]integerValue] userInfo:nil];
     [self failedError:errors];
     [Network upOutSideToServer:ADError isError:YES code:[NSString stringWithFormat:@"201%ld",(long)error.code] msg: error.userInfo[@"NSLocalizedDescription"] currentAD:self.currentAD gdtAD:self.AdDict mediaID:self.mediaId];
@@ -724,8 +761,8 @@
 
 - (void)bannerAdViewDidLoad:(BUBannerAdView * _Nonnull)bannerAdView WithAdmodel:(BUNativeAd *_Nullable)admodel {
     [Network upOutSideToServer:ADSHOW isError:NO code:nil msg:nil currentAD:self.currentAD gdtAD:self.AdDict mediaID:self.mediaId];
-    if(self.delegate && [self.delegate respondsToSelector:@selector(didLoadBannerAd:)]){
-        [self.delegate didLoadBannerAd:self];
+    if(self.delegate && [self.delegate respondsToSelector:@selector(didLoadBannerAd)]){
+        [self.delegate didLoadBannerAd];
     }
     
 }
@@ -742,6 +779,7 @@
 }
 
 - (void)bannerAdView:(BUBannerAdView *_Nonnull)bannerAdView didLoadFailWithError:(NSError *_Nullable)error {
+    [self initS2S];
     NSError *errors = [NSError errorWithDomain:@"" code:[[NSString stringWithFormat:@"202%ld",(long)error.code]integerValue] userInfo:nil];
     [self failedError:errors];
     

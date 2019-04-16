@@ -92,7 +92,7 @@
 
 
 /*
- DDG extensions include:
+ YX extensions include:
  Each YXReachability object now has a copy of the key used to store it in a
  dictionary. This allows each observer to quickly determine if the event is
  important to them.
@@ -107,13 +107,13 @@
 #import <SystemConfiguration/SystemConfiguration.h>
 #import <netinet/in.h>
 
-#define USE_DDG_EXTENSIONS 1 // Use DDG's Extensions to test network criteria.
+#define USE_YX_EXTENSIONS 1 // Use YX's Extensions to test network criteria.
 // Since NSAssert and NSCAssert are used in this code, 
 // I recommend you set NS_BLOCK_ASSERTIONS=1 in the release versions of your projects.
 
 enum {
 	
-	// DDG NetworkStatus Constant Names.
+	// YX NetworkStatus Constant Names.
 	kNotReachable = 0, // Apple's code depends upon 'NotReachable' being the same value as 'NO'.
 	kReachableViaWWAN, // Switched order from Apple's enum. WWAN is active before WiFi.
 	kReachableViaWiFi
@@ -176,7 +176,7 @@ extern NSString *const kYXReachabilityChangedNotification;
 
 // WWAN may be available, but not active until a connection has been established.
 // WiFi may require a connection for VPN on Demand.
-- (BOOL) isConnectionRequired; // Identical DDG variant.
+- (BOOL) isConnectionRequired; // Identical YX variant.
 - (BOOL)   connectionRequired; // Apple's routine.
 
 // Dynamic, on demand connection?

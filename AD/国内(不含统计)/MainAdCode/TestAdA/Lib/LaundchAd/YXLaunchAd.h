@@ -103,7 +103,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic,assign) BOOL hiddenRightIcon;
 
-//@property (nonatomic,strong) YXLaunchImageView *backImageView;
 @property(nonatomic,strong)YXLaunchImageAdConfiguration * imageAdConfiguration;
 
 @property(nonatomic,strong)YXLaunchAdButton * skipButton;

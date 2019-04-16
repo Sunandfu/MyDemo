@@ -23,29 +23,26 @@
  
  */
 //请求配置接口接口
-//#define SEVERIN @"http://119.29.146.103:8073"
 #define SEVERIN @"http://www.yunqingugm.com:8081"
-
 //上报接口
-//#define TRACKIN @"http://119.29.146.103:8074"
 #define TRACKIN @"http://www.yunqingugm.com:8082"
 
-#define ADSHOW   TRACKIN @"/log/newMimpr/v2"//展示成果
-#define ADCLICK  TRACKIN @"/log/newMclick"//点击
-#define ADError  TRACKIN @"/log/newErrorLog"//错误
+#define ADSHOW   TRACKIN @"/log/newMimpr/v3"//展示成果
+#define ADCLICK  TRACKIN @"/log/newMclick/v3"//点击
+#define ADError  TRACKIN @"/log/newErrorLog/v3"//错误
 
-#define ADRequest SEVERIN @"/yd3/log"//请求第三方上报
+#define ADRequest SEVERIN @"/yd3/log/v/3"//请求第三方上报
 
-#define inLandAD @"inLandAD"//
+#define inLandAD @"inLandAD"//缓存ID
 //请求配置接口接口
-#define congfigIp SEVERIN @"/yd3/mediaconfig/v/2?mediaId=%@&aid=%@&ver=%@&%@"
-//添加黑名单
-#define USERBLACK SEVERIN @"/yd3/user/black"
-//移除黑名单
-#define USERBLACKREMOVE USERBLACK @"/remove"
+#define congfigIp SEVERIN @"/yd3/mediaconfig/v/3"
+//S2S接口
+#define S2SURL    SEVERIN @"/yd3/mview/v/3"
 
-//#warning 正式去掉/v/2
-#define S2SURL SEVERIN @"/yd3/mview/v/2"
+//添加黑名单
+#define USERBLACK       SEVERIN @"/yd3/user/black"
+//移除黑名单
+#define USERBLACKREMOVE SEVERIN @"/yd3/user/black/remove"
 
 typedef void(^NetworkSucess) (NSDictionary * response);
 typedef void(^NetworkFailure) (NSError *error);
@@ -111,5 +108,7 @@ typedef void(^NetworkFailure) (NSError *error);
 
 //请求配置接口
 + (void)requestADSourceFromMediaId:(NSString *)mediaId success:(void(^)(NSDictionary *dataDict))success fail:(void(^)(NSError *error))fail;
+
++ (void)requestADSourceFromMediaId:(NSString *)mediaId adCount:(NSInteger)adCount imgWidth:(CGFloat)width imgHeight:(CGFloat)height success:(void(^)(NSDictionary *dataDict))success fail:(void(^)(NSError *error))fail;
 
 @end
