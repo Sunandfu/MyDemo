@@ -40,6 +40,7 @@
     self.dataArr = @[@"轮播",@"信息流样式",@"横幅样式",@"开屏启动页样式",@"半屏开屏启动页样式",@"icon样式",@"插屏样式",@"激励视频"];
     
     [self.view addSubview:self.tableView];
+    
 }
 - (UITableView *)tableView
 {

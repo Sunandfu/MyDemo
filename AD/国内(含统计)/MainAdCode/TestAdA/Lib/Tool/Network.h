@@ -23,10 +23,13 @@
  
  */
 //请求配置接口接口
-#define SEVERIN @"http://www.yunqingugm.com:8081"
+//#define SEVERIN @"http://www.yunqingugm.com:8081"
+////上报接口
+//#define TRACKIN @"http://www.yunqingugm.com:8082"
 
-//上报接口
-#define TRACKIN @"http://www.yunqingugm.com:8082"
+#define SEVERIN @"http://47.99.227.46:8081"
+
+#define TRACKIN @"http://47.99.227.46:8082"
 
 #define ADSHOW   TRACKIN @"/log/newMimpr/v2"//展示成果
 #define ADCLICK  TRACKIN @"/log/newMclick"//点击

@@ -8,10 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-
-#define SF_DEVICE_WIDTH [UIScreen mainScreen].bounds.size.width
-#define SF_DEVICE_HEIGHT [UIScreen mainScreen].bounds.size.height
-
+#import "NSObject+addFunction.h"
+#import "UIView+addFunction.h"
+#define WEAK(weakSelf)   __weak typeof(self) weakSelf = self
 typedef void(^downloadFinish)(UIImage *image,NSInteger index);
 typedef void(^downloadFailure)(NSError *error);
 
@@ -20,11 +19,14 @@ typedef void(^downloadFailure)(NSError *error);
 +(NSString *)getIDFA ;
 typedef enum {
     notReach=0,
-    wifi=1,
-    WWAN=2,
-    net2G=3,
-    net3G=4,
-    net4G=5
+    WWAN=1,
+    net2G=2,
+    net3G=3,
+    net4G=4,
+    net5G=5,
+    wifi=100,
+    Ethernet=101,
+    unknown=999,
 }netType;
 //+(NSString *) getrequestInfo:(NSString *)key;
 +(NSString *) getrequestInfo:(NSString *)key
@@ -43,8 +45,10 @@ typedef enum {
 +(NSString *)getPackageName;
 + (NSString *)getOpenUDID;
 + (NSString *)getOS;
++ (NSString *)getCityCode;
 + (NSString *)deviceWANIPAdress;
 + (netType) getNetTyepe;
++ (NSString*)getYunYingShang;
 + (NSInteger)getSpendTimeWithStartDate:(NSString *)start stopDate:(NSString *)stop;
 + (NSString *)getNowDateStr_2;
 + (UIImage *)getLauchImage;

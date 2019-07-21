@@ -94,6 +94,9 @@
 		E736B356225609D2004E8A1F /* UIView+YXExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = E736B34C225609D1004E8A1F /* UIView+YXExtension.m */; };
 		E736B357225609D2004E8A1F /* YXCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E736B34D225609D2004E8A1F /* YXCollectionViewCell.m */; };
 		E736F1F722607CAC00AE5F11 /* libGDTMobSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E736F1EE22607CAB00AE5F11 /* libGDTMobSDK.a */; };
+		E76CB9AD22841F8A0094B62E /* UIView+addFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = E76CB9A922841F890094B62E /* UIView+addFunction.m */; };
+		E76CB9AE22841F8A0094B62E /* NSObject+addFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = E76CB9AA22841F890094B62E /* NSObject+addFunction.m */; };
+		E7F2A25B2271A4230095D5FB /* SFWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7F2A25A2271A4230095D5FB /* SFWebViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -296,6 +299,12 @@
 		E736F1F422607CAB00AE5F11 /* GDTNativeExpressAd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTNativeExpressAd.h; sourceTree = "<group>"; };
 		E736F1F522607CAB00AE5F11 /* GDTUnifiedInterstitialAd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTUnifiedInterstitialAd.h; sourceTree = "<group>"; };
 		E736F1F622607CAC00AE5F11 /* GDTUnifiedNativeAd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTUnifiedNativeAd.h; sourceTree = "<group>"; };
+		E76CB9A922841F890094B62E /* UIView+addFunction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+addFunction.m"; sourceTree = "<group>"; };
+		E76CB9AA22841F890094B62E /* NSObject+addFunction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+addFunction.m"; sourceTree = "<group>"; };
+		E76CB9AB22841F8A0094B62E /* UIView+addFunction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+addFunction.h"; sourceTree = "<group>"; };
+		E76CB9AC22841F8A0094B62E /* NSObject+addFunction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+addFunction.h"; sourceTree = "<group>"; };
+		E7F2A2592271A4230095D5FB /* SFWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SFWebViewController.h; sourceTree = "<group>"; };
+		E7F2A25A2271A4230095D5FB /* SFWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SFWebViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -564,6 +573,8 @@
 				E73699C5223906E6000BC26F /* Weichat */,
 				E73699C9223906E6000BC26F /* YXWebViewController.h */,
 				E73699DB223906E6000BC26F /* YXWebViewController.m */,
+				E7F2A2592271A4230095D5FB /* SFWebViewController.h */,
+				E7F2A25A2271A4230095D5FB /* SFWebViewController.m */,
 				E73699DC223906E6000BC26F /* Network.h */,
 				E73699CA223906E6000BC26F /* Network.m */,
 				E73699CB223906E6000BC26F /* YXImgUtil.h */,
@@ -572,6 +583,10 @@
 				E73699D5223906E6000BC26F /* NetTool.m */,
 				E73699D6223906E6000BC26F /* YXReachability.h */,
 				E73699CC223906E6000BC26F /* YXReachability.m */,
+				E76CB9AC22841F8A0094B62E /* NSObject+addFunction.h */,
+				E76CB9AA22841F890094B62E /* NSObject+addFunction.m */,
+				E76CB9AB22841F8A0094B62E /* UIView+addFunction.h */,
+				E76CB9A922841F890094B62E /* UIView+addFunction.m */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -804,6 +819,7 @@
 				E7369A192239078A000BC26F /* YXInterstitialViewController.m in Sources */,
 				E736B34F225609D2004E8A1F /* YXBannerScrollView.m in Sources */,
 				E736B351225609D2004E8A1F /* YXDotView.m in Sources */,
+				E76CB9AD22841F8A0094B62E /* UIView+addFunction.m in Sources */,
 				E7369A10223906E6000BC26F /* YXImgUtil.m in Sources */,
 				E736B34E225609D2004E8A1F /* YXPageControl.m in Sources */,
 				E7191C722248760100D8FBB4 /* YXLaunchAd.m in Sources */,
@@ -826,6 +842,7 @@
 				E7369A06223906E6000BC26F /* YXMutBannerAdManager.m in Sources */,
 				E7191C7E22487A3E00D8FBB4 /* YXPopupMenu.m in Sources */,
 				E7369A07223906E6000BC26F /* YXLaunchAdManager.m in Sources */,
+				E76CB9AE22841F8A0094B62E /* NSObject+addFunction.m in Sources */,
 				E736B356225609D2004E8A1F /* UIView+YXExtension.m in Sources */,
 				8270C7A120661EAA005C8545 /* main.m in Sources */,
 				E7369A0F223906E6000BC26F /* NetTool.m in Sources */,
@@ -839,6 +856,7 @@
 				E7191C4322447FFE00D8FBB4 /* NSString+SFAES.m in Sources */,
 				E7191C732248760100D8FBB4 /* YXLaunchAdConst.m in Sources */,
 				E7369A16223906E6000BC26F /* YXFeedAdManager.m in Sources */,
+				E7F2A25B2271A4230095D5FB /* SFWebViewController.m in Sources */,
 				8214501121B7B7AD00081AED /* YXMotivationVideoViewController.m in Sources */,
 				E7191C8322487B0200D8FBB4 /* YXMenuViewCell.m in Sources */,
 				E7369A08223906E6000BC26F /* YXBannerAdManager.m in Sources */,
@@ -1042,7 +1060,7 @@
 					"-Objc",
 					"-all_load",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.gvsoft.gofun;
+				PRODUCT_BUNDLE_IDENTIFIER = com.xcloudtech.locate;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "6c98abac-4b2e-4ab1-9faf-fc1314841d2a";
 				PROVISIONING_PROFILE_SPECIFIER = YunQingTest_Development;
@@ -1080,7 +1098,7 @@
 					"-Objc",
 					"-all_load",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.gvsoft.gofun;
+				PRODUCT_BUNDLE_IDENTIFIER = com.xcloudtech.locate;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "6c98abac-4b2e-4ab1-9faf-fc1314841d2a";
 				PROVISIONING_PROFILE_SPECIFIER = YunQingTest_Development;

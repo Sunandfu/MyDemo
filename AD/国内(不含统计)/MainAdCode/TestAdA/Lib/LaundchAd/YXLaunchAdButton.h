@@ -15,4 +15,5 @@
 - (void)startRoundDispathTimerWithDuration:(CGFloat )duration;
 - (void)setTitleWithSkipType:(SkipType)skipType duration:(NSInteger)duration;
 - (void)setTitleduration:(NSInteger)duration;
+- (CGFloat)getTopBottomSpace;
 @end

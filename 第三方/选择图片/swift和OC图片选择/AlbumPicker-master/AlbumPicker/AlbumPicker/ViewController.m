@@ -36,8 +36,10 @@
     for (ALAsset *asset in assets) {
         if ([[asset valueForProperty:@"ALAssetPropertyType"] isEqual:@"ALAssetTypePhoto"]) {
             UIImage * img = [UIImage imageWithCGImage:asset.defaultRepresentation.fullResolutionImage];
+            NSLog(@"%@",img);
         } else if ([[asset valueForProperty:@"ALAssetPropertyType"] isEqual:@"ALAssetTypeVideo"]){
             NSURL *url = asset.defaultRepresentation.url;
+            NSLog(@"%@",url);
         }
     }
 //    dispatch_semaphore_t sem = dispatch_semaphore_create(0);

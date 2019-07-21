@@ -13,7 +13,7 @@
 @interface BUNativeAdRelatedView : NSObject
 
 /**
- dislike 按钮懒加载，需要主动添加到 View，处理 materialMeta.filterWords反馈
+ dislike 按钮懒加载，需要主动添加到 View，处理反馈
  提高广告信息推荐精度
  */
 @property (nonatomic, strong, readonly, nullable) UIButton *dislikeButton;
@@ -27,6 +27,10 @@
  logoImageView 网盟广告标识，需要主动添加到 View
  */
 @property (nonatomic, strong, readonly, nullable) UIImageView *logoImageView;
+/**
+ logoADImageView 网盟广告+广告字样标识，需要主动添加到 View
+ */
+@property (nonatomic, strong, readonly, nullable) UIImageView *logoADImageView;
 
 /**
  BUPlayer View 需要主动添加到 View

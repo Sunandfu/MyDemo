@@ -8,7 +8,6 @@
 
 #import "ViewController.h"
 #import "YXHalfLaunchScreenViewController.h"
-#import "YXFeedListViewController.h"
 
 #import "YXBannerViewController.h"
 
@@ -18,7 +17,7 @@
 #import "YXLaunchScreenViewController.h"
 #import "YXIconViewController.h"
 
-#import "YXFeedNativeBannerViewControllerDemo.h"
+#import "YXScrollerBannerViewController.h"
 
 #define YX_IPHONEX  ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1125, 2436), [[UIScreen mainScreen] currentMode].size) : NO)
 
@@ -36,7 +35,7 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     self.title = @"ADDemo";
-    self.dataArr = @[@"ScrollBannerDemo",@"信息流样式",@"信息流列表样式",@"横幅样式",@"开屏启动页样式",@"半屏开屏启动页样式",@"icon样式"];
+    self.dataArr = @[@"轮播",@"信息流样式",@"横幅样式",@"开屏启动页样式",@"半屏开屏启动页样式",@"icon样式",@"插屏样式",@"激励视频"];
     
     [self.view addSubview:self.tableView];
 }
@@ -89,26 +88,25 @@ static NSString * cellID = @"CELL";
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     switch (indexPath.row) {
         case 0:
-            [self.navigationController pushViewController:[YXFeedNativeBannerViewControllerDemo new] animated:YES];
+            [self.navigationController pushViewController:[YXScrollerBannerViewController new] animated:YES];
             break;
         case 1:
             [self.navigationController pushViewController:[YXFeedAdViewController new] animated:YES];
             break;
+         
         case 2:
-            [self.navigationController pushViewController:[YXFeedListViewController new] animated:YES];
-            break;
-        case 3:
             [self.navigationController pushViewController:[YXBannerViewController new] animated:YES];
             break;
-        case 4:
+        case 3:
             [self.navigationController pushViewController:[YXLaunchScreenViewController new] animated:YES];
             break;
-        case 5:
+        case 4:
             [self.navigationController pushViewController:[YXHalfLaunchScreenViewController new] animated:YES];
             break;
         default:
             [self.navigationController pushViewController:[YXIconViewController new] animated:YES];
             break;
+            
             
     }
 }

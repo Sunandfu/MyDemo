@@ -19,6 +19,35 @@ typedef NS_ENUM(NSUInteger, YXADTYPE) {
     /**广告种类  icon  */
     YXIconType = 4
 };
+/**
+ 箭头方向优先级
+ 
+ 当控件超出屏幕时会自动调整成反方向
+ */
+typedef NS_ENUM(NSInteger , YXPopupMenuDirection) {
+    YXPopupMenuDirectionTop = 0,  //Default
+    YXPopupMenuDirectionBottom = 1,
+    YXPopupMenuDirectionLeft = 2,
+    YXPopupMenuDirectionRight = 3,
+    YXPopupMenuDirectionNone = 4      //不自动调整
+};
+
+typedef enum {
+    YXBannerScrollViewPageContolAlimentRight,
+    YXBannerScrollViewPageContolAlimentCenter,
+    YXBannerScrollViewPageContolAlimentLeft
+} YXBannerScrollViewPageContolAliment;
+
+typedef enum {
+    YXBannerScrollViewPageContolStyleClassic,        // 系统自带经典样式
+    YXBannerScrollViewPageContolStyleAnimated,       // 动画效果--直接显示
+    YXBannerScrollViewPageControlHorizontal,         // 水平动态滑块
+    YXBannerScrollViewPageImageRotation,             // 旋转前进
+    YXBannerScrollViewPageImageJump,                 // 以半圆跳跃前进
+    YXBannerScrollViewPageImageAnimated,             // 动画滑动前进
+    YXBannerScrollViewPageContolStyleNone            // 不显示pagecontrol
+} YXBannerScrollViewPageContolStyle;
+
 typedef NS_OPTIONS(NSUInteger, YXLaunchAdImageOptions) {
     /** 有缓存,读取缓存,不重新下载,没缓存先下载,并缓存 */
     YXLaunchAdImageDefault = 1 << 0,
@@ -29,6 +58,7 @@ typedef NS_OPTIONS(NSUInteger, YXLaunchAdImageOptions) {
     /** 后台缓存本次不显示,缓存OK后下次再显示(建议使用这种方式)*/
     YXLaunchAdImageCacheInBackground = 1 << 3
 };
+
 /** 显示完成动画时间默认时间 */
 static CGFloat const showFinishAnimateTimeDefault = 0.8;
 
@@ -47,6 +77,7 @@ typedef NS_ENUM(NSInteger , ShowFinishAnimate) {
     /** 向上翻页 */
     ShowFinishAnimateCurlUp = 6,
 };
+
 /**
  *  倒计时类型
  */
@@ -62,16 +93,14 @@ typedef NS_ENUM(NSInteger,SkipType) {
     SkipTypeRoundProgressTime = 7,//圆形:进度圈+倒计时
     SkipTypeRoundProgressText = 8,//圆形:进度圈+跳过
 };
+
 /**
  *  banner位置
  */
 typedef NS_ENUM(NSInteger,BannerLocationType) {
     TopBannerType      = 1,//顶部约束 只需设置距离顶部的距离
-    
-    BottomBannerType      = 2,//底部约束 只需设置距离底部的距离
-    
+    BottomBannerType   = 2,//底部约束 只需设置距离底部的距离
 };
-
 
 /**
  原生广告尺寸
@@ -79,26 +108,41 @@ typedef NS_ENUM(NSInteger,BannerLocationType) {
  - YXADSize750X326: 750 X 326 尺寸
  - YXADSize690X388: 690 X 388 尺寸
  - YXADSize288X150: 288 X 150 尺寸
+ - YXADSizeCustom: 自定义尺寸，根据运营谈好的尺寸来显示，否则可能会出现图片被截取现象
  */
 typedef NS_ENUM(NSInteger,YXADSize){
-    
+    //原生广告尺寸
     YXADSize750X326,
-    
     YXADSize690X388,
-    
     YXADSize288X150,
+    YXADSizeCustom,
 };
 
-
-
 /**
- 滚动方向 
- - YXNewPagedFlowViewOrientationHorizontal: 水平
- - YXNewPagedFlowViewOrientationVertical: 垂直
+ Banner 尺寸
+
+ - YXAD_Banner600_100: 600 X 100 尺寸
+ - YXAD_Banner600_150: 600 X 150 尺寸
+ - YXAD_Banner600_260: 600 X 260 尺寸
+ - YXAD_Banner600_286: 600 X 286 尺寸
+ - YXAD_Banner600_300: 600 X 300 尺寸
+ - YXAD_Banner600_388: 600 X 388 尺寸
+ - YXAD_Banner600_400: 600 X 400 尺寸
+ - YXAD_Banner600_500: 600 X 500 尺寸
+ - YXAD_BannerCustom: 自定义尺寸，请求到的图片按尺寸完全平铺，超出将被截取
  */
-typedef NS_ENUM(NSInteger,YXNewPagedFlowViewOrientation){
-    YXNewPagedFlowViewOrientationHorizontal = 0,
-    YXNewPagedFlowViewOrientationVertical
-} ;
+typedef NS_ENUM(NSInteger,YXAD_Banner){
+    //banner尺寸
+    YXAD_Banner600_90,
+    YXAD_Banner600_100,
+    YXAD_Banner600_150,
+    YXAD_Banner600_260,
+    YXAD_Banner600_286,
+    YXAD_Banner600_300,
+    YXAD_Banner600_388,
+    YXAD_Banner600_400,
+    YXAD_Banner600_500,
+    YXAD_BannerCustom,
+};
 
 #endif /* YXLaunchConfiguration_h */

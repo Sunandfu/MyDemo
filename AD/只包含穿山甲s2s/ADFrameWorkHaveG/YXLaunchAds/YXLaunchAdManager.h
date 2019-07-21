@@ -4,7 +4,7 @@
 
 //  Created by shuai on 2018/3/23.
 //  Copyright © 2018年 M. All rights reserved.
-
+//  Version 2.4
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
@@ -15,16 +15,16 @@
 @optional
 /**
  加载成功的回调
- 
+
  @param view  回调的view（开屏的时候返回nil）
  */
-- (void)didLoadAd:(UIView*)view;
+- (void)didLoadAd:(UIView *_Nullable)view;
 /**
  取广告失败调用
  
  @param error 为错误信息
  */
-- (void)didFailedLoadAd:(NSError* _Nonnull)error;
+- (void)didFailedLoadAd:(NSError *_Nonnull)error;
 
 /**
  广告结束 移除window中的视图
@@ -47,26 +47,26 @@
  *
  *  @param duration 倒计时时间
  */
--(void)customSkipDuration:(NSInteger)duration;
+-(void)customSkipDuration:(NSInteger)duration; 
 
 @end
 
 @interface YXLaunchAdManager : NSObject
 /**
  初始化方法
- 
+
  @return 广告管理器初始化
  */
-+(YXLaunchAdManager *)shareManager;
++(YXLaunchAdManager *_Nonnull)shareManager;
 
-@property(nonatomic,weak) id<YXLaunchAdManagerDelegate> delegate;
+@property(nonatomic, weak) id<YXLaunchAdManagerDelegate> delegate;
 
 /** 设置开屏广告的frame(default [UIScreen mainScreen].bounds) */
 @property (nonatomic,assign) CGRect frame;
 
 /**  媒体位Id  */
-@property (nonatomic,copy) NSString *mediaId;
-
+@property (nonatomic, copy, nonnull) NSString *mediaId;
+ 
 
 //
 ///** 缓存机制(default YXLaunchImageDefault) */
@@ -87,7 +87,7 @@
 
 /** 显示完成动画(default ShowFinishAnimateFadein) */
 @property(nonatomic,assign)ShowFinishAnimate showFinishAnimate;
-
+ 
 
 /** 广告类型 */
 @property(nonatomic,assign) YXADTYPE adType;
@@ -99,35 +99,18 @@
 @property(nonatomic,assign)UIViewContentMode contentMode;
 
 /** 自定义跳过按钮 (不再使用) */
-@property (nonatomic,strong) UIView *customSkipView;
+@property (nonatomic,strong) UIView * _Nullable customSkipView;
 
-@property (nonatomic,strong) UIView *bottomView;
+@property (nonatomic,strong) UIView * _Nullable bottomView;
 
 /**  开始加载广告  */
-- (void)loadLaunchAdWithShowAdWindow:(UIWindow*)showAdWindow;
+- (void)loadLaunchAdWithShowAdWindow:(UIWindow *_Nonnull)showAdWindow;
 /**
  设置自定义跳过按钮的时候需要手动 手动移除广告
  
  @param animated 是否需要动画
  */
 +(void)removeAndAnimated:(BOOL)animated;
-
-
-/**
- 添加黑名单     取消显示广告
  
- @param media 媒体位id
- @param day 时间 单位天 默认3天
- */
-- (void)addBlackList:(NSString*)media andTime:(NSInteger)day;
-
-
-/**
- 移除黑名单      显示广告
- 
- @param media 媒体位id
- */
-- (void)removeBlackList:(NSString*)media;
-
 
 @end

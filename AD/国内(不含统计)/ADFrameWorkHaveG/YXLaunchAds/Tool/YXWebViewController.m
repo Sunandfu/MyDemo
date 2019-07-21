@@ -38,23 +38,14 @@ API_AVAILABLE(ios(8.0))
         [webview removeObserver:self forKeyPath:@"estimatedProgress"];
     }
 }
--(void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-    
-    /**
-     如果你设置了APP从后台恢复时也显示广告,
-     当用户停留在广告详情页时,APP从后台恢复时,你不想再次显示启动广告,
-     请在广告详情控制器将要显示时,发下面通知,告诉YXLaunchAd,广告详情页面将要显示
-     */
-    [[NSNotificationCenter defaultCenter] postNotificationName:YXLaunchAdDetailPageWillShowNotification object:nil];
-}
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationItem.title = @"详情";
     self.navigationController.navigationBar.translucent = YES;
     self.automaticallyAdjustsScrollViewInsets = NO;
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"←" style:UIBarButtonItemStylePlain target:self action:@selector(back)];
+    UIBarButtonItem *backBtn = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"XibAndPng.bundle/sf_leftback"] style:UIBarButtonItemStylePlain target:self action:@selector(backAction)];
+    UIBarButtonItem *closeBtn = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"XibAndPng.bundle/sf_close"] style:UIBarButtonItemStylePlain target:self action:@selector(backToHome)];
+    self.navigationItem.leftBarButtonItems = @[backBtn,closeBtn];
     
     CGFloat navbarHeight = [UIApplication sharedApplication].statusBarFrame.size.height;
     
@@ -77,7 +68,7 @@ API_AVAILABLE(ios(8.0))
         close = @"close";
     }
     
-    UIImage *leftimage = [UIImage imageNamed:@"BUAdSDK.bundle/bu_leftback"];
+    UIImage *leftimage = [UIImage imageNamed:@"XibAndPng.bundle/sf_leftback"];
     [button setImage:leftimage forState:UIControlStateNormal];
     
     button.frame = CGRectMake(20,navbarHeight, 30, 44);
@@ -91,7 +82,7 @@ API_AVAILABLE(ios(8.0))
     buttonBack.backgroundColor =[UIColor whiteColor];
     [buttonBack setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     buttonBack.titleLabel.font = [UIFont systemFontOfSize:15];
-    UIImage *closeimage = [UIImage imageNamed:@"BUAdSDK.bundle/bu_close"];
+    UIImage *closeimage = [UIImage imageNamed:@"XibAndPng.bundle/sf_close"];
     [buttonBack setImage:closeimage forState:UIControlStateNormal];
     
     buttonBack.frame = CGRectMake(60,navbarHeight, 30, 44);
@@ -129,6 +120,53 @@ API_AVAILABLE(ios(8.0))
     self.progressView.progressTintColor = [UIColor blackColor];
     [self.view addSubview:self.progressView];
 }
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    /**
+     如果你设置了APP从后台恢复时也显示广告,
+     当用户停留在广告详情页时,APP从后台恢复时,你不想再次显示启动广告,
+     请在广告详情控制器将要显示时,发下面通知,告诉YXLaunchAd,广告详情页面将要显示
+     */
+    [[NSNotificationCenter defaultCenter] postNotificationName:YXLaunchAdDetailPageWillShowNotification object:nil];
+    if (!self.show) {
+        return;
+    }
+    
+    if (nil!=[YXAdSDKManager defaultManager].webCustomView) {
+        NSData *tempArchive = [NSKeyedArchiver archivedDataWithRootObject:[YXAdSDKManager defaultManager].webCustomView];
+        UIView *redView = [NSKeyedUnarchiver unarchiveObjectWithData:tempArchive];
+        redView.autoresizesSubviews =YES;
+        for (UIView *view in redView.subviews) {
+            view.autoresizingMask =
+            UIViewAutoresizingFlexibleLeftMargin   |
+            UIViewAutoresizingFlexibleWidth        |
+            UIViewAutoresizingFlexibleRightMargin  |
+            UIViewAutoresizingFlexibleTopMargin    |
+            UIViewAutoresizingFlexibleHeight       |
+            UIViewAutoresizingFlexibleBottomMargin ;
+        }
+        redView.frame = CGRectMake(SF_ScreenW-redView.bounds.size.width-10, SF_ScreenH-SF_TabbarHeight-redView.bounds.size.height-10, redView.bounds.size.width, redView.bounds.size.height);
+        redView.tag = 998;
+        redView.layer.masksToBounds = YES;
+        redView.layer.cornerRadius = (redView.bounds.size.height<redView.bounds.size.width?redView.bounds.size.height:redView.bounds.size.width)/2.0;
+        redView.userInteractionEnabled = YES;
+        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(customViewClick)];
+        [redView addGestureRecognizer:tap];
+        [[UIApplication sharedApplication].keyWindow addSubview:redView];
+    }
+}
+- (void)viewWillDisappear:(BOOL)animated{
+    [super viewDidDisappear:animated];
+    [self.progressView removeFromSuperview];
+    UIView *redView = [[UIApplication sharedApplication].keyWindow viewWithTag:998];
+    [redView removeFromSuperview];
+}
+- (void)customViewClick{
+    [self dismissViewControllerAnimated:NO completion:nil];
+    if (self.delegate && [self.delegate respondsToSelector:@selector(customWebViewClicked)]) {
+        [self.delegate customWebViewClicked];
+    }
+}
 -(NSString*)currentLanguage
 {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
@@ -136,47 +174,24 @@ API_AVAILABLE(ios(8.0))
     NSString *currentLang = [languages objectAtIndex:0];
     return currentLang;
 }
--(void)viewWillDisappear:(BOOL)animated
-{
-    [super viewWillDisappear:animated];
-    [self.progressView removeFromSuperview];
-}
 - (void)backToHome
 {
-    [self dismissViewControllerAnimated:YES completion:nil];
-    if (self.delegate &&[self.delegate respondsToSelector:@selector(backClicked)]) {
-        [self.delegate backClicked];
+    if (self.presentingViewController) {
+        [self dismissViewControllerAnimated:YES completion:nil];
+    } else {
+        [self.navigationController popViewControllerAnimated:YES];
     }
 }
 - (void)backAction
 {
     if (@available(iOS 8.0, *)) {
-        if([_webView canGoBack])
-        {
+        if([_webView canGoBack]) {
             [_webView goBack];
+        } else {
+            [self backToHome];
         }
-        else
-        {
-            [self dismissViewControllerAnimated:YES completion:nil];
-        }
-    }else{
-        [self dismissViewControllerAnimated:YES completion:nil];
-    }
-    
-    if (self.delegate &&[self.delegate respondsToSelector:@selector(backClicked)]) {
-        [self.delegate backClicked];
-    }
-}
-
--(void)back{
-    
-    if([_webView canGoBack])
-    {
-        [_webView goBack];
-    }
-    else
-    {
-        [self.navigationController popViewControllerAnimated:YES];
+    } else{
+        [self backToHome];
     }
 }
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context{

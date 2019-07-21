@@ -9,6 +9,7 @@
 #import "YXLaunchScreenViewController.h"
 #import <YXLaunchAds/YXLaunchAds.h>
 #import "AppDelegate.h"
+#import <SafariServices/SafariServices.h>
 
 @interface YXLaunchScreenViewController ()<YXLaunchAdManagerDelegate>
 
@@ -42,7 +43,7 @@
     adManager.adType = YXScreenType;
     adManager.imageOption = YXLaunchAdImageDefault;
     adManager.contentMode = UIViewContentModeScaleAspectFill;
-    adManager.showFinishAnimate = ShowFinishAnimateFadein;
+    adManager.showFinishAnimate = ShowFinishAnimateNone;
     adManager.showFinishAnimateTime = 0.8;
     adManager.skipButtonType = SkipTypeTimeText;
     adManager.delegate = self;
@@ -65,6 +66,12 @@
 - (void)didClickedAd
 {
     NSLog(@"广告点击事件");
+}
+- (void)customViewdidClickedAd{
+    NSLog(@"自定义 View 点击事件");
+//    SFSafariViewController *webView = [[SFSafariViewController alloc] initWithURL:[NSURL URLWithString:@"http://baidu.com"]];
+//    //此处应获取当前显示的控制器去推出新控制器，否则将会被当前显示的控制器所盖住
+//    [self presentViewController:webView animated:YES completion:nil];
 }
 - (void)didPresentedAd
 {

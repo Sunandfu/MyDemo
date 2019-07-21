@@ -9,6 +9,8 @@
 #import "YXLaunchScreenViewController.h"
 #import "YXLaunchAdManager.h"
 #import "AppDelegate.h"
+#import "YXAdSDKManager.h"
+#import <SafariServices/SafariServices.h>
 
 @interface YXLaunchScreenViewController ()<YXLaunchAdManagerDelegate>
 
@@ -33,6 +35,7 @@
 }
 - (void)launchScreenBtnClicked:(UIButton*)sender
 {
+//    [YXAdSDKManager defaultManager].userDefault = YES;
     YXLaunchAdManager *adManager = [YXLaunchAdManager shareManager];
     
     adManager.waitDataDuration = 10;
@@ -46,7 +49,6 @@
     adManager.showFinishAnimateTime = 0.8;
     adManager.skipButtonType = SkipTypeTimeText;
     adManager.delegate = self;
-    
     [adManager loadLaunchAdWithShowAdWindow:[UIApplication sharedApplication].delegate.window];
     
     //    [adManager addBlackList: splashMediaID andTime:2];
@@ -65,6 +67,25 @@
 - (void)didClickedAd
 {
     NSLog(@"广告点击事件");
+}
+
+- (void)customViewdidClickedAd{
+    NSLog(@"自定义 View 点击事件");
+    SFSafariViewController *webView = [[SFSafariViewController alloc] initWithURL:[NSURL URLWithString:@"http://baidu.com"]];
+    //    //此处应获取当前显示的控制器去推出新控制器，否则将会被当前显示的控制器所盖住
+    [[self getCurrentViewController] presentViewController:webView animated:YES completion:nil];
+}
+//获取当前显示的控制器
+- (UIViewController *)getCurrentViewController
+{
+    UIViewController * vc = [UIApplication sharedApplication].delegate.window.rootViewController;
+    if([vc isKindOfClass:[UITabBarController class]]) {
+        vc = [(UITabBarController *)vc selectedViewController];
+    }
+    if([vc isKindOfClass:[UINavigationController class]]) {
+        vc = [(UINavigationController *)vc visibleViewController];
+    }
+    return vc;
 }
 - (void)didPresentedAd
 {

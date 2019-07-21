@@ -20,9 +20,11 @@
 #define XHStringContainsSubString(string,subString)  ([string rangeOfString:subString].location == NSNotFound) ? NO:YES
 
 #ifdef DEBUG
+#define YX_DEBUG_MODE YES
 #define YXLaunchAdLog(FORMAT, ...) fprintf(stderr,"%s:%d\t%s\n",[[[NSString stringWithUTF8String:__FILE__] lastPathComponent] UTF8String], __LINE__, [[NSString stringWithFormat:FORMAT, ##__VA_ARGS__] UTF8String]);
 #else
 #define YXLaunchAdLog(...)
+#define YX_DEBUG_MODE NO
 #endif
 
 #define XHISGIFTypeWithData(data)\
@@ -64,7 +66,7 @@ time = nil;\
 view = nil;\
 }
 
-#define YXLaunchLogoURL @"http://static.yunqingugm.com/yd_ad.png"
+#define YXLaunchLogoURL @"http://static.yunqingugm.com/ad.png"
 
 UIKIT_EXTERN NSString *const XHCacheImageUrlStringKey;
 UIKIT_EXTERN NSString *const XHCacheVideoUrlStringKey;

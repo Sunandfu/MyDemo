@@ -14,8 +14,6 @@
 
 static  NSString * bannerMediaID = @"beta_ios_banner";
 
-
-
 @interface YXBannerViewController ()<YXBannerAdManagerDelegate>
 {
     YXBannerAdManager *bannerView;
@@ -47,14 +45,16 @@ static  NSString * bannerMediaID = @"beta_ios_banner";
     }
     
     
-    bannerView =  [[YXBannerAdManager alloc]initWithFrame:CGRectMake(0,88, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height/3)
-                                                 delegate:self
-                                                  mediaId:bannerMediaID
-                                           BannerLocation:BottomBannerType];
-    
+    bannerView =  [[YXBannerAdManager alloc]initWithFrame:CGRectMake(0,64, [UIScreen mainScreen].bounds.size.width, 50)];
+    bannerView.interval = 30;
+    bannerView.isLoop = YES;
+    bannerView.delegate = self;
+    bannerView.mediaId = bannerMediaID;
+    bannerView.bannerType = BottomBannerType;
+    bannerView.adSize = YXAD_Banner600_90;
     [self.view addSubview:bannerView];
     NSLog(@"Banner请求");
-    
+    [bannerView loadBannerAD];
 }
 - (void)didLoadBannerAd:(UIView *)adView
 {
@@ -78,6 +78,11 @@ static  NSString * bannerMediaID = @"beta_ios_banner";
     // Dispose of any resources that can be recreated.
 }
 
+
+- (void)dealloc
+{
+    NSLog(@"%@ %@",[self class],NSStringFromSelector(_cmd));
+}
 /*
 #pragma mark - Navigation
 

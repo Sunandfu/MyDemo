@@ -225,8 +225,8 @@
         
         if (isError) {
             NSString *msgs = [NetTool URLEncodedString:msg];
-            [dic setObject:code                forKey:@"code"];
-            [dic setObject:msgs                forKey:@"message"];
+            [dic setObject:code?code:@"20240000"        forKey:@"code"];
+            [dic setObject:msgs?msgs:@"AD error"        forKey:@"message"];
         }
         NSString *jsonStr = [NSString sf_jsonStringWithJson:dic];
         NSString *aesStr = [jsonStr sf_AESEncryptString];
@@ -348,6 +348,49 @@
         //        NSLog(@"log success");
     });
 }
+
++ (void)getJSONDataWithURL:(NSString *)url parameters:(id)parameters success:(void(^)(id json))success fail:(void(^)(NSError * error))fail{
+    NSURLSession *session=[NSURLSession sharedSession];
+    NSMutableURLRequest *request=[NSMutableURLRequest requestWithURL:[NSURL URLWithString:url]];
+    request.HTTPMethod = @"GET";
+    request.HTTPBody = [[NSString sf_jsonStringWithJson:parameters] dataUsingEncoding:NSUTF8StringEncoding];
+    request.allHTTPHeaderFields = @{@"Content-Type":@"application/json"};
+    request.cachePolicy = NSURLRequestUseProtocolCachePolicy;
+    request.timeoutInterval = 5;
+    NSURLSessionDataTask *task=[session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        if (error && fail) {
+            fail(error);
+        } else if (data && success) {
+            if ([data isKindOfClass:[NSData class]]) {
+                data = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
+            }
+            success(data);
+        }
+    }];
+    [task resume];
+}
++ (void)postJSONDataWithURL:(NSString *)url parameters:(id)parameters success:(void(^)(id json))success fail:(void(^)(NSError * error))fail{
+    NSURLSession *session=[NSURLSession sharedSession];
+    NSMutableURLRequest *request=[NSMutableURLRequest requestWithURL:[NSURL URLWithString:url]];
+    request.HTTPMethod = @"POST";
+    request.HTTPBody = [[NSString sf_jsonStringWithJson:parameters] dataUsingEncoding:NSUTF8StringEncoding];
+    request.allHTTPHeaderFields = @{@"Content-Type":@"application/json"};
+    request.cachePolicy = NSURLRequestUseProtocolCachePolicy;
+    request.timeoutInterval = 5;
+    NSURLSessionDataTask *task=[session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        if (error && fail) {
+            fail(error);
+        } else if (data && success) {
+            if ([data isKindOfClass:[NSData class]]) {
+                data = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
+            }
+            success(data);
+        }
+    }];
+    [task resume];
+}
+
+
 //请求配置接口
 + (void)requestADSourceFromMediaId:(NSString *)mediaId success:(void(^)(NSDictionary *dataDict))success fail:(void(^)(NSError *error))fail{
     CGFloat c_w = [UIScreen mainScreen].bounds.size.width;
@@ -369,7 +412,7 @@
                            @"model":[NetTool gettelModel],
                            @"brand":@"apple",
                            @"networktype":@(netnumber),
-                           @"mac":[NetTool getMac],
+                           @"mac":[NetTool getMac]?[NetTool getMac]:@"",
                            @"adCount":@(1),
                            @"image":@{@"width": @(c_w),@"height": @(c_h)}
                            };
@@ -426,7 +469,7 @@
                            @"model":[NetTool gettelModel],
                            @"brand":@"apple",
                            @"networktype":@(netnumber),
-                           @"mac":[NetTool getMac],
+                           @"mac":[NetTool getMac]?[NetTool getMac]:@"",
                            @"adCount":@(adCount),
                            @"image":@{@"width": @(width),@"height": @(height)}
                            };

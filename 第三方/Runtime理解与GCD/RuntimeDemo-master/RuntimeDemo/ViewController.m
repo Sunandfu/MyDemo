@@ -68,7 +68,7 @@
         Method method = methodList[i];
         NSLog(@"method --> %@", NSStringFromSelector(method_getName(method)));
     }
-    
+    //  GDTSplashViewController
     // 获取成员变量列表
     Ivar *ivarList = class_copyIvarList([self class], &count);
     for (unsigned int i=0; i < count; i++) {

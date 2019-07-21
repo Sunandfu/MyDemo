@@ -9,7 +9,7 @@
 #import "YXScrollerBannerViewController.h" 
 #import "YXMutBannerAdManager.h"
 
-static  NSString * feedMediaID = @"beta_ios_native";
+static  NSString * feedMediaID = @"ckej_ios_feed";
 
 @interface YXScrollerBannerViewController ()<YXMutBannerAdManagerDelegate>
 {

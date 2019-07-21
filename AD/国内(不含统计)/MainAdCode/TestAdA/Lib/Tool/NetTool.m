@@ -53,9 +53,7 @@ NSString *_gulongitude;
         orientationStr = @"1";
         //竖屏
     }
-    //
-    [self getNetTyepe];
-    int netNumber = nettype;//网络标示
+    int netNumber = [self getNetTyepe];;//网络标示
     NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];
     // app名称
     NSString *app_Name = [infoDictionary objectForKey:@"CFBundleDisplayName"];
@@ -86,6 +84,7 @@ NSString *_gulongitude;
     [dic setValue:[self getPackageName]                  forKey:@"appid"];
     [dic setValue:app_Name                               forKey:@"appname"];
     [dic setValue:orientationStr                         forKey:@"orientation"];
+    [dic setValue:[NetTool getCityCode]                  forKey:@"cityCode"];
     [dic setValue:@{@"width": width,@"height": height}   forKey:@"image"];
     [dic setValue:timeLocal                              forKey:@"ts"];//时间戳
     NSString *yun = [self getYunYingShang];
@@ -267,19 +266,30 @@ NSString *_gulongitude;
     } else if (currentStatus == ReachableViaWiFi) {
         nettype = wifi;
 //         NSLog(@"Wifi");
-      } else {
-          nettype = WWAN;
+      } else if (currentStatus == kReachableViaWWAN) {
+//          nettype = WWAN;
 //          NSLog(@"3G/4G/5G");
+          
+          //connection type
+          CTTelephonyNetworkInfo *netinfo = [[CTTelephonyNetworkInfo alloc] init];
+//          NSString *carrier = [[netinfo subscriberCellularProvider] carrierName];
+//          NSLog(@"carrier = %@",carrier);
+          if ([netinfo.currentRadioAccessTechnology isEqualToString:CTRadioAccessTechnologyGPRS] || [netinfo.currentRadioAccessTechnology isEqualToString:CTRadioAccessTechnologyEdge] || [netinfo.currentRadioAccessTechnology isEqualToString:CTRadioAccessTechnologyCDMA1x]) {
+//              NSLog(@"2G");
+              nettype = net2G;
+          } else if ([netinfo.currentRadioAccessTechnology isEqualToString:CTRadioAccessTechnologyWCDMA] || [netinfo.currentRadioAccessTechnology isEqualToString:CTRadioAccessTechnologyHSDPA] || [netinfo.currentRadioAccessTechnology isEqualToString:CTRadioAccessTechnologyHSUPA] || [netinfo.currentRadioAccessTechnology isEqualToString:CTRadioAccessTechnologyCDMAEVDORev0] || [netinfo.currentRadioAccessTechnology isEqualToString:CTRadioAccessTechnologyCDMAEVDORevA] || [netinfo.currentRadioAccessTechnology isEqualToString:CTRadioAccessTechnologyCDMAEVDORevB] || [netinfo.currentRadioAccessTechnology isEqualToString:CTRadioAccessTechnologyeHRPD]) {
+//              NSLog(@"3G");
+              nettype = net3G;
+          } else if ([netinfo.currentRadioAccessTechnology isEqualToString:CTRadioAccessTechnologyLTE]) {
+//              NSLog(@"4G");
+              nettype = net4G;
+          } else {
+              nettype = WWAN;
+          }
+      } else {
+          nettype = unknown;
       }
-    
-    [self setNetType:nettype];
     return nettype;
-}
-
-
-+(void)setNetType:(netType)type
-{
-    nettype = type;
 }
 
 //获取idfa
@@ -321,24 +331,24 @@ NSString *_gulongitude;
     
     if ((mib[5] = if_nametoindex("en0")) == 0) {
         printf("Error: if_nametoindex error/n");
-        return NULL;
+        return @"";
     }
     
     if (sysctl(mib, 6, NULL, &len, NULL, 0) < 0) {
         printf("Error: sysctl, take 1/n");
-        return NULL;
+        return @"";
     }
     
     if ((buf = malloc(len)) == NULL) {
         printf("Could not allocate memory. error!/n");
         free(buf);
-        return NULL;
+        return @"";
     }
     
     if (sysctl(mib, 6, buf, &len, NULL, 0) < 0) {
         printf("Error: sysctl, take 2");
         free(buf);
-        return NULL;
+        return @"";
     }
     
     ifm = (struct if_msghdr *)buf;
@@ -351,6 +361,12 @@ NSString *_gulongitude;
     
 }
 
+//cityCode
++ (NSString *)getCityCode
+{
+    NSString *cityCode = [[NSUserDefaults standardUserDefaults] objectForKey:@"ADSDKCityCode"];
+    return cityCode?cityCode:@"";
+}
 //系统版本
 + (NSString *)getOS
 {

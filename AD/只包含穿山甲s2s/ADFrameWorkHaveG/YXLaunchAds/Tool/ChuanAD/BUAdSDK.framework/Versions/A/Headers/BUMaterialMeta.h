@@ -12,14 +12,14 @@
 
 typedef NS_ENUM(NSInteger, BUInteractionType) {
     BUInteractionTypeCustorm = 0,
-    BUInteractionTypeNO_INTERACTION = 1,    // 纯展示广告
-    BUInteractionTypeURL = 2,               // 使用浏览器打开网页
-    BUInteractionTypePage,                  // 应用内打开网页
-    BUInteractionTypeDownload,              // 下载应用
-    BUInteractionTypePhone ,                // 拨打电话
-    BUInteractionTypeMessage,               // 发送短信
-    BUInteractionTypeEmail,                 // 发邮件
-    BUInteractionTypeVideoAdDetail          // 视频广告详情页
+    BUInteractionTypeNO_INTERACTION = 1,        // 纯展示广告
+    BUInteractionTypeURL = 2,                   // 使用浏览器打开网页
+    BUInteractionTypePage = 3,                  // 应用内打开网页
+    BUInteractionTypeDownload = 4,              // 下载应用
+    BUInteractionTypePhone = 5,                 // 拨打电话
+    BUInteractionTypeMessage = 6,               // 发送短信
+    BUInteractionTypeEmail = 7,                 // 发邮件
+    BUInteractionTypeVideoAdDetail = 8          // 视频广告详情页
 };
 
 typedef NS_ENUM(NSInteger, BUFeedADMode) {
@@ -53,11 +53,20 @@ typedef NS_ENUM(NSInteger, BUFeedADMode) {
 /// 创意按钮显示文字
 @property (nonatomic, copy) NSString *buttonText;
 
-/// 客户不喜欢广告，关闭时， 提示不喜欢原因
-@property (nonatomic, copy) NSArray<BUDislikeWords *> *filterWords;
-
 /// feed广告的展示类型，banner广告忽略
 @property (nonatomic, assign) BUFeedADMode imageMode;
+
+/// 评分（星级），取值范围1-5
+@property (nonatomic, assign) NSInteger score;
+
+/// 评论人数
+@property (nonatomic, assign) NSInteger commentNum;
+
+/// 广告安装包大小,单位byte
+@property (nonatomic, assign) NSInteger appSize;
+
+/// 媒体配置参数
+@property (nonatomic, strong) NSDictionary *mediaExt;
 
 - (instancetype)initWithDictionary:(NSDictionary *)dict error:(NSError * __autoreleasing *)error;
 

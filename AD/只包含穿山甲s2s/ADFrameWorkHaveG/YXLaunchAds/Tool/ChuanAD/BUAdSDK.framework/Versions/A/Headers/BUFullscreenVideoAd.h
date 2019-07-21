@@ -45,9 +45,9 @@
 - (void)fullscreenVideoAdDidClose:(BUFullscreenVideoAd *)fullscreenVideoAd;
 
 /**
- 视频广告点击下载
+ 视频广告点击
  */
-- (void)fullscreenVideoAdDidClickDownload:(BUFullscreenVideoAd *)fullscreenVideoAd;
+- (void)fullscreenVideoAdDidClick:(BUFullscreenVideoAd *)fullscreenVideoAd;
 
 /**
  视频广告素材加载失败

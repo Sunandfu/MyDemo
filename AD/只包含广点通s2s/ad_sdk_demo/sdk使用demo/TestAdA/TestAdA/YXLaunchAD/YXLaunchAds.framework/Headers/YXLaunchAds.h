@@ -4,7 +4,7 @@
 //
 //  Created by shuai on 2018/6/6.
 //  Copyright © 2018年 YX. All rights reserved.
-//  version3.2
+//  version3.0
 
 #import <UIKit/UIKit.h>
 
@@ -22,4 +22,6 @@ FOUNDATION_EXPORT const unsigned char YXLaunchAdsVersionString[];
 #import <YXLaunchAds/YXFeedAdManager.h>
 #import <YXLaunchAds/YXFeedAdData.h>
 #import <YXLaunchAds/YXInterstitialAdManager.h>
-#import <YXLaunchAds/YXMutBannerAdManager.h> 
+#import <YXLaunchAds/YXAdSDKManager.h>
+#import <YXLaunchAds/YXMotivationVideoManager.h>
+#import <YXLaunchAds/YXMutBannerAdManager.h>

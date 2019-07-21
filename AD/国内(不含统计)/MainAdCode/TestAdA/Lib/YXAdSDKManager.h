@@ -13,6 +13,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface YXAdSDKManager : NSObject
 
++(instancetype)defaultManager;
+
+@property (nonatomic, strong) UIView *webCustomView;
+@property (nonatomic, strong) UIView *kpCustomView;
+//默认关闭  若开启，将使用系统默认自定义 View
+@property (nonatomic, assign) BOOL userDefault;
+
 /**
  添加黑名单     取消显示广告
  

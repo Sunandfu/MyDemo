@@ -62,6 +62,11 @@ typedef NS_OPTIONS(NSUInteger, YXLaunchAdImageOptions) {
 /** 显示完成动画时间默认时间 */
 static CGFloat const showFinishAnimateTimeDefault = 0.8;
 
+/** 再网页中点击自定义 View 后将发出通知 */
+static NSString * const KPCUSTOMCLICKNOTIFITION  = @"KpCustomViewDidClicked";
+/** 再网页中点击自定义 View 后将发出通知 */
+static NSString * const WEBCUSTOMCLICKNOTIFITION = @"WebCustomViewDidClicked";
+
 /** 显示完成动画类型 */
 typedef NS_ENUM(NSInteger , ShowFinishAnimate) {
     /** 无动画 */

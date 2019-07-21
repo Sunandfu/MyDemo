@@ -16,6 +16,8 @@
 #import "NetTool.h"
 #import "YXImgUtil.h"
 #import "YXLaunchAdManager.h"
+#import "YXWebViewController.h"
+
 typedef NS_ENUM(NSInteger, YXLaunchAdType) {
     YXLaunchAdTypeImage,
     YXLaunchAdTypeVideo
@@ -534,6 +536,29 @@ static  SourceType _sourceType = SourceTypeLaunchImage;
         }
         [_adWindow addSubview:_skipButton];
         [_skipButton setTitleWithSkipType:configuration.skipButtonType duration:configuration.duration];
+        if (configuration.addSkipLeftView){
+            configuration.addSkipLeftView.autoresizesSubviews =YES;
+            for (UIView *view in configuration.addSkipLeftView.subviews) {
+                view.autoresizingMask =
+                UIViewAutoresizingFlexibleLeftMargin   |
+                UIViewAutoresizingFlexibleWidth        |
+                UIViewAutoresizingFlexibleRightMargin  |
+                UIViewAutoresizingFlexibleTopMargin    |
+                UIViewAutoresizingFlexibleHeight       |
+                UIViewAutoresizingFlexibleBottomMargin ;
+            }
+            CGFloat topBottomSpace = [_skipButton getTopBottomSpace];
+            CGFloat viewHeight = _skipButton.frame.size.height-topBottomSpace*2;
+            CGFloat viewWidth = configuration.addSkipLeftView.bounds.size.width * viewHeight / configuration.addSkipLeftView.bounds.size.height;
+            configuration.addSkipLeftView.frame = CGRectMake(SF_ScreenW-viewWidth-13, _skipButton.frame.origin.y+topBottomSpace, viewWidth, viewHeight);
+            configuration.addSkipLeftView.layer.masksToBounds = YES;
+            configuration.addSkipLeftView.layer.cornerRadius = _skipButton.frame.size.height / 2.0;
+            configuration.addSkipLeftView.userInteractionEnabled = YES;
+            UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(customViewClick)];
+            [configuration.addSkipLeftView addGestureRecognizer:tap];
+            [_adWindow addSubview:configuration.addSkipLeftView];
+            _skipButton.frame = CGRectMake(configuration.addSkipLeftView.frame.origin.x-_skipButton.bounds.size.width-6, _skipButton.frame.origin.y, _skipButton.bounds.size.width, _skipButton.bounds.size.height);
+        }
     }
 }
 
@@ -687,7 +712,10 @@ static  SourceType _sourceType = SourceTypeLaunchImage;
     }
     [self removeAndAnimated:YES];
 }
-
+- (void)customViewClick{
+    [[NSNotificationCenter defaultCenter] postNotificationName:KPCUSTOMCLICKNOTIFITION object:nil];
+    [self removeAndAnimated:YES];
+}
 -(void)removeAndAnimated:(BOOL)animated{
     if(animated){
         [self removeAndAnimate];
@@ -787,7 +815,7 @@ static  SourceType _sourceType = SourceTypeLaunchImage;
                     [self->_skipButton setTitleWithSkipType:configuration.skipButtonType duration:duration];
                 }
             }
-            if(duration==1){
+            if(duration==0){
                 DISPATCH_SOURCE_CANCEL_SAFE(self->_skipTimer);
                 [self removeAndAnimate]; return ;
             }
@@ -804,7 +832,7 @@ static  SourceType _sourceType = SourceTypeLaunchImage;
     if(configuration.showFinishAnimateTime>0) duration = configuration.showFinishAnimateTime;
     switch (configuration.showFinishAnimate) {
         case ShowFinishAnimateNone:{
-            [self removeAndAnimateDefault];
+            [self removeAndAnimated:NO];
         }
             break;
         case ShowFinishAnimateFadein:{

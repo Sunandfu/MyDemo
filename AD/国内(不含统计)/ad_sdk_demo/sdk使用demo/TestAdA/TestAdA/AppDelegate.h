@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #define YX_IPHONEX  ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1125, 2436), [[UIScreen mainScreen] currentMode].size) : NO)
-static  NSString * splashMediaID = @"wxbus_ios_splash";
+static  NSString * splashMediaID = @"beta_ios_splash";
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;

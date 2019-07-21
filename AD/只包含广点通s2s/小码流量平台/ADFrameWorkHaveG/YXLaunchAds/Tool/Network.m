@@ -319,7 +319,7 @@
                             @"7",                     //advtp
                             adplaces[@"adPlaceId"],   //adPlaceId
                             [NetTool getPackageName], //appId
-                            mediaID,           //mid
+                            mediaID,                  //mid
                             @"IOS",                   //os
                             [NetTool getOS],          //osv
                             @"apple",                 //make
@@ -327,7 +327,7 @@
                             @"1",                     //deviceType
                             [NetTool getIDFA],        //idfa
                             @"2",                     //cType
-                            uuid,    //uid
+                            uuid,                     //uid
                             @"apple",                 //brand
                             @(widthStr),@(heightStr),macId,
                             timeLocal,

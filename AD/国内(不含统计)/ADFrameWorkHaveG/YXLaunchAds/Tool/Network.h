@@ -27,6 +27,12 @@
 //上报接口
 #define TRACKIN @"http://www.yunqingugm.com:8082"
 
+//#define SEVERIN @"http://119.29.146.103:8086"
+//#define TRACKIN @"http://119.29.146.103:8086"
+
+//#define SEVERIN @"http://47.99.227.46:8081"
+//#define TRACKIN @"http://47.99.227.46:8082"
+
 #define ADSHOW   TRACKIN @"/log/newMimpr/v3"//展示成果
 #define ADCLICK  TRACKIN @"/log/newMclick/v3"//点击
 #define ADError  TRACKIN @"/log/newErrorLog/v3"//错误
@@ -105,10 +111,15 @@ typedef void(^NetworkFailure) (NSError *error);
  */
 + (void)blackListUrl:(NSString *)url andMedia:(NSString *)media andTime:(NSInteger)day isAdd:(BOOL)isAdd;
 
-
 //请求配置接口
 + (void)requestADSourceFromMediaId:(NSString *)mediaId success:(void(^)(NSDictionary *dataDict))success fail:(void(^)(NSError *error))fail;
 
 + (void)requestADSourceFromMediaId:(NSString *)mediaId adCount:(NSInteger)adCount imgWidth:(CGFloat)width imgHeight:(CGFloat)height success:(void(^)(NSDictionary *dataDict))success fail:(void(^)(NSError *error))fail;
+
+//GET请求JSON数据
++ (void)getJSONDataWithURL:(NSString *)url parameters:(id)parameters success:(void(^)(id json))success fail:(void(^)(NSError * error))fail;
+
+//POST请求JSON数据
++ (void)postJSONDataWithURL:(NSString *)url parameters:(id)parameters success:(void(^)(id json))success fail:(void(^)(NSError * error))fail;
 
 @end

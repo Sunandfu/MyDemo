@@ -23,15 +23,16 @@
 #import <BUAdSDK/BUAdSDK.h>
 #import <BUAdSDK/BUNativeAdsManager.h>
 
+#import "CustomCollectionViewCell.h"
+
 @interface YXMutBannerAdManager()<BUNativeAdDelegate,BUNativeAdsManagerDelegate,GDTNativeAdDelegate,YXBannerScrollViewDelegate>
 {
     CGFloat _width;
     CGFloat _height;
     NSInteger _chazhi;
-    NSDictionary *_resultDict;
     BOOL isOther;
 }
-
+@property (nonatomic, strong) NSDictionary *resultDict;
 @property (nonatomic, strong) NSDictionary *otherDict;
 @property (nonatomic, strong) NSDictionary *netAdDict;
 @property (nonatomic, strong) NSDictionary *currentAdDict;
@@ -194,20 +195,21 @@
 }
 - (void)initXAD
 {
+    WEAK(weakSelf);
     [[Network sharedInstance] beginRequestfinished:^(BOOL isSuccess, id json) {
         if (isSuccess) {
             if ([json[@"ret"] isEqualToString:@"0"]) {
-                self.adArr = json[@"adInfos"];
-                if (self.adArr.count <= 0) {
+                weakSelf.adArr = json[@"adInfos"];
+                if (weakSelf.adArr.count <= 0) {
                     NSError *errors = [NSError errorWithDomain:@"请求失败" code:400 userInfo:nil];
-                    [self failedError:errors];
+                    [weakSelf failedError:errors];
                     return ;
                 }
-                //                self->_resultDict = dict;
+                //                self->self.resultDict = dict;
                 //                self->_adDict = dict;
                 
                 dispatch_async(dispatch_get_main_queue(), ^{
-                    for (NSDictionary *dict in self.adArr) {
+                    for (NSDictionary *dict in weakSelf.adArr) {
                         YXFeedAdData *backdata = [YXFeedAdData new];
                         backdata.adContent = [NSString stringWithFormat:@"%@",dict[@"description"]];
                         backdata.adTitle =  [NSString stringWithFormat:@"%@",dict[@"title"]];
@@ -219,26 +221,28 @@
                         }
                         backdata.imageUrl = [NSString stringWithFormat:@"%@",dict[@"img_url"]];
                         backdata.IconUrl = [NSString stringWithFormat:@"%@",dict[@"logo_icon"]];
-                        [self.feedArray addObject:backdata];
+                        backdata.adType = 4;
+                        backdata.data = dict;
+                        [weakSelf.feedArray addObject:backdata];
                     }
                     
-                    [self reloadDataScrollerView];
+                    [weakSelf reloadDataScrollerView];
                     
-                    if(self.delegate && [self.delegate respondsToSelector:@selector(didLoadMutBannerAdView)]){
-                        [self.tmpImageView removeFromSuperview];
-                        [self.delegate didLoadMutBannerAdView];
+                    if(weakSelf.delegate && [weakSelf.delegate respondsToSelector:@selector(didLoadMutBannerAdView)]){
+                        [weakSelf.tmpImageView removeFromSuperview];
+                        [weakSelf.delegate didLoadMutBannerAdView];
                     }
                 });
             }else{
                 NSError *errors = [NSError errorWithDomain:@"请求失败" code:400 userInfo:nil];
-                [self failedError:errors];
-                if (self.feedArray.count>0) {
-                    [self reloadDataScrollerView];
+                [weakSelf failedError:errors];
+                if (weakSelf.feedArray.count>0) {
+                    [weakSelf reloadDataScrollerView];
                 }
             }
         }else{
             NSError *errors = [NSError errorWithDomain:@"请求失败" code:400 userInfo:nil];
-            [self failedError:errors];
+            [weakSelf failedError:errors];
         }
     }];
 }
@@ -262,146 +266,59 @@
     
     NSString * x =  [NSString stringWithFormat:@"%f",point.x ];
     NSString * y =  [NSString stringWithFormat:@"%f",point.y ];
-    
     [self clickS2SAdWithX:x Y:y Index:recognizer.view.tag];
 }
-- (void)clickS2SAdWithX:(NSString *)x Y:(NSString *)y Index:(NSInteger)index{
-    
+// 点击图片信息
+-(void)clickS2SAdWithX:(NSString *)x Y:(NSString *)y Index:(NSInteger)index
+{
     NSString *widthStr = [NSString stringWithFormat:@"%f",_width];
     NSString *heightStr = [NSString stringWithFormat:@"%f",_height];
     
-    
-    //    NSString *dicStr =  [NSString stringWithFormat:@"{%@:%@,%@:%@,%@:%@,%@:%@}",@"down_x",x,@"down_y",y,@"up_x",x,@"up_y",y];
     if(!_resultDict){
         return;
     }
-    // 1.跳转链接
     NSString *urlStr = _resultDict[@"click_url"];
-    NSString * click_position = [NSString stringWithFormat:@"%@",_resultDict[@"click_position"]];
-    if ([click_position isEqualToString:@"1"]) {
-        if (_resultDict[@"width"]) {
-            urlStr = [urlStr stringByReplacingOccurrencesOfString:@"__REQ_WIDTH__" withString:[NSString stringWithFormat:@"%@",_resultDict[@"width"]]];
-        }
-        if (_resultDict[@"height"]) {
-            urlStr = [urlStr stringByReplacingOccurrencesOfString:@"__REQHEIGHT__" withString:[NSString stringWithFormat:@"%@",_resultDict[@"height"]]];
-        }
-        urlStr = [urlStr stringByReplacingOccurrencesOfString:@"__WIDTH__" withString:widthStr];
-        urlStr = [urlStr stringByReplacingOccurrencesOfString:@"__HEIGHT__" withString:heightStr];
-        
-        urlStr = [urlStr stringByReplacingOccurrencesOfString:@"__DOWN_X__" withString:x];
-        urlStr = [urlStr stringByReplacingOccurrencesOfString:@"__DOWN_Y__" withString:y];
-        urlStr = [urlStr stringByReplacingOccurrencesOfString:@"__UP_X__" withString:x];
-        urlStr = [urlStr stringByReplacingOccurrencesOfString:@"__UP_Y__" withString:y];
-        
-    }
+    NSDictionary *dict = [NetTool parameterWithURL:[NSURL URLWithString:urlStr]];
     
-    NSString * ac_type = [NSString stringWithFormat:@"%@",_resultDict[@"ac_type"]];
-    
-    if ([ac_type isEqualToString:@"1"] || [ac_type isEqualToString:@"2"]) {
-        
-        NSURL *url = [NSURL URLWithString:urlStr];
-        if (@available(iOS 9.0, *)) {
-            SFSafariViewController *safariVC = [[SFSafariViewController alloc] initWithURL:url];
-            [self.controller showViewController:safariVC sender:nil];
-            
-        } else {
-            // Fallback on earlier versions
-            [[UIApplication sharedApplication] openURL:url];
+    if ([dict[@"lanigirOaideMsi"] isEqualToString:@"1"]) {
+        if (_resultDict==nil) {
+            return;
         }
-    } else if ([ac_type isEqualToString:@"6"]) {
-        NSString *deeplick = _resultDict[@"deep_url"];
-        NSURL *deeplickUrl = [NSURL URLWithString:deeplick];
-        if (@available(iOS 10.0, *)) {
-            [[UIApplication sharedApplication] openURL:deeplickUrl options:@{} completionHandler:^(BOOL success) {
-                if (!success) {
-                    NSURL *url = [NSURL URLWithString:urlStr];
-                    if (@available(iOS 9.0, *)) {
-                        SFSafariViewController *safariVC = [[SFSafariViewController alloc] initWithURL:url];
-                        [self.controller showViewController:safariVC sender:nil];
-                        
-                    } else {
-                        YXWebViewController *web = [YXWebViewController new];
-                        web.URLString = urlStr;
-                        [self.controller presentViewController:web animated:YES completion:nil];
+        if(self.delegate && [self.delegate respondsToSelector:@selector(didClickedMutBannerAdWithIndex:UrlStr:)]){
+            [self.delegate didClickedMutBannerAdWithIndex:index UrlStr:urlStr];
+        }
+        
+        NSString * click_position = [NSString stringWithFormat:@"%@",_resultDict[@"click_position"]];
+        // 2.上报服务器
+        if (![[NetTool gettelModel] isEqualToString:@"iPhone Simulator"])
+        {
+            // 上报服务器
+            NSArray *viewS = _resultDict[@"click_notice_urls"];
+            if(viewS && ![viewS isKindOfClass:[NSNull class]]&& viewS.count){
+                if ([click_position isEqualToString:@"1"]) {
+                    
+                    if (_resultDict[@"width"]) {
+                        urlStr = [urlStr stringByReplacingOccurrencesOfString:@"__REQ_WIDTH__" withString:[NSString stringWithFormat:@"%@",_resultDict[@"width"]]];
                     }
+                    if (_resultDict[@"height"]) {
+                        urlStr = [urlStr stringByReplacingOccurrencesOfString:@"__REQ_HEIGHT__" withString:[NSString stringWithFormat:@"%@",_resultDict[@"height"]]];
+                    }
+                    urlStr = [urlStr stringByReplacingOccurrencesOfString:@"__WIDTH__" withString:widthStr];
+                    urlStr = [urlStr stringByReplacingOccurrencesOfString:@"__HEIGHT__" withString:heightStr];
+                    
+                    urlStr = [urlStr stringByReplacingOccurrencesOfString:@"__DOWN_X__" withString:x];
+                    urlStr = [urlStr stringByReplacingOccurrencesOfString:@"__DOWN_Y__" withString:y];
+                    urlStr = [urlStr stringByReplacingOccurrencesOfString:@"__UP_X__" withString:x];
+                    urlStr = [urlStr stringByReplacingOccurrencesOfString:@"__UP_Y__" withString:y];
                 }
-            }];
-        }else{
-            NSURL *url = [NSURL URLWithString:urlStr];
-            if (@available(iOS 9.0, *)) {
-                SFSafariViewController *safariVC = [[SFSafariViewController alloc] initWithURL:url];
-                [self.controller showViewController:safariVC sender:nil];
-                
-            } else {
-                YXWebViewController *web = [YXWebViewController new];
-                web.URLString = urlStr;
-                [self.controller presentViewController:web animated:YES completion:nil];
+                [Network groupNotifyToSerVer:viewS];
             }
         }
-        
-    } else if ([ac_type isEqualToString:@"7"]){
-        
-        NSString * miniPath = [NSString stringWithFormat:@"%@",_resultDict[@"miniPath"] ];
-        miniPath = [miniPath stringByReplacingOccurrencesOfString:@" " withString:@""];
-        NSString * miniProgramOriginId = [NSString stringWithFormat:@"%@",_resultDict[@"miniProgramOriginId"]];
-        
-        
-        WXLaunchMiniProgramReq *launchMiniProgramReq = [WXLaunchMiniProgramReq object];
-        launchMiniProgramReq.userName = miniProgramOriginId;  //拉起的小程序的username
-        launchMiniProgramReq.path = miniPath;    //拉起小程序页面的可带参路径，不填默认拉起小程序首页
-        launchMiniProgramReq.miniProgramType = WXMiniProgramTypeRelease; //拉起小程序的类型
-        
-        BOOL installWe = [WXApi isWXAppInstalled];
-        if (installWe) {
-            [WXApi sendReq:launchMiniProgramReq];
-        }else{
-            NSLog(@"未安装微信");
+    } else {
+        if(self.delegate && [self.delegate respondsToSelector:@selector(didClickedMutBannerAdWithIndex:UrlStr:)]){
+            [self.delegate didClickedMutBannerAdWithIndex:index UrlStr:@""];
         }
-        
-        [Network notifyToServer:nil serverUrl:urlStr completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
-            if(connectionError){
-                NSLog(@"#####%@\error",[connectionError debugDescription]);
-            }else{
-                NSDictionary *json =  [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
-                if (json) {
-                    NSLog(@"%@",json);
-                }
-            }
-        }];
-    }else{
-        if(urlStr && ![urlStr isEqualToString:@""]){
-            YXWebViewController *web = [YXWebViewController new];
-            web.URLString = urlStr;
-            [self.controller presentViewController:web animated:YES completion:nil];
-        }
-    }
-    
-    // 2.上报服务器
-    if (![[NetTool gettelModel] isEqualToString:@"iPhone Simulator"])
-    {
-        // 上报服务器
-        NSArray *viewS = _resultDict[@"click_notice_urls"];
-        if ([click_position isEqualToString:@"1"]) {
-            
-            if (_resultDict[@"width"]) {
-                urlStr = [urlStr stringByReplacingOccurrencesOfString:@"__REQ_WIDTH__" withString:[NSString stringWithFormat:@"%@",_resultDict[@"width"]]];
-            }
-            if (_resultDict[@"height"]) {
-                urlStr = [urlStr stringByReplacingOccurrencesOfString:@"__REQHEIGHT__" withString:[NSString stringWithFormat:@"%@",_resultDict[@"height"]]];
-            }
-            urlStr = [urlStr stringByReplacingOccurrencesOfString:@"__WIDTH__" withString:widthStr];
-            urlStr = [urlStr stringByReplacingOccurrencesOfString:@"__HEIGHT__" withString:heightStr];
-            
-            urlStr = [urlStr stringByReplacingOccurrencesOfString:@"__DOWN_X__" withString:x];
-            urlStr = [urlStr stringByReplacingOccurrencesOfString:@"__DOWN_Y__" withString:y];
-            urlStr = [urlStr stringByReplacingOccurrencesOfString:@"__UP_X__" withString:x];
-            urlStr = [urlStr stringByReplacingOccurrencesOfString:@"__UP_Y__" withString:y];
-        }
-        [Network groupNotifyToSerVer:viewS];
-    }
-    
-    if(self.delegate && [self.delegate respondsToSelector:@selector(didClickedMutBannerAdWithIndex:)]){
-        [self.delegate didClickedMutBannerAdWithIndex:index];
+        [self ViewClickWithDict:_resultDict Width:widthStr Height:heightStr X:x Y:y Controller:self.controller];
     }
 }
 #pragma mark 失败
@@ -418,11 +335,12 @@
 #pragma mark 请求配置
 - (void)requestADSourceFromNet
 {
+    WEAK(weakSelf);
     [Network requestADSourceFromMediaId:self.mediaId adCount:self.adCount imgWidth:_width imgHeight:_height success:^(NSDictionary *dataDict) {
-        self.netAdDict = dataDict;
-        NSString *adCount = [NSString stringWithFormat:@"%@",self.netAdDict[@"adCount"]];
-        NSArray *adInfosArr = self.netAdDict[@"adInfos"];
-        self.adInfoArr = adInfosArr;
+        weakSelf.netAdDict = dataDict;
+        NSString *adCount = [NSString stringWithFormat:@"%@",weakSelf.netAdDict[@"adCount"]];
+        NSArray *adInfosArr = weakSelf.netAdDict[@"adInfos"];
+        weakSelf.adInfoArr = adInfosArr;
         if ((adInfosArr.count == adCount.integerValue) && (adCount.integerValue > 0)) {
             for (NSDictionary *dict in adInfosArr) {
                 YXFeedAdData *backdata = [YXFeedAdData new];
@@ -433,12 +351,12 @@
                 backdata.adID = (NSInteger)dict[@"adid"];
                 backdata.adType = 1;
                 backdata.data = dict;
-                [self.feedArray addObject:backdata];
+                [weakSelf.feedArray addObject:backdata];
             }
-            [self reloadDataScrollerView];
-            if(self.delegate && [self.delegate respondsToSelector:@selector(didLoadMutBannerAdView)]){
-                [self.tmpImageView removeFromSuperview];
-                [self.delegate didLoadMutBannerAdView];
+            [weakSelf reloadDataScrollerView];
+            if(weakSelf.delegate && [weakSelf.delegate respondsToSelector:@selector(didLoadMutBannerAdView)]){
+                [weakSelf.tmpImageView removeFromSuperview];
+                [weakSelf.delegate didLoadMutBannerAdView];
             }
             return ;
         } else {
@@ -461,13 +379,13 @@
             
             NSArray *advertiser = dataDict[@"advertiser"];
             if(advertiser && ![advertiser isKindOfClass:[NSNull class]] && advertiser.count > 0){
-                [self initIDSource];
+                [weakSelf initIDSource];
             } else {
-                [self initS2S];
+                [weakSelf initS2S];
             }
         }
     } fail:^(NSError *error) {
-        [self failedError:error];
+        [weakSelf failedError:error];
     }];
 }
 
@@ -699,8 +617,8 @@
 - (void)nativeAdDidClick:(BUNativeAd *)nativeAd withView:(UIView *)view
 {
     [Network upOutSideToServer:ADCLICK isError:NO code:nil msg:nil currentAD:self.currentAdDict gdtAD:self.netAdDict mediaID:self.mediaId];
-    if(self.delegate && [self.delegate respondsToSelector:@selector(didClickedMutBannerAdWithIndex:)]){
-        [self.delegate didClickedMutBannerAdWithIndex:view.tag];
+    if(self.delegate && [self.delegate respondsToSelector:@selector(didClickedMutBannerAdWithIndex:UrlStr:)]){
+        [self.delegate didClickedMutBannerAdWithIndex:view.tag UrlStr:@""];
     }
 }
 
@@ -774,7 +692,7 @@
         switch (feedData.adType) {
             case 1:
             {
-                _resultDict = feedData.data;
+                self.resultDict = feedData.data;
                 UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapImg:)];
                 [view addGestureRecognizer:tap];
             }
@@ -794,7 +712,7 @@
                 break;
             case 4:
             {
-                _resultDict = feedData.data;
+                self.resultDict = feedData.data;
                 UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapImg:)];
                 [view addGestureRecognizer:tap];
                 
@@ -826,15 +744,49 @@
             }
         }
     }
+    [self registerAdViewForInteraction:cycleScrollView didScrollToIndex:index];
 }
 - (void)viewTapped:(UITapGestureRecognizer *)recognizer
 {
-    //渠道暂无广点通广告
-    YXFeedAdData *feedData = self.feedArray[recognizer.view.tag];
-    [self.nativeAd clickAd:feedData.data];
-    [Network upOutSideToServer:ADCLICK isError:NO code:nil msg:nil currentAD:self.currentAdDict gdtAD:self.netAdDict mediaID:self.mediaId];
-    if(self.delegate && [self.delegate respondsToSelector:@selector(didClickedMutBannerAdWithIndex:)]){
-        [self.delegate didClickedMutBannerAdWithIndex:recognizer.view.tag];
+    if (self.feedArray.count>recognizer.view.tag) {
+        //渠道暂无广点通广告
+        YXFeedAdData *feedData = self.feedArray[recognizer.view.tag];
+        [self.nativeAd clickAd:feedData.data];
+        [Network upOutSideToServer:ADCLICK isError:NO code:nil msg:nil currentAD:self.currentAdDict gdtAD:self.netAdDict mediaID:self.mediaId];
+        if(self.delegate && [self.delegate respondsToSelector:@selector(didClickedMutBannerAdWithIndex:UrlStr:)]){
+            [self.delegate didClickedMutBannerAdWithIndex:recognizer.view.tag UrlStr:@""];
+        }
+    }
+}
+/** 如果你需要自定义cell样式，请在实现此代理方法返回你的自定义cell的Nib。 */
+- (UINib *)customCollectionViewCellNibForCycleScrollView:(YXBannerScrollView *)view{
+    UINib *nib = [UINib nibWithNibName:@"XibAndPng.bundle/CustomCollectionViewCell" bundle:nil];
+    return nib;
+}
+
+/** 如果你自定义了cell样式，请在实现此代理方法为你的cell填充数据以及其它一系列设置 */
+- (void)setupCustomCell:(UICollectionViewCell *)cell forIndex:(NSInteger)index cycleScrollView:(YXBannerScrollView *)view{
+    if (self.feedArray.count>index) {
+        YXFeedAdData *feedData = self.feedArray[index];
+        CustomCollectionViewCell *customCell = (CustomCollectionViewCell *)cell;
+        //    customCell.frame = CGRectMake(0, 0, _width, _height);
+        if (self.isOnlyImage) {
+            customCell.currentImageView.hidden = NO;
+            [NetTool setImage:customCell.currentImageView WithURLStr:feedData.imageUrl placeholderImage:self.placeholderImage?self.placeholderImage:nil];
+        } else {
+            if (feedData.adContent.length<=0 || feedData.adContent==nil) {
+                customCell.currentImageView.hidden = NO;
+                [NetTool setImage:customCell.currentImageView WithURLStr:feedData.imageUrl placeholderImage:self.placeholderImage?self.placeholderImage:nil];
+            } else {
+                customCell.currentImageView.hidden = YES;
+                customCell.AppName.text = feedData.adTitle;
+                customCell.AppDesc.text = feedData.adContent;
+                [NetTool setImage:customCell.bigImageView WithURLStr:feedData.imageUrl placeholderImage:self.placeholderImage?self.placeholderImage:nil];
+            }
+        }
+    }
+    if (self.adCount==1) {
+        [self registerAdViewForInteraction:cell didScrollToIndex:index];
     }
 }
 

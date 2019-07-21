@@ -18,10 +18,10 @@
 #import <CoreTelephony/CTTelephonyNetworkInfo.h>
 #import<CoreTelephony/CTCarrier.h>
 #import <sys/utsname.h>
-#import "GuOpenUDID.h"
 #import <SystemConfiguration/SystemConfiguration.h>
 #include "netdb.h"
-
+#import <CommonCrypto/CommonDigest.h>
+#import "NSString+SFAES.h"
 #import <CoreTelephony/CTTelephonyNetworkInfo.h>
 #import <CoreTelephony/CTCarrier.h>
 
@@ -29,7 +29,12 @@
 netType nettype = notReach;
 NSString *_gulatitude;
 NSString *_gulongitude;
-+(NSString *) getrequestInfo:(NSString *)key width:(NSString *)width height:(NSString *)height macID:(NSString *)macID uid:(NSString*)uid
++(NSString *) getrequestInfo:(NSString *)key
+                       width:(NSString *)width
+                      height:(NSString *)height
+                       macID:(NSString *)macID
+                         uid:(NSString *)uid
+                     adCount:(NSInteger )adCount
 {
     CGFloat c_w = [UIScreen mainScreen].bounds.size.width;
     CGFloat c_h = [UIScreen mainScreen].bounds.size.height;
@@ -40,7 +45,7 @@ NSString *_gulongitude;
         orientation = [[UIApplication sharedApplication] statusBarOrientation];
         
     });
-    
+   
     if(UIInterfaceOrientationIsLandscape(orientation)){
         orientationStr = @"2";
         //横屏
@@ -52,68 +57,38 @@ NSString *_gulongitude;
     [self getNetTyepe];
     int netNumber = nettype;//网络标示
     NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];
-    //    CFShow((__bridge CFTypeRef)(infoDictionary));
     // app名称
     NSString *app_Name = [infoDictionary objectForKey:@"CFBundleDisplayName"];
+
+    UInt64 recordTime = [[NSDate date] timeIntervalSince1970]*1000;
+    NSString *timeLocal = [[NSString alloc] initWithFormat:@"%llu", recordTime];
     
     NSMutableDictionary *dic = [NSMutableDictionary dictionary];
-    [dic setValue:@"3.0" forKey:@"version"] ;
-    [dic setValue:@"2" forKey:@"c_type"] ;
-    
-    [dic setValue:key forKey:@"mid"];
-    
-    [dic setValue:uid forKey:@"uid"];
-    
-    [dic setValue:@"1" forKey:@"adCount"] ;
-    [dic setValue:@"0" forKey:@"support_https"] ;
-    [dic setValue:@"0" forKey:@"support_full_screen_interstitial"] ;
-    
-    NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
-    NSString *adStr = [userDefault objectForKey:@"AD_ID"];
-    if (adStr) {
-        [dic setValue:adStr forKey: @"last_ad_ids"];
-    }
-    
-    [dic setValue:@"IOS" forKey:@"os"];
-    [dic setValue:[self getMac] forKey:@"mac"];
-    [dic setValue:[self getOS] forKey:@"osv"];
-    [dic setValue:[NSString stringWithFormat:@"%d",netNumber] forKey:@"networktype"];
-    
-    [dic setValue:macID forKey:@"remoteip"];
-    
-    //    NSLog(@"MAc地址------------%@", macID);
-    [dic setValue:@"apple" forKey: @"make"];
-    [dic setValue:@"apple" forKey:@"brand"];
-    [dic setValue:[self gettelModel] forKey:@"model"];
-    [dic setValue:@"1" forKey:@"devicetype"];
-    
-    [dic setValue:[self getIDFA] forKey:@"idfa"];
-    
-    [dic setValue:[self getDPI] forKey:@"dpi"];
-    
-    
+    NSString * adCountStr = [NSString stringWithFormat:@"%ld",adCount];
+    [dic setValue:adCountStr                             forKey:@"adCount"];
+    [dic setValue:@"4.0"                                 forKey:@"version"] ;
+    [dic setValue:@"2"                                   forKey:@"c_type"] ;
+    [dic setValue:key                                    forKey:@"mid"];
+    [dic setValue:uid                                    forKey:@"uid"];
+    [dic setValue:@"zh"                                  forKey:@"language"] ;
+    [dic setValue:@"IOS"                                 forKey:@"os"];
+    [dic setValue:[self getMac]                          forKey:@"mac"];
+    [dic setValue:[self getOS]                           forKey:@"osv"];
+    [dic setValue:@(netNumber)                           forKey:@"networktype"];
+    [dic setValue:@"apple"                               forKey:@"make"];
+    [dic setValue:@"apple"                               forKey:@"brand"];
+    [dic setValue:[self gettelModel]                     forKey:@"model"];
+    [dic setValue:@"1"                                   forKey:@"devicetype"];//1 手机  2平板
+    [dic setValue:[self getIDFA]                         forKey:@"idfa"];
+    [dic setValue:[self getDPI]                          forKey:@"dpi"];
     [dic setValue:[NSString stringWithFormat:@"%.f",c_w] forKey:@"width"];
     [dic setValue:[NSString stringWithFormat:@"%.f",c_h] forKey:@"height"];
-    [dic setValue:[self getPackageName] forKey:@"appid"];
-    [dic setValue:app_Name forKey:@"appname"];
-    
-    //    [dic setValue:@"1" forKey:@"geo_type"];
-    //    [dic setValue:[self getlatitude] forKey:@"geo_latitude"];
-    //    [dic setValue:[self getlongitude] forKey:@"geo_longitude"];
-    [dic setValue:orientationStr forKey:@"orientation"];
-    
-    [dic setValue:@{ @"width": width,@"height": height } forKey:@"image"];
-    
-    [dic setValue:@"4" forKey:@"postion"];
-    
-    [dic setValue:@"" forKey:@"imei"];
-    
-    [dic setValue:@"" forKey:@"imsi"];
-    
-    [dic setValue:@"" forKey:@"androidid"];
-    
+    [dic setValue:[self getPackageName]                  forKey:@"appid"];
+    [dic setValue:app_Name                               forKey:@"appname"];
+    [dic setValue:orientationStr                         forKey:@"orientation"];
+    [dic setValue:@{@"width": width,@"height": height}   forKey:@"image"];
+    [dic setValue:timeLocal                              forKey:@"ts"];//时间戳
     NSString *yun = [self getYunYingShang];
-    
     if ([yun isEqualToString:@"中国电信"]) {
         [dic setValue:@"2" forKey:@"operator"];
     }else if ([yun isEqualToString:@"中国移动"]) {
@@ -125,18 +100,15 @@ NSString *_gulongitude;
     }else{
         [dic setValue:@"4" forKey:@"operator"];
     }
-    
     //    NSJSONSerialization 组json字符串
-    NSData * postDatas = [NSJSONSerialization dataWithJSONObject:dic options:NSJSONWritingPrettyPrinted error:nil];
-    NSString *str = [[NSString alloc] initWithData:postDatas encoding:NSUTF8StringEncoding];
-    NSString *innitStr = str ;
-    return innitStr;
+    NSString *jsonStr = [NSString sf_jsonStringWithJson:dic];
+    return jsonStr;
 }
-
+ 
 
 +(NSString *)deviceWANIPAdress{
     
-    //    NSLog(@"开始请求MAc地址------------%@", [NSThread currentThread]);
+//    NSLog(@"开始请求MAc地址------------%@", [NSThread currentThread]);
     NSError *error;
     NSURL *ipURL = [NSURL URLWithString:@"http://pv.sohu.com/cityjson?ie=utf-8"];
     NSMutableString *ip = [NSMutableString stringWithContentsOfURL:ipURL encoding:NSUTF8StringEncoding error:&error];
@@ -202,6 +174,26 @@ NSString *_gulongitude;
     
     if ([platform isEqualToString:@"iPhone9,2"]) return @"iPhone 7 Plus";
     
+    if ([platform isEqualToString:@"iPhone10,1"]) return @"iPhone 8";
+    
+    if ([platform isEqualToString:@"iPhone10,4"]) return @"iPhone 8";
+    
+    if ([platform isEqualToString:@"iPhone10,2"]) return @"iPhone 8 Plus";
+    
+    if ([platform isEqualToString:@"iPhone10,5"]) return @"iPhone 8 Plus";
+    
+    if ([platform isEqualToString:@"iPhone10,3"]) return @"iPhone X";
+    
+    if ([platform isEqualToString:@"iPhone10,6"]) return @"iPhone X";
+    
+    if([platform isEqualToString:@"iPhone11,2"]) return @"iPhone XS";
+    
+    if([platform isEqualToString:@"iPhone11,4"] || [platform isEqualToString:@"iPhone11,6"]) return @"iPhone XS Max";
+    
+    if([platform isEqualToString:@"iPhone11,8"]) return @"iPhone XR";
+    
+    //--------------------ipad-------------------------
+    
     if ([platform isEqualToString:@"iPod1,1"])   return @"iPod Touch 1G";
     
     if ([platform isEqualToString:@"iPod2,1"])   return @"iPod Touch 2G";
@@ -211,6 +203,8 @@ NSString *_gulongitude;
     if ([platform isEqualToString:@"iPod4,1"])   return @"iPod Touch 4G";
     
     if ([platform isEqualToString:@"iPod5,1"])   return @"iPod Touch 5G";
+    
+    if ([platform isEqualToString:@"iPod7,1"])   return @"iPod Touch 6G";
     
     if ([platform isEqualToString:@"iPad1,1"])   return @"iPad 1G";
     
@@ -264,19 +258,19 @@ NSString *_gulongitude;
 +(netType) getNetTyepe
 {
     YXReachability *ablity = [YXReachability YXReachabilityWithHostName:@"www.baidu.com"];
-    NetworkStatus currentStatus = ablity.currentYXReachabilityStatus;
+    NetworkStatus currentStatus = ablity.currentYXReachabilityStatus; 
     
     if (currentStatus == NotReachable) {
-        // 没有网络的更多操作
-        // 实现类似接到电话效果   self.window.frame = CGRectMake(0, 40, __width, __height-40);
+          // 没有网络的更多操作
+ // 实现类似接到电话效果   self.window.frame = CGRectMake(0, 40, __width, __height-40);
         nettype = notReach;
     } else if (currentStatus == ReachableViaWiFi) {
         nettype = wifi;
-        //         NSLog(@"Wifi");
-    } else {
-        nettype = WWAN;
-        //          NSLog(@"3G/4G/5G");
-    }
+//         NSLog(@"Wifi");
+      } else {
+          nettype = WWAN;
+//          NSLog(@"3G/4G/5G");
+      }
     
     [self setNetType:nettype];
     return nettype;
@@ -304,8 +298,6 @@ NSString *_gulongitude;
 + (NSString *)getOpenUDID
 {
     NSString *openUDIDStr = [NSUUID UUID].UUIDString;
-    //    NSString *openUDIDStr = [GuOpenUDID value];
-    
     return openUDIDStr;
 }
 
@@ -376,7 +368,7 @@ NSString *_gulongitude;
     free(machine);
     return platform;
 }
-//网络类型
+//设备型号
 + (NSString *)gettelModel
 {
     int mib[2];
@@ -392,87 +384,6 @@ NSString *_gulongitude;
     NSString *platform = [NSString stringWithCString:machine encoding:NSASCIIStringEncoding];
     free(machine);
     
-    //    if ([platform isEqualToString:@"iPhone1,1"]) return @"iPhone 2G";
-    //    if ([platform isEqualToString:@"iPhone1,2"]) return @"iPhone 3G";
-    //    if ([platform isEqualToString:@"iPhone2,1"]) return @"iPhone 3GS";
-    //
-    //    if ([platform isEqualToString:@"iPhone3,1"]) return @"iPhone 4";
-    //    if ([platform isEqualToString:@"iPhone3,2"]) return @"iPhone 4";
-    //    if ([platform isEqualToString:@"iPhone3,3"]) return @"iPhone 4";
-    //    if ([platform isEqualToString:@"iPhone4,1"]) return @"iPhone 4S";
-    //
-    //    if ([platform isEqualToString:@"iPhone5,1"]) return @"iPhone 5";
-    //    if ([platform isEqualToString:@"iPhone5,2"]) return @"iPhone 5";
-    //
-    //    if ([platform isEqualToString:@"iPhone5,3"]) return @"iPhone 5c";
-    //    if ([platform isEqualToString:@"iPhone5,4"]) return @"iPhone 5c";
-    //
-    //    if ([platform isEqualToString:@"iPhone6,1"]) return @"iPhone 5S";
-    //    if ([platform isEqualToString:@"iPhone6,2"]) return @"iPhone 5S";
-    //
-    //    if ([platform isEqualToString:@"iPhone7,2"]) return @"iPhone 6";
-    //    if ([platform isEqualToString:@"iPhone7,1"]) return @"iPhone 6 Plus";
-    //
-    //    if ([platform isEqualToString:@"iPhone8,1"]) return @"iPhone 6S";
-    //    if ([platform isEqualToString:@"iPhone8,2"]) return @"iPhone 6S Plus";
-    //    if ([platform isEqualToString:@"iPhone8,4"]) return @"iPhone SE";
-    //    if ([platform isEqualToString:@"iPhone9,1"]||[platform isEqualToString:@"iPhone9,3"]) return @"iPhone 7";
-    //    if ([platform isEqualToString:@"iPhone9,2"]||[platform isEqualToString:@"iPhone9,4"]) return @"iPhone 7 Plus";
-    //    if ([platform isEqualToString:@"iPhone10,1"]||[platform isEqualToString:@"iPhone10,4"]) return @"iPhone 8";
-    //    if ([platform isEqualToString:@"iPhone10,2"]||[platform isEqualToString:@"iPhone10,5"]) return @"iPhone 8 Plus";
-    //    if ([platform isEqualToString:@"iPhone10,3"]||[platform isEqualToString:@"iPhone10,6"])   return @"iPhone X";
-    //
-    //    if ([platform isEqualToString:@"iPod1,1"])      return @"iPod Touch 1G";
-    //    if ([platform isEqualToString:@"iPod2,1"])      return @"iPod Touch 2G";
-    //    if ([platform isEqualToString:@"iPod3,1"])      return @"iPod Touch 3G";
-    //    if ([platform isEqualToString:@"iPod4,1"])      return @"iPod Touch 4G";
-    //    if ([platform isEqualToString:@"iPod5,1"])      return @"iPod Touch (5 Gen)";
-    //
-    //    if ([platform isEqualToString:@"iPad1,1"])      return @"iPad";
-    //    if ([platform isEqualToString:@"iPad1,2"])      return @"iPad 3G";
-    //    if ([platform isEqualToString:@"iPad2,1"])      return @"iPad 2 (WiFi)";
-    //    if ([platform isEqualToString:@"iPad2,2"])      return @"iPad 2";
-    //    if ([platform isEqualToString:@"iPad2,3"])      return @"iPad 2 (CDMA)";
-    //    if ([platform isEqualToString:@"iPad2,4"])      return @"iPad 2";
-    //    if ([platform isEqualToString:@"iPad2,5"])      return @"iPad Mini (WiFi)";
-    //    if ([platform isEqualToString:@"iPad2,6"])      return @"iPad Mini";
-    //    if ([platform isEqualToString:@"iPad2,7"])      return @"iPad Mini (GSM+CDMA)";
-    //    if ([platform isEqualToString:@"iPad3,1"])      return @"iPad 3 (WiFi)";
-    //    if ([platform isEqualToString:@"iPad3,2"])      return @"iPad 3 (GSM+CDMA)";
-    //    if ([platform isEqualToString:@"iPad3,3"])      return @"iPad 3";
-    //    if ([platform isEqualToString:@"iPad3,4"])      return @"iPad 4 (WiFi)";
-    //    if ([platform isEqualToString:@"iPad3,5"])      return @"iPad 4";
-    //    if ([platform isEqualToString:@"iPad3,6"])      return @"iPad 4 (GSM+CDMA)";
-    //    if ([platform isEqualToString:@"iPad4,1"])      return @"iPad Air (WiFi)";
-    //    if ([platform isEqualToString:@"iPad4,2"])      return @"iPad Air (Cellular)";
-    //    if ([platform isEqualToString:@"iPad4,4"])      return @"iPad Mini 2 (WiFi)";
-    //    if ([platform isEqualToString:@"iPad4,5"])      return @"iPad Mini 2 (Cellular)";
-    //    if ([platform isEqualToString:@"iPad4,6"])      return @"iPad Mini 2";
-    //    if ([platform isEqualToString:@"iPad4,7"])      return @"iPad Mini 3";
-    //    if ([platform isEqualToString:@"iPad4,8"])      return @"iPad Mini 3";
-    //    if ([platform isEqualToString:@"iPad4,9"])      return @"iPad Mini 3";
-    //    if ([platform isEqualToString:@"iPad5,1"])      return @"iPad Mini 4 (WiFi)";
-    //    if ([platform isEqualToString:@"iPad5,2"])      return @"iPad Mini 4 (LTE)";
-    //    if ([platform isEqualToString:@"iPad5,3"])      return @"iPad Air 2";
-    //    if ([platform isEqualToString:@"iPad5,4"])      return @"iPad Air 2";
-    //    if ([platform isEqualToString:@"iPad6,3"])      return @"iPad Pro 9.7";
-    //    if ([platform isEqualToString:@"iPad6,4"])      return @"iPad Pro 9.7";
-    //    if ([platform isEqualToString:@"iPad6,7"])      return @"iPad Pro 12.9";
-    //    if ([platform isEqualToString:@"iPad6,8"])      return @"iPad Pro 12.9";
-    //    if ([platform isEqualToString:@"iPad6,11"])     return @"iPad 5 (WiFi)";
-    //    if ([platform isEqualToString:@"iPad6,12"])     return @"iPad 5 (Cellular)";
-    //    if ([platform isEqualToString:@"iPad7,1"])      return @"iPad Pro 12.9 inch 2nd gen (WiFi)";
-    //    if ([platform isEqualToString:@"iPad7,2"])      return @"iPad Pro 12.9 inch 2nd gen (Cellular)";
-    //    if ([platform isEqualToString:@"iPad7,3"])      return @"iPad Pro 10.5 inch (WiFi)";
-    //    if ([platform isEqualToString:@"iPad7,4"])      return @"iPad Pro 10.5 inch (Cellular)";
-    //
-    //    if ([platform isEqualToString:@"AppleTV2,1"])    return @"Apple TV 2";
-    //    if ([platform isEqualToString:@"AppleTV3,1"])    return @"Apple TV 3";
-    //    if ([platform isEqualToString:@"AppleTV3,2"])    return @"Apple TV 3";
-    //    if ([platform isEqualToString:@"AppleTV5,3"])    return @"Apple TV 4";
-    //
-    //    if ([platform isEqualToString:@"i386"])      return @"iPhone Simulator";
-    //    if ([platform isEqualToString:@"x86_64"])    return @"iPhone Simulator";
     return platform;
 }
 + (NSString*)getDPI
@@ -561,7 +472,7 @@ NSString *_gulongitude;
     NSString *mobile;
     //先判断有没有SIM卡，如果没有则不获取本机运营商
     if (!carrier.isoCountryCode) {
-        //        NSLog(@"没有SIM卡");
+//        NSLog(@"没有SIM卡");
         mobile = @"无运营商";
         
     }else{
@@ -706,15 +617,165 @@ NSString *_gulongitude;
     
     return vc;
 }
-+ (void)setImage:(UIImageView*)imageView WithURL:(NSURL *)url placeholderImage:(UIImage *)placeholder {
-    NSURLSession *shareSessin = [NSURLSession sharedSession];
-    NSMutableURLRequest *urlRequest = [NSMutableURLRequest requestWithURL:url];
-    NSURLSessionDataTask *dataTask = [shareSessin dataTaskWithRequest:urlRequest completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
-        UIImage *image = [[UIImage alloc] initWithData:data];
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [imageView setImage:image];
-        });
-    }];
-    [dataTask resume];
++ (void)setImage:(UIImageView*)imageView WithURLStr:(NSString *)urlStr placeholderImage:(UIImage *)placeholder {
+    imageView.image = placeholder;
+    NSString *md5 = [self MD5WithUrl:urlStr];
+    NSString *cachePath = [self cachePathWithMD5:md5];
+    BOOL isExist = [[NSFileManager defaultManager] fileExistsAtPath:cachePath];
+    if (isExist) {
+        NSData *data = [NSData dataWithContentsOfFile:cachePath];
+        UIImage *image = [UIImage imageWithData:data];
+        imageView.image = image;
+    }else{
+        [self downloadImageWithUrl:urlStr Index:0 Finish:^(UIImage *image,NSInteger index) {
+            if (image) {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    imageView.image = image;
+                });
+                
+                dispatch_async(dispatch_get_global_queue(0, 0), ^{
+                    NSData *data = UIImagePNGRepresentation(image);
+                    [data writeToFile:cachePath atomically:YES];
+                });
+            }
+        } Failure:^(NSError *error) {
+            NSLog(@"error:%@",error);
+        }];
+    }
 }
++ (NSString *)cachePathWithMD5:(NSString *)md5{
+    NSString *paths = [NSHomeDirectory() stringByAppendingPathComponent:@"Library/Caches/Image"];
+    [self imgFileDataLocationSettingWithPath:paths];
+    NSString *pathStr=[NSString stringWithFormat:@"%@/%@",paths,md5];
+    //    NSLog(@"沙盒路径：%@",pathStr);
+    return pathStr;
+}
+//处理缓存路径
++(void)imgFileDataLocationSettingWithPath:(NSString *)path
+{
+    NSFileManager *fileManager=[NSFileManager defaultManager];
+    if(![fileManager fileExistsAtPath:path]){
+        [fileManager createDirectoryAtPath:path withIntermediateDirectories:YES attributes:nil error:nil];
+    }
+}
+
++ (NSString *)MD5WithUrl:(NSString *)urlStr{
+    const char *original_str = [urlStr UTF8String];
+    unsigned char result[CC_MD5_DIGEST_LENGTH];
+    CC_MD5(original_str, (CC_LONG)strlen(original_str), result);
+    NSMutableString *hash = [NSMutableString string];
+    for (int i = 0; i < CC_MD5_DIGEST_LENGTH; i++) {
+        [hash appendFormat:@"%02X",result[i]];
+    }
+    return hash;
+}
++ (void)downloadImageWithUrl:(NSString *)urlStr Index:(NSInteger)imgIndex Finish:(downloadFinish)finish Failure:(downloadFailure)failure{
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        NSURL *url = [NSURL URLWithString:urlStr];
+        NSURLRequest *request = [NSURLRequest requestWithURL:url cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:15.0];
+        
+        NSURLSessionConfiguration *sessionConfig = [NSURLSessionConfiguration defaultSessionConfiguration];
+        NSURLSession *session = [NSURLSession sessionWithConfiguration:sessionConfig];
+        [[session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+            //            NSLog(@"data:%@ response :%@",data,response);
+            if (data) {
+                UIImage *image = [UIImage imageWithData:data];
+                finish(image,imgIndex);
+            }
+            if (error) {
+                failure(error);
+            }
+        }] resume];
+        
+    });
+}
+//清理沙盒中的图片缓存
++ (void)clearNetImageChace
+{
+    NSString *paths = [NSHomeDirectory() stringByAppendingPathComponent:@"Library/Caches/Image"];
+    
+    NSFileManager *fileManager=[NSFileManager defaultManager];
+    
+    if([fileManager fileExistsAtPath:paths]){
+        [fileManager removeItemAtPath:paths error:nil];
+    }
+    
+    [fileManager createDirectoryAtPath:paths withIntermediateDirectories:YES attributes:nil error:nil];
+}
+// 判断View是否显示在屏幕上
++ (BOOL)isInScreenView:(UIView*)view
+{
+    if (self == nil) {
+        
+        return FALSE;
+        
+    }
+    CGRect screenRect = [UIScreen mainScreen].bounds;
+    // 转换view对应window的Rect
+    CGRect rect = [view convertRect:view.frame fromView:nil];
+    if (CGRectIsEmpty(rect) || CGRectIsNull(rect)) {
+        
+        return FALSE;
+        
+    }
+    // 若view 隐藏
+    if (view.hidden) {
+        
+        return FALSE;
+        
+    }
+    // 若没有superview
+    if (view.superview == nil) {
+        
+        return FALSE;
+        
+    }
+    // 若size为CGrectZero
+    if (CGSizeEqualToSize(rect.size, CGSizeZero)) {
+        
+        return FALSE;
+        
+    }
+    // 获取 该view与window 交叉的 Rect
+    CGRect intersectionRect = CGRectIntersection(rect, screenRect);
+    if (CGRectIsEmpty(intersectionRect) || CGRectIsNull(intersectionRect)) {
+        
+        return FALSE;
+        
+    }
+    return TRUE;
+}
+// 判断Cell是否显示在屏幕上
++ (BOOL)isInScreenCell:(UITableViewCell*)cell
+{
+    if (cell == nil) { 
+        return NO;
+    }
+    UITableView * tableView = (UITableView*)cell.superview;
+    CGFloat cellY = cell.frame.origin.y;
+    CGFloat cellH = cell.frame.size.height;
+    CGFloat tableHeight = tableView.frame.size.height;
+    CGFloat newY = tableView.contentOffset.y;
+    newY = newY + tableHeight;
+    if (newY > cellY + cellH) {
+        return YES;
+    }else{
+        return NO;
+    }
+}
++ (NSDictionary *)dictionaryWithJsonString:(NSString *)jsonString {
+    
+    if (jsonString == nil) {
+        return nil;
+    }
+    NSData *jsonData = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
+    NSError *err;
+    NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers error:&err];
+    if(err) {
+        //        NSLog(@"json解析失败：%@",err);
+        return nil;
+    }
+    return dic;
+}
+
 @end

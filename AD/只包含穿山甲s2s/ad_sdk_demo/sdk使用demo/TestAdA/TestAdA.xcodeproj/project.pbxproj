@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8202E77A21A5221E00586F04 /* BUAdSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 8202E77821A5221E00586F04 /* BUAdSDK.bundle */; };
+		8202E77B21A5221E00586F04 /* BUAdSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8202E77921A5221E00586F04 /* BUAdSDK.framework */; };
+		8214500E21B7B5EE00081AED /* YXScrollerBannerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8214500D21B7B5EE00081AED /* YXScrollerBannerViewController.m */; };
 		82165733209FEB27003A9AC2 /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 82165732209FEB27003A9AC2 /* libxml2.tbd */; };
 		82165735209FEB2D003A9AC2 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82165734209FEB2D003A9AC2 /* WebKit.framework */; };
 		82165737209FEB41003A9AC2 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82165736209FEB41003A9AC2 /* Security.framework */; };
@@ -14,28 +17,20 @@
 		8216573B209FEB60003A9AC2 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8216573A209FEB60003A9AC2 /* SystemConfiguration.framework */; };
 		8216573D209FEB72003A9AC2 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8216573C209FEB72003A9AC2 /* QuartzCore.framework */; };
 		8216573F209FEB81003A9AC2 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8216573E209FEB81003A9AC2 /* CoreLocation.framework */; };
-		821A52EE21A3B6F6003EED94 /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 821A52ED21A3B6F6003EED94 /* README.txt */; };
 		822D8DFE20CA79D600F018F8 /* YXLaunchAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 822D8DFB20CA79D600F018F8 /* YXLaunchAds.framework */; };
 		82367AA6217D729500B4FB4E /* YXFeedAdRegisterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82367AA1217D729400B4FB4E /* YXFeedAdRegisterView.xib */; };
 		82367AA7217D729500B4FB4E /* YXFeedAdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82367AA2217D729500B4FB4E /* YXFeedAdViewController.m */; };
 		82367AA8217D729500B4FB4E /* YXFeedAdRegisterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 82367AA4217D729500B4FB4E /* YXFeedAdRegisterView.m */; };
-		8238B11F217F045A00346C23 /* YXFeedListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8238B11E217F045A00346C23 /* YXFeedListViewController.m */; };
 		8238B123217F04C300346C23 /* YXFeedAdTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8238B120217F04C300346C23 /* YXFeedAdTableViewCell.xib */; };
 		8238B124217F04C300346C23 /* YXFeedAdTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8238B122217F04C300346C23 /* YXFeedAdTableViewCell.m */; };
 		8238B127217F05E600346C23 /* YXHalfLaunchScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8238B125217F05E600346C23 /* YXHalfLaunchScreenViewController.m */; };
 		8238B12A217F097000346C23 /* YXIconViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8238B128217F097000346C23 /* YXIconViewController.m */; };
-		8265382D21A6B4FC005D413B /* BUAdSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 8265382B21A6B4FC005D413B /* BUAdSDK.bundle */; };
-		8265382E21A6B4FC005D413B /* BUAdSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8265382C21A6B4FC005D413B /* BUAdSDK.framework */; };
 		8266993A21959ADB00B1EC3E /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8266993921959ADB00B1EC3E /* libWeChatSDK.a */; };
 		8266993C21959AFF00B1EC3E /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 8266993B21959AFF00B1EC3E /* libc++.tbd */; };
 		8266993E21959B0700B1EC3E /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8266993D21959B0700B1EC3E /* CFNetwork.framework */; };
 		8266994021959B1A00B1EC3E /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 8266993F21959B1A00B1EC3E /* libsqlite3.0.tbd */; };
 		826ADCE3216C4C50005F0577 /* YXBannerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 826ADCDE216C4C50005F0577 /* YXBannerViewController.m */; };
 		826ADCE5216C4C50005F0577 /* YXLaunchScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 826ADCE0216C4C50005F0577 /* YXLaunchScreenViewController.m */; };
-		826DFBF4219A75F10059CFA8 /* PGIndexBannerSubiew.m in Sources */ = {isa = PBXBuildFile; fileRef = 826DFBEE219A75F10059CFA8 /* PGIndexBannerSubiew.m */; };
-		826DFBF5219A75F10059CFA8 /* NewPagedFlowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 826DFBEF219A75F10059CFA8 /* NewPagedFlowView.m */; };
-		826DFBF8219A77220059CFA8 /* YXFeedNativeBannerViewControllerDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = 826DFBF7219A77220059CFA8 /* YXFeedNativeBannerViewControllerDemo.m */; };
-		826DFBFB219A7DBD0059CFA8 /* PGCustomBannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 826DFBF9219A7DBD0059CFA8 /* PGCustomBannerView.m */; };
 		8270C79320661EAA005C8545 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8270C79220661EAA005C8545 /* AppDelegate.m */; };
 		8270C79620661EAA005C8545 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8270C79520661EAA005C8545 /* ViewController.m */; };
 		8270C79920661EAA005C8545 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8270C79720661EAA005C8545 /* Main.storyboard */; };
@@ -47,6 +42,7 @@
 		8270C802206625F4005C8545 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8270C801206625F3005C8545 /* AdSupport.framework */; };
 		8270C80420662600005C8545 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8270C80320662600005C8545 /* StoreKit.framework */; };
 		8270C8062066261F005C8545 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 8270C8052066261F005C8545 /* libz.tbd */; };
+		E774199A223FA3FD00B2B5ED /* libresolv.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E7741999223FA3FD00B2B5ED /* libresolv.9.tbd */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +76,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		8202E77821A5221E00586F04 /* BUAdSDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = BUAdSDK.bundle; sourceTree = "<group>"; };
+		8202E77921A5221E00586F04 /* BUAdSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BUAdSDK.framework; sourceTree = "<group>"; };
+		8214500C21B7B5EE00081AED /* YXScrollerBannerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXScrollerBannerViewController.h; sourceTree = "<group>"; };
+		8214500D21B7B5EE00081AED /* YXScrollerBannerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXScrollerBannerViewController.m; sourceTree = "<group>"; };
 		82165732209FEB27003A9AC2 /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
 		82165734209FEB2D003A9AC2 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		82165736209FEB41003A9AC2 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
@@ -87,16 +87,12 @@
 		8216573A209FEB60003A9AC2 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		8216573C209FEB72003A9AC2 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		8216573E209FEB81003A9AC2 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		821A52EC21A3B6F5003EED94 /* WechatAuthSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WechatAuthSDK.h; sourceTree = "<group>"; };
-		821A52ED21A3B6F6003EED94 /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
 		822D8DFB20CA79D600F018F8 /* YXLaunchAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = YXLaunchAds.framework; sourceTree = "<group>"; };
 		82367AA1217D729400B4FB4E /* YXFeedAdRegisterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YXFeedAdRegisterView.xib; sourceTree = "<group>"; };
 		82367AA2217D729500B4FB4E /* YXFeedAdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXFeedAdViewController.m; sourceTree = "<group>"; };
 		82367AA3217D729500B4FB4E /* YXFeedAdRegisterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXFeedAdRegisterView.h; sourceTree = "<group>"; };
 		82367AA4217D729500B4FB4E /* YXFeedAdRegisterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXFeedAdRegisterView.m; sourceTree = "<group>"; };
 		82367AA5217D729500B4FB4E /* YXFeedAdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXFeedAdViewController.h; sourceTree = "<group>"; };
-		8238B11D217F045A00346C23 /* YXFeedListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YXFeedListViewController.h; sourceTree = "<group>"; };
-		8238B11E217F045A00346C23 /* YXFeedListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YXFeedListViewController.m; sourceTree = "<group>"; };
 		8238B120217F04C300346C23 /* YXFeedAdTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YXFeedAdTableViewCell.xib; sourceTree = "<group>"; };
 		8238B121217F04C300346C23 /* YXFeedAdTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXFeedAdTableViewCell.h; sourceTree = "<group>"; };
 		8238B122217F04C300346C23 /* YXFeedAdTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXFeedAdTableViewCell.m; sourceTree = "<group>"; };
@@ -104,8 +100,6 @@
 		8238B126217F05E600346C23 /* YXHalfLaunchScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXHalfLaunchScreenViewController.h; sourceTree = "<group>"; };
 		8238B128217F097000346C23 /* YXIconViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXIconViewController.m; sourceTree = "<group>"; };
 		8238B129217F097000346C23 /* YXIconViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXIconViewController.h; sourceTree = "<group>"; };
-		8265382B21A6B4FC005D413B /* BUAdSDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = BUAdSDK.bundle; sourceTree = "<group>"; };
-		8265382C21A6B4FC005D413B /* BUAdSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BUAdSDK.framework; sourceTree = "<group>"; };
 		8266993721959ADB00B1EC3E /* WXApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApi.h; sourceTree = "<group>"; };
 		8266993821959ADB00B1EC3E /* WXApiObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiObject.h; sourceTree = "<group>"; };
 		8266993921959ADB00B1EC3E /* libWeChatSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeChatSDK.a; sourceTree = "<group>"; };
@@ -116,14 +110,6 @@
 		826ADCDE216C4C50005F0577 /* YXBannerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXBannerViewController.m; sourceTree = "<group>"; };
 		826ADCE0216C4C50005F0577 /* YXLaunchScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXLaunchScreenViewController.m; sourceTree = "<group>"; };
 		826ADCE2216C4C50005F0577 /* YXLaunchScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXLaunchScreenViewController.h; sourceTree = "<group>"; };
-		826DFBEE219A75F10059CFA8 /* PGIndexBannerSubiew.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGIndexBannerSubiew.m; sourceTree = "<group>"; };
-		826DFBEF219A75F10059CFA8 /* NewPagedFlowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewPagedFlowView.m; sourceTree = "<group>"; };
-		826DFBF1219A75F10059CFA8 /* PGIndexBannerSubiew.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGIndexBannerSubiew.h; sourceTree = "<group>"; };
-		826DFBF2219A75F10059CFA8 /* NewPagedFlowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewPagedFlowView.h; sourceTree = "<group>"; };
-		826DFBF6219A77220059CFA8 /* YXFeedNativeBannerViewControllerDemo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YXFeedNativeBannerViewControllerDemo.h; sourceTree = "<group>"; };
-		826DFBF7219A77220059CFA8 /* YXFeedNativeBannerViewControllerDemo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YXFeedNativeBannerViewControllerDemo.m; sourceTree = "<group>"; };
-		826DFBF9219A7DBD0059CFA8 /* PGCustomBannerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGCustomBannerView.m; sourceTree = "<group>"; };
-		826DFBFA219A7DBD0059CFA8 /* PGCustomBannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGCustomBannerView.h; sourceTree = "<group>"; };
 		8270C78E20661EAA005C8545 /* TestAdA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestAdA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8270C79120661EAA005C8545 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		8270C79220661EAA005C8545 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -143,6 +129,7 @@
 		8270C801206625F3005C8545 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		8270C80320662600005C8545 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		8270C8052066261F005C8545 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		E7741999223FA3FD00B2B5ED /* libresolv.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.9.tbd; path = usr/lib/libresolv.9.tbd; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +137,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E774199A223FA3FD00B2B5ED /* libresolv.9.tbd in Frameworks */,
 				8266994021959B1A00B1EC3E /* libsqlite3.0.tbd in Frameworks */,
 				8266993E21959B0700B1EC3E /* CFNetwork.framework in Frameworks */,
 				8266993C21959AFF00B1EC3E /* libc++.tbd in Frameworks */,
@@ -161,7 +149,7 @@
 				82165739209FEB4E003A9AC2 /* CoreTelephony.framework in Frameworks */,
 				82165737209FEB41003A9AC2 /* Security.framework in Frameworks */,
 				82165735209FEB2D003A9AC2 /* WebKit.framework in Frameworks */,
-				8265382E21A6B4FC005D413B /* BUAdSDK.framework in Frameworks */,
+				8202E77B21A5221E00586F04 /* BUAdSDK.framework in Frameworks */,
 				82165733209FEB27003A9AC2 /* libxml2.tbd in Frameworks */,
 				8270C8062066261F005C8545 /* libz.tbd in Frameworks */,
 				8270C80420662600005C8545 /* StoreKit.framework in Frameworks */,
@@ -198,8 +186,8 @@
 		822D8DF820CA79D600F018F8 /* ThirdAdLibs */ = {
 			isa = PBXGroup;
 			children = (
-				8265382B21A6B4FC005D413B /* BUAdSDK.bundle */,
-				8265382C21A6B4FC005D413B /* BUAdSDK.framework */,
+				8202E77821A5221E00586F04 /* BUAdSDK.bundle */,
+				8202E77921A5221E00586F04 /* BUAdSDK.framework */,
 				8266993621959ADB00B1EC3E /* Weichat */,
 			);
 			path = ThirdAdLibs;
@@ -208,34 +196,11 @@
 		8266993621959ADB00B1EC3E /* Weichat */ = {
 			isa = PBXGroup;
 			children = (
-				821A52ED21A3B6F6003EED94 /* README.txt */,
-				821A52EC21A3B6F5003EED94 /* WechatAuthSDK.h */,
 				8266993721959ADB00B1EC3E /* WXApi.h */,
 				8266993821959ADB00B1EC3E /* WXApiObject.h */,
 				8266993921959ADB00B1EC3E /* libWeChatSDK.a */,
 			);
 			path = Weichat;
-			sourceTree = "<group>";
-		};
-		826DFBEC219A75F10059CFA8 /* NewPagedFlowView */ = {
-			isa = PBXGroup;
-			children = (
-				826DFBF2219A75F10059CFA8 /* NewPagedFlowView.h */,
-				826DFBEF219A75F10059CFA8 /* NewPagedFlowView.m */,
-				826DFBF1219A75F10059CFA8 /* PGIndexBannerSubiew.h */,
-				826DFBEE219A75F10059CFA8 /* PGIndexBannerSubiew.m */,
-			);
-			path = NewPagedFlowView;
-			sourceTree = "<group>";
-		};
-		826DFBFC219A7DD30059CFA8 /* demoScrollView */ = {
-			isa = PBXGroup;
-			children = (
-				826DFBFA219A7DBD0059CFA8 /* PGCustomBannerView.h */,
-				826DFBF9219A7DBD0059CFA8 /* PGCustomBannerView.m */,
-				826DFBEC219A75F10059CFA8 /* NewPagedFlowView */,
-			);
-			path = demoScrollView;
 			sourceTree = "<group>";
 		};
 		8270C78520661EAA005C8545 = {
@@ -272,11 +237,8 @@
 				82367AA3217D729500B4FB4E /* YXFeedAdRegisterView.h */,
 				82367AA4217D729500B4FB4E /* YXFeedAdRegisterView.m */,
 				82367AA1217D729400B4FB4E /* YXFeedAdRegisterView.xib */,
-				8238B11D217F045A00346C23 /* YXFeedListViewController.h */,
-				8238B11E217F045A00346C23 /* YXFeedListViewController.m */,
-				826DFBFC219A7DD30059CFA8 /* demoScrollView */,
-				826DFBF6219A77220059CFA8 /* YXFeedNativeBannerViewControllerDemo.h */,
-				826DFBF7219A77220059CFA8 /* YXFeedNativeBannerViewControllerDemo.m */,
+				8214500C21B7B5EE00081AED /* YXScrollerBannerViewController.h */,
+				8214500D21B7B5EE00081AED /* YXScrollerBannerViewController.m */,
 				8238B121217F04C300346C23 /* YXFeedAdTableViewCell.h */,
 				8238B122217F04C300346C23 /* YXFeedAdTableViewCell.m */,
 				8238B120217F04C300346C23 /* YXFeedAdTableViewCell.xib */,
@@ -318,6 +280,7 @@
 		8270C800206625F3005C8545 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E7741999223FA3FD00B2B5ED /* libresolv.9.tbd */,
 				8266993F21959B1A00B1EC3E /* libsqlite3.0.tbd */,
 				8266993D21959B0700B1EC3E /* CFNetwork.framework */,
 				8266993B21959AFF00B1EC3E /* libc++.tbd */,
@@ -446,8 +409,7 @@
 				8238B123217F04C300346C23 /* YXFeedAdTableViewCell.xib in Resources */,
 				8270C79B20661EAA005C8545 /* Assets.xcassets in Resources */,
 				8270C79920661EAA005C8545 /* Main.storyboard in Resources */,
-				8265382D21A6B4FC005D413B /* BUAdSDK.bundle in Resources */,
-				821A52EE21A3B6F6003EED94 /* README.txt in Resources */,
+				8202E77A21A5221E00586F04 /* BUAdSDK.bundle in Resources */,
 				82367AA6217D729500B4FB4E /* YXFeedAdRegisterView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -473,20 +435,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8214500E21B7B5EE00081AED /* YXScrollerBannerViewController.m in Sources */,
 				82367AA8217D729500B4FB4E /* YXFeedAdRegisterView.m in Sources */,
 				8238B124217F04C300346C23 /* YXFeedAdTableViewCell.m in Sources */,
-				826DFBFB219A7DBD0059CFA8 /* PGCustomBannerView.m in Sources */,
 				82367AA7217D729500B4FB4E /* YXFeedAdViewController.m in Sources */,
 				8238B127217F05E600346C23 /* YXHalfLaunchScreenViewController.m in Sources */,
 				8270C79620661EAA005C8545 /* ViewController.m in Sources */,
-				826DFBF8219A77220059CFA8 /* YXFeedNativeBannerViewControllerDemo.m in Sources */,
 				826ADCE3216C4C50005F0577 /* YXBannerViewController.m in Sources */,
 				8270C7A120661EAA005C8545 /* main.m in Sources */,
-				8238B11F217F045A00346C23 /* YXFeedListViewController.m in Sources */,
-				826DFBF4219A75F10059CFA8 /* PGIndexBannerSubiew.m in Sources */,
 				826ADCE5216C4C50005F0577 /* YXLaunchScreenViewController.m in Sources */,
 				8238B12A217F097000346C23 /* YXIconViewController.m in Sources */,
-				826DFBF5219A75F10059CFA8 /* NewPagedFlowView.m in Sources */,
 				8270C79320661EAA005C8545 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -654,14 +612,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = J4N9H827FQ;
+				DEVELOPMENT_TEAM = YZBRFWH5TP;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/TestAdA/YXLaunchAD/ThirdAdLibs",
 					"$(PROJECT_DIR)/TestAdA/YXLaunchAD",
+					"$(PROJECT_DIR)/TestAdA/YXLaunchAD/ThirdAdLibs/VideoImpel/Tapjoy.embeddedframework",
 				);
 				INFOPLIST_FILE = TestAdA/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -675,10 +635,10 @@
 					"-Objc",
 					"-all_load",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.yd.demo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gvsoft.GoFun;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "6c98abac-4b2e-4ab1-9faf-fc1314841d2a";
-				PROVISIONING_PROFILE_SPECIFIER = mySelfTongyong;
+				PROVISIONING_PROFILE_SPECIFIER = YunQingTest_Development;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -687,14 +647,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = J4N9H827FQ;
+				DEVELOPMENT_TEAM = YZBRFWH5TP;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/TestAdA/YXLaunchAD/ThirdAdLibs",
 					"$(PROJECT_DIR)/TestAdA/YXLaunchAD",
+					"$(PROJECT_DIR)/TestAdA/YXLaunchAD/ThirdAdLibs/VideoImpel/Tapjoy.embeddedframework",
 				);
 				INFOPLIST_FILE = TestAdA/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -708,10 +670,10 @@
 					"-Objc",
 					"-all_load",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.yd.demo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gvsoft.GoFun;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "6c98abac-4b2e-4ab1-9faf-fc1314841d2a";
-				PROVISIONING_PROFILE_SPECIFIER = mySelfTongyong;
+				PROVISIONING_PROFILE_SPECIFIER = YunQingTest_Development;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

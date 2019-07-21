@@ -11,10 +11,14 @@
 
 #define XHWeakSelf __weak typeof(self) weakSelf = self;
 
-#define XH_ScreenW    [UIScreen mainScreen].bounds.size.width
-#define XH_ScreenH    [UIScreen mainScreen].bounds.size.height
+#define SF_ScreenW    [UIScreen mainScreen].bounds.size.width
+#define SF_ScreenH    [UIScreen mainScreen].bounds.size.height
 
-#define XH_IPHONEX  ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1125, 2436), [[UIScreen mainScreen] currentMode].size) : NO)
+#define SF_iPhoneXStyle ( (CGSizeEqualToSize(CGSizeMake(414, 896), [[UIScreen mainScreen] bounds].size)) || ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1125, 2436), [[UIScreen mainScreen] currentMode].size) : NO) )
+#define SF_StatusBarAndNavigationBarHeight (SF_iPhoneXStyle ? 88.f : 64.f)
+#define SF_StatusBarHeight (SF_iPhoneXStyle ? 44.f : 20.f)
+#define SF_TabbarHeight (SF_iPhoneXStyle ? 83.f : 49.f)
+#define SF_MagrinBottom (SF_iPhoneXStyle ? 34.f : 0.f)
 
 #define XHISURLString(string)  ([string hasPrefix:@"https://"] || [string hasPrefix:@"http://"]) ? YES:NO
 #define XHStringContainsSubString(string,subString)  ([string rangeOfString:subString].location == NSNotFound) ? NO:YES

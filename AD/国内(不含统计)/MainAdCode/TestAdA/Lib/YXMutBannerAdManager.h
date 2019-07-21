@@ -25,9 +25,9 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (void)didFailedLoadMutBannerAd:(NSError* _Nonnull)error;
 /**
- 广告点击后回调的index
+ 广告点击后的回调   只有自投广告，该回调URLStr 才有值
  */
-- (void)didClickedMutBannerAdWithIndex:(NSInteger)index;
+- (void)didClickedMutBannerAdWithIndex:(NSInteger)index UrlStr:(NSString *)urlStr;
 
 @end
 @interface YXMutBannerAdManager : NSObject
@@ -48,6 +48,9 @@ NS_ASSUME_NONNULL_BEGIN
 /**  媒体位Id  */
 @property (nonatomic,copy) NSString *mediaId;
 
+/** 是否只显示图片 */
+@property (nonatomic, assign) BOOL isOnlyImage;
+
 /**
  广告数量 默认为1
  */
@@ -63,6 +66,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 /** 占位图，用于网络未加载到图片时 */
 @property (nonatomic, strong) UIImage *placeholderImage;
+
+/** 轮播 View 的底色 */
+@property (nonatomic, strong) UIImage *backgroundImage;
 
 /** 自动滚动间隔时间,默认2s */
 @property (nonatomic, assign) CGFloat autoScrollTimeInterval;

@@ -10,6 +10,7 @@
 #import <Foundation/Foundation.h>
 #import "YXFeedAdData.h"
 #import "YXLaunchAdManager.h"
+
 NS_ASSUME_NONNULL_BEGIN
 
 @protocol YXFeedAdManagerDelegate<NSObject>
@@ -19,7 +20,7 @@ NS_ASSUME_NONNULL_BEGIN
  
  @param data  回调的广告素材
  */
-- (void)didLoadFeedAd:(YXFeedAdData*)data;
+- (void)didLoadFeedAd:(NSArray<YXFeedAdData*>*_Nullable)data;
 /**
  取广告失败调用
  
@@ -44,11 +45,21 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic,weak) id<YXFeedAdManagerDelegate> delegate;
 
 
-@property (nonatomic,assign)YXADSize  adSize;
+@property (nonatomic,assign) YXADSize adSize;
+
+/**
+ 当adSize类型为YXADSizeCustom时，宽高必传，其余模式不用传
+ */
+@property (nonatomic, assign) CGFloat s2sWidth;
+@property (nonatomic, assign) CGFloat s2sHeight;
 
 /**  媒体位Id  */
 @property (nonatomic,copy) NSString *mediaId;
 
+/**
+ 广告数量 默认为1
+ */
+@property (nonatomic,assign) NSInteger adCount;
 
 /*
  *  viewControllerForPresentingModalView
@@ -64,9 +75,13 @@ NS_ASSUME_NONNULL_BEGIN
  定义原生广告视图中可以点击的 视图区域，行为由SDK控制
  @param view 原生广告的视图，完整可点击区域
  */
-- (void)registerAdViewForInteraction:(UIView *)view;
+- (void)registerAdViewForInteraction:(UIView *)view adData:(YXFeedAdData*)adData;
 
-
+/**
+ 定义原生广告视图中可以点击的 视图区域，行为由SDK控制
+ @param cell 原生广告的视图所在的cell，完整可点击区域
+ */
+- (void)registerAdViewForInCell:(UITableViewCell *)cell adData:(YXFeedAdData*)adData;
 
 @end
 

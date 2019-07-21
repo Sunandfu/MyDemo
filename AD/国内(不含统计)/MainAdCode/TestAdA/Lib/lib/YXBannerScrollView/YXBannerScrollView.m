@@ -16,7 +16,7 @@
 
 #define kCycleScrollViewInitialPageControlDotSize CGSizeMake(10, 10)
 
-NSString * const ID = @"YXBannerScrollViewCell";
+NSString * const YXID = @"YXBannerScrollViewCell";
 
 @interface YXBannerScrollView () <UICollectionViewDataSource, UICollectionViewDelegate>
 
@@ -117,7 +117,7 @@ NSString * const ID = @"YXBannerScrollViewCell";
     mainView.pagingEnabled = YES;
     mainView.showsHorizontalScrollIndicator = NO;
     mainView.showsVerticalScrollIndicator = NO;
-    [mainView registerClass:[YXCollectionViewCell class] forCellWithReuseIdentifier:ID];
+    [mainView registerClass:[YXCollectionViewCell class] forCellWithReuseIdentifier:YXID];
     
     mainView.dataSource = self;
     mainView.delegate = self;
@@ -132,9 +132,9 @@ NSString * const ID = @"YXBannerScrollViewCell";
     _delegate = delegate;
     
     if ([self.delegate respondsToSelector:@selector(customCollectionViewCellClassForCycleScrollView:)] && [self.delegate customCollectionViewCellClassForCycleScrollView:self]) {
-        [self.mainView registerClass:[self.delegate customCollectionViewCellClassForCycleScrollView:self] forCellWithReuseIdentifier:ID];
+        [self.mainView registerClass:[self.delegate customCollectionViewCellClassForCycleScrollView:self] forCellWithReuseIdentifier:YXID];
     }else if ([self.delegate respondsToSelector:@selector(customCollectionViewCellNibForCycleScrollView:)] && [self.delegate customCollectionViewCellNibForCycleScrollView:self]) {
-        [self.mainView registerNib:[self.delegate customCollectionViewCellNibForCycleScrollView:self] forCellWithReuseIdentifier:ID];
+        [self.mainView registerNib:[self.delegate customCollectionViewCellNibForCycleScrollView:self] forCellWithReuseIdentifier:YXID];
     }
 }
 
@@ -566,7 +566,7 @@ NSString * const ID = @"YXBannerScrollViewCell";
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    YXCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:ID forIndexPath:indexPath];
+    YXCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:YXID forIndexPath:indexPath];
     long itemIndex = [self pageControlIndexWithCurrentCellIndex:indexPath.item];
     if ([self.delegate respondsToSelector:@selector(setupCustomCell:forIndex:cycleScrollView:)] &&
         [self.delegate respondsToSelector:@selector(customCollectionViewCellClassForCycleScrollView:)] && [self.delegate customCollectionViewCellClassForCycleScrollView:self]) {

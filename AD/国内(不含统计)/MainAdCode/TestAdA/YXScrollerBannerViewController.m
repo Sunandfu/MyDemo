@@ -9,7 +9,7 @@
 #import "YXScrollerBannerViewController.h" 
 #import "YXMutBannerAdManager.h"
 
-static  NSString * feedMediaID = @"gofun_ios_interstitial";
+static  NSString * feedMediaID = @"gdt_if_ios_test";
 
 @interface YXScrollerBannerViewController ()<YXMutBannerAdManagerDelegate>
 {

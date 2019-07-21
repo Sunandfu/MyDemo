@@ -43,6 +43,8 @@
 		8270C802206625F4005C8545 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8270C801206625F3005C8545 /* AdSupport.framework */; };
 		8270C80420662600005C8545 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8270C80320662600005C8545 /* StoreKit.framework */; };
 		8270C8062066261F005C8545 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 8270C8052066261F005C8545 /* libz.tbd */; };
+		E774199A223FA3FD00B2B5ED /* libresolv.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E7741999223FA3FD00B2B5ED /* libresolv.9.tbd */; };
+		E77419B62240862000B2B5ED /* YXInterstitialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E77419B52240862000B2B5ED /* YXInterstitialViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -131,6 +133,9 @@
 		8270C801206625F3005C8545 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		8270C80320662600005C8545 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		8270C8052066261F005C8545 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		E7741999223FA3FD00B2B5ED /* libresolv.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.9.tbd; path = usr/lib/libresolv.9.tbd; sourceTree = SDKROOT; };
+		E77419B42240862000B2B5ED /* YXInterstitialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXInterstitialViewController.h; sourceTree = "<group>"; };
+		E77419B52240862000B2B5ED /* YXInterstitialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXInterstitialViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +143,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E774199A223FA3FD00B2B5ED /* libresolv.9.tbd in Frameworks */,
 				8266994021959B1A00B1EC3E /* libsqlite3.0.tbd in Frameworks */,
 				8266993E21959B0700B1EC3E /* CFNetwork.framework in Frameworks */,
 				8266993C21959AFF00B1EC3E /* libc++.tbd in Frameworks */,
@@ -252,6 +258,8 @@
 				8270C79520661EAA005C8545 /* ViewController.m */,
 				8238B129217F097000346C23 /* YXIconViewController.h */,
 				8238B128217F097000346C23 /* YXIconViewController.m */,
+				E77419B42240862000B2B5ED /* YXInterstitialViewController.h */,
+				E77419B52240862000B2B5ED /* YXInterstitialViewController.m */,
 				8270C79720661EAA005C8545 /* Main.storyboard */,
 				8270C79A20661EAA005C8545 /* Assets.xcassets */,
 				8270C79C20661EAA005C8545 /* LaunchScreen.storyboard */,
@@ -282,6 +290,7 @@
 		8270C800206625F3005C8545 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E7741999223FA3FD00B2B5ED /* libresolv.9.tbd */,
 				8266993F21959B1A00B1EC3E /* libsqlite3.0.tbd */,
 				8266993D21959B0700B1EC3E /* CFNetwork.framework */,
 				8266993B21959AFF00B1EC3E /* libc++.tbd */,
@@ -437,6 +446,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8214500E21B7B5EE00081AED /* YXScrollerBannerViewController.m in Sources */,
+				E77419B62240862000B2B5ED /* YXInterstitialViewController.m in Sources */,
 				82367AA8217D729500B4FB4E /* YXFeedAdRegisterView.m in Sources */,
 				8238B124217F04C300346C23 /* YXFeedAdTableViewCell.m in Sources */,
 				82367AA7217D729500B4FB4E /* YXFeedAdViewController.m in Sources */,
@@ -616,8 +626,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = J4N9H827FQ;
-				ENABLE_BITCODE = YES;
+				DEVELOPMENT_TEAM = YZBRFWH5TP;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -637,10 +647,10 @@
 					"-Objc",
 					"-all_load",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.yunx.fitness;
+				PRODUCT_BUNDLE_IDENTIFIER = com.xcloudtech.locate;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "6c98abac-4b2e-4ab1-9faf-fc1314841d2a";
-				PROVISIONING_PROFILE_SPECIFIER = mySelfTongyong;
+				PROVISIONING_PROFILE_SPECIFIER = YunQingTest_Development;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -651,8 +661,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = J4N9H827FQ;
-				ENABLE_BITCODE = YES;
+				DEVELOPMENT_TEAM = YZBRFWH5TP;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -672,10 +682,10 @@
 					"-Objc",
 					"-all_load",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.yunx.fitness;
+				PRODUCT_BUNDLE_IDENTIFIER = com.xcloudtech.locate;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "6c98abac-4b2e-4ab1-9faf-fc1314841d2a";
-				PROVISIONING_PROFILE_SPECIFIER = mySelfTongyong;
+				PROVISIONING_PROFILE_SPECIFIER = YunQingTest_Development;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

@@ -65,6 +65,8 @@
 
 @property (nonatomic,strong)YXLaunchImageAdConfiguration *imageAdconfiguration;
 
+@property (nonatomic,strong) UIView *skipLeftView;
+
 @end
 
 @implementation YXLaunchAdManager
@@ -101,6 +103,9 @@ static YXLaunchAdManager *instance = nil;
     [YXLaunchAd setWaitDataDuration:self.waitDataDuration];
     
     [YXLaunchAd shareLaunchAd].delegate = self;
+    if (nil!=[YXAdSDKManager defaultManager].kpCustomView) {
+        self.skipLeftView = [YXAdSDKManager defaultManager].kpCustomView;
+    }
     self.yxADView = [[UIView alloc]initWithFrame:[UIScreen mainScreen].bounds];
     self.yxADView.userInteractionEnabled = YES;
     
@@ -207,24 +212,25 @@ static YXLaunchAdManager *instance = nil;
 #pragma mark 请求配置
 - (void)requestADSourceFromNet
 {
+    WEAK(weakSelf);
     [Network requestADSourceFromMediaId:self.mediaId success:^(NSDictionary *dataDict) {
         self->_gdtAD = dataDict ;
         NSArray *adInfosArr = dataDict[@"adInfos"];
         if (adInfosArr.count>0) {
             self->_resultDict = adInfosArr.firstObject;
             dispatch_async(dispatch_get_main_queue(), ^{
-                [self showLaunchAd];
+                [weakSelf showLaunchAd];
             });
             return ;
         }
         NSArray *advertiser = dataDict[@"advertiser"];
         if(advertiser && ![advertiser isKindOfClass:[NSNull class]] && advertiser.count > 0){
-            [self initIDSource];
+            [weakSelf initIDSource];
         }else{
-            [self initS2S];
+            [weakSelf initS2S];
         }
     } fail:^(NSError *error) {
-        [self failedError:error];
+        [weakSelf failedError:error];
     }];
 }
 
@@ -324,6 +330,7 @@ static YXLaunchAdManager *instance = nil;
         imageAdconfiguration.skipButtonType = self.skipButtonType;
         //start********************自定义跳过按钮**************************
         imageAdconfiguration.customSkipView = nil;
+        imageAdconfiguration.addSkipLeftView = self.skipLeftView;
         //********************自定义广告*****************************end
         [YXLaunchAd shareLaunchAd].customAdView = self.yxADView;
         [YXLaunchAd shareLaunchAd].hiddenRightIcon = YES;
@@ -411,9 +418,9 @@ static YXLaunchAdManager *instance = nil;
         
         self.splash.fetchDelay = self.waitDataDuration;
         
-        //        UIWindow *window = [YXLaunchAd shareLaunchAd].adWindow;
-        //
-        //        [window makeKeyAndVisible];
+//                UIWindow *window = [YXLaunchAd shareLaunchAd].adWindow;
+//
+//                [window makeKeyAndVisible];
         
         UIWindow *window = self.showAdWindow;
         
@@ -424,23 +431,49 @@ static YXLaunchAdManager *instance = nil;
         bottoms.image = images;
         [bottoms addSubview:self.bottomView];
         
-        if (self.bottomView) {
-            YXLaunchAdButton *button = [YXLaunchAd shareLaunchAd].skipButton;
-            [self.splash loadAdAndShowInWindow:window withBottomView:bottoms skipView:button];
-        }else{
-            YXLaunchAdButton *button = [YXLaunchAd shareLaunchAd].skipButton;
-            [self.splash loadAdAndShowInWindow:window withBottomView:self.bottomView skipView:button];
+        YXLaunchAdButton *button = [YXLaunchAd shareLaunchAd].skipButton;
+        
+        if ([YXAdSDKManager defaultManager].kpCustomView) {
+            self.skipLeftView.autoresizesSubviews =YES;
+            for (UIView *view in self.skipLeftView.subviews) {
+                view.autoresizingMask =
+                UIViewAutoresizingFlexibleLeftMargin   |
+                UIViewAutoresizingFlexibleWidth        |
+                UIViewAutoresizingFlexibleRightMargin  |
+                UIViewAutoresizingFlexibleTopMargin    |
+                UIViewAutoresizingFlexibleHeight       |
+                UIViewAutoresizingFlexibleBottomMargin ;
+            }
+            CGFloat topBottomSpace = [button getTopBottomSpace];
+            CGFloat viewHeight = button.frame.size.height-topBottomSpace*2;
+            CGFloat viewWidth = self.skipLeftView.bounds.size.width * viewHeight / self.skipLeftView.bounds.size.height;
+            button.frame = CGRectMake(button.frame.origin.x-viewWidth-8, button.frame.origin.y, button.bounds.size.width, button.bounds.size.height);
+            self.skipLeftView.frame = CGRectMake(button.frame.origin.x+button.bounds.size.width+8, button.frame.origin.y+topBottomSpace, viewWidth, viewHeight);
+            self.skipLeftView.layer.masksToBounds = YES;
+            self.skipLeftView.layer.cornerRadius = viewHeight / 2.0;
+            UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(customViewClick)];
+            [self.skipLeftView addGestureRecognizer:tap];
+            [window addSubview:self.skipLeftView];
+            
+            if (self.bottomView) {
+                [self.splash loadAdAndShowInWindow:window withBottomView:bottoms skipView:button];
+            }else{
+                [self.splash loadAdAndShowInWindow:window withBottomView:self.bottomView skipView:button];
+            }
+        } else {
+            if (self.bottomView) {
+                [self.splash loadAdAndShowInWindow:window withBottomView:bottoms skipView:button];
+            }else{
+                [self.splash loadAdAndShowInWindow:window withBottomView:self.bottomView skipView:button];
+            }
         }
-        
         [[YXLaunchAd shareLaunchAd] startSkipDispathTimer];
-        
-        
         
     });
 }
 -(void)splashAdLifeTime:(NSUInteger)time
 {
-    //    NSLog(@"splashAdLifeTime:%lu",(unsigned long)time);
+//    NSLog(@"splashAdLifeTime:%lu",(unsigned long)time);
 }
 
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
@@ -459,6 +492,7 @@ static YXLaunchAdManager *instance = nil;
     if (self->launchTimeOut) {
         return;
     }
+    
     isGDLaunchOK = YES;
     
     [Network upOutSideToServer:ADSHOW isError:NO code:nil msg:nil currentAD:self->_currentAD gdtAD:self->_gdtAD mediaID:self.mediaId];
@@ -503,6 +537,8 @@ static YXLaunchAdManager *instance = nil;
 - (void)splashAdWillClosed:(GDTSplashAd *)splashAd
 {
     //    NSLog(@"splashAdWillClosed;%s",__FUNCTION__);
+    [self.skipLeftView removeFromSuperview];
+    self.skipLeftView = nil;
     
 }
 -(void)splashAdClosed:(GDTSplashAd *)splashAd
@@ -524,6 +560,16 @@ static YXLaunchAdManager *instance = nil;
     
     
 }
+- (void)customViewClick{
+    [self.skipLeftView removeFromSuperview];
+    self.skipLeftView = nil;
+    self.splash = nil;
+    [[YXLaunchAd shareLaunchAd] cancleSkip];
+    [[YXLaunchAd shareLaunchAd] removeAndAnimate];
+    [[NetTool getCurrentViewController] dismissViewControllerAnimated:NO completion:^{
+        [[NSNotificationCenter defaultCenter] postNotificationName:KPCUSTOMCLICKNOTIFITION object:nil];
+    }];
+}
 
 - (void)splashAdWillPresentFullScreenModal:(GDTSplashAd *)splashAd
 {
@@ -537,8 +583,12 @@ static YXLaunchAdManager *instance = nil;
 
 - (void)splashAdClicked:(GDTSplashAd *)splashAd
 {
+    [self.skipLeftView removeFromSuperview];
+    self.skipLeftView = nil;
+    self.splash = nil;
+    [[YXLaunchAd shareLaunchAd] cancleSkip];
+    [[YXLaunchAd shareLaunchAd] removeAndAnimate];
     dispatch_async(dispatch_get_main_queue(), ^{
-        
         [[YXLaunchAd shareLaunchAd]cancleSkip];
         self->isGDTClicked = YES;
         [Network upOutSideToServer:ADCLICK isError:NO code:nil msg:nil currentAD:self->_currentAD gdtAD:self->_gdtAD mediaID:self.mediaId];
@@ -591,7 +641,7 @@ static YXLaunchAdManager *instance = nil;
     NSString * uuid = self->_gdtAD[@"uuid"];
     [[Network sharedInstance] prepareDataAndRequestWithadkeyString:self.mediaId width:_frame.size.width height:_frame.size.height macID:ip uid:uuid adCount:1];
     
-    
+    WEAK(weakSelf);
     //广告数据请求
     [[Network sharedInstance] beginRequestfinished:^(BOOL isSuccess, id json) {
         
@@ -601,7 +651,7 @@ static YXLaunchAdManager *instance = nil;
                 NSArray * arr = json[@"adInfos"];
                 if (arr.count <= 0) {
                     NSError *errors = [NSError errorWithDomain:@"请求失败" code:400 userInfo:nil];
-                    [self failedError:errors];
+                    [weakSelf failedError:errors];
                     return ;
                 }
                 self->_resultDict = arr.lastObject;
@@ -618,16 +668,16 @@ static YXLaunchAdManager *instance = nil;
                         }
                     }
                 }
-                [self showLaunchAd];
+                [weakSelf showLaunchAd];
                 
             }else{
                 NSError *error = [NSError errorWithDomain:@"" code:40041 userInfo:@{@"NSLocalizedDescription":@"请检查网络"}];
-                [self failedError:error];
+                [weakSelf failedError:error];
                 
             }
         }else{
             NSError *error = [NSError errorWithDomain:@"" code:40041 userInfo:@{@"NSLocalizedDescription":@"请检查网络"}];
-            [self failedError:error];
+            [weakSelf failedError:error];
         }
         
     }];
@@ -660,6 +710,7 @@ static YXLaunchAdManager *instance = nil;
     imageAdconfiguration.skipButtonType = self.skipButtonType;
     //start********************自定义跳过按钮**************************
     imageAdconfiguration.customSkipView = nil;
+    imageAdconfiguration.addSkipLeftView = self.skipLeftView;
     //********************自定义跳过按钮*****************************end
     
     //显示开屏广告
@@ -772,7 +823,7 @@ static YXLaunchAdManager *instance = nil;
 #pragma mark - subViews
 -(NSArray<UIView *> *)launchAdSubViews_alreadyView{
     
-    CGFloat y = XH_IPHONEX ? 46:22;
+    CGFloat y = SF_iPhoneXStyle ? 46:22;
     UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake([UIScreen mainScreen].bounds.size.width-140, y, 60, 30)];
     label.text  = @"已预载";
     label.font = [UIFont systemFontOfSize:12];
@@ -787,7 +838,7 @@ static YXLaunchAdManager *instance = nil;
 
 -(NSArray<UIView *> *)launchAdSubViews{
     
-    CGFloat y = XH_IPHONEX ? 54 : 30;
+    CGFloat y = SF_iPhoneXStyle ? 54 : 30;
     UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake([UIScreen mainScreen].bounds.size.width-170, y, 60, 30)];
     label.text  = @"subViews";
     label.font = [UIFont systemFontOfSize:12];
@@ -844,140 +895,12 @@ static YXLaunchAdManager *instance = nil;
     if(!_resultDict){
         return;
     }
-    // 1.跳转链接
-    NSString *urlStr = _resultDict[@"click_url"];
     
-    NSString * click_position = [NSString stringWithFormat:@"%@",_resultDict[@"click_position"]];
-    if ([click_position isEqualToString:@"1"]) {
-        if (_resultDict[@"width"]) {
-            urlStr = [urlStr stringByReplacingOccurrencesOfString:@"__REQ_WIDTH__" withString:[NSString stringWithFormat:@"%@",_resultDict[@"width"]]];
-        }
-        if (_resultDict[@"height"]) {
-            urlStr = [urlStr stringByReplacingOccurrencesOfString:@"__REQ_HEIGHT__" withString:[NSString stringWithFormat:@"%@",_resultDict[@"height"]]];
-        }
-        urlStr = [urlStr stringByReplacingOccurrencesOfString:@"__WIDTH__" withString:widthStr];
-        urlStr = [urlStr stringByReplacingOccurrencesOfString:@"__HEIGHT__" withString:heightStr];
-        
-        urlStr = [urlStr stringByReplacingOccurrencesOfString:@"__DOWN_X__" withString:x];
-        urlStr = [urlStr stringByReplacingOccurrencesOfString:@"__DOWN_Y__" withString:y];
-        urlStr = [urlStr stringByReplacingOccurrencesOfString:@"__UP_X__" withString:x];
-        urlStr = [urlStr stringByReplacingOccurrencesOfString:@"__UP_Y__" withString:y];
-    }
-    
-    NSString * ac_type = [NSString stringWithFormat:@"%@",_resultDict[@"ac_type"]];
-    //下载类的
-    if ([ac_type isEqualToString:@"1"] || [ac_type isEqualToString:@"2"]) {
-        NSURL *url = [NSURL URLWithString:urlStr];
-        if (@available(iOS 9.0, *)) {
-            SFSafariViewController *safariVC = [[SFSafariViewController alloc] initWithURL:url];
-            [[NetTool getCurrentViewController] showViewController:safariVC sender:nil];
-            
-        } else {
-            // Fallback on earlier versions
-            [[UIApplication sharedApplication] openURL:url];
-        }
-    } else if ([ac_type isEqualToString:@"6"]) {
-        NSString *deeplick = _resultDict[@"deep_url"];
-        NSURL *deeplickUrl = [NSURL URLWithString:deeplick];
-        if (@available(iOS 10.0, *)) {
-            [[UIApplication sharedApplication] openURL:deeplickUrl options:@{} completionHandler:^(BOOL success) {
-                if (!success) {
-                    NSURL *url = [NSURL URLWithString:urlStr];
-                    if (@available(iOS 9.0, *)) {
-                        SFSafariViewController *safariVC = [[SFSafariViewController alloc] initWithURL:url];
-                        [[NetTool getCurrentViewController] showViewController:safariVC sender:nil];
-                        
-                    } else {
-                        YXWebViewController *web = [YXWebViewController new];
-                        web.URLString = urlStr;
-                        [[NetTool getCurrentViewController] presentViewController:web animated:YES completion:nil];
-                    }
-                }
-            }];
-        }else{
-            NSURL *url = [NSURL URLWithString:urlStr];
-            if (@available(iOS 9.0, *)) {
-                SFSafariViewController *safariVC = [[SFSafariViewController alloc] initWithURL:url];
-                [[NetTool getCurrentViewController] showViewController:safariVC sender:nil];
-                
-            } else {
-                YXWebViewController *web = [YXWebViewController new];
-                web.URLString = urlStr;
-                [[NetTool getCurrentViewController] presentViewController:web animated:YES completion:nil];
-            }
-        }
-        
-    } else if([ac_type isEqualToString:@"7"]){
-        
-        NSString * miniPath = [NSString stringWithFormat:@"%@",_resultDict[@"miniPath"] ];
-        miniPath = [miniPath stringByReplacingOccurrencesOfString:@" " withString:@""];
-        NSString * miniProgramOriginId = [NSString stringWithFormat:@"%@",_resultDict[@"miniProgramOriginId"]];
-        
-        
-        WXLaunchMiniProgramReq *launchMiniProgramReq = [WXLaunchMiniProgramReq object];
-        launchMiniProgramReq.userName = miniProgramOriginId;  //拉起的小程序的username
-        launchMiniProgramReq.path = miniPath;    //拉起小程序页面的可带参路径，不填默认拉起小程序首页
-        launchMiniProgramReq.miniProgramType = WXMiniProgramTypeRelease; //拉起小程序的类型
-        
-        BOOL installWe = [WXApi isWXAppInstalled];
-        if (installWe) {
-            [WXApi sendReq:launchMiniProgramReq];
-        }else{
-            NSLog(@"未安装微信");
-        }
-        
-        [Network notifyToServer:nil serverUrl:urlStr completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
-            if(connectionError){
-                NSLog(@"#####%@\error",[connectionError debugDescription]);
-            }else{
-                NSDictionary *json =  [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
-                if (json) {
-                    NSLog(@"%@",json);
-                }
-                
-            }
-        }];
-    }else {
-        if(urlStr && ![urlStr isEqualToString:@""]){
-            YXWebViewController *VC = [[YXWebViewController alloc] init];
-            VC.delegate = self;
-            VC.URLString = urlStr;
-            //此处不要直接取keyWindow
-            [[NetTool getCurrentViewController] presentViewController:VC animated:NO completion:nil];
-        }
-    }
-    // 2.上报服务器
-    if (![[NetTool gettelModel] isEqualToString:@"iPhone Simulator"])
-    {
-        // 上报服务器
-        NSArray *viewS = _resultDict[@"click_notice_urls"];
-        if(viewS && ![viewS isKindOfClass:[NSNull class]]&& viewS.count){
-            if ([click_position isEqualToString:@"1"]) {
-                
-                if (_resultDict[@"width"]) {
-                    urlStr = [urlStr stringByReplacingOccurrencesOfString:@"__REQ_WIDTH__" withString:[NSString stringWithFormat:@"%@",_resultDict[@"width"]]];
-                }
-                if (_resultDict[@"height"]) {
-                    urlStr = [urlStr stringByReplacingOccurrencesOfString:@"__REQ_HEIGHT__" withString:[NSString stringWithFormat:@"%@",_resultDict[@"height"]]];
-                }
-                urlStr = [urlStr stringByReplacingOccurrencesOfString:@"__WIDTH__" withString:widthStr];
-                urlStr = [urlStr stringByReplacingOccurrencesOfString:@"__HEIGHT__" withString:heightStr];
-                
-                urlStr = [urlStr stringByReplacingOccurrencesOfString:@"__DOWN_X__" withString:x];
-                urlStr = [urlStr stringByReplacingOccurrencesOfString:@"__DOWN_Y__" withString:y];
-                urlStr = [urlStr stringByReplacingOccurrencesOfString:@"__UP_X__" withString:x];
-                urlStr = [urlStr stringByReplacingOccurrencesOfString:@"__UP_Y__" withString:y];
-            }
-            [Network groupNotifyToSerVer:viewS];
-        }
-    }
-    
-    
+    [self ViewClickWithDict:_resultDict Width:widthStr Height:heightStr X:x Y:y];
     if (self.delegate && [self.delegate respondsToSelector:@selector(didClickedAd)]) {
         [self.delegate didClickedAd];
     }
 }
-
 #pragma mark 落地页返回
 - (void)backClicked
 {
@@ -1023,6 +946,10 @@ static YXLaunchAdManager *instance = nil;
 - (void)remove
 {
     if (self.customSkipView) [self.customSkipView removeFromSuperview];
+    if (self.skipLeftView) {
+        [self.skipLeftView removeFromSuperview];
+        self.skipLeftView = nil;
+    }
     if (self.skipButton)[self.skipButton removeFromSuperview];
     if (self.bottomView) {
         [self.bottomView removeFromSuperview];

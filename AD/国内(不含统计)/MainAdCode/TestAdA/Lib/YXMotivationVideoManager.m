@@ -39,17 +39,18 @@
 }
 
 - (void)loadVideoPlacement{
+    WEAK(weakSelf);
     [Network requestADSourceFromMediaId:self.mediaId success:^(NSDictionary *dataDict) {
-        self.videoAD = dataDict ;
+        weakSelf.videoAD = dataDict ;
         NSArray *advertiser = dataDict[@"advertiser"];
         if(advertiser && ![advertiser isKindOfClass:[NSNull class]]&& advertiser.count > 0){
-            [self initIDSource];
+            [weakSelf initIDSource];
         } else {
             NSError *errors = [NSError errorWithDomain:@"" code:500 userInfo:@{@"NSLocalizedDescription":[NSString stringWithFormat:@"没有广告资源"]}];
-            [self failedError:errors];
+            [weakSelf failedError:errors];
         }
     } fail:^(NSError *error) {
-        [self failedError:error];
+        [weakSelf failedError:error];
     }];
 }
 

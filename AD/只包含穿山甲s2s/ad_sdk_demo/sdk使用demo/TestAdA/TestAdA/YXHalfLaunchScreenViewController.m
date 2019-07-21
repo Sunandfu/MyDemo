@@ -48,14 +48,7 @@
     adManager.delegate = self;
     
     UIView *bottom = [[UIView alloc]initWithFrame:CGRectMake(0, [UIScreen mainScreen].bounds.size.height * 0.8, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height * 0.2)];
-    //    bottom.backgroundColor = [UIColor cyanColor];
-    UIImageView *logoImageView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"yxadlogo"]];
-    //把logo置于 bottom 中心
-    logoImageView.frame = bottom.bounds;
-    //    logoImageView.frame = CGRectMake(0, 0, 300, 89);
-    logoImageView.contentMode =  UIViewContentModeCenter;
-    
-    [bottom addSubview:logoImageView];
+    bottom.backgroundColor = [UIColor clearColor];
     
     
     adManager.bottomView = bottom;
@@ -118,6 +111,10 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)dealloc
+{
+    NSLog(@"%@ %@",[self class],NSStringFromSelector(_cmd));
+}
 /*
 #pragma mark - Navigation
 

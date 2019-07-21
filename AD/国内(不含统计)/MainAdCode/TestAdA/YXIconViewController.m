@@ -10,7 +10,7 @@
 #import "YXIconAdManager.h"
 #import "WXApi.h"
 
-static  NSString * iconMediaID = @"gofun_ios_icon";
+static  NSString * iconMediaID = @"fzd_ios_icon";
 
 @interface YXIconViewController ()<YXIconAdManagerDelegate>
 

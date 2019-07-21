@@ -18,7 +18,7 @@
 #import "YXIconViewController.h"
 
 #import "YXScrollerBannerViewController.h"
-
+#import "YXInterstitialViewController.h"
 #import "YXMotivationVideoViewController.h"
 
 #define YX_IPHONEX  ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1125, 2436), [[UIScreen mainScreen] currentMode].size) : NO)
@@ -37,7 +37,7 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     self.title = @"ADDemo";
-    self.dataArr = @[@"轮播",@"信息流样式",@"横幅样式",@"开屏启动页样式",@"半屏开屏启动页样式",@"icon样式",@"激励视频"];
+    self.dataArr = @[@"轮播",@"信息流样式",@"横幅样式",@"开屏启动页样式",@"半屏开屏启动页样式",@"icon样式",@"插屏样式",@"激励视频"];
     
     [self.view addSubview:self.tableView];
 }
@@ -107,6 +107,9 @@ static NSString * cellID = @"CELL";
             break;
         case 5:
             [self.navigationController pushViewController:[YXIconViewController new] animated:YES];
+            break;
+        case 6:
+            [self.navigationController pushViewController:[YXInterstitialViewController new] animated:YES];
             break;
         default:
             [self.navigationController pushViewController:[YXMotivationVideoViewController new] animated:YES];

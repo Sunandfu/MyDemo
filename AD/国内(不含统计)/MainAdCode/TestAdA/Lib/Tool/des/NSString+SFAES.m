@@ -11,9 +11,9 @@
 #import <CommonCrypto/CommonDigest.h>
 #import <CommonCrypto/CommonCryptor.h>
 // key跟后台协商一个即可，保持一致
-static NSString *const PSW_AES_KEY = @"!@#_123_sda_12!_";
+static NSString *const SF_PSW_AES_KEY = @"!@#_123_sda_12!_";
 // 这里的偏移量也需要跟后台一致，一般跟key一样就行
-static NSString *const AES_IV_PARAMETER = @"";
+static NSString *const SF_AES_IV_PARAMETER = @"";
 
 @implementation NSString (SFAES)
 
@@ -22,7 +22,7 @@ static NSString *const AES_IV_PARAMETER = @"";
     NSData *data = [self dataUsingEncoding:NSUTF8StringEncoding];
     NSData *AESData = [self AES128operation:kCCEncrypt
                                        data:data
-                                        key:PSW_AES_KEY
+                                        key:SF_PSW_AES_KEY
                                          iv:nil];
     NSString *baseStr_GTM = [self encodeBase64Data:AESData];
     baseStr_GTM = [baseStr_GTM stringByReplacingOccurrencesOfString:@"+" withString:@"-"];
@@ -45,7 +45,7 @@ static NSString *const AES_IV_PARAMETER = @"";
     NSData *baseData_GTM = [self decodeBase64Data:data];
     NSData *AESData_GTM = [self AES128operation:kCCDecrypt
                                            data:baseData_GTM
-                                            key:PSW_AES_KEY
+                                            key:SF_PSW_AES_KEY
                                              iv:nil];
     NSString *decStr_GTM = [[NSString alloc] initWithData:AESData_GTM encoding:NSUTF8StringEncoding];
     NSDictionary *dataDict = [self dictionaryWithJsonString:decStr_GTM];

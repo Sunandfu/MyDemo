@@ -10,7 +10,6 @@
 #import <UIKit/UIKit.h>
 #import "YXLaunchConfiguration.h"
 
-
 @protocol YXIconAdManagerDelegate<NSObject>
 @optional
 /**
@@ -18,13 +17,13 @@
  
  @param view  回调的view
  */
-- (void)didLoadIconAd:(UIView*)view;
+- (void)didLoadIconAd:(UIView *_Nonnull)view;
 /**
  取广告失败调用
  
  @param error 为错误信息
  */
-- (void)didFailedLoadIconAd:(NSError* _Nonnull)error;
+- (void)didFailedLoadIconAd:(NSError *_Nonnull)error;
 /**
  广告点击后回调
  */
@@ -35,7 +34,7 @@
 
 @interface YXIconAdManager : UIView
 
-@property (nonatomic,weak) id<YXIconAdManagerDelegate> delegate;
+@property (nonatomic,weak) id<YXIconAdManagerDelegate> _Nullable delegate;
 
 /**
  图片frame
@@ -48,14 +47,38 @@
 /** 广告类型 */
 @property(nonatomic,assign) YXADTYPE adType;
 
-/*
- *  viewControllerForPresentingModalView
- *  详解：[必选]开发者需传入用来弹出目标页的ViewController，一般为当前ViewController
- */
-@property (nonatomic, weak) UIViewController *controller;
-
 
 /**  开始加载广告  */
 - (void)loadIconAd;
+
+/**
+ icon数组形式 与mediaId互斥
+ */
+@property (nonatomic, strong) NSArray<NSString *> *mediaIdArray;
+
+/**
+ 多icon样式时，以下参数可自定义设置
+ */
+//menu的颜色
+@property (nonatomic, strong) UIColor *menuGroundColor;
+//字体颜色
+@property (nonatomic, strong) UIColor *titleColor;
+//字体大小
+@property (nonatomic, strong) UIFont *titleFont;
+//item宽度
+@property (nonatomic, assign) CGFloat itemWidth;
+//item高度
+@property (nonatomic, assign) CGFloat itemHeight;
+//icon的ContentMode
+@property (nonatomic)         UIViewContentMode contentMode;
+//箭头方向
+@property(nonatomic,assign) YXPopupMenuDirection popType;
+
+/**
+ 显示icon数组view
+
+ @param point 传入点击view的point
+ */
+- (void)showCustomPopupMenuWithPoint:(CGPoint)point;
 
 @end

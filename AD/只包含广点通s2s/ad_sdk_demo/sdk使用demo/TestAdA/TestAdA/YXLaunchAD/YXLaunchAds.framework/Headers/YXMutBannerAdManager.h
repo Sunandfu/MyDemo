@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-
 #import <Foundation/Foundation.h>
 #import "YXLaunchConfiguration.h"
 #import "YXFeedAdData.h"
@@ -26,16 +25,25 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (void)didFailedLoadMutBannerAd:(NSError* _Nonnull)error;
 /**
- 广告点击后回调
+ 广告点击后回调的index
  */
-- (void)didClickedMutBannerAd;
+- (void)didClickedMutBannerAdWithIndex:(NSInteger)index;
 
 @end
 @interface YXMutBannerAdManager : NSObject
 
 @property(nonatomic,weak) id<YXMutBannerAdManagerDelegate> delegate;
 
-@property (nonatomic,assign)YXADSize  adSize;
+@property (nonatomic,assign) YXADSize  adSize;
+
+/**
+ 当adSize类型为YXADSizeCustom时，宽高必传，其余模式不用传
+ */
+@property (nonatomic, assign) CGFloat s2sWidth;
+@property (nonatomic, assign) CGFloat s2sHeight;
+
+//轮播图弧度
+@property (nonatomic, assign) CGFloat cornerRadius;
 
 /**  媒体位Id  */
 @property (nonatomic,copy) NSString *mediaId;
@@ -48,23 +56,55 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  *  滚动方法 默认为横向
  */
+@property (nonatomic, assign) UICollectionViewScrollDirection scrollDirection;
 
-@property (nonatomic,assign) YXNewPagedFlowViewOrientation orientation;
+/** 轮播图片的ContentMode，默认为 UIViewContentModeScaleToFill */
+@property (nonatomic, assign) UIViewContentMode bannerImageViewContentMode;
 
-/**
- *  是否开启自动滚动 默认为开启
- */
-@property (nonatomic, assign) BOOL isOpenAutoScroll;
+/** 占位图，用于网络未加载到图片时 */
+@property (nonatomic, strong) UIImage *placeholderImage;
 
-/**
- *  是否开启无限轮播,默认为开启
- */
-@property (nonatomic, assign) BOOL isCarousel;
+/** 自动滚动间隔时间,默认2s */
+@property (nonatomic, assign) CGFloat autoScrollTimeInterval;
 
-/**
- *  自动切换视图的时间,默认是5.0
- */
-@property (nonatomic, assign) CGFloat autoTime;
+/** 是否无限循环,默认Yes */
+@property (nonatomic,assign) BOOL infiniteLoop;
+
+/** 是否自动滚动,默认Yes */
+@property (nonatomic,assign) BOOL autoScroll;
+
+/** 是否显示分页控件 */
+@property (nonatomic, assign) BOOL showPageControl;
+
+/** 是否在只有一张图时隐藏pagecontrol，默认为YES */
+@property(nonatomic) BOOL hidesForSinglePage;
+
+/** pagecontrol 样式，默认为动画样式 */
+@property (nonatomic, assign) YXBannerScrollViewPageContolStyle pageControlStyle;
+
+/** 分页控件位置 */
+@property (nonatomic, assign) YXBannerScrollViewPageContolAliment pageControlAliment;
+
+/** 分页控件距离轮播图的底部间距（在默认间距基础上）的偏移量 */
+@property (nonatomic, assign) CGFloat pageControlBottomOffset;
+
+/** 分页控件距离轮播图的右边间距（在默认间距基础上）的偏移量 */
+@property (nonatomic, assign) CGFloat pageControlRightOffset;
+
+/** 分页控件小圆标大小 */
+@property (nonatomic, assign) CGSize pageControlDotSize;
+
+/** 当前分页控件小圆标颜色 */
+@property (nonatomic, strong) UIColor *currentPageDotColor;
+
+/** 其他分页控件小圆标颜色 */
+@property (nonatomic, strong) UIColor *pageDotColor;
+
+/** 当前分页控件小圆标图片 */
+@property (nonatomic, strong) UIImage *currentPageDotImage;
+
+/** 其他分页控件小圆标图片 */
+@property (nonatomic, strong) UIImage *pageDotImage;
 
 /**
   [必选]开发者需传入用来弹出广告的ViewController，一般为当前ViewController
@@ -82,6 +122,15 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)loadMutBannerAdViewsInView:(UIView*)view;
 
 
+/**
+ 刷新广告数据
+ */
+- (void)reloadMutBannerAd;
+
+/**
+ 清空轮播广告缓存数据
+ */
+- (void)clearMutBannerAdImageChace;
 
 @end
 

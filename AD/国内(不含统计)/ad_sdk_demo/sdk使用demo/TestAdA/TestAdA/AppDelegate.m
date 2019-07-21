@@ -9,7 +9,7 @@
 #import "AppDelegate.h"
 #import "ViewController.h"
 #import <YXLaunchAds/YXLaunchAds.h>
-
+#import <SafariServices/SafariServices.h>
 #import "WXApi.h"
 
 #define WXAPPID @"wxb6e91d4c42a22663"
@@ -61,7 +61,9 @@
  开屏广告初始化 建议放在 didFinishLaunchingWithOptions中调用
  */
 - (void)initLaunchAd
-{    
+{
+//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(customViewdidClickedAd) name:KPCUSTOMCLICKNOTIFITION object:nil];
+//    [YXAdSDKManager defaultManager].userDefault = YES;
     YXLaunchAdManager *adManager = [YXLaunchAdManager shareManager];
     adManager.waitDataDuration = 5;
     adManager.duration = 5;
@@ -90,6 +92,7 @@
     
     
 }
+
 #pragma mark ADDelegate
 -(void)didLoadAd:(UIView *)view
 {
@@ -98,6 +101,24 @@
 - (void)didClickedAd
 {
     NSLog(@"广告点击事件");
+}
+- (void)customViewdidClickedAd{
+    NSLog(@"自定义 View 点击事件");
+    SFSafariViewController *webView = [[SFSafariViewController alloc] initWithURL:[NSURL URLWithString:@"http://baidu.com"]];
+    //此处应获取当前显示的控制器去推出新控制器，否则将会被当前显示的控制器所盖住
+    [[self getCurrentViewController] showViewController:webView sender:self];
+}
+//获取当前显示的控制器
+- (UIViewController *)getCurrentViewController
+{
+    UIViewController * vc = [UIApplication sharedApplication].delegate.window.rootViewController;
+    if([vc isKindOfClass:[UITabBarController class]]) {
+        vc = [(UITabBarController *)vc selectedViewController];
+    }
+    if([vc isKindOfClass:[UINavigationController class]]) {
+        vc = [(UINavigationController *)vc visibleViewController];
+    }
+    return vc;
 }
 - (void)didPresentedAd
 {

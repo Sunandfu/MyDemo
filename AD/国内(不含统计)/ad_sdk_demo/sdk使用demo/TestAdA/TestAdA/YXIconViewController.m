@@ -7,16 +7,17 @@
 //
 
 #import "YXIconViewController.h"
+#import <YXLaunchAds/YXLaunchAds.h>
+#import "WXApi.h"
 
-#import <YXLaunchAds/YXIconAdManager.h>
-
-
-static  NSString * iconMediaID = @"znsh_ios_wlicon";
+static  NSString * iconMediaID = @"beta_ios_icon";
 
 @interface YXIconViewController ()<YXIconAdManagerDelegate>
-{
-    YXIconAdManager *iconAd;
-}
+
+@property (nonatomic, strong) UIView *customView;
+@property (nonatomic, strong) YXIconAdManager *iconAd;
+@property (nonatomic, strong) YXIconAdManager *iconAdArray;
+
 @end
 
 @implementation YXIconViewController
@@ -33,33 +34,51 @@ static  NSString * iconMediaID = @"znsh_ios_wlicon";
         button;
     });
     [self.view addSubview:iconBtn];
+    
+    //多Icon样式
+    self.iconAdArray = [[YXIconAdManager alloc]initWithFrame:CGRectMake(100, 300, 40, 40)];
+    self.iconAdArray.mediaIdArray = @[iconMediaID,iconMediaID,iconMediaID];
+    self.iconAdArray.popType = YXPopupMenuDirectionRight;
+    self.iconAdArray.adType = YXIconType;
+    self.iconAdArray.delegate = self;
+    self.iconAdArray.menuGroundColor = [UIColor orangeColor];
+    [self.iconAdArray loadIconAd];
+    self.customView = [[UIView alloc] initWithFrame:CGRectMake([UIScreen mainScreen].bounds.size.width - 100, 300, 80, 80)];
+    self.customView.backgroundColor = [UIColor redColor];
+    [self.view addSubview:self.customView];
+//    NSString * str = NSStringFromClass([self class]);
+    
+//    [HMTAgentSDK postAction:str];
     // Do any additional setup after loading the view from its nib.
 }
 - (void)iconBtnClicked:(UIButton*)sender
 {
-    if (iconAd ) {
-        [iconAd removeFromSuperview];
-        iconAd = nil;
+    if (self.iconAd) {
+        [self.iconAd removeFromSuperview];
+        self.iconAd = nil;
     }
-    
-    iconAd = [[YXIconAdManager alloc]initWithFrame:CGRectMake(100, 300, 40, 40)];
-    iconAd.backgroundColor = [UIColor cyanColor];
-    iconAd.mediaId = iconMediaID;
-    iconAd.adType = YXIconType;
-    iconAd.delegate = self;
-    [iconAd loadIconAd];
+    //单Icon样式
+    self.iconAd = [[YXIconAdManager alloc]initWithFrame:CGRectMake(100, 300, 40, 40)];
+    self.iconAd.mediaId = iconMediaID;
+    self.iconAd.adType = YXIconType;
+    self.iconAd.delegate = self;
+    [self.iconAd loadIconAd];
     NSLog(@"Icon请求");
 }
 
 - (void)didLoadIconAd:(UIView *)adView
 {
     NSLog(@"Icon广告请求成功");
-    adView.center = self.view.center;
-    [self.view addSubview:iconAd];
-    
-    UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(handlePan:)];
-    adView.userInteractionEnabled = YES;
-    [iconAd addGestureRecognizer:pan];
+    if (self.iconAd) {
+        adView.center = self.view.center;
+        [self.view addSubview:self.iconAd];
+        
+        UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(handlePan:)];
+        adView.userInteractionEnabled = YES;
+        [self.iconAd addGestureRecognizer:pan];
+    } else {
+        //多icon 此时可点击展示
+    }
 }
 
 
@@ -68,6 +87,7 @@ static  NSString * iconMediaID = @"znsh_ios_wlicon";
 {
     NSLog(@"Icon广告点击");
 }
+    
 
 - (void)didFailedLoadIconAd:(NSError *)error
 {
@@ -78,7 +98,7 @@ static  NSString * iconMediaID = @"znsh_ios_wlicon";
     
     
     CGFloat KWidth = [UIScreen mainScreen].bounds.size.width;
-    //    CGFloat KHeight = [UIScreen mainScreen].bounds.size.height;
+//    CGFloat KHeight = [UIScreen mainScreen].bounds.size.height;
     
     //返回在横坐标上、纵坐标上拖动了多少像素
     CGPoint point=[rec translationInView:[UIApplication sharedApplication].keyWindow];
@@ -110,24 +130,27 @@ static  NSString * iconMediaID = @"znsh_ios_wlicon";
     
     //拖动完之后，每次都要用setTranslation:方法制0这样才不至于不受控制般滑动出视图
     [rec setTranslation:CGPointMake(0, 0) inView:[UIApplication sharedApplication].keyWindow];
+    
+    
 }
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
 - (void)dealloc
 {
     NSLog(@"%@ %@",[self class],NSStringFromSelector(_cmd));
 }
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+{
+    UITouch *t = touches.anyObject;
+    CGPoint p = [t locationInView: self.view];
+    
+    if (CGRectContainsPoint(self.customView.frame, p)) {
+        [self.iconAdArray showCustomPopupMenuWithPoint:p];
+    }
 }
-*/
 
 @end

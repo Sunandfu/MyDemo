@@ -8,11 +8,12 @@
 
 #import "AppDelegate.h"
 #import "ViewController.h"
-#import <YXLaunchAds/YXLaunchAdManager.h>
+#import <YXLaunchAds/YXLaunchAds.h>
 
 #import "WXApi.h"
 
-#define WXAPPID @"wxb6e91d4c42a22663"//向微信终端程序注册第三方应用 （本应用）Appid
+#define WXAPPID @"wxb6e91d4c42a22663"
+//向微信终端程序注册第三方应用 （本应用）Appid
 
 @interface AppDelegate ()<YXLaunchAdManagerDelegate,WXApiDelegate>
 
@@ -74,19 +75,20 @@
     adManager.skipButtonType = SkipTypeTimeText;
     
     adManager.delegate = self;
-    
-    
-    UIView *bottom = [[UIView alloc]initWithFrame:CGRectMake(0, [UIScreen mainScreen].bounds.size.height * 0.8, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height * 0.2)];
-//    bottom.backgroundColor = [UIColor whiteColor];
-    UIImageView *logoImageView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"yxadlogo"]];
-    //把logo置于 bottom 中心
-    logoImageView.frame = bottom.bounds;
-    logoImageView.contentMode =  UIViewContentModeCenter;
-    
-    [bottom addSubview:logoImageView];
-    adManager.bottomView = bottom;
-    
     [adManager loadLaunchAdWithShowAdWindow:self.window];
+    
+//
+//    UIView *bottom = [[UIView alloc]initWithFrame:CGRectMake(0, [UIScreen mainScreen].bounds.size.height * 0.8, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height * 0.2)];
+////    bottom.backgroundColor = [UIColor whiteColor];
+//    UIImageView *logoImageView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"yxadlogo"]];
+//    //把logo置于 bottom 中心
+//    logoImageView.frame = bottom.bounds;
+//    logoImageView.contentMode =  UIViewContentModeCenter;
+//
+//    [bottom addSubview:logoImageView];
+//    adManager.bottomView = bottom;
+    
+    
 }
 #pragma mark ADDelegate
 -(void)didLoadAd:(UIView *)view

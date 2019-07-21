@@ -7,7 +7,7 @@
 //
 
 #import "YXLaunchScreenViewController.h"
-#import <YXLaunchAds/YXLaunchAdManager.h>
+#import <YXLaunchAds/YXLaunchAds.h>
 #import "AppDelegate.h"
 
 @interface YXLaunchScreenViewController ()<YXLaunchAdManagerDelegate>
@@ -102,6 +102,11 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)dealloc
+{
+    NSLog(@"%@ %@",[self class],NSStringFromSelector(_cmd));
 }
 
 /*

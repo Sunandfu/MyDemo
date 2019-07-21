@@ -10,7 +10,6 @@
 #import <UIKit/UIKit.h>
 #import "YXLaunchConfiguration.h"
 
-
 @protocol YXIconAdManagerDelegate<NSObject>
 @optional
 /**

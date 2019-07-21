@@ -596,7 +596,7 @@
 					"-Objc",
 					"-all_load",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.ixiaoma.newchinabus;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ixiaoma.chinabusride;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "6c98abac-4b2e-4ab1-9faf-fc1314841d2a";
 				PROVISIONING_PROFILE_SPECIFIER = mySelfTongyong;
@@ -628,7 +628,7 @@
 					"-Objc",
 					"-all_load",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.ixiaoma.newchinabus;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ixiaoma.chinabusride;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "6c98abac-4b2e-4ab1-9faf-fc1314841d2a";
 				PROVISIONING_PROFILE_SPECIFIER = mySelfTongyong;

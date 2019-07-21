@@ -21,4 +21,5 @@ FOUNDATION_EXPORT const unsigned char YXLaunchAdsVersionString[];
 #import <YXLaunchAds/YXLaunchConfiguration.h>
 #import <YXLaunchAds/YXFeedAdManager.h>
 #import <YXLaunchAds/YXFeedAdData.h>
-#import <YXLaunchAds/YXInterstitialAdManager.h>
+#import <YXLaunchAds/YXAdSDKManager.h>
+#import <YXLaunchAds/YXMutBannerAdManager.h>

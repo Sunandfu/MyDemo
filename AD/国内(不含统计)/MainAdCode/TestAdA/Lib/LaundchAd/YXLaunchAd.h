@@ -73,6 +73,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)YXLaunchAdShowFailed;
 
 - (void)skipBtnClicked;
+
 /**
  如果你想用SDWebImage等框架加载网络广告图片,请实现此代理,注意:实现此方法后,图片缓存将不受YXLaunchAd管理
  

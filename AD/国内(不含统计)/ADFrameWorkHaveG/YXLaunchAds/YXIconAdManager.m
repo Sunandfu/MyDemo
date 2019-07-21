@@ -71,6 +71,7 @@
 
 - (void)initXAD
 {
+    WEAK(weakSelf);
     [[Network sharedInstance] beginRequestfinished:^(BOOL isSuccess, id json) {
         
         if (isSuccess) {
@@ -78,13 +79,13 @@
                 NSArray * arr = json[@"adInfos"];
                 if (arr.count <= 0) {
                     NSError *errors = [NSError errorWithDomain:@"请求失败" code:400 userInfo:nil];
-                    [self failedError:errors];
+                    [weakSelf failedError:errors];
                     return ;
                 }
-                if (self.mediaId) {
-                    self.adDict = arr.lastObject;
+                if (weakSelf.mediaId) {
+                    weakSelf.adDict = arr.lastObject;
                 } else {
-                    [self.adDictArray addObject:arr.lastObject];
+                    [weakSelf.adDictArray addObject:arr.lastObject];
                 }
                 if ([json objectForKey:@"data"]) {
                     if ([[json objectForKey:@"data"] isKindOfClass:[NSArray class]]) {
@@ -99,16 +100,16 @@
                     }
                 }
                 dispatch_async(dispatch_get_main_queue(), ^{
-                    [self   showNativeAd];
+                    [weakSelf   showNativeAd];
                 });
             }else{
                 NSError *errors = [NSError errorWithDomain:@"请求失败" code:400 userInfo:nil];
-                [self failedError:errors];
+                [weakSelf failedError:errors];
             }
          
         }else{
             NSError *errors = [NSError errorWithDomain:@"请求失败" code:400 userInfo:nil];
-            [self failedError:errors];
+            [weakSelf failedError:errors];
         }
     }];
 }
@@ -162,12 +163,13 @@
     [self addWebView];
     NSString *urlstr = self.adDict[@"img_url"];
     if(urlstr && ![urlstr isEqualToString:@""]){
+        WEAK(weakSelf);
         // 1.加载
         [YXImgUtil gifImgWithUrl:urlstr successBlock:^(NSData *data) { 
             
             [self->_webView loadData:data MIMEType:@"image/gif" textEncodingName:@"UTF-8" baseURL:[NSURL URLWithString:urlstr]];
-            if (self.adDict[@"logo_url"]) {
-                NSString * logo_url = self.adDict[@"logo_url"];
+            if (weakSelf.adDict[@"logo_url"]) {
+                NSString * logo_url = weakSelf.adDict[@"logo_url"];
                 UIImage *logoImage = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:logo_url]]];
                 UIImageView *logoView = [[UIImageView alloc] initWithFrame:CGRectMake(self->_webView.frame.size.width - 24 , self->_webView.frame.size.height - 24, 24, 24)];
                 logoView.image = logoImage ;
@@ -176,16 +178,16 @@
             // 2.显示成功
             // 2.显示成功
             dispatch_async(dispatch_get_main_queue(), ^{
-                if(self.delegate && [self.delegate respondsToSelector:@selector(didLoadIconAd:)]){
-                    [self.delegate didLoadIconAd:self];
+                if(weakSelf.delegate && [weakSelf.delegate respondsToSelector:@selector(didLoadIconAd:)]){
+                    [weakSelf.delegate didLoadIconAd:self];
                 }
                 // 3.上报
-                [self groupNotify];
+                [weakSelf groupNotify];
             });
             
         } failBlock:^(NSError *error) {
             NSError *errors = [NSError errorWithDomain:@"加载Gif失败,请重试" code:400 userInfo:nil];
-            [self failedError:errors];
+            [weakSelf failedError:errors];
         }];
     }else{
         // 3.加载下一副广告,使用定时器
@@ -200,7 +202,7 @@
     
     NSString *urlstr = self.adDict[@"img_url"];
     if(urlstr && ![urlstr isEqualToString:@""]){
-        
+        WEAK(weakSelf);
         [YXImgUtil imgWithUrl:urlstr successBlock:^(UIImage *img) {
             self->_imgView.image =img;
             // 2.显示成功
@@ -211,12 +213,12 @@
                     [self->_delegate didLoadIconAd:self];
                 }
                 // 3.上报
-                [self groupNotify];
+                [weakSelf groupNotify];
             });
             
         } failBlock:^(NSError *error) {
             NSError *errors = [NSError errorWithDomain:@"加载jpg失败,请重试" code:400 userInfo:nil];
-            [self failedError:errors];
+            [weakSelf failedError:errors];
         }];
         
     }else{
@@ -302,129 +304,8 @@
     if(!self.adDict){
         return;
     }
-    // 1.跳转链接
-    NSString *urlStr = self.adDict[@"click_url"];
     
-    NSString * click_position = [NSString stringWithFormat:@"%@",self.adDict[@"click_position"]];
-    if ([click_position isEqualToString:@"1"]) {
-        if (self.adDict[@"width"]) {
-            urlStr = [urlStr stringByReplacingOccurrencesOfString:@"__REQ_WIDTH__" withString:[NSString stringWithFormat:@"%@",self.adDict[@"width"]]];
-        }
-        if (self.adDict[@"height"]) {
-            urlStr = [urlStr stringByReplacingOccurrencesOfString:@"__REQHEIGHT__" withString:[NSString stringWithFormat:@"%@",self.adDict[@"height"]]];
-        }
-        urlStr = [urlStr stringByReplacingOccurrencesOfString:@"__WIDTH__" withString:widthStr];
-        urlStr = [urlStr stringByReplacingOccurrencesOfString:@"__HEIGHT__" withString:heightStr];
-        
-        urlStr = [urlStr stringByReplacingOccurrencesOfString:@"__DOWN_X__" withString:x];
-        urlStr = [urlStr stringByReplacingOccurrencesOfString:@"__DOWN_Y__" withString:y];
-        urlStr = [urlStr stringByReplacingOccurrencesOfString:@"__UP_X__" withString:x];
-        urlStr = [urlStr stringByReplacingOccurrencesOfString:@"__UP_Y__" withString:y];
-        
-    }
-    
-    NSString * ac_type = [NSString stringWithFormat:@"%@",self.adDict[@"ac_type"]];
-    
-    if ([ac_type isEqualToString:@"1"] || [ac_type isEqualToString:@"2"]) {
-        NSURL *url = [NSURL URLWithString:urlStr];
-        if (@available(iOS 9.0, *)) {
-            SFSafariViewController *safariVC = [[SFSafariViewController alloc] initWithURL:url];
-            [[NetTool getCurrentViewController] showViewController:safariVC sender:nil];
-            
-        } else {
-            // Fallback on earlier versions
-            [[UIApplication sharedApplication] openURL:url];
-        }
-    } else if ([ac_type isEqualToString:@"6"]) {
-        NSString *deeplick = self.adDict[@"deep_url"];
-        NSURL *deeplickUrl = [NSURL URLWithString:deeplick];
-        if ([[UIApplication sharedApplication] canOpenURL:deeplickUrl]) {
-            if (@available(iOS 10.0, *)) {
-                [[UIApplication sharedApplication] openURL:deeplickUrl options:@{} completionHandler:^(BOOL success) {
-                    NSLog(@"success = %d",success);
-                }];
-            }else{
-                [[UIApplication sharedApplication] openURL:deeplickUrl];
-            }
-        } else {
-            NSURL *url = [NSURL URLWithString:urlStr];
-            if (@available(iOS 9.0, *)) {
-                SFSafariViewController *safariVC = [[SFSafariViewController alloc] initWithURL:url];
-                [[NetTool getCurrentViewController] showViewController:safariVC sender:nil];
-                
-            } else {
-                // Fallback on earlier versions
-                [[UIApplication sharedApplication] openURL:url];
-            }
-        }
-        
-    } else if ([ac_type isEqualToString:@"7"]){//6。app。 7。 小程序
-        
-        NSString * miniPath = [NSString stringWithFormat:@"%@",self.adDict[@"miniPath"] ];
-        miniPath = [miniPath stringByReplacingOccurrencesOfString:@" " withString:@""];
-        NSString * miniProgramOriginId = [NSString stringWithFormat:@"%@",self.adDict[@"miniProgramOriginId"]];
-        
-        WXLaunchMiniProgramReq *launchMiniProgramReq = [WXLaunchMiniProgramReq object];
-        launchMiniProgramReq.userName = miniProgramOriginId;  //拉起的小程序的username
-        launchMiniProgramReq.path = miniPath;    //拉起小程序页面的可带参路径，不填默认拉起小程序首页
-        launchMiniProgramReq.miniProgramType = WXMiniProgramTypeRelease; //拉起小程序的类型
-        
-        BOOL installWe = [WXApi isWXAppInstalled];
-        if (installWe) {
-            [WXApi sendReq:launchMiniProgramReq];
-        }else{
-            NSLog(@"未安装微信");
-        }
-        
-        [Network notifyToServer:nil serverUrl:urlStr completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
-            if(connectionError){
-                NSLog(@"#####%@\error",[connectionError debugDescription]);
-            }else{
-                NSDictionary *json =  [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
-                if (json) {
-                    NSLog(@"%@",json);
-                }
-            }
-        }]; 
-    }else{
-        if(urlStr && ![urlStr isEqualToString:@""]){
-            
-//            NSURL *url = [NSURL URLWithString:urlStr];
-//             [[UIApplication sharedApplication] openURL:url];
-            
-            YXWebViewController *web = [YXWebViewController new];
-            web.URLString = urlStr;
-            web.delegate = self;
-            [[NetTool getCurrentViewController] presentViewController:web animated:YES completion:nil];
-        }
-    }
-    
-    //    urlStr = [NSString stringWithFormat:@"%@%@",urlStr,dicStr];
-    
-    
-    // 2.上报服务器
-    if (![[NetTool gettelModel] isEqualToString:@"iPhone Simulator"])
-    {
-        // 上报服务器
-        NSArray *viewS = self.adDict[@"click_notice_urls"];
-        if ([click_position isEqualToString:@"1"]) {
-            
-            if (self.adDict[@"width"]) {
-                urlStr = [urlStr stringByReplacingOccurrencesOfString:@"__REQ_WIDTH__" withString:[NSString stringWithFormat:@"%@",self.adDict[@"width"]]];
-            }
-            if (self.adDict[@"height"]) {
-                urlStr = [urlStr stringByReplacingOccurrencesOfString:@"__REQHEIGHT__" withString:[NSString stringWithFormat:@"%@",self.adDict[@"height"]]];
-            }
-            urlStr = [urlStr stringByReplacingOccurrencesOfString:@"__WIDTH__" withString:widthStr];
-            urlStr = [urlStr stringByReplacingOccurrencesOfString:@"__HEIGHT__" withString:heightStr];
-            
-            urlStr = [urlStr stringByReplacingOccurrencesOfString:@"__DOWN_X__" withString:x];
-            urlStr = [urlStr stringByReplacingOccurrencesOfString:@"__DOWN_Y__" withString:y];
-            urlStr = [urlStr stringByReplacingOccurrencesOfString:@"__UP_X__" withString:x];
-            urlStr = [urlStr stringByReplacingOccurrencesOfString:@"__UP_Y__" withString:y];
-        }
-        [Network groupNotifyToSerVer:viewS];
-    }
+    [self ViewClickWithDict:self.adDict Width:widthStr Height:heightStr X:x Y:y];
     [self clikedADs2sPan];
 }
 -(void)onResp:(BaseResp *)resp
@@ -546,8 +427,8 @@
     if ([ac_type isEqualToString:@"1"] || [ac_type isEqualToString:@"2"]) {
         NSURL *url = [NSURL URLWithString:urlStr];
         if (@available(iOS 9.0, *)) {
-            SFSafariViewController *safariVC = [[SFSafariViewController alloc] initWithURL:url];
-            [[NetTool getCurrentViewController] showViewController:safariVC sender:nil];
+            SFWebViewController *safariVC = [[SFWebViewController alloc] initWithURL:url];
+            [[NetTool getCurrentViewController] presentViewController:safariVC animated:YES completion:nil];
             
         } else {
             // Fallback on earlier versions
@@ -561,8 +442,8 @@
                 if (!success) {
                     NSURL *url = [NSURL URLWithString:urlStr];
                     if (@available(iOS 9.0, *)) {
-                        SFSafariViewController *safariVC = [[SFSafariViewController alloc] initWithURL:url];
-                        [[NetTool getCurrentViewController] showViewController:safariVC sender:nil];
+                        SFWebViewController *safariVC = [[SFWebViewController alloc] initWithURL:url];
+                        [[NetTool getCurrentViewController] presentViewController:safariVC animated:YES completion:nil];
                         
                     } else {
                         YXWebViewController *web = [YXWebViewController new];
@@ -574,8 +455,8 @@
         }else{
             NSURL *url = [NSURL URLWithString:urlStr];
             if (@available(iOS 9.0, *)) {
-                SFSafariViewController *safariVC = [[SFSafariViewController alloc] initWithURL:url];
-                [[NetTool getCurrentViewController] showViewController:safariVC sender:nil];
+                SFWebViewController *safariVC = [[SFWebViewController alloc] initWithURL:url];
+                [[NetTool getCurrentViewController] presentViewController:safariVC animated:YES completion:nil];
                 
             } else {
                 YXWebViewController *web = [YXWebViewController new];

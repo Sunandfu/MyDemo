@@ -34,9 +34,9 @@
     self = [super init];
     if (self) {
         
-        CGFloat y = XH_IPHONEX ? 40 : 20;
+        CGFloat y = SF_iPhoneXStyle ? 40 : 20;
         
-        self.frame = CGRectMake(XH_ScreenW-100,y, 90, 35);
+        self.frame = CGRectMake(SF_ScreenW-100,y, 90, 35);
         
         [self setupLanguage];
         
@@ -51,12 +51,12 @@
     if (self) {
         [self setupLanguage];
         _skipType = skipType;
-        CGFloat y = XH_IPHONEX ? 40 : 20;
+        CGFloat y = SF_StatusBarHeight;
         //环形
         if(skipType == SkipTypeRoundTime || skipType ==SkipTypeRoundText || skipType == SkipTypeRoundProgressTime || skipType == SkipTypeRoundProgressText){
-            self.frame = CGRectMake(XH_ScreenW-55,y, 42, 42);
+            self.frame = CGRectMake(SF_ScreenW-55,y, 42, 42);
         }else{//方形
-            self.frame = CGRectMake(XH_ScreenW-100,y, 90, 35);
+            self.frame = CGRectMake(SF_ScreenW-100,y, 90, 35);
         }
         switch (skipType) {
             case SkipTypeNone:{
@@ -260,6 +260,9 @@
     NSArray *languages = [defaults objectForKey:@"AppleLanguages"];
     NSString *currentLang = [languages objectAtIndex:0];
     return currentLang;
+}
+- (CGFloat)getTopBottomSpace{
+    return self.topBottomSpace;
 }
 
 @end

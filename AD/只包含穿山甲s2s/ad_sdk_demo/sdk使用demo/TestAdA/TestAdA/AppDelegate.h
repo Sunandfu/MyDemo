@@ -4,7 +4,7 @@
 //
 //  Created by shuai on 2018/3/24.
 //  Copyright © 2018年 YX. All rights reserved.
-//com.yd.demo 
+//
 
 #import <UIKit/UIKit.h>
 #define YX_IPHONEX  ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1125, 2436), [[UIScreen mainScreen] currentMode].size) : NO)

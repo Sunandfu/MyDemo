@@ -8,6 +8,7 @@
 
 #import "YXHalfLaunchScreenViewController.h"
 
+#import <SafariServices/SafariServices.h>
 #import <YXLaunchAds/YXLaunchAdManager.h>
 #import "AppDelegate.h"
 @interface YXHalfLaunchScreenViewController ()<YXLaunchAdManagerDelegate>
@@ -71,6 +72,24 @@
 - (void)didClickedAd
 {
     NSLog(@"广告点击事件");
+}
+- (void)customViewdidClickedAd{
+    NSLog(@"自定义 View 点击事件");
+    SFSafariViewController *webView = [[SFSafariViewController alloc] initWithURL:[NSURL URLWithString:@"http://baidu.com"]];
+    //此处应获取当前显示的控制器去推出新控制器，否则将会被当前显示的控制器所盖住
+    [[self getCurrentViewController] showViewController:webView sender:self];
+}
+//获取当前显示的控制器
+- (UIViewController *)getCurrentViewController
+{
+    UIViewController * vc = [UIApplication sharedApplication].delegate.window.rootViewController;
+    if([vc isKindOfClass:[UITabBarController class]]) {
+        vc = [(UITabBarController *)vc selectedViewController];
+    }
+    if([vc isKindOfClass:[UINavigationController class]]) {
+        vc = [(UINavigationController *)vc visibleViewController];
+    }
+    return vc;
 }
 - (void)didPresentedAd
 {

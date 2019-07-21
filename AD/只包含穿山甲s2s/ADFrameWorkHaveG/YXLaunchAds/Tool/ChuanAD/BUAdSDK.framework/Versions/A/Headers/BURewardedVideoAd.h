@@ -73,11 +73,11 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)rewardedVideoAdDidClose:(BURewardedVideoAd *)rewardedVideoAd;
 
 /**
- rewardedVideoAd 激励视频广告点击下载
+ rewardedVideoAd 激励视频广告点击
  
  @param rewardedVideoAd 当前激励视频对象
  */
-- (void)rewardedVideoAdDidClickDownload:(BURewardedVideoAd *)rewardedVideoAd;
+- (void)rewardedVideoAdDidClick:(BURewardedVideoAd *)rewardedVideoAd;
 
 /**
  rewardedVideoAd 激励视频广告素材加载失败
