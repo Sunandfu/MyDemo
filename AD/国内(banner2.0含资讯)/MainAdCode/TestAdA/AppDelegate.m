@@ -15,7 +15,8 @@
 #import "SFInformationViewController.h"
 #import "NetTool.h"
 
-#define WXAPPID @"wxb6e91d4c42a22663"
+#define WXAPPID @"wx6622c5f427bd8f14"
+
 //向微信终端程序注册第三方应用 （本应用）Appid
 
 @interface AppDelegate ()<YXLaunchAdManagerDelegate,WXApiDelegate>
@@ -66,7 +67,6 @@
         NSLog(@"URL query: %@", [url query]);
         if ([[url query] isEqualToString:@"zixun"]) {
             SFInformationViewController *infoVC = [SFInformationViewController new];
-            infoVC.mediaId = @"4";
             infoVC.mLocationId = @"3";
             [[NetTool getCurrentViewController] presentViewController:infoVC animated:YES completion:nil];
         }

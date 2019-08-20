@@ -74,7 +74,7 @@
 
 + (void)showStatus:(NSString *)str
 {
-    [self showStatus:str delay:1.0];
+    [self showStatus:str delay:2.0];
 }
 
 + (void)showStatus:(NSString *)str delay:(CGFloat)delay
@@ -100,7 +100,7 @@
     [[self defaultLoading] fitLabelSizeWithStr:str bottom:NO];
     
     [self show];
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self dissmissProgress];
     });
 }
@@ -136,12 +136,12 @@
         CGSize expectSize = [_tipLab sizeThatFits:maximumLabelSize];
         CGFloat labW = expectSize.width + 60;
         labW = labW > 120 ? labW : 120;
-        CGFloat labH = expectSize.height + 20;
+        CGFloat labH = expectSize.height + 30;
         labH = labH > 50 ? labH : 50;
         frame = CGRectMake(0, 0, labW, labH);
         frame;
     });
-    _tipLab.center = CGPointMake(SF_ScreenW/2.0, bottom ? SF_ScreenH*3.0/4.0 : SF_ScreenH/2.0);
+    _tipLab.center = CGPointMake(SF_ScreenW/2.0, bottom ? SF_ScreenH*4.0/5.0 : SF_ScreenH/2.0);
 }
 
 + (void)dissmissProgress

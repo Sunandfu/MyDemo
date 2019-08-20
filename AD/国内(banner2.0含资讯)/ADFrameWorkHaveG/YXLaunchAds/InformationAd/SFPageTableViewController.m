@@ -19,7 +19,7 @@
 #import "YXReachability.h"
 #import "MJRefresh.h"
 #import "YXWebViewController.h"
-#import "YXFeedAdManager.h"
+#import "SFSDKAdManager.h"
 #import "YXFeedAdData.h"
 #import "SFTagBtnView.h"
 
@@ -30,16 +30,16 @@
 @property (strong, nonatomic) NSMutableArray *zhidingArray;
 @property (strong, nonatomic) NSMutableArray *dataArray;
 @property (strong, nonatomic) UITableView *tableView;
-@property (nonatomic,strong) YXFeedAdManager *feedManager;
+@property (strong, nonatomic) SFSDKAdManager *feedManager;
 @property (assign, nonatomic) NSInteger index;
 @property (assign, nonatomic) NSInteger isFirst;
 @property (assign, nonatomic) NSInteger pageIndex;
 @property (nonatomic, copy) NSString *startKeyStr;
-@property (nonatomic, strong) UILabel *tmpLabel;
+@property (strong, nonatomic) UILabel *tmpLabel;
 @property (assign, nonatomic) NSInteger videoLastIndex;
-@property (nonatomic, strong) NSArray *videoTitleArray;
-@property (nonatomic, strong) SFTagBtnView *textBtnView;
-@property (nonatomic, strong) UIScrollView *headerView;
+@property (strong, nonatomic) NSArray *videoTitleArray;
+@property (strong, nonatomic) SFTagBtnView *textBtnView;
+@property (strong, nonatomic) UIScrollView *headerView;
 
 @end
 
@@ -57,7 +57,6 @@
     //    }
 }
 - (void)sf_viewDidLoadForIndex:(NSInteger)index {
-    [[NSUserDefaults standardUserDefaults] setObject:self.mediaId forKey:@"mediaId"];
     [[NSUserDefaults standardUserDefaults] setObject:self.mLocationId forKey:@"mLocationId"];
     [[NSUserDefaults standardUserDefaults] synchronize];
     
@@ -115,7 +114,7 @@
         isVideo = YES;
         if (_textBtnView==nil) {
             WEAK(weakSelf);
-            [Network getJSONDataWithURL:[NSString stringWithFormat:@"%@/social/getVideoCat?mLocationId=%@",NewsSeverin,self.mLocationId] parameters:nil success:^(id json) {
+            [Network getJSONDataWithURL:[NSString stringWithFormat:@"%@/social/getVideoCat?mLocationId=%@",TASK_SEVERIN,self.mLocationId] parameters:nil success:^(id json) {
                 if ([json isKindOfClass:[NSArray class]]) {
                     weakSelf.videoTitleArray = [NSArray arrayWithArray:json];
                     dispatch_async(dispatch_get_main_queue(), ^{
@@ -134,7 +133,7 @@
             } fail:^(NSError *error) {
                 [weakSelf.tableView.mj_header endRefreshing];
                 [weakSelf.tableView.mj_footer endRefreshing];
-                NSLog(@"video catID request error = %@",error);
+                NSLog(@"request error = %@",error);
             }];
         } else {
             if (self.videoTitleArray.count > self.videoLastIndex) {
@@ -150,21 +149,7 @@
     }
 }
 - (void)normalWithTop:(BOOL)isTop CatID:(NSString *)ydCatIdStr Url:(NSString *)urlShort{
-    NSString *url = [NSString stringWithFormat:@"%@/social/%@?userId=%@&mLocationId=%@&catId=%@&pageIndex=%@&startKey=%@&isFirst=%@",NewsSeverin,urlShort,self.mediaId,self.mLocationId,ydCatIdStr,isTop?@(1):@(self.pageIndex),self.startKeyStr,@(self.isFirst)];
-    
-    NSString *yun = [NetTool getYunYingShang];
-    NSInteger operator;
-    if ([yun isEqualToString:@"中国电信"]) {
-        operator = 2;
-    }else if ([yun isEqualToString:@"中国移动"]) {
-        operator = 1;
-    }else if ([yun isEqualToString:@"中国联通"]) {
-        operator = 3;
-    }else if ([yun isEqualToString:@"无运营商"]) {
-        operator = 0;
-    }else{
-        operator = 99;
-    }
+    NSString *url = [NSString stringWithFormat:@"%@/social/%@?mLocationId=%@&catId=%@&pageIndex=%@&startKey=%@&isFirst=%@",TASK_SEVERIN,urlShort,self.mLocationId,ydCatIdStr,isTop?@(1):@(self.pageIndex),self.startKeyStr,@(self.isFirst)];
     
     NSMutableDictionary *parametDict = [NSMutableDictionary dictionary];
     [parametDict setValue:@"1"                           forKey:@"deviceType"];
@@ -177,7 +162,7 @@
     [parametDict setValue:[NetTool getIDFA]              forKey:@"idfa"];
     [parametDict setValue:[Network sharedInstance].ipStr forKey:@"ipv4"];
     [parametDict setValue:@([NetTool getNetTyepe])       forKey:@"connectionType"];
-    [parametDict setValue:@(operator)                    forKey:@"operateType"];
+    [parametDict setValue:@([NetTool getYunYingShang])   forKey:@"operateType"];
     [parametDict setValue:@""                            forKey:@"longitude"];
     [parametDict setValue:@""                            forKey:@"latitude"];
     __weak typeof(self) weakSelf = self;
@@ -264,6 +249,8 @@
     } fail:^(NSError *error) {
         NSLog(@"error = %@",error);
         dispatch_async(dispatch_get_main_queue(), ^{
+            [weakSelf.tableView.mj_header endRefreshing];
+            [weakSelf.tableView.mj_footer endRefreshing];
             if (self.dataArray.count<=0) {
                 UIView *footerView = [[UIView alloc] initWithFrame:self.tableView.bounds];
                 footerView.backgroundColor = [UIColor whiteColor];
@@ -272,8 +259,6 @@
                 imageView.center = footerView.center;
                 [footerView addSubview:imageView];
                 self.tableView.tableFooterView = footerView;
-                [weakSelf.tableView.mj_header endRefreshing];
-                [weakSelf.tableView.mj_footer endRefreshing];
             }
             if (self.isFirst==1) {
                 [[NSNotificationCenter defaultCenter] postNotificationName:@"getDataFail" object:nil];
@@ -505,7 +490,7 @@
 - (UILabel *)tmpLabel{
     if (!_tmpLabel) {
         _tmpLabel = [[UILabel alloc] init];
-        _tmpLabel.font = [UIFont systemFontOfSize:HFont(18) weight:UIFontWeightRegular];
+        _tmpLabel.font = [SFNewsConfiguration defaultConfiguration].titleFont;
         _tmpLabel.numberOfLines = 0;
     }
     return _tmpLabel;
@@ -520,21 +505,35 @@
     }
     NSString *type = [NSString stringWithFormat:@"%@",dict[@"type"]];
     if ([type isEqualToString:@"sdkads"]) {//SDK 广告
+        YXFeedAdData *model = dict[@"model"];
+        [self.feedManager clickAdViewForAdData:model];
         return;
     }
-    //    NSLog(@"点击了%ld行----", indexPath.row);
-    YXWebViewController *webVC = [YXWebViewController new];
     NSString *urlStr = [NSString stringWithFormat:@"%@",dict[@"detailUrl"]];
     NSString *original = [NSString stringWithFormat:@"%@",dict[@"isOriginal"]];
     if (dict[@"isOriginal"] && [original isEqualToString:@"1"]) {
         
     } else {
-        urlStr = [urlStr stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+        urlStr = [urlStr stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
     }
-    webVC.URLString = urlStr;
-    webVC.show = NO;
     NSDictionary *titleDict = self.titleArray[self.index];
     NSString *ydCatIdStr = titleDict[@"ydCatId"];
+    if (dict[@"clickReportUrl"] && [dict[@"clickReportUrl"] isKindOfClass:[NSString class]]) {
+        [Network postJSONDataWithURL:dict[@"clickReportUrl"] parameters:nil success:nil fail:nil];
+    }
+    [Network newsStatisticsWithType:3 NewsID:dict[@"id"]?dict[@"id"]:@"" CatID:ydCatIdStr lengthOfTime:0];
+    if ([dict[@"isTop"] isEqualToString:@"1"]) {
+        if ([dict[@"topType"] isKindOfClass:[NSString class]] && [dict[@"topType"] isEqualToString:@"2"]) {
+            SFWebViewController *webVC = [[SFWebViewController alloc] initWithURL:[NSURL URLWithString:urlStr]];
+            webVC.hidesBottomBarWhenPushed = YES;
+            [self presentViewController:webVC animated:YES completion:nil];
+            return;
+        }
+    }
+    //    NSLog(@"点击了%ld行----", indexPath.row);
+    YXWebViewController *webVC = [YXWebViewController new];
+    webVC.URLString = urlStr;
+    webVC.show = NO;
     webVC.catIdStr = ydCatIdStr;
     webVC.newsIdStr = dict[@"id"];
     webVC.hidesBottomBarWhenPushed = YES;
@@ -543,10 +542,6 @@
     } else {
         [self presentViewController:webVC animated:YES completion:nil];
     }
-    if (dict[@"clickReportUrl"] && [dict[@"clickReportUrl"] isKindOfClass:[NSString class]]) {
-        [Network postJSONDataWithURL:dict[@"clickReportUrl"] parameters:nil success:nil fail:nil];
-    }
-    [Network newsStatisticsWithType:3 NewsID:dict[@"id"]?dict[@"id"]:@"" CatID:ydCatIdStr lengthOfTime:0];
 }
 - (void)dealloc{
     [NetTool clearNetImageChace];
@@ -561,9 +556,9 @@
         [self.pageDelegate scrollViewIsScrolling:scrollView];
     }
 }
-- (YXFeedAdManager *)feedManager{
+- (SFSDKAdManager *)feedManager{
     if (!_feedManager) {
-        _feedManager = [YXFeedAdManager new];
+        _feedManager = [SFSDKAdManager new];
         _feedManager.adSize = YXADSize690X388;
         _feedManager.controller = self;
         _feedManager.adCount = 1;

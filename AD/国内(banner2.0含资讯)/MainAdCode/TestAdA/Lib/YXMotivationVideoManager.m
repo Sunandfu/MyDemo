@@ -15,12 +15,13 @@
 #import <BUAdSDK/BURewardedVideoAd.h>
 #import <BUAdSDK/BURewardedVideoModel.h>
 #import <BUAdSDK/BUAdSDKManager.h>
+#import "AdCompvideo.h"
 
-@interface YXMotivationVideoManager ()<GDTRewardedVideoAdDelegate,BURewardedVideoAdDelegate>
+@interface YXMotivationVideoManager ()<GDTRewardedVideoAdDelegate,BURewardedVideoAdDelegate,AdCompVideoDelegate>
 
 @property (nonatomic, strong) GDTRewardVideoAd *rewardVideoAd;
-
 @property (nonatomic, strong) BURewardedVideoAd *rewardedVideoAd;
+@property (strong, nonatomic) AdCompVideo *video;
 
 @property (nonatomic, strong) NSDictionary *videoAD;
 @property (nonatomic, strong) NSDictionary *currentAD;
@@ -104,12 +105,89 @@
             [self initGDTAD];
         } else if ([name isEqualToString:@"头条"]){
             [self initChuanAD];
+        } else if ([name isEqualToString:@"快友"]){
+            [self initKuaiyouAD];
         }else{
             NSError *errors = [NSError errorWithDomain:@"" code:500 userInfo:@{@"NSLocalizedDescription":[NSString stringWithFormat:@"没有广告资源"]}];
             [self failedError:errors];
         }
     }
 }
+#pragma mark - 快有激励视频
+- (void)initKuaiyouAD{
+    dispatch_async(dispatch_get_main_queue(), ^{
+        NSDictionary *adplaces = [self.currentAD[@"adplaces"] lastObject];
+        AdCompVideoType videoType = AdCompVideoTypeInstl;
+    //    self.video.enableGPS = YES;                              //根据自己需求设定
+        self.video = [AdCompVideo playVideoWithAppId:adplaces[@"appId"] positionId:adplaces[@"adPlaceId"] videoType:videoType delegate:self];
+        if (videoType ==  AdCompVideoTypeInstl) {
+//            self.video.enableGPS = YES;
+            [self.video setInterfaceOrientations:UIInterfaceOrientationPortrait];
+        }
+        [self.video getVideoAD];
+    });
+}
+#pragma mark - videoDelegate
+/*
+ * 视频可以开始播放该回调调用后可以调用showVideoWithController:展示视频广告
+ */
+- (void)adCompVideoIsReadyToPlay:(AdCompVideo*)video{
+    [self.video showVideoWithController:self.showAdController];
+    if (self.delegate && [self.delegate respondsToSelector:@selector(rewardedVideoDidLoad:)]) {
+        [self.delegate rewardedVideoDidLoad:YES];
+    }
+}
+
+/*
+ * 视频广告播放开始回调
+ */
+- (void)adCompVideoPlayStarted{
+    NSLog(@"视频广告播放开始回调");
+    if (self.delegate && [self.delegate respondsToSelector:@selector(rewardedVideoDidVisible)]) {
+        [self.delegate rewardedVideoDidVisible];
+    }
+}
+
+/*
+ * 视频广告播放结束回调
+ */
+- (void)adCompVideoPlayEnded{
+    NSLog(@"视频广告播放结束回调");
+    if (self.delegate && [self.delegate respondsToSelector:@selector(rewardedVideoDidPlayFinish:)]) {
+        [self.delegate rewardedVideoDidPlayFinish:YES];
+    }
+}
+
+/*
+ * 视频广告关闭回调
+ */
+- (void)adCompVideoClosed{
+    NSLog(@"视频广告关闭回调");
+    if (self.delegate && [self.delegate respondsToSelector:@selector(rewardedVideoDidClose)]) {
+        [self.delegate rewardedVideoDidClose];
+    }
+}
+
+//***** 两种模式共用部分回调
+/*
+ * 请求广告数据成功回调
+ * @param vastString:贴片模式下返回视频内容字符串(vast协议标准);非贴片模式下返回为nil;
+ */
+- (void)adCompVideoDidReceiveAd:(NSString *)vastString{
+    NSLog(@"请求广告数据成功回调 success = %@",vastString);
+}
+
+/*
+ * 请求广告数据失败回调
+ * @param error:数据加载失败错误信息;(播放失败回调也包含再该回调中)
+ */
+- (void)adCompVideoFailReceiveDataWithError:(NSError*)error{
+    NSLog(@"请求广告数据失败回调 error = %@",error);
+    if (error) {
+        [self failedError:error];
+    }
+}
+
 #pragma mark BURewardedVideoAdDelegate  穿山甲激励视频
 - (void)initChuanAD{
     

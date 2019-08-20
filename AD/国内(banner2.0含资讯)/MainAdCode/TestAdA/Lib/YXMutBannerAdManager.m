@@ -687,10 +687,14 @@
     [self.bgHeaderView addSubview:self.bannerScrollView];
 }
 - (void)registerAdViewForInteraction:(UIView *)view didScrollToIndex:(NSInteger)index{
-    NSLog(@"registerAdViewForInteraction = %ld",index);
+//    NSLog(@"registerAdViewForInteraction = %ld",index);
     if (self.feedArray.count>index) {
         YXFeedAdData *feedData = self.feedArray[index];
         view.tag = index;
+        NSMutableArray *newges = [NSMutableArray arrayWithArray:view.gestureRecognizers];
+        for (int i =0; i<[newges count]; i++) {
+            [view removeGestureRecognizer:[newges objectAtIndex:i]];
+        }
         switch (feedData.adType) {
             case 1:
             {

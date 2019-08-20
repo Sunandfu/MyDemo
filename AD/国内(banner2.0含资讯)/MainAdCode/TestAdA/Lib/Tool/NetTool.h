@@ -11,6 +11,8 @@
 #import "UIView+addFunction.h"
 #import "NSObject+addFunction.h"
 #import "UIImageView+WebCache.h"
+#import "SFNewsConfiguration.h"
+#import "NSObject+SF_MJParse.h"
 
 #define WEAK(weakSelf)   __weak typeof(self) weakSelf = self
 typedef void(^downloadFinish)(UIImage *image,NSString *imageUrl);
@@ -31,7 +33,7 @@ typedef enum {
     unknown=999,
 }netType;
 //+(NSString *) getrequestInfo:(NSString *)key;
-+(NSString *) getrequestInfo:(NSString *)key
++ (NSString *) getrequestInfo:(NSString *)key
                        width:(NSString*)width
                       height:(NSString*)height
                        macID:(NSString*)macID
@@ -39,18 +41,17 @@ typedef enum {
                      adCount:(NSInteger)adCount;
 + (BOOL) connectedToNetwork;
 //网络类型
-//+ (NSDictionary *)getIPAddresses;
-//+ (NSString *)getIPAddress:(BOOL)preferIPv4;
-+ (NSString*)getDPI;
++ (NSString *)getDPI;
 + (NSString *)getMac;
 + (NSString *)gettelModel;
-+(NSString *)getPackageName;
++ (NSString *)getPackageName;
 + (NSString *)getOpenUDID;
 + (NSString *)getOS;
++ (NSString *)getTimeLocal;
 + (NSString *)getCityCode;
 + (NSString *)deviceWANIPAdress;
 + (netType) getNetTyepe;
-+ (NSString*)getYunYingShang;
++ (NSInteger)getYunYingShang;
 + (NSInteger)getSpendTimeWithStartDate:(NSString *)start stopDate:(NSString *)stop;
 + (NSString *)getNowDateStr_2;
 + (NSString *)compareCurrentTime:(NSString *)dateStr;
@@ -68,6 +69,7 @@ typedef enum {
 + (NSDictionary *)dictionaryWithJsonString:(NSString *)jsonString;
 + (NSMutableAttributedString *)attributedSetWithString:(NSString *)string;
 + (NSMutableDictionary *)parseURLParametersWithURLStr:(NSString *)urlStr;
++ (NSString *)urlStrWithDict:(NSDictionary *)arrayDic UrlStr:(NSString *)urlStr;
 /**
  * 获取 SDK 版本
  */

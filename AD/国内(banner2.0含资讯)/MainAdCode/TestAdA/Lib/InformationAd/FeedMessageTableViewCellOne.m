@@ -39,9 +39,16 @@
 }
 - (void)cellDataWithDictionary:(NSDictionary *)dict{
     NSString *type = [NSString stringWithFormat:@"%@",dict[@"type"]];
-    if ([dict[@"isTop"] isEqualToString:@"1"]) {
+    if ([dict[@"isTop"] isKindOfClass:[NSString class]] && [dict[@"isTop"] isEqualToString:@"1"]) {
         self.zhidWidth1.constant = 28;
         self.leftZhidWidth1.constant = 5;
+        if ([dict[@"topType"] isKindOfClass:[NSString class]] && [dict[@"topType"] isEqualToString:@"2"]) {
+            if ([dict[@"topImage"] isKindOfClass:[NSString class]]) {
+                [self.zhidImg1 sd_setImageWithURL:[NSURL URLWithString:dict[@"topImage"]] placeholderImage:[UIImage imageNamed:@"XibAndPng.bundle/sf_zhid"]];
+            }
+        } else {
+            self.zhidImg1.image = [UIImage imageNamed:@"XibAndPng.bundle/sf_zhid"];
+        }
     } else {
         self.zhidWidth1.constant = 0;
         self.leftZhidWidth1.constant = 0;
@@ -60,9 +67,14 @@
     NSString *imgStr = [imageArr firstObject];
     [self.imageView1 sd_setImageWithURL:[NSURL URLWithString:imgStr] placeholderImage:[UIImage imageNamed:@"XibAndPng.bundle/sf_placeImg"]];
 //    [NetTool setImage:self.imageView1 WithURLStr:imgStr placeholderImage:[UIImage imageNamed:@"XibAndPng.bundle/sf_placeImg"]];
-    self.contentLabel1.font = [UIFont systemFontOfSize:HFont(18) weight:UIFontWeightRegular];
-    self.fromLabel1.font = [UIFont systemFontOfSize:HFont(13) weight:UIFontWeightRegular];
-    self.timeLabel.font = [UIFont systemFontOfSize:HFont(13) weight:UIFontWeightRegular];
+    self.contentLabel1.font = [SFNewsConfiguration defaultConfiguration].titleFont;
+    self.fromLabel1.font = [SFNewsConfiguration defaultConfiguration].fromFont;
+    self.timeLabel.font = [SFNewsConfiguration defaultConfiguration].fromFont;
+    self.imageView1.layer.masksToBounds = YES;
+    self.imageView1.layer.cornerRadius = [SFNewsConfiguration defaultConfiguration].cornerRadius;
+    self.contentLabel1.textColor = [SFNewsConfiguration defaultConfiguration].titleColor;
+    self.fromLabel1.textColor = [SFNewsConfiguration defaultConfiguration].fromColor;
+    self.timeLabel.textColor = [SFNewsConfiguration defaultConfiguration].fromColor;
 }
 
 @end

@@ -61,9 +61,6 @@ NSString *_gulongitude;
     // app名称
     NSString *app_Name = [infoDictionary objectForKey:@"CFBundleDisplayName"];
 
-    UInt64 recordTime = [[NSDate date] timeIntervalSince1970]*1000;
-    NSString *timeLocal = [[NSString alloc] initWithFormat:@"%llu", recordTime];
-    
     NSMutableDictionary *dic = [NSMutableDictionary dictionary];
     NSString * adCountStr = [NSString stringWithFormat:@"%ld",(long)adCount];
     [dic setValue:adCountStr                             forKey:@"adCount"];
@@ -89,22 +86,16 @@ NSString *_gulongitude;
     [dic setValue:orientationStr                         forKey:@"orientation"];
     [dic setValue:[NetTool getCityCode]                  forKey:@"cityCode"];
     [dic setValue:@{@"width": width,@"height": height}   forKey:@"image"];
-    [dic setValue:timeLocal                              forKey:@"ts"];//时间戳
-    NSString *yun = [self getYunYingShang];
-    if ([yun isEqualToString:@"中国电信"]) {
-        [dic setValue:@"2" forKey:@"operator"];
-    }else if ([yun isEqualToString:@"中国移动"]) {
-        [dic setValue:@"1" forKey:@"operator"];
-    }else if ([yun isEqualToString:@"中国联通"]) {
-        [dic setValue:@"3" forKey:@"operator"];
-    }else if ([yun isEqualToString:@"无运营商"]) {
-        [dic setValue:@"0" forKey:@"operator"];
-    }else{
-        [dic setValue:@"4" forKey:@"operator"];
-    }
+    [dic setValue:[self getTimeLocal]                              forKey:@"ts"];//时间戳
+    [dic setValue:@([NetTool getYunYingShang]) forKey:@"operator"];
     //    NSJSONSerialization 组json字符串
     NSString *jsonStr = [NSString sf_jsonStringWithJson:dic];
     return jsonStr;
+}
++ (NSString *)getTimeLocal{
+    UInt64 recordTime = [[NSDate date] timeIntervalSince1970]*1000;
+    NSString *timeLocal = [[NSString alloc] initWithFormat:@"%llu", recordTime];
+    return timeLocal;
 }
 + (NSString *)sdkVersion{
     NSLog(@"当前版本号：%@",[GDTSDKConfig sdkVersion]);
@@ -112,8 +103,6 @@ NSString *_gulongitude;
 }
 
 +(NSString *)deviceWANIPAdress{
-    
-//    NSLog(@"开始请求MAc地址------------%@", [NSThread currentThread]);
     NSError *error;
     NSURL *ipURL = [NSURL URLWithString:@"http://pv.sohu.com/cityjson?ie=utf-8"];
     NSMutableString *ip = [NSMutableString stringWithContentsOfURL:ipURL encoding:NSUTF8StringEncoding error:&error];
@@ -131,7 +120,7 @@ NSString *_gulongitude;
         return ipAddress;
         
     }
-    return nil;
+    return @"";
 }
 
 
@@ -493,7 +482,7 @@ NSString *_gulongitude;
     // BOOL isEDGE = flags & kSCNetworkYXReachabilityFlagsIsWWAN;
     return (isReachable && !needsConnection) ? YES : NO;
 }
-+ (NSString*)getYunYingShang
++ (NSInteger)getYunYingShang
 {
     //获取本机运营商名称
     CTTelephonyNetworkInfo *info = [[CTTelephonyNetworkInfo alloc] init];
@@ -509,7 +498,17 @@ NSString *_gulongitude;
         mobile = [carrier carrierName];
         
     }
-    return mobile;
+    if ([mobile isEqualToString:@"中国电信"]) {
+        return 2;
+    }else if ([mobile isEqualToString:@"中国移动"]) {
+        return 1;
+    }else if ([mobile isEqualToString:@"中国联通"]) {
+        return 3;
+    }else if ([mobile isEqualToString:@"无运营商"]) {
+        return 0;
+    }else{
+        return 99;
+    }
 }
 + (NSInteger)getSpendTimeWithStartDate:(NSString *)start stopDate:(NSString *)stop
 {
@@ -913,6 +912,25 @@ NSString *_gulongitude;
     }
     
     return parameters;
+}
++ (NSString *)urlStrWithDict:(NSDictionary *)arrayDic UrlStr:(NSString *)urlStr{
+    NSMutableString *URL = [NSMutableString stringWithString:urlStr];
+    //获取字典的所有keys
+    NSArray * keys = [arrayDic allKeys];
+    //拼接字符串
+    for (int j = 0; j < keys.count; j ++) {
+        NSString *string;
+        if (j == 0) {
+            //拼接时加？
+            string = [NSString stringWithFormat:@"?%@=%@", keys[j], arrayDic[keys[j]]];
+        } else {
+            //拼接时加&
+            string = [NSString stringWithFormat:@"&%@=%@", keys[j], arrayDic[keys[j]]];
+        }
+        //拼接字符串
+        [URL appendString:string];
+    }
+    return [NSString stringWithString:URL];
 }
 
 @end

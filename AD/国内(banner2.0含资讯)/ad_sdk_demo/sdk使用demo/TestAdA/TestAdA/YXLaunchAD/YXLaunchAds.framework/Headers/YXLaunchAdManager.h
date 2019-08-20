@@ -33,7 +33,7 @@
 /**
  广告点击后回调
  */
-- (void)didClickedAd;
+- (void)didClickedAdWithUrlStr:(NSString *)urlStr;
 /**
   自定义 VIew 点击后回调
  */

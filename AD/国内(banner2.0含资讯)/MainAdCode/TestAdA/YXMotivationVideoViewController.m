@@ -7,7 +7,6 @@
 //
 
 #import "YXMotivationVideoViewController.h"
-
 #import "YXMotivationVideoManager.h"
 
 @interface YXMotivationVideoViewController ()<YXMotivationDelegate>
@@ -31,7 +30,7 @@
     self.motivationVideo = [YXMotivationVideoManager new];
     self.motivationVideo.delegate = self;
     self.motivationVideo.showAdController = self;
-    self.motivationVideo.mediaId = @"beta_ios_video";
+    self.motivationVideo.mediaId = @"ckej_ios_jlsp";
     
     UIButton *launchScreenBtn = ({
         UIButton *button = [[UIButton alloc]initWithFrame:CGRectMake(50, 300, [UIScreen mainScreen].bounds.size.width - 100, 40)];

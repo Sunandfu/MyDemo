@@ -51,9 +51,14 @@
     }
     //    [NetTool setImage:self.bigImageView WithURLStr:model.imageUrl placeholderImage:[UIImage imageNamed:@"XibAndPng.bundle/sf_placeImg"]];
     
-    self.SDKcontentLabel.font = [UIFont systemFontOfSize:HFont(18) weight:UIFontWeightRegular];
-    self.SDKfromLabel.font = [UIFont systemFontOfSize:HFont(13) weight:UIFontWeightRegular];
-    self.SDKtimeLabel.font = [UIFont systemFontOfSize:HFont(13) weight:UIFontWeightRegular];
+    self.SDKcontentLabel.font = [SFNewsConfiguration defaultConfiguration].titleFont;
+    self.SDKfromLabel.font = [SFNewsConfiguration defaultConfiguration].fromFont;
+    self.SDKtimeLabel.font = [SFNewsConfiguration defaultConfiguration].fromFont;
+    self.SDKbigImageView.layer.masksToBounds = YES;
+    self.SDKbigImageView.layer.cornerRadius = [SFNewsConfiguration defaultConfiguration].cornerRadius;
+    self.SDKcontentLabel.textColor = [SFNewsConfiguration defaultConfiguration].titleColor;
+    self.SDKfromLabel.textColor = [SFNewsConfiguration defaultConfiguration].fromColor;
+    self.SDKtimeLabel.textColor = [SFNewsConfiguration defaultConfiguration].fromColor;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

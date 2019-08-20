@@ -49,18 +49,21 @@
     [self.jianbianView.layer insertSublayer:gradient atIndex:0];
 }
 - (void)cellDataWithDictionary:(NSDictionary *)dict{
-    NSString *type = [NSString stringWithFormat:@"%@",dict[@"type"]];
     if ([dict[@"isTop"] isEqualToString:@"1"]) {
         self.zhidWidth.constant = 28;
         self.leftZhidWidth.constant = 5;
+        self.adImg.hidden = NO;
+        if ([dict[@"topType"] isKindOfClass:[NSString class]] && [dict[@"topType"] isEqualToString:@"2"]) {
+            if ([dict[@"topImage"] isKindOfClass:[NSString class]]) {
+                [self.adImg sd_setImageWithURL:[NSURL URLWithString:dict[@"topImage"]] placeholderImage:[UIImage imageNamed:@"XibAndPng.bundle/sf_zhid"]];
+            }
+        } else {
+            self.adImg.image = [UIImage imageNamed:@"XibAndPng.bundle/sf_zhid"];
+        }
     } else {
         self.zhidWidth.constant = 0;
         self.leftZhidWidth.constant = 0;
-    }
-    if ([type isEqualToString:@"video"]) {//新闻
         self.adImg.hidden = YES;
-    } else {// 广告
-        self.adImg.hidden = NO;
     }
     self.tag1.hidden = YES;
     self.tag2.hidden = YES;
@@ -116,12 +119,19 @@
     } else if ([dict[@"bigImageUrl"] isKindOfClass:[NSString class]]) {
         [self.backgroundImage sd_setImageWithURL:[NSURL URLWithString:dict[@"bigImageUrl"]] placeholderImage:[UIImage imageNamed:@"XibAndPng.bundle/sf_placeImg"]];
     }
+    self.contentLabel.font = [SFNewsConfiguration defaultConfiguration].titleFont;
+    self.titleLabel.font = [SFNewsConfiguration defaultConfiguration].fromFont;
+    self.tag1.font = [SFNewsConfiguration defaultConfiguration].fromFont;
+    self.tag2.font = [SFNewsConfiguration defaultConfiguration].fromFont;
+    self.timeLabel.font = [SFNewsConfiguration defaultConfiguration].fromFont;
+    self.backgroundImage.layer.masksToBounds = YES;
+    self.backgroundImage.layer.cornerRadius = [SFNewsConfiguration defaultConfiguration].cornerRadius;
+    self.contentLabel.textColor = [SFNewsConfiguration defaultConfiguration].titleColor;
+    self.titleLabel.textColor = [SFNewsConfiguration defaultConfiguration].fromColor;
+    self.tag1.textColor = [SFNewsConfiguration defaultConfiguration].fromColor;
+    self.tag2.textColor = [SFNewsConfiguration defaultConfiguration].fromColor;
+    self.timeLabel.textColor = [SFNewsConfiguration defaultConfiguration].fromColor;
     
-    self.contentLabel.font = [UIFont systemFontOfSize:HFont(17) weight:UIFontWeightRegular];
-    self.titleLabel.font = [UIFont systemFontOfSize:HFont(11) weight:UIFontWeightRegular];
-    self.tag1.font = [UIFont systemFontOfSize:HFont(12) weight:UIFontWeightRegular];
-    self.tag2.font = [UIFont systemFontOfSize:HFont(12) weight:UIFontWeightRegular];
-    self.timeLabel.font = [UIFont systemFontOfSize:HFont(12) weight:UIFontWeightRegular];
     self.userBackViewWidth.constant = [self cellWidthWithLabel:self.titleLabel]+30;
 }
 - (CGFloat)cellWidthWithLabel:(UILabel *)label

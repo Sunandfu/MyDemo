@@ -158,6 +158,7 @@ GDTNativeAdDelegate
         currentAdDict = @{@"ad":@"1"};
         BUNativeAd *wmAdData = adData.data;
         wmAdData.delegate = self;
+        wmAdData.rootViewController = self.controller;
         [wmAdData registerContainer:view withClickableViews:nil];
     } else if (adData.adType == 2) {
         UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(viewTapped:)];
@@ -222,6 +223,8 @@ GDTNativeAdDelegate
         cell.tag = adData.adID;
         currentAdDict = @{@"ad":@"1"};
         BUNativeAd *wmAdData = adData.data;
+        wmAdData.delegate = self;
+        wmAdData.rootViewController = self.controller;
         [wmAdData registerContainer:cell withClickableViews:nil];
     } else if(adData.adType == 2) {
         

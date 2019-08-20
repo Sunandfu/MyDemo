@@ -111,7 +111,10 @@ GDTNativeAdDelegate
 
     NSDictionary * currentAdDict;
     NSString * currentAD;
-
+    NSMutableArray *newges = [NSMutableArray arrayWithArray:view.gestureRecognizers];
+    for (int i =0; i<[newges count]; i++) {
+        [view removeGestureRecognizer:[newges objectAtIndex:i]];
+    }
     if (adData.adType == 4) {
         UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapImg:)];
         currentAD = @"1";

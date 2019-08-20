@@ -40,7 +40,7 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     self.title = @"ADDemo";
-    self.dataArr = @[@"轮播",@"信息流样式",@"横幅样式",@"开屏启动页样式",@"半屏开屏启动页样式",@"icon样式",@"插屏样式",@"激励视频",@"tableView半屏单频道资讯接入",@"tableView半屏全频道资讯接入",@"scrollView半屏单频道资讯接入",@"scrollView半屏全频道资讯接入",@"全屏资讯接入"];
+    self.dataArr = @[@"轮播",@"信息流样式",@"横幅样式",@"开屏启动页样式",@"半屏开屏启动页样式",@"icon样式",@"插屏样式",@"激励视频",@"tableView半屏单频道资讯接入",@"tableView半屏全频道资讯接入",@"scrollView半屏单频道资讯接入",@"scrollView半屏全频道资讯接入",@"全屏资讯接入",@"免费乘公交活动接入"];
     
     [self.view addSubview:self.tableView];
 }
@@ -152,9 +152,17 @@ static NSString * cellID = @"CELL";
         case 12:
         {
             SFInformationViewController *infoVC = [SFInformationViewController new];
-            infoVC.mediaId = @"10";
             infoVC.mLocationId = @"yxxcx_ios_sp";
             [self.navigationController pushViewController:infoVC animated:YES];
+            
+        }
+            break;
+        case 13:
+        {
+            TaskActivityViewController *taskVC = [TaskActivityViewController new];
+            taskVC.channelID = @"t-i";
+            taskVC.vuid = @"111";
+            [self.navigationController pushViewController:taskVC animated:YES];
             
         }
             break;

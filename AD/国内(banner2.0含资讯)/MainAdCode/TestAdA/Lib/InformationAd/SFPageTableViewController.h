@@ -18,7 +18,6 @@
 @interface SFPageTableViewController : UIViewController<SFScrollPageViewChildVcDelegate>
 
 @property(strong, nonatomic)NSArray *titleArray;
-@property (nonatomic, copy) NSString *mediaId;
 @property (nonatomic, copy) NSString *mLocationId;
 @property (assign, nonatomic) CGFloat segmentHeight;
 

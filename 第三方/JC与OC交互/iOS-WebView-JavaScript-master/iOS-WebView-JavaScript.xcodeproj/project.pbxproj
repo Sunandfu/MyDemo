@@ -7,12 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6B1F22DC1FE3A56300925FE7 /* task.html in Resources */ = {isa = PBXBuildFile; fileRef = 6B1F22DB1FE3A56300925FE7 /* task.html */; };
-		6B1F22E21FE3A57400925FE7 /* task.js in Resources */ = {isa = PBXBuildFile; fileRef = 6B1F22DD1FE3A56E00925FE7 /* task.js */; };
-		6B1F22E31FE3A57400925FE7 /* swiper.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 6B1F22DE1FE3A56F00925FE7 /* swiper.min.js */; };
-		6B1F22E41FE3A57400925FE7 /* jquery-1.10.2.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 6B1F22DF1FE3A57100925FE7 /* jquery-1.10.2.min.js */; };
-		6B1F22E51FE3A57400925FE7 /* consignee.js in Resources */ = {isa = PBXBuildFile; fileRef = 6B1F22E01FE3A57300925FE7 /* consignee.js */; };
-		6B1F22E61FE3A57400925FE7 /* jquery.mobile-1.4.5.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 6B1F22E11FE3A57400925FE7 /* jquery.mobile-1.4.5.min.js */; };
 		A2CB2E471CBA44B3003919C0 /* UIWebViewJS.html in Resources */ = {isa = PBXBuildFile; fileRef = A2CB2E3F1CBA44B3003919C0 /* UIWebViewJS.html */; };
 		A2CB2E481CBA44B3003919C0 /* UIWebViewJS_file.html in Resources */ = {isa = PBXBuildFile; fileRef = A2CB2E401CBA44B3003919C0 /* UIWebViewJS_file.html */; };
 		A2CB2E491CBA44B3003919C0 /* light_advice.png in Resources */ = {isa = PBXBuildFile; fileRef = A2CB2E411CBA44B3003919C0 /* light_advice.png */; };
@@ -59,12 +53,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		6B1F22DB1FE3A56300925FE7 /* task.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = task.html; sourceTree = "<group>"; };
-		6B1F22DD1FE3A56E00925FE7 /* task.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = task.js; sourceTree = "<group>"; };
-		6B1F22DE1FE3A56F00925FE7 /* swiper.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = swiper.min.js; sourceTree = "<group>"; };
-		6B1F22DF1FE3A57100925FE7 /* jquery-1.10.2.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "jquery-1.10.2.min.js"; sourceTree = "<group>"; };
-		6B1F22E01FE3A57300925FE7 /* consignee.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = consignee.js; sourceTree = "<group>"; };
-		6B1F22E11FE3A57400925FE7 /* jquery.mobile-1.4.5.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "jquery.mobile-1.4.5.min.js"; sourceTree = "<group>"; };
 		A2CB2E3F1CBA44B3003919C0 /* UIWebViewJS.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = UIWebViewJS.html; sourceTree = "<group>"; };
 		A2CB2E401CBA44B3003919C0 /* UIWebViewJS_file.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = UIWebViewJS_file.html; sourceTree = "<group>"; };
 		A2CB2E411CBA44B3003919C0 /* light_advice.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = light_advice.png; sourceTree = "<group>"; };
@@ -247,12 +235,6 @@
 		A2CB2E831CBA7184003919C0 /* JSCallOC */ = {
 			isa = PBXGroup;
 			children = (
-				6B1F22E01FE3A57300925FE7 /* consignee.js */,
-				6B1F22DF1FE3A57100925FE7 /* jquery-1.10.2.min.js */,
-				6B1F22E11FE3A57400925FE7 /* jquery.mobile-1.4.5.min.js */,
-				6B1F22DE1FE3A56F00925FE7 /* swiper.min.js */,
-				6B1F22DD1FE3A56E00925FE7 /* task.js */,
-				6B1F22DB1FE3A56300925FE7 /* task.html */,
 				A2CB2E841CBA7184003919C0 /* JSCallOC.html */,
 				A2CB2E851CBA7184003919C0 /* JSCallOCViewController.h */,
 				A2CB2E861CBA7184003919C0 /* JSCallOCViewController.m */,
@@ -358,12 +340,18 @@
 			attributes = {
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = www.skyfox.org;
+				TargetAttributes = {
+					A2E71E06197F911B0055B687 = {
+						DevelopmentTeam = J4N9H827FQ;
+					};
+				};
 			};
 			buildConfigurationList = A2E71E02197F911B0055B687 /* Build configuration list for PBXProject "iOS-WebView-JavaScript" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 			);
 			mainGroup = A2E71DFE197F911B0055B687;
@@ -384,7 +372,6 @@
 				A2CB2E951CBA7184003919C0 /* OCCallJSViewController.xib in Resources */,
 				A2CB2E5A1CBA4683003919C0 /* WKWebViewJSViewController.xib in Resources */,
 				A2CB2E701CBA61A8003919C0 /* JSUIWebViewViewController.xib in Resources */,
-				6B1F22DC1FE3A56300925FE7 /* task.html in Resources */,
 				A2CB2E8F1CBA7184003919C0 /* HighchartsWebViewController.xib in Resources */,
 				A2CB2E491CBA44B3003919C0 /* light_advice.png in Resources */,
 				A2CB2E9C1CBA7252003919C0 /* SecondViewController.xib in Resources */,
@@ -399,21 +386,16 @@
 				A2CB2E601CBA49CC003919C0 /* WKWebViewJS_file.html in Resources */,
 				A2CB2E911CBA7184003919C0 /* JSCallOC.html in Resources */,
 				A2CB2E611CBA49CC003919C0 /* WKWebViewJS_location.html in Resources */,
-				6B1F22E51FE3A57400925FE7 /* consignee.js in Resources */,
-				6B1F22E41FE3A57400925FE7 /* jquery-1.10.2.min.js in Resources */,
 				A2CB2E6B1CBA6198003919C0 /* JSWKWebViewViewController.xib in Resources */,
 				A2CB2E8C1CBA7184003919C0 /* highcharts.js in Resources */,
-				6B1F22E31FE3A57400925FE7 /* swiper.min.js in Resources */,
 				A2CB2E4B1CBA44B3003919C0 /* UIWebViewJS_location.html in Resources */,
 				A2CB2E761CBA6444003919C0 /* JSWKWebView.html in Resources */,
 				A2CB2E4A1CBA44B3003919C0 /* light_illstration.png in Resources */,
 				A2CB2E551CBA4547003919C0 /* Launch Screen.storyboard in Resources */,
 				A2CB2E8D1CBA7184003919C0 /* HighchartsView.html in Resources */,
 				A2CB2E931CBA7184003919C0 /* JSCallOCViewController.xib in Resources */,
-				6B1F22E21FE3A57400925FE7 /* task.js in Resources */,
 				A2E71E1D197F911B0055B687 /* Images.xcassets in Resources */,
 				A2CB2E901CBA7184003919C0 /* jquery-1.11.0.min.js in Resources */,
-				6B1F22E61FE3A57400925FE7 /* jquery.mobile-1.4.5.min.js in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -530,6 +512,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				DEVELOPMENT_TEAM = J4N9H827FQ;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iOS-WebView-JavaScript/iOS-WebView-JavaScript-Prefix.pch";
 				INFOPLIST_FILE = "iOS-WebView-JavaScript/iOS-WebView-JavaScript-Info.plist";
@@ -544,6 +527,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				DEVELOPMENT_TEAM = J4N9H827FQ;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iOS-WebView-JavaScript/iOS-WebView-JavaScript-Prefix.pch";
 				INFOPLIST_FILE = "iOS-WebView-JavaScript/iOS-WebView-JavaScript-Info.plist";

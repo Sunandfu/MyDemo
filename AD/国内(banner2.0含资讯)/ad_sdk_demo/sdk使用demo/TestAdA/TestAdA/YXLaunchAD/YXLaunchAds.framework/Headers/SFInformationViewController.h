@@ -12,7 +12,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface SFInformationViewController : UIViewController
 /** 必传参数 **/
-@property (nonatomic, copy) NSString *mediaId;
 @property (nonatomic, copy) NSString *mLocationId;
 /** 可选参数  设置颜色相关属性时 请务必使用RGBA空间的颜色值   **/
 ///自定义设置
@@ -40,6 +39,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic) UIColor *backGroundColor;
 //返回图片
 @property (nonatomic, strong) UIImage *backImage;
+/** 是否添加自定义导航栏 默认为 YES*/
+@property (assign, nonatomic) BOOL isAddNavigation;
 
 @end
 

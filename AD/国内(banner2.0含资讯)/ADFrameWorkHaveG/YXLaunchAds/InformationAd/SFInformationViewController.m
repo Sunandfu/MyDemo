@@ -111,7 +111,7 @@
 }
 
 - (void)getNetWorkTitles{
-    [Network getJSONDataWithURL:[NSString stringWithFormat:@"%@/social/getYdFeedCatIds?userId=%@&mLocationId=%@",NewsSeverin,self.mediaId,self.mLocationId] parameters:nil success:^(id json) {
+    [Network getJSONDataWithURL:[NSString stringWithFormat:@"%@/social/getYdFeedCatIds?mLocationId=%@",TASK_SEVERIN,self.mLocationId] parameters:nil success:^(id json) {
         self.titleArray = json;
         dispatch_async(dispatch_get_main_queue(), ^{
             [self createTitleViews];
@@ -194,7 +194,6 @@
         SFPageTableViewController *newChildVc = [[SFPageTableViewController alloc] init];
         newChildVc.title = dict[@"ydCatName"];
         newChildVc.titleArray = self.titleArray;
-        newChildVc.mediaId = self.mediaId;
         newChildVc.mLocationId = self.mLocationId;
         newChildVc.isInfo = YES;
         return newChildVc;

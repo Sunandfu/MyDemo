@@ -23,19 +23,20 @@
  
  */
 //请求配置接口接口
-#define SEVERIN @"http://www.yunqingugm.com:8081"
+#define SEVERIN @"http://www.yunqingugm.com:8081"//请求接口
 #define TRACKIN @"http://www.yunqingugm.com:8082"//上报接口
-#define NewsSeverin @"https://nr.beilamusi.com"
+#define TASK_SEVERIN @"https://nr.beilamusi.com"//资讯、任务、活动接口
 
 //#define SEVERIN @"http://119.29.146.103:8073"
 //#define TRACKIN @"http://119.29.146.103:8074"
-//#define NewsSeverin @"https://content.i-xiaoma.com.cn"
+//#define TASK_SEVERIN @"https://content.i-xiaoma.com.cn"
 
 //#define SEVERIN @"http://47.99.227.46:8081"
 //#define TRACKIN @"http://47.99.227.46:8082"
-//#define NewsSeverin @"https://content.i-xiaoma.com.cn"
+//#define TASK_SEVERIN @"https://content.i-xiaoma.com.cn"
 
 #define ADSHOW   TRACKIN @"/log/newMimpr/v3"//展示成果
+#define ADExposured   TRACKIN @"/log/newImprEffect/v/3"//曝光上报
 #define ADCLICK  TRACKIN @"/log/newMclick/v3"//点击
 #define ADError  TRACKIN @"/log/newErrorLog/v3"//错误
 

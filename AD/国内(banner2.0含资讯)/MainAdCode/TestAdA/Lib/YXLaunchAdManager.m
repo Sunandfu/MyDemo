@@ -507,7 +507,12 @@ static YXLaunchAdManager *instance = nil;
         }
     });
 }
-
+/**
+ *  开屏广告曝光回调
+ */
+- (void)splashAdExposured:(GDTSplashAd *)splashAd{
+    [Network upOutSideToServer:ADExposured isError:NO code:nil msg:nil currentAD:self->_currentAD gdtAD:self->_gdtAD mediaID:self.mediaId];
+}
 
 #pragma mark 40043 广点通 splashAdFail
 -(void)splashAdFailToPresent:(GDTSplashAd *)splashAd withError:(NSError *)error

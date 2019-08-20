@@ -72,7 +72,6 @@
 - (SFHalfPageViewController *)webVC{
     if (_webVC == nil) {
         _webVC = [[SFHalfPageViewController alloc] init];
-        _webVC.mediaId = @"6";
         _webVC.mLocationId = @"ystios";
         _webVC.vcCanScroll = NO;
         _webVC.halfDelegate = self;

@@ -9,7 +9,7 @@
 #import "YXScrollerBannerViewController.h" 
 #import "YXMutBannerAdManager.h"
 
-static  NSString * feedMediaID = @"yxxcx_ios_native";
+static  NSString * feedMediaID = @"xmlc_ios_bonus_banner";
 
 @interface YXScrollerBannerViewController ()<YXMutBannerAdManagerDelegate>
 {
@@ -18,6 +18,7 @@ static  NSString * feedMediaID = @"yxxcx_ios_native";
 }
 
 @property (nonatomic,strong) UIView *BannerView;
+@property (nonatomic, strong) dispatch_source_t timer;
 
 @end
 
@@ -28,7 +29,7 @@ static  NSString * feedMediaID = @"yxxcx_ios_native";
     self.view.backgroundColor = [UIColor whiteColor];
     CGFloat width = self.view.frame.size.width-60;
     //根据宽高比自定义适配
-    CGFloat height = 388 * width / 690;
+    CGFloat height = 240 * width / 670;
     
     self.BannerView = [[UIView alloc]initWithFrame:CGRectMake(30,100 , width, height)];
     
@@ -43,22 +44,43 @@ static  NSString * feedMediaID = @"yxxcx_ios_native";
     [button setTitle:@"刷新广告" forState:UIControlStateNormal];
     [button addTarget:self action:@selector(reloadADView) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:button];
+    
+    if (self.timer) {
+        dispatch_cancel(self.timer);
+        self.timer = nil;
+    }
+    dispatch_queue_t queue = dispatch_get_main_queue();
+    //创建一个定时器（dispatch_source_t本质上还是一个OC对象）
+    self.timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, queue);
+    
+    //设置定时器的各种属性
+    dispatch_time_t start = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(120*NSEC_PER_SEC));
+    uint64_t interval = (uint64_t)(120*NSEC_PER_SEC);
+    dispatch_source_set_timer(self.timer, start, interval, 0);
+    
+    //设置回调
+    __weak typeof(self) weakSelf = self;
+    dispatch_source_set_event_handler(self.timer, ^{
+        //定时器需要执行的操作
+        [weakSelf reloadADView];
+    });
+    //启动定时器（默认是暂停）
+    dispatch_resume(self.timer);
 }
 - (void)reloadADView{
     [mutBanner reloadMutBannerAd];
 }
-
 - (void)loadAd
 {
     mutBanner = [YXMutBannerAdManager new];
     mutBanner.delegate = self;
     mutBanner.adSize = YXADSizeCustom;
-    mutBanner.s2sWidth = 690;
-    mutBanner.s2sHeight = 388;
+    mutBanner.s2sWidth = 670;
+    mutBanner.s2sHeight = 240;
     mutBanner.controller = self;
     mutBanner.isOnlyImage = YES;
 //    mutBanner.autoScrollTimeInterval = 10;
-    mutBanner.adCount = 1;
+//    mutBanner.adCount = 10;
     mutBanner.placeholderImage = [UIImage imageNamed:@"placeImage"];
 //    mutBanner.backgroundImage = [UIImage imageNamed:@"placeImage"];
     mutBanner.mediaId = feedMediaID;
@@ -98,6 +120,10 @@ static  NSString * feedMediaID = @"yxxcx_ios_native";
 
 - (void)dealloc
 {
+    if (self.timer) {
+        dispatch_cancel(self.timer);
+        self.timer = nil;
+    }
     NSLog(@"%@ %@",[self class],NSStringFromSelector(_cmd));
 }
 

@@ -551,7 +551,9 @@
         [self.delegate didClickedBannerAd];
     }
 }
-
+- (void)unifiedBannerViewWillExpose:(GDTUnifiedBannerView *)unifiedBannerView{
+    [Network upOutSideToServer:ADExposured isError:NO code:nil msg:nil currentAD:self.currentAD gdtAD:self.AdDict mediaID:self.mediaId];
+}
 // 应用进入后台时调用
 //
 // 详解:当点击下载或者地图类型广告时，会调用系统程序打开，

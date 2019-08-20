@@ -42,9 +42,9 @@
  */
 - (UIViewController<SFScrollPageViewChildVcDelegate> *)childViewController:(UIViewController<SFScrollPageViewChildVcDelegate> *)reuseViewController forIndex:(NSInteger)index;
 
-- (void)scrollViewSliding;
-
 @optional
+
+- (void)scrollViewSliding;
 
 
 - (BOOL)scrollPageController:(UIViewController *)scrollPageController contentScrollView:(SFCollectionView *)scrollView shouldBeginPanGesture:(UIPanGestureRecognizer *)panGesture;

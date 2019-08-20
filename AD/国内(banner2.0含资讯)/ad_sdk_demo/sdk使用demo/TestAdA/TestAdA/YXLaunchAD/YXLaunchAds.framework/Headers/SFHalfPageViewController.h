@@ -25,8 +25,6 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) BOOL vcCanScroll;
 // 是否显示全部的频道： YES -> 所有频道 ; NO -> 只有一个推荐频道
 @property (nonatomic, assign) BOOL isShowAllChannels;
-// 用户 ID
-@property (nonatomic, copy) NSString *mediaId;
 // 内容位 ID
 @property (nonatomic, copy) NSString *mLocationId;
 

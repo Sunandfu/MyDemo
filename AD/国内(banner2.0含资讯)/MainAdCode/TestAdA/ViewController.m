@@ -25,6 +25,8 @@
 #import "TableHalfViewController.h"
 #import "GDTSDKConfig.h"
 #import "TestViewController.h"
+#import "GraspMaterialViewController.h"
+#import "TaskActivityViewController.h"
 
 #define YX_IPHONEX  ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1125, 2436), [[UIScreen mainScreen] currentMode].size) : NO)
 
@@ -42,11 +44,12 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     self.title = @"ADDemo";
-    self.dataArr = @[@"轮播",@"信息流样式",@"横幅样式",@"开屏启动页样式",@"半屏开屏启动页样式",@"icon样式",@"插屏样式",@"激励视频",@"tableView半屏单频道资讯接入",@"tableView半屏全频道资讯接入",@"scrollView半屏单频道资讯接入",@"scrollView半屏全频道资讯接入",@"全屏资讯接入",@"测试通用链接"];
+    self.dataArr = @[@"轮播",@"信息流样式",@"横幅样式",@"开屏启动页样式",@"半屏开屏启动页样式",@"icon样式",@"插屏样式",@"激励视频",@"tableView半屏单频道资讯接入",@"tableView半屏全频道资讯接入",@"scrollView半屏单频道资讯接入",@"scrollView半屏全频道资讯接入",@"全屏资讯接入",@"抓素材",@"活动任务",@"测试通用链接"];
     
     [self.view addSubview:self.tableView];
     
     NSLog(@"版本号：%@",[GDTSDKConfig sdkVersion]);
+    
 }
 - (UITableView *)tableView
 {
@@ -156,12 +159,22 @@ static NSString * cellID = @"CELL";
         case 12:
         {
             SFInformationViewController *infoVC = [SFInformationViewController new];
-            infoVC.mediaId = @"6";
             infoVC.mLocationId = @"ystios";
             infoVC.showLine = YES;
             infoVC.title = @"资讯";
             [self.navigationController pushViewController:infoVC animated:YES];
             
+        }
+            break;
+        case 13:
+            [self.navigationController pushViewController:[GraspMaterialViewController new] animated:YES];
+            break;
+        case 14:
+        {
+            TaskActivityViewController *task = [TaskActivityViewController new];
+            task.channelID = @"t-i";
+            task.vuid = @"1";
+            [self.navigationController pushViewController:task animated:YES];
         }
             break;
         default:

@@ -82,7 +82,7 @@
     self.showHeaderLabel.text = @"推荐资讯";
     self.showHeaderLabel.font = [UIFont systemFontOfSize:18 weight:UIFontWeightBold];
     [headerView addSubview:self.showHeaderLabel];
-    if (self.titleArray.count>0) {
+    if (self.titleArray.count>0 && self.isShowAllChannels==NO) {
         NSDictionary *dic = [self.titleArray firstObject];
         self.showHeaderLabel.text = [NSString stringWithFormat:@"%@资讯",dic[@"ydCatName"]];
     }
@@ -136,8 +136,8 @@
     return NO;
 }
 - (void)refreshNewsData{
-    if (self.mediaId==nil || self.mLocationId==nil) {
-        NSLog(@"请正确传入媒体位与广告位");
+    if (self.mLocationId==nil) {
+        NSLog(@"必须传入广告位");
         return;
     }
     UIView *view = [self.view viewWithTag:98765];
@@ -167,7 +167,7 @@
     } else {
         __weak typeof(self) weakSelf = self;
         [self.titleArray removeAllObjects];
-        [Network getJSONDataWithURL:[NSString stringWithFormat:@"%@/social/getYdFeedCatIds?userId=%@&mLocationId=%@",NewsSeverin,self.mediaId,self.mLocationId] parameters:nil success:^(id json) {
+        [Network getJSONDataWithURL:[NSString stringWithFormat:@"%@/social/getYdFeedCatIds?mLocationId=%@",TASK_SEVERIN,self.mLocationId] parameters:nil success:^(id json) {
             if ([json isKindOfClass:[NSArray class]]) {
                 if (weakSelf.isShowAllChannels) {
                     weakSelf.titleArray = [NSMutableArray arrayWithArray:json];
@@ -254,7 +254,6 @@
 
 - (void)moreBtnClick{
     SFInformationViewController *infoVC = [SFInformationViewController new];
-    infoVC.mediaId = self.mediaId;
     infoVC.mLocationId = self.mLocationId;
     if (self.isSyncDeploy) {
         infoVC.showLine = self.showLine;
@@ -339,7 +338,6 @@
         newChildVc.pageDelegate = self;
         newChildVc.title = dict[@"ydCatName"];
         newChildVc.titleArray = self.titleArray;
-        newChildVc.mediaId = self.mediaId;
         newChildVc.mLocationId = self.mLocationId;
         newChildVc.segmentHeight = self.headerViewHeight;
         newChildVc.vcCanScroll = self.vcCanScroll;

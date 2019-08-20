@@ -54,12 +54,13 @@
     [super viewDidLoad];
     self.canScroll = YES;
     // Do any additional setup after loading the view.
-    self.scrollView = [[SFScrollerView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height)];
-    self.scrollView.contentSize = CGSizeMake(0, self.view.bounds.size.height+300);
+    self.scrollView = [[SFScrollerView alloc] initWithFrame:CGRectMake(0, 88, self.view.bounds.size.width, self.view.bounds.size.height-88)];
+    self.scrollView.contentSize = CGSizeMake(0, (self.view.bounds.size.height-88)*2);
+//    self.scrollView.pagingEnabled = YES;
     self.scrollView.delegate = self;
     [self.view addSubview:self.scrollView];
     
-    UIView *headView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 300)];
+    UIView *headView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height-88)];
     headView.backgroundColor = [UIColor purpleColor];
     UIButton *iconBtn = ({
         UIButton *button = [[UIButton alloc]initWithFrame:CGRectMake(50, 150, [UIScreen mainScreen].bounds.size.width - 100 , 40)];
@@ -71,7 +72,7 @@
     [headView addSubview:iconBtn];
     [self.scrollView addSubview:headView];
     
-    UIView *footView = [[UIView alloc] initWithFrame:CGRectMake(0, 300, self.view.bounds.size.width, self.view.bounds.size.height)];
+    UIView *footView = [[UIView alloc] initWithFrame:CGRectMake(0, self.view.bounds.size.height-88, self.view.bounds.size.width, self.view.bounds.size.height-88)];
     footView.backgroundColor = [UIColor cyanColor];
     [self.scrollView addSubview:footView];
     
@@ -96,21 +97,20 @@
 - (SFHalfPageViewController *)webVC{
     if (_webVC == nil) {
         _webVC = [[SFHalfPageViewController alloc] init];
-        _webVC.mediaId = @"6";
         _webVC.mLocationId = @"ystios";
         _webVC.vcCanScroll = NO;
         _webVC.halfDelegate = self;
         _webVC.isShowAllChannels = self.isShowAll;
         
-        _webVC.normalTitleColor = [UIColor colorWithRed:1 green:1 blue:1 alpha:1.0];
+//        _webVC.normalTitleColor = [UIColor colorWithRed:1 green:1 blue:1 alpha:1.0];
 //        _webVC.selectedTitleColor = [UIColor greenColor];
-        _webVC.backGroundColor = [UIColor orangeColor];
+//        _webVC.backGroundColor = [UIColor orangeColor];
     }
     return _webVC;
 }
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
     CGFloat offset = scrollView.contentOffset.y;
-    CGFloat bottomCellOffset = 300 - StatusBarAndNavigationBarHeight;
+    CGFloat bottomCellOffset = self.view.bounds.size.height-88;
     if (offset >= bottomCellOffset) {
         scrollView.contentOffset = CGPointMake(0, bottomCellOffset);
         if (self.canScroll) {

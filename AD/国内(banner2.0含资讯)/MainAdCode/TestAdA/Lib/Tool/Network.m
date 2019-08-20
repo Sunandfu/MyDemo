@@ -356,21 +356,7 @@
         NSString *mediaId = [[NSUserDefaults standardUserDefaults] objectForKey:@"mediaId"];
         NSString *mLocationId = [[NSUserDefaults standardUserDefaults] objectForKey:@"mLocationId"];
         NSString *lengthtime = [NSString stringWithFormat:@"%@",(eventType==4?@(lengthOfTime):@"0")];
-        NSString *url = [NSString stringWithFormat:@"%@/social/eventStatistic?userId=%@&mLocationId=%@&catId=%@&eventType=%@&newsId=%@&stayTime=%@",NewsSeverin,mediaId,mLocationId,catId,@(eventType),newsId?newsId:@"",lengthtime];
-        
-        NSString *yun = [NetTool getYunYingShang];
-        NSInteger operator;
-        if ([yun isEqualToString:@"中国电信"]) {
-            operator = 2;
-        }else if ([yun isEqualToString:@"中国移动"]) {
-            operator = 1;
-        }else if ([yun isEqualToString:@"中国联通"]) {
-            operator = 3;
-        }else if ([yun isEqualToString:@"无运营商"]) {
-            operator = 0;
-        }else{
-            operator = 99;
-        }
+        NSString *url = [NSString stringWithFormat:@"%@/social/eventStatistic?userId=%@&mLocationId=%@&catId=%@&eventType=%@&newsId=%@&stayTime=%@",TASK_SEVERIN,mediaId,mLocationId,catId,@(eventType),newsId?newsId:@"",lengthtime];
         NSDictionary *parametDict = @{
                                       @"deviceType":@"1",
                                       @"osType":@"2",
@@ -382,7 +368,7 @@
                                       @"idfa":[NetTool getIDFA],
                                       @"ipv4":[Network sharedInstance].ipStr,
                                       @"connectionType":@([NetTool getNetTyepe]),
-                                      @"operateType":@(operator)
+                                      @"operateType":@([NetTool getYunYingShang])
                                       };
         [Network postJSONDataWithURL:url parameters:parametDict success:^(id json) {
             //            NSLog(@"%@",json);
@@ -396,6 +382,7 @@
 }
 
 + (void)getJSONDataWithURL:(NSString *)url parameters:(id)parameters success:(void(^)(id json))success fail:(void(^)(NSError * error))fail{
+    NSLog(@"url = %@",url);
     NSURLSession *session=[NSURLSession sharedSession];
     NSMutableURLRequest *request=[NSMutableURLRequest requestWithURL:[NSURL URLWithString:[url stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]]];
     request.HTTPMethod = @"GET";
@@ -407,17 +394,22 @@
     request.timeoutInterval = 5;
     NSURLSessionDataTask *task=[session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         if (error && fail) {
-            fail(error);
+            dispatch_async(dispatch_get_main_queue(), ^{
+                fail(error);
+            });
         } else if (data && success) {
             if ([data isKindOfClass:[NSData class]]) {
                 data = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
             }
-            success(data);
+            dispatch_async(dispatch_get_main_queue(), ^{
+                success(data);
+            });
         }
     }];
     [task resume];
 }
 + (void)postJSONDataWithURL:(NSString *)url parameters:(id)parameters success:(void(^)(id json))success fail:(void(^)(NSError * error))fail{
+    NSLog(@"url = %@",url);
     NSURLSession *session=[NSURLSession sharedSession];
     NSMutableURLRequest *request=[NSMutableURLRequest requestWithURL:[NSURL URLWithString:[url stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]]];
     request.HTTPMethod = @"POST";
@@ -429,12 +421,16 @@
     request.timeoutInterval = 5;
     NSURLSessionDataTask *task=[session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         if (error && fail) {
-            fail(error);
+            dispatch_async(dispatch_get_main_queue(), ^{
+                fail(error);
+            });
         } else if (data && success) {
             if ([data isKindOfClass:[NSData class]]) {
                 data = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
             }
-            success(data);
+            dispatch_async(dispatch_get_main_queue(), ^{
+                success(data);
+            });
         }
     }];
     [task resume];

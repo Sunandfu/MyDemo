@@ -37,11 +37,11 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    _sectorProgress = [[ZXYSectorProgress alloc] initWithFrame:CGRectMake(10, 50, 150, 150) progress:0];
+    _sectorProgress = [[ZXYSectorProgress alloc] initWithFrame:CGRectMake(10, 88, 150, 150) progress:0];
     _sectorProgress.fillColor = [UIColor yellowColor];
     [self.view addSubview:_sectorProgress];
     
-    _ballProgress = [[ZXYBallProgress alloc] initWithFrame:CGRectMake(215, 50, 150, 150) progress:0];
+    _ballProgress = [[ZXYBallProgress alloc] initWithFrame:CGRectMake(215, 88, 150, 150) progress:0];
     _ballProgress.fillColor = [UIColor yellowColor];
     _ballProgress.strokeColor = [UIColor redColor];
     [self.view addSubview:_ballProgress];
@@ -62,7 +62,7 @@
     _gradientProgress.bottomColor = [UIColor purpleColor];
     [self.view addSubview:_gradientProgress];
     
-    _slider = [[UISlider alloc] initWithFrame:CGRectMake(20, 20, self.view.bounds.size.width - 40, 30)];
+    _slider = [[UISlider alloc] initWithFrame:CGRectMake(20, 44, self.view.bounds.size.width - 40, 30)];
     _slider.minimumValue = 0;
     _slider.maximumValue = 1;
     _slider.value = 0;
