@@ -7,12 +7,15 @@
 //
 
 #import "NSString+SFAES.h"
+#import "YXGTMBase64.h"
 #import <CommonCrypto/CommonDigest.h>
 #import <CommonCrypto/CommonCryptor.h>
 // key跟后台协商一个即可，保持一致
 static NSString *const SF_PSW_AES_KEY = @"!@#_123_sda_12!_";
 // 这里的偏移量也需要跟后台一致，一般跟key一样就行
 static NSString *const SF_AES_IV_PARAMETER = @"";
+//新版 加密 解密中监参数
+static NSString *const SF_KEY_CODE = @"FI()*&<";
 
 @implementation NSString (SFAES)
 
@@ -147,6 +150,55 @@ static NSString *const SF_AES_IV_PARAMETER = @"";
     }
     return dic;
 }
+- (NSString *)request_Encrypt{
+    NSData *tmpData = [SF_KEY_CODE dataUsingEncoding:NSUTF8StringEncoding];
+    Byte *tmpByte = (Byte *)[tmpData bytes];
+    
+    NSData *testData = [self dataUsingEncoding:NSUTF8StringEncoding];
+    //字符串转化成 data
+    Byte *testByte = (Byte *)[testData bytes];
+    uint8_t *bytes = malloc(sizeof(*bytes)*testData.length);
+    for(int i = 0;i < [testData length];i++){
+        bytes[i] = testByte[i];
+        for (int j=0; j<[tmpData length]; j++) {
+            bytes[i] = bytes[i] ^ tmpByte[j];
+        }
+    }
+    NSData *newdata = [YXGTMBase64 encodeBytes:bytes length:testData.length];
+    NSString *baseStr_GTM =[[NSString alloc] initWithData:newdata encoding:NSUTF8StringEncoding];
+    baseStr_GTM = [baseStr_GTM stringByReplacingOccurrencesOfString:@"+" withString:@"-"];
+    baseStr_GTM = [baseStr_GTM stringByReplacingOccurrencesOfString:@"/" withString:@"_"];
+    baseStr_GTM = [baseStr_GTM stringByReplacingOccurrencesOfString:@"=" withString:@""];
+    return baseStr_GTM;
+}
+
+- (NSDictionary *)request_Decrypt{
+    NSString *tmpStr = self;
+    tmpStr = [tmpStr stringByReplacingOccurrencesOfString:@"-" withString:@"+"];
+    tmpStr = [tmpStr stringByReplacingOccurrencesOfString:@"_" withString:@"/"];
+    int a = tmpStr.length%4;
+    if (a>0) {
+        for (int i=0; i<(4-a); i++) {
+            tmpStr = [tmpStr stringByAppendingString:@"="];
+        }
+    }
+    NSData *tmpData = [SF_KEY_CODE dataUsingEncoding:NSUTF8StringEncoding];
+    Byte *tmpByte = (Byte *)[tmpData bytes];
+    NSData *testData = [YXGTMBase64 decodeString:tmpStr];
+    //字符串转化成 data
+    Byte *testByte = (Byte *)[testData bytes];
+    uint8_t *bytes = malloc(sizeof(*bytes)*testData.length);
+    for(int i = 0;i < [testData length];i++){
+        bytes[i] = testByte[i];
+        for (int j=0; j<[tmpData length]; j++) {
+            bytes[i] = bytes[i] ^ tmpByte[j];
+        }
+    }
+    NSData *newData = [[NSData alloc] initWithBytes:bytes length:testData.length];
+    NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:newData options:NSJSONReadingAllowFragments error:nil];
+    return dict;
+}
+
 - (NSString *)sf_MD5EncryptString{
     NSString *tmpStr = self;
     const char *original_str = [tmpStr UTF8String];

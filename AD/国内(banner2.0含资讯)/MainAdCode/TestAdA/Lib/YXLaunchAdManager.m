@@ -128,8 +128,13 @@ static YXLaunchAdManager *instance = nil;
     
     self.showAdWindow = showAdWindow;
     isGDLaunchOK = NO;
-    
-    [self requestADSource];
+    @try {
+        [self requestADSource];
+    } @catch (NSException *exception) {
+        [NetTool uncaughtExceptionHandler:exception];
+    } @finally {
+        NSLog(@"开屏广告出现错误了");
+    }
     
     //配置广告数据
     _imageAdconfiguration = [YXLaunchImageAdConfiguration new];
@@ -138,7 +143,6 @@ static YXLaunchAdManager *instance = nil;
     _imageAdconfiguration.showFinishAnimate = self.showFinishAnimate;
     _imageAdconfiguration.showFinishAnimateTime = self.showFinishAnimateTime;
     _imageAdconfiguration.skipButtonType = self.skipButtonType;
-    
 }
 
 
@@ -298,7 +302,7 @@ static YXLaunchAdManager *instance = nil;
         if (self->_bottomView) {
             [self.yxADView addSubview:self.bottomView];
         }
-        [Network upOutSideToServerRequest:ADRequest currentAD:self->_currentAD gdtAD:self->_gdtAD mediaID:self.mediaId ];
+        [Network upOutSideToServerRequest:APIRequest currentAD:self->_currentAD gdtAD:self->_gdtAD mediaID:self.mediaId ];
         
     });
 }
@@ -346,7 +350,7 @@ static YXLaunchAdManager *instance = nil;
             }
         }
     });
-    [Network upOutSideToServer:ADSHOW isError:NO code:nil msg:nil currentAD:self->_currentAD gdtAD:self->_gdtAD mediaID:self.mediaId];
+    [Network upOutSideToServer:APIShow isError:NO code:nil msg:nil currentAD:self->_currentAD gdtAD:self->_gdtAD mediaID:self.mediaId];
 }
 
 - (void)splashAdWillVisible:(BUSplashAdView *)splashAd
@@ -361,7 +365,7 @@ static YXLaunchAdManager *instance = nil;
         [_delegate didClickedAdWithUrlStr:@""];
     }
     
-    [Network upOutSideToServer:ADCLICK isError:NO code:nil msg:nil currentAD:self->_currentAD gdtAD:self->_gdtAD mediaID:self.mediaId];
+    [Network upOutSideToServer:APIClick isError:NO code:nil msg:nil currentAD:self->_currentAD gdtAD:self->_gdtAD mediaID:self.mediaId];
 }
 - (void)splashAdWillClose:(BUSplashAdView *)splashAd
 {
@@ -390,7 +394,7 @@ static YXLaunchAdManager *instance = nil;
     } else {
         [self initS2S];
     }
-    [Network upOutSideToServer:ADError isError:YES code:[NSString stringWithFormat:@"202%ld",(long)error.code] msg:[NSString stringWithFormat:@"%@",error.userInfo[@"NSLocalizedDescription"]] currentAD:self->_currentAD gdtAD:self->_gdtAD mediaID:self.mediaId];
+    [Network upOutSideToServer:APIError isError:YES code:[NSString stringWithFormat:@"202%ld",(long)error.code] msg:[NSString stringWithFormat:@"%@",error.userInfo[@"NSLocalizedDescription"]] currentAD:self->_currentAD gdtAD:self->_gdtAD mediaID:self.mediaId];
 }
 - (void)splashAdDidCloseOtherController:(BUSplashAdView *)splashAd interactionType:(BUInteractionType)interactionType {
     NSString *str = @"";
@@ -412,7 +416,7 @@ static YXLaunchAdManager *instance = nil;
             [self initS2S];
             return;
         }
-        [Network upOutSideToServerRequest:ADRequest currentAD:self->_currentAD gdtAD:self->_gdtAD mediaID:self.mediaId ];
+        [Network upOutSideToServerRequest:APIRequest currentAD:self->_currentAD gdtAD:self->_gdtAD mediaID:self.mediaId ];
         self->isGDTClicked = NO;
         
         [[YXLaunchAd shareLaunchAd] setCusAdConfi: self->_imageAdconfiguration];
@@ -499,7 +503,7 @@ static YXLaunchAdManager *instance = nil;
     
     isGDLaunchOK = YES;
     
-    [Network upOutSideToServer:ADSHOW isError:NO code:nil msg:nil currentAD:self->_currentAD gdtAD:self->_gdtAD mediaID:self.mediaId];
+    [Network upOutSideToServer:APIShow isError:NO code:nil msg:nil currentAD:self->_currentAD gdtAD:self->_gdtAD mediaID:self.mediaId];
     dispatch_async(dispatch_get_main_queue(), ^{
         [YXLaunchAd shareLaunchAd].adWindow.hidden = YES;
         if(self.delegate && [self.delegate respondsToSelector:@selector(didLoadAd:)]){
@@ -511,7 +515,7 @@ static YXLaunchAdManager *instance = nil;
  *  开屏广告曝光回调
  */
 - (void)splashAdExposured:(GDTSplashAd *)splashAd{
-    [Network upOutSideToServer:ADExposured isError:NO code:nil msg:nil currentAD:self->_currentAD gdtAD:self->_gdtAD mediaID:self.mediaId];
+    [Network upOutSideToServer:APIExposured isError:NO code:nil msg:nil currentAD:self->_currentAD gdtAD:self->_gdtAD mediaID:self.mediaId];
 }
 
 #pragma mark 40043 广点通 splashAdFail
@@ -531,7 +535,7 @@ static YXLaunchAdManager *instance = nil;
         [self initS2S];
     }
     
-    [Network upOutSideToServer:ADError isError:YES code:[NSString stringWithFormat:@"201%ld",(long)error.code] msg:[NSString stringWithFormat:@"%@",error.userInfo[@"NSLocalizedDescription"]] currentAD:self->_currentAD gdtAD:self->_gdtAD mediaID:self.mediaId];
+    [Network upOutSideToServer:APIError isError:YES code:[NSString stringWithFormat:@"201%ld",(long)error.code] msg:[NSString stringWithFormat:@"%@",error.userInfo[@"NSLocalizedDescription"]] currentAD:self->_currentAD gdtAD:self->_gdtAD mediaID:self.mediaId];
 }
 
 #pragma mark 广点通的结束
@@ -567,11 +571,17 @@ static YXLaunchAdManager *instance = nil;
     self.splash = nil;
     [[YXLaunchAd shareLaunchAd] cancleSkip];
     [[YXLaunchAd shareLaunchAd] removeAndAnimate];
-    [[NetTool getCurrentViewController] dismissViewControllerAnimated:NO completion:^{
+    [[self getTopViewController] dismissViewControllerAnimated:NO completion:^{
         [[NSNotificationCenter defaultCenter] postNotificationName:CUSTOMCLICKNOTIFITION object:nil];
     }];
 }
-
+- (UIViewController *)getTopViewController{
+    UIViewController *topRootViewController = self.showAdWindow.rootViewController;
+    while (topRootViewController.presentedViewController){
+        topRootViewController = topRootViewController.presentedViewController;
+    }
+    return topRootViewController;
+}
 - (void)splashAdWillPresentFullScreenModal:(GDTSplashAd *)splashAd
 {
     
@@ -586,7 +596,7 @@ static YXLaunchAdManager *instance = nil;
 {
     dispatch_async(dispatch_get_main_queue(), ^{
         self->isGDTClicked = YES;
-        [Network upOutSideToServer:ADCLICK isError:NO code:nil msg:nil currentAD:self->_currentAD gdtAD:self->_gdtAD mediaID:self.mediaId];
+        [Network upOutSideToServer:APIClick isError:NO code:nil msg:nil currentAD:self->_currentAD gdtAD:self->_gdtAD mediaID:self.mediaId];
         if(self.delegate && [self.delegate respondsToSelector:@selector(didClickedAdWithUrlStr:)]){
             
             [self.delegate didClickedAdWithUrlStr:@""];
@@ -631,27 +641,21 @@ static YXLaunchAdManager *instance = nil;
 #pragma mark - 图片开屏广告-网络数据-示例
 //图片开屏广告 - 网络数据 s2s
 -(void)example01{
-    
-    NSString *ip = [Network sharedInstance].ipStr;
-    
     if (_gdtAD.allKeys.count == 0) {
-        NSError *error = [NSError errorWithDomain:@"" code:40041 userInfo:@{@"NSLocalizedDescription":@"请检查网络"}];
+        NSError *error = [NSError errorWithDomain:@"暂无配置信息,请联系运营" code:40041 userInfo:@{@"NSLocalizedDescription":@"请检查网络"}];
         [self failedError:error];
         return;
     }
-    NSString * uuid = self->_gdtAD[@"uuid"];
-    [[Network sharedInstance] prepareDataAndRequestWithadkeyString:self.mediaId width:_frame.size.width height:_frame.size.height macID:ip uid:uuid adCount:1];
-    
     WEAK(weakSelf);
     //广告数据请求
-    [[Network sharedInstance] beginRequestfinished:^(BOOL isSuccess, id json) {
+    [Network beginRequestWithADkey:self.mediaId width:_frame.size.width height:_frame.size.height adCount:1 finished:^(BOOL isSuccess, id json) {
         
         if (isSuccess) {
             if ([json[@"ret"] isEqualToString:@"0"]) {
                 
                 NSArray * arr = json[@"adInfos"];
                 if (arr.count <= 0) {
-                    NSError *errors = [NSError errorWithDomain:@"请求失败" code:400 userInfo:nil];
+                    NSError *errors = [NSError errorWithDomain:@"广告数据为空" code:20001 userInfo:nil];
                     [weakSelf failedError:errors];
                     return ;
                 }
@@ -934,7 +938,7 @@ static YXLaunchAdManager *instance = nil;
             }
         }
     } else {
-        [self ViewClickWithDict:_resultDict Width:widthStr Height:heightStr X:x Y:y];
+        [self ViewClickWithDict:_resultDict Width:widthStr Height:heightStr X:x Y:y Controller:[self getTopViewController]];
         if (self.delegate && [self.delegate respondsToSelector:@selector(didClickedAdWithUrlStr:)]) {
             [self.delegate didClickedAdWithUrlStr:@""];
         }
@@ -1016,13 +1020,10 @@ static YXLaunchAdManager *instance = nil;
 - (void)YXLaunchAdShowFailed
 {
     launchTimeOut = YES;
-    
-    NSError *errors = [NSError errorWithDomain:@"" code:7423 userInfo:@{@"NSLocalizedDescription":@"请求超时"}];
-    
+    NSError *errors = [NSError errorWithDomain:@"广告请求超时" code:2017423 userInfo:@{@"NSLocalizedDescription":@"请求超时"}];
     
     if (self.splash) {//GDT
         self.splash.delegate = nil;
-        errors = [NSError errorWithDomain:@"" code:2017423 userInfo:@{@"NSLocalizedDescription":@"请求超时"}];
     }
     
     [self failedError:errors];

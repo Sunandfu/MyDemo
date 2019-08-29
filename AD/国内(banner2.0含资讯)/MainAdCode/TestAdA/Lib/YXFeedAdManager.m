@@ -16,17 +16,17 @@
 #import "YXWebViewController.h"
 #import "NSString+SFAES.h"
 //
-#import "GDTNativeAd.h"
-#import "GDTNativeExpressAdView.h"
+#import "GDTUnifiedNativeAd.h"
+#import "GDTUnifiedNativeAdView.h"
 
 #import <BUAdSDK/BUAdSDK.h>
-#import <BUAdSDK/BUNativeAdsManager.h>
 
 @interface YXFeedAdManager()
 <
 BUNativeAdDelegate,
 BUNativeAdsManagerDelegate,
-GDTNativeAdDelegate
+GDTUnifiedNativeAdDelegate,
+GDTUnifiedNativeAdViewDelegate
 >
 {
     CGFloat _width;
@@ -43,11 +43,10 @@ GDTNativeAdDelegate
 @property (nonatomic, strong) NSArray *s2sAdArray;
 @property (nonatomic, strong) NSDictionary *s2sTapAdDict;
 
-@property (nonatomic, strong) GDTNativeAd *nativeAd;
 @property (nonatomic, strong) NSMutableArray * gdtArr;
-@property (nonatomic, strong) GDTNativeAdData *currentTapAdData;
-
+@property (nonatomic, strong) GDTUnifiedNativeAd *unifiedNativeAd;
 @property (nonatomic, strong) BUNativeAdsManager *adManager;
+@property (nonatomic, strong) NSMutableArray *gdtViewsArray;
 
 @property (nonatomic, strong) UIView *registerAdView;
 
@@ -61,14 +60,6 @@ GDTNativeAdDelegate
 
 @implementation YXFeedAdManager
 
-- (instancetype)init
-{
-    self = [super init];
-    if (self) {
-    }
-    return self;
-}
-
 #pragma mark 开始加载广告
 -(void)loadFeedAd
 {
@@ -79,9 +70,12 @@ GDTNativeAdDelegate
     
     [self.gdtArr removeAllObjects];
     self.gdtArr = [[NSMutableArray alloc]initWithCapacity:0];
+    [self.timeArr removeAllObjects];
     self.timeArr = [[NSMutableArray alloc]initWithCapacity:0];
-    
+    [self.feedArray removeAllObjects];
     self.feedArray = [[NSMutableArray alloc]initWithCapacity:0];
+    [self.gdtViewsArray removeAllObjects];
+    self.gdtViewsArray = [NSMutableArray arrayWithCapacity:0];
     
     CGSize  size;
     if (self.adSize == YXADSize690X388) {
@@ -94,8 +88,8 @@ GDTNativeAdDelegate
         size.width = 288;
         size.height = 150;
     } else {
-        size.width = self.s2sWidth?self.s2sWidth:750;
-        size.height = self.s2sHeight?self.s2sHeight:326;
+        size.width = self.s2sWidth?self.s2sWidth:690;
+        size.height = self.s2sHeight?self.s2sHeight:388;
     }
     _width = size.width;
     _height = size.height;
@@ -106,7 +100,7 @@ GDTNativeAdDelegate
 
 #pragma mark 注册View
 
-- (void)registerAdViewForInteraction:(UIView *)view adData:(YXFeedAdData*)adData
+- (void)registerAdViewForInteraction:(UIView *)view adData:(YXFeedAdData*)adData clickableViews:(NSArray *)views
 {
 
     NSDictionary * currentAdDict;
@@ -125,23 +119,36 @@ GDTNativeAdDelegate
     } else if (adData.adType == 3){
         currentAD = @"2";
         view.tag = adData.adID;
-        currentAdDict = @{@"ad":@"1"};
+        currentAdDict = @{@"ad":@"2",@"impress_notice_urls":@[]};
         BUNativeAd *wmAdData = adData.data;
         wmAdData.delegate = self;
         wmAdData.rootViewController = self.controller;
         [wmAdData registerContainer:view withClickableViews:nil];
     } else if (adData.adType == 2) {
-        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(viewTapped:)];
-        [view addGestureRecognizer:tap];
         currentAD = @"3";
         view.tag = adData.adID;
-        currentAdDict = @{@"ad":@"1"};
-        /*
-         * 广告数据渲染完毕，即将展示时需调用AttachAd方法。
-         */
-        GDTNativeAdData *currentAdData = adData.data;
-        self.currentTapAdData = adData.data;
-        [self.nativeAd attachAd:currentAdData toView:view];
+        currentAdDict = @{@"ad":@"3",@"impress_notice_urls":@[]};
+        GDTUnifiedNativeAdDataObject *currentAdData = adData.data;
+        BOOL isHave = NO;
+        for (GDTUnifiedNativeAdView *tmpView in self.gdtViewsArray) {
+            if (tmpView.tag == adData.adID) {
+                isHave = YES;
+                [tmpView unregisterDataObject];
+                tmpView.viewController = self.controller;
+                tmpView.delegate = self;
+                [tmpView registerDataObject:currentAdData clickableViews:views];
+                break;
+            }
+        }
+        if (!isHave) {
+            GDTUnifiedNativeAdView *gdtView = [[GDTUnifiedNativeAdView alloc] initWithFrame:view.bounds];
+            [gdtView addSubview:view];
+            gdtView.tag = view.tag;
+            [self.gdtViewsArray addObject:gdtView];
+            gdtView.viewController = self.controller;
+            gdtView.delegate = self;
+            [gdtView registerDataObject:currentAdData clickableViews:views];
+        }
     } else {
         UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapImg:)];
         currentAD = @"1";
@@ -158,10 +165,8 @@ GDTNativeAdDelegate
     NSDictionary * dicts = @{@"viewTag":pages,@"adDict":currentAdDict};
     //adShowArr  记录展示的广告上报数组
     if (self.adShowArr.count == 0) { //第一次注册上报一次
-        
         [self.adShowArr addObject:dicts];
         [self checkIsInView:view dicts:dicts sts:currentAD];
-        
     } else {
         BOOL hasIndex = NO;//在记录中 查询是否有当前注册的广告
         for (NSDictionary * addict in self.adShowArr) {
@@ -177,7 +182,6 @@ GDTNativeAdDelegate
         }
     }
 }
-
 - (void)checkIsInView:(UIView*)view dicts:(NSDictionary*)dicts sts:(NSString*)currentAD
 {
 //     1.获取全局子线程队列
@@ -192,35 +196,6 @@ GDTNativeAdDelegate
         // doSomething()
         dispatch_async(dispatch_get_main_queue(), ^{
             BOOL  isINshow = [NetTool isInScreenView:view];
-            if (isINshow) {
-//                NSLog(@"在屏幕内");
-                [self adShowUpToSever:dicts sts:currentAD];
-                dispatch_source_cancel(timer);
-            }else{
-//                NSLog(@"不在屏幕内");
-                if (timeRet == 0) {
-                    dispatch_source_cancel(timer);
-                }
-            }
-            timeRet -- ;
-        });
-    });
-    dispatch_resume(timer);
-}
-- (void)checkIsInCell:(UITableViewCell*)cell dicts:(NSDictionary*)dicts sts:(NSString*)currentAD
-{
-    //     1.获取全局子线程队列
-    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
-    //    2.创建timer添加到队列中
-    dispatch_source_t timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, queue);
-    __block int timeRet = 30;
-    [self.timeArr addObject:timer];
-    //    3.设置首次执行时间、执行间隔和精确度
-    dispatch_source_set_timer(timer, dispatch_time(DISPATCH_TIME_NOW, 1 * NSEC_PER_SEC), 1 * NSEC_PER_SEC, 0.1 * NSEC_PER_SEC);
-    dispatch_source_set_event_handler(timer, ^{
-        // doSomething()
-        dispatch_async(dispatch_get_main_queue(), ^{
-            BOOL  isINshow = [NetTool isInScreenCell:cell];
             if (isINshow) {
 //                NSLog(@"在屏幕内");
                 [self adShowUpToSever:dicts sts:currentAD];
@@ -256,11 +231,11 @@ GDTNativeAdDelegate
     if ([isBU isEqualToString:@"1"]) {
         NSDictionary * dic = dict[@"adDict"];
         NSArray * viewS = dic[@"impress_notice_urls"];
-        if(viewS && ![viewS isKindOfClass:[NSNull class]]&& viewS.count){
+        if(viewS && ![viewS isKindOfClass:[NSNull class]] && viewS.count){
             [Network groupNotifyToSerVer:viewS];
         }
     }else{
-        [Network upOutSideToServer:ADSHOW isError:NO code:nil msg:nil currentAD:self.currentAdDict gdtAD:self.netAdDict mediaID:self.mediaId];
+        [Network upOutSideToServer:APIShow isError:NO code:nil msg:nil currentAD:self.currentAdDict gdtAD:self.netAdDict mediaID:self.mediaId];
     }
 }
 
@@ -270,43 +245,29 @@ GDTNativeAdDelegate
  */
 - (void)initS2S
 {
-    NSString *macId = [Network sharedInstance].ipStr;
-    
-    [[Network sharedInstance] prepareDataAndRequestWithadkeyString:_mediaId width:_width height:_height macID:macId uid:[NetTool getOpenUDID] adCount:_chazhi];
-    
-    [self initXAD];
-}
-- (void)initXAD
-{
     WEAK(weakSelf);
-    [[Network sharedInstance] beginRequestfinished:^(BOOL isSuccess, id json) {
+    [Network  beginRequestWithADkey:self.mediaId width:_width height:_height adCount:_chazhi finished:^(BOOL isSuccess, id json) {
         if (isSuccess) {
             if ([json[@"ret"] isEqualToString:@"0"]) {
                 weakSelf.s2sAdArray = json[@"adInfos"];
                 if (weakSelf.s2sAdArray.count <= 0) {
-                    NSError *errors = [NSError errorWithDomain:@"请求失败" code:400 userInfo:nil];
+                    NSError *errors = [NSError errorWithDomain:@"请求广告数量为空" code:400 userInfo:nil];
                     [weakSelf failedError:errors];
                     return ;
                 }
                 
                 dispatch_async(dispatch_get_main_queue(), ^{
                     for (NSDictionary *dict in weakSelf.s2sAdArray) {
-                        
                         YXFeedAdData *backdata = [YXFeedAdData new];
-                        
                         backdata.adContent = [NSString stringWithFormat:@"%@",dict[@"description"]];
-                        //
                         backdata.adTitle =  [NSString stringWithFormat:@"%@",dict[@"title"]];
-                        //
                         NSString * ac_type = [NSString stringWithFormat:@"%@",dict[@"ac_type"]];
                         if ([ac_type isEqualToString:@"1"]) {
                             backdata.buttonText = @"开始下载";
                         }else{
                             backdata.buttonText = @"查看详情";
                         }
-                        
                         backdata.imageUrl = [NSString stringWithFormat:@"%@",dict[@"img_url"]];
-                        
                         backdata.IconUrl = [NSString stringWithFormat:@"%@",dict[@"logo_icon"]];
                         backdata.adType = 4;
                         backdata.data = [[NSString sf_jsonStringWithJson:dict] sf_AESEncryptString];
@@ -322,12 +283,12 @@ GDTNativeAdDelegate
                         [weakSelf.delegate didLoadFeedAd:weakSelf.feedArray];
                     }
                 } else {
-                    NSError *errors = [NSError errorWithDomain:@"请求失败" code:400 userInfo:nil];
+                    NSError *errors = [NSError errorWithDomain:@"广告配置解析失败" code:403 userInfo:nil];
                     [weakSelf failedError:errors];
                 }
             }
         }else{
-            NSError *errors = [NSError errorWithDomain:@"请求失败" code:400 userInfo:nil];
+            NSError *errors = [NSError errorWithDomain:@"广告配置请求失败" code:404 userInfo:nil];
             [weakSelf failedError:errors];
         }
     }];
@@ -354,7 +315,7 @@ GDTNativeAdDelegate
         return;
     }
     
-    [self ViewClickWithDict:self.s2sTapAdDict Width:widthStr Height:heightStr X:x Y:y];
+    [self ViewClickWithDict:self.s2sTapAdDict Width:widthStr Height:heightStr X:x Y:y Controller:self.controller];
     [self clikedADs2sPan];
 }
 
@@ -378,6 +339,8 @@ GDTNativeAdDelegate
     WEAK(weakSelf);
     [Network requestADSourceFromMediaId:self.mediaId adCount:self.adCount imgWidth:_width imgHeight:_height success:^(NSDictionary *dataDict) {
         if ([dataDict[@"ret"] isEqualToString:@"-1"]) {
+            NSError *errors = [NSError errorWithDomain:@"广告配置请求失败" code:404 userInfo:nil];
+            [weakSelf failedError:errors];
             return ;
         }
         weakSelf.netAdDict = dataDict;
@@ -506,57 +469,40 @@ GDTNativeAdDelegate
             [self initS2S];
             return;
         }
-        [Network upOutSideToServerRequest:ADRequest currentAD:self.currentAdDict gdtAD:self.netAdDict mediaID:self.mediaId ];
+        [Network upOutSideToServerRequest:APIRequest currentAD:self.currentAdDict gdtAD:self.netAdDict mediaID:self.mediaId];
         
-        self.nativeAd = [[GDTNativeAd alloc] initWithAppId:adplaces[@"appId"] placementId:adplaces[@"adPlaceId"]];
-        self.nativeAd.controller = self.controller;
-        self.nativeAd.delegate = self;
-        [self.nativeAd loadAd:((int)self->_chazhi)];
+        self.unifiedNativeAd = [[GDTUnifiedNativeAd alloc] initWithAppId:adplaces[@"appId"] placementId:adplaces[@"adPlaceId"]];
+        self.unifiedNativeAd.delegate = self;
+        self.unifiedNativeAd.maxVideoDuration = 15;
+        [self.unifiedNativeAd loadAdWithAdCount:((int)self->_chazhi)];
     });
 }
 
 #pragma mark - GDTNativeAdDelegate
--(void)nativeAdSuccessToLoad:(NSArray *)nativeAdDataArray
-{
-    // 广告数据拉取成功，存储并展示
-    dispatch_async(dispatch_get_main_queue(), ^{
-        if (nativeAdDataArray.count > 0) {
-            self.gdtArr = [nativeAdDataArray mutableCopy];
-            for (int index = 0; index < nativeAdDataArray.count; index ++ ) {
-                GDTNativeAdData *data = nativeAdDataArray[index];
-                NSDictionary * properties = data.properties;
+
+- (void)gdt_unifiedNativeAdLoaded:(NSArray<GDTUnifiedNativeAdDataObject *> * _Nullable)unifiedNativeAdDataObjects error:(NSError * _Nullable)error{
+    if (!error && unifiedNativeAdDataObjects.count > 0) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            self.gdtArr = [unifiedNativeAdDataObjects mutableCopy];
+            for (int index = 0; index < unifiedNativeAdDataObjects.count; index ++ ) {
+                GDTUnifiedNativeAdDataObject *properties = unifiedNativeAdDataObjects[index];
                 YXFeedAdData *backdata = [YXFeedAdData new];
-                backdata.adContent = [properties objectForKey:GDTNativeAdDataKeyDesc];
-                backdata.adTitle = [properties objectForKey:GDTNativeAdDataKeyTitle];
-                backdata.imageUrl = [properties objectForKey:GDTNativeAdDataKeyImgUrl];
-                backdata.IconUrl = [properties objectForKey:GDTNativeAdDataKeyIconUrl];
+                backdata.adContent = properties.desc;
+                backdata.adTitle = properties.title;
+                backdata.imageUrl = properties.imageUrl;
+                backdata.IconUrl = properties.iconUrl;
                 backdata.adID = index;
                 backdata.adType = 2;
-                backdata.data = data;
+                backdata.data = properties;
                 [self.feedArray addObject:backdata];
             }
             if(self.delegate && [self.delegate respondsToSelector:@selector(didLoadFeedAd:)]){
                 [self.delegate didLoadFeedAd:self.feedArray];
             }
-        }
-        
-    });
-}
-
-- (void)viewTapped:(UITapGestureRecognizer *)recognizer
-{
-    if (self.currentTapAdData && [self.currentTapAdData isKindOfClass:[GDTNativeAdData class]]) {
-        //渠道暂无广点通广告
-        [self.nativeAd clickAd:self.currentTapAdData];
-        [Network upOutSideToServer:ADCLICK isError:NO code:nil msg:nil currentAD:self.currentAdDict gdtAD:self.netAdDict mediaID:self.mediaId];
-        if(self.delegate && [self.delegate respondsToSelector:@selector(didClickedFeedAd)]){
-            [self.delegate didClickedFeedAd];
-        }
+            
+        });
+        return;
     }
-}
-
--(void)nativeAdFailToLoad:(NSError *)error
-{
     if (isOther) {
         if (![self.otherDict isEqualToDictionary:self.currentAdDict]) {
             self.currentAdDict = self.otherDict;
@@ -566,24 +512,73 @@ GDTNativeAdDelegate
     } else {
         [self initS2S];
     }
-    [Network upOutSideToServer:ADError isError:YES code:[NSString stringWithFormat:@"201%ld",(long)error.code] msg: error.userInfo[@"NSLocalizedDescription"] currentAD:self.currentAdDict gdtAD:self.netAdDict mediaID:self.mediaId];
-}
-// 原生广告点击之后将要展示内嵌浏览器或应用内AppStore回调
-- (void)nativeAdWillPresentScreen
-{
+    [Network upOutSideToServer:APIError isError:YES code:[NSString stringWithFormat:@"%ld",(long)error.code] msg: error.userInfo[@"NSLocalizedDescription"] currentAD:self.currentAdDict gdtAD:self.netAdDict mediaID:self.mediaId];
 }
 
-//原生广告点击之后应用进入后台时回调
-- (void)nativeAdApplicationWillEnterBackground
-{
-}
-
-- (void)nativeAdClosed
-{
+/**
+ 广告曝光回调
+ 
+ @param unifiedNativeAdView GDTUnifiedNativeAdView 实例
+ */
+- (void)gdt_unifiedNativeAdViewWillExpose:(GDTUnifiedNativeAdView *)unifiedNativeAdView{
+    [Network upOutSideToServer:APIExposured isError:NO code:nil msg:nil currentAD:self.currentAdDict gdtAD:self.netAdDict mediaID:self.mediaId];
 }
 
 
+/**
+ 广告点击回调
+ 
+ @param unifiedNativeAdView GDTUnifiedNativeAdView 实例
+ */
+- (void)gdt_unifiedNativeAdViewDidClick:(GDTUnifiedNativeAdView *)unifiedNativeAdView{
+    //渠道暂无广点通广告
+    [Network upOutSideToServer:APIClick isError:NO code:nil msg:nil currentAD:self.currentAdDict gdtAD:self.netAdDict mediaID:self.mediaId];
+    if(self.delegate && [self.delegate respondsToSelector:@selector(didClickedFeedAd)]){
+        [self.delegate didClickedFeedAd];
+    }
+}
 
+
+/**
+ 广告详情页关闭回调
+ 
+ @param unifiedNativeAdView GDTUnifiedNativeAdView 实例
+ */
+- (void)gdt_unifiedNativeAdDetailViewClosed:(GDTUnifiedNativeAdView *)unifiedNativeAdView{
+    
+}
+
+
+/**
+ 当点击应用下载或者广告调用系统程序打开时调用
+ 
+ @param unifiedNativeAdView GDTUnifiedNativeAdView 实例
+ */
+- (void)gdt_unifiedNativeAdViewApplicationWillEnterBackground:(GDTUnifiedNativeAdView *)unifiedNativeAdView{
+    
+}
+
+
+/**
+ 广告详情页面即将展示回调
+ 
+ @param unifiedNativeAdView GDTUnifiedNativeAdView 实例
+ */
+- (void)gdt_unifiedNativeAdDetailViewWillPresentScreen:(GDTUnifiedNativeAdView *)unifiedNativeAdView{
+    
+}
+
+
+/**
+ 视频广告播放状态更改回调
+ 
+ @param unifiedNativeAdView GDTUnifiedNativeAdView 实例
+ @param status 视频广告播放状态
+ @param userInfo 视频广告信息
+ */
+- (void)gdt_unifiedNativeAdView:(GDTUnifiedNativeAdView *)unifiedNativeAdView playerStatusChanged:(GDTMediaPlayerStatus)status userInfo:(NSDictionary *)userInfo{
+    
+}
 #pragma mark 穿山甲
 
 - (void)initChuanAD
@@ -594,7 +589,7 @@ GDTNativeAdDelegate
             [self initS2S];
             return;
         }
-        [Network upOutSideToServerRequest:ADRequest currentAD:self.currentAdDict gdtAD:self.netAdDict mediaID:self.mediaId ];
+        [Network upOutSideToServerRequest:APIRequest currentAD:self.currentAdDict gdtAD:self.netAdDict mediaID:self.mediaId ];
         
         [BUAdSDKManager setAppID: adplaces[@"appId"]];
         BUNativeAdsManager *nad = [BUNativeAdsManager new];
@@ -665,11 +660,11 @@ GDTNativeAdDelegate
     } else {
         [self initS2S];
     }
-    [Network upOutSideToServer:ADError isError:YES code:[NSString stringWithFormat:@"202%ld",(long)error.code] msg: error.userInfo[@"NSLocalizedDescription"] currentAD:self.currentAdDict gdtAD:self.netAdDict mediaID:self.mediaId];
+    [Network upOutSideToServer:APIError isError:YES code:[NSString stringWithFormat:@"202%ld",(long)error.code] msg: error.userInfo[@"NSLocalizedDescription"] currentAD:self.currentAdDict gdtAD:self.netAdDict mediaID:self.mediaId];
 }
 - (void)nativeAdDidClick:(BUNativeAd *)nativeAd withView:(UIView *)view
 {
-    [Network upOutSideToServer:ADCLICK isError:NO code:nil msg:nil currentAD:self.currentAdDict gdtAD:self.netAdDict mediaID:self.mediaId];
+    [Network upOutSideToServer:APIClick isError:NO code:nil msg:nil currentAD:self.currentAdDict gdtAD:self.netAdDict mediaID:self.mediaId];
     if(self.delegate && [self.delegate respondsToSelector:@selector(didClickedFeedAd)]){
         
         [self.delegate didClickedFeedAd];
@@ -686,21 +681,7 @@ GDTNativeAdDelegate
     } else {
         [self initS2S];
     }
-    NSError *errors = [NSError errorWithDomain:@"" code:[[NSString stringWithFormat:@"202%ld",(long)error.code]integerValue] userInfo:nil];
-    [self failedError:errors];
-    [Network upOutSideToServer:ADError isError:YES code:[NSString stringWithFormat:@"202%ld",(long)error.code] msg: error.userInfo[@"NSLocalizedDescription"] currentAD:self.currentAdDict gdtAD:self.netAdDict mediaID:self.mediaId];
-}
-
-#pragma mark -上报给指定服务器
--(void) groupNotify
-{
-    if (![[NetTool gettelModel] isEqualToString:@"iPhone Simulator"])
-    {
-        NSArray *viewS = self.s2sTapAdDict[@"impress_notice_urls"];
-        if(viewS && ![viewS isKindOfClass:[NSNull class]]&& viewS.count){
-            [Network groupNotifyToSerVer:viewS];
-        }
-    }
+    [Network upOutSideToServer:APIError isError:YES code:[NSString stringWithFormat:@"202%ld",(long)error.code] msg: error.userInfo[@"NSLocalizedDescription"] currentAD:self.currentAdDict gdtAD:self.netAdDict mediaID:self.mediaId];
 }
 
 @end

@@ -198,12 +198,11 @@
             [self failedError:errors];
             return;
         }
-        [Network upOutSideToServerRequest:ADRequest currentAD:self.currentAD gdtAD:self.videoAD mediaID:self.mediaId];
+        [Network upOutSideToServerRequest:APIRequest currentAD:self.currentAD gdtAD:self.videoAD mediaID:self.mediaId];
         
         [BUAdSDKManager setAppID: adplaces[@"appId"]];
         BURewardedVideoModel *model = [[BURewardedVideoModel alloc] init];
         model.userId = @"";
-        model.isShowDownloadBar = YES;
         self.rewardedVideoAd = [[BURewardedVideoAd alloc] initWithSlotID:adplaces[@"adPlaceId"] rewardedVideoModel:model];
         self.rewardedVideoAd.delegate = self;
         [self.rewardedVideoAd loadAdData];
@@ -289,7 +288,7 @@
             [self failedError:errors];
             return;
         }
-        [Network upOutSideToServerRequest:ADRequest currentAD:self.currentAD gdtAD:self.videoAD mediaID:self.mediaId];
+        [Network upOutSideToServerRequest:APIRequest currentAD:self.currentAD gdtAD:self.videoAD mediaID:self.mediaId];
         
         self.rewardVideoAd = [[GDTRewardVideoAd alloc] initWithAppId:adplaces[@"appId"] placementId:adplaces[@"adPlaceId"]];
         self.rewardVideoAd.delegate = self;

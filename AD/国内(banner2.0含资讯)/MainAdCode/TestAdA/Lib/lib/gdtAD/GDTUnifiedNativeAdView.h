@@ -18,6 +18,8 @@
 extern NSString* const kGDTUnifiedNativeAdKeyVideoDuration;
 
 @protocol GDTUnifiedNativeAdViewDelegate <NSObject>
+
+@optional
 /**
  广告曝光回调
 
@@ -61,7 +63,7 @@ extern NSString* const kGDTUnifiedNativeAdKeyVideoDuration;
 /**
  视频广告播放状态更改回调
 
- @param nativeExpressAdView GDTUnifiedNativeAdView 实例
+ @param unifiedNativeAdView GDTUnifiedNativeAdView 实例
  @param status 视频广告播放状态
  @param userInfo 视频广告信息
  */
@@ -69,7 +71,25 @@ extern NSString* const kGDTUnifiedNativeAdKeyVideoDuration;
 @end
 
 @interface GDTUnifiedNativeAdView:UIView
+
+/**
+ 绑定的数据对象
+ */
+@property (nonatomic, strong, readonly) GDTUnifiedNativeAdDataObject *dataObject;
+
+/**
+ 视频广告的媒体View，绑定数据对象后自动生成，可自定义布局
+ */
 @property (nonatomic, strong, readonly) GDTMediaView *mediaView;
+
+/**
+ 腾讯广告 LogoView，自动生成，可自定义布局
+ */
+@property (nonatomic, strong, readonly) GDTLogoView *logoView;
+
+/**
+ 广告 View 时间回调对象
+ */
 @property (nonatomic, weak) id<GDTUnifiedNativeAdViewDelegate> delegate;
 
 /*
@@ -78,8 +98,26 @@ extern NSString* const kGDTUnifiedNativeAdKeyVideoDuration;
  */
 @property (nonatomic, weak) UIViewController *viewController;
 
+/**
+ 自渲染2.0视图注册方法
+ 
+ @param dataObject 数据对象，必传字段
+ @param clickableViews 可点击的视图数组，此数组内的广告元素才可以响应广告对应的点击事件
+ */
+- (void)registerDataObject:(GDTUnifiedNativeAdDataObject *)dataObject
+            clickableViews:(NSArray<UIView *> *)clickableViews;
+
 
 /**
+ 注销数据对象，在 tableView、collectionView 等场景需要复用 GDTUnifiedNativeAdView 时，
+ 需要在合适的时机，例如 cell 的 prepareForReuse 方法内执行 unregisterDataObject 方法，
+ 将广告对象与 GDTUnifiedNativeAdView 解绑，具体可参考示例 demo 的 UnifiedNativeAdBaseTableViewCell 类
+ */
+- (void)unregisterDataObject;
+
+#pragma mark - DEPRECATED
+/**
+ 此方法已经废弃
  自渲染2.0视图注册方法
 
  @param dataObject 数据对象，必传字段
@@ -90,10 +128,11 @@ extern NSString* const kGDTUnifiedNativeAdKeyVideoDuration;
 - (void)registerDataObject:(GDTUnifiedNativeAdDataObject *)dataObject
                   logoView:(GDTLogoView *)logoView
             viewController:(UIViewController *)viewController
-            clickableViews:(NSArray<UIView *> *)clickableViews;
+            clickableViews:(NSArray<UIView *> *)clickableViews GDT_DEPRECATED_MSG_ATTRIBUTE("use registerDataObject:clickableViews: instead.");
 
 
 /**
+ 此方法已经废弃
  自渲染2.0视图注册方法
  
  @param dataObject 数据对象，必传字段
@@ -106,7 +145,7 @@ extern NSString* const kGDTUnifiedNativeAdKeyVideoDuration;
                  mediaView:(GDTMediaView *)mediaView
                   logoView:(GDTLogoView *)logoView
             viewController:(UIViewController *)viewController
-            clickableViews:(NSArray<UIView *> *)clickableViews;
+            clickableViews:(NSArray<UIView *> *)clickableViews GDT_DEPRECATED_MSG_ATTRIBUTE("use registerDataObject:clickableViews: instead.");
 @end
 
 

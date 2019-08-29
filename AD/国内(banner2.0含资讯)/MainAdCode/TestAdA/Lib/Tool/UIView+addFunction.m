@@ -22,7 +22,7 @@
 
 @implementation UIView (addFunction)
 
-- (void)ViewClickWithDict:(NSDictionary *)currentDict Width:(NSString *)widthStr Height:(NSString *)heightStr X:(NSString *)x Y:(NSString *)y{
+- (void)ViewClickWithDict:(NSDictionary *)currentDict Width:(NSString *)widthStr Height:(NSString *)heightStr X:(NSString *)x Y:(NSString *)y Controller:(id)controller{
     if (currentDict==nil) {
         return;
     }
@@ -54,19 +54,19 @@
             SFWebViewController *safariVC = [[SFWebViewController alloc] initWithURL:url];
             safariVC.delegate = self;
             safariVC.sfwebdelegate = self;
-            [[NetTool getCurrentViewController] presentViewController:safariVC animated:YES completion:nil];
+            [controller presentViewController:safariVC animated:YES completion:nil];
             
         } else {
             YXWebViewController *VC = [[YXWebViewController alloc] init];
             VC.delegate = self;
             VC.URLString = urlStr;
             //此处不要直接取keyWindow
-            [[NetTool getCurrentViewController] presentViewController:VC animated:NO completion:nil];
+            [controller presentViewController:VC animated:NO completion:nil];
         }
     } else if ([ac_type isEqualToString:@"6"]) {
         if (currentDict[@"inventory_source"] && [currentDict[@"inventory_source"] isKindOfClass:[NSString class]]) {
             if ([currentDict[@"inventory_source"] isEqualToString:@"1"]) {
-                [Network notifyToServer:nil serverUrl:currentDict[@"start_deeplink_urls"] completionHandler:nil];
+                [Network notifyToServerUrl:currentDict[@"start_deeplink_urls"] completionHandler:nil];
             }
         }
         NSString *deeplick = currentDict[@"deep_url"];
@@ -81,19 +81,19 @@
                         SFWebViewController *safariVC = [[SFWebViewController alloc] initWithURL:url];
                         safariVC.delegate = self;
                         safariVC.sfwebdelegate = self;
-                        [[NetTool getCurrentViewController] presentViewController:safariVC animated:YES completion:nil];
+                        [controller presentViewController:safariVC animated:YES completion:nil];
                         
                     } else {
                         YXWebViewController *web = [YXWebViewController new];
                         web.delegate = self;
                         web.URLString = urlStr;
-                        [[NetTool getCurrentViewController] presentViewController:web animated:YES completion:nil];
+                        [controller presentViewController:web animated:YES completion:nil];
                     }
                 } else {
                     deepType = @"1";
                     if (currentDict[@"inventory_source"] && [currentDict[@"inventory_source"] isKindOfClass:[NSString class]]) {
                         if ([currentDict[@"inventory_source"] isEqualToString:@"1"]) {
-                            [Network notifyToServer:nil serverUrl:currentDict[@"end_deeplink_urls"] completionHandler:nil];
+                            [Network notifyToServerUrl:currentDict[@"end_deeplink_urls"] completionHandler:nil];
                         }
                     }
                 }
@@ -103,7 +103,7 @@
                     dispatch_async(queue2, ^{
                         for (NSString *deepUrlStr in deepLinks) {
                             NSString *deepLinkUrlStr = [deepUrlStr stringByReplacingOccurrencesOfString:@"{deepType}" withString:deepType];
-                            [Network notifyToServer:nil serverUrl:deepLinkUrlStr completionHandler:nil];
+                            [Network notifyToServerUrl:deepLinkUrlStr completionHandler:nil];
                         }
                     });
                 }
@@ -114,13 +114,13 @@
                 SFWebViewController *safariVC = [[SFWebViewController alloc] initWithURL:url];
                 safariVC.delegate = self;
                 safariVC.sfwebdelegate = self;
-                [[NetTool getCurrentViewController] presentViewController:safariVC animated:YES completion:nil];
+                [controller presentViewController:safariVC animated:YES completion:nil];
                 
             } else {
                 YXWebViewController *web = [YXWebViewController new];
                 web.delegate = self;
                 web.URLString = urlStr;
-                [[NetTool getCurrentViewController] presentViewController:web animated:YES completion:nil];
+                [controller presentViewController:web animated:YES completion:nil];
             }
             if ([currentDict[@"deeplink_notice_urls"] isKindOfClass:[NSArray class]]) {
                 NSArray *deepLinks = currentDict[@"deeplink_notice_urls"];
@@ -128,7 +128,7 @@
                 dispatch_async(queue2, ^{
                     for (NSString *deepUrlStr in deepLinks) {
                         NSString *deepLinkUrlStr = [deepUrlStr stringByReplacingOccurrencesOfString:@"{deepType}" withString:@"3"];
-                        [Network notifyToServer:nil serverUrl:deepLinkUrlStr completionHandler:nil];
+                        [Network notifyToServerUrl:deepLinkUrlStr completionHandler:nil];
                     }
                 });
             }
@@ -153,7 +153,7 @@
             NSLog(@"未安装微信");
         }
         
-        [Network notifyToServer:nil serverUrl:urlStr completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
+        [Network notifyToServerUrl:urlStr completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
             if(connectionError){
                 NSLog(@"#####%@\error",[connectionError debugDescription]);
             }else{
@@ -170,7 +170,7 @@
             VC.delegate = self;
             VC.URLString = urlStr;
             //此处不要直接取keyWindow
-            [[NetTool getCurrentViewController] presentViewController:VC animated:NO completion:nil];
+            [controller presentViewController:VC animated:NO completion:nil];
         }
     }
     // 2.上报服务器

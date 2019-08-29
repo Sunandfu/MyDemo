@@ -35,6 +35,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface YXInterstitialAdManager : UIView
 
+/*
+ *  viewControllerForPresentingModalView
+ *  详解：[必选]开发者需传入用来弹出目标页的ViewController，一般为当前ViewController
+ */
+@property (nonatomic, weak) UIViewController *controller;
+
 @property (nonatomic,weak) id<YXInterstitialAdManagerDelegate> delegate;
 
 /**  媒体位Id  */

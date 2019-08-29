@@ -123,7 +123,7 @@
     } else {
         __weak typeof(self) weakSelf = self;
         [self.titleArray removeAllObjects];
-        [Network getJSONDataWithURL:[NSString stringWithFormat:@"%@/social/getYdFeedCatIds?userId=%@&mLocationId=%@",NewsSeverin,self.mediaId,self.mLocationId] parameters:nil success:^(id json) {
+        [Network getJSONDataWithURL:[NSString stringWithFormat:@"%@/social/getYdFeedCatIds?userId=%@&mLocationId=%@",TASK_SEVERIN,self.mediaId,self.mLocationId] parameters:nil success:^(id json) {
             if ([json isKindOfClass:[NSArray class]]) {
                 if (weakSelf.isShowAllChannels) {
                     weakSelf.titleArray = [NSMutableArray arrayWithArray:json];
@@ -234,7 +234,6 @@
         newChildVc.pageDelegate = self;
         newChildVc.title = dict[@"ydCatName"];
         newChildVc.titleArray = self.titleArray;
-        newChildVc.mediaId = self.mediaId;
         newChildVc.mLocationId = self.mLocationId;
         newChildVc.segmentHeight = self.headerViewHeight;
         newChildVc.isInfo = NO;

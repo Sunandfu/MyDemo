@@ -111,14 +111,7 @@
         return;
     }
     if ([self.urlStr hasPrefix:@"http"]) {
-        if (@available(iOS 9.0, *)) {
-            self.urlStr = [self.urlStr stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
-        } else {
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Wdeprecated-declarations"
-            self.urlStr = [self.urlStr stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-#pragma clang diagnostic pop
-        }
+        self.urlStr = [self.urlStr stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
         url = [NSURL URLWithString:self.urlStr];
     } else {
         url = [NSURL fileURLWithPath:self.urlStr];

@@ -145,6 +145,14 @@
  */
 - (void)loadAdAndShowInWindow:(UIWindow *)window withBottomView:(UIView *)bottomView skipView:(UIView *)skipView;
 
+/**
+ 预加载闪屏广告接口
+ 
+ @param appId 媒体ID
+ @param placementId 广告位ID
+ */
++ (void)preloadSplashOrderWithAppId:(NSString *)appId placementId:(NSString *)placementId;
+
 #pragma mark - DEPRECATED
 - (instancetype)initWithAppkey:(NSString *)appkey placementId:(NSString *)placementId GDT_DEPRECATED_MSG_ATTRIBUTE("use initWithAppId:placementId: instead.");
 

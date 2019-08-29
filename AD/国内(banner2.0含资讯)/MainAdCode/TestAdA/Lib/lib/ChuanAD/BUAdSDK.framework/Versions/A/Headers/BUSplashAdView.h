@@ -19,7 +19,7 @@ The unique identifier of splash ad.
 @property (nonatomic, copy, readonly, nonnull) NSString *slotID;
 
 /**
- Maximum allowable load timeout, default 2s, unit s.
+ Maximum allowable load timeout, default 3s, unit s.
  */
 @property (nonatomic, assign) NSTimeInterval tolerateTimeout;
 
@@ -76,7 +76,7 @@ The unique identifier of splash ad.
  This method is called when splash ad material failed to load.
  @param error : the reason of error
  */
-- (void)splashAd:(BUSplashAdView *)splashAd didFailWithError:(NSError *)error;
+- (void)splashAd:(BUSplashAdView *)splashAd didFailWithError:(NSError * _Nullable)error;
 
 /**
  This method is called when splash ad slot will be showing.

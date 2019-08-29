@@ -17,7 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  *  插屏2.0广告预加载成功回调
- *  当接收服务器返回的广告数据成功后调用该函数
+ *  当接收服务器返回的广告数据成功且预加载后调用该函数
  */
 - (void)unifiedInterstitialSuccessToLoadAd:(GDTUnifiedInterstitialAd *)unifiedInterstitial;
 
@@ -94,6 +94,8 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property (nonatomic, weak) id<GDTUnifiedInterstitialAdDelegate> delegate;
 
+@property (nonatomic, readonly) NSString *placementId;
+
 /**
  *  构造方法
  *  详解：appId - 媒体 ID
@@ -112,6 +114,21 @@ NS_ASSUME_NONNULL_BEGIN
  *  详解：[必选]发起展示广告请求, 必须传入用于显示插播广告的UIViewController
  */
 - (void)presentAdFromRootViewController:(UIViewController *)rootViewController;
+
+/**
+ 返回广告的eCPM，单位：分
+
+ @return 成功返回一个大于等于0的值，-1表示无权限或后台出现异常
+ */
+- (NSInteger)eCPM;
+
+/**
+ 返回广告的eCPM等级
+ 
+ @return 成功返回一个包含数字的string，@""或nil表示无权限或后台异常
+ */
+- (NSString *)eCPMLevel;
+
 @end
 
 NS_ASSUME_NONNULL_END

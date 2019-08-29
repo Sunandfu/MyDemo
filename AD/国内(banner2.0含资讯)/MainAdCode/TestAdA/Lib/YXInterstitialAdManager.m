@@ -16,22 +16,23 @@
 #import <SafariServices/SafariServices.h>
 
 #import <BUAdSDK/BUAdSDK.h>
-#import "GDTMobInterstitial.h"
+#import "GDTUnifiedInterstitialAd.h"
 
-@interface YXInterstitialAdManager ()<GDTMobInterstitialDelegate,BUInterstitialAdDelegate,UIWebViewDelegate,UIGestureRecognizerDelegate,YXWebViewDelegate>
+@interface YXInterstitialAdManager ()<GDTUnifiedInterstitialAdDelegate,BUNativeExpresInterstitialAdDelegate,UIWebViewDelegate,UIGestureRecognizerDelegate,YXWebViewDelegate>
 {
     CGFloat _width;
     CGFloat _height;
+    BOOL isOther;
 }
 
 @property (nonatomic, strong) NSDictionary *AdDict;
 @property (nonatomic, strong) NSDictionary *currentAD;
-
 @property (nonatomic, strong) NSDictionary *resultDict;
+@property (nonatomic, strong) NSDictionary *otherDict;
 
-@property (nonatomic, strong) BUInterstitialAd *interstitialAd;
+@property (nonatomic, strong) BUNativeExpressInterstitialAd *interstitialAd;
 
-@property (nonatomic, strong) GDTMobInterstitial *interstitial;
+@property (nonatomic, strong) GDTUnifiedInterstitialAd *interstitial;
 
 @property (nonatomic, strong) UIWebView *webView;
 @property (nonatomic, strong) UIImageView *imgView;
@@ -108,6 +109,7 @@
 - (void)initIDSource
 {
     NSArray *advertiserArr = self.AdDict[@"advertiser"];
+    
     //    暂时不用priority
     NSMutableArray * mArrPriority = [[NSMutableArray alloc]initWithCapacity:0];
     
@@ -146,16 +148,24 @@
             break;
         }
     }
-    
+    if (valueArray.count>1) {
+        isOther = YES;
+        for (int index = 0; index < valueArray.count; index ++ ) {
+            NSDictionary *advertiser = valueArray[index];
+            if (![advertiser isEqualToDictionary:self.currentAD]) {
+                self.otherDict = advertiser;
+            }
+        }
+    }
     if (self.currentAD == nil) {
         [self initS2S];
     }else{
         NSString *name = self.currentAD[@"name"];
-        if ([name isEqualToString:@"广点通"]) {
-            [self initGDTAD];
-        } else if ([name isEqualToString:@"头条"]){
+        if ([name isEqualToString:@"头条"]){
             [self initChuanAD];
-        } else {
+        } else if ([name isEqualToString:@"广点通"]) {
+            [self initGDTAD];
+        }else{
             [self initS2S];
         }
     }
@@ -166,25 +176,13 @@
  */
 - (void)initS2S
 {
-    NSString *macId = [Network sharedInstance].ipStr;
-    
-    [[Network sharedInstance] prepareDataAndRequestWithadkeyString:self.mediaId
-                                                             width:_width
-                                                            height:_height
-                                                             macID:macId
-                                                               uid:[NetTool getOpenUDID]
-                                                           adCount:1];
-    [self initXAD];
-}
-- (void)initXAD
-{
     WEAK(weakSelf);
-    [[Network sharedInstance] beginRequestfinished:^(BOOL isSuccess, id json) {
+    [Network beginRequestWithADkey:self.mediaId width:_width height:_height adCount:1 finished:^(BOOL isSuccess, id json) {
         if (isSuccess) {
             if ([json[@"ret"] isEqualToString:@"0"]) {
                 NSArray * arr = json[@"adInfos"];
                 if (arr.count <= 0) {
-                    NSError *errors = [NSError errorWithDomain:@"请求失败" code:400 userInfo:nil];
+                    NSError *errors = [NSError errorWithDomain:@"请求广告数量为空" code:400 userInfo:nil];
                     [weakSelf failedError:errors];
                     return ;
                 }
@@ -205,11 +203,11 @@
                     [weakSelf showNativeAd];
                 });
             }else{
-                NSError *errors = [NSError errorWithDomain:@"请求失败" code:400 userInfo:nil];
+                NSError *errors = [NSError errorWithDomain:@"广告配置解析失败" code:403 userInfo:nil];
                 [weakSelf failedError:errors];
             }
         }else{
-            NSError *errors = [NSError errorWithDomain:@"请求失败" code:400 userInfo:nil];
+            NSError *errors = [NSError errorWithDomain:@"广告配置请求失败" code:404 userInfo:nil];
             [weakSelf failedError:errors];
         }
     }];
@@ -223,12 +221,6 @@
         return;
     }
     NSString *img_url = self.resultDict[@"img_url"];
-    //    NSString *click_url = self.resultDict[@"click_url"];
-    //    _returnDict = [NSDictionary dictionaryWithObjectsAndKeys:click_url,@"click_url",img_url,@"img_url",@"1",@"type", nil];
-    //    if (self.resultDict[@"logo_url"]) {
-    //        NSString * logo_url = self.resultDict[@"logo_url"] ;
-    //        _returnDict = [NSDictionary dictionaryWithObjectsAndKeys:logo_url,@"logo_url",click_url,@"click_url",img_url,@"img_url",@"1",@"type", nil];
-    //    }
     NSString *lastCompnoments = [[img_url componentsSeparatedByString:@"/"] lastObject];
     if([lastCompnoments hasSuffix:@"gif"]){
         [self showGif];
@@ -253,7 +245,6 @@
                 logoView.image = logoImage ;
                 [self.webView addSubview:logoView];
             }
-            // 2.显示成功
             // 2.显示成功
             dispatch_async(dispatch_get_main_queue(), ^{
                 if(self.delegate && [self.delegate respondsToSelector:@selector(didLoadInterstitialAd)]){
@@ -383,7 +374,7 @@
         return;
     }
     
-    [self ViewClickWithDict:self.resultDict Width:widthStr Height:heightStr X:x Y:y];
+    [self ViewClickWithDict:self.resultDict Width:widthStr Height:heightStr X:x Y:y Controller:self.controller];
     [self clikedADs2sPan];
 }
 
@@ -424,76 +415,103 @@
         [self initS2S];
         return;
     }
-    [Network upOutSideToServerRequest:ADRequest currentAD:self.currentAD gdtAD:self.AdDict mediaID:self.mediaId];
+    [Network upOutSideToServerRequest:APIRequest currentAD:self.currentAD gdtAD:self.AdDict mediaID:self.mediaId];
     
-    dispatch_async(dispatch_get_main_queue(), ^{
-        self.interstitial = [[GDTMobInterstitial alloc] initWithAppId:adplaces[@"appId"] placementId:adplaces[@"adPlaceId"]];
-        self.interstitial.delegate = self;
-        [self.interstitial loadAd];
-    });
+    self.interstitial = [[GDTUnifiedInterstitialAd alloc] initWithAppId:adplaces[@"appId"] placementId:adplaces[@"adPlaceId"]];
+    self.interstitial.delegate = self;
+    [self.interstitial loadAd];
 }
 #pragma mark - GDTMobInterstitialDelegate
-// 广告预加载成功回调
-// 详解:当接收服务器返回的广告数据成功后调用该函数
-- (void)interstitialSuccessToLoadAd:(GDTMobInterstitial *)interstitial
-{
+
+/**
+ *  插屏2.0广告预加载成功回调
+ *  当接收服务器返回的广告数据成功且预加载后调用该函数
+ */
+- (void)unifiedInterstitialSuccessToLoadAd:(GDTUnifiedInterstitialAd *)unifiedInterstitial{
     if(self.delegate && [self.delegate respondsToSelector:@selector(didLoadInterstitialAd)]){
         [self.delegate didLoadInterstitialAd];
     }
-    [self.interstitial presentFromRootViewController:[NetTool getCurrentViewController]];
 }
 
-// 广告预加载失败回调
-// 详解:当接收服务器返回的广告数据失败后调用该函数
-- (void)interstitialFailToLoadAd:(GDTMobInterstitial *)interstitial error:(NSError *)error
-{
-    NSError *errors = [NSError errorWithDomain:@"" code:[[NSString stringWithFormat:@"201%ld",(long)error.code]integerValue] userInfo:nil];
-    [self failedError:errors];
-    
-    [Network upOutSideToServer:ADError isError:YES code:[NSString stringWithFormat:@"201%ld",(long)error.code] msg: error.userInfo[@"NSLocalizedDescription"] currentAD:self.currentAD gdtAD:self.AdDict mediaID:self.mediaId];
-}
-
-// 插屏广告将要展示回调
-// 详解: 插屏广告即将展示回调该函数
-- (void)interstitialWillPresentScreen:(GDTMobInterstitial *)interstitial
-{
-    [Network upOutSideToServer:ADSHOW isError:NO code:nil msg:nil currentAD:self.currentAD gdtAD:self.AdDict mediaID:self.mediaId];
-}
-
-// 插屏广告视图展示成功回调
-//
-// 详解: 插屏广告展示成功回调该函数
-- (void)interstitialDidPresentScreen:(GDTMobInterstitial *)interstitial
-{
-    
-}
-
-// 插屏广告展示结束回调
-//
-// 详解: 插屏广告展示结束回调该函数
-- (void)interstitialDidDismissScreen:(GDTMobInterstitial *)interstitial
-{
-    
-}
-
-// 应用进入后台时回调
-//
-// 详解: 当点击下载应用时会调用系统程序打开，应用切换到后台
-- (void)interstitialApplicationWillEnterBackground:(GDTMobInterstitial *)interstitial
-{
-    
-}
 /**
- *  插屏广告点击回调
+ *  插屏2.0广告预加载失败回调
+ *  当接收服务器返回的广告数据失败后调用该函数
  */
-- (void)interstitialClicked:(GDTMobInterstitial *)interstitial
-{
-    [Network upOutSideToServer:ADCLICK isError:NO code:nil msg:nil currentAD:self.currentAD gdtAD:self.AdDict mediaID:self.mediaId];
+- (void)unifiedInterstitialFailToLoadAd:(GDTUnifiedInterstitialAd *)unifiedInterstitial error:(NSError *)error{
+    if (isOther) {
+        if (![self.otherDict isEqualToDictionary:self.currentAD]) {
+            self.currentAD = self.otherDict;
+            isOther = NO;
+            [self initChuanAD];
+        }
+    } else {
+        [self initS2S];
+    }
+    
+    [Network upOutSideToServer:APIError isError:YES code:[NSString stringWithFormat:@"201%ld",(long)error.code] msg: error.userInfo[@"NSLocalizedDescription"] currentAD:self.currentAD gdtAD:self.AdDict mediaID:self.mediaId];
+}
+
+/**
+ *  插屏2.0广告将要展示回调
+ *  插屏2.0广告即将展示回调该函数
+ */
+- (void)unifiedInterstitialWillPresentScreen:(GDTUnifiedInterstitialAd *)unifiedInterstitial{}
+
+/**
+ *  插屏2.0广告视图展示成功回调
+ *  插屏2.0广告展示成功回调该函数
+ */
+- (void)unifiedInterstitialDidPresentScreen:(GDTUnifiedInterstitialAd *)unifiedInterstitial{
+    [Network upOutSideToServer:APIShow isError:NO code:nil msg:nil currentAD:self.currentAD gdtAD:self.AdDict mediaID:self.mediaId];
+}
+
+/**
+ *  插屏2.0广告展示结束回调
+ *  插屏2.0广告展示结束回调该函数
+ */
+- (void)unifiedInterstitialDidDismissScreen:(GDTUnifiedInterstitialAd *)unifiedInterstitial{}
+
+/**
+ *  当点击下载应用时会调用系统程序打开其它App或者Appstore时回调
+ */
+- (void)unifiedInterstitialWillLeaveApplication:(GDTUnifiedInterstitialAd *)unifiedInterstitial{}
+
+/**
+ *  插屏2.0广告曝光回调
+ */
+- (void)unifiedInterstitialWillExposure:(GDTUnifiedInterstitialAd *)unifiedInterstitial{
+    [Network upOutSideToServer:APIExposured isError:NO code:nil msg:nil currentAD:self.currentAD gdtAD:self.AdDict mediaID:self.mediaId];
+}
+
+/**
+ *  插屏2.0广告点击回调
+ */
+- (void)unifiedInterstitialClicked:(GDTUnifiedInterstitialAd *)unifiedInterstitial{
+    [Network upOutSideToServer:APIClick isError:NO code:nil msg:nil currentAD:self.currentAD gdtAD:self.AdDict mediaID:self.mediaId];
     if(self.delegate && [self.delegate respondsToSelector:@selector(didClickedInterstitialAd)]){
-        
         [self.delegate didClickedInterstitialAd];
     }
 }
+
+/**
+ *  点击插屏2.0广告以后即将弹出全屏广告页
+ */
+- (void)unifiedInterstitialAdWillPresentFullScreenModal:(GDTUnifiedInterstitialAd *)unifiedInterstitial{}
+
+/**
+ *  点击插屏2.0广告以后弹出全屏广告页
+ */
+- (void)unifiedInterstitialAdDidPresentFullScreenModal:(GDTUnifiedInterstitialAd *)unifiedInterstitial{}
+
+/**
+ *  全屏广告页将要关闭
+ */
+- (void)unifiedInterstitialAdWillDismissFullScreenModal:(GDTUnifiedInterstitialAd *)unifiedInterstitial{}
+
+/**
+ *  全屏广告页被关闭
+ */
+- (void)unifiedInterstitialAdDidDismissFullScreenModal:(GDTUnifiedInterstitialAd *)unifiedInterstitial{}
 
 #pragma mark 穿山甲
 
@@ -504,68 +522,83 @@
         [self initS2S];
         return;
     }
-    [Network upOutSideToServerRequest:ADRequest currentAD:self.currentAD gdtAD:self.AdDict mediaID:self.mediaId ];
+    [Network upOutSideToServerRequest:APIRequest currentAD:self.currentAD gdtAD:self.AdDict mediaID:self.mediaId ];
     [BUAdSDKManager setAppID: adplaces[@"appId"]];
     
     BUSize *imgSize1 = [[BUSize alloc] init];
     imgSize1.width = _width;
     imgSize1.height = _height;
     
-    dispatch_async(dispatch_get_main_queue(), ^{
-        self.interstitialAd = [[BUInterstitialAd alloc] initWithSlotID:adplaces[@"adPlaceId"] size:[BUSize sizeBy:BUProposalSize_Interstitial600_600]];
-        self.interstitialAd.delegate = self;
-        [self.interstitialAd loadAdData];
-        
-    });
+    self.interstitialAd = [[BUNativeExpressInterstitialAd alloc] initWithSlotID:adplaces[@"adPlaceId"] imgSize:[BUSize sizeBy:BUProposalSize_Interstitial600_600] adSize:CGSizeMake(_width, _height)];
+    self.interstitialAd.delegate = self;
+    [self.interstitialAd loadAdData];
 }
 
 /**
- 点击插屏广告 回调该函数， 期间可能调起 AppStore ThirdApp WebView etc.
- - Parameter interstitialAd: 产生该事件的 BUInterstitialAd 对象.
+ This method is called when interstitial ad material loaded successfully.
  */
-- (void)interstitialAdDidClick:(BUInterstitialAd *)interstitialAd
-{
-    [Network upOutSideToServer:ADCLICK isError:NO code:nil msg:nil currentAD:self.currentAD gdtAD:self.AdDict mediaID:self.mediaId];
-    if(self.delegate && [self.delegate respondsToSelector:@selector(didClickedInterstitialAd)]){
-        
-        [self.delegate didClickedInterstitialAd];
-    }
-}
-/**
- BUInterstitialAd 广告加载成功
- 
- - Parameter interstitialAd: 产生该事件的 BUInterstitialAd 对象.
- */
-- (void)interstitialAdDidLoad:(BUInterstitialAd *)interstitialAd
-{
+- (void)nativeExpresInterstitialAdDidLoad:(BUNativeExpressInterstitialAd *)interstitialAd{
     if(self.delegate && [self.delegate respondsToSelector:@selector(didLoadInterstitialAd)]){
         [self.delegate didLoadInterstitialAd];
     }
-    [self.interstitialAd showAdFromRootViewController:[NetTool getCurrentViewController]];
-}
-/**
- 即将展示 插屏广告
- - Parameter interstitialAd: 产生该事件的 BUInterstitialAd 对象.
- */
-- (void)interstitialAdWillVisible:(BUInterstitialAd *)interstitialAd
-{
-    [Network upOutSideToServer:ADSHOW isError:NO code:nil msg:nil currentAD:self.currentAD gdtAD:self.AdDict mediaID:self.mediaId];
+    [self.interstitialAd showAdFromRootViewController:self.controller];
 }
 
 /**
- BUInterstitialAd 加载失败
- 
- - Parameter interstitialAd: 产生该事件的 BUInterstitialAd 对象.
- - Parameter error: 包含详细是失败信息.
+ This method is called when interstitial ad material failed to load.
+ @param error : the reason of error
  */
-- (void)interstitialAd:(BUInterstitialAd *)interstitialAd didFailWithError:(NSError *)error
-{
-    NSError *errors = [NSError errorWithDomain:@"" code:[[NSString stringWithFormat:@"202%ld",(long)error.code]integerValue] userInfo:nil];
-    [self failedError:errors];
+- (void)nativeExpresInterstitialAd:(BUNativeExpressInterstitialAd *)interstitialAd didFailWithError:(NSError * __nullable)error{
+    if (isOther) {
+        if (![self.otherDict isEqualToDictionary:self.currentAD]) {
+            self.currentAD = self.otherDict;
+            isOther = NO;
+            [self initGDTAD];
+        }
+    } else {
+        [self initS2S];
+    }
     
-    [Network upOutSideToServer:ADError isError:YES code:[NSString stringWithFormat:@"202%ld",(long)error.code] msg: error.userInfo[@"NSLocalizedDescription"] currentAD:self.currentAD gdtAD:self.AdDict mediaID:self.mediaId];
+    [Network upOutSideToServer:APIError isError:YES code:[NSString stringWithFormat:@"202%ld",(long)error.code] msg: error.userInfo[@"NSLocalizedDescription"] currentAD:self.currentAD gdtAD:self.AdDict mediaID:self.mediaId];
 }
 
+/**
+ This method is called when rendering a nativeExpressAdView successed.
+ */
+- (void)nativeExpresInterstitialAdRenderSuccess:(BUNativeExpressInterstitialAd *)interstitialAd{
+    [Network upOutSideToServer:APIShow isError:NO code:nil msg:nil currentAD:self.currentAD gdtAD:self.AdDict mediaID:self.mediaId];
+}
+
+/**
+ This method is called when a nativeExpressAdView failed to render.
+ @param error : the reason of error
+ */
+- (void)nativeExpresInterstitialAdRenderFail:(BUNativeExpressInterstitialAd *)interstitialAd error:(NSError * __nullable)error{}
+
+/**
+ This method is called when interstitial ad slot will be showing.
+ */
+- (void)nativeExpresInterstitialAdWillVisible:(BUNativeExpressInterstitialAd *)interstitialAd{}
+
+/**
+ This method is called when interstitial ad is clicked.
+ */
+- (void)nativeExpresInterstitialAdDidClick:(BUNativeExpressInterstitialAd *)interstitialAd{
+    [Network upOutSideToServer:APIClick isError:NO code:nil msg:nil currentAD:self.currentAD gdtAD:self.AdDict mediaID:self.mediaId];
+    if(self.delegate && [self.delegate respondsToSelector:@selector(didClickedInterstitialAd)]){
+        [self.delegate didClickedInterstitialAd];
+    }
+}
+
+/**
+ This method is called when interstitial ad is about to close.
+ */
+- (void)nativeExpresInterstitialAdWillClose:(BUNativeExpressInterstitialAd *)interstitialAd{}
+
+/**
+ This method is called when interstitial ad is closed.
+ */
+- (void)nativeExpresInterstitialAdDidClose:(BUNativeExpressInterstitialAd *)interstitialAd{}
 #pragma mark -上报给指定服务器
 
 -(void) groupNotify{

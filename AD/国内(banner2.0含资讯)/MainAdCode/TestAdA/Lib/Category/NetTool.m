@@ -27,82 +27,17 @@
 #import "GDTSDKConfig.h"
 
 @implementation NetTool
-netType nettype = notReach;
-NSString *_gulatitude;
-NSString *_gulongitude;
-+(NSString *) getrequestInfo:(NSString *)key
-                       width:(NSString *)width
-                      height:(NSString *)height
-                       macID:(NSString *)macID
-                         uid:(NSString *)uid
-                     adCount:(NSInteger )adCount
-{
-    CGFloat c_w = [UIScreen mainScreen].bounds.size.width;
-    CGFloat c_h = [UIScreen mainScreen].bounds.size.height;
-    // 1.2网络状态
-    NSString *orientationStr;
-    __block UIInterfaceOrientation  orientation ;
-    dispatch_async(dispatch_get_main_queue(), ^(void) {
-        orientation = [[UIApplication sharedApplication] statusBarOrientation];
-        
-    });
-   
-    if(UIInterfaceOrientationIsLandscape(orientation)){
-        orientationStr = @"2";
-        //横屏
-    }else{
-        orientationStr = @"1";
-        //竖屏
-    }
-    //
-    [self getNetTyepe];
-    int netNumber = nettype;//网络标示
-    NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];
-    // app名称
-    NSString *app_Name = [infoDictionary objectForKey:@"CFBundleDisplayName"];
 
-    NSMutableDictionary *dic = [NSMutableDictionary dictionary];
-    NSString * adCountStr = [NSString stringWithFormat:@"%ld",(long)adCount];
-    [dic setValue:adCountStr                             forKey:@"adCount"];
-    [dic setValue:@"4.0"                                 forKey:@"version"] ;
-    [dic setValue:@"2"                                   forKey:@"c_type"] ;
-    [dic setValue:key                                    forKey:@"mid"];
-    [dic setValue:uid                                    forKey:@"uid"];
-    [dic setValue:@"zh"                                  forKey:@"language"] ;
-    [dic setValue:@"IOS"                                 forKey:@"os"];
-    [dic setValue:[self getMac]                          forKey:@"mac"];
-    [dic setValue:[self getOS]                           forKey:@"osv"];
-    [dic setValue:@(netNumber)                           forKey:@"networktype"];
-    [dic setValue:@"apple"                               forKey:@"make"];
-    [dic setValue:@"apple"                               forKey:@"brand"];
-    [dic setValue:[self gettelModel]                     forKey:@"model"];
-    [dic setValue:@"1"                                   forKey:@"devicetype"];//1 手机  2平板
-    [dic setValue:[self getIDFA]                         forKey:@"idfa"];
-    [dic setValue:[self getDPI]                          forKey:@"dpi"];
-    [dic setValue:[NSString stringWithFormat:@"%.f",c_w] forKey:@"width"];
-    [dic setValue:[NSString stringWithFormat:@"%.f",c_h] forKey:@"height"];
-    [dic setValue:[self getPackageName]                  forKey:@"appid"];
-    [dic setValue:app_Name                               forKey:@"appname"];
-    [dic setValue:orientationStr                         forKey:@"orientation"];
-    [dic setValue:[NetTool getCityCode]                  forKey:@"cityCode"];
-    [dic setValue:@{@"width": width,@"height": height}   forKey:@"image"];
-    [dic setValue:[self getTimeLocal]                              forKey:@"ts"];//时间戳
-    [dic setValue:@([NetTool getYunYingShang]) forKey:@"operator"];
-    //    NSJSONSerialization 组json字符串
-    NSString *jsonStr = [NSString sf_jsonStringWithJson:dic];
-    return jsonStr;
-}
-+ (NSString *)getTimeLocal{
++ (NSString *)getTimeLocal{//毫秒级
     UInt64 recordTime = [[NSDate date] timeIntervalSince1970]*1000;
     NSString *timeLocal = [[NSString alloc] initWithFormat:@"%llu", recordTime];
     return timeLocal;
 }
-+ (NSString *)sdkVersion{
-    NSLog(@"当前版本号：%@",[GDTSDKConfig sdkVersion]);
++ (NSString *)sdkVersion{//广点通版本号
+    NSLog(@"当前SDK版本号：%@-%@",[GDTSDKConfig sdkVersion],SDKVersionKey);
     return [GDTSDKConfig sdkVersion];
 }
-
-+(NSString *)deviceWANIPAdress{
++(NSString *)getDeviceIPAdress{
     NSError *error;
     NSURL *ipURL = [NSURL URLWithString:@"http://pv.sohu.com/cityjson?ie=utf-8"];
     NSMutableString *ip = [NSMutableString stringWithContentsOfURL:ipURL encoding:NSUTF8StringEncoding error:&error];
@@ -116,13 +51,12 @@ NSString *_gulongitude;
         //将字符串转换成二进制进行Json解析
         NSData * data = [nowIp dataUsingEncoding:NSUTF8StringEncoding];
         NSDictionary * dict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
-        NSString *ipAddress = [dict objectForKey:@"cip"];
+        NSString *ipAddress = [NSString stringWithFormat:@"%@",[dict objectForKey:@"cip"]];
         return ipAddress;
         
     }
     return @"";
 }
-
 
 +(NSString *)iphonePlatform{
     struct utsname systemInfo;
@@ -245,12 +179,12 @@ NSString *_gulongitude;
     if ([platform isEqualToString:@"x86_64"])    return @"iPhone Simulator";
     
     return platform;
-    
 }
 
 //获取网络类型
 +(netType) getNetTyepe
 {
+    netType nettype = notReach;
     YXReachability *ablity = [YXReachability YXReachabilityWithHostName:@"www.baidu.com"];
     NetworkStatus currentStatus = ablity.currentYXReachabilityStatus; 
     
@@ -262,13 +196,7 @@ NSString *_gulongitude;
         nettype = wifi;
 //         NSLog(@"Wifi");
       } else if (currentStatus == kReachableViaWWAN) {
-//          nettype = WWAN;
-//          NSLog(@"3G/4G/5G");
-          
-          //connection type
           CTTelephonyNetworkInfo *netinfo = [[CTTelephonyNetworkInfo alloc] init];
-//          NSString *carrier = [[netinfo subscriberCellularProvider] carrierName];
-//          NSLog(@"carrier = %@",carrier);
           if ([netinfo.currentRadioAccessTechnology isEqualToString:CTRadioAccessTechnologyGPRS] || [netinfo.currentRadioAccessTechnology isEqualToString:CTRadioAccessTechnologyEdge] || [netinfo.currentRadioAccessTechnology isEqualToString:CTRadioAccessTechnologyCDMA1x]) {
 //              NSLog(@"2G");
               nettype = net2G;
@@ -284,41 +212,38 @@ NSString *_gulongitude;
       } else {
           nettype = unknown;
       }
-    
-    [self setNetType:nettype];
     return nettype;
 }
 
-
-+(void)setNetType:(netType)type
-{
-    nettype = type;
-}
-
 //获取idfa
-+(NSString *)getIDFA
-{
++(NSString *)getIDFA{
     if ([[UIDevice currentDevice].systemVersion floatValue] < 6.0) {
         return @"";
-        
     }else{
-        NSString *adId =[[[ASIdentifierManager sharedManager] advertisingIdentifier]UUIDString];
+        NSUUID *UUID = [[ASIdentifierManager sharedManager] advertisingIdentifier];
+        NSString *adId = [NSString stringWithFormat:@"%@",UUID.UUIDString];
         return adId ;
     }
 }
 
 //OpenUDID zzz uid
-+ (NSString *)getOpenUDID
++ (NSString *)getDeviceUUID
 {
-    NSString *openUDIDStr = [NSUUID UUID].UUIDString;
-    return openUDIDStr;
+    NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
+    NSString *uuid = [userDefault objectForKey:@"ApplicationUniqueIdentifier"];
+    if (uuid == nil) {
+        uuid = [[NSUUID UUID] UUIDString];
+        if (uuid == nil) {uuid = @"";}
+        [userDefault setObject:uuid forKey:@"ApplicationUniqueIdentifier"];
+        [userDefault synchronize];
+    }
+    return uuid;
 }
 
 
 //获取mac地址
 //Mac地址
-+ (NSString *)getMac
-{
++ (NSString *)getMac{
     int                   mib[6];
     size_t                len;
     char                *buf;
@@ -363,11 +288,15 @@ NSString *_gulongitude;
     return [outstring uppercaseString];
     
 }
-
++ (NSString *)URLEncodedString:(NSString*)str{
+    NSString *unencodedString = str;
+    NSString *encodedString = (NSString *) CFBridgingRelease(CFURLCreateStringByAddingPercentEscapes( kCFAllocatorDefault, (CFStringRef)unencodedString, NULL, (CFStringRef)@"!*'();:@&=+$,/?%#[]", kCFStringEncodingUTF8));
+    return encodedString;
+}
 //cityCode
 + (NSString *)getCityCode
 {
-    NSString *cityCode = [[NSUserDefaults standardUserDefaults] objectForKey:@"ADSDKCityCode"];
+    NSString *cityCode = [[NSUserDefaults standardUserDefaults] objectForKey:KeyADSDKCityCode];
     return cityCode?cityCode:@"";
 }
 //系统版本
@@ -375,17 +304,6 @@ NSString *_gulongitude;
 {
     NSString *os  = [[UIDevice currentDevice] systemVersion];
     return [NSString stringWithFormat:@"%@",os];
-}
-//设备型号
-+ (NSString *)platform
-{
-    size_t size;
-    sysctlbyname("hw.machine", NULL, &size, NULL, 0);
-    char *machine = malloc(size);
-    sysctlbyname("hw.machine", machine, &size, NULL, 0);
-    NSString *platform = [NSString stringWithCString:machine encoding:NSASCIIStringEncoding];
-    free(machine);
-    return platform;
 }
 //设备型号
 + (NSString *)gettelModel
@@ -403,61 +321,64 @@ NSString *_gulongitude;
     NSString *platform = [NSString stringWithCString:machine encoding:NSASCIIStringEncoding];
     free(machine);
     
-    return platform;
+    return [NSString stringWithFormat:@"%@",platform];
 }
-+ (NSString*)getDPI
++ (NSString*)getPPI
 {
-    if (CGSizeEqualToSize(CGSizeMake(320, 480), [UIScreen mainScreen].bounds.size)) {
+    if (CGSizeEqualToSize(CGSizeMake(320, 480), [UIScreen mainScreen].bounds.size)) {//4S 5
         return @"163";
-    }else if (CGSizeEqualToSize(CGSizeMake(320, 568), [UIScreen mainScreen].bounds.size)){
+    }else if (CGSizeEqualToSize(CGSizeMake(320, 568), [UIScreen mainScreen].bounds.size)){//5S  SE
         return @"326";
-    }else if (CGSizeEqualToSize(CGSizeMake(375, 667), [UIScreen mainScreen].bounds.size)){
+    }else if (CGSizeEqualToSize(CGSizeMake(375, 667), [UIScreen mainScreen].bounds.size)){//6 7 8
         return @"326";
-    }else if (CGSizeEqualToSize(CGSizeMake(414, 736), [UIScreen mainScreen].bounds.size)){
+    }else if (CGSizeEqualToSize(CGSizeMake(414, 736), [UIScreen mainScreen].bounds.size)){//6+ 7+ 8+
         return @"401";
-    }else if (CGSizeEqualToSize(CGSizeMake(375, 812), [UIScreen mainScreen].bounds.size)){
+    }else if (CGSizeEqualToSize(CGSizeMake(375, 812), [UIScreen mainScreen].bounds.size)){//XS
         return @"458";
+    }else if (CGSizeEqualToSize(CGSizeMake(414, 896), [UIScreen mainScreen].bounds.size)){
+        if ([[self iphonePlatform] isEqualToString:@"iPhone XS Max"]) {//6.5  XS Max
+            return @"458";
+        } else {//6.1 iPhone XR
+            return @"401";
+        }
     }else{
         return @"163";
     }
 }
-
-+(NSString*)getlatitude{
-    if (!_gulatitude) {
-        return @"";
+//获取设备英寸
++ (NSInteger)getPhysicalDevice{
+    if (CGSizeEqualToSize(CGSizeMake(414, 896), [UIScreen mainScreen].bounds.size)){
+        if ([[self iphonePlatform] isEqualToString:@"iPhone XS Max"]) {//6.5
+            return 6.5;
+        } else {//6.1 iPhone XR
+            return 6.1;
+        }
+    } else if (CGSizeEqualToSize(CGSizeMake(375, 812), [UIScreen mainScreen].bounds.size)){
+        return 5.8;
+    } else if (CGSizeEqualToSize(CGSizeMake(414, 736), [UIScreen mainScreen].bounds.size)){
+        return 5.5;
+    } else if (CGSizeEqualToSize(CGSizeMake(375, 667), [UIScreen mainScreen].bounds.size)){
+        return 4.7;
+    } else if (CGSizeEqualToSize(CGSizeMake(320, 568), [UIScreen mainScreen].bounds.size)){
+        return 4;
+    } else {
+        return 3.5;
     }
-    return _gulatitude;
 }
-+(NSString*)getlongitude{
-    if (!_gulongitude) {
-        return @"";
-    }
-    return _gulongitude;
-}
-
-+(void)setlatitude :(NSString*)info{
-    
-    _gulatitude = info;
-    
-}
-
-+(void)setlongitude :(NSString*)info{
-    
-    _gulongitude = info;
-    
-}
-
-
 //应用包名
 +(NSString *)getPackageName
 {
-    NSString *packageName = [[NSBundle mainBundle] bundleIdentifier];
+    NSString *packageName = [NSString stringWithFormat:@"%@",[[NSBundle mainBundle] bundleIdentifier]];
     return packageName;
 }
-
-
-+ (BOOL) connectedToNetwork
-{
++ (NSString *)getAppName{
+    NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];
+    // app名称
+    NSString *app_Name = [infoDictionary objectForKey:@"CFBundleDisplayName"];
+    return app_Name?app_Name:@"";
+}
+//判断是否连接网络
++ (BOOL) connectedToNetwork{
     // Create zero addy
     struct sockaddr_in zeroAddress;
     bzero(&zeroAddress, sizeof(zeroAddress));
@@ -465,16 +386,12 @@ NSString *_gulongitude;
     zeroAddress.sin_family = AF_INET;
     
     SCNetworkReachabilityRef defaultRouteYXReachability = SCNetworkReachabilityCreateWithAddress(NULL, (struct sockaddr *)&zeroAddress);
-    
     SCNetworkReachabilityFlags flags;
-    
     BOOL didRetrieveFlags = SCNetworkReachabilityGetFlags(defaultRouteYXReachability, &flags);
     CFRelease(defaultRouteYXReachability);
-    
-    if (!didRetrieveFlags)
-    {
+    if (!didRetrieveFlags){
         printf("Error. Could not recover network YXReachability flags\n");
-        return 0;
+        return NO;
     }
     
     BOOL isReachable = flags & kSCNetworkFlagsReachable;
@@ -482,8 +399,7 @@ NSString *_gulongitude;
     // BOOL isEDGE = flags & kSCNetworkYXReachabilityFlagsIsWWAN;
     return (isReachable && !needsConnection) ? YES : NO;
 }
-+ (NSInteger)getYunYingShang
-{
++ (NSInteger)getYunYingShang{
     //获取本机运营商名称
     CTTelephonyNetworkInfo *info = [[CTTelephonyNetworkInfo alloc] init];
     CTCarrier *carrier = [info subscriberCellularProvider];
@@ -493,10 +409,8 @@ NSString *_gulongitude;
     if (!carrier.isoCountryCode) {
 //        NSLog(@"没有SIM卡");
         mobile = @"无运营商";
-        
     }else{
         mobile = [carrier carrierName];
-        
     }
     if ([mobile isEqualToString:@"中国电信"]) {
         return 2;
@@ -519,7 +433,7 @@ NSString *_gulongitude;
     NSTimeInterval interval = [stopDate timeIntervalSinceDate:startDate];
     return (NSInteger)interval/3600;
 }
-+ (NSString *)getNowDateStr_2
++ (NSString *)getNowDateStr
 {
     NSDateFormatter * recordDateFormatter = [NSDateFormatter new];
     recordDateFormatter.dateFormat = @"yyyy-MM-dd HH:mm:ss";
@@ -621,31 +535,6 @@ NSString *_gulongitude;
     CGImageRelease(imageRef);
     return image;
 }
-/** * URLEncode */
-+ (NSString *)URLEncodedString:(NSString*)str {
-    // CharactersToBeEscaped = @":/?&=;+!@#$()~',*";
-    // CharactersToLeaveUnescaped = @"[].";
-    NSString *unencodedString = str;
-    NSString *encodedString = (NSString *) CFBridgingRelease(CFURLCreateStringByAddingPercentEscapes(
-                                                                                                     kCFAllocatorDefault, (CFStringRef)unencodedString,                                              NULL,                                             (CFStringRef)@"!*'();:@&=+$,/?%#[]", kCFStringEncodingUTF8));
-    return encodedString;
-    
-}
-+ (UIViewController *)getCurrentViewController
-{
-    UIViewController * vc = [UIApplication sharedApplication].delegate.window.rootViewController;
-    
-    if([vc isKindOfClass:[UITabBarController class]])
-    {
-        vc = [(UITabBarController *)vc selectedViewController];
-    }
-    if([vc isKindOfClass:[UINavigationController class]])
-    {
-        vc = [(UINavigationController *)vc visibleViewController];
-    }
-    
-    return vc;
-}
 + (void)setImage:(UIImageView*)imageView WithURLStr:(NSString *)urlStr placeholderImage:(UIImage *)placeholder {
     imageView.image = placeholder;
     if (!urlStr) {
@@ -702,13 +591,16 @@ NSString *_gulongitude;
     long temp = 0;
     NSString *result;
     if (timeInterval < 60) {
-        result = [NSString stringWithFormat:@"1分钟前"];
+        result = [NSString stringWithFormat:@"%d秒前",(int)timeInterval];
     }
     else if((temp = timeInterval/60) <60){
         result = [NSString stringWithFormat:@"%ld分钟前",temp];
     }
     else if((temp = temp/60) <24){
         result = [NSString stringWithFormat:@"%ld小时前",temp];
+    }
+    else if((temp = temp/24) <3){
+        result = [NSString stringWithFormat:@"%ld天前",temp];
     }
     else{
         result = [NSString stringWithFormat:@"%@",dateStr];
@@ -749,56 +641,41 @@ NSString *_gulongitude;
 + (void)clearNetImageChace
 {
     NSString *paths = [NSHomeDirectory() stringByAppendingPathComponent:@"Library/Caches/Image"];
-    
     NSFileManager *fileManager=[NSFileManager defaultManager];
-    
     if([fileManager fileExistsAtPath:paths]){
         [fileManager removeItemAtPath:paths error:nil];
     }
-    
     [fileManager createDirectoryAtPath:paths withIntermediateDirectories:YES attributes:nil error:nil];
     [[SDImageCache sharedImageCache] clearMemory];
 }
 // 判断View是否显示在屏幕上
 + (BOOL)isInScreenView:(UIView*)view
 {
-    if (self == nil) {
-        
+    if (view == nil) {
         return FALSE;
-        
     }
     CGRect screenRect = [UIScreen mainScreen].bounds;
     // 转换view对应window的Rect
     CGRect rect = [view convertRect:view.frame fromView:nil];
     if (CGRectIsEmpty(rect) || CGRectIsNull(rect)) {
-        
         return FALSE;
-        
     }
     // 若view 隐藏
     if (view.hidden) {
-        
         return FALSE;
-        
     }
     // 若没有superview
     if (view.superview == nil) {
-        
         return FALSE;
-        
     }
     // 若size为CGrectZero
     if (CGSizeEqualToSize(rect.size, CGSizeZero)) {
-        
         return FALSE;
-        
     }
     // 获取 该view与window 交叉的 Rect
     CGRect intersectionRect = CGRectIntersection(rect, screenRect);
     if (CGRectIsEmpty(intersectionRect) || CGRectIsNull(intersectionRect)) {
-        
         return FALSE;
-        
     }
     return TRUE;
 }
@@ -821,7 +698,6 @@ NSString *_gulongitude;
     }
 }
 + (NSDictionary *)dictionaryWithJsonString:(NSString *)jsonString {
-    
     if (jsonString == nil) {
         return nil;
     }
@@ -829,7 +705,6 @@ NSString *_gulongitude;
     NSError *err;
     NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers error:&err];
     if(err) {
-        //        NSLog(@"json解析失败：%@",err);
         return nil;
     }
     return dic;
@@ -869,20 +744,16 @@ NSString *_gulongitude;
     if (range.location == NSNotFound) return nil;
     
     NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
-    
     NSString *parametersString = [urlStr substringFromIndex:range.location + 1];
     if ([parametersString containsString:@"&"]) {
         NSArray *urlComponents = [parametersString componentsSeparatedByString:@"&"];
-        
         for (NSString *keyValuePair in urlComponents) {
             NSArray *pairComponents = [keyValuePair componentsSeparatedByString:@"="];
             NSString *key = [pairComponents.firstObject stringByRemovingPercentEncoding];
             NSString *value = [pairComponents.lastObject stringByRemovingPercentEncoding];
-            
             if (key == nil || value == nil) {
                 continue;
             }
-            
             id existValue = [parameters valueForKey:key];
             if (existValue != nil) {
                 if ([existValue isKindOfClass:[NSArray class]]) {
@@ -901,10 +772,8 @@ NSString *_gulongitude;
         if (pairComponents.count == 1) {
             return nil;
         }
-        
         NSString *key = [pairComponents.firstObject stringByRemovingPercentEncoding];
         NSString *value = [pairComponents.lastObject stringByRemovingPercentEncoding];
-        
         if (key == nil || value == nil) {
             return nil;
         }
@@ -931,6 +800,23 @@ NSString *_gulongitude;
         [URL appendString:string];
     }
     return [NSString stringWithString:URL];
+}
+// 获取异常崩溃信息
++ (void)uncaughtExceptionHandler:(NSException *)exception{
+    NSArray *callStack = [exception callStackSymbols];
+    NSString *reason = [exception reason];
+    NSString *name = [exception name];
+    NSString *errorMessage = [NSString stringWithFormat:@"========异常错误报告========\nname:%@\nreason:\n%@\ncallStackSymbols:\n%@",name,reason,[callStack componentsJoinedByString:@"\n"]];
+    NSLog(@"errorMessage = %@", errorMessage);
+    /*
+     @try {
+     [self requestADSource];
+     } @catch (NSException *exception) {
+     [NetTool uncaughtExceptionHandler:exception];
+     } @finally {
+     NSLog(@"开屏广告出现错误了");
+     }
+     */
 }
 
 @end

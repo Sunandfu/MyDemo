@@ -7,141 +7,109 @@
 //  代码地址:https://github.com/CoderZhuXH/XHLaunchAd
 //  数据请求类
 #import "Network.h"
-#import "NSString+SFAES.h"
-#import "NetTool.h"
-
-@interface Network()
-{
-    NSString *_initPar;
-    NSDictionary *_adDict;
-    
-    NSMutableData *_receivedData;
-    NSDictionary *_resultDict;//data数据
-    
-    CGFloat _frameWidth;// 宽度
-    CGFloat _frameHeight;// 高度
-    NSString * _adValue;
-    NSThread *getIpthread;
-    NSInteger _adCount;
-}
-
-@end
 
 @implementation Network
 
-+ (instancetype)sharedInstance
++ (NSString *)getrequestInfo:(NSString *)key
+                       width:(CGFloat)width
+                      height:(CGFloat)height
+                     adCount:(NSInteger )adCount
 {
-    static dispatch_once_t onceToken;
-    static Network *seaAFmanager;
-    dispatch_once(&onceToken, ^{
-        seaAFmanager = [[self alloc]init];
+    CGFloat c_w = [UIScreen mainScreen].bounds.size.width;
+    CGFloat c_h = [UIScreen mainScreen].bounds.size.height;
+    // 1.2网络状态
+    NSString *orientationStr;
+    __block UIInterfaceOrientation  orientation ;
+    dispatch_async(dispatch_get_main_queue(), ^(void) {
+        orientation = [[UIApplication sharedApplication] statusBarOrientation];
+        
     });
-    return seaAFmanager;
-} 
-- (void)beginRequestfinished:(void (^)(BOOL, id))finish{
- //[_initPar dataUsingEncoding:NSUTF8StringEncoding allowLossyConversion:YES]
-    NSString *aesStr = [_initPar sf_AESEncryptString];
-    NSData *postDatas = [[NSString sf_jsonStringWithJson:@{@"data":aesStr}] dataUsingEncoding:NSUTF8StringEncoding];
+    
+    if(UIInterfaceOrientationIsLandscape(orientation)){
+        orientationStr = @"2";
+        //横屏
+    }else{
+        orientationStr = @"1";
+        //竖屏
+    }
+    //
+    int netNumber = [NetTool getNetTyepe];//网络标示
+    NSMutableDictionary *dic = [NSMutableDictionary dictionary];
+    NSString * adCountStr = [NSString stringWithFormat:@"%ld",(long)adCount];
+    [dic setValue:adCountStr                             forKey:@"adCount"];
+    [dic setValue:@"4.0"                                 forKey:@"version"] ;
+    [dic setValue:@"2"                                   forKey:@"c_type"] ;
+    [dic setValue:key                                    forKey:@"mid"];
+    [dic setValue:[NetTool getDeviceUUID]                forKey:@"uid"];
+    [dic setValue:@"zh"                                  forKey:@"language"] ;
+    [dic setValue:@"IOS"                                 forKey:@"os"];
+    [dic setValue:[NetTool getMac]                       forKey:@"mac"];
+    [dic setValue:[NetTool getOS]                        forKey:@"osv"];
+    [dic setValue:@(netNumber)                           forKey:@"networktype"];
+    [dic setValue:@"apple"                               forKey:@"make"];
+    [dic setValue:@"apple"                               forKey:@"brand"];
+    [dic setValue:[NetTool gettelModel]                  forKey:@"model"];
+    [dic setValue:@"1"                                   forKey:@"devicetype"];//1 手机  2平板
+    [dic setValue:[NetTool getIDFA]                      forKey:@"idfa"];
+    [dic setValue:[NetTool getPPI]                       forKey:@"dpi"];
+    [dic setValue:[NSString stringWithFormat:@"%.f",c_w] forKey:@"width"];
+    [dic setValue:[NSString stringWithFormat:@"%.f",c_h] forKey:@"height"];
+    [dic setValue:[NetTool getPackageName]               forKey:@"appid"];
+    [dic setValue:[NetTool getAppName]                   forKey:@"appname"];
+    [dic setValue:orientationStr                         forKey:@"orientation"];
+    [dic setValue:[NetTool getCityCode]                  forKey:@"cityCode"];
+    [dic setValue:[NetTool getTimeLocal]                 forKey:@"ts"];//时间戳
+    [dic setValue:@([NetTool getYunYingShang])           forKey:@"operator"];
+    [dic setValue:@{@"width": @(width),@"height": @(height)}   forKey:@"image"];
+    //    NSJSONSerialization 组json字符串
+    NSString *jsonStr = [NSString sf_jsonStringWithJson:dic];
+    return jsonStr;
+}
++ (void)beginRequestWithADkey:(NSString *)adkey
+                        width:(CGFloat )width
+                       height:(CGFloat )height
+                      adCount:(NSInteger)adCount finished:(void (^)(BOOL, id))finish{
+    NSString *paramStr = [self getrequestInfo:adkey width:width height:height adCount:adCount];
+    NSString *aesStr = [paramStr request_Encrypt];
+    
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
-    NSString * url = [NSString stringWithFormat:S2SURL];
+    NSString * url = [NSString stringWithFormat:@"%@", APICongfig];
     [request setURL:[NSURL URLWithString:url]];
     [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    [request setValue:@"4.4" forHTTPHeaderField:@"apiversion"];
     [request setCachePolicy:NSURLRequestUseProtocolCachePolicy];//缓存策略
     [request setTimeoutInterval: 3];//超时时间
     [request setHTTPMethod:@"POST"];
-    [request setHTTPBody:postDatas];
+    [request setHTTPBody:[[NSString sf_jsonStringWithJson:@{@"data":aesStr}] dataUsingEncoding:NSUTF8StringEncoding]];
     
     [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse * _Nullable response, id _Nullable data, NSError * _Nullable connectionError) {
         if (connectionError) {
-            finish(NO , data);
+            dispatch_async(dispatch_get_main_queue(), ^{
+                finish(NO , connectionError);
+            });
         } else {
             NSDictionary *dataDict =  [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
             if (dataDict[@"data"]) {
                 NSString *aesData = dataDict[@"data"];
-                NSDictionary *dict = [aesData sf_AESDecryptString];
-                finish(YES , dict);
+                NSDictionary *dict = [aesData request_Decrypt];
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    finish(YES , dict);
+                });
             } else {
-                NSError *error1 = [NSError errorWithDomain:@"获取数据格式不正确" code:10020 userInfo:nil];
-                [self getDataError:error1];
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    finish(NO , connectionError);
+                });
             }
         }
     }];
 }
 
--(void)CrashSQL{
-    NSLog(@"CrashSQL");
-    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
-    NSString *strURL =  [NSString stringWithFormat:@"http://ad/getReportList?idfa=%@",[NetTool getIDFA] ];
-    [request setURL:[NSURL URLWithString:strURL]];
-    [request setCachePolicy:NSURLRequestUseProtocolCachePolicy];
-    [request setTimeoutInterval:5];
-    [request setHTTPMethod:@"GET"];
-    [NSURLConnection connectionWithRequest:request delegate:self];
-}
--(NSString *)deviceWANIPAdress
-{
-    return [NetTool deviceWANIPAdress];
-}
-- (NSString *)ipStr
-{
-    if (!_ipStr) {
-        __block NSString *macId;  dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-            macId = [[Network sharedInstance] deviceWANIPAdress];
-        });
-        [NSThread sleepForTimeInterval:1];
-        if (macId) {
-            _ipStr = macId;
-        }
-    }
-    return _ipStr?_ipStr:@"";
-}
--(BOOL) prepareDataAndRequestWithadkeyString:(NSString *)adkey
-                                       width:(CGFloat )width
-                                      height:(CGFloat )height
-                                       macID:(NSString*)macId
-                                         uid:(NSString*)uid
-                                     adCount:(NSInteger)adCount
-{
-    
-    _adValue = adkey;
-    _frameHeight = height ;
-    _frameWidth = width ;
-    _adCount = adCount;
-    _initPar = [NetTool getrequestInfo:_adValue
-                                 width:[NSString stringWithFormat:@"%.0f",_frameWidth]
-                                height:[NSString stringWithFormat:@"%.0f",_frameHeight]
-                                 macID:macId
-                                   uid:uid
-                               adCount:adCount];
-    if ([NetTool connectedToNetwork]) {
-//        [self getInterstitialData];//请求数据
-        return YES;
-    }else{
-//        if (_delegate&&[_delegate respondsToSelector:@selector(initPopFrameAdFail:)])
-//        {
-//            NSError *error = [NSError errorWithDomain:@"could't connect the net" code:404 userInfo:nil];
-//            [_delegate initPopFrameAdFail:error];
-//        }
-        return NO;
-    }
-    
-}
-
--(void) getDataError:(NSError *)error
-{
-//    if (_delegate&&[_delegate respondsToSelector:@selector(initPopFrameAdFail:)]) {
-//        [_delegate initPopFrameAdFail:error];
-//    }
-}
-
 #pragma mark -上报给指定服务器
-+ (void) notifyToServer:(NSString *) parmams serverUrl:(NSString *)serverUrl completionHandler:(void (^)(NSURLResponse* response, NSData* data, NSError* connectionError)) handler
-{
++ (void)notifyToServerUrl:(NSString *)serverUrl completionHandler:(void (^)(NSURLResponse* response, NSData* data, NSError* connectionError)) handler{
     //加密参数
-    if (![[NetTool gettelModel] isEqualToString:@"iPhone Simulator"])
-    {
+    if (![[NetTool gettelModel] isEqualToString:@"iPhone Simulator"]) {
         NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
-        [request setURL:[NSURL URLWithString:serverUrl]];
+        [request setURL:[NSURL URLWithString:[serverUrl stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]]];
         [request setCachePolicy:NSURLRequestUseProtocolCachePolicy];
         [request setTimeoutInterval:5];
         [request setHTTPMethod:@"GET"];
@@ -158,13 +126,12 @@
  
  @param arr s2s上报
  */
-+(void) groupNotifyToSerVer:(NSArray *) arr
-{
++(void)groupNotifyToSerVer:(NSArray *)arr{
     dispatch_group_t group = dispatch_group_create();
-    dispatch_queue_t queue = dispatch_queue_create("com.adwalker.dsp", DISPATCH_QUEUE_PRIORITY_DEFAULT);
+    dispatch_queue_t queue = dispatch_queue_create("com.yunqing.s2sdsp", DISPATCH_QUEUE_PRIORITY_DEFAULT);
     for(int  i = 0;i <arr.count;i++){
         dispatch_group_async(group, queue, ^{
-            [Network notifyToServer:nil serverUrl:arr[i] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
+            [Network notifyToServerUrl:arr[i] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
                 if(connectionError){
                     NSLog(@"#####%@\error",[connectionError debugDescription]);
                 }else{
@@ -188,26 +155,18 @@
  */
 + (void)upOutSideToServer:(NSString*)url isError:(BOOL)isError code:(NSString*)code msg:(NSString*)msg currentAD:(NSDictionary*)currentAD gdtAD:(NSDictionary*)gdtAD mediaID:(NSString*)mediaID
 {
-    
     dispatch_group_t group = dispatch_group_create();
-    dispatch_queue_t queue = dispatch_queue_create("com.yunxiang.lsad", DISPATCH_QUEUE_PRIORITY_DEFAULT);
+    dispatch_queue_t queue = dispatch_queue_create("com.yunqing.zsdj", DISPATCH_QUEUE_PRIORITY_DEFAULT);
     dispatch_group_async(group, queue, ^{
-        
         if (currentAD == nil) {
             return;
         }
         NSDictionary *adplaces = [currentAD[@"adplaces"] lastObject];
         NSString * uuid = gdtAD[@"uuid"];
-        
-        UInt64 recordTime = [[NSDate date] timeIntervalSince1970]*1000;
-        
-        NSString *timeLocal = [[NSString alloc] initWithFormat:@"%llu", recordTime];
-        
         int netnumber = [NetTool getNetTyepe];
-        
         NSMutableDictionary *dic = [NSMutableDictionary dictionaryWithCapacity:0];
         [dic setObject:[NetTool getIDFA]                forKey:@"device_id"];
-        [dic setObject:timeLocal                        forKey:@"ts"];
+        [dic setObject:[NetTool getTimeLocal]           forKey:@"ts"];
         [dic setObject:adplaces[@"adPlaceId"]           forKey:@"adPlaceId"];
         [dic setObject:adplaces[@"advertiserId"]        forKey:@"advertiserId"];
         [dic setObject:@"7"                             forKey:@"advtp"];
@@ -230,12 +189,10 @@
         NSString *jsonStr = [NSString sf_jsonStringWithJson:dic];
         NSString *aesStr = [jsonStr sf_AESEncryptString];
         NSString *netStr = [NSString stringWithFormat:@"%@?%@",url,aesStr];
-//        netStr = [netStr stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-        [Network notifyToServer:nil serverUrl:netStr completionHandler:nil];
-        
+        [Network notifyToServerUrl:netStr completionHandler:nil];
     });
     dispatch_group_notify(group, queue, ^{
-        //        NSLog(@"request success up");
+//        NSLog(@"request success up");
     });
 }
 
@@ -244,29 +201,18 @@
  
  @param url 请求上报地址
  */
-+ (void)upOutSideToServerRequest:(NSString*)url currentAD:(NSDictionary*)currentAD gdtAD:(NSDictionary*)gdtAD mediaID:(NSString*)mediaID
-{
++ (void)upOutSideToServerRequest:(NSString*)url currentAD:(NSDictionary*)currentAD gdtAD:(NSDictionary*)gdtAD mediaID:(NSString*)mediaID{
     dispatch_group_t group = dispatch_group_create();
-    dispatch_queue_t queue = dispatch_queue_create("com.yunxiang.lsadlog", DISPATCH_QUEUE_PRIORITY_DEFAULT);
+    dispatch_queue_t queue = dispatch_queue_create("com.yunqing.qqsb", DISPATCH_QUEUE_PRIORITY_DEFAULT);
     dispatch_group_async(group, queue, ^{
-        
         if (currentAD == nil) {
             return;
         }
         int widthStr = [[NSString stringWithFormat:@"%.0f",[UIScreen mainScreen].bounds.size.width]intValue];
         int heightStr = [[NSString stringWithFormat:@"%.0f",[UIScreen mainScreen].bounds.size.height]intValue];
         NSString *macId = [NetTool getMac];
-        
-        NSString * uuid = gdtAD[@"uuid"];
-        
-        UInt64 recordTime = [[NSDate date] timeIntervalSince1970]*1000;
-        
-        NSString *timeLocal = [[NSString alloc] initWithFormat:@"%llu", recordTime];
-        
+        NSString * uuid = [NSString stringWithFormat:@"%@",gdtAD[@"uuid"]];
         NSDictionary *adplaces = [currentAD[@"adplaces"] lastObject];
-        
-//        netStr = [netStr stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-        
         NSDictionary *dict = @{
                              @"advertiserId":adplaces[@"advertiserId"],
                              @"adPlaceId":adplaces[@"adPlaceId"],
@@ -285,46 +231,31 @@
                              @"width":@(widthStr),
                              @"height":@(heightStr),
                              @"mac":macId,
-                             @"ts":timeLocal,
+                             @"ts":[NetTool getTimeLocal],
                              @"adKind":adplaces[@"type"],
                              @"adCount":gdtAD[@"adCount"],
                              };
         NSString *jsonStr = [NSString sf_jsonStringWithJson:dict];
         NSString *aesStr = [jsonStr sf_AESEncryptString];
         NSString *netStr = [NSString stringWithFormat:@"%@?%@",url,aesStr];
-        [Network notifyToServer:nil serverUrl:netStr completionHandler:nil];
+        [Network notifyToServerUrl:netStr completionHandler:nil];
     });
     dispatch_group_notify(group, queue, ^{
-        //        NSLog(@"log success");
+//        NSLog(@"log success");
     });
 }
 
-+ (void)blackListUrl:(NSString*)url andMedia:(NSString*)media andTime:(NSInteger)day isAdd:(BOOL)isAdd
-{
++ (void)blackListUrl:(NSString*)url andMedia:(NSString*)media andTime:(NSInteger)day isAdd:(BOOL)isAdd{
     dispatch_group_t group = dispatch_group_create();
-    dispatch_queue_t queue = dispatch_queue_create("com.yunxiang.lsadblacklist", DISPATCH_QUEUE_PRIORITY_DEFAULT);
+    dispatch_queue_t queue = dispatch_queue_create("com.yunxiang.blacklist", DISPATCH_QUEUE_PRIORITY_DEFAULT);
     dispatch_group_async(group, queue, ^{
-        
         NSString * uid = [NetTool getIDFA];
-        
-//        NSString * desuuid = [YXLCdes encrypt:uid];
-//
-//        NSString * urluid = [YXLCdes UrlValueEncode:desuuid];
-        
         NSString * mid = media;
-        
-//        NSString * desmid = [YXLCdes encrypt:mid];
-//
-//        NSString * urlmid = [YXLCdes UrlValueEncode:desmid];
-        
         __block NSInteger dayNow = day;
-        
         if (!dayNow) {
             dayNow = 3;
         }
-        
         NSString *time = [NSString stringWithFormat:@"%ld",(long)dayNow];
-        
         NSDictionary *dict;
         if (isAdd) {
             dict = @{
@@ -341,20 +272,19 @@
         NSString *jsonStr = [NSString sf_jsonStringWithJson:dict];
         NSString *aesStr = [jsonStr sf_AESEncryptString];
         NSString *netStr = [NSString stringWithFormat:@"%@?%@",url,aesStr];
-        [Network  notifyToServer:nil serverUrl:netStr completionHandler:nil];
+        [Network  notifyToServerUrl:netStr completionHandler:nil];
     });
     dispatch_group_notify(group, queue, ^{
         //        NSLog(@"log success");
     });
 }
 
-//com.yunx.fitness  com.zhongwei.aiweibaby
 + (void)newsStatisticsWithType:(NSInteger)eventType NewsID:(NSString *)newsId CatID:(NSString *)catId lengthOfTime:(NSInteger)lengthOfTime{
     dispatch_group_t group = dispatch_group_create();
     dispatch_queue_t queue = dispatch_queue_create("com.yunxiang.lsadblacklist", DISPATCH_QUEUE_PRIORITY_DEFAULT);
     dispatch_group_async(group, queue, ^{
-        NSString *mediaId = [[NSUserDefaults standardUserDefaults] objectForKey:@"mediaId"];
-        NSString *mLocationId = [[NSUserDefaults standardUserDefaults] objectForKey:@"mLocationId"];
+        NSString *mediaId = [[NSUserDefaults standardUserDefaults] objectForKey:KeyMediaId];
+        NSString *mLocationId = [[NSUserDefaults standardUserDefaults] objectForKey:KeyLocationId];
         NSString *lengthtime = [NSString stringWithFormat:@"%@",(eventType==4?@(lengthOfTime):@"0")];
         NSString *url = [NSString stringWithFormat:@"%@/social/eventStatistic?userId=%@&mLocationId=%@&catId=%@&eventType=%@&newsId=%@&stayTime=%@",TASK_SEVERIN,mediaId,mLocationId,catId,@(eventType),newsId?newsId:@"",lengthtime];
         NSDictionary *parametDict = @{
@@ -366,15 +296,11 @@
                                       @"imei":@"",
                                       @"androidId":@"",
                                       @"idfa":[NetTool getIDFA],
-                                      @"ipv4":[Network sharedInstance].ipStr,
+                                      @"ipv4":[NetTool getDeviceIPAdress],
                                       @"connectionType":@([NetTool getNetTyepe]),
                                       @"operateType":@([NetTool getYunYingShang])
                                       };
-        [Network postJSONDataWithURL:url parameters:parametDict success:^(id json) {
-            //            NSLog(@"%@",json);
-        } fail:^(NSError *error) {
-            NSLog(@"统计上报出现接口网络错误->error = %@",error);
-        }];
+        [Network postJSONDataWithURL:url parameters:parametDict success:nil fail:nil];
     });
     dispatch_group_notify(group, queue, ^{
         //        NSLog(@"log success");
@@ -382,9 +308,8 @@
 }
 
 + (void)getJSONDataWithURL:(NSString *)url parameters:(id)parameters success:(void(^)(id json))success fail:(void(^)(NSError * error))fail{
-    NSLog(@"url = %@",url);
-    NSURLSession *session=[NSURLSession sharedSession];
-    NSMutableURLRequest *request=[NSMutableURLRequest requestWithURL:[NSURL URLWithString:[url stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]]];
+    NSURLSession *session = [NSURLSession sharedSession];
+    NSMutableURLRequest *request=[NSMutableURLRequest requestWithURL:[NSURL URLWithString:[url stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]]]];
     request.HTTPMethod = @"GET";
     if (parameters) {
         request.HTTPBody = [[NSString sf_jsonStringWithJson:parameters] dataUsingEncoding:NSUTF8StringEncoding];
@@ -409,9 +334,8 @@
     [task resume];
 }
 + (void)postJSONDataWithURL:(NSString *)url parameters:(id)parameters success:(void(^)(id json))success fail:(void(^)(NSError * error))fail{
-    NSLog(@"url = %@",url);
     NSURLSession *session=[NSURLSession sharedSession];
-    NSMutableURLRequest *request=[NSMutableURLRequest requestWithURL:[NSURL URLWithString:[url stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]]];
+    NSMutableURLRequest *request=[NSMutableURLRequest requestWithURL:[NSURL URLWithString:[url stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]]]];
     request.HTTPMethod = @"POST";
     if (parameters) {
         request.HTTPBody = [[NSString sf_jsonStringWithJson:parameters] dataUsingEncoding:NSUTF8StringEncoding];
@@ -436,13 +360,10 @@
     [task resume];
 }
 
-
 //请求配置接口
 + (void)requestADSourceFromMediaId:(NSString *)mediaId success:(void(^)(NSDictionary *dataDict))success fail:(void(^)(NSError *error))fail{
     CGFloat c_w = [UIScreen mainScreen].bounds.size.width;
     CGFloat c_h = [UIScreen mainScreen].bounds.size.height;
-    UInt64 recordTime = [[NSDate date] timeIntervalSince1970]*1000;
-    NSString *timeLocal = [[NSString alloc] initWithFormat:@"%llu", recordTime];
     int netnumber = [NetTool getNetTyepe];
     
     NSDictionary *dict = @{
@@ -451,7 +372,7 @@
                            @"make":@"apple",
                            @"appid":[NetTool getPackageName],
                            @"idfa":[NetTool getIDFA],
-                           @"ts":timeLocal,
+                           @"ts":[NetTool getTimeLocal],
                            @"os":@"IOS",
                            @"osv":[NetTool getOS],
                            @"width":@(c_w),
@@ -460,35 +381,42 @@
                            @"brand":@"apple",
                            @"networktype":@(netnumber),
                            @"mac":[NetTool getMac],
+                           @"cityCode":[NetTool getCityCode],
                            @"adCount":@(1),
                            @"image":@{@"width": @(c_w),@"height": @(c_h)}
                            };
     NSString *jsonStr = [NSString sf_jsonStringWithJson:dict];
-    NSString *aesStr = [jsonStr sf_AESEncryptString];
+    NSString *aesStr = [jsonStr request_Encrypt];
     
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
-    NSString * url = [NSString stringWithFormat:congfigIp];
+    NSString * url = [NSString stringWithFormat:@"%@", APICongfig];
     [request setURL:[NSURL URLWithString:url]];
-    //    [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
     [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    [request setValue:@"4.4" forHTTPHeaderField:@"apiversion"];
     [request setCachePolicy:NSURLRequestUseProtocolCachePolicy];//缓存策略
     [request setTimeoutInterval: 3];//超时时间
     [request setHTTPMethod:@"POST"];
     [request setHTTPBody:[[NSString sf_jsonStringWithJson:@{@"data":aesStr}] dataUsingEncoding:NSUTF8StringEncoding]];
     [NSURLConnection  sendAsynchronousRequest:request queue:[[NSOperationQueue alloc]init] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
-        if(connectionError){
-            NSError *errors = [NSError errorWithDomain:@"请求失败" code:400 userInfo:nil];
-            fail(errors);
-        }else{
+        if(connectionError && fail){
+            dispatch_async(dispatch_get_main_queue(), ^{
+                NSError *errors = [NSError errorWithDomain:@"请求广告配置失败" code:404 userInfo:nil];
+                fail(errors);
+            });
+        }else if (data && success && fail) {
             NSString *dataStr = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
             NSDictionary *dataDict = [NetTool dictionaryWithJsonString:dataStr];
             if (dataDict[@"data"]) {
                 NSString *aesData = dataDict[@"data"];
-                NSDictionary *dict = [aesData sf_AESDecryptString];
-                success(dict);
+                NSDictionary *dict = [aesData request_Decrypt];
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    success(dict);
+                });
             } else {
-                NSError *errors = [NSError errorWithDomain:@"请求失败" code:400 userInfo:nil];
-                fail(errors);
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    NSError *errors = [NSError errorWithDomain:@"请求广告配置为空" code:400 userInfo:nil];
+                    fail(errors);
+                });
             }
         }
         
@@ -499,72 +427,14 @@
 + (void)requestADSourceFromMediaId:(NSString *)mediaId adCount:(NSInteger)adCount imgWidth:(CGFloat)width imgHeight:(CGFloat)height success:(void(^)(NSDictionary *dataDict))success fail:(void(^)(NSError *error))fail{
     CGFloat c_w = [UIScreen mainScreen].bounds.size.width;
     CGFloat c_h = [UIScreen mainScreen].bounds.size.height;
-    UInt64 recordTime = [[NSDate date] timeIntervalSince1970]*1000;
-    NSString *timeLocal = [[NSString alloc] initWithFormat:@"%llu", recordTime];
     int netnumber = [NetTool getNetTyepe];
-//    // 1.2网络状态
-//    NSString *orientationStr;
-//    __block UIInterfaceOrientation  orientation ;
-//    dispatch_async(dispatch_get_main_queue(), ^(void) {
-//        orientation = [[UIApplication sharedApplication] statusBarOrientation];
-//
-//    });
-//
-//    if(UIInterfaceOrientationIsLandscape(orientation)){
-//        orientationStr = @"2";
-//        //横屏
-//    }else{
-//        orientationStr = @"1";
-//        //竖屏
-//    }
-//    NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];
-//    // app名称
-//    NSString *app_Name = [infoDictionary objectForKey:@"CFBundleDisplayName"];
-//    NSMutableDictionary *dic = [NSMutableDictionary dictionary];
-//    NSString * adCountStr = [NSString stringWithFormat:@"%ld",adCount];
-//    [dic setValue:adCountStr                             forKey:@"adCount"];
-//    [dic setValue:@"4.0"                                 forKey:@"version"] ;
-//    [dic setValue:@"2"                                   forKey:@"c_type"] ;
-//    [dic setValue:[NetTool URLEncodedString:mediaId]         forKey:@"mid"];
-//    [dic setValue:[NetTool getOpenUDID]                  forKey:@"uid"];
-//    [dic setValue:@"zh"                                  forKey:@"language"] ;
-//    [dic setValue:@"IOS"                                 forKey:@"os"];
-//    [dic setValue:[NetTool getMac]                       forKey:@"mac"];
-//    [dic setValue:[NetTool getOS]                        forKey:@"osv"];
-//    [dic setValue:@(netnumber)                           forKey:@"networktype"];
-//    [dic setValue:@"apple"                               forKey:@"make"];
-//    [dic setValue:@"apple"                               forKey:@"brand"];
-//    [dic setValue:[NetTool gettelModel]                  forKey:@"model"];
-//    [dic setValue:@"1"                                   forKey:@"devicetype"];//1 手机  2平板
-//    [dic setValue:[NetTool getIDFA]                      forKey:@"idfa"];
-//    [dic setValue:[NetTool getDPI]                       forKey:@"dpi"];
-//    [dic setValue:[NSString stringWithFormat:@"%.f",c_w] forKey:@"width"];
-//    [dic setValue:[NSString stringWithFormat:@"%.f",c_h] forKey:@"height"];
-//    [dic setValue:[NetTool getPackageName]               forKey:@"appid"];
-//    [dic setValue:app_Name                               forKey:@"appname"];
-//    [dic setValue:orientationStr                         forKey:@"orientation"];
-//    [dic setValue:[NetTool getCityCode]                  forKey:@"cityCode"];
-//    [dic setValue:@{@"width":@(width),@"height":@(height)}forKey:@"image"];
-//    [dic setValue:timeLocal                              forKey:@"ts"];//时间戳
-//    NSString *yun = [NetTool getYunYingShang];
-//    if ([yun isEqualToString:@"中国电信"]) {
-//        [dic setValue:@"2" forKey:@"operator"];
-//    }else if ([yun isEqualToString:@"中国移动"]) {
-//        [dic setValue:@"1" forKey:@"operator"];
-//    }else if ([yun isEqualToString:@"中国联通"]) {
-//        [dic setValue:@"3" forKey:@"operator"];
-//    }else if ([yun isEqualToString:@"无运营商"]) {
-//        [dic setValue:@"0" forKey:@"operator"];
-//    }else{
-//        [dic setValue:@"4" forKey:@"operator"];
-//    }
     NSDictionary *dic = @{
-                           @"mid":[NetTool URLEncodedString:mediaId],
+                           @"mid":mediaId,
                            @"version":@"4.0",
                            @"make":@"apple",
                            @"appid":[NetTool getPackageName],
                            @"idfa":[NetTool getIDFA],
-                           @"ts":timeLocal,
+                           @"ts":[NetTool getTimeLocal],
                            @"os":@"IOS",
                            @"osv":[NetTool getOS],
                            @"width":@(c_w),
@@ -573,34 +443,42 @@
                            @"brand":@"apple",
                            @"networktype":@(netnumber),
                            @"mac":[NetTool getMac],
+                           @"cityCode":[NetTool getCityCode],
                            @"adCount":adCount?@(adCount):@"",
                            @"image":@{@"width": @(width),@"height": @(height)}
                            };
     NSString *jsonStr = [NSString sf_jsonStringWithJson:dic];
-    NSString *aesStr = [jsonStr sf_AESEncryptString];
+    NSString *aesStr = [jsonStr request_Encrypt];
     
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
-    NSString * url = [NSString stringWithFormat:congfigIp];
+    NSString * url = [NSString stringWithFormat:@"%@", APICongfig];
     [request setURL:[NSURL URLWithString:url]];
     [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    [request setValue:@"4.4" forHTTPHeaderField:@"apiversion"];
     [request setCachePolicy:NSURLRequestUseProtocolCachePolicy];//缓存策略
     [request setTimeoutInterval: 3];//超时时间
     [request setHTTPMethod:@"POST"];
     [request setHTTPBody:[[NSString sf_jsonStringWithJson:@{@"data":aesStr}] dataUsingEncoding:NSUTF8StringEncoding]];
     [NSURLConnection  sendAsynchronousRequest:request queue:[[NSOperationQueue alloc]init] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
-        if(connectionError){
-            NSError *errors = [NSError errorWithDomain:@"请求失败" code:400 userInfo:nil];
-            fail(errors);
-        }else{
+        if(connectionError && fail){
+            dispatch_async(dispatch_get_main_queue(), ^{
+                NSError *errors = [NSError errorWithDomain:@"请求广告配置失败" code:404 userInfo:nil];
+                fail(errors);
+            });
+        }else if (data && success && fail) {
             NSString *dataStr = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
             NSDictionary *dataDict = [NetTool dictionaryWithJsonString:dataStr];
             if (dataDict[@"data"]) {
                 NSString *aesData = dataDict[@"data"];
-                NSDictionary *dict = [aesData sf_AESDecryptString];
-                success(dict);
+                NSDictionary *dict = [aesData request_Decrypt];
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    success(dict);
+                });
             } else {
-                NSError *errors = [NSError errorWithDomain:@"请求失败" code:400 userInfo:nil];
-                fail(errors);
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    NSError *errors = [NSError errorWithDomain:@"请求广告配置为空" code:400 userInfo:nil];
+                    fail(errors);
+                });
             }
         }
         

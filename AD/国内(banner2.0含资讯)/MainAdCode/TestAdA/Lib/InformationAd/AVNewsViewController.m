@@ -54,7 +54,7 @@
 //        // Fallback on earlier versions
 //        self.automaticallyAdjustsScrollViewInsets = NO;
 //    }
-    [[NSUserDefaults standardUserDefaults] setObject:self.mLocationId forKey:@"mLocationId"];
+    [[NSUserDefaults standardUserDefaults] setObject:self.mLocationId forKey:KeyLocationId];
     [[NSUserDefaults standardUserDefaults] synchronize];
     
     self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, SF_ScreenW, SF_ScreenH-SF_StatusBarAndNavigationBarHeight) style:UITableViewStylePlain];
@@ -174,7 +174,7 @@
     [parametDict setValue:@""                            forKey:@"imei"];
     [parametDict setValue:@""                            forKey:@"androidId"];
     [parametDict setValue:[NetTool getIDFA]              forKey:@"idfa"];
-    [parametDict setValue:[Network sharedInstance].ipStr forKey:@"ipv4"];
+    [parametDict setValue:[NetTool getDeviceIPAdress]    forKey:@"ipv4"];
     [parametDict setValue:@([NetTool getNetTyepe])       forKey:@"connectionType"];
     [parametDict setValue:@([NetTool getYunYingShang])   forKey:@"operateType"];
     [parametDict setValue:@""                            forKey:@"longitude"];

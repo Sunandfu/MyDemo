@@ -18,7 +18,7 @@
 
 /**
  *  广告预加载成功回调
- *  详解:当接收服务器返回的广告数据成功后调用该函数
+ *  详解:当接收服务器返回的广告数据成功且预加载后调用该函数
  */
 - (void)interstitialSuccessToLoadAd:(GDTMobInterstitial *)interstitial;
 

@@ -9,7 +9,7 @@
 #import "YXScrollerBannerViewController.h" 
 #import "YXMutBannerAdManager.h"
 
-static  NSString * feedMediaID = @"xmlc_ios_bonus_banner";
+static  NSString * feedMediaID = @"dev_ios_native";
 
 @interface YXScrollerBannerViewController ()<YXMutBannerAdManagerDelegate>
 {
@@ -29,7 +29,7 @@ static  NSString * feedMediaID = @"xmlc_ios_bonus_banner";
     self.view.backgroundColor = [UIColor whiteColor];
     CGFloat width = self.view.frame.size.width-60;
     //根据宽高比自定义适配
-    CGFloat height = 240 * width / 670;
+    CGFloat height = 388 * width / 690;
     
     self.BannerView = [[UIView alloc]initWithFrame:CGRectMake(30,100 , width, height)];
     
@@ -75,12 +75,12 @@ static  NSString * feedMediaID = @"xmlc_ios_bonus_banner";
     mutBanner = [YXMutBannerAdManager new];
     mutBanner.delegate = self;
     mutBanner.adSize = YXADSizeCustom;
-    mutBanner.s2sWidth = 670;
-    mutBanner.s2sHeight = 240;
+    mutBanner.s2sWidth = 690;
+    mutBanner.s2sHeight = 388;
     mutBanner.controller = self;
     mutBanner.isOnlyImage = YES;
 //    mutBanner.autoScrollTimeInterval = 10;
-//    mutBanner.adCount = 10;
+    mutBanner.adCount = 5;
     mutBanner.placeholderImage = [UIImage imageNamed:@"placeImage"];
 //    mutBanner.backgroundImage = [UIImage imageNamed:@"placeImage"];
     mutBanner.mediaId = feedMediaID;

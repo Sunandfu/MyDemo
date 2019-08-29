@@ -121,34 +121,8 @@ typedef NS_ENUM(NSInteger,YXADSize){
     YXADSize750X326,
     YXADSize690X388,
     YXADSize288X150,
+    YXADSize228X150,
     YXADSizeCustom,
-};
-
-/**
- Banner 尺寸
-
- - YXAD_Banner600_100: 600 X 100 尺寸
- - YXAD_Banner600_150: 600 X 150 尺寸
- - YXAD_Banner600_260: 600 X 260 尺寸
- - YXAD_Banner600_286: 600 X 286 尺寸
- - YXAD_Banner600_300: 600 X 300 尺寸
- - YXAD_Banner600_388: 600 X 388 尺寸
- - YXAD_Banner600_400: 600 X 400 尺寸
- - YXAD_Banner600_500: 600 X 500 尺寸
- - YXAD_BannerCustom: 自定义尺寸，请求到的图片按尺寸完全平铺，超出将被截取
- */
-typedef NS_ENUM(NSInteger,YXAD_Banner){
-    //banner尺寸
-    YXAD_Banner600_90,
-    YXAD_Banner600_100,
-    YXAD_Banner600_150,
-    YXAD_Banner600_260,
-    YXAD_Banner600_286,
-    YXAD_Banner600_300,
-    YXAD_Banner600_388,
-    YXAD_Banner600_400,
-    YXAD_Banner600_500,
-    YXAD_BannerCustom,
 };
 
 #endif /* YXLaunchConfiguration_h */

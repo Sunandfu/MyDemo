@@ -10,6 +10,7 @@
 #import <UIKit/UIKit.h>
 #import "YXLaunchConfiguration.h"
 
+NS_ASSUME_NONNULL_BEGIN
 @protocol YXIconAdManagerDelegate<NSObject>
 @optional
 /**
@@ -17,13 +18,13 @@
  
  @param view  回调的view
  */
-- (void)didLoadIconAd:(UIView *_Nonnull)view;
+- (void)didLoadIconAd:(UIView *)view;
 /**
  取广告失败调用
  
  @param error 为错误信息
  */
-- (void)didFailedLoadIconAd:(NSError *_Nonnull)error;
+- (void)didFailedLoadIconAd:(NSError *)error;
 /**
  广告点击后回调
  */
@@ -34,8 +35,13 @@
 
 @interface YXIconAdManager : UIView
 
-@property (nonatomic,weak) id<YXIconAdManagerDelegate> _Nullable delegate;
+@property (nonatomic,weak) id<YXIconAdManagerDelegate> delegate;
 
+/*
+ *  viewControllerForPresentingModalView
+ *  详解：[必选]开发者需传入用来弹出目标页的ViewController，一般为当前ViewController
+ */
+@property (nonatomic, weak) UIViewController *controller;
 /**
  图片frame
  */
@@ -82,3 +88,5 @@
 - (void)showCustomPopupMenuWithPoint:(CGPoint)point;
 
 @end
+
+NS_ASSUME_NONNULL_END

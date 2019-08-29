@@ -35,11 +35,11 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 @interface YXBannerAdManager : UIView
-/**此 banner 不用设置 frame ，frame 无效，请配置adSize **/
+//banner尺寸默认 600*150 的比例  无法更改
 /**
- banner尺寸   如果不设置。默认使用当前view的bounds
+ banner位置
  */
-@property (nonatomic,assign) YXAD_Banner adSize;
+@property (nonatomic,assign) BannerLocationType bannerType;
 
 /**
  距离顶部或者底部的间距   由 BannerLocationType  控制上还是下
@@ -57,14 +57,13 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) NSInteger interval;
 
 /**
- banner位置
- */
-@property (nonatomic,assign) BannerLocationType bannerType;
-
-/**
  媒体位ID
  */
 @property (nonatomic, copy) NSString *mediaId;
+/**
+ [必选]开发者需传入用来弹出广告的ViewController，一般为当前ViewController
+ */
+@property (nonatomic, weak) UIViewController *controller;
 
 @property (nonatomic, weak) id<YXBannerAdManagerDelegate> delegate;
 

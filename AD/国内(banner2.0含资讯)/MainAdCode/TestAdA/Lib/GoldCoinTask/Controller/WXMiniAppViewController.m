@@ -133,7 +133,7 @@
                           @"time":[NetTool getTimeLocal],//时间戳
                           @"pageSize":@"",//分頁大小（默認 30）
                           @"pageNo":@"",//第幾頁（默認 1
-                          @"userIP":[NetTool deviceWANIPAdress],//用户ip
+                          @"userIP":[NetTool getDeviceIPAdress],//用户ip
                           @"bundleid":[NetTool getPackageName],//bundleID
                           }];
     NSString *keyCode = [NSString stringWithFormat:@"%@&%@&%@&%@&%@&%@%@",dict[@"cid"],dict[@"cuid"],dict[@"deviceid"],dict[@"osversion"],dict[@"phonemodel"],dict[@"time"],self.key];

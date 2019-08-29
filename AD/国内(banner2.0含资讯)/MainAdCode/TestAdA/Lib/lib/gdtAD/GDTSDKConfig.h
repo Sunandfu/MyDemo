@@ -28,7 +28,7 @@
 
 + (NSString *)sdkVersion;
 
-
++ (void)enableGPS:(BOOL)enabled;
 
 #pragma mark - DEPRECATED
 

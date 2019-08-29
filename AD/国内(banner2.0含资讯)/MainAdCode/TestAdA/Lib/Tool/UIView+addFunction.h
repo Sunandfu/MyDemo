@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface UIView (addFunction)
 
-- (void)ViewClickWithDict:(NSDictionary *)currentDict Width:(NSString *)widthStr Height:(NSString *)heightStr X:(NSString *)x Y:(NSString *)y;
+- (void)ViewClickWithDict:(NSDictionary *)currentDict Width:(NSString *)widthStr Height:(NSString *)heightStr X:(NSString *)x Y:(NSString *)y Controller:(id)controller;
 
 @end
 

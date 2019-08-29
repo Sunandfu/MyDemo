@@ -260,8 +260,8 @@ API_AVAILABLE(ios(8.0))
     // Dispose of any resources that can be recreated.
 }
 - (void)getTaskDesc{
-    NSString *channel = [[NSUserDefaults standardUserDefaults] objectForKey:@"channel"];
-    NSString *vuid = [[NSUserDefaults standardUserDefaults] objectForKey:@"vuid"];
+    NSString *channel = [[NSUserDefaults standardUserDefaults] objectForKey:KeyChannel];
+    NSString *vuid = [[NSUserDefaults standardUserDefaults] objectForKey:KeyVuid];
     NSDictionary *parameterDict = @{
                                     @"deviceType":@"1",
                                     @"osType":@"2",

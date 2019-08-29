@@ -15,28 +15,25 @@ NS_ASSUME_NONNULL_BEGIN
 
 @protocol YXFeedAdManagerDelegate<NSObject>
 @optional
+
 /**
  加载成功的回调
  
  @param data  回调的广告素材
  */
 - (void)didLoadFeedAd:(NSArray<YXFeedAdData*>*_Nullable)data;
+
 /**
  取广告失败调用
  
  @param error 为错误信息
  */
 - (void)didFailedLoadFeedAd:(NSError* _Nonnull)error;
+
 /**
  广告点击后回调
  */
 - (void)didClickedFeedAd;
-
-
-/**
- 广告渲染成功
- */
-- (void)didFeedAdRenderSuccess;
 
 @end
 
@@ -75,7 +72,7 @@ NS_ASSUME_NONNULL_BEGIN
  定义原生广告视图中可以点击的 视图区域，行为由SDK控制
  @param view 原生广告的视图，完整可点击区域
  */
-- (void)registerAdViewForInteraction:(UIView *)view adData:(YXFeedAdData*)adData;
+- (void)registerAdViewForInteraction:(UIView *)view adData:(YXFeedAdData*)adData clickableViews:(NSArray *)views;
 
 @end
 

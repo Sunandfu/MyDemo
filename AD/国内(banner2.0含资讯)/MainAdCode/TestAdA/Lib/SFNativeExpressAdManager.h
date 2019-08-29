@@ -35,16 +35,18 @@ NS_ASSUME_NONNULL_BEGIN
  广告被关闭
  */
 - (void)nativeExpressAdClose;
-
-
 /**
  广告渲染成功
  */
-- (void)didFeedAdRenderSuccess;
+- (void)didFeedAdRenderSuccess:(NSArray<YXFeedAdData *> *)data;
+/**
+ 广告渲染失败
+ */
+- (void)didFeedAdRenderFail;
 
 @end
 
-@interface YXImageTextAdManager : NSObject
+@interface SFNativeExpressAdManager : NSObject
 
 @property(nonatomic,weak) id<YXImageTextAdManagerDelegate> delegate;
 
@@ -73,13 +75,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 /**  开始加载广告  */
-- (void)loadFeedAd;
-
-/**
- 定义原生广告视图中可以点击的 视图区域，行为由SDK控制
- @param view 原生广告的视图，完整可点击区域
- */
-- (void)registerAdViewForInteraction:(UIView *)view adData:(YXFeedAdData*)adData;
+- (void)loadNativeExpressFeedAd;
 
 @end
 

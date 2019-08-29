@@ -83,7 +83,7 @@
         spalshView.tolerateTimeout = 5;
         spalshView.hideSkipButton = YES;
         spalshView.delegate = self;
-        spalshView.rootViewController = [NetTool getCurrentViewController];
+//        spalshView.rootViewController = [NetTool getCurrentViewController];
         [spalshView loadAdData];
         
         [self.adView addSubview:spalshView];

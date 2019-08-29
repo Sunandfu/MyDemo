@@ -14,7 +14,7 @@
 
 #import "YXFeedAdTableViewCell.h"
 
-static  NSString * feedMediaID = @"hcykt_ios_pay_native";
+static  NSString * feedMediaID = @"dev_ios_native";
 
 @interface YXFeedAdViewController () <YXFeedAdManagerDelegate ,UITableViewDelegate,UITableViewDataSource>
 
@@ -119,8 +119,7 @@ static  NSString * feedMediaID = @"hcykt_ios_pay_native";
         YXFeedAdRegisterView * adregistAdView =  [[[NSBundle mainBundle]loadNibNamed:NSStringFromClass([YXFeedAdRegisterView class]) owner:nil options:nil]firstObject];
         adregistAdView.frame = CGRectMake(0, 0, self.view.bounds.size.width, 220);
         
-//        [_feedManager registerAdViewForInteraction:adregistAdView adData:model];
-        [_feedManager registerAdViewForInteraction:cell adData:model];
+        [_feedManager registerAdViewForInteraction:cell adData:model clickableViews:cell.subviews];
         
         [self initadViewWithData:model adView:adregistAdView];
         
@@ -156,7 +155,7 @@ static  NSString * feedMediaID = @"hcykt_ios_pay_native";
     _feedManager.mediaId = feedMediaID;
     _feedManager.controller = self;
     _feedManager.delegate = self;
-    _feedManager.adCount = 11;
+    _feedManager.adCount = 5;
     
     [_feedManager loadFeedAd];
     

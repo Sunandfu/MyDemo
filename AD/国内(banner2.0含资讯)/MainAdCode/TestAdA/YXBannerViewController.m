@@ -13,7 +13,7 @@
 #import "AppDelegate.h"
 #import "NSString+SFAES.h"
 
-static  NSString * bannerMediaID = @"pt_ios_banner";
+static  NSString * bannerMediaID = @"dev_ios_banner";
 
 @interface YXBannerViewController ()<YXBannerAdManagerDelegate>
 {
@@ -44,8 +44,6 @@ static  NSString * bannerMediaID = @"pt_ios_banner";
         [bannerView removeFromSuperview];
         bannerView = nil;
     }
-    
-    
     bannerView =  [YXBannerAdManager new];
     bannerView.interval = 30;
     bannerView.isLoop = YES;
@@ -53,7 +51,6 @@ static  NSString * bannerMediaID = @"pt_ios_banner";
     bannerView.mediaId = bannerMediaID;
     bannerView.bannerType = BottomBannerType;
     bannerView.locationY = 88;
-    bannerView.adSize = YXAD_Banner600_100;
     [self.view addSubview:bannerView];
     NSLog(@"Banner请求");
     [bannerView loadBannerAD];

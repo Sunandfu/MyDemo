@@ -20,6 +20,8 @@ NS_ASSUME_NONNULL_BEGIN
 //默认关闭  若开启，将使用系统默认自定义 View
 @property (nonatomic, assign) BOOL userDefault;
 
+@property (nonatomic, copy) NSString *cityCode;
+
 /**
  添加黑名单     取消显示广告
  

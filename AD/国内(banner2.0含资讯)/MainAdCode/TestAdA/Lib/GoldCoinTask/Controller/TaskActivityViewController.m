@@ -54,8 +54,8 @@
     [super viewDidLoad];
     self.isVerify = NO;
     self.view.backgroundColor = TASK_THEME_COLOR;
-    [[NSUserDefaults standardUserDefaults] setObject:self.channelID forKey:@"channel"];
-    [[NSUserDefaults standardUserDefaults] setObject:self.vuid forKey:@"vuid"];
+    [[NSUserDefaults standardUserDefaults] setObject:self.channelID forKey:KeyChannel];
+    [[NSUserDefaults standardUserDefaults] setObject:self.vuid forKey:KeyVuid];
     // Do any additional setup after loading the view.
     [self createHeaderView];
     [self.view addSubview:self.tableView];

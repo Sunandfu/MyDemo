@@ -56,12 +56,16 @@ static YXAdSDKManager * manager = nil;
 + (void)addBlackList:(NSString*)media andTime:(NSInteger)day
 {
     
-    [Network blackListUrl:USERBLACK andMedia:media andTime:day isAdd:YES];
+    [Network blackListUrl:APIAddBlack andMedia:media andTime:day isAdd:YES];
 }
 
 + (void)removeBlackList:(NSString *)media
 {
-    [Network blackListUrl:USERBLACKREMOVE andMedia:media andTime:0 isAdd:NO];
+    [Network blackListUrl:APIRemoveBlack andMedia:media andTime:0 isAdd:NO];
+}
+- (void)setCityCode:(NSString *)cityCode{
+    _cityCode = cityCode;
+    [[NSUserDefaults standardUserDefaults] setObject:cityCode forKey:KeyADSDKCityCode];
 }
 
 

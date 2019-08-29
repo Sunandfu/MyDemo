@@ -17,6 +17,9 @@ typedef NS_ENUM(NSInteger, BUErrorCode) {
     BUErrorCodeNetError         = -2,       // network request failed
     BUErrorCodeParseError       = -1,       // parsing failed
     
+    BUErrorCodePlayableError_ERR_HAS_CACHE  = -702,   // has cache
+    BUErrorCodePlayableError_ERR_UNZIP      = -704,   // unzip error
+
     BUErrorCodeNERenderResultError= 101,    // native Express ad, render result parse fail
     BUErrorCodeNETempError        = 102,    // native Express ad, template is invalid
     BUErrorCodeNETempPluginError  = 103,    // native Express ad, template plugin is invalid
@@ -56,6 +59,10 @@ typedef NS_ENUM(NSInteger, BUErrorCode) {
     BUUnionRequestLimitError    = 40020,    // The ad space registered by developers exceeds daily request limit
     BUUnionSignatureError       = 40021,    // Apk signature sha1 value is inconsistent with media platform entry
     BUUnionIncompleteError      = 40022,    // Whether the media request material is inconsistent with the media platform entry
+    BUUnionOSError              = 40023,    // The OS field is incorrectly filled
+    BUUnionLowVersion           = 40024,    // The SDK version is too low to return ads
     BUErrorCodeAdPackageIncomplete  = 40025,// the SDK package is incomplete. It is recommended to verify the integrity of SDK package or contact technical support.
+    BUUnionMedialCheckError     = 40026,    // Non-international account request for overseas delivery system
+    
     BUErrorCodeSysError         = 50001     // ad server error
 };

@@ -26,7 +26,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, weak) id<GDTUnifiedNativeAdDelegate> delegate;
 
 /**
- 请求视频的最大时长，有效值范围为[5,30]。
+ 请求视频的最大时长，有效值范围为[5,60]。
  */
 @property (nonatomic) NSInteger maxVideoDuration;
 

@@ -60,19 +60,7 @@
         [WXApi handleOpenURL:url delegate:self];
         return YES;
     }
-    // Check the calling application Bundle ID
-    if ([sourceApplication isEqualToString:@"com.xcloudtech.locate"]){
-        NSLog(@"Calling Application Bundle ID: %@", sourceApplication);
-        NSLog(@"URL scheme:%@", [url scheme]);
-        NSLog(@"URL query: %@", [url query]);
-        if ([[url query] isEqualToString:@"zixun"]) {
-            SFInformationViewController *infoVC = [SFInformationViewController new];
-            infoVC.mLocationId = @"3";
-            [[NetTool getCurrentViewController] presentViewController:infoVC animated:YES completion:nil];
-        }
-        return YES;
-    }
-    else return NO;
+    return NO;
 }
 /**
  开屏广告初始化 建议放在 didFinishLaunchingWithOptions中调用

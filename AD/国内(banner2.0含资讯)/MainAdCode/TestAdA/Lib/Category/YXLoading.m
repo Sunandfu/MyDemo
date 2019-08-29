@@ -8,7 +8,7 @@
 
 #import "YXLoading.h"
 #import "YXLaunchAdConst.h"
-
+#define showtime 2.0
 @interface YXLoading ()
 
 @property (nonatomic,strong) UILabel * tipLab;
@@ -74,7 +74,7 @@
 
 + (void)showStatus:(NSString *)str
 {
-    [self showStatus:str delay:2.0];
+    [self showStatus:str delay:showtime];
 }
 
 + (void)showStatus:(NSString *)str delay:(CGFloat)delay
@@ -100,7 +100,7 @@
     [[self defaultLoading] fitLabelSizeWithStr:str bottom:NO];
     
     [self show];
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(showtime * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self dissmissProgress];
     });
 }

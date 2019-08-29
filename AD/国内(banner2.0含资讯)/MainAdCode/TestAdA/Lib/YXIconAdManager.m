@@ -49,36 +49,27 @@
     }
     return self;
 }
-- (void)loadIconAd
-{
-    [self XZAD];
-}
-#pragma mark s2s
-- (void)XZAD
-{
-    NSString *macId = [Network sharedInstance].ipStr;
+- (void)loadIconAd{
     if (self.mediaId) {
-        [[Network sharedInstance] prepareDataAndRequestWithadkeyString:_mediaId width:_width height:_height macID:macId uid:[NetTool getOpenUDID] adCount:1];
-        [self initXAD];
+        [self initXADWithMediaID:self.mediaId];
     } else {
         self.adDictArray = [NSMutableArray arrayWithCapacity:0];
         for (NSString *mediaId in self.mediaIdArray) {
-            [[Network sharedInstance] prepareDataAndRequestWithadkeyString:mediaId width:_width height:_height macID:macId uid:[NetTool getOpenUDID] adCount:1];
-            [self initXAD];
+            [self initXADWithMediaID:mediaId];
         }
     }
 }
 
-- (void)initXAD
+- (void)initXADWithMediaID:(NSString *)mediaId
 {
     WEAK(weakSelf);
-    [[Network sharedInstance] beginRequestfinished:^(BOOL isSuccess, id json) {
-        
+    [Network beginRequestWithADkey:mediaId width:_width height:_height adCount:1
+                          finished:^(BOOL isSuccess, id json) {
         if (isSuccess) {
             if ([json[@"ret"] isEqualToString:@"0"]) {
                 NSArray * arr = json[@"adInfos"];
                 if (arr.count <= 0) {
-                    NSError *errors = [NSError errorWithDomain:@"请求失败" code:400 userInfo:nil];
+                    NSError *errors = [NSError errorWithDomain:@"广告数据为空" code:20001 userInfo:nil];
                     [weakSelf failedError:errors];
                     return ;
                 }
@@ -118,18 +109,12 @@
 {
     if (self.mediaId) {
         if(!self.adDict){//40041无广告
-            NSError *errors = [NSError errorWithDomain:@"暂无填充广告，请重试" code:400 userInfo:nil];
+            NSError *errors = [NSError errorWithDomain:@"暂无填充广告，请重试" code:40041 userInfo:nil];
             [self failedError:errors];
             return;
         }
         _YXGTMDevLog(@"Func type 1 start") ;
         NSString *img_url = self.adDict[@"img_url"];
-        //    NSString *click_url = self.adDict[@"click_url"];
-        //    _returnDict = [NSDictionary dictionaryWithObjectsAndKeys:click_url,@"click_url",img_url,@"img_url",@"1",@"type", nil];
-        //    if (self.adDict[@"logo_url"]) {
-        //        NSString * logo_url = self.adDict[@"logo_url"] ;
-        //        _returnDict = [NSDictionary dictionaryWithObjectsAndKeys:logo_url,@"logo_url",click_url,@"click_url",img_url,@"img_url",@"1",@"type", nil];
-        //    }
         NSString *lastCompnoments = [[img_url componentsSeparatedByString:@"/"] lastObject];
         if([lastCompnoments hasSuffix:@"gif"]){
             [self showGif];
@@ -138,7 +123,7 @@
         }
     } else {
         if(self.adDictArray.count==0){//40041无广告
-            NSError *errors = [NSError errorWithDomain:@"暂无填充广告，请重试" code:400 userInfo:nil];
+            NSError *errors = [NSError errorWithDomain:@"暂无填充广告，请重试" code:40041 userInfo:nil];
             [self failedError:errors];
             return;
         }
@@ -304,7 +289,7 @@
         return;
     }
     
-    [self ViewClickWithDict:self.adDict Width:widthStr Height:heightStr X:x Y:y];
+    [self ViewClickWithDict:self.adDict Width:widthStr Height:heightStr X:x Y:y Controller:self.controller];
     [self clikedADs2sPan];
 }
 -(void)onResp:(BaseResp *)resp
@@ -342,9 +327,6 @@
 
 
 -(BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType{
-    
-    
-//    [[UIApplication sharedApplication] openURL:request.URL];
     return YES;
 }
 
@@ -427,8 +409,7 @@
         NSURL *url = [NSURL URLWithString:urlStr];
         if (@available(iOS 9.0, *)) {
             SFWebViewController *safariVC = [[SFWebViewController alloc] initWithURL:url];
-            [[NetTool getCurrentViewController] presentViewController:safariVC animated:YES completion:nil];
-            
+            [self.controller presentViewController:safariVC animated:YES completion:nil];
         } else {
             // Fallback on earlier versions
             [[UIApplication sharedApplication] openURL:url];
@@ -442,12 +423,12 @@
                     NSURL *url = [NSURL URLWithString:urlStr];
                     if (@available(iOS 9.0, *)) {
                         SFWebViewController *safariVC = [[SFWebViewController alloc] initWithURL:url];
-                        [[NetTool getCurrentViewController] presentViewController:safariVC animated:YES completion:nil];
+                        [self.controller presentViewController:safariVC animated:YES completion:nil];
                         
                     } else {
                         YXWebViewController *web = [YXWebViewController new];
                         web.URLString = urlStr;
-                        [[NetTool getCurrentViewController] presentViewController:web animated:YES completion:nil];
+                        [self.controller presentViewController:web animated:YES completion:nil];
                     }
                 }
             }];
@@ -455,12 +436,12 @@
             NSURL *url = [NSURL URLWithString:urlStr];
             if (@available(iOS 9.0, *)) {
                 SFWebViewController *safariVC = [[SFWebViewController alloc] initWithURL:url];
-                [[NetTool getCurrentViewController] presentViewController:safariVC animated:YES completion:nil];
+                [self.controller presentViewController:safariVC animated:YES completion:nil];
                 
             } else {
                 YXWebViewController *web = [YXWebViewController new];
                 web.URLString = urlStr;
-                [[NetTool getCurrentViewController] presentViewController:web animated:YES completion:nil];
+                [self.controller presentViewController:web animated:YES completion:nil];
             }
         }
         
@@ -482,7 +463,7 @@
             NSLog(@"未安装微信");
         }
         
-        [Network notifyToServer:nil serverUrl:urlStr completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
+        [Network notifyToServerUrl:urlStr completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
             if(connectionError){
                 NSLog(@"#####%@\error",[connectionError debugDescription]);
             }else{
@@ -497,7 +478,7 @@
             YXWebViewController *web = [YXWebViewController new];
             web.URLString = urlStr;
             web.delegate = self;
-            [[NetTool getCurrentViewController] presentViewController:web animated:YES completion:nil];
+            [self.controller presentViewController:web animated:YES completion:nil];
         }
     }
     

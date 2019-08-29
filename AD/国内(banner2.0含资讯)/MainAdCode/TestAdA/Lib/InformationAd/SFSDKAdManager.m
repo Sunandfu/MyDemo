@@ -121,7 +121,7 @@ GDTNativeAdDelegate
             return;
         }
         
-        [self ViewClickWithDict:self.s2sTapAdDict Width:widthStr Height:heightStr X:x Y:y];
+        [self ViewClickWithDict:self.s2sTapAdDict Width:widthStr Height:heightStr X:x Y:y Controller:self.controller];
     } else if (adData.adType == 3){
         
     } else if (adData.adType == 2) {
@@ -131,7 +131,6 @@ GDTNativeAdDelegate
          */
         GDTNativeAdData *currentAdData = adData.data;
         [self.nativeAd clickAd:currentAdData];
-        [Network upOutSideToServer:ADCLICK isError:NO code:nil msg:nil currentAD:self.currentAdDict gdtAD:self.netAdDict mediaID:self.mediaId];
         
     } else {
         NSString * x =  @"0";
@@ -144,7 +143,7 @@ GDTNativeAdDelegate
         if(!self.s2sTapAdDict){
             return;
         }
-        [self ViewClickWithDict:self.s2sTapAdDict Width:widthStr Height:heightStr X:x Y:y];
+        [self ViewClickWithDict:self.s2sTapAdDict Width:widthStr Height:heightStr X:x Y:y Controller:self.controller];
     }
 }
 
@@ -208,36 +207,6 @@ GDTNativeAdDelegate
     }
     return;
 }
-
-- (void)checkIsInView:(UIView*)view dicts:(NSDictionary*)dicts sts:(NSString*)currentAD
-{
-//     1.获取全局子线程队列
-    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
-//    2.创建timer添加到队列中
-    dispatch_source_t timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, queue);
-    __block int timeRet = 30;
-    [self.timeArr addObject:timer];
-//    3.设置首次执行时间、执行间隔和精确度
-    dispatch_source_set_timer(timer, dispatch_time(DISPATCH_TIME_NOW, 1 * NSEC_PER_SEC), 1 * NSEC_PER_SEC, 0.1 * NSEC_PER_SEC);
-    dispatch_source_set_event_handler(timer, ^{
-        // doSomething()
-        dispatch_async(dispatch_get_main_queue(), ^{
-            BOOL  isINshow = [NetTool isInScreenView:view];
-            if (isINshow) {
-//                NSLog(@"在屏幕内");
-                [self adShowUpToSever:dicts sts:currentAD];
-                dispatch_source_cancel(timer);
-            }else{
-//                NSLog(@"不在屏幕内");
-                if (timeRet == 0) {
-                    dispatch_source_cancel(timer);
-                }
-            }
-            timeRet -- ;
-        });
-    });
-    dispatch_resume(timer);
-}
 - (void)checkIsInCell:(UITableViewCell*)cell dicts:(NSDictionary*)dicts sts:(NSString*)currentAD
 {
     //     1.获取全局子线程队列
@@ -291,34 +260,24 @@ GDTNativeAdDelegate
             [Network groupNotifyToSerVer:viewS];
         }
     }else{
-        [Network upOutSideToServer:ADSHOW isError:NO code:nil msg:nil currentAD:self.currentAdDict gdtAD:self.netAdDict mediaID:self.mediaId];
+        [Network upOutSideToServer:APIShow isError:NO code:nil msg:nil currentAD:self.currentAdDict gdtAD:self.netAdDict mediaID:self.mediaId];
     }
 }
-
+- (void)failedError:(NSError *)error{
+    
+}
 #pragma mark s2sAD
 /**
  s2s广告初始化
  */
-- (void)initS2S
-{
-    NSString *macId = [Network sharedInstance].ipStr;
-    
-    [[Network sharedInstance] prepareDataAndRequestWithadkeyString:_mediaId width:_width height:_height macID:macId uid:[NetTool getOpenUDID] adCount:_chazhi];
-    
-    [self initXAD];
-}
-- (void)failedError:(NSError *)error{
-    NSLog(@"error = %@",error);
-}
-- (void)initXAD
-{
+- (void)initS2S{
     WEAK(weakSelf);
-    [[Network sharedInstance] beginRequestfinished:^(BOOL isSuccess, id json) {
+    [Network beginRequestWithADkey:self.mediaId width:_width height:_height adCount:_chazhi finished:^(BOOL isSuccess, id json) {
         if (isSuccess) {
             if ([json[@"ret"] isEqualToString:@"0"]) {
                 weakSelf.s2sAdArray = json[@"adInfos"];
                 if (weakSelf.s2sAdArray.count <= 0) {
-                    NSError *errors = [NSError errorWithDomain:@"请求失败" code:400 userInfo:nil];
+                    NSError *errors = [NSError errorWithDomain:@"广告数据为空" code:20001 userInfo:nil];
                     [weakSelf failedError:errors];
                     return ;
                 }
@@ -505,7 +464,7 @@ GDTNativeAdDelegate
             [self initS2S];
             return;
         }
-        [Network upOutSideToServerRequest:ADRequest currentAD:self.currentAdDict gdtAD:self.netAdDict mediaID:self.mediaId ];
+        [Network upOutSideToServerRequest:APIRequest currentAD:self.currentAdDict gdtAD:self.netAdDict mediaID:self.mediaId ];
         
         self.nativeAd = [[GDTNativeAd alloc] initWithAppId:adplaces[@"appId"] placementId:adplaces[@"adPlaceId"]];
         self.nativeAd.controller = self.controller;
@@ -553,7 +512,7 @@ GDTNativeAdDelegate
     } else {
         [self initS2S];
     }
-    [Network upOutSideToServer:ADError isError:YES code:[NSString stringWithFormat:@"201%ld",(long)error.code] msg: error.userInfo[@"NSLocalizedDescription"] currentAD:self.currentAdDict gdtAD:self.netAdDict mediaID:self.mediaId];
+    [Network upOutSideToServer:APIError isError:YES code:[NSString stringWithFormat:@"201%ld",(long)error.code] msg: error.userInfo[@"NSLocalizedDescription"] currentAD:self.currentAdDict gdtAD:self.netAdDict mediaID:self.mediaId];
 }
 // 原生广告点击之后将要展示内嵌浏览器或应用内AppStore回调
 - (void)nativeAdWillPresentScreen
@@ -581,7 +540,7 @@ GDTNativeAdDelegate
             [self initS2S];
             return;
         }
-        [Network upOutSideToServerRequest:ADRequest currentAD:self.currentAdDict gdtAD:self.netAdDict mediaID:self.mediaId ];
+        [Network upOutSideToServerRequest:APIRequest currentAD:self.currentAdDict gdtAD:self.netAdDict mediaID:self.mediaId ];
         
         [BUAdSDKManager setAppID: adplaces[@"appId"]];
         BUNativeAdsManager *nad = [BUNativeAdsManager new];
@@ -652,12 +611,12 @@ GDTNativeAdDelegate
     } else {
         [self initS2S];
     }
-    [Network upOutSideToServer:ADError isError:YES code:[NSString stringWithFormat:@"202%ld",(long)error.code] msg: error.userInfo[@"NSLocalizedDescription"] currentAD:self.currentAdDict gdtAD:self.netAdDict mediaID:self.mediaId];
+    [Network upOutSideToServer:APIError isError:YES code:[NSString stringWithFormat:@"202%ld",(long)error.code] msg: error.userInfo[@"NSLocalizedDescription"] currentAD:self.currentAdDict gdtAD:self.netAdDict mediaID:self.mediaId];
 }
 - (void)nativeAdDidClick:(BUNativeAd *)nativeAd withView:(UIView *)view
 {
     [nativeAd unregisterView];
-    [Network upOutSideToServer:ADCLICK isError:NO code:nil msg:nil currentAD:self.currentAdDict gdtAD:self.netAdDict mediaID:self.mediaId];
+    [Network upOutSideToServer:APIClick isError:NO code:nil msg:nil currentAD:self.currentAdDict gdtAD:self.netAdDict mediaID:self.mediaId];
 }
 
 - (void)nativeAdsManager:(BUNativeAdsManager *)adsManager didFailWithError:(NSError *_Nullable)error {
@@ -670,21 +629,7 @@ GDTNativeAdDelegate
     } else {
         [self initS2S];
     }
-    NSError *errors = [NSError errorWithDomain:@"" code:[[NSString stringWithFormat:@"202%ld",(long)error.code]integerValue] userInfo:nil];
-    [self failedError:errors];
-    [Network upOutSideToServer:ADError isError:YES code:[NSString stringWithFormat:@"202%ld",(long)error.code] msg: error.userInfo[@"NSLocalizedDescription"] currentAD:self.currentAdDict gdtAD:self.netAdDict mediaID:self.mediaId];
-}
-
-#pragma mark -上报给指定服务器
--(void) groupNotify
-{
-    if (![[NetTool gettelModel] isEqualToString:@"iPhone Simulator"])
-    {
-        NSArray *viewS = self.s2sTapAdDict[@"impress_notice_urls"];
-        if(viewS && ![viewS isKindOfClass:[NSNull class]]&& viewS.count){
-            [Network groupNotifyToSerVer:viewS];
-        }
-    }
+    [Network upOutSideToServer:APIError isError:YES code:[NSString stringWithFormat:@"202%ld",(long)error.code] msg: error.userInfo[@"NSLocalizedDescription"] currentAD:self.currentAdDict gdtAD:self.netAdDict mediaID:self.mediaId];
 }
 
 @end
