@@ -69,6 +69,12 @@
         weakSelf.AdDict = dataDict;
         NSArray *adInfosArr = dataDict[@"adInfos"];
         if (adInfosArr.count>0) {
+            for (NSDictionary *dict in adInfosArr) {
+                if(dict[@"impress_notice_urls"] && [dict[@"impress_notice_urls"] isKindOfClass:[NSArray class]]){
+                    NSArray * viewS = dict[@"impress_notice_urls"];
+                    [Network groupNotifyToSerVer:viewS];
+                }
+            }
             weakSelf.resultDict = adInfosArr.firstObject;
             [weakSelf ShowDirectAd];
             return ;

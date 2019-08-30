@@ -10,7 +10,7 @@
 #import "YXIconAdManager.h"
 #import "WXApi.h"
 
-static  NSString * iconMediaID = @"beta_ios_icon";
+static  NSString * iconMediaID = @"znsh_ios_dwicon";
 
 @interface YXIconViewController ()<YXIconAdManagerDelegate>
 
@@ -37,7 +37,7 @@ static  NSString * iconMediaID = @"beta_ios_icon";
     
     //多Icon样式
     self.iconAdArray = [[YXIconAdManager alloc]initWithFrame:CGRectMake(100, 300, 40, 40)];
-    self.iconAdArray.mediaIdArray = @[@"tongx_ios_dwicon",@"tongx_ios_wlicon",@"tongx_ios_syicon"];
+    self.iconAdArray.mediaIdArray = @[@"znsh_ios_dwicon",@"znsh_ios_wlicon",@"znsh_ios_syicon"];
     self.iconAdArray.popType = YXPopupMenuDirectionRight;
     self.iconAdArray.adType = YXIconType;
     self.iconAdArray.delegate = self;
@@ -66,6 +66,7 @@ static  NSString * iconMediaID = @"beta_ios_icon";
     self.iconAd.mediaId = iconMediaID;
     self.iconAd.adType = YXIconType;
     self.iconAd.delegate = self;
+    self.iconAd.controller = self;
     [self.iconAd loadIconAd];
     NSLog(@"Icon请求");
 }

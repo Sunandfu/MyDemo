@@ -7,12 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-@class YXFeedAdData;
+@class YXFeedAdData,GDTUnifiedNativeAdView;
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface SDKADTableViewCell : UITableViewCell
 
+@property (weak, nonatomic) IBOutlet GDTUnifiedNativeAdView *backView;
 - (void)cellDataWithFeedAdModel:(YXFeedAdData *)model;
 
 @end

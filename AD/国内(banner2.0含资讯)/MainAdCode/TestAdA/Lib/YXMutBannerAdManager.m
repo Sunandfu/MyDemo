@@ -72,42 +72,6 @@ GDTUnifiedNativeAdViewDelegate,YXBannerScrollViewDelegate>
     [NetTool clearNetImageChace];
 }
 
-/**
- 展示上报
- */
-- (void)adShowUpToSever:(YXFeedAdData *)data
-{
-    switch (data.adType) {
-        case 1:
-        {
-            NSDictionary * dic = data.data;
-            NSArray * viewS = dic[@"impress_notice_urls"];
-            if(viewS && ![viewS isKindOfClass:[NSNull class]]&& viewS.count){
-                [Network groupNotifyToSerVer:viewS];
-            } }
-            break;
-        case 2:
-        { [Network upOutSideToServer:APIShow isError:NO code:nil msg:nil currentAD:self.currentAdDict gdtAD:self.netAdDict mediaID:self.mediaId];
-        }
-            break;
-        case 3:
-        {
-            [Network upOutSideToServer:APIShow isError:NO code:nil msg:nil currentAD:self.currentAdDict gdtAD:self.netAdDict mediaID:self.mediaId]; }
-            break;
-        case 4:
-        {
-            NSDictionary * dic = data.data;
-            NSArray * viewS = dic[@"impress_notice_urls"];
-            if(viewS && ![viewS isKindOfClass:[NSNull class]]&& viewS.count){
-                [Network groupNotifyToSerVer:viewS];
-            } }
-            break;
-            
-        default:
-            break;
-    }
-}
-
 #pragma mark - Private Methods
 - (instancetype)init
 {
@@ -216,7 +180,7 @@ GDTUnifiedNativeAdViewDelegate,YXBannerScrollViewDelegate>
                         backdata.imageUrl = [NSString stringWithFormat:@"%@",dict[@"img_url"]];
                         backdata.IconUrl = [NSString stringWithFormat:@"%@",dict[@"logo_icon"]];
                         backdata.adType = 4;
-                        backdata.data = dict;
+                        backdata.data = [[NSString sf_jsonStringWithJson:dict] sf_AESEncryptString];
                         [weakSelf.feedArray addObject:backdata];
                     }
                     
@@ -345,8 +309,12 @@ GDTUnifiedNativeAdViewDelegate,YXBannerScrollViewDelegate>
                 backdata.adTitle = dict[@"title"];
                 backdata.adID = (NSInteger)dict[@"adid"];
                 backdata.adType = 1;
-                backdata.data = dict;
+                backdata.data = [[NSString sf_jsonStringWithJson:dict] sf_AESEncryptString];
                 [weakSelf.feedArray addObject:backdata];
+                if(dict[@"impress_notice_urls"] && [dict[@"impress_notice_urls"] isKindOfClass:[NSArray class]]){
+                    NSArray * viewS = dict[@"impress_notice_urls"];
+                    [Network groupNotifyToSerVer:viewS];
+                }
             }
             [weakSelf reloadDataScrollerView];
             if(weakSelf.delegate && [weakSelf.delegate respondsToSelector:@selector(didLoadMutBannerAdView)]){
@@ -368,8 +336,12 @@ GDTUnifiedNativeAdViewDelegate,YXBannerScrollViewDelegate>
                 backdata.adTitle = dict[@"title"];
                 backdata.adID = (NSInteger)dict[@"adid"];
                 backdata.adType = 1;
-                backdata.data = dict;
-                [self.feedArray addObject:backdata];
+                backdata.data = [[NSString sf_jsonStringWithJson:dict] sf_AESEncryptString];
+                [weakSelf.feedArray addObject:backdata];
+                if(dict[@"impress_notice_urls"] && [dict[@"impress_notice_urls"] isKindOfClass:[NSArray class]]){
+                    NSArray * viewS = dict[@"impress_notice_urls"];
+                    [Network groupNotifyToSerVer:viewS];
+                }
             }
             
             NSArray *advertiser = dataDict[@"advertiser"];
@@ -416,7 +388,7 @@ GDTUnifiedNativeAdViewDelegate,YXBannerScrollViewDelegate>
     }
     
     double random = 1+ arc4random()%99;
-    random = 66;
+    
     double sumWeight = 0;
 
     for (int index = 0; index < valueArray.count; index ++ ) {
@@ -484,6 +456,7 @@ GDTUnifiedNativeAdViewDelegate,YXBannerScrollViewDelegate>
                 backdata.adType = 2;
                 backdata.data = properties;
                 [self.feedArray addObject:backdata];
+                [Network upOutSideToServer:APIShow isError:NO code:nil msg:nil currentAD:self.currentAdDict gdtAD:self.netAdDict mediaID:self.mediaId];
             }
             [self reloadDataScrollerView];
             if(self.delegate && [self.delegate respondsToSelector:@selector(didLoadMutBannerAdView)]){
@@ -627,6 +600,7 @@ GDTUnifiedNativeAdViewDelegate,YXBannerScrollViewDelegate>
                     backdata.adType = 3;
                     backdata.data = nativeAd;
                     [self.feedArray addObject:backdata];
+                    [Network upOutSideToServer:APIShow isError:NO code:nil msg:nil currentAD:self.currentAdDict gdtAD:self.netAdDict mediaID:self.mediaId];
                 }
             }
             [self reloadDataScrollerView];
@@ -713,43 +687,43 @@ GDTUnifiedNativeAdViewDelegate,YXBannerScrollViewDelegate>
 }
 - (void)registerAdViewForInteraction:(UIView *)view didScrollToIndex:(NSInteger)index clickableViews:(NSArray *)views{
 //    NSLog(@"registerAdViewForInteraction = %ld",index);
+    CustomCollectionViewCell *cell = (CustomCollectionViewCell *)view;
+    cell.backView.logoView.hidden = YES;
     if (self.feedArray.count>index) {
         YXFeedAdData *feedData = self.feedArray[index];
-        view.tag = index;
-        NSMutableArray *newges = [NSMutableArray arrayWithArray:view.gestureRecognizers];
+        cell.tag = index+10;
+        NSMutableArray *newges = [NSMutableArray arrayWithArray:cell.backView.gestureRecognizers];
         for (int i =0; i<[newges count]; i++) {
-            [view removeGestureRecognizer:[newges objectAtIndex:i]];
+            [cell.backView removeGestureRecognizer:[newges objectAtIndex:i]];
         }
         switch (feedData.adType) {
             case 1:
             {
-                self.resultDict = feedData.data;
+                NSString *s2sTapAdStr = feedData.data;
+                self.resultDict = [s2sTapAdStr sf_AESDecryptString];
                 UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapImg:)];
-                [view addGestureRecognizer:tap];
+                [cell.backView addGestureRecognizer:tap];
             }
                 break;
             case 2:
             {
                 GDTUnifiedNativeAdDataObject *currentAdData = feedData.data;
                 BOOL isHave = NO;
-                for (GDTUnifiedNativeAdView *tmpView in self.gdtViewsArray) {
-                    if (tmpView.tag == feedData.adID) {
+                for (CustomCollectionViewCell *tmpView in self.gdtViewsArray) {
+                    if (tmpView.tag == cell.tag) {
                         isHave = YES;
-                        [tmpView unregisterDataObject];
-                        tmpView.viewController = self.controller;
-                        tmpView.delegate = self;
-                        [tmpView registerDataObject:currentAdData clickableViews:views];
+                        [tmpView.backView unregisterDataObject];
+                        tmpView.backView.viewController = self.controller;
+                        tmpView.backView.delegate = self;
+                        [tmpView.backView registerDataObject:currentAdData clickableViews:@[cell.backView]];
                         break;
                     }
                 }
                 if (!isHave) {
-                    GDTUnifiedNativeAdView *gdtView = [[GDTUnifiedNativeAdView alloc] initWithFrame:view.bounds];
-                    [gdtView addSubview:view];
-                    gdtView.tag = view.tag;
-                    [self.gdtViewsArray addObject:gdtView];
-                    gdtView.viewController = self.controller;
-                    gdtView.delegate = self;
-                    [gdtView registerDataObject:currentAdData clickableViews:views];
+                    [self.gdtViewsArray addObject:cell];
+                    cell.backView.viewController = self.controller;
+                    cell.backView.delegate = self;
+                    [cell.backView registerDataObject:currentAdData clickableViews:@[cell.backView]];
                 }
             }
                 break;
@@ -757,14 +731,15 @@ GDTUnifiedNativeAdViewDelegate,YXBannerScrollViewDelegate>
             {
                 BUNativeAd *wmAdData = feedData.data;
                 wmAdData.rootViewController = self.controller;
-                [wmAdData registerContainer:view withClickableViews:views];
+                [wmAdData registerContainer:cell.backView withClickableViews:@[cell.backView]];
             }
                 break;
             case 4:
             {
-                self.resultDict = feedData.data;
+                NSString *s2sTapAdStr = feedData.data;
+                self.resultDict = [s2sTapAdStr sf_AESDecryptString];
                 UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapImg:)];
-                [view addGestureRecognizer:tap];
+                [cell.backView addGestureRecognizer:tap];
             }
                 break;
                 
@@ -774,38 +749,18 @@ GDTUnifiedNativeAdViewDelegate,YXBannerScrollViewDelegate>
     }
 }
 - (void)cycleScrollView:(YXBannerScrollView *)cycleScrollView didScrollToIndex:(NSInteger)index {
-    if (self.feedArray.count>index) {
-        YXFeedAdData *feedData = self.feedArray[index];
-        NSString * pages = [NSString stringWithFormat:@"%ld",(long)index];
-        if (self.adShowArr.count == 0) {
-            [self.adShowArr addObject:pages];
-            [self adShowUpToSever:feedData];
-        }else{
-            BOOL hasIndex = NO;
-            for (NSString * str in self.adShowArr) {
-                if ([str isEqualToString:pages]) {
-                    hasIndex = YES;
-                }
-            }
-            if (!hasIndex) {
-                [self.adShowArr addObject:pages];
-                [self adShowUpToSever:feedData];
-            }
-        }
-    }
-    [self registerAdViewForInteraction:cycleScrollView didScrollToIndex:index clickableViews:cycleScrollView.subviews];
 }
 /** 如果你需要自定义cell样式，请在实现此代理方法返回你的自定义cell的Nib。 */
 - (UINib *)customCollectionViewCellNibForCycleScrollView:(YXBannerScrollView *)view{
     UINib *nib = [UINib nibWithNibName:@"XibAndPng.bundle/CustomCollectionViewCell" bundle:nil];
-    return nib;
+    return nib;//
 }
 
 /** 如果你自定义了cell样式，请在实现此代理方法为你的cell填充数据以及其它一系列设置 */
 - (void)setupCustomCell:(UICollectionViewCell *)cell forIndex:(NSInteger)index cycleScrollView:(YXBannerScrollView *)view{
+    CustomCollectionViewCell *customCell = (CustomCollectionViewCell *)cell;
     if (self.feedArray.count>index) {
         YXFeedAdData *feedData = self.feedArray[index];
-        CustomCollectionViewCell *customCell = (CustomCollectionViewCell *)cell;
         //    customCell.frame = CGRectMake(0, 0, _width, _height);
         if (self.isOnlyImage) {
             customCell.currentImageView.hidden = NO;
@@ -822,9 +777,9 @@ GDTUnifiedNativeAdViewDelegate,YXBannerScrollViewDelegate>
             }
         }
     }
+    [self registerAdViewForInteraction:customCell didScrollToIndex:index clickableViews:customCell.backView.subviews];
     if (self.adCount==1 || isFirst==YES) {
         isFirst = NO;
-        [self registerAdViewForInteraction:cell didScrollToIndex:index clickableViews:cell.subviews];
     }
 }
 

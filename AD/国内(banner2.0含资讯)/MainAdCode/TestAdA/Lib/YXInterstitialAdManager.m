@@ -90,6 +90,12 @@
         NSArray *adInfosArr = dataDict[@"adInfos"];
         if (adInfosArr.count>0) {
             weakSelf.resultDict = adInfosArr.firstObject;
+            for (NSDictionary *dict in adInfosArr) {
+                if(dict[@"impress_notice_urls"] && [dict[@"impress_notice_urls"] isKindOfClass:[NSArray class]]){
+                    NSArray * viewS = dict[@"impress_notice_urls"];
+                    [Network groupNotifyToSerVer:viewS];
+                }
+            }
             dispatch_async(dispatch_get_main_queue(), ^{
                 [weakSelf showNativeAd];
             });

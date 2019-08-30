@@ -138,24 +138,11 @@
  广告渲染成功
  */
 - (void)didFeedAdRenderSuccess:(NSArray<YXFeedAdData *> *)data{
-//    if (data.count>0) {
-//        NSMutableArray *dataSources = [self.dataArray mutableCopy];
-//        for (int i=0; i<self.dataArray.count; i++) {
-//            id dataModel = self.dataArray[i];
-//            if ([dataModel isKindOfClass:[YXFeedAdData class]]) {
-//                YXFeedAdData *newModel = dataModel;
-//                for (YXFeedAdData *model in data) {
-//                    if (model.adID == newModel.adID) {
-//                        [dataSources replaceObjectAtIndex:i withObject:model];
-//                    }
-//                }
-//            }
-//        }
-//        self.dataArray = [dataSources mutableCopy];
-//        [self.tableView reloadData];
-//    }
     NSLog(@"广告渲染成功");
 }
-
+- (void)dealloc
+{
+    NSLog(@"%@ %@",[self class],NSStringFromSelector(_cmd));
+}
 
 @end

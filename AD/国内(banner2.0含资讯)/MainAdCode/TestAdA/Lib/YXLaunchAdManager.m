@@ -133,7 +133,7 @@ static YXLaunchAdManager *instance = nil;
     } @catch (NSException *exception) {
         [NetTool uncaughtExceptionHandler:exception];
     } @finally {
-        NSLog(@"开屏广告出现错误了");
+//        NSLog(@"开屏广告出现错误了");
     }
     
     //配置广告数据
@@ -226,6 +226,12 @@ static YXLaunchAdManager *instance = nil;
         NSArray *adInfosArr = dataDict[@"adInfos"];
         if (adInfosArr.count>0) {
             self->_resultDict = adInfosArr.firstObject;
+            for (NSDictionary *dict in adInfosArr) {
+                if(dict[@"impress_notice_urls"] && [dict[@"impress_notice_urls"] isKindOfClass:[NSArray class]]){
+                    NSArray * viewS = dict[@"impress_notice_urls"];
+                    [Network groupNotifyToSerVer:viewS];
+                }
+            }
             dispatch_async(dispatch_get_main_queue(), ^{
                 [weakSelf showLaunchAd];
             });

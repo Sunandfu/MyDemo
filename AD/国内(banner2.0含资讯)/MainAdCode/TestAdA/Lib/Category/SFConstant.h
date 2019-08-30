@@ -34,6 +34,8 @@ extern NSString * const KeyAppleLanguages;
 extern NSString * const KeyChannel;
 //活动 userID
 extern NSString * const KeyVuid;
+//版本号
+extern NSString * const SDKVersionKey;
 
 #pragma mark - 接口类
 //展示成果
@@ -54,5 +56,3 @@ extern NSString * const APIMview;
 extern NSString * const APIAddBlack;
 //移除黑名单
 extern NSString * const APIRemoveBlack;
-//版本号
-extern NSString * const SDKVersionKey;

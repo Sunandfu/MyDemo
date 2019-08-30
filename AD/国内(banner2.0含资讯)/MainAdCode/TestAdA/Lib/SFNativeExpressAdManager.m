@@ -57,10 +57,6 @@
 #pragma mark 开始加载广告
 -(void)loadNativeExpressFeedAd
 {
-    self.gdtDefaultVC = [SFGDTADViewController defaultManger];
-    self.gdtDefaultVC.delegate = self;
-    self.chuanDefaultVC = [SFChuanADViewControl defaultManger];
-    self.chuanDefaultVC.delegate = self;
     isOther = NO;
     self.feedArray = [[NSMutableArray alloc]initWithCapacity:0];
     
@@ -324,9 +320,11 @@
         return;
     }
     [Network upOutSideToServerRequest:APIRequest currentAD:self.currentAdDict gdtAD:self.netAdDict mediaID:self.mediaId ];
+    self.gdtDefaultVC = [SFGDTADViewController defaultManger];
+    self.gdtDefaultVC.delegate = self;
     self.gdtDefaultVC.showController = self.controller;
     [self.gdtDefaultVC getGDTADWithAppId:adplaces[@"appId"] PlaceId:adplaces[@"adPlaceId"] Width:_width Height:_height AdCount:self->_chazhi];
-    NSLog(@"广点通 AppID = %@;placementId = %@",adplaces[@"appId"],adplaces[@"adPlaceId"]);
+//    NSLog(@"广点通 AppID = %@;placementId = %@",adplaces[@"appId"],adplaces[@"adPlaceId"]);
 }
 
 #pragma mark 穿山甲
@@ -343,9 +341,11 @@
     //        adPlaceId = 5000546;
     //        appId = 900546662;
     
+    self.chuanDefaultVC = [SFChuanADViewControl defaultManger];
+    self.chuanDefaultVC.delegate = self;
     self.chuanDefaultVC.showController = self.controller;
     [self.chuanDefaultVC getChuanADWithAppId:adplaces[@"appId"] Size:self.adSize PlaceId:adplaces[@"adPlaceId"] Width:_width Height:_height AdCount:self->_chazhi];
-    NSLog(@"头条 AppID = %@;placementId = %@",adplaces[@"appId"],adplaces[@"adPlaceId"]);
+//    NSLog(@"头条 AppID = %@;placementId = %@",adplaces[@"appId"],adplaces[@"adPlaceId"]);
 }
 
 
@@ -434,17 +434,6 @@
  */
 - (void)gdt_nativeExpressAdViewExposure:(NSInteger)adType{
     [Network upOutSideToServer:APIExposured isError:NO code:nil msg:nil currentAD:self.currentAdDict gdtAD:self.netAdDict mediaID:self.mediaId];
-}
-#pragma mark -上报给指定服务器
--(void) groupNotify
-{
-    if (![[NetTool gettelModel] isEqualToString:@"iPhone Simulator"])
-    {
-        NSArray *viewS = self.s2sTapAdDict[@"impress_notice_urls"];
-        if(viewS && ![viewS isKindOfClass:[NSNull class]]&& viewS.count){
-            [Network groupNotifyToSerVer:viewS];
-        }
-    }
 }
 
 @end

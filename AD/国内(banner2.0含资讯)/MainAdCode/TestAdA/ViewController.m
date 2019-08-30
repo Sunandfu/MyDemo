@@ -135,7 +135,7 @@ static NSString * cellID = @"CELL";
         [self.navigationController pushViewController:infoVC animated:YES];
     } else if ([titleStr isEqualToString:@"全屏资讯接入"]) {
         SFInformationViewController *infoVC = [SFInformationViewController new];
-        infoVC.mLocationId = @"ystios";
+        infoVC.mLocationId = @"ystios";//znsf_ios_spv2
         infoVC.showLine = YES;
         infoVC.title = @"资讯";
         [self.navigationController pushViewController:infoVC animated:YES];

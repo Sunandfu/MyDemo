@@ -20,9 +20,11 @@ NSString * const KeyAppleLanguages = @"AppleLanguages";
 NSString * const KeyChannel = @"channel";
 //活动 userID
 NSString * const KeyVuid = @"vuid";
+//版本号
+NSString * const SDKVersionKey = @"4.4";
 
 #pragma mark - 接口类
-//展示成果
+//请求成功上报
 NSString * const APIShow = TRACKIN @"/log/newMimpr/v3";
 //曝光上报
 NSString * const APIExposured = TRACKIN @"/log/newImprEffect/v/3";
@@ -40,6 +42,4 @@ NSString * const APIMview = SEVERIN @"/yd3/mview/v/3";
 NSString * const APIAddBlack = SEVERIN @"/yd3/user/black";
 //移除黑名单
 NSString * const APIRemoveBlack = SEVERIN @"/yd3/user/black/remove";
-//版本号
-NSString * const SDKVersionKey = SEVERIN @"4.4";
 

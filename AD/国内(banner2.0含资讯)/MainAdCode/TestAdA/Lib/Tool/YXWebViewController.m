@@ -286,10 +286,10 @@ API_AVAILABLE(ios(8.0))
                 [weakSelf showCircleProgress];
             });
         } else {
-            NSLog(@"接口请求失败 message = %@",model.msg);
+//            NSLog(@"接口请求失败 message = %@",model.msg);
         }
     } fail:^(NSError *error) {
-        NSLog(@"网络请求错误 error = %@",error);
+//        NSLog(@"网络请求错误 error = %@",error);
     }];
 }
 - (SFCircleProgress *)circleProgress{
@@ -362,11 +362,11 @@ API_AVAILABLE(ios(8.0))
             NSString *dataStr = [NSString stringWithFormat:@"%@",dict[@"data"]];
             [YXLoading showStatus:dataStr];
         } else {
-            NSLog(@"接口返回错误 error message = %@",dict[@"msg"]);
+//            NSLog(@"接口返回错误 error message = %@",dict[@"msg"]);
             [YXLoading showStatus:dict[@"msg"]];
         }
     } fail:^(NSError *error) {
-        NSLog(@"网络错误 error = %@",error);
+//        NSLog(@"网络错误 error = %@",error);
     }];
 }
 

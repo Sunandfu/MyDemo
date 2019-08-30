@@ -10,6 +10,7 @@
 #import <Foundation/Foundation.h>
 #import "YXFeedAdData.h"
 #import "YXLaunchAdManager.h"
+@class SDKADTableViewCell;
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -54,7 +55,7 @@ typedef void(^getADFail) (NSError *error);
  定义原生广告视图中可以点击的 视图区域，行为由SDK控制
  @param cell 原生广告的视图所在的cell，完整可点击区域
  */
-- (void)registerAdViewForInCell:(UITableViewCell *)cell adData:(YXFeedAdData*)adData;
+- (void)registerAdViewForInCell:(SDKADTableViewCell *)cell adData:(YXFeedAdData*)adData;
 
 @end
 

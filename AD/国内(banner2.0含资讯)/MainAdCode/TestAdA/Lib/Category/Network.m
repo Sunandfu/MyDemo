@@ -37,7 +37,7 @@
     NSMutableDictionary *dic = [NSMutableDictionary dictionary];
     NSString * adCountStr = [NSString stringWithFormat:@"%ld",(long)adCount];
     [dic setValue:adCountStr                             forKey:@"adCount"];
-    [dic setValue:@"4.0"                                 forKey:@"version"] ;
+    [dic setValue:SDKVersionKey                                 forKey:@"version"] ;
     [dic setValue:@"2"                                   forKey:@"c_type"] ;
     [dic setValue:key                                    forKey:@"mid"];
     [dic setValue:[NetTool getDeviceUUID]                forKey:@"uid"];
@@ -73,10 +73,10 @@
     NSString *aesStr = [paramStr request_Encrypt];
     
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
-    NSString * url = [NSString stringWithFormat:@"%@", APICongfig];
+    NSString * url = [NSString stringWithFormat:@"%@", APIMview];
     [request setURL:[NSURL URLWithString:url]];
     [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
-    [request setValue:@"4.4" forHTTPHeaderField:@"apiversion"];
+    [request setValue:SDKVersionKey forHTTPHeaderField:@"apiversion"];
     [request setCachePolicy:NSURLRequestUseProtocolCachePolicy];//缓存策略
     [request setTimeoutInterval: 3];//超时时间
     [request setHTTPMethod:@"POST"];
@@ -144,7 +144,7 @@
         });
     }
     dispatch_group_notify(group, queue, ^{
-        NSLog(@"group notify");
+//        NSLog(@"group notify");
     });
 }
 
@@ -368,7 +368,7 @@
     
     NSDictionary *dict = @{
                            @"mid":[NetTool URLEncodedString:mediaId],
-                           @"version":@"4.0",
+                           @"version":SDKVersionKey,
                            @"make":@"apple",
                            @"appid":[NetTool getPackageName],
                            @"idfa":[NetTool getIDFA],
@@ -392,7 +392,7 @@
     NSString * url = [NSString stringWithFormat:@"%@", APICongfig];
     [request setURL:[NSURL URLWithString:url]];
     [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
-    [request setValue:@"4.4" forHTTPHeaderField:@"apiversion"];
+    [request setValue:SDKVersionKey forHTTPHeaderField:@"apiversion"];
     [request setCachePolicy:NSURLRequestUseProtocolCachePolicy];//缓存策略
     [request setTimeoutInterval: 3];//超时时间
     [request setHTTPMethod:@"POST"];
@@ -430,7 +430,7 @@
     int netnumber = [NetTool getNetTyepe];
     NSDictionary *dic = @{
                            @"mid":mediaId,
-                           @"version":@"4.0",
+                           @"version":SDKVersionKey,
                            @"make":@"apple",
                            @"appid":[NetTool getPackageName],
                            @"idfa":[NetTool getIDFA],
@@ -454,7 +454,7 @@
     NSString * url = [NSString stringWithFormat:@"%@", APICongfig];
     [request setURL:[NSURL URLWithString:url]];
     [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
-    [request setValue:@"4.4" forHTTPHeaderField:@"apiversion"];
+    [request setValue:SDKVersionKey forHTTPHeaderField:@"apiversion"];
     [request setCachePolicy:NSURLRequestUseProtocolCachePolicy];//缓存策略
     [request setTimeoutInterval: 3];//超时时间
     [request setHTTPMethod:@"POST"];

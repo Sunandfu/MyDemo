@@ -14,7 +14,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 @protocol SFADViewDelegate <NSObject>
-
+@optional
 /**
  加载成功的回调
  

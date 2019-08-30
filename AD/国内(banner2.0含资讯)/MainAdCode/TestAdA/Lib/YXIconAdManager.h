@@ -38,7 +38,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic,weak) id<YXIconAdManagerDelegate> delegate;
 
 /*
- *  viewControllerForPresentingModalView
+ *  controller
  *  详解：[必选]开发者需传入用来弹出目标页的ViewController，一般为当前ViewController
  */
 @property (nonatomic, weak) UIViewController *controller;

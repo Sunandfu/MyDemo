@@ -511,6 +511,7 @@
     }
     NSString *urlStr = [NSString stringWithFormat:@"%@",dict[@"detailUrl"]];
     NSString *original = [NSString stringWithFormat:@"%@",dict[@"isOriginal"]];
+    urlStr = [urlStr stringByReplacingOccurrencesOfString:@" " withString:@""];
     if (dict[@"isOriginal"] && [original isEqualToString:@"1"]) {
         
     } else {
