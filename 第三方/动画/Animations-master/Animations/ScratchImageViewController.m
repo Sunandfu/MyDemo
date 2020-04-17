@@ -27,7 +27,7 @@
     
     UIImage *image            = [UIImage imageNamed:@"1"];
     UIView  *imageContentView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, image.size.width, image.size.height)];
-    imageContentView.scale    = MAX(Height / image.size.height, Width / image.size.width);
+//    imageContentView.scale    = MAX(Height / image.size.height, Width / image.size.width);
     imageContentView.center   = self.contentView.middlePoint;
     [self.contentView addSubview:imageContentView];
     

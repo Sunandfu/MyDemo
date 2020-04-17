@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RewardVideoViewController" customModule="GDTMobSample_Swift" customModuleProvider="target">
+            <connections>
+                <outlet property="placementIdTextField" destination="a0c-Nu-JSb" id="FiI-8D-uIM"/>
+                <outlet property="portraitPlacementIdTextField" destination="iIf-pb-0NF" id="O7g-6i-63q"/>
+                <outlet property="statusLabel" destination="nzS-7e-3Eo" id="NLt-N1-IoN"/>
+                <outlet property="view" destination="bKa-7f-isI" id="B4f-Dt-jnl"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="bKa-7f-isI">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="5040546242831432" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="a0c-Nu-JSb">
+                    <rect key="frame" x="20" y="112" width="335" height="30"/>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                </textField>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请拉取激励视频（横屏状态只出横屏广告）" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nzS-7e-3Eo">
+                    <rect key="frame" x="23" y="187" width="329" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fHf-UF-FY9">
+                    <rect key="frame" x="263" y="62" width="92" height="29"/>
+                    <state key="normal" title="拉取激励视频"/>
+                    <connections>
+                        <action selector="loadAd:" destination="-1" eventType="touchUpInside" id="BEC-CU-XJi"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A65-sJ-D5t">
+                    <rect key="frame" x="267" y="216" width="92" height="30"/>
+                    <state key="normal" title="播放激励视频"/>
+                    <connections>
+                        <action selector="playVideo:" destination="-1" eventType="touchUpInside" id="C85-XK-PSf"/>
+                    </connections>
+                </button>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="8020744212936426" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iIf-pb-0NF">
+                    <rect key="frame" x="20" y="28" width="335" height="30"/>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                </textField>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="竖屏只出竖屏广告" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5cZ-zx-3rj">
+                    <rect key="frame" x="20" y="66" width="139" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="EhZ-2n-onI"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="竖屏出横竖屏广告" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Bd-mN-3m0">
+                    <rect key="frame" x="20" y="150" width="139" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MBm-2P-PjJ">
+                    <rect key="frame" x="263" y="146" width="92" height="30"/>
+                    <state key="normal" title="拉取激励视频"/>
+                    <connections>
+                        <action selector="loadAd:" destination="-1" eventType="touchUpInside" id="GRH-YI-9Vo"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kg2-bw-IZh">
+                    <rect key="frame" x="20" y="216" width="77" height="30"/>
+                    <state key="normal" title="横竖屏切换"/>
+                    <connections>
+                        <action selector="changeOrientation:" destination="-1" eventType="touchUpInside" id="Ica-V8-Xfq"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="nzS-7e-3Eo" firstAttribute="top" secondItem="a0c-Nu-JSb" secondAttribute="bottom" constant="45" id="1pM-Lh-uSq"/>
+                <constraint firstAttribute="trailing" secondItem="MBm-2P-PjJ" secondAttribute="trailing" constant="20" id="4as-Kr-X1K"/>
+                <constraint firstItem="iIf-pb-0NF" firstAttribute="top" secondItem="mc3-1D-ar7" secondAttribute="top" constant="8" id="86A-6G-6R0"/>
+                <constraint firstItem="5Bd-mN-3m0" firstAttribute="baseline" secondItem="MBm-2P-PjJ" secondAttribute="baseline" id="9cW-70-OZU"/>
+                <constraint firstItem="fHf-UF-FY9" firstAttribute="trailing" secondItem="iIf-pb-0NF" secondAttribute="trailing" id="Brw-JR-5un"/>
+                <constraint firstItem="5cZ-zx-3rj" firstAttribute="leading" secondItem="iIf-pb-0NF" secondAttribute="leading" id="DQ8-re-9vC"/>
+                <constraint firstItem="A65-sJ-D5t" firstAttribute="top" secondItem="nzS-7e-3Eo" secondAttribute="bottom" constant="8" id="DpG-d9-mgB"/>
+                <constraint firstItem="iIf-pb-0NF" firstAttribute="leading" secondItem="bKa-7f-isI" secondAttribute="leading" constant="20" id="GWd-e3-uEj"/>
+                <constraint firstItem="nzS-7e-3Eo" firstAttribute="leading" secondItem="mc3-1D-ar7" secondAttribute="leading" constant="23" id="GtI-aA-E4v"/>
+                <constraint firstAttribute="trailing" secondItem="iIf-pb-0NF" secondAttribute="trailing" constant="20" id="L5F-U7-uqd"/>
+                <constraint firstItem="nzS-7e-3Eo" firstAttribute="top" secondItem="MBm-2P-PjJ" secondAttribute="bottom" constant="11" id="LYe-4x-G0d"/>
+                <constraint firstItem="5Bd-mN-3m0" firstAttribute="leading" secondItem="bKa-7f-isI" secondAttribute="leading" constant="20" id="NxE-tQ-BSw"/>
+                <constraint firstItem="5cZ-zx-3rj" firstAttribute="baseline" secondItem="fHf-UF-FY9" secondAttribute="baseline" id="TRl-1M-3WO"/>
+                <constraint firstItem="5cZ-zx-3rj" firstAttribute="top" secondItem="iIf-pb-0NF" secondAttribute="bottom" constant="8" id="VZ4-PW-qXU"/>
+                <constraint firstItem="MBm-2P-PjJ" firstAttribute="centerY" secondItem="5Bd-mN-3m0" secondAttribute="centerY" id="ZeQ-re-6t8"/>
+                <constraint firstAttribute="trailing" secondItem="A65-sJ-D5t" secondAttribute="trailing" constant="16" id="ce8-lP-RVO"/>
+                <constraint firstItem="a0c-Nu-JSb" firstAttribute="leading" secondItem="bKa-7f-isI" secondAttribute="leading" constant="20" id="edy-VT-eFz"/>
+                <constraint firstItem="MBm-2P-PjJ" firstAttribute="top" secondItem="a0c-Nu-JSb" secondAttribute="bottom" constant="4" id="gvu-1L-yo4"/>
+                <constraint firstItem="fHf-UF-FY9" firstAttribute="top" secondItem="iIf-pb-0NF" secondAttribute="bottom" constant="4" id="hG9-5C-Yoo"/>
+                <constraint firstItem="a0c-Nu-JSb" firstAttribute="top" secondItem="5cZ-zx-3rj" secondAttribute="bottom" constant="25" id="hdL-5I-88D"/>
+                <constraint firstItem="nzS-7e-3Eo" firstAttribute="centerX" secondItem="bKa-7f-isI" secondAttribute="centerX" id="m4V-Pj-P3H"/>
+                <constraint firstItem="kg2-bw-IZh" firstAttribute="centerY" secondItem="A65-sJ-D5t" secondAttribute="centerY" id="noT-0X-sIT"/>
+                <constraint firstItem="5Bd-mN-3m0" firstAttribute="top" secondItem="a0c-Nu-JSb" secondAttribute="bottom" constant="8" id="qe1-sn-5J2"/>
+                <constraint firstItem="fHf-UF-FY9" firstAttribute="centerY" secondItem="5cZ-zx-3rj" secondAttribute="centerY" id="qyn-0c-Z4U"/>
+                <constraint firstItem="5Bd-mN-3m0" firstAttribute="baseline" secondItem="MBm-2P-PjJ" secondAttribute="firstBaseline" id="tfS-rt-1xT"/>
+                <constraint firstItem="5cZ-zx-3rj" firstAttribute="baseline" secondItem="fHf-UF-FY9" secondAttribute="firstBaseline" id="uyV-QK-vwL"/>
+                <constraint firstAttribute="trailing" secondItem="a0c-Nu-JSb" secondAttribute="trailing" constant="20" id="ybw-Ys-IoJ"/>
+                <constraint firstItem="kg2-bw-IZh" firstAttribute="leading" secondItem="bKa-7f-isI" secondAttribute="leading" constant="20" id="zO8-0K-YtP"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="mc3-1D-ar7"/>
+        </view>
+    </objects>
+</document>

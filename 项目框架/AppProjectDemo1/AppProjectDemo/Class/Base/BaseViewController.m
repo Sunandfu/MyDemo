@@ -51,6 +51,15 @@
 }
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
+    if (_type==NavigationTypeClean) {
+        [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
+    }
+}
+- (void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    if (_type==NavigationTypeClean) {
+        [self.navigationController.navigationBar setBackgroundImage:nil forBarMetrics:UIBarMetricsDefault];
+    }
 }
 - (void)setType:(NavigationType)type{
     _type = type;
@@ -59,7 +68,6 @@
         [self addLeftBackButton];
     }
     if (type == NavigationTypeBlack) {
-        self.navBarBgAlpha = @"1.0";
         // 设置导航栏标题和返回按钮颜色
         self.navigationController.navigationBar.barTintColor = [UIColor whiteColor];
         [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor blackColor]}];
@@ -67,7 +75,6 @@
         //返回按钮颜色
         self.navigationController.navigationBar.tintColor = [UIColor darkGrayColor];
     } else if (type == NavigationTypeWhite) {
-        self.navBarBgAlpha = @"1.0";
         // 设置导航栏标题和返回按钮颜色
         self.navigationController.navigationBar.barTintColor = THEME_COLOR;
         [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
@@ -75,7 +82,6 @@
         //返回按钮颜色
         self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     } else {
-        self.navBarBgAlpha = @"0.0";
         // 设置导航栏标题和返回按钮颜色
         self.navigationController.navigationBar.barTintColor = [UIColor clearColor];
         [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];

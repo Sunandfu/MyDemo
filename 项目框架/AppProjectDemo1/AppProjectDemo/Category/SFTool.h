@@ -106,4 +106,6 @@
  */
 + (NSString *)jsonStringWithObject:(id)object;
 
++ (NSArray *)matchString:(NSString *)string toRegexString:(NSString *)regexStr;
+
 @end

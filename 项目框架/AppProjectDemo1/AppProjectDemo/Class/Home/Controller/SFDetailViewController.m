@@ -29,8 +29,8 @@
     self.navigationBackView = navigationView;
 }
 - (void)viewWillAppear:(BOOL)animated{
-    [super viewWillAppear:animated];
     self.type = NavigationTypeClean;
+    [super viewWillAppear:animated];
 }
 - (UIView *)tableHeaderView{
     UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, DEVICE_WIDTH, HEIGHT(100))];

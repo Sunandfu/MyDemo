@@ -22,8 +22,8 @@
     self.view.backgroundColor = [UIColor redColor];
 }
 - (void)viewWillAppear:(BOOL)animated{
-    [super viewWillAppear:animated];
     self.type = NavigationTypeClean;
+    [super viewWillAppear:animated];
 }
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     [self.navigationController pushViewController:[SFMyViewController new] animated:YES];

@@ -51,6 +51,8 @@
 		E7C7322023057D4700FB89D5 /* sf_fullClose@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E7C731F423057D4600FB89D5 /* sf_fullClose@2x.png */; };
 		E7C7322123057D4700FB89D5 /* CustomCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7C731F523057D4600FB89D5 /* CustomCollectionViewCell.xib */; };
 		E7C7322223057D4700FB89D5 /* FeedMessageTableViewCellFour.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7C731F623057D4600FB89D5 /* FeedMessageTableViewCellFour.xib */; };
+		E7FDE3812322623E00B953E7 /* new_topImg2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E7FDE37F2322623C00B953E7 /* new_topImg2@2x.png */; };
+		E7FDE3822322623E00B953E7 /* new_topImg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E7FDE3802322623E00B953E7 /* new_topImg@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -99,6 +101,8 @@
 		E7C731F523057D4600FB89D5 /* CustomCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomCollectionViewCell.xib; sourceTree = "<group>"; };
 		E7C731F623057D4600FB89D5 /* FeedMessageTableViewCellFour.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FeedMessageTableViewCellFour.xib; sourceTree = "<group>"; };
 		E7F2A5842278808E0095D5FB /* XibAndPng.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = XibAndPng.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		E7FDE37F2322623C00B953E7 /* new_topImg2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "new_topImg2@2x.png"; sourceTree = "<group>"; };
+		E7FDE3802322623E00B953E7 /* new_topImg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "new_topImg@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +142,8 @@
 				E7C731DE23057D4600FB89D5 /* WXMiniAppViewCell.xib */,
 				E7C731DF23057D4600FB89D5 /* MoneyDetailViewCell.xib */,
 				E7C731E023057D4600FB89D5 /* taskImage1@2x.png */,
+				E7FDE3802322623E00B953E7 /* new_topImg@2x.png */,
+				E7FDE37F2322623C00B953E7 /* new_topImg2@2x.png */,
 			);
 			path = Task;
 			sourceTree = "<group>";
@@ -260,6 +266,7 @@
 				E7C7322123057D4700FB89D5 /* CustomCollectionViewCell.xib in Resources */,
 				E7C7321223057D4700FB89D5 /* sf_adFlag@2x.png in Resources */,
 				E7C7320D23057D4700FB89D5 /* taskImage1@2x.png in Resources */,
+				E7FDE3812322623E00B953E7 /* new_topImg2@2x.png in Resources */,
 				E7C731FB23057D4700FB89D5 /* duihuan@2x.png in Resources */,
 				E7C731FE23057D4700FB89D5 /* yhjLeft@2x.png in Resources */,
 				E7C7320023057D4700FB89D5 /* taskImage2@2x.png in Resources */,
@@ -287,6 +294,7 @@
 				E7C7320923057D4700FB89D5 /* taskImage3@2x.png in Resources */,
 				E7C7321723057D4700FB89D5 /* SDKADTableViewCell.xib in Resources */,
 				E7C731F923057D4700FB89D5 /* goDoneNor@2x.png in Resources */,
+				E7FDE3822322623E00B953E7 /* new_topImg@2x.png in Resources */,
 				E7C7321923057D4700FB89D5 /* FeedMessageTableViewCellTwo.xib in Resources */,
 				E7C7320C23057D4700FB89D5 /* MoneyDetailViewCell.xib in Resources */,
 				E7C7320A23057D4700FB89D5 /* TaskImageViewCell.xib in Resources */,

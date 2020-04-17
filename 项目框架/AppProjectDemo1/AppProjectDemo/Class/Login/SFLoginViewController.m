@@ -21,8 +21,8 @@
 //    self.view.backgroundColor = [UIColor yellowColor];
 }
 - (void)viewWillAppear:(BOOL)animated{
-    [super viewWillAppear:animated];
     self.type = NavigationTypeWhite;
+    [super viewWillAppear:animated];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

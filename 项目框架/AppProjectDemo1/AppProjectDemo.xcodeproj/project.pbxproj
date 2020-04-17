@@ -115,8 +115,6 @@
 		6B878F6E20BC0465004958E8 /* SFMyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B878F6C20BC0465004958E8 /* SFMyViewController.m */; };
 		6B878F7120BC07D4004958E8 /* UIImage+Resizable.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B878F6F20BC07D4004958E8 /* UIImage+Resizable.m */; };
 		6B878F7320BC08EE004958E8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B878F7220BC08EE004958E8 /* LaunchScreen.storyboard */; };
-		6B878F7820BC1336004958E8 /* UINavigationController+Cloudox.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B878F7420BC1335004958E8 /* UINavigationController+Cloudox.m */; };
-		6B878F7920BC1336004958E8 /* UIViewController+Cloudox.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B878F7620BC1335004958E8 /* UIViewController+Cloudox.m */; };
 		6B878F7C20BC17D6004958E8 /* SFLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B878F7B20BC17D6004958E8 /* SFLoginViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -367,10 +365,6 @@
 		6B878F6F20BC07D4004958E8 /* UIImage+Resizable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Resizable.m"; sourceTree = "<group>"; };
 		6B878F7020BC07D4004958E8 /* UIImage+Resizable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Resizable.h"; sourceTree = "<group>"; };
 		6B878F7220BC08EE004958E8 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
-		6B878F7420BC1335004958E8 /* UINavigationController+Cloudox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+Cloudox.m"; sourceTree = "<group>"; };
-		6B878F7520BC1335004958E8 /* UINavigationController+Cloudox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+Cloudox.h"; sourceTree = "<group>"; };
-		6B878F7620BC1335004958E8 /* UIViewController+Cloudox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Cloudox.m"; sourceTree = "<group>"; };
-		6B878F7720BC1335004958E8 /* UIViewController+Cloudox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Cloudox.h"; sourceTree = "<group>"; };
 		6B878F7A20BC17D6004958E8 /* SFLoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SFLoginViewController.h; sourceTree = "<group>"; };
 		6B878F7B20BC17D6004958E8 /* SFLoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SFLoginViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -873,10 +867,6 @@
 				6B878F5320BC029C004958E8 /* BaseTabBarController.m */,
 				6B878F4F20BC029C004958E8 /* BaseViewController.h */,
 				6B878F5020BC029C004958E8 /* BaseViewController.m */,
-				6B878F7520BC1335004958E8 /* UINavigationController+Cloudox.h */,
-				6B878F7420BC1335004958E8 /* UINavigationController+Cloudox.m */,
-				6B878F7720BC1335004958E8 /* UIViewController+Cloudox.h */,
-				6B878F7620BC1335004958E8 /* UIViewController+Cloudox.m */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -1088,7 +1078,6 @@
 				6B31A46620BCEF910003ACB8 /* SFDetailViewController.m in Sources */,
 				6B878F3020BBF561004958E8 /* AFURLSessionManager.m in Sources */,
 				6B878E8D20BBF53C004958E8 /* UIButton+VTMagic.m in Sources */,
-				6B878F7820BC1336004958E8 /* UINavigationController+Cloudox.m in Sources */,
 				6B878EF320BBF556004958E8 /* KafkaHeadRefreshControl.m in Sources */,
 				6B878E6120BBF52F004958E8 /* SDWebImageWebPCoder.m in Sources */,
 				6B878F1B20BBF55B004958E8 /* UINavigationController+hidesBottomBarWhenPushed.m in Sources */,
@@ -1105,7 +1094,6 @@
 				6B878EB320BBF54B004958E8 /* NSObject+MJProperty.m in Sources */,
 				6B878EEF20BBF556004958E8 /* UIScrollView+KafkaLayout.m in Sources */,
 				6B878F0020BBF556004958E8 /* KafkaArcLayer.m in Sources */,
-				6B878F7920BC1336004958E8 /* UIViewController+Cloudox.m in Sources */,
 				6B878F1520BBF55B004958E8 /* CYButton.m in Sources */,
 				6B878E5120BBF52F004958E8 /* NSData+ImageContentType.m in Sources */,
 				6B878EF420BBF556004958E8 /* KafkaRefreshControl.m in Sources */,

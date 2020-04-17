@@ -910,4 +910,17 @@ static int32_t gLunarHolDay[]=
     return jsonStr;
 }
 
++ (NSArray *)matchString:(NSString *)string toRegexString:(NSString *)regexStr{
+    NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:regexStr options:NSRegularExpressionAnchorsMatchLines error:nil];
+    NSArray * matches = [regex matchesInString:string options:0 range:NSMakeRange(0, [string length])];
+    //match: 所有匹配到的字符,根据() 包含级
+    NSMutableArray *array = [NSMutableArray array];
+    for (NSTextCheckingResult *match in matches) {
+        //以正则中的(),划分成不同的匹配部分
+        NSString *component = [string substringWithRange:[match rangeAtIndex:1]];
+        [array addObject:component];
+    }
+    return array;
+}
+
 @end

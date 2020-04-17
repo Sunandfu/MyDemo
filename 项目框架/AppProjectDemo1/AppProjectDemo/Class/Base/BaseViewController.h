@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "UIViewController+Cloudox.h"
 
 typedef enum : NSUInteger {
     NavigationTypeBlack = 0,

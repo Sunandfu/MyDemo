@@ -176,7 +176,7 @@
 				TargetAttributes = {
 					EAA2EA6E1BB64D3400422C42 = {
 						CreatedOnToolsVersion = 6.4;
-						DevelopmentTeam = J4N9H827FQ;
+						DevelopmentTeam = YZBRFWH5TP;
 						ProvisioningStyle = Manual;
 					};
 				};
@@ -186,6 +186,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -349,13 +350,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = J4N9H827FQ;
+				DEVELOPMENT_TEAM = YZBRFWH5TP;
 				INFOPLIST_FILE = XDQRCode/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "7ecb5201-b5dd-432c-97d0-c4e6a32350db";
-				PROVISIONING_PROFILE_SPECIFIER = mySelfTongyong;
+				PROVISIONING_PROFILE_SPECIFIER = YQ_tongyong;
 			};
 			name = Debug;
 		};
@@ -365,13 +366,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = J4N9H827FQ;
+				DEVELOPMENT_TEAM = YZBRFWH5TP;
 				INFOPLIST_FILE = XDQRCode/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "7ecb5201-b5dd-432c-97d0-c4e6a32350db";
-				PROVISIONING_PROFILE_SPECIFIER = mySelfTongyong;
+				PROVISIONING_PROFILE_SPECIFIER = YQ_tongyong;
 			};
 			name = Release;
 		};

@@ -3,6 +3,9 @@ NSAppTransportSecurity
 $(SRCROOT)
 OS_ACTIVITY_MODE : disable
 
+//配置文件路径
+~/Library/MobileDevice/Provisioning Profiles
+
 合并frameWork
 lipo -create 【模拟器打包path】 【真机打包path】 -output 【导出兼容版本path】
 
