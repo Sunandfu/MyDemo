@@ -350,7 +350,6 @@
 				7D93B8461ACFD7CF00453452 /* Frameworks */,
 				7D93B8471ACFD7CF00453452 /* Resources */,
 				E3C6CE4BF0E2DC22290F364C /* [CP] Embed Pods Frameworks */,
-				AC0440772142031EBF9B4523 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -372,7 +371,7 @@
 				TargetAttributes = {
 					7D93B8481ACFD7CF00453452 = {
 						CreatedOnToolsVersion = 6.2;
-						DevelopmentTeam = J4N9H827FQ;
+						DevelopmentTeam = YZBRFWH5TP;
 					};
 				};
 			};
@@ -381,6 +380,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -408,21 +408,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		AC0440772142031EBF9B4523 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Meizi/Pods-Meizi-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		D4F776C2BDC8413703A06507 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -447,7 +432,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Meizi/Pods-Meizi-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-Meizi/Pods-Meizi-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
 				"${BUILT_PRODUCTS_DIR}/DACircularProgress/DACircularProgress.framework",
 				"${BUILT_PRODUCTS_DIR}/MJExtension/MJExtension.framework",
@@ -470,7 +455,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Meizi/Pods-Meizi-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Meizi/Pods-Meizi-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -607,7 +592,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = J4N9H827FQ;
+				DEVELOPMENT_TEAM = YZBRFWH5TP;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Meizi/PrefixHeader.pch";
 				INFOPLIST_FILE = Meizi/Info.plist;
@@ -626,7 +611,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = J4N9H827FQ;
+				DEVELOPMENT_TEAM = YZBRFWH5TP;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Meizi/PrefixHeader.pch";
 				INFOPLIST_FILE = Meizi/Info.plist;

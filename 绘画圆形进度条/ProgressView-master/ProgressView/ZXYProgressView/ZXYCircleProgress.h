@@ -1,5 +1,5 @@
 //
-//  ZXYWaveProgress.h
+//  ZXYCircleProgress.h
 //  ZXYProgressView
 //
 //  Created by Mars on 2017/11/28.
@@ -8,14 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ZXYWaveProgress : UIView
+@interface ZXYCircleProgress : UIView
 
 /** 进度 */
 @property (nonatomic, assign) CGFloat progress;
-/** 填充颜色 */
-@property (nonatomic, strong) UIColor *fillColor;
-/** 边框颜色 */
-@property (nonatomic, strong) UIColor *strokeColor;
+/** 底层颜色 */
+@property (nonatomic, strong) UIColor *bottomColor;
+/** 顶层颜色 */
+@property (nonatomic, strong) UIColor *topColor;
+/** 宽度 */
+@property (nonatomic, assign) CGFloat progressWidth;
 
 
 /** 初始化 */

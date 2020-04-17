@@ -13,7 +13,8 @@
 		82E2088F1BC6500E00F23FCD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 82E2088D1BC6500E00F23FCD /* Main.storyboard */; };
 		82E208911BC6500E00F23FCD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 82E208901BC6500E00F23FCD /* Assets.xcassets */; };
 		82E208941BC6500E00F23FCD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 82E208921BC6500E00F23FCD /* LaunchScreen.storyboard */; };
-		82E208A01BC651B100F23FCD /* heartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 82E2089F1BC651B100F23FCD /* heartView.m */; settings = {ASSET_TAGS = (); }; };
+		82E208A01BC651B100F23FCD /* heartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 82E2089F1BC651B100F23FCD /* heartView.m */; };
+		E785687124091E46000A4E9B /* SFDrinkWaterView.m in Sources */ = {isa = PBXBuildFile; fileRef = E785686F24091E45000A4E9B /* SFDrinkWaterView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,8 @@
 		82E208951BC6500E00F23FCD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		82E2089E1BC651B100F23FCD /* heartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = heartView.h; sourceTree = "<group>"; };
 		82E2089F1BC651B100F23FCD /* heartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = heartView.m; sourceTree = "<group>"; };
+		E785686F24091E45000A4E9B /* SFDrinkWaterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFDrinkWaterView.m; sourceTree = "<group>"; };
+		E785687024091E45000A4E9B /* SFDrinkWaterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFDrinkWaterView.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +70,8 @@
 				82E2088B1BC6500E00F23FCD /* ViewController.m */,
 				82E2089E1BC651B100F23FCD /* heartView.h */,
 				82E2089F1BC651B100F23FCD /* heartView.m */,
+				E785687024091E45000A4E9B /* SFDrinkWaterView.h */,
+				E785686F24091E45000A4E9B /* SFDrinkWaterView.m */,
 				82E2088D1BC6500E00F23FCD /* Main.storyboard */,
 				82E208901BC6500E00F23FCD /* Assets.xcassets */,
 				82E208921BC6500E00F23FCD /* LaunchScreen.storyboard */,
@@ -123,6 +128,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -156,6 +162,7 @@
 			files = (
 				82E2088C1BC6500E00F23FCD /* ViewController.m in Sources */,
 				82E208A01BC651B100F23FCD /* heartView.m in Sources */,
+				E785687124091E46000A4E9B /* SFDrinkWaterView.m in Sources */,
 				82E208891BC6500E00F23FCD /* AppDelegate.m in Sources */,
 				82E208861BC6500E00F23FCD /* main.m in Sources */,
 			);
@@ -306,6 +313,7 @@
 				82E2089A1BC6500E00F23FCD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -8,9 +8,10 @@
 
 #import "ViewController.h"
 #import "heartView.h"
+#import "SFDrinkWaterView.h"
 
 @interface ViewController ()
-@property(nonatomic ,weak) heartView *heart;
+@property(nonatomic ,weak) SFDrinkWaterView *heart;
 @end
 
 @implementation ViewController
@@ -21,7 +22,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    heartView *heart = [[heartView alloc]initWithFrame:CGRectMake(50, 100, 200, 300)];
+    SFDrinkWaterView *heart = [[SFDrinkWaterView alloc]initWithFrame:CGRectMake(50, 100, 200, 300)];
     heart.backgroundColor = [UIColor clearColor];
     [self.view addSubview:heart];
     _heart = heart;

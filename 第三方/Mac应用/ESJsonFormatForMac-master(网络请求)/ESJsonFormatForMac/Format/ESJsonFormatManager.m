@@ -281,11 +281,11 @@
         NSString *methodStr = nil;
         if (isYYModel) {
             
-            //append method content (objectClassInArray) if YYModel
+            //append method content (mj_objectClassInArray) if YYModel
             methodStr = [NSString stringWithFormat:@"\n+ (NSDictionary<NSString *,id> *)modelContainerPropertyGenericClass{\n    return @{%@};\n}\n",result];
         }else{
-            // append method content (objectClassInArray)
-            methodStr = [NSString stringWithFormat:@"\n+ (NSDictionary *)objectClassInArray{\n    return @{%@};\n}\n",result];
+            // append method content (mj_objectClassInArray)
+            methodStr = [NSString stringWithFormat:@"\n+ (NSDictionary *)mj_objectClassInArray{\n    return @{%@};\n}\n",result];
         }
         
         return methodStr;
