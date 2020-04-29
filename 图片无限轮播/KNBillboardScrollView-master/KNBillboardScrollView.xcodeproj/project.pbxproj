@@ -1,0 +1,446 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A208A585C2E53873A22104A9 /* libPods-KNBillboardScrollView.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 43C43374965C18B941814BF3 /* libPods-KNBillboardScrollView.a */; };
+		C207C7441FBA93CC007A2551 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C207C7431FBA93CC007A2551 /* AppDelegate.m */; };
+		C207C7471FBA93CC007A2551 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C207C7461FBA93CC007A2551 /* ViewController.m */; };
+		C207C74A1FBA93CC007A2551 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C207C7481FBA93CC007A2551 /* Main.storyboard */; };
+		C207C74C1FBA93CC007A2551 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C207C74B1FBA93CC007A2551 /* Assets.xcassets */; };
+		C207C74F1FBA93CC007A2551 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C207C74D1FBA93CC007A2551 /* LaunchScreen.storyboard */; };
+		C207C7521FBA93CC007A2551 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C207C7511FBA93CC007A2551 /* main.m */; };
+		C207C75B1FBAA177007A2551 /* KNBillboadrView.m in Sources */ = {isa = PBXBuildFile; fileRef = C207C75A1FBAA177007A2551 /* KNBillboadrView.m */; };
+		C207C75E1FBAD090007A2551 /* NSTimer+KNTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = C207C75D1FBAD090007A2551 /* NSTimer+KNTimer.m */; };
+		C207C7631FBC2B98007A2551 /* 3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C207C7621FBC2B98007A2551 /* 3.jpg */; };
+		C207C7651FBC2C8D007A2551 /* KNBilboardDefalutImge.png in Resources */ = {isa = PBXBuildFile; fileRef = C207C7641FBC2C8D007A2551 /* KNBilboardDefalutImge.png */; };
+		C207C76B1FBC3F73007A2551 /* 2.gif in Resources */ = {isa = PBXBuildFile; fileRef = C207C76A1FBC3F73007A2551 /* 2.gif */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0DCF93B0FAAF6954361391F0 /* Pods-KNBillboardScrollView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KNBillboardScrollView.release.xcconfig"; path = "Pods/Target Support Files/Pods-KNBillboardScrollView/Pods-KNBillboardScrollView.release.xcconfig"; sourceTree = "<group>"; };
+		43C43374965C18B941814BF3 /* libPods-KNBillboardScrollView.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KNBillboardScrollView.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8B34064E9EED788E327F3DA9 /* Pods-KNBillboardScrollView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KNBillboardScrollView.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KNBillboardScrollView/Pods-KNBillboardScrollView.debug.xcconfig"; sourceTree = "<group>"; };
+		C207C73F1FBA93CC007A2551 /* KNBillboardScrollView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KNBillboardScrollView.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C207C7421FBA93CC007A2551 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		C207C7431FBA93CC007A2551 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		C207C7451FBA93CC007A2551 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		C207C7461FBA93CC007A2551 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		C207C7491FBA93CC007A2551 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C207C74B1FBA93CC007A2551 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C207C74E1FBA93CC007A2551 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C207C7501FBA93CC007A2551 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C207C7511FBA93CC007A2551 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		C207C7591FBAA177007A2551 /* KNBillboadrView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KNBillboadrView.h; sourceTree = "<group>"; };
+		C207C75A1FBAA177007A2551 /* KNBillboadrView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KNBillboadrView.m; sourceTree = "<group>"; };
+		C207C75C1FBAD090007A2551 /* NSTimer+KNTimer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSTimer+KNTimer.h"; sourceTree = "<group>"; };
+		C207C75D1FBAD090007A2551 /* NSTimer+KNTimer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSTimer+KNTimer.m"; sourceTree = "<group>"; };
+		C207C7621FBC2B98007A2551 /* 3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 3.jpg; sourceTree = "<group>"; };
+		C207C7641FBC2C8D007A2551 /* KNBilboardDefalutImge.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = KNBilboardDefalutImge.png; sourceTree = "<group>"; };
+		C207C76A1FBC3F73007A2551 /* 2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 2.gif; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C207C73C1FBA93CC007A2551 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A208A585C2E53873A22104A9 /* libPods-KNBillboardScrollView.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9AE2D9C441A466FA1CAF0852 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8B34064E9EED788E327F3DA9 /* Pods-KNBillboardScrollView.debug.xcconfig */,
+				0DCF93B0FAAF6954361391F0 /* Pods-KNBillboardScrollView.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		C207C7361FBA93CC007A2551 = {
+			isa = PBXGroup;
+			children = (
+				C207C7411FBA93CC007A2551 /* KNBillboardScrollView */,
+				C207C7401FBA93CC007A2551 /* Products */,
+				9AE2D9C441A466FA1CAF0852 /* Pods */,
+				C835D7B517A8C9B9345CEA5E /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		C207C7401FBA93CC007A2551 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C207C73F1FBA93CC007A2551 /* KNBillboardScrollView.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C207C7411FBA93CC007A2551 /* KNBillboardScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				C207C7581FBAA147007A2551 /* KNBillboadrView */,
+				C207C7421FBA93CC007A2551 /* AppDelegate.h */,
+				C207C7431FBA93CC007A2551 /* AppDelegate.m */,
+				C207C7451FBA93CC007A2551 /* ViewController.h */,
+				C207C7461FBA93CC007A2551 /* ViewController.m */,
+				C207C75F1FBC2B66007A2551 /* images */,
+				C207C7481FBA93CC007A2551 /* Main.storyboard */,
+				C207C74B1FBA93CC007A2551 /* Assets.xcassets */,
+				C207C74D1FBA93CC007A2551 /* LaunchScreen.storyboard */,
+				C207C7501FBA93CC007A2551 /* Info.plist */,
+				C207C7511FBA93CC007A2551 /* main.m */,
+			);
+			path = KNBillboardScrollView;
+			sourceTree = "<group>";
+		};
+		C207C7581FBAA147007A2551 /* KNBillboadrView */ = {
+			isa = PBXGroup;
+			children = (
+				C207C7591FBAA177007A2551 /* KNBillboadrView.h */,
+				C207C75A1FBAA177007A2551 /* KNBillboadrView.m */,
+				C207C75C1FBAD090007A2551 /* NSTimer+KNTimer.h */,
+				C207C75D1FBAD090007A2551 /* NSTimer+KNTimer.m */,
+			);
+			path = KNBillboadrView;
+			sourceTree = "<group>";
+		};
+		C207C75F1FBC2B66007A2551 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				C207C76A1FBC3F73007A2551 /* 2.gif */,
+				C207C7621FBC2B98007A2551 /* 3.jpg */,
+				C207C7641FBC2C8D007A2551 /* KNBilboardDefalutImge.png */,
+			);
+			path = images;
+			sourceTree = "<group>";
+		};
+		C835D7B517A8C9B9345CEA5E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				43C43374965C18B941814BF3 /* libPods-KNBillboardScrollView.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C207C73E1FBA93CC007A2551 /* KNBillboardScrollView */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C207C7551FBA93CC007A2551 /* Build configuration list for PBXNativeTarget "KNBillboardScrollView" */;
+			buildPhases = (
+				9A4B2F24F79AB2B90E7F321F /* [CP] Check Pods Manifest.lock */,
+				C207C73B1FBA93CC007A2551 /* Sources */,
+				C207C73C1FBA93CC007A2551 /* Frameworks */,
+				C207C73D1FBA93CC007A2551 /* Resources */,
+				F4BF3FB65818706E859F2E85 /* [CP] Embed Pods Frameworks */,
+				9D602E1A84FCA0A62B8C9C97 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KNBillboardScrollView;
+			productName = KNBillboardScrollView;
+			productReference = C207C73F1FBA93CC007A2551 /* KNBillboardScrollView.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C207C7371FBA93CC007A2551 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0910;
+				ORGANIZATIONNAME = KrystalName;
+				TargetAttributes = {
+					C207C73E1FBA93CC007A2551 = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = C207C73A1FBA93CC007A2551 /* Build configuration list for PBXProject "KNBillboardScrollView" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C207C7361FBA93CC007A2551;
+			productRefGroup = C207C7401FBA93CC007A2551 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C207C73E1FBA93CC007A2551 /* KNBillboardScrollView */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C207C73D1FBA93CC007A2551 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C207C76B1FBC3F73007A2551 /* 2.gif in Resources */,
+				C207C7631FBC2B98007A2551 /* 3.jpg in Resources */,
+				C207C7651FBC2C8D007A2551 /* KNBilboardDefalutImge.png in Resources */,
+				C207C74F1FBA93CC007A2551 /* LaunchScreen.storyboard in Resources */,
+				C207C74C1FBA93CC007A2551 /* Assets.xcassets in Resources */,
+				C207C74A1FBA93CC007A2551 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		9A4B2F24F79AB2B90E7F321F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		9D602E1A84FCA0A62B8C9C97 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KNBillboardScrollView/Pods-KNBillboardScrollView-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F4BF3FB65818706E859F2E85 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KNBillboardScrollView/Pods-KNBillboardScrollView-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C207C73B1FBA93CC007A2551 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C207C7471FBA93CC007A2551 /* ViewController.m in Sources */,
+				C207C75E1FBAD090007A2551 /* NSTimer+KNTimer.m in Sources */,
+				C207C7521FBA93CC007A2551 /* main.m in Sources */,
+				C207C7441FBA93CC007A2551 /* AppDelegate.m in Sources */,
+				C207C75B1FBAA177007A2551 /* KNBillboadrView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		C207C7481FBA93CC007A2551 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C207C7491FBA93CC007A2551 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		C207C74D1FBA93CC007A2551 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C207C74E1FBA93CC007A2551 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C207C7531FBA93CC007A2551 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		C207C7541FBA93CC007A2551 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C207C7561FBA93CC007A2551 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8B34064E9EED788E327F3DA9 /* Pods-KNBillboardScrollView.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = YZBRFWH5TP;
+				INFOPLIST_FILE = KNBillboardScrollView/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Leessang.KNBillboardScrollView;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C207C7571FBA93CC007A2551 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0DCF93B0FAAF6954361391F0 /* Pods-KNBillboardScrollView.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = YZBRFWH5TP;
+				INFOPLIST_FILE = KNBillboardScrollView/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Leessang.KNBillboardScrollView;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C207C73A1FBA93CC007A2551 /* Build configuration list for PBXProject "KNBillboardScrollView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C207C7531FBA93CC007A2551 /* Debug */,
+				C207C7541FBA93CC007A2551 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C207C7551FBA93CC007A2551 /* Build configuration list for PBXNativeTarget "KNBillboardScrollView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C207C7561FBA93CC007A2551 /* Debug */,
+				C207C7571FBA93CC007A2551 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C207C7371FBA93CC007A2551 /* Project object */;
+}

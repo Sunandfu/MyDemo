@@ -1,0 +1,667 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9AF595E221C8E63C00C6AF2B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF595DF21C8E63C00C6AF2B /* AppDelegate.swift */; };
+		9AF595E321C8E63C00C6AF2B /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF595E021C8E63C00C6AF2B /* MainTabBarController.swift */; };
+		9AF5960E21C8E7B100C6AF2B /* CYLPlusButtonSubclass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF595E721C8E7B000C6AF2B /* CYLPlusButtonSubclass.swift */; };
+		9AF5960F21C8E7B100C6AF2B /* PersonalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF595EC21C8E7B000C6AF2B /* PersonalViewController.swift */; };
+		9AF5961021C8E7B100C6AF2B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF595F221C8E7B000C6AF2B /* HomeViewController.swift */; };
+		9AF5961121C8E7B100C6AF2B /* ConnectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF595F821C8E7B000C6AF2B /* ConnectionViewController.swift */; };
+		9AF5961221C8E7B100C6AF2B /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF595FE21C8E7B000C6AF2B /* MessageViewController.swift */; };
+		9AF5961321C8E7B100C6AF2B /* PublishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF5960421C8E7B000C6AF2B /* PublishViewController.swift */; };
+		9AF5961421C8E7B100C6AF2B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9AF5960821C8E7B100C6AF2B /* Assets.xcassets */; };
+		9AF5961521C8E7B100C6AF2B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9AF5960921C8E7B100C6AF2B /* LaunchScreen.storyboard */; };
+		9AF5961621C8E7B100C6AF2B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9AF5960B21C8E7B100C6AF2B /* Main.storyboard */; };
+		C0196AB673A3C11A8689ED66 /* Pods_CYLTabBarController_Swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DEC604443F0BED5845C1590 /* Pods_CYLTabBarController_Swift.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		2CDA77BCC28E878CAB5EFD15 /* Pods-CYLTabBarController-Swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CYLTabBarController-Swift.release.xcconfig"; path = "Pods/Target Support Files/Pods-CYLTabBarController-Swift/Pods-CYLTabBarController-Swift.release.xcconfig"; sourceTree = "<group>"; };
+		922DCEDD1FF63399005C89BE /* CYLTabBarController-Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CYLTabBarController-Swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9AF595DF21C8E63C00C6AF2B /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		9AF595E021C8E63C00C6AF2B /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		9AF595E721C8E7B000C6AF2B /* CYLPlusButtonSubclass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CYLPlusButtonSubclass.swift; sourceTree = "<group>"; };
+		9AF595EC21C8E7B000C6AF2B /* PersonalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonalViewController.swift; sourceTree = "<group>"; };
+		9AF595F221C8E7B000C6AF2B /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		9AF595F821C8E7B000C6AF2B /* ConnectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionViewController.swift; sourceTree = "<group>"; };
+		9AF595FE21C8E7B000C6AF2B /* MessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
+		9AF5960421C8E7B000C6AF2B /* PublishViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PublishViewController.swift; sourceTree = "<group>"; };
+		9AF5960821C8E7B100C6AF2B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9AF5960A21C8E7B100C6AF2B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		9AF5960C21C8E7B100C6AF2B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		9AF5960D21C8E7B100C6AF2B /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9DEC604443F0BED5845C1590 /* Pods_CYLTabBarController_Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CYLTabBarController_Swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C7C15F27AFB129417A291CF9 /* Pods-CYLTabBarController-Swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CYLTabBarController-Swift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CYLTabBarController-Swift/Pods-CYLTabBarController-Swift.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		922DCEDA1FF63399005C89BE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C0196AB673A3C11A8689ED66 /* Pods_CYLTabBarController_Swift.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6961000247EFFCCDCECEE099 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9DEC604443F0BED5845C1590 /* Pods_CYLTabBarController_Swift.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		922DCED41FF63399005C89BE = {
+			isa = PBXGroup;
+			children = (
+				9AF595DF21C8E63C00C6AF2B /* AppDelegate.swift */,
+				9AF595E021C8E63C00C6AF2B /* MainTabBarController.swift */,
+				9AF595E821C8E7B000C6AF2B /* Module */,
+				9AF595E521C8E7B000C6AF2B /* Model */,
+				9AF595E621C8E7B000C6AF2B /* View */,
+				9AF5961821C8E8B700C6AF2B /* Controller */,
+				9AF5960721C8E7B100C6AF2B /* Other */,
+				922DCEDE1FF63399005C89BE /* Products */,
+				9E8F1952DFE997BA5D0E1F59 /* Pods */,
+				6961000247EFFCCDCECEE099 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		922DCEDE1FF63399005C89BE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				922DCEDD1FF63399005C89BE /* CYLTabBarController-Swift.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9AF595E521C8E7B000C6AF2B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		9AF595E621C8E7B000C6AF2B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9AF595E721C8E7B000C6AF2B /* CYLPlusButtonSubclass.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9AF595E821C8E7B000C6AF2B /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				9AF595E921C8E7B000C6AF2B /* Personal */,
+				9AF595EF21C8E7B000C6AF2B /* Home */,
+				9AF595F521C8E7B000C6AF2B /* Connection */,
+				9AF595FB21C8E7B000C6AF2B /* Message */,
+				9AF5960121C8E7B000C6AF2B /* Publish */,
+				9AF5961921C8E8D600C6AF2B /* Other */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
+		9AF595E921C8E7B000C6AF2B /* Personal */ = {
+			isa = PBXGroup;
+			children = (
+				9AF595EA21C8E7B000C6AF2B /* Other */,
+				9AF595EB21C8E7B000C6AF2B /* Controller */,
+				9AF595ED21C8E7B000C6AF2B /* Model */,
+				9AF595EE21C8E7B000C6AF2B /* View */,
+			);
+			path = Personal;
+			sourceTree = "<group>";
+		};
+		9AF595EA21C8E7B000C6AF2B /* Other */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		9AF595EB21C8E7B000C6AF2B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				9AF595EC21C8E7B000C6AF2B /* PersonalViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		9AF595ED21C8E7B000C6AF2B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		9AF595EE21C8E7B000C6AF2B /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9AF595EF21C8E7B000C6AF2B /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				9AF595F021C8E7B000C6AF2B /* Other */,
+				9AF595F121C8E7B000C6AF2B /* Controller */,
+				9AF595F321C8E7B000C6AF2B /* Model */,
+				9AF595F421C8E7B000C6AF2B /* View */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		9AF595F021C8E7B000C6AF2B /* Other */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		9AF595F121C8E7B000C6AF2B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				9AF595F221C8E7B000C6AF2B /* HomeViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		9AF595F321C8E7B000C6AF2B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		9AF595F421C8E7B000C6AF2B /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9AF595F521C8E7B000C6AF2B /* Connection */ = {
+			isa = PBXGroup;
+			children = (
+				9AF595F621C8E7B000C6AF2B /* Other */,
+				9AF595F721C8E7B000C6AF2B /* Controller */,
+				9AF595F921C8E7B000C6AF2B /* Model */,
+				9AF595FA21C8E7B000C6AF2B /* View */,
+			);
+			path = Connection;
+			sourceTree = "<group>";
+		};
+		9AF595F621C8E7B000C6AF2B /* Other */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		9AF595F721C8E7B000C6AF2B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				9AF595F821C8E7B000C6AF2B /* ConnectionViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		9AF595F921C8E7B000C6AF2B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		9AF595FA21C8E7B000C6AF2B /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9AF595FB21C8E7B000C6AF2B /* Message */ = {
+			isa = PBXGroup;
+			children = (
+				9AF595FC21C8E7B000C6AF2B /* Other */,
+				9AF595FD21C8E7B000C6AF2B /* Controller */,
+				9AF595FF21C8E7B000C6AF2B /* Model */,
+				9AF5960021C8E7B000C6AF2B /* View */,
+			);
+			path = Message;
+			sourceTree = "<group>";
+		};
+		9AF595FC21C8E7B000C6AF2B /* Other */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		9AF595FD21C8E7B000C6AF2B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				9AF595FE21C8E7B000C6AF2B /* MessageViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		9AF595FF21C8E7B000C6AF2B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		9AF5960021C8E7B000C6AF2B /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9AF5960121C8E7B000C6AF2B /* Publish */ = {
+			isa = PBXGroup;
+			children = (
+				9AF5960221C8E7B000C6AF2B /* Other */,
+				9AF5960321C8E7B000C6AF2B /* Controller */,
+				9AF5960521C8E7B000C6AF2B /* Model */,
+				9AF5960621C8E7B000C6AF2B /* View */,
+			);
+			path = Publish;
+			sourceTree = "<group>";
+		};
+		9AF5960221C8E7B000C6AF2B /* Other */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		9AF5960321C8E7B000C6AF2B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				9AF5960421C8E7B000C6AF2B /* PublishViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		9AF5960521C8E7B000C6AF2B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		9AF5960621C8E7B000C6AF2B /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9AF5960721C8E7B100C6AF2B /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				9AF5960821C8E7B100C6AF2B /* Assets.xcassets */,
+				9AF5960921C8E7B100C6AF2B /* LaunchScreen.storyboard */,
+				9AF5960B21C8E7B100C6AF2B /* Main.storyboard */,
+				9AF5960D21C8E7B100C6AF2B /* Info.plist */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		9AF5961821C8E8B700C6AF2B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		9AF5961921C8E8D600C6AF2B /* Other */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		9E8F1952DFE997BA5D0E1F59 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C7C15F27AFB129417A291CF9 /* Pods-CYLTabBarController-Swift.debug.xcconfig */,
+				2CDA77BCC28E878CAB5EFD15 /* Pods-CYLTabBarController-Swift.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		922DCEDC1FF63399005C89BE /* CYLTabBarController-Swift */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 922DCEEF1FF63399005C89BE /* Build configuration list for PBXNativeTarget "CYLTabBarController-Swift" */;
+			buildPhases = (
+				CDF94486ED41F7591F19980E /* [CP] Check Pods Manifest.lock */,
+				922DCED91FF63399005C89BE /* Sources */,
+				922DCEDA1FF63399005C89BE /* Frameworks */,
+				922DCEDB1FF63399005C89BE /* Resources */,
+				66B8CB3D934CEEA7F1A6E40D /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "CYLTabBarController-Swift";
+			productName = "CYLTabBarController-Swift";
+			productReference = 922DCEDD1FF63399005C89BE /* CYLTabBarController-Swift.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		922DCED51FF63399005C89BE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0920;
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = Anthony;
+				TargetAttributes = {
+					922DCEDC1FF63399005C89BE = {
+						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 1000;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 922DCED81FF63399005C89BE /* Build configuration list for PBXProject "CYLTabBarController-Swift" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 922DCED41FF63399005C89BE;
+			productRefGroup = 922DCEDE1FF63399005C89BE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				922DCEDC1FF63399005C89BE /* CYLTabBarController-Swift */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		922DCEDB1FF63399005C89BE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9AF5961521C8E7B100C6AF2B /* LaunchScreen.storyboard in Resources */,
+				9AF5961421C8E7B100C6AF2B /* Assets.xcassets in Resources */,
+				9AF5961621C8E7B100C6AF2B /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		66B8CB3D934CEEA7F1A6E40D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-CYLTabBarController-Swift/Pods-CYLTabBarController-Swift-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/CYLTabBarController/CYLTabBarController.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CYLTabBarController.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CYLTabBarController-Swift/Pods-CYLTabBarController-Swift-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CDF94486ED41F7591F19980E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CYLTabBarController-Swift-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		922DCED91FF63399005C89BE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9AF5961021C8E7B100C6AF2B /* HomeViewController.swift in Sources */,
+				9AF595E221C8E63C00C6AF2B /* AppDelegate.swift in Sources */,
+				9AF5961121C8E7B100C6AF2B /* ConnectionViewController.swift in Sources */,
+				9AF5960E21C8E7B100C6AF2B /* CYLPlusButtonSubclass.swift in Sources */,
+				9AF5961321C8E7B100C6AF2B /* PublishViewController.swift in Sources */,
+				9AF5960F21C8E7B100C6AF2B /* PersonalViewController.swift in Sources */,
+				9AF595E321C8E63C00C6AF2B /* MainTabBarController.swift in Sources */,
+				9AF5961221C8E7B100C6AF2B /* MessageViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		9AF5960921C8E7B100C6AF2B /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9AF5960A21C8E7B100C6AF2B /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		9AF5960B21C8E7B100C6AF2B /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9AF5960C21C8E7B100C6AF2B /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		922DCEED1FF63399005C89BE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		922DCEEE1FF63399005C89BE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		922DCEF01FF63399005C89BE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C7C15F27AFB129417A291CF9 /* Pods-CYLTabBarController-Swift.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = "$(SRCROOT)/Other/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "WeMadeCode.CYLTabBarController-Swift";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		922DCEF11FF63399005C89BE /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2CDA77BCC28E878CAB5EFD15 /* Pods-CYLTabBarController-Swift.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = "$(SRCROOT)/Other/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "WeMadeCode.CYLTabBarController-Swift";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		922DCED81FF63399005C89BE /* Build configuration list for PBXProject "CYLTabBarController-Swift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				922DCEED1FF63399005C89BE /* Debug */,
+				922DCEEE1FF63399005C89BE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		922DCEEF1FF63399005C89BE /* Build configuration list for PBXNativeTarget "CYLTabBarController-Swift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				922DCEF01FF63399005C89BE /* Debug */,
+				922DCEF11FF63399005C89BE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 922DCED51FF63399005C89BE /* Project object */;
+}

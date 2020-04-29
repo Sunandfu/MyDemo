@@ -1,0 +1,16 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+source 'git@github.com:CocoaPods/Specs.git'
+
+
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+source 'git@github.com:CocoaPods/Specs.git'
+
+platform:ios,'9.0'
+inhibit_all_warnings!
+
+target 'CYLTabBarController-Swift' do
+  use_frameworks!
+   pod 'CYLTabBarController'
+end

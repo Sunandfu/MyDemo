@@ -1,0 +1,26 @@
+PODS:
+  - CYLTabBarController/Core (1.28.5)
+  - CYLTabBarController/Lottie (1.28.5):
+    - CYLTabBarController/Core
+    - lottie-ios (~> 2.5.3)
+  - lottie-ios (2.5.3)
+  - MJRefresh (3.3.1)
+
+DEPENDENCIES:
+  - CYLTabBarController/Lottie (~> 1.28.5)
+  - MJRefresh
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - CYLTabBarController
+    - lottie-ios
+    - MJRefresh
+
+SPEC CHECKSUMS:
+  CYLTabBarController: edd9fecba9afa3f2e9e44ed50ca6dde69941f25f
+  lottie-ios: a50d5c0160425cd4b01b852bb9578963e6d92d31
+  MJRefresh: eeda70fbf0ad277f3178cef1cd0c3532591d6237
+
+PODFILE CHECKSUM: 321b51ed1fec8cd4bf47b6f553fe5eecfdf99493
+
+COCOAPODS: 1.8.3
