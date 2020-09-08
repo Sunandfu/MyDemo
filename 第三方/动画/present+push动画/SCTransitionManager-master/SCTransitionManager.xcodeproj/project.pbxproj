@@ -1,0 +1,389 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		258AE5AB1C67AB3F00B86BC6 /* SCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 258AE5AA1C67AB3F00B86BC6 /* SCViewController.m */; };
+		25F094761C649A9700942728 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 25F094751C649A9700942728 /* main.m */; };
+		25F094791C649A9700942728 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 25F094781C649A9700942728 /* AppDelegate.m */; };
+		25F0947C1C649A9700942728 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 25F0947B1C649A9700942728 /* ViewController.m */; };
+		25F0947F1C649A9700942728 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25F0947D1C649A9700942728 /* Main.storyboard */; };
+		25F094811C649A9700942728 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 25F094801C649A9700942728 /* Assets.xcassets */; };
+		25F094841C649A9700942728 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25F094821C649A9700942728 /* LaunchScreen.storyboard */; };
+		E741DA7325076D4800A2C9E8 /* SCGestureTransitionBackContext.m in Sources */ = {isa = PBXBuildFile; fileRef = E741DA6225076D4700A2C9E8 /* SCGestureTransitionBackContext.m */; };
+		E741DA7425076D4800A2C9E8 /* SCNormalDismissTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = E741DA6425076D4700A2C9E8 /* SCNormalDismissTransition.m */; };
+		E741DA7525076D4800A2C9E8 /* SCNormalPresentTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = E741DA6525076D4700A2C9E8 /* SCNormalPresentTransition.m */; };
+		E741DA7625076D4800A2C9E8 /* SCZoomDismissTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = E741DA6725076D4700A2C9E8 /* SCZoomDismissTransition.m */; };
+		E741DA7725076D4800A2C9E8 /* SCZoomPresentTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = E741DA6825076D4700A2C9E8 /* SCZoomPresentTransition.m */; };
+		E741DA7825076D4800A2C9E8 /* SCPresentTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = E741DA6A25076D4700A2C9E8 /* SCPresentTransition.m */; };
+		E741DA7925076D4800A2C9E8 /* SCPushTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = E741DA6B25076D4800A2C9E8 /* SCPushTransition.m */; };
+		E741DA7A25076D4800A2C9E8 /* SCTransitionDelegateManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E741DA6D25076D4800A2C9E8 /* SCTransitionDelegateManager.m */; };
+		E741DA7B25076D4800A2C9E8 /* UIView+Capture.m in Sources */ = {isa = PBXBuildFile; fileRef = E741DA6F25076D4800A2C9E8 /* UIView+Capture.m */; };
+		E741DA7C25076D4800A2C9E8 /* SCSwipeBackInteractionController.m in Sources */ = {isa = PBXBuildFile; fileRef = E741DA7225076D4800A2C9E8 /* SCSwipeBackInteractionController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		258AE5A91C67AB3F00B86BC6 /* SCViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCViewController.h; sourceTree = "<group>"; };
+		258AE5AA1C67AB3F00B86BC6 /* SCViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCViewController.m; sourceTree = "<group>"; };
+		25F094711C649A9700942728 /* SCTransitionManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SCTransitionManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		25F094751C649A9700942728 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		25F094771C649A9700942728 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		25F094781C649A9700942728 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		25F0947A1C649A9700942728 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		25F0947B1C649A9700942728 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		25F0947E1C649A9700942728 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		25F094801C649A9700942728 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		25F094831C649A9700942728 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		25F094851C649A9700942728 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E741DA5F25076D4700A2C9E8 /* SCZoomPresentTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCZoomPresentTransition.h; sourceTree = "<group>"; };
+		E741DA6025076D4700A2C9E8 /* SCNormalDismissTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCNormalDismissTransition.h; sourceTree = "<group>"; };
+		E741DA6125076D4700A2C9E8 /* SCPushTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCPushTransition.h; sourceTree = "<group>"; };
+		E741DA6225076D4700A2C9E8 /* SCGestureTransitionBackContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCGestureTransitionBackContext.m; sourceTree = "<group>"; };
+		E741DA6325076D4700A2C9E8 /* SCPresentTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCPresentTransition.h; sourceTree = "<group>"; };
+		E741DA6425076D4700A2C9E8 /* SCNormalDismissTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCNormalDismissTransition.m; sourceTree = "<group>"; };
+		E741DA6525076D4700A2C9E8 /* SCNormalPresentTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCNormalPresentTransition.m; sourceTree = "<group>"; };
+		E741DA6625076D4700A2C9E8 /* SCZoomDismissTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCZoomDismissTransition.h; sourceTree = "<group>"; };
+		E741DA6725076D4700A2C9E8 /* SCZoomDismissTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCZoomDismissTransition.m; sourceTree = "<group>"; };
+		E741DA6825076D4700A2C9E8 /* SCZoomPresentTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCZoomPresentTransition.m; sourceTree = "<group>"; };
+		E741DA6925076D4700A2C9E8 /* SCGestureTransitionBackContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCGestureTransitionBackContext.h; sourceTree = "<group>"; };
+		E741DA6A25076D4700A2C9E8 /* SCPresentTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCPresentTransition.m; sourceTree = "<group>"; };
+		E741DA6B25076D4800A2C9E8 /* SCPushTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCPushTransition.m; sourceTree = "<group>"; };
+		E741DA6C25076D4800A2C9E8 /* SCNormalPresentTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCNormalPresentTransition.h; sourceTree = "<group>"; };
+		E741DA6D25076D4800A2C9E8 /* SCTransitionDelegateManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCTransitionDelegateManager.m; sourceTree = "<group>"; };
+		E741DA6E25076D4800A2C9E8 /* UIView+Capture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Capture.h"; sourceTree = "<group>"; };
+		E741DA6F25076D4800A2C9E8 /* UIView+Capture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Capture.m"; sourceTree = "<group>"; };
+		E741DA7025076D4800A2C9E8 /* SCTransitionDelegateManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCTransitionDelegateManager.h; sourceTree = "<group>"; };
+		E741DA7125076D4800A2C9E8 /* SCSwipeBackInteractionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCSwipeBackInteractionController.h; sourceTree = "<group>"; };
+		E741DA7225076D4800A2C9E8 /* SCSwipeBackInteractionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCSwipeBackInteractionController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		25F0946E1C649A9700942728 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		25F094681C649A9700942728 = {
+			isa = PBXGroup;
+			children = (
+				25F094731C649A9700942728 /* SCTransitionManager */,
+				25F094721C649A9700942728 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		25F094721C649A9700942728 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				25F094711C649A9700942728 /* SCTransitionManager.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		25F094731C649A9700942728 /* SCTransitionManager */ = {
+			isa = PBXGroup;
+			children = (
+				E741DA4025076D3800A2C9E8 /* SCTransitionManager */,
+				25F094771C649A9700942728 /* AppDelegate.h */,
+				25F094781C649A9700942728 /* AppDelegate.m */,
+				25F0947A1C649A9700942728 /* ViewController.h */,
+				25F0947B1C649A9700942728 /* ViewController.m */,
+				258AE5A91C67AB3F00B86BC6 /* SCViewController.h */,
+				258AE5AA1C67AB3F00B86BC6 /* SCViewController.m */,
+				25F0947D1C649A9700942728 /* Main.storyboard */,
+				25F094801C649A9700942728 /* Assets.xcassets */,
+				25F094821C649A9700942728 /* LaunchScreen.storyboard */,
+				25F094851C649A9700942728 /* Info.plist */,
+				25F094741C649A9700942728 /* Supporting Files */,
+			);
+			path = SCTransitionManager;
+			sourceTree = "<group>";
+		};
+		25F094741C649A9700942728 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				25F094751C649A9700942728 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E741DA4025076D3800A2C9E8 /* SCTransitionManager */ = {
+			isa = PBXGroup;
+			children = (
+				E741DA6925076D4700A2C9E8 /* SCGestureTransitionBackContext.h */,
+				E741DA6225076D4700A2C9E8 /* SCGestureTransitionBackContext.m */,
+				E741DA6025076D4700A2C9E8 /* SCNormalDismissTransition.h */,
+				E741DA6425076D4700A2C9E8 /* SCNormalDismissTransition.m */,
+				E741DA6C25076D4800A2C9E8 /* SCNormalPresentTransition.h */,
+				E741DA6525076D4700A2C9E8 /* SCNormalPresentTransition.m */,
+				E741DA6325076D4700A2C9E8 /* SCPresentTransition.h */,
+				E741DA6A25076D4700A2C9E8 /* SCPresentTransition.m */,
+				E741DA6125076D4700A2C9E8 /* SCPushTransition.h */,
+				E741DA6B25076D4800A2C9E8 /* SCPushTransition.m */,
+				E741DA7125076D4800A2C9E8 /* SCSwipeBackInteractionController.h */,
+				E741DA7225076D4800A2C9E8 /* SCSwipeBackInteractionController.m */,
+				E741DA7025076D4800A2C9E8 /* SCTransitionDelegateManager.h */,
+				E741DA6D25076D4800A2C9E8 /* SCTransitionDelegateManager.m */,
+				E741DA6625076D4700A2C9E8 /* SCZoomDismissTransition.h */,
+				E741DA6725076D4700A2C9E8 /* SCZoomDismissTransition.m */,
+				E741DA5F25076D4700A2C9E8 /* SCZoomPresentTransition.h */,
+				E741DA6825076D4700A2C9E8 /* SCZoomPresentTransition.m */,
+				E741DA6E25076D4800A2C9E8 /* UIView+Capture.h */,
+				E741DA6F25076D4800A2C9E8 /* UIView+Capture.m */,
+			);
+			path = SCTransitionManager;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		25F094701C649A9700942728 /* SCTransitionManager */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 25F094881C649A9700942728 /* Build configuration list for PBXNativeTarget "SCTransitionManager" */;
+			buildPhases = (
+				25F0946D1C649A9700942728 /* Sources */,
+				25F0946E1C649A9700942728 /* Frameworks */,
+				25F0946F1C649A9700942728 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SCTransitionManager;
+			productName = SCTransitionManager;
+			productReference = 25F094711C649A9700942728 /* SCTransitionManager.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		25F094691C649A9700942728 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = sichenwang;
+				TargetAttributes = {
+					25F094701C649A9700942728 = {
+						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = YZBRFWH5TP;
+					};
+				};
+			};
+			buildConfigurationList = 25F0946C1C649A9700942728 /* Build configuration list for PBXProject "SCTransitionManager" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				English,
+				en,
+				Base,
+			);
+			mainGroup = 25F094681C649A9700942728;
+			productRefGroup = 25F094721C649A9700942728 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				25F094701C649A9700942728 /* SCTransitionManager */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		25F0946F1C649A9700942728 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				25F094841C649A9700942728 /* LaunchScreen.storyboard in Resources */,
+				25F094811C649A9700942728 /* Assets.xcassets in Resources */,
+				25F0947F1C649A9700942728 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		25F0946D1C649A9700942728 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				25F0947C1C649A9700942728 /* ViewController.m in Sources */,
+				E741DA7525076D4800A2C9E8 /* SCNormalPresentTransition.m in Sources */,
+				25F094791C649A9700942728 /* AppDelegate.m in Sources */,
+				E741DA7425076D4800A2C9E8 /* SCNormalDismissTransition.m in Sources */,
+				E741DA7325076D4800A2C9E8 /* SCGestureTransitionBackContext.m in Sources */,
+				258AE5AB1C67AB3F00B86BC6 /* SCViewController.m in Sources */,
+				E741DA7C25076D4800A2C9E8 /* SCSwipeBackInteractionController.m in Sources */,
+				E741DA7925076D4800A2C9E8 /* SCPushTransition.m in Sources */,
+				E741DA7825076D4800A2C9E8 /* SCPresentTransition.m in Sources */,
+				E741DA7B25076D4800A2C9E8 /* UIView+Capture.m in Sources */,
+				E741DA7725076D4800A2C9E8 /* SCZoomPresentTransition.m in Sources */,
+				E741DA7625076D4800A2C9E8 /* SCZoomDismissTransition.m in Sources */,
+				25F094761C649A9700942728 /* main.m in Sources */,
+				E741DA7A25076D4800A2C9E8 /* SCTransitionDelegateManager.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		25F0947D1C649A9700942728 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				25F0947E1C649A9700942728 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		25F094821C649A9700942728 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				25F094831C649A9700942728 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		25F094861C649A9700942728 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		25F094871C649A9700942728 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		25F094891C649A9700942728 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = YZBRFWH5TP;
+				INFOPLIST_FILE = SCTransitionManager/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.meilishuo.SCTransitionManager;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		25F0948A1C649A9700942728 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = SCTransitionManager/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.meilishuo.SCTransitionManager;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		25F0946C1C649A9700942728 /* Build configuration list for PBXProject "SCTransitionManager" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				25F094861C649A9700942728 /* Debug */,
+				25F094871C649A9700942728 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		25F094881C649A9700942728 /* Build configuration list for PBXNativeTarget "SCTransitionManager" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				25F094891C649A9700942728 /* Debug */,
+				25F0948A1C649A9700942728 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 25F094691C649A9700942728 /* Project object */;
+}

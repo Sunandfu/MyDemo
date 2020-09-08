@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		48B16C9B1ED55D77003CAFB3 /* CustomMunelabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 48B16C9A1ED55D77003CAFB3 /* CustomMunelabel.m */; };
+		E779D56E24725C7D00CBF134 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E779D56D24725C7D00CBF134 /* CoreText.framework */; };
 		EA1656FE1C40E2E20071D66E /* HistoryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA1656EF1C40E2E20071D66E /* HistoryTableViewController.m */; };
 		EA1656FF1C40E2E20071D66E /* album.png in Resources */ = {isa = PBXBuildFile; fileRef = EA1656F11C40E2E20071D66E /* album.png */; };
 		EA1657001C40E2E20071D66E /* album@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EA1656F21C40E2E20071D66E /* album@2x.png */; };
@@ -32,6 +33,7 @@
 /* Begin PBXFileReference section */
 		48B16C991ED55D77003CAFB3 /* CustomMunelabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomMunelabel.h; sourceTree = "<group>"; };
 		48B16C9A1ED55D77003CAFB3 /* CustomMunelabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomMunelabel.m; sourceTree = "<group>"; };
+		E779D56D24725C7D00CBF134 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 		EA1656ED1C40E2E20071D66E /* Config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Config.h; sourceTree = "<group>"; };
 		EA1656EE1C40E2E20071D66E /* HistoryTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryTableViewController.h; sourceTree = "<group>"; };
 		EA1656EF1C40E2E20071D66E /* HistoryTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryTableViewController.m; sourceTree = "<group>"; };
@@ -65,12 +67,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E779D56E24725C7D00CBF134 /* CoreText.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E779D56C24725C7D00CBF134 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E779D56D24725C7D00CBF134 /* CoreText.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		EA1656EC1C40E2E20071D66E /* lib */ = {
 			isa = PBXGroup;
 			children = (
@@ -107,6 +118,7 @@
 			children = (
 				EAA2EA711BB64D3400422C42 /* XDQRCode */,
 				EAA2EA701BB64D3400422C42 /* Products */,
+				E779D56C24725C7D00CBF134 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};

@@ -45,11 +45,12 @@
     UIMenuItem *copyMenuItem = [[UIMenuItem alloc]initWithTitle:@"复制" action:@selector(copyAction:)];
     UIMenuItem *pasteMenueItem = [[UIMenuItem alloc]initWithTitle:@"粘贴" action:@selector(pasteAction:)];
     UIMenuItem *cutMenuItem = [[UIMenuItem alloc]initWithTitle:@"剪切" action:@selector(cutAction:)];
+    UIMenuItem *queryMenuItem = [[UIMenuItem alloc]initWithTitle:@"查询" action:@selector(queryAction:)];
     
     UIMenuController *menuController = [UIMenuController sharedMenuController];
     
     
-    [menuController setMenuItems:[NSArray arrayWithObjects:copyMenuItem, pasteMenueItem,cutMenuItem, nil]];
+    [menuController setMenuItems:[NSArray arrayWithObjects:copyMenuItem, pasteMenueItem,cutMenuItem,queryMenuItem, nil]];
     [menuController setTargetRect:self.frame inView:self.superview];
     [menuController setMenuVisible:YES animated: YES];
     
@@ -67,6 +68,9 @@
         return YES;
     }
     if (action == @selector(cutAction:)) {
+        return YES;
+    }
+    if (action == @selector(queryAction:)) {
         return YES;
     }
     return NO; //隐藏系统默认的菜单项
@@ -87,5 +91,22 @@
     self.pBoard.string = self.text;
     self.text = nil;
 }
+
+- (void)queryAction:(id)sender {
+    UIReferenceLibraryViewController *referenceLibraryViewController = [[UIReferenceLibraryViewController alloc] initWithTerm:self.text];
+    [[self viewController] presentViewController:referenceLibraryViewController animated:YES completion:nil];
+}
+- (UIViewController *)viewController
+{
+    UIResponder *responder = self;
+    do {
+        responder = [responder nextResponder];
+        if ([responder isKindOfClass:[UIViewController class]]) {
+            return (UIViewController *)responder;
+        }
+    } while (responder != nil);
+    return nil;
+}
+
 
 @end

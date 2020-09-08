@@ -71,19 +71,19 @@
 //    self.cover;
 }
 
-//// 实现这个方法，就有删除按钮
-//- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-//{
-//    NSLog(@"删除111");
-//}
-//
-//-(UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath
-//{
-//    if (indexPath.row>0) {
-//        return UITableViewCellEditingStyleDelete;
-//    } else {
-//        return UITableViewCellEditingStyleNone;
-//    }
-//}
+// 实现这个方法，就有删除按钮
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSLog(@"删除111");
+}
+
+-(UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.row>0) {
+        return UITableViewCellEditingStyleDelete;
+    } else {
+        return UITableViewCellEditingStyleNone;
+    }
+}
 
 @end

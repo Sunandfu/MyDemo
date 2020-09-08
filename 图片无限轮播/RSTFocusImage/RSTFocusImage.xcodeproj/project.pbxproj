@@ -417,6 +417,7 @@
 				TargetAttributes = {
 					E7F223C51CD1B7E400096C70 = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = YZBRFWH5TP;
 					};
 					E7F223DE1CD1B7E400096C70 = {
 						CreatedOnToolsVersion = 7.3;
@@ -433,6 +434,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -659,6 +661,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = YZBRFWH5TP;
 				INFOPLIST_FILE = RSTFocusImage/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = rong.RSTFocusImage;
@@ -670,6 +673,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = YZBRFWH5TP;
 				INFOPLIST_FILE = RSTFocusImage/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = rong.RSTFocusImage;
