@@ -23,7 +23,7 @@
     [super viewDidLoad];
 
     self.title = @"三种特殊的layer动画";
-    _layerTypes = @[@"CAReplicatorLayer 复制层动画", @"CAEmitterLayer 粒子动画", @"CAGradientLayer 渐变动画"];
+    _layerTypes = @[@"CAReplicatorLayer 复制层动画", @"CAEmitterLayer 粒子动画", @"CAGradientLayer 渐变动画", @"隐式动画"];
     
     self.tableView.tableFooterView = [[UIView alloc] init];
 }
@@ -50,10 +50,14 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    YUAnimationViewController *animationCtrl = [[YUAnimationViewController alloc] init];
-    animationCtrl.layerType = indexPath.row;
-    animationCtrl.title = _layerTypes[indexPath.row];
-    [self.navigationController pushViewController:animationCtrl animated:YES];
+    if (indexPath.row==_layerTypes.count-1) {
+        [self.navigationController pushViewController:[NSClassFromString(@"YUYinshiAnimationViewController") new] animated:YES];
+    } else {
+        YUAnimationViewController *animationCtrl = [[YUAnimationViewController alloc] init];
+        animationCtrl.layerType = indexPath.row;
+        animationCtrl.title = _layerTypes[indexPath.row];
+        [self.navigationController pushViewController:animationCtrl animated:YES];
+    }
 }
 
 @end

@@ -41,8 +41,8 @@
 }
 
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
-//    [self.layerView.layer pop_removeAllAnimations];
-//    [self springAnimation];
+    [self.layerView.layer pop_removeAllAnimations];
+    [self springAnimation];
     
 //    [self basicAnimation];
     

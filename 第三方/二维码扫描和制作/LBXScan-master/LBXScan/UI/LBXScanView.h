@@ -12,13 +12,15 @@
 #import "LBXScanNetAnimation.h"
 #import "LBXScanViewStyle.h"
 
-
+#define LBXScan_Define_UI
 
 /**
  扫码区域显示效果
  */
 @interface LBXScanView : UIView
 
+//扫码区域各种参数
+@property (nonatomic, strong) LBXScanViewStyle* viewStyle;
 /**
  @brief  初始化
  @param frame 位置大小

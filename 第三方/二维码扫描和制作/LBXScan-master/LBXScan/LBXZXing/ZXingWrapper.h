@@ -8,17 +8,25 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import <AVFoundation/AVFoundation.h>
 
 #import "ZXBarcodeFormat.h"
 
+#define LBXScan_Define_ZXing
 
 /*!
  *  ZXing扫码封装
  */
 @interface ZXingWrapper : NSObject
 
+///连续扫码，默认NO
+@property (nonatomic, assign) BOOL continuous;
 
+//相机启动完成
+@property (nonatomic, copy) void (^onStarted)(void);
 
+@property (nonatomic, assign) NSInteger  orientation;
+@property (nonatomic, assign) CGRect videoLayerframe;
 /**
  初始化ZXing
 
@@ -28,6 +36,16 @@
  */
 - (instancetype)initWithPreView:(UIView*)preView block:(void(^)(ZXBarcodeFormat barcodeFormat,NSString *str,UIImage *scanImg))block;
 
+
+
+/**
+初始化ZXing
+
+@param preView 视频预览视图
+@param success 返回识别结果,resultPoints 表示条码在图像scanImg上的坐标
+@return 返回封装对象
+*/
+- (id)initWithPreView:(UIView*)preView success:(void(^)(ZXBarcodeFormat barcodeFormat,NSString *str,UIImage *scanImg,NSArray* resultPoints))success;
 
 
 /**

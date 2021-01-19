@@ -266,6 +266,7 @@
     picker.delegate = self;
     picker.mediaTypes = @[@"public.image"];
     picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    picker.modalPresentationStyle = UIModalPresentationFullScreen;
     [self presentViewController:picker animated:YES completion:nil];
     
 }
@@ -346,9 +347,8 @@
             CIQRCodeFeature *feature = [features firstObject];
             NSString *scannedResult = feature.messageString;
             [self readingFinshedWithMessage:scannedResult];
-//            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"QRCodeReader" message:scannedResult delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-//            [alert show];
-//            return;
+            [self dismissViewControllerAnimated:YES completion:nil];
+            return;
         }
         //变化区间可以自行设置
         i = i+0.5;

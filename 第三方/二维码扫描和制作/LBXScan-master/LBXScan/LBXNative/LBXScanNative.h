@@ -11,29 +11,11 @@
 @import Foundation;
 @import AVFoundation;
 
+#import "LBXScanTypes.h"
+#define LBXScan_Define_Native
 
 
 
-@interface LBXScanResult : NSObject
-
-
-- (instancetype)initWithScanString:(NSString*)str imgScan:(UIImage*)img barCodeType:(NSString*)type;
-
-/**
- @brief  条码字符串
- */
-@property (nonatomic, copy) NSString* strScanned;
-/**
- @brief  扫码图像
- */
-@property (nonatomic, strong) UIImage* imgScanned;
-/**
- @brief  扫码码的类型,AVMetadataObjectType  如AVMetadataObjectTypeQRCode，AVMetadataObjectTypeEAN13Code等
- 如果使用ZXing扫码，返回类型也已经转换成对应的AVMetadataObjectType
- */
-@property (nonatomic, copy) NSString* strBarCodeType;
-
-@end
 
 /**
  @brief  ios系统自带扫码功能
@@ -41,15 +23,46 @@
 @interface LBXScanNative : NSObject
 
 
+/// 是否需要条码位置信息,默认NO,位置信息在LBXScanResult中返回
+@property (nonatomic, assign) BOOL needCodePosion;
+
+///连续扫码，默认NO
+@property (nonatomic, assign) BOOL continuous;
+
+//default  AVCaptureVideoOrientationPortrait
+@property (nonatomic, assign) AVCaptureVideoOrientation  orientation;
+@property (nonatomic, assign) CGRect videoLayerframe;
+
+//相机启动完成
+@property (nonatomic, copy) void (^onStarted)(void);
+
 #pragma mark --初始化
 /**
  @brief  初始化采集相机
  @param preView 视频显示区域
  @param objType 识别码类型：如果为nil，默认支持很多类型。(二维码QR：AVMetadataObjectTypeQRCode,条码如：AVMetadataObjectTypeCode93Code
- @param block   识别结果
+ @param success   识别结果
  @return LBXScanNative的实例
  */
-- (instancetype)initWithPreView:(UIView*)preView ObjectType:(NSArray*)objType success:(void(^)(NSArray<LBXScanResult*> *array))block;
+- (instancetype)initWithPreView:(UIView*)preView
+                     ObjectType:(NSArray*)objType
+                        success:(void(^)(NSArray<LBXScanResult*> *array))success;
+
+
+
+
+/**
+@brief  初始化采集相机
+@param preView 视频显示区域
+@param objType 识别码类型：如果为nil，默认支持很多类型。(二维码QR：AVMetadataObjectTypeQRCode,条码如：AVMetadataObjectTypeCode93Code
+@param blockvideoMaxScale  返回摄像头放大最大范围
+@param success   识别结果
+@return LBXScanNative的实例
+*/
+- (instancetype)initWithPreView:(UIView*)preView
+                     ObjectType:(NSArray*)objType
+                  videoMaxScale:(void(^)(CGFloat maxScale))blockvideoMaxScale
+                        success:(void(^)(NSArray<LBXScanResult*> *array))success;
 
 
 /**
@@ -57,11 +70,29 @@
  @param preView 视频显示区域
  @param objType 识别码类型：如果为nil，默认支持很多类型。(二维码如QR：AVMetadataObjectTypeQRCode,条码如：AVMetadataObjectTypeCode93Code
  @param cropRect 识别区域，值CGRectZero 全屏识别
- @param block   识别结果
+ @param success   识别结果
  @return LBXScanNative的实例
  */
-- (instancetype)initWithPreView:(UIView*)preView ObjectType:(NSArray*)objType cropRect:(CGRect)cropRect
-              success:(void(^)(NSArray<LBXScanResult*> *array))block;
+- (instancetype)initWithPreView:(UIView*)preView
+                     ObjectType:(NSArray*)objType
+                       cropRect:(CGRect)cropRect
+                        success:(void(^)(NSArray<LBXScanResult*> *array))success;
+
+
+/**
+@brief  初始化采集相机
+@param preView 视频显示区域
+@param objType 识别码类型：如果为nil，默认支持很多类型。(二维码如QR：AVMetadataObjectTypeQRCode,条码如：AVMetadataObjectTypeCode93Code
+@param cropRect 识别区域，值CGRectZero 全屏识别
+@param blockvideoMaxScale  返回摄像头放大最大范围
+@param success   识别结果
+@return LBXScanNative的实例
+*/
+- (instancetype)initWithPreView:(UIView*)preView
+                     ObjectType:(NSArray*)objType
+                       cropRect:(CGRect)cropRect
+                  videoMaxScale:(void(^)(CGFloat maxScale))blockvideoMaxScale
+                        success:(void(^)(NSArray<LBXScanResult*> *array))success;
 
 
 
@@ -77,6 +108,11 @@
  */
 - (void)stopScan;
 
+
+/*!
+*  是否有闪光灯，在启动完成后可调用
+*/
+- (BOOL)hasTorch;
 /**
  *  开启关闭闪光灯
  *

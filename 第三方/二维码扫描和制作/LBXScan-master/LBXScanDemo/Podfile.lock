@@ -1,25 +1,35 @@
 PODS:
-  - LBXScan/LBXNative (2.0)
-  - LBXScan/LBXZBar (2.0):
-    - ZBarSDK (~> 1.3.1)
-  - LBXScan/LBXZXing (2.0)
-  - LBXScan/UI (2.0)
-  - ZBarSDK (1.3.1)
+  - LBXScan/LBXNative (2.4.1):
+    - LBXScan/Types (~> 2.2)
+  - LBXScan/LBXZXing (2.4.1):
+    - LBXScan/Types (~> 2.2)
+  - LBXScan/Types (2.4.1)
+  - LBXScan/UI (2.4.1):
+    - LBXScan/Types (~> 2.2)
+  - LBXZBarSDK (1.3.4)
+  - Toast (4.0.0)
 
 DEPENDENCIES:
   - LBXScan/LBXNative (from `../`)
-  - LBXScan/LBXZBar (from `../`)
   - LBXScan/LBXZXing (from `../`)
   - LBXScan/UI (from `../`)
+  - LBXZBarSDK (~> 1.3)
+  - Toast (~> 4.0.0)
+
+SPEC REPOS:
+  trunk:
+    - LBXZBarSDK
+    - Toast
 
 EXTERNAL SOURCES:
   LBXScan:
-    :path: ../
+    :path: "../"
 
 SPEC CHECKSUMS:
-  LBXScan: 15701fad409ab2d51ed517c1a51260e070d2d415
-  ZBarSDK: 4c1b5daeb7d6cc67dc9355e690af0230a661f6ec
+  LBXScan: 740f2a4dcff7923cb08700c8ac864ca300fb5335
+  LBXZBarSDK: e32ffa0db6e9da403c88316ed86ec19e2da4c532
+  Toast: 91b396c56ee72a5790816f40d3a94dd357abc196
 
-PODFILE CHECKSUM: 4add3353722fb500d4ef98cb0b90dac3aff18cf5
+PODFILE CHECKSUM: 22264310b927b0a02c11f7858c56d0fffe2302a8
 
-COCOAPODS: 1.2.0.rc.1
+COCOAPODS: 1.9.3

@@ -1,0 +1,406 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CA694867235EC48A0088197C /* FujianMapPath.m in Sources */ = {isa = PBXBuildFile; fileRef = CA694866235EC48A0088197C /* FujianMapPath.m */; };
+		CA69486A235EFCE10088197C /* Fujian.m in Sources */ = {isa = PBXBuildFile; fileRef = CA694869235EFCE10088197C /* Fujian.m */; };
+		CA69486D235EFF5F0088197C /* FujianMapController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA69486C235EFF5F0088197C /* FujianMapController.m */; };
+		CAE5647623538540003CBD3F /* CXProvincesMapView.m in Sources */ = {isa = PBXBuildFile; fileRef = CAE5647323538540003CBD3F /* CXProvincesMapView.m */; };
+		CAE5647B23538FBE003CBD3F /* ChinaMapPath.m in Sources */ = {isa = PBXBuildFile; fileRef = CAE5647723538FBE003CBD3F /* ChinaMapPath.m */; };
+		CAE5647C23538FBE003CBD3F /* ChinaMapView.m in Sources */ = {isa = PBXBuildFile; fileRef = CAE5647A23538FBE003CBD3F /* ChinaMapView.m */; };
+		DC5D89D6226B725700F16B77 /* SwiftLaunchView.m in Sources */ = {isa = PBXBuildFile; fileRef = DC5D89D5226B725700F16B77 /* SwiftLaunchView.m */; };
+		DC70E7E82264E0D000BBC128 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DC70E7E72264E0D000BBC128 /* AppDelegate.m */; };
+		DC70E7EB2264E0D000BBC128 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC70E7EA2264E0D000BBC128 /* ViewController.m */; };
+		DC70E7EE2264E0D000BBC128 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC70E7EC2264E0D000BBC128 /* Main.storyboard */; };
+		DC70E7F02264E0D100BBC128 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC70E7EF2264E0D100BBC128 /* Assets.xcassets */; };
+		DC70E7F32264E0D100BBC128 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC70E7F12264E0D100BBC128 /* LaunchScreen.storyboard */; };
+		DC70E7F62264E0D100BBC128 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DC70E7F52264E0D100BBC128 /* main.m */; };
+		DCAE735B227756AF002C1B7F /* StyleKitName.m in Sources */ = {isa = PBXBuildFile; fileRef = DCAE7359227756AF002C1B7F /* StyleKitName.m */; };
+		DCE8380F226E15310067AC93 /* SampleMapController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCE8380E226E15310067AC93 /* SampleMapController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		CA694865235EC48A0088197C /* FujianMapPath.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FujianMapPath.h; sourceTree = "<group>"; };
+		CA694866235EC48A0088197C /* FujianMapPath.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FujianMapPath.m; sourceTree = "<group>"; };
+		CA694868235EFCE00088197C /* Fujian.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Fujian.h; sourceTree = "<group>"; };
+		CA694869235EFCE10088197C /* Fujian.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Fujian.m; sourceTree = "<group>"; };
+		CA69486B235EFF5F0088197C /* FujianMapController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FujianMapController.h; sourceTree = "<group>"; };
+		CA69486C235EFF5F0088197C /* FujianMapController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FujianMapController.m; sourceTree = "<group>"; };
+		CAE5647223538540003CBD3F /* CXProvincesMapView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXProvincesMapView.h; sourceTree = "<group>"; };
+		CAE5647323538540003CBD3F /* CXProvincesMapView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXProvincesMapView.m; sourceTree = "<group>"; };
+		CAE5647723538FBE003CBD3F /* ChinaMapPath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChinaMapPath.m; sourceTree = "<group>"; };
+		CAE5647823538FBE003CBD3F /* ChinaMapPath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChinaMapPath.h; sourceTree = "<group>"; };
+		CAE5647923538FBE003CBD3F /* ChinaMapView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChinaMapView.h; sourceTree = "<group>"; };
+		CAE5647A23538FBE003CBD3F /* ChinaMapView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChinaMapView.m; sourceTree = "<group>"; };
+		DC5D89D4226B725700F16B77 /* SwiftLaunchView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftLaunchView.h; sourceTree = "<group>"; };
+		DC5D89D5226B725700F16B77 /* SwiftLaunchView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SwiftLaunchView.m; sourceTree = "<group>"; };
+		DC70E7E32264E0D000BBC128 /* CXProvincesMapView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CXProvincesMapView.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DC70E7E62264E0D000BBC128 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		DC70E7E72264E0D000BBC128 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		DC70E7E92264E0D000BBC128 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		DC70E7EA2264E0D000BBC128 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		DC70E7ED2264E0D000BBC128 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		DC70E7EF2264E0D100BBC128 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DC70E7F22264E0D100BBC128 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		DC70E7F42264E0D100BBC128 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DC70E7F52264E0D100BBC128 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		DCAE7359227756AF002C1B7F /* StyleKitName.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StyleKitName.m; sourceTree = "<group>"; };
+		DCAE735A227756AF002C1B7F /* StyleKitName.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StyleKitName.h; sourceTree = "<group>"; };
+		DCE8380D226E15310067AC93 /* SampleMapController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SampleMapController.h; sourceTree = "<group>"; };
+		DCE8380E226E15310067AC93 /* SampleMapController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SampleMapController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DC70E7E02264E0D000BBC128 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CAE5646C23538540003CBD3F /* CXProvincesMapView */ = {
+			isa = PBXGroup;
+			children = (
+				CAE5647823538FBE003CBD3F /* ChinaMapPath.h */,
+				CAE5647723538FBE003CBD3F /* ChinaMapPath.m */,
+				CAE5647923538FBE003CBD3F /* ChinaMapView.h */,
+				CAE5647A23538FBE003CBD3F /* ChinaMapView.m */,
+				CAE5647223538540003CBD3F /* CXProvincesMapView.h */,
+				CAE5647323538540003CBD3F /* CXProvincesMapView.m */,
+			);
+			path = CXProvincesMapView;
+			sourceTree = "<group>";
+		};
+		DC70E7DA2264E0D000BBC128 = {
+			isa = PBXGroup;
+			children = (
+				DC70E7E52264E0D000BBC128 /* CXProvincesMapView */,
+				DC70E7E42264E0D000BBC128 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DC70E7E42264E0D000BBC128 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DC70E7E32264E0D000BBC128 /* CXProvincesMapView.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DC70E7E52264E0D000BBC128 /* CXProvincesMapView */ = {
+			isa = PBXGroup;
+			children = (
+				CAE5646C23538540003CBD3F /* CXProvincesMapView */,
+				DCAE735A227756AF002C1B7F /* StyleKitName.h */,
+				DCAE7359227756AF002C1B7F /* StyleKitName.m */,
+				CA694868235EFCE00088197C /* Fujian.h */,
+				CA694869235EFCE10088197C /* Fujian.m */,
+				CA694865235EC48A0088197C /* FujianMapPath.h */,
+				CA694866235EC48A0088197C /* FujianMapPath.m */,
+				DCE8380D226E15310067AC93 /* SampleMapController.h */,
+				DCE8380E226E15310067AC93 /* SampleMapController.m */,
+				CA69486B235EFF5F0088197C /* FujianMapController.h */,
+				CA69486C235EFF5F0088197C /* FujianMapController.m */,
+				DC70E7E62264E0D000BBC128 /* AppDelegate.h */,
+				DC70E7E72264E0D000BBC128 /* AppDelegate.m */,
+				DC70E7E92264E0D000BBC128 /* ViewController.h */,
+				DC70E7EA2264E0D000BBC128 /* ViewController.m */,
+				DC5D89D4226B725700F16B77 /* SwiftLaunchView.h */,
+				DC5D89D5226B725700F16B77 /* SwiftLaunchView.m */,
+				DC70E7EC2264E0D000BBC128 /* Main.storyboard */,
+				DC70E7EF2264E0D100BBC128 /* Assets.xcassets */,
+				DC70E7F12264E0D100BBC128 /* LaunchScreen.storyboard */,
+				DC70E7F42264E0D100BBC128 /* Info.plist */,
+				DC70E7F52264E0D100BBC128 /* main.m */,
+			);
+			path = CXProvincesMapView;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DC70E7E22264E0D000BBC128 /* CXProvincesMapView */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DC70E7F92264E0D100BBC128 /* Build configuration list for PBXNativeTarget "CXProvincesMapView" */;
+			buildPhases = (
+				DC70E7DF2264E0D000BBC128 /* Sources */,
+				DC70E7E02264E0D000BBC128 /* Frameworks */,
+				DC70E7E12264E0D000BBC128 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CXProvincesMapView;
+			productName = CXProvincesMapView;
+			productReference = DC70E7E32264E0D000BBC128 /* CXProvincesMapView.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DC70E7DB2264E0D000BBC128 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1020;
+				ORGANIZATIONNAME = CXTretar;
+				TargetAttributes = {
+					DC70E7E22264E0D000BBC128 = {
+						CreatedOnToolsVersion = 10.2;
+					};
+				};
+			};
+			buildConfigurationList = DC70E7DE2264E0D000BBC128 /* Build configuration list for PBXProject "CXProvincesMapView" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DC70E7DA2264E0D000BBC128;
+			productRefGroup = DC70E7E42264E0D000BBC128 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DC70E7E22264E0D000BBC128 /* CXProvincesMapView */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DC70E7E12264E0D000BBC128 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC70E7F32264E0D100BBC128 /* LaunchScreen.storyboard in Resources */,
+				DC70E7F02264E0D100BBC128 /* Assets.xcassets in Resources */,
+				DC70E7EE2264E0D000BBC128 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DC70E7DF2264E0D000BBC128 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC70E7EB2264E0D000BBC128 /* ViewController.m in Sources */,
+				DCAE735B227756AF002C1B7F /* StyleKitName.m in Sources */,
+				CAE5647C23538FBE003CBD3F /* ChinaMapView.m in Sources */,
+				CA69486D235EFF5F0088197C /* FujianMapController.m in Sources */,
+				CA69486A235EFCE10088197C /* Fujian.m in Sources */,
+				DC70E7F62264E0D100BBC128 /* main.m in Sources */,
+				CA694867235EC48A0088197C /* FujianMapPath.m in Sources */,
+				DC70E7E82264E0D000BBC128 /* AppDelegate.m in Sources */,
+				CAE5647623538540003CBD3F /* CXProvincesMapView.m in Sources */,
+				DCE8380F226E15310067AC93 /* SampleMapController.m in Sources */,
+				DC5D89D6226B725700F16B77 /* SwiftLaunchView.m in Sources */,
+				CAE5647B23538FBE003CBD3F /* ChinaMapPath.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		DC70E7EC2264E0D000BBC128 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DC70E7ED2264E0D000BBC128 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		DC70E7F12264E0D100BBC128 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DC70E7F22264E0D100BBC128 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DC70E7F72264E0D100BBC128 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		DC70E7F82264E0D100BBC128 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DC70E7FA2264E0D100BBC128 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = NN56R38BZT;
+				INFOPLIST_FILE = CXProvincesMapView/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.CXTretar.CXProvincesMapView;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		DC70E7FB2264E0D100BBC128 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = NN56R38BZT;
+				INFOPLIST_FILE = CXProvincesMapView/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.CXTretar.CXProvincesMapView;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DC70E7DE2264E0D000BBC128 /* Build configuration list for PBXProject "CXProvincesMapView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DC70E7F72264E0D100BBC128 /* Debug */,
+				DC70E7F82264E0D100BBC128 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DC70E7F92264E0D100BBC128 /* Build configuration list for PBXNativeTarget "CXProvincesMapView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DC70E7FA2264E0D100BBC128 /* Debug */,
+				DC70E7FB2264E0D100BBC128 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DC70E7DB2264E0D000BBC128 /* Project object */;
+}

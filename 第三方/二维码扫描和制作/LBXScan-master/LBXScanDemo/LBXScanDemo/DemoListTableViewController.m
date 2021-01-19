@@ -9,19 +9,27 @@
 #import "DemoListTableViewController.h"
 #import <objc/message.h>
 
-#import "LBXScanPermissions.h"
+#import "LBXPermission.h"
+#import "LBXPermissionSetting.h"
 #import "LBXAlertAction.h"
 #import "Global.h"
 #import "SettingViewController.h"
 
-//#import <LBXScanViewStyle.h>
+#import "StyleDIY.h"
 
-#import "LBXScanViewStyle.h"
-#import "LBXScanViewController.h"
-#import "QQLBXScanViewController.h"
+
+
+#import "LBXScanNativeViewController.h"
+#import "LBXScanZXingViewController.h"
+#import "LBXScanZBarViewController.h"
+
+#import "QQScanNativeViewController.h"
+#import "QQScanZBarViewController.h"
+#import "QQScanZXingViewController.h"
+
 #import "ScanResultViewController.h"
 #import "CreateBarCodeViewController.h"
-#import "StyleDIY.h"
+
 
 @interface DemoListTableViewController ()<UIImagePickerControllerDelegate,UINavigationControllerDelegate>
 @property (nonatomic, strong) NSArray<NSArray*>* arrayItems;
@@ -101,17 +109,21 @@
     
     switch ([Global sharedManager].libraryType) {
         case SLT_Native:
-            self.title = @"当前使用库:native";
+            self.title = @"当前库:native";
             break;
         case SLT_ZXing:
-            self.title = @"当前使用库:ZXing";
+            self.title = @"当前库:ZXing";
             break;
         case SLT_ZBar:
-            self.title = @"当前使用库:ZBar";
+            self.title = @"当前库:ZBar";
             break;
         default:
             break;
     }
+    
+        
+    self.title = [NSString stringWithFormat:@"%@-%@",self.title,[Global sharedManager].continuous ? @"连续扫码" : @"不连续扫码" ];
+    
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -173,12 +185,24 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (![LBXScanPermissions cameraPemission])
-    {
-        [self showError:@"没有摄像机权限"];
-        return;
-    }
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
 
+    
+    __weak __typeof(self) weakSelf = self;
+    [LBXPermission authorizeWithType:LBXPermissionType_Camera completion:^(BOOL granted, BOOL firstTime) {
+        if (granted) {
+            [weakSelf startWithIndexPath:indexPath];
+        }
+        else if(!firstTime)
+        {
+            [LBXPermissionSetting showAlertToDislayPrivacySettingWithTitle:@"提示" msg:@"没有相机权限，是否前往设置" cancel:@"取消" setting:@"设置" ];
+        }
+    }];
+  
+}
+
+- (void)startWithIndexPath:(NSIndexPath *)indexPath
+{
     NSArray* array = _arrayItems[indexPath.section][indexPath.row];
     NSString *methodName = array.lastObject;
     SEL normalSelector = NSSelectorFromString(methodName);
@@ -186,29 +210,63 @@
         
         ((void (*)(id, SEL))objc_msgSend)(self, normalSelector);
     }
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 #pragma mark ---自定义界面
 
 - (void)openScanVCWithStyle:(LBXScanViewStyle*)style
 {
-    LBXScanViewController *vc = [LBXScanViewController new];
+    LBXScanBaseViewController *vc = [self createScanVC];
+    
     vc.style = style;
-    vc.isOpenInterestRect = YES;
+    vc.orientation = [StyleDIY videoOrientation];
     [self.navigationController pushViewController:vc animated:YES];
 }
 
 #pragma mark -模仿qq界面
 - (void)qqStyle
 {
-    //添加一些扫码或相册结果处理
-    QQLBXScanViewController *vc = [QQLBXScanViewController new];
-    vc.style = [StyleDIY qqStyle];
+    switch ([Global sharedManager].libraryType) {
+        case SLT_Native:
+        {
+            QQScanNativeViewController *vc = [QQScanNativeViewController new];
+            vc.style = [StyleDIY qqStyle];
+            vc.orientation = [StyleDIY videoOrientation];
+            //镜头拉远拉近功能
+            vc.isVideoZoom = YES;
+            vc.cameraInvokeMsg = @"相机启动中";
+            vc.continuous = [Global sharedManager].continuous;
+
+            [self.navigationController pushViewController:vc animated:YES];
+        }
+            break;
+        case SLT_ZXing:
+        {
+            QQScanZXingViewController *vc = [QQScanZXingViewController new];
+            vc.style = [StyleDIY qqStyle];
+            vc.cameraInvokeMsg = @"相机启动中";
+            vc.continuous = [Global sharedManager].continuous;
+            vc.orientation = [StyleDIY videoOrientation];
+            [self.navigationController pushViewController:vc animated:YES];
+        }
+            
+            break;
+        case SLT_ZBar:
+        {
+            QQScanZBarViewController *vc = [QQScanZBarViewController new];
+            vc.style = [StyleDIY qqStyle];
+            
+            vc.cameraInvokeMsg = @"相机启动中";
+            vc.continuous = [Global sharedManager].continuous;
+            vc.orientation = [StyleDIY videoOrientation];
+            [self.navigationController pushViewController:vc animated:YES];
+            
+        }
+            break;
+        default:
+            break;
+    }
     
-    //镜头拉远拉近功能
-    vc.isVideoZoom = YES;
-    [self.navigationController pushViewController:vc animated:YES];
 }
 
 #pragma mark --模仿支付宝
@@ -217,25 +275,25 @@
     [self openScanVCWithStyle:[StyleDIY ZhiFuBaoStyle]];
 }
 
-#pragma mark - 无边框，内嵌4个角
+#pragma mark -无边框，内嵌4个角
 - (void)InnerStyle
 {
     [self openScanVCWithStyle:[StyleDIY InnerStyle]];
 }
 
-#pragma mark - 模仿微信
+#pragma mark -无边框，内嵌4个角
 - (void)weixinStyle
 {
     [self openScanVCWithStyle:[StyleDIY weixinStyle]];
 }
 
-#pragma mark - 框内区域识别
+#pragma mark -框内区域识别
 - (void)recoCropRect
 {
-    LBXScanViewController *vc = [LBXScanViewController new];
+    LBXScanBaseViewController *vc = [self createScanVC];
+    
     vc.style = [StyleDIY recoCropRect];
-    //开启只识别框内
-    vc.isOpenInterestRect = YES;
+    
     [self.navigationController pushViewController:vc animated:YES];
 }
 
@@ -248,11 +306,10 @@
 #pragma mark -自定义4个角及矩形框颜色
 - (void)changeColor
 {
-    LBXScanViewController *vc = [LBXScanViewController new];
+    LBXScanBaseViewController *vc = [self createScanVC];
+
     vc.style = [StyleDIY changeColor];
-    
-    //开启只识别矩形框内图像功能
-    vc.isOpenInterestRect = YES;
+
     [self.navigationController pushViewController:vc animated:YES];
 }
 
@@ -266,6 +323,47 @@
 - (void)notSquare
 {
     [self openScanVCWithStyle:[StyleDIY notSquare]];
+}
+
+
+- (LBXScanBaseViewController*)createScanVC
+{
+    LBXScanBaseViewController *vc = nil;
+    
+    switch ([Global sharedManager].libraryType) {
+        case SLT_Native:
+        {
+           LBXScanNativeViewController* tmp = [LBXScanNativeViewController new];
+            tmp.listScanTypes = @[[StyleDIY nativeCodeWithType:[Global sharedManager].scanCodeType]];
+            vc = tmp;
+        }
+            break;
+        case SLT_ZXing:
+        {
+            vc = [LBXScanZXingViewController new];
+        }
+            break;
+        case SLT_ZBar:
+        {
+            LBXScanZBarViewController *tmp = [LBXScanZBarViewController new];
+            tmp.zbarType = [StyleDIY zbarTypeWithScanType:[Global sharedManager].scanCodeType];
+            vc = tmp;
+        }
+            break;
+        default:
+            break;
+    }
+    
+    vc.cameraInvokeMsg = @"相机启动中";
+    
+    //开启只识别框内,ZBar暂不支持
+    vc.isOpenInterestRect = NO;
+    
+    vc.continuous = [Global sharedManager].continuous;
+
+    
+    return vc;
+    
 }
 
 #pragma mark --生成条码
@@ -282,15 +380,19 @@
 }
 
 
-#pragma mark - 相册
+#pragma mark- - 相册
 - (void)openLocalPhotoAlbum
 {
-    if ([LBXScanPermissions photoPermission])
-    {
-        [self openLocalPhoto];
-    }
-    else
-        [self showError:@"      请到设置->隐私中开启本程序相册权限     "];
+    __weak __typeof(self) weakSelf = self;
+    [LBXPermission authorizeWithType:LBXPermissionType_Photos completion:^(BOOL granted, BOOL firstTime) {
+        if (granted) {
+            [weakSelf openLocalPhoto];
+        }
+        else if (!firstTime )
+        {
+            [LBXPermissionSetting showAlertToDislayPrivacySettingWithTitle:@"提示" msg:@"没有相册权限，是否前往设置" cancel:@"取消" setting:@"设置"];
+        }
+    }];
 }
 
 /*!
@@ -305,7 +407,7 @@
     picker.delegate = self;
     
     //部分机型可能导致崩溃
-    picker.allowsEditing = YES;
+    picker.allowsEditing = NO;
     
     [self presentViewController:picker animated:YES completion:nil];
 }
@@ -314,8 +416,14 @@
 
 -(void)imagePickerController:(UIImagePickerController*)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
-    [picker dismissViewControllerAnimated:YES completion:nil];
-    
+    [picker dismissViewControllerAnimated:YES completion:^{
+        
+        [self handPhotoDidFinishPickingMediaWithInfo:info];
+    }];
+}
+
+- (void)handPhotoDidFinishPickingMediaWithInfo:(NSDictionary *)info
+{
     __block UIImage* image = [info objectForKey:UIImagePickerControllerEditedImage];
     
     if (!image){
@@ -325,16 +433,13 @@
     switch ([Global sharedManager].libraryType) {
         case SLT_Native:
         {
-            if ([[[UIDevice currentDevice]systemVersion]floatValue] >= 8.0)
-            {
+            if (@available(iOS 8.0, *)) {
                 //ios8.0之后支持
                 __weak __typeof(self) weakSelf = self;
                 [LBXScanNative recognizeImage:image success:^(NSArray<LBXScanResult *> *array) {
                     [weakSelf scanResultWithArray:array];
                 }];
-            }
-            else
-            {
+            }else{
                 [self showError:@"native低于ios8.0不支持识别图片"];
             }
         }
@@ -344,12 +449,17 @@
             __weak __typeof(self) weakSelf = self;
             [ZXingWrapper recognizeImage:image block:^(ZXBarcodeFormat barcodeFormat, NSString *str) {
                 
-                LBXScanResult *result = [[LBXScanResult alloc]init];
-                result.strScanned = str;
-                result.imgScanned = image;
-                result.strBarCodeType = [StyleDIY convertZXBarcodeFormat:barcodeFormat];
-                
-                [weakSelf scanResultWithArray:@[result]];
+                if (str) {
+                    LBXScanResult *result = [[LBXScanResult alloc]init];
+                    result.strScanned = str;
+                    result.imgScanned = image;
+                    result.strBarCodeType = [StyleDIY convertZXBarcodeFormat:barcodeFormat];
+                    
+                    [weakSelf scanResultWithArray:@[result]];
+                }else
+                {
+                    [self showError:@"识别失败"];
+                }
             }];
         }
             break;
@@ -359,15 +469,21 @@
             
             [LBXZBarWrapper recognizeImage:image block:^(NSArray<LBXZbarResult *> *result) {
                 
-                //测试，只使用扫码结果第一项
-                LBXZbarResult *firstObj = result[0];
-                
-                LBXScanResult *scanResult = [[LBXScanResult alloc]init];
-                scanResult.strScanned = firstObj.strScanned;
-                scanResult.imgScanned = firstObj.imgScanned;
-                scanResult.strBarCodeType = [LBXZBarWrapper convertFormat2String:firstObj.format];
-                
-                [weakSelf scanResultWithArray:@[scanResult]];
+                if (result && result.count > 0) {
+                    
+                    //测试，只使用扫码结果第一项
+                    LBXZbarResult *firstObj = result[0];
+                    
+                    LBXScanResult *scanResult = [[LBXScanResult alloc]init];
+                    scanResult.strScanned = firstObj.strScanned;
+                    scanResult.imgScanned = firstObj.imgScanned;
+                    scanResult.strBarCodeType = [LBXZBarWrapper convertFormat2String:firstObj.format];
+                    
+                    [weakSelf scanResultWithArray:@[scanResult]];
+                }else
+                {
+                    [self showError:@"识别失败"];
+                }
                 
             }];
         }
@@ -377,9 +493,10 @@
             break;
     }
 }
+
 - (void)scanResultWithArray:(NSArray<LBXScanResult*>*)array
 {
-    if (array.count < 1)
+    if (!array || array.count < 1)
     {
         [self showError:@"识别失败了"];
         

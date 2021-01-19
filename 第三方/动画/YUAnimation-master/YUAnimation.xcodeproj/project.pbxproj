@@ -18,6 +18,8 @@
 		C369CC771E45870200A8FECF /* YULoadingLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = C369CC761E45870200A8FECF /* YULoadingLabel.m */; };
 		C369CC7C1E4588CD00A8FECF /* EmitterLayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = C369CC791E4588CD00A8FECF /* EmitterLayerView.m */; };
 		C369CC7D1E4588CD00A8FECF /* SnowView.m in Sources */ = {isa = PBXBuildFile; fileRef = C369CC7B1E4588CD00A8FECF /* SnowView.m */; };
+		E7C5CE332595DCF700D12FF7 /* YUYinshiAnimationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7C5CE312595DCF700D12FF7 /* YUYinshiAnimationViewController.m */; };
+		E7C5CE342595DCF700D12FF7 /* YUYinshiAnimationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7C5CE322595DCF700D12FF7 /* YUYinshiAnimationViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +43,9 @@
 		C369CC791E4588CD00A8FECF /* EmitterLayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmitterLayerView.m; sourceTree = "<group>"; };
 		C369CC7A1E4588CD00A8FECF /* SnowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SnowView.h; sourceTree = "<group>"; };
 		C369CC7B1E4588CD00A8FECF /* SnowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SnowView.m; sourceTree = "<group>"; };
+		E7C5CE302595DCF700D12FF7 /* YUYinshiAnimationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUYinshiAnimationViewController.h; sourceTree = "<group>"; };
+		E7C5CE312595DCF700D12FF7 /* YUYinshiAnimationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUYinshiAnimationViewController.m; sourceTree = "<group>"; };
+		E7C5CE322595DCF700D12FF7 /* YUYinshiAnimationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YUYinshiAnimationViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +86,9 @@
 				C369CC701E4570C700A8FECF /* YUAnimationViewController.m */,
 				C369CC721E4576E900A8FECF /* YUReplicatorAnimation.h */,
 				C369CC731E4576E900A8FECF /* YUReplicatorAnimation.m */,
+				E7C5CE302595DCF700D12FF7 /* YUYinshiAnimationViewController.h */,
+				E7C5CE312595DCF700D12FF7 /* YUYinshiAnimationViewController.m */,
+				E7C5CE322595DCF700D12FF7 /* YUYinshiAnimationViewController.xib */,
 				C369CC751E45870200A8FECF /* YULoadingLabel.h */,
 				C369CC761E45870200A8FECF /* YULoadingLabel.m */,
 				C369CC781E4588CD00A8FECF /* EmitterLayerView.h */,
@@ -136,7 +144,7 @@
 				TargetAttributes = {
 					C3482BBC1E4489DD00FEFEE8 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = BM238LXE9L;
+						DevelopmentTeam = YZBRFWH5TP;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -146,6 +154,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -165,6 +174,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C3482BD01E4489DD00FEFEE8 /* LaunchScreen.storyboard in Resources */,
+				E7C5CE342595DCF700D12FF7 /* YUYinshiAnimationViewController.xib in Resources */,
 				C3482BCD1E4489DD00FEFEE8 /* Assets.xcassets in Resources */,
 				C3482BCB1E4489DD00FEFEE8 /* Main.storyboard in Resources */,
 			);
@@ -181,6 +191,7 @@
 				C369CC7C1E4588CD00A8FECF /* EmitterLayerView.m in Sources */,
 				C369CC771E45870200A8FECF /* YULoadingLabel.m in Sources */,
 				C3482BC21E4489DD00FEFEE8 /* main.m in Sources */,
+				E7C5CE332595DCF700D12FF7 /* YUYinshiAnimationViewController.m in Sources */,
 				C3482BD91E448B2400FEFEE8 /* YUMainTableViewController.m in Sources */,
 				C369CC741E4576E900A8FECF /* YUReplicatorAnimation.m in Sources */,
 				C369CC711E4570C700A8FECF /* YUAnimationViewController.m in Sources */,
@@ -304,7 +315,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = BM238LXE9L;
+				DEVELOPMENT_TEAM = YZBRFWH5TP;
 				INFOPLIST_FILE = YUAnimation/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -317,7 +328,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = BM238LXE9L;
+				DEVELOPMENT_TEAM = YZBRFWH5TP;
 				INFOPLIST_FILE = YUAnimation/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

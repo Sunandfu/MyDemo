@@ -25,6 +25,8 @@
 }
 
 - (IBAction)btnAction:(UIButton *)sender {
+    NSString *weather = self.weathers[arc4random() % self.weathers.count];
+    [self setAppIconWithName:weather];
 }
 
 - (void)setAppIconWithName:(NSString *)iconName {

@@ -12,12 +12,12 @@
 #import "LBXZXCapture.h"
 
 
-typedef void(^blockScan)(ZXBarcodeFormat barcodeFormat,NSString *str,UIImage *scanImg);
-
 @interface ZXingWrapper() <LBXZXCaptureDelegate>
 @property (nonatomic, strong) LBXZXCapture *capture;
 
-@property (nonatomic,copy)blockScan block;
+@property (nonatomic, copy) void (^success)(ZXBarcodeFormat barcodeFormat,NSString *str,UIImage *scanImg);
+
+@property (nonatomic, copy) void (^onSuccess)(ZXBarcodeFormat barcodeFormat,NSString *str,UIImage *scanImg,NSArray* resultPoints);
 
 @property (nonatomic, assign) BOOL bNeedScanResult;
 
@@ -34,10 +34,16 @@ typedef void(^blockScan)(ZXBarcodeFormat barcodeFormat,NSString *str,UIImage *sc
         self.capture.camera = self.capture.back;
         self.capture.focusMode = AVCaptureFocusModeContinuousAutoFocus;
         self.capture.rotation = 90.0f;
-        
         self.capture.delegate = self;
+        self.continuous = NO;
+        self.orientation = AVCaptureVideoOrientationPortrait;
     }
     return self;
+}
+
+- (void)setOnStarted:(void (^)(void))onStarted
+{
+    self.capture.onStarted = onStarted;
 }
 
 - (id)initWithPreView:(UIView*)preView block:(void(^)(ZXBarcodeFormat barcodeFormat,NSString *str,UIImage *scanImg))block
@@ -48,10 +54,11 @@ typedef void(^blockScan)(ZXBarcodeFormat barcodeFormat,NSString *str,UIImage *sc
         self.capture.camera = self.capture.back;
         self.capture.focusMode = AVCaptureFocusModeContinuousAutoFocus;
         self.capture.rotation = 90.0f;
-        
         self.capture.delegate = self;
+        self.continuous = NO;
+        self.orientation = AVCaptureVideoOrientationPortrait;
         
-        self.block = block;
+        self.success = block;
         
         CGRect rect = preView.frame;
         rect.origin = CGPointZero;
@@ -61,6 +68,31 @@ typedef void(^blockScan)(ZXBarcodeFormat barcodeFormat,NSString *str,UIImage *sc
         
         [preView.layer insertSublayer:self.capture.layer atIndex:0];
         
+    }
+    return self;
+}
+
+- (id)initWithPreView:(UIView*)preView success:(void(^)(ZXBarcodeFormat barcodeFormat,NSString *str,UIImage *scanImg,NSArray* resultPoints))success
+{
+    if (self = [super init]) {
+        
+        self.capture = [[LBXZXCapture alloc] init];
+        self.capture.camera = self.capture.back;
+        self.capture.focusMode = AVCaptureFocusModeContinuousAutoFocus;
+        self.capture.rotation = 90.0f;
+        self.capture.delegate = self;
+        self.continuous = NO;
+        self.orientation = AVCaptureVideoOrientationPortrait;
+        
+        self.onSuccess = success;
+        
+        CGRect rect = preView.frame;
+        rect.origin = CGPointZero;
+        
+        self.capture.layer.frame = rect;
+        //[preView.layer addSublayer:self.capture.layer];
+        
+        [preView.layer insertSublayer:self.capture.layer atIndex:0];
         
     }
     return self;
@@ -74,15 +106,34 @@ typedef void(^blockScan)(ZXBarcodeFormat barcodeFormat,NSString *str,UIImage *sc
 - (void)start
 {
     self.bNeedScanResult = YES;
-    [self.capture start];
     
+    AVCaptureVideoPreviewLayer * preview = (AVCaptureVideoPreviewLayer*)self.capture.layer;
+    preview.connection.videoOrientation = self.orientation;
+    
+    [self.capture start];
 }
+
 
 - (void)stop
 {
     self.bNeedScanResult = NO;
     [self.capture stop];
+}
+
+- (void)setOrientation:(NSInteger)orientation
+{
+    _orientation = orientation;
     
+    AVCaptureVideoPreviewLayer * preview = (AVCaptureVideoPreviewLayer*)self.capture.layer;
+       preview.connection.videoOrientation = self.orientation;
+}
+
+- (void)setVideoLayerframe:(CGRect)videoLayerframe
+{
+    _videoLayerframe = videoLayerframe;
+    
+    AVCaptureVideoPreviewLayer * preview = (AVCaptureVideoPreviewLayer*)self.capture.layer;
+    preview.frame = videoLayerframe;
 }
 
 - (void)openTorch:(BOOL)on_off
@@ -106,11 +157,18 @@ typedef void(^blockScan)(ZXBarcodeFormat barcodeFormat,NSString *str,UIImage *sc
         return;
     }
     
-    if ( _block )
-    {
-        [self stop];
+    if (!_continuous) {
         
-        _block(result.barcodeFormat,result.text,img);
+         [self stop];
+    }
+    
+    
+    if (_onSuccess) {
+        _onSuccess(result.barcodeFormat,result.text,img,result.resultPoints);
+    }
+    else if ( _success )
+    {
+        _success(result.barcodeFormat,result.text,img);
     }    
 }
 

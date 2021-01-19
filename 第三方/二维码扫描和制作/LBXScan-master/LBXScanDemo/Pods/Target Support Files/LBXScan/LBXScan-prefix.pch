@@ -10,4 +10,7 @@
 #endif
 #endif
 
+#import "LBXScanNative.h"
+#import "ZXingWrapper.h"
 #import <Foundation/Foundation.h>
+#import "LBXScanView.h"
