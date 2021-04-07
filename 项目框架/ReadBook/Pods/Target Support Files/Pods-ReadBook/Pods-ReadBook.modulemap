@@ -1,0 +1,6 @@
+framework module Pods_ReadBook {
+  umbrella header "Pods-ReadBook-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vXZ-lx-hvc">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lyjbjt" translatesAutoresizingMaskIntoConstraints="NO" id="O5c-hA-nKI" propertyAccessControl="none">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            </imageView>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="8el-7A-kUj" userLabel="AudioPower">
+                                <rect key="frame" x="20" y="282" width="280" height="4"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="4" id="SH2-Dw-2rn"/>
+                                </constraints>
+                            </progressView>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qqb-ng-BZ0" userLabel="Record">
+                                <rect key="frame" x="20" y="493" width="55" height="55"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="PpE-9R-syD"/>
+                                </constraints>
+                                <state key="normal" image="lyj_lyan">
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="recordClick:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="pvd-f1-Sg8"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Z0-a7-DPu" userLabel="Continue">
+                                <rect key="frame" x="170" y="493" width="55" height="55"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="rIy-kJ-63u"/>
+                                </constraints>
+                                <state key="normal" image="lyj_bfq_bfan">
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="resumeClick:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="UBV-rE-cYd"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BO7-cH-kuf" userLabel="Stop">
+                                <rect key="frame" x="245" y="493" width="55" height="55"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="l22-Dx-54f"/>
+                                </constraints>
+                                <state key="normal" image="lyj_tian">
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="stopClick:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="AAT-sC-ovo"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f8J-xa-ser" userLabel="Pause">
+                                <rect key="frame" x="95" y="493" width="55" height="55"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="mfi-Up-cj7"/>
+                                </constraints>
+                                <state key="normal" image="lyj_atan">
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="pauseClick:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="esL-9c-dBW"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="bFZ-MB-SZp"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="bFZ-MB-SZp" firstAttribute="bottom" secondItem="qqb-ng-BZ0" secondAttribute="bottom" constant="20" id="1ds-jV-2MK"/>
+                            <constraint firstItem="bFZ-MB-SZp" firstAttribute="bottom" secondItem="f8J-xa-ser" secondAttribute="bottom" constant="20" id="5ke-dy-Cd2"/>
+                            <constraint firstItem="O5c-hA-nKI" firstAttribute="trailing" secondItem="bFZ-MB-SZp" secondAttribute="trailing" id="6AT-wy-qfZ"/>
+                            <constraint firstItem="3Z0-a7-DPu" firstAttribute="width" secondItem="qqb-ng-BZ0" secondAttribute="width" id="AHW-q7-NEx"/>
+                            <constraint firstItem="f8J-xa-ser" firstAttribute="width" secondItem="qqb-ng-BZ0" secondAttribute="width" id="Axi-pW-nj4"/>
+                            <constraint firstItem="bFZ-MB-SZp" firstAttribute="trailing" secondItem="8el-7A-kUj" secondAttribute="trailing" constant="20" id="CAS-hP-EpQ"/>
+                            <constraint firstItem="3Z0-a7-DPu" firstAttribute="leading" secondItem="f8J-xa-ser" secondAttribute="trailing" constant="20" id="D7L-r5-qX6"/>
+                            <constraint firstItem="8el-7A-kUj" firstAttribute="centerY" secondItem="kh9-bI-dsS" secondAttribute="centerY" id="ESW-BW-Z5x"/>
+                            <constraint firstItem="BO7-cH-kuf" firstAttribute="width" secondItem="qqb-ng-BZ0" secondAttribute="width" id="Iia-Zi-E9o"/>
+                            <constraint firstAttribute="bottom" secondItem="O5c-hA-nKI" secondAttribute="bottom" id="Ith-4p-vS6"/>
+                            <constraint firstItem="bFZ-MB-SZp" firstAttribute="trailing" secondItem="BO7-cH-kuf" secondAttribute="trailing" constant="20" id="LW0-ra-ETk"/>
+                            <constraint firstItem="O5c-hA-nKI" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="M2Y-nK-Khi"/>
+                            <constraint firstItem="BO7-cH-kuf" firstAttribute="leading" secondItem="3Z0-a7-DPu" secondAttribute="trailing" constant="20" id="MaG-0o-EYl"/>
+                            <constraint firstItem="O5c-hA-nKI" firstAttribute="leading" secondItem="bFZ-MB-SZp" secondAttribute="leading" id="MxF-dM-xSX"/>
+                            <constraint firstItem="bFZ-MB-SZp" firstAttribute="bottom" secondItem="BO7-cH-kuf" secondAttribute="bottom" constant="20" id="Ng3-jb-bON"/>
+                            <constraint firstItem="8el-7A-kUj" firstAttribute="leading" secondItem="bFZ-MB-SZp" secondAttribute="leading" constant="20" id="T8G-JU-R9f"/>
+                            <constraint firstItem="qqb-ng-BZ0" firstAttribute="leading" secondItem="bFZ-MB-SZp" secondAttribute="leading" constant="20" id="XZa-hT-bus"/>
+                            <constraint firstItem="f8J-xa-ser" firstAttribute="leading" secondItem="qqb-ng-BZ0" secondAttribute="trailing" constant="20" id="cnQ-tY-lIQ"/>
+                            <constraint firstItem="bFZ-MB-SZp" firstAttribute="bottom" secondItem="3Z0-a7-DPu" secondAttribute="bottom" constant="20" id="pSq-O3-WIU"/>
+                        </constraints>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="568"/>
+                    <connections>
+                        <outlet property="audioPower" destination="8el-7A-kUj" id="ajI-IL-5vk"/>
+                        <outlet property="pause" destination="f8J-xa-ser" id="t8S-uQ-KeH"/>
+                        <outlet property="record" destination="qqb-ng-BZ0" id="V4O-Og-aay"/>
+                        <outlet property="resume" destination="3Z0-a7-DPu" id="Mra-BM-yzp"/>
+                        <outlet property="stop" destination="BO7-cH-kuf" id="8nT-LG-fxk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-16" y="-20"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="lyj_atan" width="52" height="52"/>
+        <image name="lyj_bfq_bfan" width="52" height="52"/>
+        <image name="lyj_lyan" width="52" height="52"/>
+        <image name="lyj_tian" width="52" height="52"/>
+        <image name="lyjbjt" width="320" height="480"/>
+    </resources>
+</document>

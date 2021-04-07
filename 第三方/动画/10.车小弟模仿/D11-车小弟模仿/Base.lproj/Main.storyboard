@@ -1,37 +1,50 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vXZ-lx-hvc">
+    <device id="retina3_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
                 <viewController id="vXZ-lx-hvc" customClass="CZViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
-                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="home_yuanpan_bg" translatesAutoresizingMaskIntoConstraints="NO" id="w8v-Ns-88a">
-                                <rect key="frame" x="7" y="82" width="306" height="306"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home_yuanpan_bg" translatesAutoresizingMaskIntoConstraints="NO" id="w8v-Ns-88a">
+                                <rect key="frame" x="10" y="90" width="300" height="300"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="NjT-qi-vfP"/>
+                                    <constraint firstAttribute="height" constant="300" id="cbt-ae-9ue"/>
+                                </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="790-aL-wG0">
-                                <rect key="frame" x="117" y="196" width="86" height="77"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="790-aL-wG0">
+                                <rect key="frame" x="105" y="185" width="110" height="110"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="110" id="BHs-5T-Jhs"/>
+                                    <constraint firstAttribute="width" constant="110" id="FV0-LF-A6q"/>
+                                </constraints>
                                 <state key="normal" backgroundImage="home_btn_dealer_had_bind">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="centerBtnClick" destination="vXZ-lx-hvc" eventType="touchUpInside" id="nON-Vb-rzz"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="03z-lh-LDC"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="w8v-Ns-88a" firstAttribute="centerX" secondItem="03z-lh-LDC" secondAttribute="centerX" id="5en-GG-Da6"/>
+                            <constraint firstItem="w8v-Ns-88a" firstAttribute="centerY" secondItem="kh9-bI-dsS" secondAttribute="centerY" id="5rT-eU-dON"/>
+                            <constraint firstItem="790-aL-wG0" firstAttribute="centerX" secondItem="03z-lh-LDC" secondAttribute="centerX" id="M67-5N-m4r"/>
+                            <constraint firstItem="790-aL-wG0" firstAttribute="centerY" secondItem="kh9-bI-dsS" secondAttribute="centerY" id="WkR-ul-eXb"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="imageView" destination="w8v-Ns-88a" id="DCr-u0-gtV"/>
@@ -39,15 +52,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="133.125" y="130"/>
         </scene>
     </scenes>
     <resources>
         <image name="home_btn_dealer_had_bind" width="112" height="112"/>
-        <image name="home_yuanpan_bg" width="612" height="612"/>
+        <image name="home_yuanpan_bg" width="306" height="306"/>
     </resources>
-    <simulatedMetricsContainer key="defaultSimulatedMetrics">
-        <simulatedStatusBarMetrics key="statusBar"/>
-        <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination"/>
-    </simulatedMetricsContainer>
 </document>

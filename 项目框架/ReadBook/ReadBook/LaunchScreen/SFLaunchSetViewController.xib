@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SFLaunchSetViewController">
+            <connections>
+                <outlet property="view" destination="y2O-hO-d7n" id="H4t-kf-mFG"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="y2O-hO-d7n">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZON-dK-SSI" userLabel="contentView">
+                    <rect key="frame" x="0.0" y="248" width="414" height="400"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7nh-kg-UaT">
+                            <rect key="frame" x="127" y="20" width="160" height="50"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="160" id="GKc-ea-YwG"/>
+                                <constraint firstAttribute="height" constant="50" id="fXq-eO-skt"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <state key="normal" title=" 自动退出" image="unselected">
+                                <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <state key="selected" image="selected"/>
+                            <connections>
+                                <action selector="markToAutoExit:" destination="-1" eventType="touchUpInside" id="eWP-di-Xnm"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Skg-aN-ral">
+                            <rect key="frame" x="82" y="90" width="250" height="65"/>
+                            <color key="backgroundColor" red="0.64278726360000005" green="0.78496243340000005" blue="0.96130555870000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="65" id="NX4-Dh-Wco"/>
+                                <constraint firstAttribute="width" constant="250" id="hg9-qG-K3G"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <state key="normal" title="从相册中选取图片">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <integer key="value" value="5"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="useImageFromPhotoAlbum:" destination="-1" eventType="touchUpInside" id="uaJ-qh-MBV"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qC1-uc-UGr">
+                            <rect key="frame" x="82" y="185" width="250" height="65"/>
+                            <color key="backgroundColor" red="0.64278726360000005" green="0.78496243340000005" blue="0.96130555870000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="65" id="MXa-gD-SoN"/>
+                                <constraint firstAttribute="width" constant="250" id="ef0-n2-jyQ"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <state key="normal" title="恢复成默认图片启动图">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <integer key="value" value="5"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="useSnapshotFromDynamicSB:" destination="-1" eventType="touchUpInside" id="wDr-3G-MlP"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4M5-A9-vPF">
+                            <rect key="frame" x="82" y="275" width="250" height="65"/>
+                            <color key="backgroundColor" red="0.64278726360000005" green="0.78496243340000005" blue="0.96130555870000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="250" id="Var-gh-0Iz"/>
+                                <constraint firstAttribute="height" constant="65" id="arH-tC-0AB"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <state key="normal" title="恢复成默认文字启动图">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <integer key="value" value="5"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="backToNormal:" destination="-1" eventType="touchUpInside" id="hcV-ba-pxo"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="4M5-A9-vPF" firstAttribute="top" secondItem="qC1-uc-UGr" secondAttribute="bottom" constant="25" id="0n4-Hi-Scl"/>
+                        <constraint firstItem="4M5-A9-vPF" firstAttribute="centerX" secondItem="ZON-dK-SSI" secondAttribute="centerX" id="DnP-gA-llT"/>
+                        <constraint firstItem="7nh-kg-UaT" firstAttribute="centerX" secondItem="ZON-dK-SSI" secondAttribute="centerX" id="H1a-qs-Ger"/>
+                        <constraint firstItem="7nh-kg-UaT" firstAttribute="top" secondItem="ZON-dK-SSI" secondAttribute="top" constant="20" id="buJ-Zc-YWc"/>
+                        <constraint firstItem="Skg-aN-ral" firstAttribute="top" secondItem="7nh-kg-UaT" secondAttribute="bottom" constant="20" id="eGt-QZ-N5t"/>
+                        <constraint firstAttribute="height" constant="400" id="fUo-OB-4sv"/>
+                        <constraint firstItem="Skg-aN-ral" firstAttribute="centerX" secondItem="ZON-dK-SSI" secondAttribute="centerX" id="oKw-mF-gaQ"/>
+                        <constraint firstItem="qC1-uc-UGr" firstAttribute="centerX" secondItem="ZON-dK-SSI" secondAttribute="centerX" id="p5Q-qy-tfS"/>
+                        <constraint firstItem="qC1-uc-UGr" firstAttribute="top" secondItem="Skg-aN-ral" secondAttribute="bottom" constant="30" id="yWh-sM-Qbz"/>
+                    </constraints>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="点击相应按钮自定义启动视图 如果勾选自动退出按钮 选择后将会默认自动退出程序 在下次启动APP时生效" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eYx-p9-UwE">
+                    <rect key="frame" x="0.0" y="648" width="414" height="72"/>
+                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="eYx-p9-UwE" secondAttribute="trailing" id="7ig-qW-NtN"/>
+                <constraint firstItem="ZON-dK-SSI" firstAttribute="leading" secondItem="y2O-hO-d7n" secondAttribute="leading" id="Yn8-Ag-Vsf"/>
+                <constraint firstItem="eYx-p9-UwE" firstAttribute="leading" secondItem="y2O-hO-d7n" secondAttribute="leading" id="a1d-5t-Eur"/>
+                <constraint firstAttribute="trailing" secondItem="ZON-dK-SSI" secondAttribute="trailing" id="fjZ-51-SWE"/>
+                <constraint firstItem="ZON-dK-SSI" firstAttribute="centerY" secondItem="y2O-hO-d7n" secondAttribute="centerY" id="oes-9O-DXE"/>
+                <constraint firstItem="ZON-dK-SSI" firstAttribute="centerX" secondItem="y2O-hO-d7n" secondAttribute="centerX" id="q9o-J2-Hp3"/>
+                <constraint firstItem="eYx-p9-UwE" firstAttribute="top" secondItem="ZON-dK-SSI" secondAttribute="bottom" id="reP-xq-ZWt"/>
+            </constraints>
+            <point key="canvasLocation" x="788" y="56"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="selected" width="20" height="20"/>
+        <image name="unselected" width="20" height="20"/>
+    </resources>
+</document>

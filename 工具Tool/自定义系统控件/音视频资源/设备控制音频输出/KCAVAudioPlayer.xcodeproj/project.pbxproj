@@ -1,0 +1,465 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E736404E2600D1C600675679 /* folle.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E736404D2600D1C600675679 /* folle.mp3 */; };
+		FC82251B1A43D6AE002CD4FA /* ViewController1.m in Sources */ = {isa = PBXBuildFile; fileRef = FC82251A1A43D6AE002CD4FA /* ViewController1.m */; };
+		FCD598821A42BD8400FF7F36 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FCD598811A42BD8400FF7F36 /* main.m */; };
+		FCD598851A42BD8400FF7F36 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FCD598841A42BD8400FF7F36 /* AppDelegate.m */; };
+		FCD598881A42BD8400FF7F36 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCD598871A42BD8400FF7F36 /* ViewController.m */; };
+		FCD5988B1A42BD8400FF7F36 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCD598891A42BD8400FF7F36 /* Main.storyboard */; };
+		FCD5988D1A42BD8400FF7F36 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCD5988C1A42BD8400FF7F36 /* Images.xcassets */; };
+		FCD598901A42BD8400FF7F36 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCD5988E1A42BD8400FF7F36 /* LaunchScreen.xib */; };
+		FCD5989C1A42BD8500FF7F36 /* KCAVAudioPlayerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FCD5989B1A42BD8500FF7F36 /* KCAVAudioPlayerTests.m */; };
+		FCD598A61A42D7FC00FF7F36 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCD598A51A42D7FC00FF7F36 /* AVFoundation.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FCD598961A42BD8400FF7F36 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FCD598741A42BD8400FF7F36 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FCD5987B1A42BD8400FF7F36;
+			remoteInfo = KCAVAudioPlayer;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		E736404D2600D1C600675679 /* folle.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = folle.mp3; path = ../../../resources/folle.mp3; sourceTree = "<group>"; };
+		FC8225191A43D6AE002CD4FA /* ViewController1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController1.h; sourceTree = "<group>"; };
+		FC82251A1A43D6AE002CD4FA /* ViewController1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController1.m; sourceTree = "<group>"; };
+		FCD5987C1A42BD8400FF7F36 /* KCAVAudioPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KCAVAudioPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FCD598801A42BD8400FF7F36 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FCD598811A42BD8400FF7F36 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		FCD598831A42BD8400FF7F36 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		FCD598841A42BD8400FF7F36 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		FCD598861A42BD8400FF7F36 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		FCD598871A42BD8400FF7F36 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		FCD5988A1A42BD8400FF7F36 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FCD5988C1A42BD8400FF7F36 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		FCD5988F1A42BD8400FF7F36 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		FCD598951A42BD8400FF7F36 /* KCAVAudioPlayerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KCAVAudioPlayerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FCD5989A1A42BD8500FF7F36 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FCD5989B1A42BD8500FF7F36 /* KCAVAudioPlayerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KCAVAudioPlayerTests.m; sourceTree = "<group>"; };
+		FCD598A51A42D7FC00FF7F36 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FCD598791A42BD8400FF7F36 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FCD598A61A42D7FC00FF7F36 /* AVFoundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FCD598921A42BD8400FF7F36 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FCD598731A42BD8400FF7F36 = {
+			isa = PBXGroup;
+			children = (
+				FCD598A51A42D7FC00FF7F36 /* AVFoundation.framework */,
+				FCD5987E1A42BD8400FF7F36 /* KCAVAudioPlayer */,
+				FCD598981A42BD8500FF7F36 /* KCAVAudioPlayerTests */,
+				FCD5987D1A42BD8400FF7F36 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FCD5987D1A42BD8400FF7F36 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FCD5987C1A42BD8400FF7F36 /* KCAVAudioPlayer.app */,
+				FCD598951A42BD8400FF7F36 /* KCAVAudioPlayerTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FCD5987E1A42BD8400FF7F36 /* KCAVAudioPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				FC8225191A43D6AE002CD4FA /* ViewController1.h */,
+				FC82251A1A43D6AE002CD4FA /* ViewController1.m */,
+				FCD598831A42BD8400FF7F36 /* AppDelegate.h */,
+				FCD598841A42BD8400FF7F36 /* AppDelegate.m */,
+				FCD598861A42BD8400FF7F36 /* ViewController.h */,
+				FCD598871A42BD8400FF7F36 /* ViewController.m */,
+				FCD598891A42BD8400FF7F36 /* Main.storyboard */,
+				FCD5988C1A42BD8400FF7F36 /* Images.xcassets */,
+				FCD5988E1A42BD8400FF7F36 /* LaunchScreen.xib */,
+				FCD5987F1A42BD8400FF7F36 /* Supporting Files */,
+			);
+			path = KCAVAudioPlayer;
+			sourceTree = "<group>";
+		};
+		FCD5987F1A42BD8400FF7F36 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FCD598A71A42EBB500FF7F36 /* Resources */,
+				FCD598801A42BD8400FF7F36 /* Info.plist */,
+				FCD598811A42BD8400FF7F36 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FCD598981A42BD8500FF7F36 /* KCAVAudioPlayerTests */ = {
+			isa = PBXGroup;
+			children = (
+				FCD5989B1A42BD8500FF7F36 /* KCAVAudioPlayerTests.m */,
+				FCD598991A42BD8500FF7F36 /* Supporting Files */,
+			);
+			path = KCAVAudioPlayerTests;
+			sourceTree = "<group>";
+		};
+		FCD598991A42BD8500FF7F36 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FCD5989A1A42BD8500FF7F36 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FCD598A71A42EBB500FF7F36 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E736404D2600D1C600675679 /* folle.mp3 */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FCD5987B1A42BD8400FF7F36 /* KCAVAudioPlayer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FCD5989F1A42BD8500FF7F36 /* Build configuration list for PBXNativeTarget "KCAVAudioPlayer" */;
+			buildPhases = (
+				FCD598781A42BD8400FF7F36 /* Sources */,
+				FCD598791A42BD8400FF7F36 /* Frameworks */,
+				FCD5987A1A42BD8400FF7F36 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KCAVAudioPlayer;
+			productName = KCAVAudioPlayer;
+			productReference = FCD5987C1A42BD8400FF7F36 /* KCAVAudioPlayer.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FCD598941A42BD8400FF7F36 /* KCAVAudioPlayerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FCD598A21A42BD8500FF7F36 /* Build configuration list for PBXNativeTarget "KCAVAudioPlayerTests" */;
+			buildPhases = (
+				FCD598911A42BD8400FF7F36 /* Sources */,
+				FCD598921A42BD8400FF7F36 /* Frameworks */,
+				FCD598931A42BD8400FF7F36 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FCD598971A42BD8400FF7F36 /* PBXTargetDependency */,
+			);
+			name = KCAVAudioPlayerTests;
+			productName = KCAVAudioPlayerTests;
+			productReference = FCD598951A42BD8400FF7F36 /* KCAVAudioPlayerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FCD598741A42BD8400FF7F36 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = cmjstudio;
+				TargetAttributes = {
+					FCD5987B1A42BD8400FF7F36 = {
+						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = NN56R38BZT;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Maps.iOS = {
+								enabled = 0;
+							};
+						};
+					};
+					FCD598941A42BD8400FF7F36 = {
+						CreatedOnToolsVersion = 6.1.1;
+						TestTargetID = FCD5987B1A42BD8400FF7F36;
+					};
+				};
+			};
+			buildConfigurationList = FCD598771A42BD8400FF7F36 /* Build configuration list for PBXProject "KCAVAudioPlayer" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				English,
+				en,
+				Base,
+			);
+			mainGroup = FCD598731A42BD8400FF7F36;
+			productRefGroup = FCD5987D1A42BD8400FF7F36 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FCD5987B1A42BD8400FF7F36 /* KCAVAudioPlayer */,
+				FCD598941A42BD8400FF7F36 /* KCAVAudioPlayerTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FCD5987A1A42BD8400FF7F36 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FCD5988B1A42BD8400FF7F36 /* Main.storyboard in Resources */,
+				E736404E2600D1C600675679 /* folle.mp3 in Resources */,
+				FCD598901A42BD8400FF7F36 /* LaunchScreen.xib in Resources */,
+				FCD5988D1A42BD8400FF7F36 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FCD598931A42BD8400FF7F36 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FCD598781A42BD8400FF7F36 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FC82251B1A43D6AE002CD4FA /* ViewController1.m in Sources */,
+				FCD598881A42BD8400FF7F36 /* ViewController.m in Sources */,
+				FCD598851A42BD8400FF7F36 /* AppDelegate.m in Sources */,
+				FCD598821A42BD8400FF7F36 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FCD598911A42BD8400FF7F36 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FCD5989C1A42BD8500FF7F36 /* KCAVAudioPlayerTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FCD598971A42BD8400FF7F36 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FCD5987B1A42BD8400FF7F36 /* KCAVAudioPlayer */;
+			targetProxy = FCD598961A42BD8400FF7F36 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		FCD598891A42BD8400FF7F36 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FCD5988A1A42BD8400FF7F36 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		FCD5988E1A42BD8400FF7F36 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FCD5988F1A42BD8400FF7F36 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FCD5989D1A42BD8500FF7F36 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		FCD5989E1A42BD8500FF7F36 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FCD598A01A42BD8500FF7F36 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = NN56R38BZT;
+				INFOPLIST_FILE = KCAVAudioPlayer/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		FCD598A11A42BD8500FF7F36 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = NN56R38BZT;
+				INFOPLIST_FILE = KCAVAudioPlayer/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		FCD598A31A42BD8500FF7F36 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = KCAVAudioPlayerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KCAVAudioPlayer.app/KCAVAudioPlayer";
+			};
+			name = Debug;
+		};
+		FCD598A41A42BD8500FF7F36 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = KCAVAudioPlayerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KCAVAudioPlayer.app/KCAVAudioPlayer";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FCD598771A42BD8400FF7F36 /* Build configuration list for PBXProject "KCAVAudioPlayer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FCD5989D1A42BD8500FF7F36 /* Debug */,
+				FCD5989E1A42BD8500FF7F36 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FCD5989F1A42BD8500FF7F36 /* Build configuration list for PBXNativeTarget "KCAVAudioPlayer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FCD598A01A42BD8500FF7F36 /* Debug */,
+				FCD598A11A42BD8500FF7F36 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FCD598A21A42BD8500FF7F36 /* Build configuration list for PBXNativeTarget "KCAVAudioPlayerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FCD598A31A42BD8500FF7F36 /* Debug */,
+				FCD598A41A42BD8500FF7F36 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FCD598741A42BD8400FF7F36 /* Project object */;
+}

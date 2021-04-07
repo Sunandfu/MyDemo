@@ -1,0 +1,439 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E73640012600BBBE00675679 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC8225321A440E15002CD4FA /* Main.storyboard */; };
+		FC82252B1A440E15002CD4FA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FC82252A1A440E15002CD4FA /* main.m */; };
+		FC82252E1A440E15002CD4FA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FC82252D1A440E15002CD4FA /* AppDelegate.m */; };
+		FC8225311A440E15002CD4FA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC8225301A440E15002CD4FA /* ViewController.m */; };
+		FC8225361A440E15002CD4FA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC8225351A440E15002CD4FA /* Images.xcassets */; };
+		FC8225391A440E15002CD4FA /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC8225371A440E15002CD4FA /* LaunchScreen.xib */; };
+		FC8225451A440E16002CD4FA /* AVAudioRecorderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FC8225441A440E16002CD4FA /* AVAudioRecorderTests.m */; };
+		FC82254F1A441293002CD4FA /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC82254E1A441293002CD4FA /* AVFoundation.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FC82253F1A440E16002CD4FA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FC82251D1A440E15002CD4FA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FC8225241A440E15002CD4FA;
+			remoteInfo = AVAudioRecorder;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		FC8225251A440E15002CD4FA /* AVAudioRecorder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AVAudioRecorder.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC8225291A440E15002CD4FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FC82252A1A440E15002CD4FA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		FC82252C1A440E15002CD4FA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		FC82252D1A440E15002CD4FA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		FC82252F1A440E15002CD4FA /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		FC8225301A440E15002CD4FA /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		FC8225331A440E15002CD4FA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FC8225351A440E15002CD4FA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		FC8225381A440E15002CD4FA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		FC82253E1A440E16002CD4FA /* AVAudioRecorderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AVAudioRecorderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC8225431A440E16002CD4FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FC8225441A440E16002CD4FA /* AVAudioRecorderTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AVAudioRecorderTests.m; sourceTree = "<group>"; };
+		FC82254E1A441293002CD4FA /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FC8225221A440E15002CD4FA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FC82254F1A441293002CD4FA /* AVFoundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FC82253B1A440E16002CD4FA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FC82251C1A440E15002CD4FA = {
+			isa = PBXGroup;
+			children = (
+				FC82254E1A441293002CD4FA /* AVFoundation.framework */,
+				FC8225271A440E15002CD4FA /* AVAudioRecorder */,
+				FC8225411A440E16002CD4FA /* AVAudioRecorderTests */,
+				FC8225261A440E15002CD4FA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FC8225261A440E15002CD4FA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FC8225251A440E15002CD4FA /* AVAudioRecorder.app */,
+				FC82253E1A440E16002CD4FA /* AVAudioRecorderTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FC8225271A440E15002CD4FA /* AVAudioRecorder */ = {
+			isa = PBXGroup;
+			children = (
+				FC82252C1A440E15002CD4FA /* AppDelegate.h */,
+				FC82252D1A440E15002CD4FA /* AppDelegate.m */,
+				FC82252F1A440E15002CD4FA /* ViewController.h */,
+				FC8225301A440E15002CD4FA /* ViewController.m */,
+				FC8225321A440E15002CD4FA /* Main.storyboard */,
+				FC8225351A440E15002CD4FA /* Images.xcassets */,
+				FC8225371A440E15002CD4FA /* LaunchScreen.xib */,
+				FC8225281A440E15002CD4FA /* Supporting Files */,
+			);
+			path = AVAudioRecorder;
+			sourceTree = "<group>";
+		};
+		FC8225281A440E15002CD4FA /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FC8225291A440E15002CD4FA /* Info.plist */,
+				FC82252A1A440E15002CD4FA /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FC8225411A440E16002CD4FA /* AVAudioRecorderTests */ = {
+			isa = PBXGroup;
+			children = (
+				FC8225441A440E16002CD4FA /* AVAudioRecorderTests.m */,
+				FC8225421A440E16002CD4FA /* Supporting Files */,
+			);
+			path = AVAudioRecorderTests;
+			sourceTree = "<group>";
+		};
+		FC8225421A440E16002CD4FA /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FC8225431A440E16002CD4FA /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FC8225241A440E15002CD4FA /* AVAudioRecorder */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FC8225481A440E16002CD4FA /* Build configuration list for PBXNativeTarget "AVAudioRecorder" */;
+			buildPhases = (
+				FC8225211A440E15002CD4FA /* Sources */,
+				FC8225221A440E15002CD4FA /* Frameworks */,
+				FC8225231A440E15002CD4FA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AVAudioRecorder;
+			productName = AVAudioRecorder;
+			productReference = FC8225251A440E15002CD4FA /* AVAudioRecorder.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FC82253D1A440E16002CD4FA /* AVAudioRecorderTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FC82254B1A440E16002CD4FA /* Build configuration list for PBXNativeTarget "AVAudioRecorderTests" */;
+			buildPhases = (
+				FC82253A1A440E16002CD4FA /* Sources */,
+				FC82253B1A440E16002CD4FA /* Frameworks */,
+				FC82253C1A440E16002CD4FA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FC8225401A440E16002CD4FA /* PBXTargetDependency */,
+			);
+			name = AVAudioRecorderTests;
+			productName = AVAudioRecorderTests;
+			productReference = FC82253E1A440E16002CD4FA /* AVAudioRecorderTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FC82251D1A440E15002CD4FA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = cmjstudio;
+				TargetAttributes = {
+					FC8225241A440E15002CD4FA = {
+						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = NN56R38BZT;
+					};
+					FC82253D1A440E16002CD4FA = {
+						CreatedOnToolsVersion = 6.1.1;
+						TestTargetID = FC8225241A440E15002CD4FA;
+					};
+				};
+			};
+			buildConfigurationList = FC8225201A440E15002CD4FA /* Build configuration list for PBXProject "AVAudioRecorder" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				English,
+				en,
+				Base,
+			);
+			mainGroup = FC82251C1A440E15002CD4FA;
+			productRefGroup = FC8225261A440E15002CD4FA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FC8225241A440E15002CD4FA /* AVAudioRecorder */,
+				FC82253D1A440E16002CD4FA /* AVAudioRecorderTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FC8225231A440E15002CD4FA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E73640012600BBBE00675679 /* Main.storyboard in Resources */,
+				FC8225391A440E15002CD4FA /* LaunchScreen.xib in Resources */,
+				FC8225361A440E15002CD4FA /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FC82253C1A440E16002CD4FA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FC8225211A440E15002CD4FA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FC8225311A440E15002CD4FA /* ViewController.m in Sources */,
+				FC82252E1A440E15002CD4FA /* AppDelegate.m in Sources */,
+				FC82252B1A440E15002CD4FA /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FC82253A1A440E16002CD4FA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FC8225451A440E16002CD4FA /* AVAudioRecorderTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FC8225401A440E16002CD4FA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FC8225241A440E15002CD4FA /* AVAudioRecorder */;
+			targetProxy = FC82253F1A440E16002CD4FA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		FC8225321A440E15002CD4FA /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FC8225331A440E15002CD4FA /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		FC8225371A440E15002CD4FA /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FC8225381A440E15002CD4FA /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FC8225461A440E16002CD4FA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		FC8225471A440E16002CD4FA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FC8225491A440E16002CD4FA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = NN56R38BZT;
+				INFOPLIST_FILE = AVAudioRecorder/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		FC82254A1A440E16002CD4FA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = NN56R38BZT;
+				INFOPLIST_FILE = AVAudioRecorder/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		FC82254C1A440E16002CD4FA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = AVAudioRecorderTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AVAudioRecorder.app/AVAudioRecorder";
+			};
+			name = Debug;
+		};
+		FC82254D1A440E16002CD4FA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = AVAudioRecorderTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AVAudioRecorder.app/AVAudioRecorder";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FC8225201A440E15002CD4FA /* Build configuration list for PBXProject "AVAudioRecorder" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FC8225461A440E16002CD4FA /* Debug */,
+				FC8225471A440E16002CD4FA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FC8225481A440E16002CD4FA /* Build configuration list for PBXNativeTarget "AVAudioRecorder" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FC8225491A440E16002CD4FA /* Debug */,
+				FC82254A1A440E16002CD4FA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FC82254B1A440E16002CD4FA /* Build configuration list for PBXNativeTarget "AVAudioRecorderTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FC82254C1A440E16002CD4FA /* Debug */,
+				FC82254D1A440E16002CD4FA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FC82251D1A440E15002CD4FA /* Project object */;
+}
