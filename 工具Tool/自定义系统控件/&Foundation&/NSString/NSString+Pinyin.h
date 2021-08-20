@@ -18,5 +18,11 @@
 - (NSString*)pinyinWithoutBlank;
 - (NSArray*)pinyinInitialsArray;
 - (NSString*)pinyinInitialsString;
+/**
+ 将中文字符串转换为拼音格式（不带声调）
+
+ @return 返回不带声调拼音字符串
+ */
+- (NSString *)transformToPinyin;
 
 @end

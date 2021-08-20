@@ -246,31 +246,6 @@ typedef NS_ENUM(NSInteger, TXScrollLabelType) {
                                  inset:inset];
 }
 
-#pragma mark - Deprecated Getter & Setter Methods
-/*************WILL BE REMOVED IN THE FUTURE.****************************/
-
-- (void)setTx_scrollTitle:(NSString *)tx_scrollTitle {
-    self.scrollTitle = tx_scrollTitle;
-}
-
-- (void)setTx_scrollType:(TXScrollLabelViewType)tx_scrollType {
-    self.scrollType = tx_scrollType;
-}
-
-- (void)setTx_scrollVelocity:(NSTimeInterval)tx_scrollVelocity {
-    self.scrollVelocity = tx_scrollVelocity;
-}
-
-- (void)setTx_scrollContentSize:(CGRect)tx_scrollContentSize{
-    _tx_scrollContentSize = tx_scrollContentSize;
-    self.frame = _tx_scrollContentSize;
-}
-
-- (void)setTx_scrollTitleColor:(UIColor *)tx_scrollTitleColor {
-    self.scrollTitleColor = tx_scrollTitleColor;
-}
-/*************ALL ABOVE.*******************************************/
-
 
 #pragma mark - Getter & Setter Methods
 
@@ -799,55 +774,6 @@ void (*setter)(id, SEL, NSString *, TXScrollLabelType);
                                   velocity:scrollVelocity
                                    options:options
                                      inset:inset];
-}
-
-@end
-
-@implementation TXScrollLabelView (TXScrollLabelViewDeprecated)
-
-+ (instancetype)tx_setScrollTitle:(NSString *)scrollTitle {
-    
-    return [self scrollWithTitle:scrollTitle];
-}
-
-+ (instancetype)tx_setScrollTitle:(NSString *)scrollTitle
-                       scrollType:(TXScrollLabelViewType)scrollType {
-    
-    return [self scrollWithTitle:scrollTitle
-                            type:scrollType];
-}
-
-+ (instancetype)tx_setScrollTitle:(NSString *)scrollTitle
-                       scrollType:(TXScrollLabelViewType)scrollType
-                   scrollVelocity:(NSTimeInterval)scrollVelocity {
-    
-    return [self scrollWithTitle:scrollTitle
-                            type:scrollType
-                        velocity:scrollVelocity];
-}
-
-+ (instancetype)tx_setScrollTitle:(NSString *)scrollTitle
-                       scrollType:(TXScrollLabelViewType)scrollType
-                   scrollVelocity:(NSTimeInterval)scrollVelocity
-                          options:(UIViewAnimationOptions)options {
-    
-    return [self scrollWithTitle:scrollTitle
-                            type:scrollType
-                        velocity:scrollVelocity
-                         options:options];
-}
-
-+ (instancetype)tx_setScrollTitle:(NSString *)scrollTitle
-                       scrollType:(TXScrollLabelViewType)scrollType
-                   scrollVelocity:(NSTimeInterval)scrollVelocity
-                          options:(UIViewAnimationOptions)options
-                            inset:(UIEdgeInsets)inset {
-    
-    return [self scrollWithTitle:scrollTitle
-                            type:scrollType
-                        velocity:scrollVelocity
-                         options:options
-                           inset:inset];
 }
 
 @end

@@ -640,6 +640,14 @@ obj = nil;\
  * 5) __PRETTY_FUNCTION__对函数的打印会带上参数
  * 6) __DATE__编译时的日期
  * 7) __TIME__编译时的时间
+ *
+ * DEPRECATED_MSG_ATTRIBUTE("use XXXClass instead.") //整个类已过期，使用XXXClass取代
+ * API_AVAILABLE(ios(6.0)) // 方法在版本6.0后有效
+ * __attribute__((deprecated(explain)))  //explain:String  属性或方法已失效以及说明文案
+ *   #if __has_include(<CoreImage/CoreImage.h>)
+     XXX//判断是否包含某个文件
+     #endif
+ *MP_DEPRECATED_BEGIN("Use AVPlayerViewController in AVKit", ios(3.2, 9.0)) // 有效期在3.2-9.0
  */
 
 /*======================================================

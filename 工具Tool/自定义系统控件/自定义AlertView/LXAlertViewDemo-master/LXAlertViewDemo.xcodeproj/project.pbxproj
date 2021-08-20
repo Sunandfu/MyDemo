@@ -225,6 +225,7 @@
 				TargetAttributes = {
 					4B20E4ED1CC0B46400EABCBA = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = NN56R38BZT;
 					};
 					4B20E5061CC0B46400EABCBA = {
 						CreatedOnToolsVersion = 7.3;
@@ -241,6 +242,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -433,6 +435,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = NN56R38BZT;
 				INFOPLIST_FILE = LXAlertViewDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -445,6 +448,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = NN56R38BZT;
 				INFOPLIST_FILE = LXAlertViewDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

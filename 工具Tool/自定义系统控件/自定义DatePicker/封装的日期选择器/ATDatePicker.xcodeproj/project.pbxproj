@@ -212,6 +212,7 @@
 				TargetAttributes = {
 					EB4E60341D52D77000445154 = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = NN56R38BZT;
 					};
 					EB4E604D1D52D77000445154 = {
 						CreatedOnToolsVersion = 7.3;
@@ -228,6 +229,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -419,6 +421,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = NN56R38BZT;
 				INFOPLIST_FILE = ATDatePicker/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lapelgroup.ATDatePicker;
@@ -430,6 +433,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = NN56R38BZT;
 				INFOPLIST_FILE = ATDatePicker/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lapelgroup.ATDatePicker;
@@ -502,6 +506,7 @@
 				EB4E60641D52D77000445154 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EB4E60651D52D77000445154 /* Build configuration list for PBXNativeTarget "ATDatePickerTests" */ = {
 			isa = XCConfigurationList;
@@ -510,6 +515,7 @@
 				EB4E60671D52D77000445154 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EB4E60681D52D77000445154 /* Build configuration list for PBXNativeTarget "ATDatePickerUITests" */ = {
 			isa = XCConfigurationList;
@@ -518,6 +524,7 @@
 				EB4E606A1D52D77000445154 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

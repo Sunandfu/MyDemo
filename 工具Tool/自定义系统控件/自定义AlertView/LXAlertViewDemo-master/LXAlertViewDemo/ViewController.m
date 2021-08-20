@@ -45,7 +45,7 @@
     [alert showLXAlertView];
 }
 - (IBAction)animation3:(id)sender {
-    LXAlertView *alert=[[LXAlertView alloc] initWithTitle:@"提示" message:@"自定义alertview,可以自动适应文字内容。" cancelBtnTitle:@"取消" otherBtnTitle:@"确定" clickIndexBlock:^(NSInteger clickIndex) {
+    LXAlertView *alert=[[LXAlertView alloc] initWithTitle:@"提示" message:@"自定义alertview,可以自动适应文字内容。自定义alertview,可以自动适应文字内容。自定义alertview,可以自动适应文字内容。自定义alertview,可以自动适应文字内容。自定义alertview,可以自动适应文字内容。自定义alertview,可以自动适应文字内容。自定义alertview,可以自动适应文字内容。" cancelBtnTitle:@"取消" otherBtnTitle:@"确定" clickIndexBlock:^(NSInteger clickIndex) {
         NSLog(@"点击index====%ld",clickIndex);
     }];
     alert.animationStyle=LXASAnimationLeftShake;
