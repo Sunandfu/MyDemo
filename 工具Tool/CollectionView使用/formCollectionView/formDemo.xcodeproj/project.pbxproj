@@ -168,7 +168,7 @@
 				TargetAttributes = {
 					13E8D74C1CC0F0FE009390AC = {
 						CreatedOnToolsVersion = 7.1;
-						DevelopmentTeam = 32N85DHK28;
+						DevelopmentTeam = NN56R38BZT;
 					};
 				};
 			};
@@ -177,6 +177,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -327,6 +328,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = NN56R38BZT;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/formDemo/PrefixHeader.pch";
 				INFOPLIST_FILE = formDemo/Info.plist;

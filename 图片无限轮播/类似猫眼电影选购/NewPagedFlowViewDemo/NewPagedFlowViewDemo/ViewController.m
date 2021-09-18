@@ -10,6 +10,7 @@
 #import "ViewController.h"
 #import "NewPagedFlowView.h"
 #import "PGIndexBannerSubiew.h"
+#import "CustomViewController.h"
 
 #define Width [UIScreen mainScreen].bounds.size.width
 
@@ -32,6 +33,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.title = @"NewPagedFlowView";
+    
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Custom" style:UIBarButtonItemStyleDone target:self action:@selector(pushCustomVC)];
+    
     for (int index = 0; index < 5; index++) {
         UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"Yosemite%02d",index]];
         [self.imageArray addObject:image];
@@ -40,75 +45,82 @@
     [self setupUI];
 }
 
+#pragma mark --push控制器
+- (void)pushCustomVC {
+
+    //完全自定义,注意两处 #warning !!!!!!!!!1
+    CustomViewController *customVC = [[CustomViewController alloc] init];
+    
+    [self.navigationController pushViewController:customVC animated:YES];
+}
+
 - (void)setupUI {
     
+    self.automaticallyAdjustsScrollViewInsets = NO;
     
-    NewPagedFlowView *pageFlowView = [[NewPagedFlowView alloc] initWithFrame:CGRectMake(0, 64, Width, (Width - 84) * 9 / 16 + 24)];
-    pageFlowView.backgroundColor = [UIColor whiteColor];
+    NewPagedFlowView *pageFlowView = [[NewPagedFlowView alloc] initWithFrame:CGRectMake(0, 72, Width, 140)];
     pageFlowView.delegate = self;
     pageFlowView.dataSource = self;
-    pageFlowView.minimumPageAlpha = 0.4;
-    pageFlowView.minimumPageScale = 0.85;
+    pageFlowView.minimumPageAlpha = 0.1;
+    pageFlowView.isCarousel = NO;
+    pageFlowView.orientation = NewPagedFlowViewOrientationHorizontal;
+    pageFlowView.isOpenAutoScroll = YES;
     
     //初始化pageControl
-    UIPageControl *pageControl = [[UIPageControl alloc] initWithFrame:CGRectMake(0, pageFlowView.frame.size.height - 24 - 8, Width, 8)];
+    UIPageControl *pageControl = [[UIPageControl alloc] initWithFrame:CGRectMake(0, pageFlowView.frame.size.height - 32, Width, 8)];
     pageFlowView.pageControl = pageControl;
     [pageFlowView addSubview:pageControl];
-    [pageFlowView startTimer];
+    [pageFlowView reloadData];
+    
     [self.view addSubview:pageFlowView];
     
     //添加到主view上
     [self.view addSubview:self.indicateLabel];
-    
+
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    // Return YES for supported orientations
-    return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
-}
 
 #pragma mark NewPagedFlowView Delegate
 - (CGSize)sizeForPageInFlowView:(NewPagedFlowView *)flowView {
-    return CGSizeMake(Width - 84, (Width - 84) * 9 / 16);
+    return CGSizeMake(Width - 60, (Width - 60) * 9 / 16);
 }
 
-#pragma mark NewPagedFlowView Datasource
-- (NSInteger)numberOfPagesInFlowView:(NewPagedFlowView *)flowView {
-    return self.imageArray.count;
-}
-
-- (UIView *)flowView:(NewPagedFlowView *)flowView cellForPageAtIndex:(NSInteger)index{
-    PGIndexBannerSubiew *bannerView = (PGIndexBannerSubiew *)[flowView dequeueReusableCell];
-    if (!bannerView) {
-        bannerView = [[PGIndexBannerSubiew alloc] initWithFrame:CGRectMake(0, 0, Width - 84, (Width - 84) * 9 / 16)];
-        bannerView.layer.cornerRadius = 4;
-        bannerView.layer.masksToBounds = YES;
-    }
+- (void)didSelectCell:(UIView *)subView withSubViewIndex:(NSInteger)subIndex {
     
-//    [bannerView.mainImageView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:hostUrlsImg,imageDict[@"img"]]] placeholderImage:[UIImage imageNamed:@""]];
-    bannerView.mainImageView.image = self.imageArray[index];
-    bannerView.allCoverButton.tag = index;
-    [bannerView.allCoverButton addTarget:self action:@selector(didSelectBannerButtonClick:) forControlEvents:UIControlEventTouchUpInside];
+    NSLog(@"点击了第%ld张图",(long)subIndex + 1);
     
-    return bannerView;
-}
-
-#pragma mark --点击轮播图
-- (void)didSelectBannerButtonClick:(UIButton *) sender {
-    
-    NSInteger index = sender.tag;
-    
-    NSLog(@"点击了第%ld张图",(long)index + 1);
-    
-    self.indicateLabel.text = [NSString stringWithFormat:@"点击了第%ld张图",(long)index + 1];
-    
+    self.indicateLabel.text = [NSString stringWithFormat:@"点击了第%ld张图",(long)subIndex + 1];
 }
 
 - (void)didScrollToPage:(NSInteger)pageNumber inFlowView:(NewPagedFlowView *)flowView {
     
-    NSLog(@"滚动到了第%ld页",pageNumber);
+    NSLog(@"ViewController 滚动到了第%ld页",pageNumber);
 }
 
+#pragma mark NewPagedFlowView Datasource
+- (NSInteger)numberOfPagesInFlowView:(NewPagedFlowView *)flowView {
+    
+    return self.imageArray.count;
+    
+}
+
+- (PGIndexBannerSubiew *)flowView:(NewPagedFlowView *)flowView cellForPageAtIndex:(NSInteger)index{
+    PGIndexBannerSubiew *bannerView = [flowView dequeueReusableCell];
+    if (!bannerView) {
+        bannerView = [[PGIndexBannerSubiew alloc] init];
+        bannerView.tag = index;
+        bannerView.layer.cornerRadius = 4;
+        bannerView.layer.masksToBounds = YES;
+    }
+    //在这里下载网络图片
+    //  [bannerView.mainImageView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:hostUrlsImg,imageDict[@"img"]]] placeholderImage:[UIImage imageNamed:@""]];
+    bannerView.mainImageView.image = self.imageArray[index];
+    
+    return bannerView;
+}
+
+
+#pragma mark --懒加载
 - (NSMutableArray *)imageArray {
     if (_imageArray == nil) {
         _imageArray = [NSMutableArray array];
@@ -119,7 +131,7 @@
 - (UILabel *)indicateLabel {
     
     if (_indicateLabel == nil) {
-        _indicateLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 300, Width, 16)];
+        _indicateLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 400, Width, 16)];
         _indicateLabel.textColor = [UIColor blueColor];
         _indicateLabel.font = [UIFont systemFontOfSize:16.0];
         _indicateLabel.textAlignment = NSTextAlignmentCenter;
