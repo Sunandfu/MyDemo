@@ -9,7 +9,9 @@
 #import <Cocoa/Cocoa.h>
 @class ESInputJsonController;
 @interface AppDelegate : NSObject <NSApplicationDelegate>
+
 @property (nonatomic,strong) IBOutlet ESInputJsonController * inputJsonController;
-@property (nonatomic,strong) NSWindow * window;
+@property (weak) IBOutlet NSWindow *window;
+
 @end
 

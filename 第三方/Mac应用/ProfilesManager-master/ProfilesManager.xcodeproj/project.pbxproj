@@ -201,7 +201,7 @@
 				TargetAttributes = {
 					A21193181AF1CA5B0064CA7D = {
 						CreatedOnToolsVersion = 6.2;
-						DevelopmentTeam = J4N9H827FQ;
+						DevelopmentTeam = NN56R38BZT;
 						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.Sandbox = {
@@ -216,6 +216,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 				"zh-Hans",
@@ -379,7 +380,7 @@
 				CODE_SIGN_ENTITLEMENTS = ProfilesManager/ProfilesManager.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = J4N9H827FQ;
+				DEVELOPMENT_TEAM = NN56R38BZT;
 				INFOPLIST_FILE = ProfilesManager/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
@@ -397,7 +398,7 @@
 				CODE_SIGN_ENTITLEMENTS = ProfilesManager/ProfilesManager.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = J4N9H827FQ;
+				DEVELOPMENT_TEAM = NN56R38BZT;
 				INFOPLIST_FILE = ProfilesManager/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;

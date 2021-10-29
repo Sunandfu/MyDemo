@@ -19,7 +19,6 @@
 @property (nonatomic, weak) id<ESInputJsonControllerDelegate> delegate;
 
 
-
 @property (nonatomic, copy) NSString *currentFilePath;
 @property (nonatomic, assign) BOOL isSwift;
 @end

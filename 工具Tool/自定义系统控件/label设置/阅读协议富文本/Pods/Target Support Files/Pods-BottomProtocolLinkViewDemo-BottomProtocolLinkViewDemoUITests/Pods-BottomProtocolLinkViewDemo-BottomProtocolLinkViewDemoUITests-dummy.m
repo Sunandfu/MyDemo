@@ -1,0 +1,5 @@
+#import <Foundation/Foundation.h>
+@interface PodsDummy_Pods_BottomProtocolLinkViewDemo_BottomProtocolLinkViewDemoUITests : NSObject
+@end
+@implementation PodsDummy_Pods_BottomProtocolLinkViewDemo_BottomProtocolLinkViewDemoUITests
+@end

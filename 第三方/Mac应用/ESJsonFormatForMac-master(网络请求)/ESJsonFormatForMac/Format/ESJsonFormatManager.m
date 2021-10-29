@@ -62,7 +62,7 @@
         qualifierStr = @"assign";
         NSString *valueStr = [NSString stringWithFormat:@"%@",value];
         if ([valueStr rangeOfString:@"."].location!=NSNotFound){
-            typeStr = @"CGFloat";
+            typeStr = @"double";
         }else{
             NSNumber *valueNumber = (NSNumber *)value;
             if ([valueNumber longValue]<2147483648) {
