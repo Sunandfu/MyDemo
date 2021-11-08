@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>en</string>
+	<key>CFBundleExecutable</key>
+	<string>$(EXECUTABLE_NAME)</string>
+	<key>CFBundleIdentifier</key>
+	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>$(PRODUCT_NAME)</string>
+	<key>CFBundlePackageType</key>
+	<string>FMWK</string>
+	<key>CFBundleShortVersionString</key>
+	<string>2.8.2</string>
+	<key>CFBundleVersion</key>
+	<string>$(CURRENT_PROJECT_VERSION)</string>
+	<key>NSHumanReadableCopyright</key>
+	<string>Copyright © 2019年 WeChatExtension. All rights reserved.</string>
+	<key>NSPrincipalClass</key>
+	<string></string>
+	<key>showUpdateWindow</key>
+	<true/>
+	<key>versionInfo</key>
+	<string>v2.8.2(2021-01-15):\n👉🏻  适配微信v2.6.1(16837)\n👉🏻  群员监控可查看具体违规言论 \n👉🏻  修复2.6以上多选BUG \n👉🏻  祝大家新春快乐 注意疫情 保重🙏\n</string>
+</dict>
+</plist>

@@ -1,0 +1,891 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0A6470DB2058EBB50016B677 /* QQHelperSettingWindowCtr.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A6470D82058EBB50016B677 /* QQHelperSettingWindowCtr.h */; };
+		0A6470DC2058EBB50016B677 /* QQHelperSettingWindowCtr.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A6470D92058EBB50016B677 /* QQHelperSettingWindowCtr.m */; };
+		0A6470DF2058ED2C0016B677 /* QQHelperSettingWindow.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A6470DD2058ED2C0016B677 /* QQHelperSettingWindow.h */; };
+		0A6470E02058ED2C0016B677 /* QQHelperSettingWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A6470DE2058ED2C0016B677 /* QQHelperSettingWindow.m */; };
+		0A6470E42058FC630016B677 /* QQHelperSegmentedControl.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A6470E22058FC630016B677 /* QQHelperSegmentedControl.h */; };
+		0A6470E52058FC630016B677 /* QQHelperSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A6470E32058FC630016B677 /* QQHelperSegmentedControl.m */; };
+		0A6471012059003B0016B677 /* MASCompositeConstraint.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A6470E82059003B0016B677 /* MASCompositeConstraint.h */; };
+		0A6471022059003B0016B677 /* MASCompositeConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A6470E92059003B0016B677 /* MASCompositeConstraint.m */; };
+		0A6471032059003B0016B677 /* MASConstraint+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A6470EA2059003B0016B677 /* MASConstraint+Private.h */; };
+		0A6471042059003B0016B677 /* MASConstraint.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A6470EB2059003B0016B677 /* MASConstraint.h */; };
+		0A6471052059003B0016B677 /* MASConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A6470EC2059003B0016B677 /* MASConstraint.m */; };
+		0A6471062059003B0016B677 /* MASConstraintMaker.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A6470ED2059003B0016B677 /* MASConstraintMaker.h */; };
+		0A6471072059003B0016B677 /* MASConstraintMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A6470EE2059003B0016B677 /* MASConstraintMaker.m */; };
+		0A6471082059003B0016B677 /* MASLayoutConstraint.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A6470EF2059003B0016B677 /* MASLayoutConstraint.h */; };
+		0A6471092059003B0016B677 /* MASLayoutConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A6470F02059003B0016B677 /* MASLayoutConstraint.m */; };
+		0A64710A2059003B0016B677 /* Masonry.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A6470F12059003B0016B677 /* Masonry.h */; };
+		0A64710B2059003B0016B677 /* MASUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A6470F22059003B0016B677 /* MASUtilities.h */; };
+		0A64710C2059003B0016B677 /* MASViewAttribute.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A6470F32059003B0016B677 /* MASViewAttribute.h */; };
+		0A64710D2059003B0016B677 /* MASViewAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A6470F42059003B0016B677 /* MASViewAttribute.m */; };
+		0A64710E2059003B0016B677 /* MASViewConstraint.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A6470F52059003B0016B677 /* MASViewConstraint.h */; };
+		0A64710F2059003B0016B677 /* MASViewConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A6470F62059003B0016B677 /* MASViewConstraint.m */; };
+		0A6471102059003B0016B677 /* NSArray+MASAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A6470F72059003B0016B677 /* NSArray+MASAdditions.h */; };
+		0A6471112059003B0016B677 /* NSArray+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A6470F82059003B0016B677 /* NSArray+MASAdditions.m */; };
+		0A6471122059003B0016B677 /* NSArray+MASShorthandAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A6470F92059003B0016B677 /* NSArray+MASShorthandAdditions.h */; };
+		0A6471132059003B0016B677 /* NSLayoutConstraint+MASDebugAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A6470FA2059003B0016B677 /* NSLayoutConstraint+MASDebugAdditions.h */; };
+		0A6471142059003B0016B677 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A6470FB2059003B0016B677 /* NSLayoutConstraint+MASDebugAdditions.m */; };
+		0A6471152059003B0016B677 /* View+MASAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A6470FC2059003B0016B677 /* View+MASAdditions.h */; };
+		0A6471162059003B0016B677 /* View+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A6470FD2059003B0016B677 /* View+MASAdditions.m */; };
+		0A6471172059003B0016B677 /* View+MASShorthandAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A6470FE2059003B0016B677 /* View+MASShorthandAdditions.h */; };
+		0A6471182059003B0016B677 /* ViewController+MASAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A6470FF2059003B0016B677 /* ViewController+MASAdditions.h */; };
+		0A6471192059003B0016B677 /* ViewController+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A6471002059003B0016B677 /* ViewController+MASAdditions.m */; };
+		0A64712520591AF20016B677 /* RedPackView.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A64712320591AF20016B677 /* RedPackView.h */; };
+		0A64712620591AF20016B677 /* RedPackView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A64712420591AF20016B677 /* RedPackView.m */; };
+		0A64712920591AFE0016B677 /* OtherView.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A64712720591AFE0016B677 /* OtherView.h */; };
+		0A64712A20591AFE0016B677 /* OtherView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A64712820591AFE0016B677 /* OtherView.m */; };
+		0A64712E205A47700016B677 /* RedPackSettingMenuItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A64712C205A47700016B677 /* RedPackSettingMenuItem.h */; };
+		0A64712F205A47700016B677 /* RedPackSettingMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A64712D205A47700016B677 /* RedPackSettingMenuItem.m */; };
+		0A947F65204A42C8000A681C /* QQHelperNotification.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A947F63204A42C8000A681C /* QQHelperNotification.h */; };
+		0A947F66204A42C8000A681C /* QQHelperNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A947F64204A42C8000A681C /* QQHelperNotification.m */; };
+		0AD7FE562098603E0030D9E4 /* TKAutoReplyModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 0AD7FE472098603E0030D9E4 /* TKAutoReplyModel.h */; };
+		0AD7FE572098603E0030D9E4 /* TKAutoReplyModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AD7FE482098603E0030D9E4 /* TKAutoReplyModel.m */; };
+		0AD7FE582098603E0030D9E4 /* TKBaseModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 0AD7FE492098603E0030D9E4 /* TKBaseModel.h */; };
+		0AD7FE592098603E0030D9E4 /* TKBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AD7FE4A2098603E0030D9E4 /* TKBaseModel.m */; };
+		0AD7FE5A2098603E0030D9E4 /* TKAutoReplyCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 0AD7FE4D2098603E0030D9E4 /* TKAutoReplyCell.h */; };
+		0AD7FE5B2098603E0030D9E4 /* TKAutoReplyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AD7FE4E2098603E0030D9E4 /* TKAutoReplyCell.m */; };
+		0AD7FE5C2098603E0030D9E4 /* TKAutoReplyContentView.h in Headers */ = {isa = PBXBuildFile; fileRef = 0AD7FE4F2098603E0030D9E4 /* TKAutoReplyContentView.h */; };
+		0AD7FE5D2098603E0030D9E4 /* TKAutoReplyContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AD7FE502098603E0030D9E4 /* TKAutoReplyContentView.m */; };
+		0AD7FE5E2098603E0030D9E4 /* TKAutoReplyWindowController.h in Headers */ = {isa = PBXBuildFile; fileRef = 0AD7FE532098603E0030D9E4 /* TKAutoReplyWindowController.h */; };
+		0AD7FE5F2098603E0030D9E4 /* TKAutoReplyWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AD7FE542098603E0030D9E4 /* TKAutoReplyWindowController.m */; };
+		0AD7FE612098606D0030D9E4 /* QQPlugin.h in Headers */ = {isa = PBXBuildFile; fileRef = 0AD7FE602098606C0030D9E4 /* QQPlugin.h */; };
+		0AD7FE6E209860910030D9E4 /* NSButton+Action.h in Headers */ = {isa = PBXBuildFile; fileRef = 0AD7FE64209860900030D9E4 /* NSButton+Action.h */; };
+		0AD7FE6F209860910030D9E4 /* NSButton+Action.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AD7FE65209860900030D9E4 /* NSButton+Action.m */; };
+		0AD7FE70209860910030D9E4 /* NSTextField+Action.h in Headers */ = {isa = PBXBuildFile; fileRef = 0AD7FE66209860900030D9E4 /* NSTextField+Action.h */; };
+		0AD7FE71209860910030D9E4 /* NSTextField+Action.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AD7FE67209860900030D9E4 /* NSTextField+Action.m */; };
+		0AD7FE72209860910030D9E4 /* NSView+Action.h in Headers */ = {isa = PBXBuildFile; fileRef = 0AD7FE68209860900030D9E4 /* NSView+Action.h */; };
+		0AD7FE73209860910030D9E4 /* NSView+Action.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AD7FE69209860900030D9E4 /* NSView+Action.m */; };
+		0AD7FE74209860910030D9E4 /* Color.h in Headers */ = {isa = PBXBuildFile; fileRef = 0AD7FE6A209860900030D9E4 /* Color.h */; };
+		0AD7FE75209860910030D9E4 /* TKQQPluginConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = 0AD7FE6C209860900030D9E4 /* TKQQPluginConfig.h */; };
+		0AD7FE76209860910030D9E4 /* TKQQPluginConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AD7FE6D209860900030D9E4 /* TKQQPluginConfig.m */; };
+		0AD7FE7E209860F50030D9E4 /* TKHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 0AD7FE78209860F50030D9E4 /* TKHelper.h */; };
+		0AD7FE7F209860F50030D9E4 /* TKHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AD7FE79209860F50030D9E4 /* TKHelper.m */; };
+		0AD7FE80209860F50030D9E4 /* TKMsgManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 0AD7FE7A209860F50030D9E4 /* TKMsgManager.h */; };
+		0AD7FE81209860F50030D9E4 /* TKMsgManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AD7FE7B209860F50030D9E4 /* TKMsgManager.m */; };
+		0AD7FE82209860F50030D9E4 /* TKWebServerManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 0AD7FE7C209860F50030D9E4 /* TKWebServerManager.h */; };
+		0AD7FE83209860F50030D9E4 /* TKWebServerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AD7FE7D209860F50030D9E4 /* TKWebServerManager.m */; };
+		0AD7FEA42098617A0030D9E4 /* GCDWebServer.h in Headers */ = {isa = PBXBuildFile; fileRef = 0AD7FE862098617A0030D9E4 /* GCDWebServer.h */; };
+		0AD7FEA52098617A0030D9E4 /* GCDWebServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AD7FE872098617A0030D9E4 /* GCDWebServer.m */; };
+		0AD7FEA62098617A0030D9E4 /* GCDWebServerConnection.h in Headers */ = {isa = PBXBuildFile; fileRef = 0AD7FE882098617A0030D9E4 /* GCDWebServerConnection.h */; };
+		0AD7FEA72098617A0030D9E4 /* GCDWebServerConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AD7FE892098617A0030D9E4 /* GCDWebServerConnection.m */; };
+		0AD7FEA82098617A0030D9E4 /* GCDWebServerFunctions.h in Headers */ = {isa = PBXBuildFile; fileRef = 0AD7FE8A2098617A0030D9E4 /* GCDWebServerFunctions.h */; };
+		0AD7FEA92098617A0030D9E4 /* GCDWebServerFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AD7FE8B2098617A0030D9E4 /* GCDWebServerFunctions.m */; };
+		0AD7FEAA2098617A0030D9E4 /* GCDWebServerHTTPStatusCodes.h in Headers */ = {isa = PBXBuildFile; fileRef = 0AD7FE8C2098617A0030D9E4 /* GCDWebServerHTTPStatusCodes.h */; };
+		0AD7FEAB2098617A0030D9E4 /* GCDWebServerPrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = 0AD7FE8D2098617A0030D9E4 /* GCDWebServerPrivate.h */; };
+		0AD7FEAC2098617A0030D9E4 /* GCDWebServerRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 0AD7FE8E2098617A0030D9E4 /* GCDWebServerRequest.h */; };
+		0AD7FEAD2098617A0030D9E4 /* GCDWebServerRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AD7FE8F2098617A0030D9E4 /* GCDWebServerRequest.m */; };
+		0AD7FEAE2098617A0030D9E4 /* GCDWebServerResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 0AD7FE902098617A0030D9E4 /* GCDWebServerResponse.h */; };
+		0AD7FEAF2098617A0030D9E4 /* GCDWebServerResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AD7FE912098617A0030D9E4 /* GCDWebServerResponse.m */; };
+		0AD7FEB02098617A0030D9E4 /* GCDWebServerDataRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 0AD7FE932098617A0030D9E4 /* GCDWebServerDataRequest.h */; };
+		0AD7FEB12098617A0030D9E4 /* GCDWebServerDataRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AD7FE942098617A0030D9E4 /* GCDWebServerDataRequest.m */; };
+		0AD7FEB22098617A0030D9E4 /* GCDWebServerFileRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 0AD7FE952098617A0030D9E4 /* GCDWebServerFileRequest.h */; };
+		0AD7FEB32098617A0030D9E4 /* GCDWebServerFileRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AD7FE962098617A0030D9E4 /* GCDWebServerFileRequest.m */; };
+		0AD7FEB42098617A0030D9E4 /* GCDWebServerMultiPartFormRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 0AD7FE972098617A0030D9E4 /* GCDWebServerMultiPartFormRequest.h */; };
+		0AD7FEB52098617A0030D9E4 /* GCDWebServerMultiPartFormRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AD7FE982098617A0030D9E4 /* GCDWebServerMultiPartFormRequest.m */; };
+		0AD7FEB62098617A0030D9E4 /* GCDWebServerURLEncodedFormRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 0AD7FE992098617A0030D9E4 /* GCDWebServerURLEncodedFormRequest.h */; };
+		0AD7FEB72098617A0030D9E4 /* GCDWebServerURLEncodedFormRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AD7FE9A2098617A0030D9E4 /* GCDWebServerURLEncodedFormRequest.m */; };
+		0AD7FEB82098617A0030D9E4 /* GCDWebServerDataResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 0AD7FE9C2098617A0030D9E4 /* GCDWebServerDataResponse.h */; };
+		0AD7FEB92098617A0030D9E4 /* GCDWebServerDataResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AD7FE9D2098617A0030D9E4 /* GCDWebServerDataResponse.m */; };
+		0AD7FEBA2098617A0030D9E4 /* GCDWebServerErrorResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 0AD7FE9E2098617A0030D9E4 /* GCDWebServerErrorResponse.h */; };
+		0AD7FEBB2098617A0030D9E4 /* GCDWebServerErrorResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AD7FE9F2098617A0030D9E4 /* GCDWebServerErrorResponse.m */; };
+		0AD7FEBC2098617A0030D9E4 /* GCDWebServerFileResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 0AD7FEA02098617A0030D9E4 /* GCDWebServerFileResponse.h */; };
+		0AD7FEBD2098617A0030D9E4 /* GCDWebServerFileResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AD7FEA12098617A0030D9E4 /* GCDWebServerFileResponse.m */; };
+		0AD7FEBE2098617A0030D9E4 /* GCDWebServerStreamedResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 0AD7FEA22098617A0030D9E4 /* GCDWebServerStreamedResponse.h */; };
+		0AD7FEBF2098617A0030D9E4 /* GCDWebServerStreamedResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AD7FEA32098617A0030D9E4 /* GCDWebServerStreamedResponse.m */; };
+		0AD9070D2049957200F9E441 /* QQHelperMenu.h in Headers */ = {isa = PBXBuildFile; fileRef = 0AD9070B2049957200F9E441 /* QQHelperMenu.h */; };
+		0AD9070E2049957200F9E441 /* QQHelperMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AD9070C2049957200F9E441 /* QQHelperMenu.m */; };
+		0AD9123C2049A05D00F9E441 /* QQHelperSetting.h in Headers */ = {isa = PBXBuildFile; fileRef = 0AD9123A2049A05D00F9E441 /* QQHelperSetting.h */; };
+		0AD9123D2049A05D00F9E441 /* QQHelperSetting.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AD9123B2049A05D00F9E441 /* QQHelperSetting.m */; };
+		0ADF9AAB2026EB7E0048E625 /* QQRedPackHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 0ADF9AAA2026EB7E0048E625 /* QQRedPackHelper.h */; };
+		0ADF9AAD2026EB7E0048E625 /* QQRedPackHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ADF9AAC2026EB7E0048E625 /* QQRedPackHelper.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0A144D622051140C00800B74 /* QQHelperDependent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QQHelperDependent.h; sourceTree = "<group>"; };
+		0A6470D82058EBB50016B677 /* QQHelperSettingWindowCtr.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QQHelperSettingWindowCtr.h; sourceTree = "<group>"; };
+		0A6470D92058EBB50016B677 /* QQHelperSettingWindowCtr.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QQHelperSettingWindowCtr.m; sourceTree = "<group>"; };
+		0A6470DD2058ED2C0016B677 /* QQHelperSettingWindow.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QQHelperSettingWindow.h; sourceTree = "<group>"; };
+		0A6470DE2058ED2C0016B677 /* QQHelperSettingWindow.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QQHelperSettingWindow.m; sourceTree = "<group>"; };
+		0A6470E22058FC630016B677 /* QQHelperSegmentedControl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QQHelperSegmentedControl.h; sourceTree = "<group>"; };
+		0A6470E32058FC630016B677 /* QQHelperSegmentedControl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QQHelperSegmentedControl.m; sourceTree = "<group>"; };
+		0A6470E82059003B0016B677 /* MASCompositeConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASCompositeConstraint.h; sourceTree = "<group>"; };
+		0A6470E92059003B0016B677 /* MASCompositeConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASCompositeConstraint.m; sourceTree = "<group>"; };
+		0A6470EA2059003B0016B677 /* MASConstraint+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MASConstraint+Private.h"; sourceTree = "<group>"; };
+		0A6470EB2059003B0016B677 /* MASConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASConstraint.h; sourceTree = "<group>"; };
+		0A6470EC2059003B0016B677 /* MASConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASConstraint.m; sourceTree = "<group>"; };
+		0A6470ED2059003B0016B677 /* MASConstraintMaker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASConstraintMaker.h; sourceTree = "<group>"; };
+		0A6470EE2059003B0016B677 /* MASConstraintMaker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASConstraintMaker.m; sourceTree = "<group>"; };
+		0A6470EF2059003B0016B677 /* MASLayoutConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASLayoutConstraint.h; sourceTree = "<group>"; };
+		0A6470F02059003B0016B677 /* MASLayoutConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASLayoutConstraint.m; sourceTree = "<group>"; };
+		0A6470F12059003B0016B677 /* Masonry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Masonry.h; sourceTree = "<group>"; };
+		0A6470F22059003B0016B677 /* MASUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASUtilities.h; sourceTree = "<group>"; };
+		0A6470F32059003B0016B677 /* MASViewAttribute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASViewAttribute.h; sourceTree = "<group>"; };
+		0A6470F42059003B0016B677 /* MASViewAttribute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASViewAttribute.m; sourceTree = "<group>"; };
+		0A6470F52059003B0016B677 /* MASViewConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASViewConstraint.h; sourceTree = "<group>"; };
+		0A6470F62059003B0016B677 /* MASViewConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASViewConstraint.m; sourceTree = "<group>"; };
+		0A6470F72059003B0016B677 /* NSArray+MASAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+MASAdditions.h"; sourceTree = "<group>"; };
+		0A6470F82059003B0016B677 /* NSArray+MASAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+MASAdditions.m"; sourceTree = "<group>"; };
+		0A6470F92059003B0016B677 /* NSArray+MASShorthandAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+MASShorthandAdditions.h"; sourceTree = "<group>"; };
+		0A6470FA2059003B0016B677 /* NSLayoutConstraint+MASDebugAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSLayoutConstraint+MASDebugAdditions.h"; sourceTree = "<group>"; };
+		0A6470FB2059003B0016B677 /* NSLayoutConstraint+MASDebugAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSLayoutConstraint+MASDebugAdditions.m"; sourceTree = "<group>"; };
+		0A6470FC2059003B0016B677 /* View+MASAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "View+MASAdditions.h"; sourceTree = "<group>"; };
+		0A6470FD2059003B0016B677 /* View+MASAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "View+MASAdditions.m"; sourceTree = "<group>"; };
+		0A6470FE2059003B0016B677 /* View+MASShorthandAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "View+MASShorthandAdditions.h"; sourceTree = "<group>"; };
+		0A6470FF2059003B0016B677 /* ViewController+MASAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ViewController+MASAdditions.h"; sourceTree = "<group>"; };
+		0A6471002059003B0016B677 /* ViewController+MASAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ViewController+MASAdditions.m"; sourceTree = "<group>"; };
+		0A64712320591AF20016B677 /* RedPackView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RedPackView.h; sourceTree = "<group>"; };
+		0A64712420591AF20016B677 /* RedPackView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RedPackView.m; sourceTree = "<group>"; };
+		0A64712720591AFE0016B677 /* OtherView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OtherView.h; sourceTree = "<group>"; };
+		0A64712820591AFE0016B677 /* OtherView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OtherView.m; sourceTree = "<group>"; };
+		0A64712C205A47700016B677 /* RedPackSettingMenuItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RedPackSettingMenuItem.h; sourceTree = "<group>"; };
+		0A64712D205A47700016B677 /* RedPackSettingMenuItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RedPackSettingMenuItem.m; sourceTree = "<group>"; };
+		0A947F63204A42C8000A681C /* QQHelperNotification.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QQHelperNotification.h; sourceTree = "<group>"; };
+		0A947F64204A42C8000A681C /* QQHelperNotification.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QQHelperNotification.m; sourceTree = "<group>"; };
+		0AD7FE472098603E0030D9E4 /* TKAutoReplyModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKAutoReplyModel.h; sourceTree = "<group>"; };
+		0AD7FE482098603E0030D9E4 /* TKAutoReplyModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKAutoReplyModel.m; sourceTree = "<group>"; };
+		0AD7FE492098603E0030D9E4 /* TKBaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKBaseModel.h; sourceTree = "<group>"; };
+		0AD7FE4A2098603E0030D9E4 /* TKBaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKBaseModel.m; sourceTree = "<group>"; };
+		0AD7FE4D2098603E0030D9E4 /* TKAutoReplyCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKAutoReplyCell.h; sourceTree = "<group>"; };
+		0AD7FE4E2098603E0030D9E4 /* TKAutoReplyCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKAutoReplyCell.m; sourceTree = "<group>"; };
+		0AD7FE4F2098603E0030D9E4 /* TKAutoReplyContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKAutoReplyContentView.h; sourceTree = "<group>"; };
+		0AD7FE502098603E0030D9E4 /* TKAutoReplyContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKAutoReplyContentView.m; sourceTree = "<group>"; };
+		0AD7FE532098603E0030D9E4 /* TKAutoReplyWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKAutoReplyWindowController.h; sourceTree = "<group>"; };
+		0AD7FE542098603E0030D9E4 /* TKAutoReplyWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKAutoReplyWindowController.m; sourceTree = "<group>"; };
+		0AD7FE602098606C0030D9E4 /* QQPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QQPlugin.h; sourceTree = "<group>"; };
+		0AD7FE64209860900030D9E4 /* NSButton+Action.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSButton+Action.h"; sourceTree = "<group>"; };
+		0AD7FE65209860900030D9E4 /* NSButton+Action.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSButton+Action.m"; sourceTree = "<group>"; };
+		0AD7FE66209860900030D9E4 /* NSTextField+Action.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTextField+Action.h"; sourceTree = "<group>"; };
+		0AD7FE67209860900030D9E4 /* NSTextField+Action.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTextField+Action.m"; sourceTree = "<group>"; };
+		0AD7FE68209860900030D9E4 /* NSView+Action.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSView+Action.h"; sourceTree = "<group>"; };
+		0AD7FE69209860900030D9E4 /* NSView+Action.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSView+Action.m"; sourceTree = "<group>"; };
+		0AD7FE6A209860900030D9E4 /* Color.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Color.h; sourceTree = "<group>"; };
+		0AD7FE6C209860900030D9E4 /* TKQQPluginConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKQQPluginConfig.h; sourceTree = "<group>"; };
+		0AD7FE6D209860900030D9E4 /* TKQQPluginConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKQQPluginConfig.m; sourceTree = "<group>"; };
+		0AD7FE78209860F50030D9E4 /* TKHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKHelper.h; sourceTree = "<group>"; };
+		0AD7FE79209860F50030D9E4 /* TKHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKHelper.m; sourceTree = "<group>"; };
+		0AD7FE7A209860F50030D9E4 /* TKMsgManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKMsgManager.h; sourceTree = "<group>"; };
+		0AD7FE7B209860F50030D9E4 /* TKMsgManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKMsgManager.m; sourceTree = "<group>"; };
+		0AD7FE7C209860F50030D9E4 /* TKWebServerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKWebServerManager.h; sourceTree = "<group>"; };
+		0AD7FE7D209860F50030D9E4 /* TKWebServerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKWebServerManager.m; sourceTree = "<group>"; };
+		0AD7FE862098617A0030D9E4 /* GCDWebServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDWebServer.h; sourceTree = "<group>"; };
+		0AD7FE872098617A0030D9E4 /* GCDWebServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDWebServer.m; sourceTree = "<group>"; };
+		0AD7FE882098617A0030D9E4 /* GCDWebServerConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDWebServerConnection.h; sourceTree = "<group>"; };
+		0AD7FE892098617A0030D9E4 /* GCDWebServerConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDWebServerConnection.m; sourceTree = "<group>"; };
+		0AD7FE8A2098617A0030D9E4 /* GCDWebServerFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDWebServerFunctions.h; sourceTree = "<group>"; };
+		0AD7FE8B2098617A0030D9E4 /* GCDWebServerFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDWebServerFunctions.m; sourceTree = "<group>"; };
+		0AD7FE8C2098617A0030D9E4 /* GCDWebServerHTTPStatusCodes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDWebServerHTTPStatusCodes.h; sourceTree = "<group>"; };
+		0AD7FE8D2098617A0030D9E4 /* GCDWebServerPrivate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDWebServerPrivate.h; sourceTree = "<group>"; };
+		0AD7FE8E2098617A0030D9E4 /* GCDWebServerRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDWebServerRequest.h; sourceTree = "<group>"; };
+		0AD7FE8F2098617A0030D9E4 /* GCDWebServerRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDWebServerRequest.m; sourceTree = "<group>"; };
+		0AD7FE902098617A0030D9E4 /* GCDWebServerResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDWebServerResponse.h; sourceTree = "<group>"; };
+		0AD7FE912098617A0030D9E4 /* GCDWebServerResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDWebServerResponse.m; sourceTree = "<group>"; };
+		0AD7FE932098617A0030D9E4 /* GCDWebServerDataRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDWebServerDataRequest.h; sourceTree = "<group>"; };
+		0AD7FE942098617A0030D9E4 /* GCDWebServerDataRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDWebServerDataRequest.m; sourceTree = "<group>"; };
+		0AD7FE952098617A0030D9E4 /* GCDWebServerFileRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDWebServerFileRequest.h; sourceTree = "<group>"; };
+		0AD7FE962098617A0030D9E4 /* GCDWebServerFileRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDWebServerFileRequest.m; sourceTree = "<group>"; };
+		0AD7FE972098617A0030D9E4 /* GCDWebServerMultiPartFormRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDWebServerMultiPartFormRequest.h; sourceTree = "<group>"; };
+		0AD7FE982098617A0030D9E4 /* GCDWebServerMultiPartFormRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDWebServerMultiPartFormRequest.m; sourceTree = "<group>"; };
+		0AD7FE992098617A0030D9E4 /* GCDWebServerURLEncodedFormRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDWebServerURLEncodedFormRequest.h; sourceTree = "<group>"; };
+		0AD7FE9A2098617A0030D9E4 /* GCDWebServerURLEncodedFormRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDWebServerURLEncodedFormRequest.m; sourceTree = "<group>"; };
+		0AD7FE9C2098617A0030D9E4 /* GCDWebServerDataResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDWebServerDataResponse.h; sourceTree = "<group>"; };
+		0AD7FE9D2098617A0030D9E4 /* GCDWebServerDataResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDWebServerDataResponse.m; sourceTree = "<group>"; };
+		0AD7FE9E2098617A0030D9E4 /* GCDWebServerErrorResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDWebServerErrorResponse.h; sourceTree = "<group>"; };
+		0AD7FE9F2098617A0030D9E4 /* GCDWebServerErrorResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDWebServerErrorResponse.m; sourceTree = "<group>"; };
+		0AD7FEA02098617A0030D9E4 /* GCDWebServerFileResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDWebServerFileResponse.h; sourceTree = "<group>"; };
+		0AD7FEA12098617A0030D9E4 /* GCDWebServerFileResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDWebServerFileResponse.m; sourceTree = "<group>"; };
+		0AD7FEA22098617A0030D9E4 /* GCDWebServerStreamedResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDWebServerStreamedResponse.h; sourceTree = "<group>"; };
+		0AD7FEA32098617A0030D9E4 /* GCDWebServerStreamedResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDWebServerStreamedResponse.m; sourceTree = "<group>"; };
+		0AD9070B2049957200F9E441 /* QQHelperMenu.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QQHelperMenu.h; sourceTree = "<group>"; };
+		0AD9070C2049957200F9E441 /* QQHelperMenu.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QQHelperMenu.m; sourceTree = "<group>"; };
+		0AD9123A2049A05D00F9E441 /* QQHelperSetting.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QQHelperSetting.h; sourceTree = "<group>"; };
+		0AD9123B2049A05D00F9E441 /* QQHelperSetting.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QQHelperSetting.m; sourceTree = "<group>"; };
+		0ADF9AA52026EB7E0048E625 /* libQQRedPackHelper.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libQQRedPackHelper.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+		0ADF9AA92026EB7E0048E625 /* put mac app here */ = {isa = PBXFileReference; lastKnownFileType = text; name = "put mac app here"; path = "TargetApp/put mac app here"; sourceTree = "<group>"; };
+		0ADF9AAA2026EB7E0048E625 /* QQRedPackHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QQRedPackHelper.h; sourceTree = "<group>"; };
+		0ADF9AAC2026EB7E0048E625 /* QQRedPackHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QQRedPackHelper.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0ADF9AA12026EB7E0048E625 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0A6470D32058EB380016B677 /* SettingWindow */ = {
+			isa = PBXGroup;
+			children = (
+				0A6470D82058EBB50016B677 /* QQHelperSettingWindowCtr.h */,
+				0A6470D92058EBB50016B677 /* QQHelperSettingWindowCtr.m */,
+				0A6470DD2058ED2C0016B677 /* QQHelperSettingWindow.h */,
+				0A6470DE2058ED2C0016B677 /* QQHelperSettingWindow.m */,
+			);
+			name = SettingWindow;
+			sourceTree = "<group>";
+		};
+		0A6470E12058FC3C0016B677 /* SegmentedControl */ = {
+			isa = PBXGroup;
+			children = (
+				0A6470E22058FC630016B677 /* QQHelperSegmentedControl.h */,
+				0A6470E32058FC630016B677 /* QQHelperSegmentedControl.m */,
+				0A64712320591AF20016B677 /* RedPackView.h */,
+				0A64712420591AF20016B677 /* RedPackView.m */,
+				0A64712720591AFE0016B677 /* OtherView.h */,
+				0A64712820591AFE0016B677 /* OtherView.m */,
+			);
+			name = SegmentedControl;
+			sourceTree = "<group>";
+		};
+		0A6470E62059002A0016B677 /* Third */ = {
+			isa = PBXGroup;
+			children = (
+				0AD7FE842098617A0030D9E4 /* GCDWebServer */,
+				0A6470E72059003B0016B677 /* Masonry */,
+			);
+			name = Third;
+			sourceTree = "<group>";
+		};
+		0A6470E72059003B0016B677 /* Masonry */ = {
+			isa = PBXGroup;
+			children = (
+				0A6470E82059003B0016B677 /* MASCompositeConstraint.h */,
+				0A6470E92059003B0016B677 /* MASCompositeConstraint.m */,
+				0A6470EA2059003B0016B677 /* MASConstraint+Private.h */,
+				0A6470EB2059003B0016B677 /* MASConstraint.h */,
+				0A6470EC2059003B0016B677 /* MASConstraint.m */,
+				0A6470ED2059003B0016B677 /* MASConstraintMaker.h */,
+				0A6470EE2059003B0016B677 /* MASConstraintMaker.m */,
+				0A6470EF2059003B0016B677 /* MASLayoutConstraint.h */,
+				0A6470F02059003B0016B677 /* MASLayoutConstraint.m */,
+				0A6470F12059003B0016B677 /* Masonry.h */,
+				0A6470F22059003B0016B677 /* MASUtilities.h */,
+				0A6470F32059003B0016B677 /* MASViewAttribute.h */,
+				0A6470F42059003B0016B677 /* MASViewAttribute.m */,
+				0A6470F52059003B0016B677 /* MASViewConstraint.h */,
+				0A6470F62059003B0016B677 /* MASViewConstraint.m */,
+				0A6470F72059003B0016B677 /* NSArray+MASAdditions.h */,
+				0A6470F82059003B0016B677 /* NSArray+MASAdditions.m */,
+				0A6470F92059003B0016B677 /* NSArray+MASShorthandAdditions.h */,
+				0A6470FA2059003B0016B677 /* NSLayoutConstraint+MASDebugAdditions.h */,
+				0A6470FB2059003B0016B677 /* NSLayoutConstraint+MASDebugAdditions.m */,
+				0A6470FC2059003B0016B677 /* View+MASAdditions.h */,
+				0A6470FD2059003B0016B677 /* View+MASAdditions.m */,
+				0A6470FE2059003B0016B677 /* View+MASShorthandAdditions.h */,
+				0A6470FF2059003B0016B677 /* ViewController+MASAdditions.h */,
+				0A6471002059003B0016B677 /* ViewController+MASAdditions.m */,
+			);
+			path = Masonry;
+			sourceTree = "<group>";
+		};
+		0A64712B205A47390016B677 /* RightClickItem */ = {
+			isa = PBXGroup;
+			children = (
+				0A64712C205A47700016B677 /* RedPackSettingMenuItem.h */,
+				0A64712D205A47700016B677 /* RedPackSettingMenuItem.m */,
+			);
+			name = RightClickItem;
+			sourceTree = "<group>";
+		};
+		0AD7FE462098603E0030D9E4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0AD7FE472098603E0030D9E4 /* TKAutoReplyModel.h */,
+				0AD7FE482098603E0030D9E4 /* TKAutoReplyModel.m */,
+				0AD7FE492098603E0030D9E4 /* TKBaseModel.h */,
+				0AD7FE4A2098603E0030D9E4 /* TKBaseModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0AD7FE4B2098603E0030D9E4 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0AD7FE4C2098603E0030D9E4 /* AutoReply */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		0AD7FE4C2098603E0030D9E4 /* AutoReply */ = {
+			isa = PBXGroup;
+			children = (
+				0AD7FE4D2098603E0030D9E4 /* TKAutoReplyCell.h */,
+				0AD7FE4E2098603E0030D9E4 /* TKAutoReplyCell.m */,
+				0AD7FE4F2098603E0030D9E4 /* TKAutoReplyContentView.h */,
+				0AD7FE502098603E0030D9E4 /* TKAutoReplyContentView.m */,
+			);
+			path = AutoReply;
+			sourceTree = "<group>";
+		};
+		0AD7FE512098603E0030D9E4 /* WindowControllers */ = {
+			isa = PBXGroup;
+			children = (
+				0AD7FE522098603E0030D9E4 /* AutoReply */,
+			);
+			path = WindowControllers;
+			sourceTree = "<group>";
+		};
+		0AD7FE522098603E0030D9E4 /* AutoReply */ = {
+			isa = PBXGroup;
+			children = (
+				0AD7FE532098603E0030D9E4 /* TKAutoReplyWindowController.h */,
+				0AD7FE542098603E0030D9E4 /* TKAutoReplyWindowController.m */,
+			);
+			path = AutoReply;
+			sourceTree = "<group>";
+		};
+		0AD7FE62209860900030D9E4 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				0AD7FE63209860900030D9E4 /* Category */,
+				0AD7FE6A209860900030D9E4 /* Color.h */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		0AD7FE63209860900030D9E4 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				0AD7FE64209860900030D9E4 /* NSButton+Action.h */,
+				0AD7FE65209860900030D9E4 /* NSButton+Action.m */,
+				0AD7FE66209860900030D9E4 /* NSTextField+Action.h */,
+				0AD7FE67209860900030D9E4 /* NSTextField+Action.m */,
+				0AD7FE68209860900030D9E4 /* NSView+Action.h */,
+				0AD7FE69209860900030D9E4 /* NSView+Action.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		0AD7FE6B209860900030D9E4 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				0AD7FE6C209860900030D9E4 /* TKQQPluginConfig.h */,
+				0AD7FE6D209860900030D9E4 /* TKQQPluginConfig.m */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		0AD7FE77209860F50030D9E4 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				0AD7FE78209860F50030D9E4 /* TKHelper.h */,
+				0AD7FE79209860F50030D9E4 /* TKHelper.m */,
+				0AD7FE7A209860F50030D9E4 /* TKMsgManager.h */,
+				0AD7FE7B209860F50030D9E4 /* TKMsgManager.m */,
+				0AD7FE7C209860F50030D9E4 /* TKWebServerManager.h */,
+				0AD7FE7D209860F50030D9E4 /* TKWebServerManager.m */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		0AD7FE842098617A0030D9E4 /* GCDWebServer */ = {
+			isa = PBXGroup;
+			children = (
+				0AD7FE852098617A0030D9E4 /* Core */,
+				0AD7FE922098617A0030D9E4 /* Requests */,
+				0AD7FE9B2098617A0030D9E4 /* Responses */,
+			);
+			path = GCDWebServer;
+			sourceTree = "<group>";
+		};
+		0AD7FE852098617A0030D9E4 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				0AD7FE862098617A0030D9E4 /* GCDWebServer.h */,
+				0AD7FE872098617A0030D9E4 /* GCDWebServer.m */,
+				0AD7FE882098617A0030D9E4 /* GCDWebServerConnection.h */,
+				0AD7FE892098617A0030D9E4 /* GCDWebServerConnection.m */,
+				0AD7FE8A2098617A0030D9E4 /* GCDWebServerFunctions.h */,
+				0AD7FE8B2098617A0030D9E4 /* GCDWebServerFunctions.m */,
+				0AD7FE8C2098617A0030D9E4 /* GCDWebServerHTTPStatusCodes.h */,
+				0AD7FE8D2098617A0030D9E4 /* GCDWebServerPrivate.h */,
+				0AD7FE8E2098617A0030D9E4 /* GCDWebServerRequest.h */,
+				0AD7FE8F2098617A0030D9E4 /* GCDWebServerRequest.m */,
+				0AD7FE902098617A0030D9E4 /* GCDWebServerResponse.h */,
+				0AD7FE912098617A0030D9E4 /* GCDWebServerResponse.m */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		0AD7FE922098617A0030D9E4 /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				0AD7FE932098617A0030D9E4 /* GCDWebServerDataRequest.h */,
+				0AD7FE942098617A0030D9E4 /* GCDWebServerDataRequest.m */,
+				0AD7FE952098617A0030D9E4 /* GCDWebServerFileRequest.h */,
+				0AD7FE962098617A0030D9E4 /* GCDWebServerFileRequest.m */,
+				0AD7FE972098617A0030D9E4 /* GCDWebServerMultiPartFormRequest.h */,
+				0AD7FE982098617A0030D9E4 /* GCDWebServerMultiPartFormRequest.m */,
+				0AD7FE992098617A0030D9E4 /* GCDWebServerURLEncodedFormRequest.h */,
+				0AD7FE9A2098617A0030D9E4 /* GCDWebServerURLEncodedFormRequest.m */,
+			);
+			path = Requests;
+			sourceTree = "<group>";
+		};
+		0AD7FE9B2098617A0030D9E4 /* Responses */ = {
+			isa = PBXGroup;
+			children = (
+				0AD7FE9C2098617A0030D9E4 /* GCDWebServerDataResponse.h */,
+				0AD7FE9D2098617A0030D9E4 /* GCDWebServerDataResponse.m */,
+				0AD7FE9E2098617A0030D9E4 /* GCDWebServerErrorResponse.h */,
+				0AD7FE9F2098617A0030D9E4 /* GCDWebServerErrorResponse.m */,
+				0AD7FEA02098617A0030D9E4 /* GCDWebServerFileResponse.h */,
+				0AD7FEA12098617A0030D9E4 /* GCDWebServerFileResponse.m */,
+				0AD7FEA22098617A0030D9E4 /* GCDWebServerStreamedResponse.h */,
+				0AD7FEA32098617A0030D9E4 /* GCDWebServerStreamedResponse.m */,
+			);
+			path = Responses;
+			sourceTree = "<group>";
+		};
+		0ADF9A9B2026EB7E0048E625 = {
+			isa = PBXGroup;
+			children = (
+				0ADF9AA72026EB7E0048E625 /* QQRedPackHelper */,
+				0ADF9AA62026EB7E0048E625 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		0ADF9AA62026EB7E0048E625 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0ADF9AA52026EB7E0048E625 /* libQQRedPackHelper.dylib */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0ADF9AA72026EB7E0048E625 /* QQRedPackHelper */ = {
+			isa = PBXGroup;
+			children = (
+				0AD7FE77209860F50030D9E4 /* Utils */,
+				0AD7FE62209860900030D9E4 /* Common */,
+				0AD7FE6B209860900030D9E4 /* Config */,
+				0AD7FE462098603E0030D9E4 /* Model */,
+				0AD7FE4B2098603E0030D9E4 /* Views */,
+				0AD7FE512098603E0030D9E4 /* WindowControllers */,
+				0A64712B205A47390016B677 /* RightClickItem */,
+				0A6470E62059002A0016B677 /* Third */,
+				0A6470E12058FC3C0016B677 /* SegmentedControl */,
+				0A6470D32058EB380016B677 /* SettingWindow */,
+				0A144D622051140C00800B74 /* QQHelperDependent.h */,
+				0ADF9AAA2026EB7E0048E625 /* QQRedPackHelper.h */,
+				0ADF9AAC2026EB7E0048E625 /* QQRedPackHelper.m */,
+				0AD7FE602098606C0030D9E4 /* QQPlugin.h */,
+				0AD9070B2049957200F9E441 /* QQHelperMenu.h */,
+				0AD9070C2049957200F9E441 /* QQHelperMenu.m */,
+				0AD9123A2049A05D00F9E441 /* QQHelperSetting.h */,
+				0AD9123B2049A05D00F9E441 /* QQHelperSetting.m */,
+				0A947F63204A42C8000A681C /* QQHelperNotification.h */,
+				0A947F64204A42C8000A681C /* QQHelperNotification.m */,
+				0ADF9AA82026EB7E0048E625 /* TargetApp */,
+			);
+			path = QQRedPackHelper;
+			sourceTree = "<group>";
+		};
+		0ADF9AA82026EB7E0048E625 /* TargetApp */ = {
+			isa = PBXGroup;
+			children = (
+				0ADF9AA92026EB7E0048E625 /* put mac app here */,
+			);
+			name = TargetApp;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		0ADF9AA22026EB7E0048E625 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0AD7FE5C2098603E0030D9E4 /* TKAutoReplyContentView.h in Headers */,
+				0A6471032059003B0016B677 /* MASConstraint+Private.h in Headers */,
+				0A6471172059003B0016B677 /* View+MASShorthandAdditions.h in Headers */,
+				0AD9123C2049A05D00F9E441 /* QQHelperSetting.h in Headers */,
+				0A6471182059003B0016B677 /* ViewController+MASAdditions.h in Headers */,
+				0A947F65204A42C8000A681C /* QQHelperNotification.h in Headers */,
+				0A6471152059003B0016B677 /* View+MASAdditions.h in Headers */,
+				0AD7FE74209860910030D9E4 /* Color.h in Headers */,
+				0AD7FEB82098617A0030D9E4 /* GCDWebServerDataResponse.h in Headers */,
+				0A64712920591AFE0016B677 /* OtherView.h in Headers */,
+				0AD7FE82209860F50030D9E4 /* TKWebServerManager.h in Headers */,
+				0A64710A2059003B0016B677 /* Masonry.h in Headers */,
+				0AD7FEB42098617A0030D9E4 /* GCDWebServerMultiPartFormRequest.h in Headers */,
+				0AD7FEB22098617A0030D9E4 /* GCDWebServerFileRequest.h in Headers */,
+				0ADF9AAB2026EB7E0048E625 /* QQRedPackHelper.h in Headers */,
+				0AD7FE562098603E0030D9E4 /* TKAutoReplyModel.h in Headers */,
+				0A6470DB2058EBB50016B677 /* QQHelperSettingWindowCtr.h in Headers */,
+				0A6471132059003B0016B677 /* NSLayoutConstraint+MASDebugAdditions.h in Headers */,
+				0AD7FE6E209860910030D9E4 /* NSButton+Action.h in Headers */,
+				0AD7FE80209860F50030D9E4 /* TKMsgManager.h in Headers */,
+				0AD7FEAA2098617A0030D9E4 /* GCDWebServerHTTPStatusCodes.h in Headers */,
+				0AD9070D2049957200F9E441 /* QQHelperMenu.h in Headers */,
+				0AD7FEAC2098617A0030D9E4 /* GCDWebServerRequest.h in Headers */,
+				0AD7FEB02098617A0030D9E4 /* GCDWebServerDataRequest.h in Headers */,
+				0A64712520591AF20016B677 /* RedPackView.h in Headers */,
+				0AD7FE5E2098603E0030D9E4 /* TKAutoReplyWindowController.h in Headers */,
+				0A6471122059003B0016B677 /* NSArray+MASShorthandAdditions.h in Headers */,
+				0AD7FE72209860910030D9E4 /* NSView+Action.h in Headers */,
+				0AD7FE7E209860F50030D9E4 /* TKHelper.h in Headers */,
+				0AD7FEBA2098617A0030D9E4 /* GCDWebServerErrorResponse.h in Headers */,
+				0AD7FEA82098617A0030D9E4 /* GCDWebServerFunctions.h in Headers */,
+				0AD7FEA42098617A0030D9E4 /* GCDWebServer.h in Headers */,
+				0AD7FE70209860910030D9E4 /* NSTextField+Action.h in Headers */,
+				0A6470E42058FC630016B677 /* QQHelperSegmentedControl.h in Headers */,
+				0AD7FEB62098617A0030D9E4 /* GCDWebServerURLEncodedFormRequest.h in Headers */,
+				0AD7FE75209860910030D9E4 /* TKQQPluginConfig.h in Headers */,
+				0A6471082059003B0016B677 /* MASLayoutConstraint.h in Headers */,
+				0A6470DF2058ED2C0016B677 /* QQHelperSettingWindow.h in Headers */,
+				0A6471102059003B0016B677 /* NSArray+MASAdditions.h in Headers */,
+				0AD7FE612098606D0030D9E4 /* QQPlugin.h in Headers */,
+				0AD7FEBC2098617A0030D9E4 /* GCDWebServerFileResponse.h in Headers */,
+				0AD7FEBE2098617A0030D9E4 /* GCDWebServerStreamedResponse.h in Headers */,
+				0AD7FEAE2098617A0030D9E4 /* GCDWebServerResponse.h in Headers */,
+				0AD7FEA62098617A0030D9E4 /* GCDWebServerConnection.h in Headers */,
+				0AD7FE5A2098603E0030D9E4 /* TKAutoReplyCell.h in Headers */,
+				0A64710E2059003B0016B677 /* MASViewConstraint.h in Headers */,
+				0A64710C2059003B0016B677 /* MASViewAttribute.h in Headers */,
+				0AD7FEAB2098617A0030D9E4 /* GCDWebServerPrivate.h in Headers */,
+				0A6471012059003B0016B677 /* MASCompositeConstraint.h in Headers */,
+				0A64710B2059003B0016B677 /* MASUtilities.h in Headers */,
+				0A6471042059003B0016B677 /* MASConstraint.h in Headers */,
+				0AD7FE582098603E0030D9E4 /* TKBaseModel.h in Headers */,
+				0A64712E205A47700016B677 /* RedPackSettingMenuItem.h in Headers */,
+				0A6471062059003B0016B677 /* MASConstraintMaker.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		0ADF9AA42026EB7E0048E625 /* QQRedPackHelper */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0ADF9AB02026EB7E0048E625 /* Build configuration list for PBXNativeTarget "QQRedPackHelper" */;
+			buildPhases = (
+				0ADF9AA02026EB7E0048E625 /* Sources */,
+				0ADF9AA12026EB7E0048E625 /* Frameworks */,
+				0ADF9AA22026EB7E0048E625 /* Headers */,
+				0ADF9AA32026EB7E0048E625 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = QQRedPackHelper;
+			productName = QQRedPackHelper;
+			productReference = 0ADF9AA52026EB7E0048E625 /* libQQRedPackHelper.dylib */;
+			productType = "com.apple.product-type.library.dynamic";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0ADF9A9C2026EB7E0048E625 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0940;
+				ORGANIZATIONNAME = tangxianhai;
+				TargetAttributes = {
+					0ADF9AA42026EB7E0048E625 = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 0ADF9A9F2026EB7E0048E625 /* Build configuration list for PBXProject "QQRedPackHelper" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 0ADF9A9B2026EB7E0048E625;
+			productRefGroup = 0ADF9AA62026EB7E0048E625 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0ADF9AA42026EB7E0048E625 /* QQRedPackHelper */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0ADF9AA32026EB7E0048E625 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = /opt/MonkeyDev/Tools/mpack.sh;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0ADF9AA02026EB7E0048E625 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0AD7FE572098603E0030D9E4 /* TKAutoReplyModel.m in Sources */,
+				0A6471112059003B0016B677 /* NSArray+MASAdditions.m in Sources */,
+				0AD7FEBB2098617A0030D9E4 /* GCDWebServerErrorResponse.m in Sources */,
+				0AD7FEB12098617A0030D9E4 /* GCDWebServerDataRequest.m in Sources */,
+				0AD7FEB92098617A0030D9E4 /* GCDWebServerDataResponse.m in Sources */,
+				0A64710F2059003B0016B677 /* MASViewConstraint.m in Sources */,
+				0AD9123D2049A05D00F9E441 /* QQHelperSetting.m in Sources */,
+				0AD7FE71209860910030D9E4 /* NSTextField+Action.m in Sources */,
+				0AD7FE6F209860910030D9E4 /* NSButton+Action.m in Sources */,
+				0AD7FEA92098617A0030D9E4 /* GCDWebServerFunctions.m in Sources */,
+				0A64712F205A47700016B677 /* RedPackSettingMenuItem.m in Sources */,
+				0AD7FE73209860910030D9E4 /* NSView+Action.m in Sources */,
+				0A64712620591AF20016B677 /* RedPackView.m in Sources */,
+				0A6471072059003B0016B677 /* MASConstraintMaker.m in Sources */,
+				0AD7FEB72098617A0030D9E4 /* GCDWebServerURLEncodedFormRequest.m in Sources */,
+				0A6471162059003B0016B677 /* View+MASAdditions.m in Sources */,
+				0AD9070E2049957200F9E441 /* QQHelperMenu.m in Sources */,
+				0A6471052059003B0016B677 /* MASConstraint.m in Sources */,
+				0A6470E52058FC630016B677 /* QQHelperSegmentedControl.m in Sources */,
+				0AD7FE5B2098603E0030D9E4 /* TKAutoReplyCell.m in Sources */,
+				0A64710D2059003B0016B677 /* MASViewAttribute.m in Sources */,
+				0A6471142059003B0016B677 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
+				0AD7FEB52098617A0030D9E4 /* GCDWebServerMultiPartFormRequest.m in Sources */,
+				0A6470E02058ED2C0016B677 /* QQHelperSettingWindow.m in Sources */,
+				0A6471022059003B0016B677 /* MASCompositeConstraint.m in Sources */,
+				0AD7FE592098603E0030D9E4 /* TKBaseModel.m in Sources */,
+				0AD7FE7F209860F50030D9E4 /* TKHelper.m in Sources */,
+				0AD7FEBD2098617A0030D9E4 /* GCDWebServerFileResponse.m in Sources */,
+				0AD7FEAF2098617A0030D9E4 /* GCDWebServerResponse.m in Sources */,
+				0A6471092059003B0016B677 /* MASLayoutConstraint.m in Sources */,
+				0A947F66204A42C8000A681C /* QQHelperNotification.m in Sources */,
+				0A6470DC2058EBB50016B677 /* QQHelperSettingWindowCtr.m in Sources */,
+				0AD7FE76209860910030D9E4 /* TKQQPluginConfig.m in Sources */,
+				0AD7FEBF2098617A0030D9E4 /* GCDWebServerStreamedResponse.m in Sources */,
+				0AD7FE5F2098603E0030D9E4 /* TKAutoReplyWindowController.m in Sources */,
+				0A64712A20591AFE0016B677 /* OtherView.m in Sources */,
+				0AD7FEAD2098617A0030D9E4 /* GCDWebServerRequest.m in Sources */,
+				0AD7FE5D2098603E0030D9E4 /* TKAutoReplyContentView.m in Sources */,
+				0A6471192059003B0016B677 /* ViewController+MASAdditions.m in Sources */,
+				0AD7FEA52098617A0030D9E4 /* GCDWebServer.m in Sources */,
+				0AD7FEA72098617A0030D9E4 /* GCDWebServerConnection.m in Sources */,
+				0AD7FE81209860F50030D9E4 /* TKMsgManager.m in Sources */,
+				0AD7FE83209860F50030D9E4 /* TKWebServerManager.m in Sources */,
+				0ADF9AAD2026EB7E0048E625 /* QQRedPackHelper.m in Sources */,
+				0AD7FEB32098617A0030D9E4 /* GCDWebServerFileRequest.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		0ADF9AAE2026EB7E0048E625 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(MonkeyDevPath)/FrameworksForMac",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(MonkeyDevPath)/FrameworksForMac",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				MonkeyDevPath = /opt/MonkeyDev;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		0ADF9AAF2026EB7E0048E625 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(MonkeyDevPath)/FrameworksForMac",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(MonkeyDevPath)/FrameworksForMac",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MonkeyDevPath = /opt/MonkeyDev;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		0ADF9AB12026EB7E0048E625 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9TP25EGDF3;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				EXECUTABLE_PREFIX = lib;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(MonkeyDevPath)/MFrameworks",
+				);
+				INSTALL_PATH = "@executable_path/libQQRedPackHelper.dylib";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(MonkeyDevPath)/MFrameworks",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-lsubstitute",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		0ADF9AB22026EB7E0048E625 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9TP25EGDF3;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				EXECUTABLE_PREFIX = lib;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(MonkeyDevPath)/MFrameworks",
+				);
+				INSTALL_PATH = "@executable_path/libQQRedPackHelper.dylib";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(MonkeyDevPath)/MFrameworks",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-lsubstitute",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0ADF9A9F2026EB7E0048E625 /* Build configuration list for PBXProject "QQRedPackHelper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0ADF9AAE2026EB7E0048E625 /* Debug */,
+				0ADF9AAF2026EB7E0048E625 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0ADF9AB02026EB7E0048E625 /* Build configuration list for PBXNativeTarget "QQRedPackHelper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0ADF9AB12026EB7E0048E625 /* Debug */,
+				0ADF9AB22026EB7E0048E625 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0ADF9A9C2026EB7E0048E625 /* Project object */;
+}
