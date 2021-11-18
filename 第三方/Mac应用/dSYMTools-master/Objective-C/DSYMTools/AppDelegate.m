@@ -27,7 +27,12 @@
 - (void)applicationWillTerminate:(NSNotification *)aNotification {
     // Insert code here to tear down your application
 }
-
+- (BOOL)applicationShouldHandleReopen:(NSApplication *)sender hasVisibleWindows:(BOOL)flag{
+    if (!flag) {
+        [self.mainWindowViewController.window makeKeyAndOrderFront:self];
+    }
+    return YES;
+}
 /**
  *  关闭最后一个 window 的时候关闭应用
  *
