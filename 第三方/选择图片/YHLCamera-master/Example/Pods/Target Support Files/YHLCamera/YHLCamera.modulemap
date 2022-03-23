@@ -1,0 +1,6 @@
+framework module YHLCamera {
+  umbrella header "YHLCamera-umbrella.h"
+
+  export *
+  module * { export * }
+}

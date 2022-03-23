@@ -62,7 +62,7 @@
         qualifierStr = @"assign";
         NSString *valueStr = [NSString stringWithFormat:@"%@",value];
         if ([valueStr rangeOfString:@"."].location!=NSNotFound){
-            typeStr = @"double";
+            typeStr = @"CGFloat";
         }else{
             NSNumber *valueNumber = (NSNumber *)value;
             if ([valueNumber longValue]<2147483648) {
@@ -281,10 +281,10 @@
         NSString *methodStr = nil;
         if (isYYModel) {
             
-            //append method content (mj_objectClassInArray) if YYModel
+            //append method content (objectClassInArray) if YYModel
             methodStr = [NSString stringWithFormat:@"\n+ (NSDictionary<NSString *,id> *)modelContainerPropertyGenericClass{\n    return @{%@};\n}\n",result];
         }else{
-            // append method content (mj_objectClassInArray)
+            // append method content (objectClassInArray)
             methodStr = [NSString stringWithFormat:@"\n+ (NSDictionary *)mj_objectClassInArray{\n    return @{%@};\n}\n",result];
         }
         

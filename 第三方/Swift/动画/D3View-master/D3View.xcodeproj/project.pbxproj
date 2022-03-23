@@ -130,6 +130,7 @@
 				TargetAttributes = {
 					A5501C3B1B1B5E8300EDCE1F = {
 						CreatedOnToolsVersion = 6.3.2;
+						DevelopmentTeam = NN56R38BZT;
 					};
 				};
 			};
@@ -138,6 +139,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -285,6 +287,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = NN56R38BZT;
 				INFOPLIST_FILE = D3View/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.d3.$(PRODUCT_NAME:rfc1034identifier)";
@@ -299,6 +302,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = NN56R38BZT;
 				INFOPLIST_FILE = D3View/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.d3.$(PRODUCT_NAME:rfc1034identifier)";

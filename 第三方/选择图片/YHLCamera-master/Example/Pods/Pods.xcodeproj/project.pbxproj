@@ -1,0 +1,558 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		045983D17DB11D607AA5C3E4C112170E /* YHLClipViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93DDA22200DED1106C1E8D187C794F19 /* YHLClipViewController.m */; };
+		5562D5A576A94443FF4715B9D41CE578 /* Pods-YHLCamera_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A212FAFF25105A8CA9F880EDAEB108B /* Pods-YHLCamera_Example-dummy.m */; };
+		6CA52C4E4C6F46C620D8362FD69AD915 /* YHLCamera-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 77B04DB546E8A4998DB6CE7D58B5A3B9 /* YHLCamera-dummy.m */; };
+		6E79E534E3B9FDDF2A0A20FC4D7FFB5F /* YHLCamera.h in Headers */ = {isa = PBXBuildFile; fileRef = 28F7959B219901F22C71F81566A27C8C /* YHLCamera.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		95DD081F7D631506D702D6FF9765739D /* YHLCameraViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 7C089DB96B0C6B6788D329ABE0C73BCD /* YHLCameraViewController.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		97176075513CDCE8D34B93D160B138FB /* YHLPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CD88A564C2BF75C9187A6BE37260E77 /* YHLPanel.m */; };
+		AE0B067D8B6D428DD6E4899E3FA15A22 /* YHLPanel.h in Headers */ = {isa = PBXBuildFile; fileRef = 472063C3D802C416DAD2C22B61950B66 /* YHLPanel.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		C36E7EA7AA9D4090DF9650D3E20A1835 /* YHLCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ED16BA983B1090D10AB68FDB97641A9 /* YHLCamera.m */; };
+		D82280AEF945BEA498E818449DC046B6 /* YHLCameraButton.h in Headers */ = {isa = PBXBuildFile; fileRef = B9757AD474A3426A587674F9917209D4 /* YHLCameraButton.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		F52DACC909C0F21004D4D7D9093C2204 /* YHLCameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 655ADF50568EFA06D438F47AE9295541 /* YHLCameraViewController.m */; };
+		F78D08E19B59D829E90690EFFE097520 /* YHLClipViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 852360CC3A1A550DBC9291BD7790810C /* YHLClipViewController.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		FCCF019ECDD45892BE6F5A9B1783EE96 /* YHLCameraButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DE19982A764742E542DB19203C2D72E /* YHLCameraButton.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8681531E58C1840DB5AB8EBB81DAE44F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7A1A74B80B8A6B3BE8CA4D59EAC35441;
+			remoteInfo = YHLCamera;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0A64312E029C6C0143B852182AA52C2E /* Pods-YHLCamera_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-YHLCamera_Example.release.xcconfig"; sourceTree = "<group>"; };
+		0BF6DB5054BC4C7C5BF45059E25B32D6 /* Pods-YHLCamera_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-YHLCamera_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
+		0DE19982A764742E542DB19203C2D72E /* YHLCameraButton.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = YHLCameraButton.m; path = YHLCamera/Classes/YHLCameraButton.m; sourceTree = "<group>"; };
+		12670504EF591BDFA447BE40FC4DD008 /* YHLCamera.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = YHLCamera.xcconfig; sourceTree = "<group>"; };
+		1CD88A564C2BF75C9187A6BE37260E77 /* YHLPanel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = YHLPanel.m; path = YHLCamera/Classes/YHLPanel.m; sourceTree = "<group>"; };
+		2184DAE1A802EB53ACCF938FD7F95C1F /* YHLCamera-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "YHLCamera-prefix.pch"; sourceTree = "<group>"; };
+		28F7959B219901F22C71F81566A27C8C /* YHLCamera.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = YHLCamera.h; path = YHLCamera/Classes/YHLCamera.h; sourceTree = "<group>"; };
+		2FFA4FE84A0C0A9D11955077EF2F54AC /* libYHLCamera.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libYHLCamera.a; path = libYHLCamera.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		406E21098F23ADB3B04614B365D1A821 /* YHLCamera.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = YHLCamera.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		472063C3D802C416DAD2C22B61950B66 /* YHLPanel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = YHLPanel.h; path = YHLCamera/Classes/YHLPanel.h; sourceTree = "<group>"; };
+		519AE7E487A25363DC418E4A37981520 /* Pods-YHLCamera_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-YHLCamera_Example-acknowledgements.plist"; sourceTree = "<group>"; };
+		575FB3236121AAC7C79C1CFF6B529D3F /* YHLCameraViewController.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = YHLCameraViewController.xib; path = YHLCamera/Classes/YHLCameraViewController.xib; sourceTree = "<group>"; };
+		5A212FAFF25105A8CA9F880EDAEB108B /* Pods-YHLCamera_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-YHLCamera_Example-dummy.m"; sourceTree = "<group>"; };
+		655ADF50568EFA06D438F47AE9295541 /* YHLCameraViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = YHLCameraViewController.m; path = YHLCamera/Classes/YHLCameraViewController.m; sourceTree = "<group>"; };
+		6ED16BA983B1090D10AB68FDB97641A9 /* YHLCamera.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = YHLCamera.m; path = YHLCamera/Classes/YHLCamera.m; sourceTree = "<group>"; };
+		77B04DB546E8A4998DB6CE7D58B5A3B9 /* YHLCamera-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "YHLCamera-dummy.m"; sourceTree = "<group>"; };
+		7C089DB96B0C6B6788D329ABE0C73BCD /* YHLCameraViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = YHLCameraViewController.h; path = YHLCamera/Classes/YHLCameraViewController.h; sourceTree = "<group>"; };
+		7C0E3E25208D756B153FEA8C70DA6EB3 /* Pods-YHLCamera_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-YHLCamera_Example-resources.sh"; sourceTree = "<group>"; };
+		852360CC3A1A550DBC9291BD7790810C /* YHLClipViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = YHLClipViewController.h; path = YHLCamera/Classes/YHLClipViewController.h; sourceTree = "<group>"; };
+		93DDA22200DED1106C1E8D187C794F19 /* YHLClipViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = YHLClipViewController.m; path = YHLCamera/Classes/YHLClipViewController.m; sourceTree = "<group>"; };
+		95C3C61C2EC5C869830107D723D582F3 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		9A922006958CA2BD20F1A903F2E33729 /* libPods-YHLCamera_Example.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-YHLCamera_Example.a"; path = "libPods-YHLCamera_Example.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		B9757AD474A3426A587674F9917209D4 /* YHLCameraButton.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = YHLCameraButton.h; path = YHLCamera/Classes/YHLCameraButton.h; sourceTree = "<group>"; };
+		C2308F64903D73CF313AD42CFB620990 /* Pods-YHLCamera_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-YHLCamera_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		CA1A1D35FD24785F6EA771C425919E4C /* YHLClipViewController.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = YHLClipViewController.xib; path = YHLCamera/Classes/YHLClipViewController.xib; sourceTree = "<group>"; };
+		D75812EB0AFF529D8FF34C7D0B11FF80 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0B8DE3ED25E37BD9DB6B0A672984A1E2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F3CC47AFEF4FD919A61A755768E72BB3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		16C231A2642542D24C4BEB1787EE0208 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				7182C6067EDBB897CC633780517F7A5C /* Pods-YHLCamera_Example */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		46BEB9647041A12A43A94C72CF99438A /* YHLCamera */ = {
+			isa = PBXGroup;
+			children = (
+				28F7959B219901F22C71F81566A27C8C /* YHLCamera.h */,
+				6ED16BA983B1090D10AB68FDB97641A9 /* YHLCamera.m */,
+				B9757AD474A3426A587674F9917209D4 /* YHLCameraButton.h */,
+				0DE19982A764742E542DB19203C2D72E /* YHLCameraButton.m */,
+				7C089DB96B0C6B6788D329ABE0C73BCD /* YHLCameraViewController.h */,
+				655ADF50568EFA06D438F47AE9295541 /* YHLCameraViewController.m */,
+				852360CC3A1A550DBC9291BD7790810C /* YHLClipViewController.h */,
+				93DDA22200DED1106C1E8D187C794F19 /* YHLClipViewController.m */,
+				472063C3D802C416DAD2C22B61950B66 /* YHLPanel.h */,
+				1CD88A564C2BF75C9187A6BE37260E77 /* YHLPanel.m */,
+				E652E054AC988F52E3ECB745CA5BDB6C /* Pod */,
+				7FE95361B6DC44C242B1AFB62212B2BA /* Resources */,
+				CE1594C3B984DA5C25429A651A2C26DB /* Support Files */,
+			);
+			name = YHLCamera;
+			path = ../..;
+			sourceTree = "<group>";
+		};
+		7182C6067EDBB897CC633780517F7A5C /* Pods-YHLCamera_Example */ = {
+			isa = PBXGroup;
+			children = (
+				0BF6DB5054BC4C7C5BF45059E25B32D6 /* Pods-YHLCamera_Example-acknowledgements.markdown */,
+				519AE7E487A25363DC418E4A37981520 /* Pods-YHLCamera_Example-acknowledgements.plist */,
+				5A212FAFF25105A8CA9F880EDAEB108B /* Pods-YHLCamera_Example-dummy.m */,
+				7C0E3E25208D756B153FEA8C70DA6EB3 /* Pods-YHLCamera_Example-resources.sh */,
+				C2308F64903D73CF313AD42CFB620990 /* Pods-YHLCamera_Example.debug.xcconfig */,
+				0A64312E029C6C0143B852182AA52C2E /* Pods-YHLCamera_Example.release.xcconfig */,
+			);
+			name = "Pods-YHLCamera_Example";
+			path = "Target Support Files/Pods-YHLCamera_Example";
+			sourceTree = "<group>";
+		};
+		78FDCBD8818F3B793BD3F6F59E1D05D8 /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				46BEB9647041A12A43A94C72CF99438A /* YHLCamera */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		7FE95361B6DC44C242B1AFB62212B2BA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				575FB3236121AAC7C79C1CFF6B529D3F /* YHLCameraViewController.xib */,
+				CA1A1D35FD24785F6EA771C425919E4C /* YHLClipViewController.xib */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		8A9DF8444FCDF835FFA897DAA82B3D96 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9A922006958CA2BD20F1A903F2E33729 /* libPods-YHLCamera_Example.a */,
+				2FFA4FE84A0C0A9D11955077EF2F54AC /* libYHLCamera.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CE1594C3B984DA5C25429A651A2C26DB /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				12670504EF591BDFA447BE40FC4DD008 /* YHLCamera.xcconfig */,
+				77B04DB546E8A4998DB6CE7D58B5A3B9 /* YHLCamera-dummy.m */,
+				2184DAE1A802EB53ACCF938FD7F95C1F /* YHLCamera-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/YHLCamera";
+			sourceTree = "<group>";
+		};
+		CF1408CF629C7361332E53B88F7BD30C = {
+			isa = PBXGroup;
+			children = (
+				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
+				78FDCBD8818F3B793BD3F6F59E1D05D8 /* Development Pods */,
+				D89477F20FB1DE18A04690586D7808C4 /* Frameworks */,
+				8A9DF8444FCDF835FFA897DAA82B3D96 /* Products */,
+				16C231A2642542D24C4BEB1787EE0208 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		D89477F20FB1DE18A04690586D7808C4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E652E054AC988F52E3ECB745CA5BDB6C /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				95C3C61C2EC5C869830107D723D582F3 /* LICENSE */,
+				D75812EB0AFF529D8FF34C7D0B11FF80 /* README.md */,
+				406E21098F23ADB3B04614B365D1A821 /* YHLCamera.podspec */,
+			);
+			name = Pod;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		07316EF13D9E7B49C8957B8E19BB8B68 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6E79E534E3B9FDDF2A0A20FC4D7FFB5F /* YHLCamera.h in Headers */,
+				D82280AEF945BEA498E818449DC046B6 /* YHLCameraButton.h in Headers */,
+				95DD081F7D631506D702D6FF9765739D /* YHLCameraViewController.h in Headers */,
+				F78D08E19B59D829E90690EFFE097520 /* YHLClipViewController.h in Headers */,
+				AE0B067D8B6D428DD6E4899E3FA15A22 /* YHLPanel.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		16E05249D4FEC9C709BD6772D12E2225 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		7A1A74B80B8A6B3BE8CA4D59EAC35441 /* YHLCamera */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D424DA8665604BB32E3629970C28F500 /* Build configuration list for PBXNativeTarget "YHLCamera" */;
+			buildPhases = (
+				07316EF13D9E7B49C8957B8E19BB8B68 /* Headers */,
+				C420A864DCCF7BA1EF3DBEE1C135EC99 /* Sources */,
+				0B8DE3ED25E37BD9DB6B0A672984A1E2 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = YHLCamera;
+			productName = YHLCamera;
+			productReference = 2FFA4FE84A0C0A9D11955077EF2F54AC /* libYHLCamera.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		82C328455A8E18414BDD35A833333A0A /* Pods-YHLCamera_Example */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0C3665EC5C98DB8729FE9C84CB6BA9EA /* Build configuration list for PBXNativeTarget "Pods-YHLCamera_Example" */;
+			buildPhases = (
+				16E05249D4FEC9C709BD6772D12E2225 /* Headers */,
+				F0669969BBC0FBE5A93BCDF0203D7C7C /* Sources */,
+				F3CC47AFEF4FD919A61A755768E72BB3 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A96366EF518D9002BDFDF0F2585082FB /* PBXTargetDependency */,
+			);
+			name = "Pods-YHLCamera_Example";
+			productName = "Pods-YHLCamera_Example";
+			productReference = 9A922006958CA2BD20F1A903F2E33729 /* libPods-YHLCamera_Example.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1100;
+				LastUpgradeCheck = 1100;
+			};
+			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
+			productRefGroup = 8A9DF8444FCDF835FFA897DAA82B3D96 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				82C328455A8E18414BDD35A833333A0A /* Pods-YHLCamera_Example */,
+				7A1A74B80B8A6B3BE8CA4D59EAC35441 /* YHLCamera */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C420A864DCCF7BA1EF3DBEE1C135EC99 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6CA52C4E4C6F46C620D8362FD69AD915 /* YHLCamera-dummy.m in Sources */,
+				C36E7EA7AA9D4090DF9650D3E20A1835 /* YHLCamera.m in Sources */,
+				FCCF019ECDD45892BE6F5A9B1783EE96 /* YHLCameraButton.m in Sources */,
+				F52DACC909C0F21004D4D7D9093C2204 /* YHLCameraViewController.m in Sources */,
+				045983D17DB11D607AA5C3E4C112170E /* YHLClipViewController.m in Sources */,
+				97176075513CDCE8D34B93D160B138FB /* YHLPanel.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F0669969BBC0FBE5A93BCDF0203D7C7C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5562D5A576A94443FF4715B9D41CE578 /* Pods-YHLCamera_Example-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A96366EF518D9002BDFDF0F2585082FB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = YHLCamera;
+			target = 7A1A74B80B8A6B3BE8CA4D59EAC35441 /* YHLCamera */;
+			targetProxy = 8681531E58C1840DB5AB8EBB81DAE44F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		19E4D7E2D178808C2129C5E964C28BB3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 12670504EF591BDFA447BE40FC4DD008 /* YHLCamera.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/YHLCamera/YHLCamera-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = YHLCamera;
+				PRODUCT_NAME = YHLCamera;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		8A511876FCC36B49696D62E28B3E569B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C2308F64903D73CF313AD42CFB620990 /* Pods-YHLCamera_Example.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MACH_O_TYPE = staticlib;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		8F17DC3A99F99FBAD606CE6963886315 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		916E0404255105F480DC4950B7625F7A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		A7BAD82A839079DB62DF3A9E4ED3FE42 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 12670504EF591BDFA447BE40FC4DD008 /* YHLCamera.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/YHLCamera/YHLCamera-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = YHLCamera;
+				PRODUCT_NAME = YHLCamera;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D217FBF245B1ACB1B694E9D70E730939 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0A64312E029C6C0143B852182AA52C2E /* Pods-YHLCamera_Example.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MACH_O_TYPE = staticlib;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0C3665EC5C98DB8729FE9C84CB6BA9EA /* Build configuration list for PBXNativeTarget "Pods-YHLCamera_Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8A511876FCC36B49696D62E28B3E569B /* Debug */,
+				D217FBF245B1ACB1B694E9D70E730939 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				916E0404255105F480DC4950B7625F7A /* Debug */,
+				8F17DC3A99F99FBAD606CE6963886315 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D424DA8665604BB32E3629970C28F500 /* Build configuration list for PBXNativeTarget "YHLCamera" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				19E4D7E2D178808C2129C5E964C28BB3 /* Debug */,
+				A7BAD82A839079DB62DF3A9E4ED3FE42 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+}

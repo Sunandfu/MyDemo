@@ -9,7 +9,7 @@
 import UIKit
 import Spring
 
-protocol OptionsViewControllerDelegate: class {
+protocol OptionsViewControllerDelegate: AnyObject {
     func dampingSliderChanged(_ sender: AnyObject)
     func velocitySliderChanged(_ sender: AnyObject)
     func scaleSliderChanged(_ sender: AnyObject)

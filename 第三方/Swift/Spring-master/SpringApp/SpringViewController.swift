@@ -33,6 +33,7 @@ class SpringViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     var selectedX: CGFloat = 0
     var selectedY: CGFloat = 0
     var selectedRotate: CGFloat = 0
+    var status: UIStatusBarStyle = .default
     
     @IBAction func forceSliderChanged(_ sender: AnyObject) {
         selectedForce = sender.value(forKey: "value") as! CGFloat
@@ -106,14 +107,22 @@ class SpringViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         SpringAnimation.spring(duration: 0.7, animations: {
             self.view.transform = CGAffineTransform(scaleX: 0.935, y: 0.935)
         })
-        UIApplication.shared.setStatusBarStyle(UIStatusBarStyle.lightContent, animated: true)
+       status = .lightContent
+       self.navigationController?.updateFocusIfNeeded()
     }
     
    @objc func maximizeView(_ sender: AnyObject) {
         SpringAnimation.spring(duration: 0.7, animations: {
             self.view.transform = CGAffineTransform(scaleX: 1, y: 1)
         })
-        UIApplication.shared.setStatusBarStyle(UIStatusBarStyle.default, animated: true)
+       status = .default
+       self.navigationController?.updateFocusIfNeeded()
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        get {
+            status
+        }
     }
 
     let animations: [Spring.AnimationPreset] = [

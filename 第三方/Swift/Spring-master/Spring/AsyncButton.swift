@@ -37,12 +37,11 @@ public class AsyncButton: UIButton {
             ImageLoader.sharedLoader.imageForUrl(urlString: urlString) { [weak self] image, url in
                 
                 if let strongSelf = self {
-                    
-                    DispatchQueue.main.async(execute: { () -> Void in
+                    DispatchQueue.main.async {
                         if strongSelf.imageURL[state.rawValue]?.absoluteString == url {
                             strongSelf.setImage(image, for: state)
                         }
-                    })
+                    }
                 }
             }
         }

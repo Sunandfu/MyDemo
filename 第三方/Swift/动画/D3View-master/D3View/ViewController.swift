@@ -26,21 +26,21 @@ class ViewController: UIViewController{
 }
 
 extension ViewController:UIPickerViewDelegate,UIPickerViewDataSource{
-    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
     
-    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return dataSource.count
     }
 
-    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return dataSource[row]
     }
     
-    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         //重置
-        d3view.transform = CGAffineTransformIdentity
+        d3view.transform = .identity
         d3view.frame = exFrame
         d3view.alpha = 1
         
@@ -52,7 +52,7 @@ extension ViewController:UIPickerViewDelegate,UIPickerViewDataSource{
             d3view.d3_shake()
             
         case 2:  //上下摇
-            d3view.d3_bounce(10, duration: 0.2, completion: {
+            d3view.d3_bounce(range: 10, duration: 0.2) {
                 print("摇完了")
             })
             
@@ -63,7 +63,7 @@ extension ViewController:UIPickerViewDelegate,UIPickerViewDataSource{
             d3view.d3_swing()
             
         case 5:  //缩小
-            d3view.d3_scale(0.01)
+            d3view.d3_scale(scale: 0.01)
             
         case 6:  //放大
             d3view.d3_scale(2.0)
@@ -99,7 +99,7 @@ extension ViewController:UIPickerViewDelegate,UIPickerViewDataSource{
             //            kCATransitionFromTop
             //            kCATransitionFromBottom
             
-            d3view.d3_Animation(kCATransitionPush, subType: kCATransitionFromRight, duration: 1.0)
+            d3view.d3_Animation(type: kCATransitionPush, subType: kCATransitionFromRight, duration: 1.0)
             
         case 11:
             d3view.d3_Animation(kCATransitionMoveIn, subType: kCATransitionFromRight, duration: 1.0)

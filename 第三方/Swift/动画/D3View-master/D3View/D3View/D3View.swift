@@ -2,7 +2,7 @@
 import UIKit
 
 //MARK: UIView动画扩展,d3开头的都是带动画的
-var DEFAULT_DURATION:NSTimeInterval = 0.25
+var DEFAULT_DURATION: NSTimeInterval = 0.25
 typealias CompleteBlock = (() -> Void)?
 extension UIView{
     
@@ -52,7 +52,7 @@ extension UIView{
     
     var centerX:CGFloat{
         set{
-            self.center = CGPointMake(newValue, self.center.y)
+            self.center = CGPoint(x: newValue, y: self.center.y)
         }
         get{
             return self.center.x
@@ -61,7 +61,7 @@ extension UIView{
     
     var centerY:CGFloat{
         set{
-            self.center = CGPointMake(self.center.x, newValue)
+            self.center = CGPoint(x: self.center.x, y: newValue)
         }
         get{
             return self.center.y
@@ -141,14 +141,14 @@ extension UIView{
      
      - parameter duration: 动画持续时间
      */
-    func d3_Animation(type:String,subType:String!,duration:NSTimeInterval){
+    func d3_Animation(type: CATransitionType, subType: CATransitionSubtype?, duration: NSTimeInterval){
         let action:CATransition = CATransition()
         action.type = type
         if subType != nil{
             action.subtype = subType
         }
         action.duration = duration
-        self.layer.addAnimation(action, forKey: "animation")
+        self.layer.add(action, forKey: "animation")
     }
     
     //转场类
