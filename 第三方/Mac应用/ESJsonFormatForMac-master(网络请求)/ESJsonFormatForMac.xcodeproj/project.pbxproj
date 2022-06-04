@@ -343,6 +343,7 @@
 				TargetAttributes = {
 					FB7C76AA1EC554B100949F64 = {
 						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = NN56R38BZT;
 						ProvisioningStyle = Automatic;
 					};
 					FB7C76C01EC554B100949F64 = {
@@ -362,6 +363,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -568,6 +570,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = NN56R38BZT;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/ESJsonFormatForMac/ESJsonFormat-Prefix.pch";
 				INFOPLIST_FILE = ESJsonFormatForMac/Info.plist;
@@ -583,6 +586,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = NN56R38BZT;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/ESJsonFormatForMac/ESJsonFormat-Prefix.pch";
 				INFOPLIST_FILE = ESJsonFormatForMac/Info.plist;
