@@ -65,14 +65,13 @@
     pageFlowView.isCarousel = NO;
     pageFlowView.orientation = NewPagedFlowViewOrientationHorizontal;
     pageFlowView.isOpenAutoScroll = YES;
+    [pageFlowView reloadData];
+    [self.view addSubview:pageFlowView];
     
     //初始化pageControl
     UIPageControl *pageControl = [[UIPageControl alloc] initWithFrame:CGRectMake(0, pageFlowView.frame.size.height - 32, Width, 8)];
     pageFlowView.pageControl = pageControl;
     [pageFlowView addSubview:pageControl];
-    [pageFlowView reloadData];
-    
-    [self.view addSubview:pageFlowView];
     
     //添加到主view上
     [self.view addSubview:self.indicateLabel];

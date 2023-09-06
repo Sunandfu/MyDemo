@@ -10,17 +10,15 @@
 #import <AVFoundation/AVFoundation.h>
 #import <AudioToolbox/AudioToolbox.h>
 
-@interface XDScaningViewController ()<UIAlertViewDelegate, AVCaptureMetadataOutputObjectsDelegate, XDScanningViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>{
-    AVCaptureDevice *frontCamera;
-    AVCaptureDevice *backCamera;
-    AVCaptureSession *session;
-    AVCaptureVideoPreviewLayer *previewLayer;
-    AVCaptureInput *input;
-    AVCaptureMetadataOutput *output;
-    BOOL isTorchOn;
-}
+@interface XDScaningViewController ()<AVCaptureMetadataOutputObjectsDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+
 @property (nonatomic, assign) XDScaningWarningTone tone;
 @property (nonatomic, strong) XDScanningView *overView;
+
+@property (nonatomic, strong) AVCaptureDevice *backCamera;
+@property (nonatomic, strong) AVCaptureSession *session;
+@property (nonatomic) BOOL isTorchOn;
+
 @end
 
 @implementation XDScaningViewController
@@ -29,7 +27,6 @@
     [super viewDidLoad];
     [self initCapture];
     [self initUI];
-    [self addGesture];
     [self config];
 }
 
@@ -38,37 +35,25 @@
 }
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
+    [self.navigationController setNavigationBarHidden:YES animated:YES];
     [self initOverView];
 }
 
 - (void)viewDidDisappear:(BOOL)animated{
     [super viewDidDisappear:animated];
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
     [self.overView removeFromSuperview];
     self.overView = nil;
 }
-
-- (void)addGesture{
-    UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(pan:)];
-    [self.view addGestureRecognizer:pan];
-}
 - (void)initUI{
-    
-    if (self.navigationController) {
-        if (!self.navigationController.navigationBarHidden) {
-            self.navigationController.navigationBarHidden = NavigationBarHidden;
-        }
-    }
-    NSArray *imageNames = @[@"history@2x.png", @"flash_on@2x.png", @"album.png", @"return@2x.png"];
+    NSArray *imageNames = @[@"history", @"flash_on", @"album", @"return"];
     for (int i = 0; i<4; i++) {
         [self.view addSubview:[self buttonWithImage:imageNames[i] tag:i selector:@selector(buttonsAction:)]];
     }
-    
-    
 }
 
 - (UIButton *)buttonWithImage:(NSString *)imageName tag:(int)tag selector:(SEL)selector{
-    
-    UIButton *b = [[UIButton alloc]initWithFrame:tag==3?CGRectMake(15, 25, ButtonSize.width, ButtonSize.height):CGRectMake(ScreenSize.width*.25*(tag+1)-ButtonSize.width*.5, ScreenSize.height - ButtonFromBottom - ButtonSize.height, ButtonSize.width, ButtonSize.height)];
+    UIButton *b = [[UIButton alloc]initWithFrame:tag==3?CGRectMake(15, [UIApplication sharedApplication].keyWindow.safeAreaInsets.top + 20, ButtonSize.width, ButtonSize.height):CGRectMake(ScreenSize.width*.25*(tag+1)-ButtonSize.width*.5, ScreenSize.height - ButtonFromBottom - ButtonSize.height, ButtonSize.width, ButtonSize.height)];
     [b setImage:[UIImage imageNamed:imageName] forState:UIControlStateNormal];
     [b addTarget:self action:selector forControlEvents:UIControlEventTouchUpInside];
     b.layer.cornerRadius = ButtonSize.width*.5;
@@ -80,7 +65,6 @@
 }
 
 - (void)buttonsAction:(UIButton *)btn{
-    
     switch (btn.tag) {
         case 0://历史
             [self history:btn];
@@ -101,37 +85,25 @@
 
 
 - (void)initOverView{
-    
-    _overView = [[XDScanningView alloc]initWithFrame:[UIScreen mainScreen].bounds];
-    _overView.delegate = self;
-    [self.view insertSubview:_overView atIndex:1];
+    self.overView = [[XDScanningView alloc]initWithFrame:[UIScreen mainScreen].bounds];
+    [self.view insertSubview:self.overView atIndex:1];
 }
 
 - (void)initCapture{
-    
-    session = [[AVCaptureSession alloc]init];
-    [session setSessionPreset:AVCaptureSessionPresetHigh];
-    
-    NSArray *devices = [AVCaptureDevice devicesWithMediaType:AVMediaTypeVideo];
-    for (AVCaptureDevice *camera in devices) {
-        if (camera.position == AVCaptureDevicePositionFront) {
-            frontCamera = camera;
-        }else{
-            backCamera = camera;
-    
-        }
-    }
-    input = [AVCaptureDeviceInput deviceInputWithDevice:backCamera error:nil];
-    output = [[AVCaptureMetadataOutput alloc]init];
+    self.session = [[AVCaptureSession alloc]init];
+    [self.session setSessionPreset:AVCaptureSessionPresetHigh];
+    self.backCamera = [[[AVCaptureDeviceDiscoverySession discoverySessionWithDeviceTypes:@[AVCaptureDeviceTypeBuiltInWideAngleCamera] mediaType:AVMediaTypeVideo position:AVCaptureDevicePositionBack] devices] firstObject];
+    AVCaptureDeviceInput *input = [AVCaptureDeviceInput deviceInputWithDevice:self.backCamera error:nil];
+    AVCaptureMetadataOutput *output = [[AVCaptureMetadataOutput alloc]init];
     [output setMetadataObjectsDelegate:self queue:dispatch_get_main_queue()];
     
-    if ([session canAddInput:input]) {
-        [session addInput:input];
+    if ([self.session canAddInput:input]) {
+        [self.session addInput:input];
     }
-    if ([session canAddOutput:output]) {
-        [session addOutput:output];
+    if ([self.session canAddOutput:output]) {
+        [self.session addOutput:output];
     }
-    NSLog(@"%f", backCamera.activeFormat.videoMaxZoomFactor);
+    NSLog(@"%f", self.backCamera.activeFormat.videoMaxZoomFactor);
     
     
     
@@ -140,12 +112,13 @@
                                    AVMetadataObjectTypeCode128Code,
                                    AVMetadataObjectTypeQRCode];
     
-    previewLayer = [AVCaptureVideoPreviewLayer layerWithSession:session];
+    AVCaptureVideoPreviewLayer *previewLayer = [AVCaptureVideoPreviewLayer layerWithSession:self.session];
     previewLayer.videoGravity = AVLayerVideoGravityResizeAspectFill;
     previewLayer.frame = self.view.layer.bounds;
     [self.view.layer insertSublayer:previewLayer atIndex:0];
-    
-    [session startRunning];
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        [self.session startRunning];
+    });
     
     
     CGFloat screenHeight = ScreenSize.height;
@@ -160,7 +133,6 @@
                                          cropRect.origin.x / screenWidth,
                                          cropRect.size.height / screenHeight,
                                          cropRect.size.width / screenWidth)];
-    
 }
 
 - (void)captureOutput:(AVCaptureOutput *)captureOutput didOutputMetadataObjects:(NSArray *)metadataObjects fromConnection:(AVCaptureConnection *)connection{
@@ -176,19 +148,19 @@
 }
 
 - (void)readingFinshedWithMessage:(NSString *)msg{
-    
     if (msg) {
-        [session stopRunning];
+        [self.session stopRunning];
         [self saveInformation:msg];
         [self playSystemSoundWithStyle:_tone];
         self.backValue(msg);
         [self backButtonActioin:nil];
     }else{
-        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:nil message:@"读取失败！" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil];
-        [alert show];
-        
+        UIAlertController *alertVC = [UIAlertController alertControllerWithTitle:nil message:@"读取失败！" preferredStyle:UIAlertControllerStyleAlert];
+        [alertVC addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+            NSLog(@"取消");
+        }]];
+        [self presentViewController:alertVC animated:YES completion:nil];
     }
-
 }
 
 
@@ -231,15 +203,6 @@
     }
 }
 
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
-    
-}
-
-- (void)view:(UIView *)view didCatchGesture:(UIGestureRecognizer *)gesture{
-    [self.navigationController popViewControllerAnimated:YES];
-}
-
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     NSLog(@"%@ -- 内存警告", self.description);
@@ -247,7 +210,6 @@
 }
 
 - (void)backButtonActioin:(UIButton *)button{
-    
     if (self.navigationController) {
         [self.navigationController popViewControllerAnimated:YES];
     }else{
@@ -256,12 +218,10 @@
 }
 
 - (void)history:(UIButton *)button{
-  
     HistoryTableViewController *history = [[HistoryTableViewController alloc]initWithStyle:UITableViewStylePlain];
     [self.navigationController pushViewController:history animated:YES];
 }
 - (void)selectImageFormAlbum:(UIButton *)btn{
-    
     UIImagePickerController *picker = [[UIImagePickerController alloc]init];
     picker.delegate = self;
     picker.mediaTypes = @[@"public.image"];
@@ -281,8 +241,6 @@
     // Send the image back
     return [self createNonInterpolatedUIImageFormCIImage:qrFilter.outputImage withSize:size];
 }
-
-
 //将CGImage转换成UIImage
 - (UIImage *)createNonInterpolatedUIImageFormCIImage:(CIImage *)image withSize:(CGFloat) size {
     CGRect extent = CGRectIntegral(image.extent);
@@ -310,20 +268,6 @@
 }
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info{
-    
-//    UIImage *image = info[UIImagePickerControllerOriginalImage];
-//    if (!image){
-//        image = [info objectForKey:UIImagePickerControllerOriginalImage];
-//    }
-//    CIImage *cii = [CIImage imageWithCGImage:[image CGImage]];
-//    CIContext *context = [CIContext contextWithOptions:nil];
-//    NSDictionary *detectorOptions = [NSDictionary dictionaryWithObject:CIDetectorAccuracyHigh forKey:CIDetectorAccuracy];
-//    CIDetector *detector = [CIDetector detectorOfType:CIDetectorTypeQRCode context:context options:detectorOptions];
-//    NSArray *features = [detector featuresInImage:cii];
-//    NSString *msg = [features firstObject];
-//    [self readingFinshedWithMessage:msg];
-//    [self dismissViewControllerAnimated:YES completion:nil];
-    
     UIImage *image = info[UIImagePickerControllerOriginalImage];
     if (!image){
         image = [info objectForKey:UIImagePickerControllerOriginalImage];
@@ -353,69 +297,24 @@
         //变化区间可以自行设置
         i = i+0.5;
     }
-    
 }
 
 - (void)openTorch:(UIButton *)button{
-    isTorchOn = !isTorchOn;
-    [backCamera lockForConfiguration:nil];
-    if (isTorchOn) {
-        [backCamera setTorchMode:AVCaptureTorchModeOn];
-        [button setImage:[UIImage imageNamed:@"flash_off@2x.png"] forState:UIControlStateNormal];
+    self.isTorchOn = !self.isTorchOn;
+    [self.backCamera lockForConfiguration:nil];
+    if (self.isTorchOn) {
+        [self.backCamera setTorchMode:AVCaptureTorchModeOn];
+        [button setImage:[UIImage imageNamed:@"flash_off"] forState:UIControlStateNormal];
     }else{
-        [backCamera setTorchMode:AVCaptureTorchModeOff];
-        [button setImage:[UIImage imageNamed:@"flash_on@2x.png"] forState:UIControlStateNormal];
+        [self.backCamera setTorchMode:AVCaptureTorchModeOff];
+        [button setImage:[UIImage imageNamed:@"flash_on"] forState:UIControlStateNormal];
     }
-    [backCamera unlockForConfiguration];
-}
-
-- (void)pan:(UIPanGestureRecognizer *)pan{
-//    
-//    CGPoint point = [pan translationInView:self.view];
-//
-//    if ([pan state] == UIGestureRecognizerStateBegan) {
-//        NSLog(@"%f", -point.y*.01);
-//        _initialZoom = backCamera.videoZoomFactor;
-//        
-//        NSLog(@"initialZoom = %f", backCamera.videoZoomFactor);
-//    }
-//    
-//    if ([pan state] == UIGestureRecognizerStateChanged) {
-//        
-//        //backCamera.videoZoomFactor = -point.y*.01 + _initialZoom;
-//        ///NSLog(@"%f", -point.y*.01 + _initialZoom);
-//        CGFloat zoomFactor;
-//        if (-point.y*.01 < 1.0f) {
-//            
-//            zoomFactor = _initialZoom - pow(backCamera.activeFormat.videoMaxZoomFactor, 1.0f - (-point.y*.01));
-//        }else{
-//                
-//                zoomFactor = _initialZoom + pow(backCamera.activeFormat.videoMaxZoomFactor, (-point.y*.01 - 1.0f) / 2.0f);
-//        }
-//        NSLog(@"%f", backCamera.activeFormat.videoMaxZoomFactor);
-//        zoomFactor = MIN(10.0f, zoomFactor);
-//        zoomFactor = MAX(1.0f, zoomFactor);
-//        
-//  
-//        [backCamera lockForConfiguration:nil];
-//        backCamera.videoZoomFactor = zoomFactor;
-//        [backCamera unlockForConfiguration];
-//    }
-//        
-//
-//
-//    if ([pan state] == UIGestureRecognizerStateEnded) {
-//        [backCamera unlockForConfiguration];
-//    }
-  
+    [self.backCamera unlockForConfiguration];
 }
 
 - (void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
     [[NSNotificationCenter defaultCenter]postNotificationName:@"ViewWillDisappearNotification" object:nil];
-    if (self.navigationController) { //如果继续隐藏导航栏 注掉此代码即可
-        self.navigationController.navigationBarHidden = NO;
-    }
 }
 
 - (void)dealloc{
@@ -433,7 +332,7 @@
 @property (assign, nonatomic) BOOL isReachEdge;
 
 
-@property (assign , nonatomic) XDScaningLineMoveMode lineMoveMode;
+@property (assign, nonatomic) XDScaningLineMoveMode lineMoveMode;
 @property (assign, nonatomic) XDScaningLineMode lineMode;
 @property (assign, nonatomic) XDScaningWarningTone warninTone;
 
@@ -455,9 +354,6 @@
     
     self.backgroundColor = [UIColor clearColor];
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(viewWillDisappear:) name:@"ViewWillDisappearNotification" object:nil];
-    UIScreenEdgePanGestureRecognizer *g = [[UIScreenEdgePanGestureRecognizer alloc]initWithTarget:self action:@selector(a:)];
-    [g setEdges:UIRectEdgeLeft];
-    [self addGestureRecognizer:g];
     
     self.lineMode = XDScaningLineModeDeafult;
     self.lineMoveMode = XDScaningLineMoveModeDown;
@@ -468,10 +364,6 @@
     
 }
 
-
-- (void)a:(UIScreenEdgePanGestureRecognizer *)g{
-    [self.delegate view:self didCatchGesture:g];
-}
 - (UIView *)creatLine{
     
     if (_lineMoveMode == XDScaningLineMoveModeNone) return nil;
@@ -485,7 +377,7 @@
     if (_lineMode == XDScaningLineModeImge) {
         line.backgroundColor = [UIColor clearColor];
         self.origin = line.frame.origin.y;
-        UIImageView *v = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"line@2x.png"]];
+        UIImageView *v = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"line"]];
         v.contentMode = UIViewContentModeScaleAspectFill;
         v.frame = CGRectMake(0, 0, line.frame.size.width, line.frame.size.height);
         [line addSubview:v];
@@ -496,7 +388,7 @@
         CGRect frame = line.frame;
         frame.size.height = TransparentArea([XDScanningView width], [XDScanningView height]).height;
         line.frame = frame;
-        UIImageView *iv = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"scan_net@2x.png"]];
+        UIImageView *iv = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"scan_net"]];
         iv.frame = CGRectMake(0, -TransparentArea([XDScanningView width], [XDScanningView height]).height, line.frame.size.width, TransparentArea([XDScanningView width], [XDScanningView height]).height);
         [line addSubview:iv];
     }
@@ -524,7 +416,7 @@
         [UIView animateWithDuration:1.5 delay:0.1 options:UIViewAnimationOptionCurveEaseInOut animations:^{
             iv.transform = CGAffineTransformTranslate(iv.transform, 0, TransparentArea([XDScanningView width], [XDScanningView height]).height);
         } completion:^(BOOL finished) {
-            iv.frame = CGRectMake(0, -TransparentArea([XDScanningView width], [XDScanningView height]).height, _line.frame.size.width, TransparentArea([XDScanningView width], [XDScanningView height]).height);
+            iv.frame = CGRectMake(0, -TransparentArea([XDScanningView width], [XDScanningView height]).height, self->_line.frame.size.width, TransparentArea([XDScanningView width], [XDScanningView height]).height);
             [self starMove];
         }];
     }
@@ -597,7 +489,7 @@
     CGContextRef context = UIGraphicsGetCurrentContext();
     CGContextSetRGBFillColor(context, 40/255.0, 40/255.0, 40/255.0, .5);
     CGContextFillRect(context, rect);
-     NSLog(@"%@", NSStringFromCGSize(TransparentArea([XDScanningView width], [XDScanningView height])));
+    NSLog(@"%@", NSStringFromCGSize(TransparentArea([XDScanningView width], [XDScanningView height])));
     CGRect clearDrawRect = CGRectMake(rect.size.width / 2 - TransparentArea([XDScanningView width], [XDScanningView height]).width / 2,
                                       rect.size.height / 2 - TransparentArea([XDScanningView width], [XDScanningView height]).height / 2,
                                       TransparentArea([XDScanningView width], [XDScanningView height]).width,TransparentArea([XDScanningView width], [XDScanningView height]).height);
@@ -656,7 +548,7 @@
     }else if(Iphone6Plus){
         return Iphone6PlusScanningSize_width;
     }else{
-        return Iphone45ScanningSize_width;
+        return 300;
     }
 }
 
@@ -668,7 +560,7 @@
     }else if(Iphone6Plus){
         return Iphone6PlusScanningSize_height;
     }else{
-        return Iphone45ScanningSize_height;
+        return 300;
     }
 }
 
@@ -679,8 +571,6 @@
 - (void)dealloc{
     NSLog(@"%@dead", self.description);
 }
-
-
 
 @end
 

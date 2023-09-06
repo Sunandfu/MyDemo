@@ -3,24 +3,15 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 53;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		48B16C9B1ED55D77003CAFB3 /* CustomMunelabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 48B16C9A1ED55D77003CAFB3 /* CustomMunelabel.m */; };
+		E7136B2D2AA8317100FD8937 /* QRImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7136B2C2AA8317100FD8937 /* QRImages.xcassets */; };
 		E779D56E24725C7D00CBF134 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E779D56D24725C7D00CBF134 /* CoreText.framework */; };
 		EA1656FE1C40E2E20071D66E /* HistoryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA1656EF1C40E2E20071D66E /* HistoryTableViewController.m */; };
-		EA1656FF1C40E2E20071D66E /* album.png in Resources */ = {isa = PBXBuildFile; fileRef = EA1656F11C40E2E20071D66E /* album.png */; };
-		EA1657001C40E2E20071D66E /* album@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EA1656F21C40E2E20071D66E /* album@2x.png */; };
-		EA1657011C40E2E20071D66E /* flash_off@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EA1656F31C40E2E20071D66E /* flash_off@2x.png */; };
-		EA1657021C40E2E20071D66E /* flash_on@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EA1656F41C40E2E20071D66E /* flash_on@2x.png */; };
-		EA1657031C40E2E20071D66E /* history.png in Resources */ = {isa = PBXBuildFile; fileRef = EA1656F51C40E2E20071D66E /* history.png */; };
-		EA1657041C40E2E20071D66E /* history@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EA1656F61C40E2E20071D66E /* history@2x.png */; };
-		EA1657051C40E2E20071D66E /* line@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EA1656F71C40E2E20071D66E /* line@2x.png */; };
-		EA1657061C40E2E20071D66E /* myctrip_line_scan@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = EA1656F81C40E2E20071D66E /* myctrip_line_scan@3x.png */; };
-		EA1657071C40E2E20071D66E /* return@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EA1656F91C40E2E20071D66E /* return@2x.png */; };
 		EA1657081C40E2E20071D66E /* scan.wav in Resources */ = {isa = PBXBuildFile; fileRef = EA1656FA1C40E2E20071D66E /* scan.wav */; };
-		EA1657091C40E2E20071D66E /* scan_net@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EA1656FB1C40E2E20071D66E /* scan_net@2x.png */; };
 		EA16570A1C40E2E20071D66E /* XDScaningViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA1656FD1C40E2E20071D66E /* XDScaningViewController.m */; };
 		EAA2EA781BB64D3400422C42 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EAA2EA771BB64D3400422C42 /* AppDelegate.m */; };
 		EAA2EA7B1BB64D3400422C42 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAA2EA7A1BB64D3400422C42 /* ViewController.m */; };
@@ -33,21 +24,12 @@
 /* Begin PBXFileReference section */
 		48B16C991ED55D77003CAFB3 /* CustomMunelabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomMunelabel.h; sourceTree = "<group>"; };
 		48B16C9A1ED55D77003CAFB3 /* CustomMunelabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomMunelabel.m; sourceTree = "<group>"; };
+		E7136B2C2AA8317100FD8937 /* QRImages.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = QRImages.xcassets; sourceTree = "<group>"; };
 		E779D56D24725C7D00CBF134 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 		EA1656ED1C40E2E20071D66E /* Config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Config.h; sourceTree = "<group>"; };
 		EA1656EE1C40E2E20071D66E /* HistoryTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryTableViewController.h; sourceTree = "<group>"; };
 		EA1656EF1C40E2E20071D66E /* HistoryTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryTableViewController.m; sourceTree = "<group>"; };
-		EA1656F11C40E2E20071D66E /* album.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = album.png; sourceTree = "<group>"; };
-		EA1656F21C40E2E20071D66E /* album@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "album@2x.png"; sourceTree = "<group>"; };
-		EA1656F31C40E2E20071D66E /* flash_off@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "flash_off@2x.png"; sourceTree = "<group>"; };
-		EA1656F41C40E2E20071D66E /* flash_on@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "flash_on@2x.png"; sourceTree = "<group>"; };
-		EA1656F51C40E2E20071D66E /* history.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = history.png; sourceTree = "<group>"; };
-		EA1656F61C40E2E20071D66E /* history@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "history@2x.png"; sourceTree = "<group>"; };
-		EA1656F71C40E2E20071D66E /* line@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "line@2x.png"; sourceTree = "<group>"; };
-		EA1656F81C40E2E20071D66E /* myctrip_line_scan@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "myctrip_line_scan@3x.png"; sourceTree = "<group>"; };
-		EA1656F91C40E2E20071D66E /* return@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "return@2x.png"; sourceTree = "<group>"; };
 		EA1656FA1C40E2E20071D66E /* scan.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = scan.wav; sourceTree = "<group>"; };
-		EA1656FB1C40E2E20071D66E /* scan_net@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "scan_net@2x.png"; sourceTree = "<group>"; };
 		EA1656FC1C40E2E20071D66E /* XDScaningViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XDScaningViewController.h; sourceTree = "<group>"; };
 		EA1656FD1C40E2E20071D66E /* XDScaningViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XDScaningViewController.m; sourceTree = "<group>"; };
 		EAA2EA6F1BB64D3400422C42 /* XDQRCode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XDQRCode.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -98,17 +80,8 @@
 		EA1656F01C40E2E20071D66E /* resource */ = {
 			isa = PBXGroup;
 			children = (
-				EA1656F11C40E2E20071D66E /* album.png */,
-				EA1656F21C40E2E20071D66E /* album@2x.png */,
-				EA1656F31C40E2E20071D66E /* flash_off@2x.png */,
-				EA1656F41C40E2E20071D66E /* flash_on@2x.png */,
-				EA1656F51C40E2E20071D66E /* history.png */,
-				EA1656F61C40E2E20071D66E /* history@2x.png */,
-				EA1656F71C40E2E20071D66E /* line@2x.png */,
-				EA1656F81C40E2E20071D66E /* myctrip_line_scan@3x.png */,
-				EA1656F91C40E2E20071D66E /* return@2x.png */,
 				EA1656FA1C40E2E20071D66E /* scan.wav */,
-				EA1656FB1C40E2E20071D66E /* scan_net@2x.png */,
+				E7136B2C2AA8317100FD8937 /* QRImages.xcassets */,
 			);
 			path = resource;
 			sourceTree = "<group>";
@@ -183,7 +156,8 @@
 		EAA2EA671BB64D3300422C42 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0640;
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
 				ORGANIZATIONNAME = DINGYONGGANG;
 				TargetAttributes = {
 					EAA2EA6E1BB64D3400422C42 = {
@@ -195,10 +169,9 @@
 			};
 			buildConfigurationList = EAA2EA6A1BB64D3300422C42 /* Build configuration list for PBXProject "XDQRCode" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				English,
 				en,
 				Base,
 			);
@@ -217,18 +190,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EA1657031C40E2E20071D66E /* history.png in Resources */,
-				EA1657001C40E2E20071D66E /* album@2x.png in Resources */,
-				EA1657011C40E2E20071D66E /* flash_off@2x.png in Resources */,
-				EA1657061C40E2E20071D66E /* myctrip_line_scan@3x.png in Resources */,
+				E7136B2D2AA8317100FD8937 /* QRImages.xcassets in Resources */,
 				EA1657081C40E2E20071D66E /* scan.wav in Resources */,
 				EAA2EA7E1BB64D3400422C42 /* Main.storyboard in Resources */,
-				EA1657021C40E2E20071D66E /* flash_on@2x.png in Resources */,
-				EA1657071C40E2E20071D66E /* return@2x.png in Resources */,
-				EA1656FF1C40E2E20071D66E /* album.png in Resources */,
-				EA1657051C40E2E20071D66E /* line@2x.png in Resources */,
-				EA1657041C40E2E20071D66E /* history@2x.png in Resources */,
-				EA1657091C40E2E20071D66E /* scan_net@2x.png in Resources */,
 				EAA2EA831BB64D3400422C42 /* LaunchScreen.xib in Resources */,
 				EAA2EA801BB64D3400422C42 /* Images.xcassets in Resources */,
 			);
@@ -280,13 +244,24 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Chen GangQiang (785VZN2ZN7)";
@@ -294,6 +269,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -309,7 +285,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -325,13 +301,24 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Chen GangQiang (785VZN2ZN7)";
@@ -348,7 +335,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -362,13 +349,23 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = NN56R38BZT;
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = NN56R38BZT;
 				INFOPLIST_FILE = XDQRCode/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				INFOPLIST_KEY_CFBundleDisplayName = "二维码工具";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bigbo.QRCode;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "7ecb5201-b5dd-432c-97d0-c4e6a32350db";
 				PROVISIONING_PROFILE_SPECIFIER = Yqad_Tongyong_Development;
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "Yqad_Tongyong_开发";
 			};
 			name = Debug;
 		};
@@ -378,13 +375,23 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = NN56R38BZT;
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = NN56R38BZT;
 				INFOPLIST_FILE = XDQRCode/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				INFOPLIST_KEY_CFBundleDisplayName = "二维码工具";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bigbo.QRCode;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "7ecb5201-b5dd-432c-97d0-c4e6a32350db";
 				PROVISIONING_PROFILE_SPECIFIER = Yqad_Tongyong_Development;
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "Yqad_Tongyong_开发";
 			};
 			name = Release;
 		};

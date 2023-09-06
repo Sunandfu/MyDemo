@@ -1,0 +1,6 @@
+framework module OUIIM {
+  umbrella header "OUIIM-umbrella.h"
+
+  export *
+  module * { export * }
+}

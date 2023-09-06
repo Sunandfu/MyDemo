@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="0Md-ka-p6S">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--DragAndDrop使用-->
+        <scene sceneID="4RN-e9-Acn">
+            <objects>
+                <tableViewController id="EeI-dy-Q1O" customClass="RootTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="e6D-Eo-V0Y">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Qmv-vY-0MT">
+                                <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Qmv-vY-0MT" id="aVL-kS-YMr">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="EeI-dy-Q1O" id="4kN-x4-IaY"/>
+                            <outlet property="delegate" destination="EeI-dy-Q1O" id="ydg-cs-1fu"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="DragAndDrop使用" id="9dM-j9-GG9"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fxi-hb-FAc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="931.88405797101461" y="146.65178571428569"/>
+        </scene>
+        <!--Drag And Drop Table View Controller-->
+        <scene sceneID="x3r-x8-if7">
+            <objects>
+                <tableViewController storyboardIdentifier="DragAndDropTableViewController" id="1rM-lO-KB8" customClass="DragAndDropTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="HwG-Av-cHr">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="F0a-lL-SzU">
+                                <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="F0a-lL-SzU" id="Aka-Z2-i9E">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="1rM-lO-KB8" id="TfC-u7-piZ"/>
+                            <outlet property="delegate" destination="1rM-lO-KB8" id="3u5-2k-AAz"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1Lt-Em-bjJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1638" y="146"/>
+        </scene>
+        <!--Text View Drag And Drop View Controller-->
+        <scene sceneID="oKh-CE-Jba">
+            <objects>
+                <viewController storyboardIdentifier="TextViewDragAndDropViewController" id="v8b-9e-3Tr" customClass="TextViewDragAndDropViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Vmw-ca-6Ij">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="qtp-6U-VlV" userLabel="dragView">
+                                <rect key="frame" x="10" y="54" width="394" height="150"/>
+                                <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="tLm-OO-AWK"/>
+                                </constraints>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="这是一个蛋蛋地忧伤控件" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8mI-j6-Duu" userLabel="dragTextField">
+                                <rect key="frame" x="10" y="394" width="394" height="50"/>
+                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="OAp-WL-WQ9"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Law-bU-fo0" userLabel="DropTextView">
+                                <rect key="frame" x="10" y="474" width="394" height="50"/>
+                                <color key="backgroundColor" systemColor="systemPinkColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="hello guy, www.baidu.com. 即使开放虎归山接口的凤凰国际开始动画风格会计师" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ieh-hj-Ppm" userLabel="dropView">
+                                <rect key="frame" x="10" y="214" width="394" height="150"/>
+                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="rgp-ic-eep"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Law-bU-fo0" firstAttribute="leading" secondItem="rgp-ic-eep" secondAttribute="leading" constant="10" id="0jd-MV-tAL"/>
+                            <constraint firstItem="qtp-6U-VlV" firstAttribute="top" secondItem="rgp-ic-eep" secondAttribute="top" constant="10" id="3co-Wx-GcE"/>
+                            <constraint firstItem="ieh-hj-Ppm" firstAttribute="leading" secondItem="rgp-ic-eep" secondAttribute="leading" constant="10" id="F7r-nY-Iue"/>
+                            <constraint firstItem="rgp-ic-eep" firstAttribute="trailing" secondItem="qtp-6U-VlV" secondAttribute="trailing" constant="10" id="GSX-U8-lF0"/>
+                            <constraint firstItem="8mI-j6-Duu" firstAttribute="height" secondItem="Law-bU-fo0" secondAttribute="height" id="Jdh-qJ-o5D"/>
+                            <constraint firstItem="ieh-hj-Ppm" firstAttribute="top" secondItem="qtp-6U-VlV" secondAttribute="bottom" constant="10" id="NjW-r2-1CU"/>
+                            <constraint firstItem="8mI-j6-Duu" firstAttribute="top" secondItem="ieh-hj-Ppm" secondAttribute="bottom" constant="30" id="ObN-xf-OTs"/>
+                            <constraint firstItem="ieh-hj-Ppm" firstAttribute="height" secondItem="qtp-6U-VlV" secondAttribute="height" id="RTj-RI-Bue"/>
+                            <constraint firstItem="qtp-6U-VlV" firstAttribute="leading" secondItem="rgp-ic-eep" secondAttribute="leading" constant="10" id="Sct-sO-TY7"/>
+                            <constraint firstItem="rgp-ic-eep" firstAttribute="trailing" secondItem="ieh-hj-Ppm" secondAttribute="trailing" constant="10" id="XiA-6D-G8I"/>
+                            <constraint firstItem="rgp-ic-eep" firstAttribute="trailing" secondItem="8mI-j6-Duu" secondAttribute="trailing" constant="10" id="aHN-Yy-gvH"/>
+                            <constraint firstItem="rgp-ic-eep" firstAttribute="trailing" secondItem="Law-bU-fo0" secondAttribute="trailing" constant="10" id="gLR-NO-GDJ"/>
+                            <constraint firstItem="8mI-j6-Duu" firstAttribute="leading" secondItem="rgp-ic-eep" secondAttribute="leading" constant="10" id="lx9-x6-PEE"/>
+                            <constraint firstItem="Law-bU-fo0" firstAttribute="top" secondItem="8mI-j6-Duu" secondAttribute="bottom" constant="30" id="omF-43-RuP"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yNt-t5-YeD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2332" y="146"/>
+        </scene>
+        <!--Drag And Drop View Controller-->
+        <scene sceneID="GdW-Vm-Wb6">
+            <objects>
+                <viewController storyboardIdentifier="DragAndDropViewController" id="7qC-li-79R" customClass="DragAndDropViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="mMS-Sj-lkA">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MwD-1D-upb" customClass="DragView">
+                                <rect key="frame" x="10" y="144" width="394" height="200"/>
+                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="wAi-6w-S2W"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rcI-fA-3Mq" customClass="DropView">
+                                <rect key="frame" x="10" y="374" width="394" height="200"/>
+                                <color key="backgroundColor" systemColor="systemYellowColor"/>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="bY7-4v-W2x"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="bY7-4v-W2x" firstAttribute="trailing" secondItem="rcI-fA-3Mq" secondAttribute="trailing" constant="10" id="1Hp-D0-rPq"/>
+                            <constraint firstItem="bY7-4v-W2x" firstAttribute="trailing" secondItem="MwD-1D-upb" secondAttribute="trailing" constant="10" id="8am-oV-m83"/>
+                            <constraint firstItem="rcI-fA-3Mq" firstAttribute="leading" secondItem="bY7-4v-W2x" secondAttribute="leading" constant="10" id="RAr-Wm-x9n"/>
+                            <constraint firstItem="MwD-1D-upb" firstAttribute="leading" secondItem="bY7-4v-W2x" secondAttribute="leading" constant="10" id="diR-qt-gNe"/>
+                            <constraint firstItem="MwD-1D-upb" firstAttribute="top" secondItem="bY7-4v-W2x" secondAttribute="top" constant="100" id="gZH-EH-QSp"/>
+                            <constraint firstItem="MwD-1D-upb" firstAttribute="height" secondItem="rcI-fA-3Mq" secondAttribute="height" id="vKC-R5-Pp2"/>
+                            <constraint firstItem="rcI-fA-3Mq" firstAttribute="top" secondItem="MwD-1D-upb" secondAttribute="bottom" constant="30" id="zpX-3P-GYu"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="drapView" destination="MwD-1D-upb" id="Aqg-op-Slt"/>
+                        <outlet property="dropView" destination="rcI-fA-3Mq" id="LKs-bY-QND"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0xV-e9-b2E" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3054" y="146"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="q9z-QH-0DL">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0Md-ka-p6S" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="3hL-KL-quO">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="EeI-dy-Q1O" kind="relationship" relationship="rootViewController" id="xOg-8L-QMI"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XeI-94-278" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="21.739130434782609" y="146.65178571428569"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="opaqueSeparatorColor">
+            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

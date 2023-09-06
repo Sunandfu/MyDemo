@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14109"/>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="20037"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -61,7 +62,7 @@
         <scene sceneID="R2V-B0-nI4">
             <objects>
                 <windowController id="B8D-0N-5wS" sceneMemberID="viewController">
-                    <window key="window" title="代码混淆" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
+                    <window key="window" title="代码混淆" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
                         <rect key="contentRect" x="196" y="500" width="480" height="180"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
@@ -82,21 +83,21 @@
             <objects>
                 <viewController id="XfG-lQ-9wD" customClass="MJCodeViewController" sceneMemberID="viewController">
                     <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="546" height="185"/>
+                        <rect key="frame" x="0.0" y="0.0" width="546" height="183"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <subviews>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="WSf-ao-jWh">
-                                <rect key="frame" x="324" y="137" width="105" height="32"/>
+                                <rect key="frame" x="339" y="135" width="99" height="33"/>
                                 <buttonCell key="cell" type="push" title="1.选择目录" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="uQc-pA-kfF">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" size="13" name=".PingFangSC-Regular"/>
+                                    <font key="font" metaFont="system"/>
                                 </buttonCell>
                                 <connections>
                                     <action selector="chooseFile:" target="XfG-lQ-9wD" id="bGW-vY-5x0"/>
                                 </connections>
                             </button>
                             <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="4h6-Kj-1OQ">
-                                <rect key="frame" x="18" y="88" width="510" height="17"/>
+                                <rect key="frame" x="18" y="87" width="510" height="16"/>
                                 <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="选择目录" id="nEr-pT-HZ4">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -104,7 +105,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="2y4-vW-vcX">
-                                <rect key="frame" x="18" y="115" width="20" height="17"/>
+                                <rect key="frame" x="18" y="113" width="20" height="16"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="tip" id="hOj-2r-Fwk">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="systemRedColor" catalog="System" colorSpace="catalog"/>
@@ -112,7 +113,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="nci-xS-3PR">
-                                <rect key="frame" x="18" y="61" width="510" height="17"/>
+                                <rect key="frame" x="18" y="61" width="510" height="16"/>
                                 <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="混淆完毕" id="9JK-47-YRB">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -120,50 +121,50 @@
                                 </textFieldCell>
                             </textField>
                             <textField verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Voa-5b-FSv" customClass="MJTextField">
-                                <rect key="frame" x="20" y="143" width="300" height="22"/>
+                                <rect key="frame" x="20" y="141" width="316" height="22"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="22" id="Gfw-b4-bD1"/>
                                 </constraints>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="请输入要搜索的前缀，多个前缀之间用空格隔开" drawsBackground="YES" id="wTB-Da-5ok">
                                     <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="mQl-KS-34d">
-                                <rect key="frame" x="427" y="137" width="105" height="32"/>
+                                <rect key="frame" x="434" y="135" width="99" height="33"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="BYL-jf-abZ"/>
                                 </constraints>
                                 <buttonCell key="cell" type="push" title="2.开始混淆" bezelStyle="rounded" alignment="center" enabled="NO" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="jt8-vt-VTL">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" size="13" name=".PingFangSC-Regular"/>
+                                    <font key="font" metaFont="system"/>
                                 </buttonCell>
                                 <connections>
                                     <action selector="start:" target="XfG-lQ-9wD" id="ef3-ZE-af4"/>
                                 </connections>
                             </button>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="SLd-2Q-Ndg">
-                                <rect key="frame" x="425" y="13" width="107" height="32"/>
+                                <rect key="frame" x="432" y="13" width="101" height="33"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="76T-Mr-jre"/>
                                 </constraints>
                                 <buttonCell key="cell" type="push" title="字符串加密" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="K4o-MD-TP3">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" size="13" name=".PingFangSC-Regular"/>
+                                    <font key="font" metaFont="system"/>
                                 </buttonCell>
                                 <connections>
                                     <segue destination="6RO-O1-hSl" kind="show" id="cnc-YI-PZv"/>
                                 </connections>
                             </button>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="YaG-tb-0UA">
-                                <rect key="frame" x="324" y="106" width="208" height="32"/>
+                                <rect key="frame" x="339" y="104" width="194" height="33"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="DHW-JB-J9j"/>
                                 </constraints>
                                 <buttonCell key="cell" type="push" title="打开目录" bezelStyle="rounded" alignment="center" enabled="NO" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="fXN-ph-p4z">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" size="13" name=".PingFangSC-Regular"/>
+                                    <font key="font" metaFont="system"/>
                                 </buttonCell>
                                 <connections>
                                     <action selector="openFile:" target="XfG-lQ-9wD" id="f6A-Bv-cTo"/>
@@ -218,11 +219,11 @@
             <objects>
                 <viewController title="字符串加密" id="6RO-O1-hSl" customClass="MJStringViewController" sceneMemberID="viewController">
                     <view key="view" id="HS6-hM-RcA">
-                        <rect key="frame" x="0.0" y="0.0" width="548" height="376"/>
+                        <rect key="frame" x="0.0" y="0.0" width="548" height="373"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="om0-7h-Z5C">
-                                <rect key="frame" x="18" y="74" width="512" height="17"/>
+                                <rect key="frame" x="18" y="72" width="512" height="16"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="tip" id="EiR-Rv-0NY">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="systemRedColor" catalog="System" colorSpace="catalog"/>
@@ -230,7 +231,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="vQm-gW-oIp">
-                                <rect key="frame" x="18" y="47" width="512" height="17"/>
+                                <rect key="frame" x="18" y="46" width="512" height="16"/>
                                 <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="选择目录" id="9So-5j-rS9">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -238,7 +239,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="j3p-Zv-jvk">
-                                <rect key="frame" x="18" y="20" width="512" height="17"/>
+                                <rect key="frame" x="18" y="20" width="512" height="16"/>
                                 <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="加密完毕" id="Qze-CX-Gjt">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -246,99 +247,99 @@
                                 </textFieldCell>
                             </textField>
                             <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ENP-eo-EXt">
-                                <rect key="frame" x="20" y="334" width="443" height="22"/>
+                                <rect key="frame" x="20" y="331" width="451" height="22"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="22" id="ncw-4C-ZgP"/>
                                 </constraints>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="请输入要加密的字符串" drawsBackground="YES" id="Ydw-KV-OzB">
                                     <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="eDb-nb-bPd">
-                                <rect key="frame" x="467" y="328" width="67" height="32"/>
+                                <rect key="frame" x="474" y="325" width="61" height="33"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="7TJ-HJ-YUj"/>
                                 </constraints>
                                 <buttonCell key="cell" type="push" title="加密" bezelStyle="rounded" alignment="center" enabled="NO" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="hfI-Xj-vYn">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" size="13" name=".PingFangSC-Regular"/>
+                                    <font key="font" metaFont="system"/>
                                 </buttonCell>
                                 <connections>
                                     <action selector="encrypt:" target="6RO-O1-hSl" id="AsQ-dD-JMB"/>
                                 </connections>
                             </button>
                             <scrollView horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WAl-Mp-Ahs">
-                                <rect key="frame" x="20" y="144" width="508" height="180"/>
-                                <clipView key="contentView" id="xET-2b-oGy">
+                                <rect key="frame" x="20" y="141" width="508" height="180"/>
+                                <clipView key="contentView" drawsBackground="NO" id="xET-2b-oGy">
                                     <rect key="frame" x="1" y="1" width="506" height="178"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <textView editable="NO" importsGraphics="NO" verticallyResizable="YES" usesFontPanel="YES" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" spellingCorrection="YES" smartInsertDelete="YES" id="RDw-3i-unz" customClass="MJTextView">
                                             <rect key="frame" x="0.0" y="0.0" width="506" height="178"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             <size key="minSize" width="506" height="178"/>
                                             <size key="maxSize" width="508" height="10000000"/>
-                                            <color key="insertionPointColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="insertionPointColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                         </textView>
                                     </subviews>
-                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </clipView>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="180" id="XMq-ur-eto"/>
                                 </constraints>
-                                <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="YES" id="zss-GF-QPr">
+                                <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="YES" id="zss-GF-QPr">
                                     <rect key="frame" x="-100" y="-100" width="87" height="18"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
-                                <scroller key="verticalScroller" verticalHuggingPriority="750" horizontal="NO" id="KLO-Za-YsP">
+                                <scroller key="verticalScroller" wantsLayer="YES" verticalHuggingPriority="750" horizontal="NO" id="KLO-Za-YsP">
                                     <rect key="frame" x="491" y="1" width="16" height="178"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                             </scrollView>
                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="Mp3-Hh-tTi" customClass="MJDividerView">
-                                <rect key="frame" x="0.0" y="132" width="548" height="2"/>
+                                <rect key="frame" x="0.0" y="129" width="548" height="2"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="2" id="Cea-Gq-P4l"/>
                                     <constraint firstAttribute="height" constant="2" id="DKQ-Fs-YVY"/>
                                 </constraints>
                             </customView>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="WO4-iS-xN6">
-                                <rect key="frame" x="14" y="94" width="175" height="32"/>
+                                <rect key="frame" x="13" y="91" width="177" height="33"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="fak-ay-cN6"/>
                                 </constraints>
                                 <buttonCell key="cell" type="push" title="1.选择目录" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Psz-oq-UAm">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" size="13" name=".PingFangSC-Regular"/>
+                                    <font key="font" metaFont="system"/>
                                 </buttonCell>
                                 <connections>
                                     <action selector="choose:" target="6RO-O1-hSl" id="Xe8-vr-BMl"/>
                                 </connections>
                             </button>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="gJu-NO-Exs">
-                                <rect key="frame" x="187" y="94" width="174" height="32"/>
+                                <rect key="frame" x="186" y="91" width="176" height="33"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="kdK-Wh-vOr"/>
                                 </constraints>
                                 <buttonCell key="cell" type="push" title="2.开始加密" bezelStyle="rounded" alignment="center" enabled="NO" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="ebJ-be-b3s">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" size="13" name=".PingFangSC-Regular"/>
+                                    <font key="font" metaFont="system"/>
                                 </buttonCell>
                                 <connections>
                                     <action selector="start:" target="6RO-O1-hSl" id="C7v-qe-f4i"/>
                                 </connections>
                             </button>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="4NK-Z2-BRV">
-                                <rect key="frame" x="359" y="94" width="175" height="32"/>
+                                <rect key="frame" x="358" y="91" width="177" height="33"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="NL8-UG-Iuh"/>
                                 </constraints>
                                 <buttonCell key="cell" type="push" title="打开目录" bezelStyle="rounded" alignment="center" enabled="NO" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="aOA-i7-f6I">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" size="13" name=".PingFangSC-Regular"/>
+                                    <font key="font" metaFont="system"/>
                                 </buttonCell>
                                 <connections>
                                     <action selector="open:" target="6RO-O1-hSl" id="pwQ-lS-sjQ"/>

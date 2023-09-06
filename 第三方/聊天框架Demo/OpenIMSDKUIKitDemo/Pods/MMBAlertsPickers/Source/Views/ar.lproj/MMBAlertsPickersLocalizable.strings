@@ -1,0 +1,20 @@
+/************************* Mahmoud Abo-Osama *************************/
+//
+//  Localizable.strings
+//
+
+
+//Common
+"Error"                      = "خطأ";
+"Info"                       = "معلومات";
+"Done"                       = "تم";
+"OK"                         = "نعم";
+"Confirm"                    = "تأكيد";
+"Cancel"                     = "إلغاء";
+"Attention"                  = "تنبيه";
+"Add"                        = "إضافة";
+"Search or enter an address" = "إبحث أو أدخل العنوان";
+"Select"                     = "إختيار";
+"Search History"             = "البحث السابق";
+"Search"                     = "إبحث ,,,,";
+"Palestine"                  = "فلسطين";

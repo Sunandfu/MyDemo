@@ -1,0 +1,6 @@
+framework module OpenIMSDK {
+  umbrella header "OpenIMSDK-umbrella.h"
+
+  export *
+  module * { export * }
+}

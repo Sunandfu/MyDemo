@@ -1,0 +1,197 @@
+PODS:
+  - Alamofire (4.9.1)
+  - ChatLayout (1.3.3):
+    - ChatLayout/Ultimate (= 1.3.3)
+  - ChatLayout/Core (1.3.3)
+  - ChatLayout/Extras (1.3.3):
+    - ChatLayout/Core
+  - ChatLayout/Ultimate (1.3.3):
+    - ChatLayout/Core
+    - ChatLayout/Extras
+  - DifferenceKit (1.3.0):
+    - DifferenceKit/Core (= 1.3.0)
+    - DifferenceKit/UIKitExtension (= 1.3.0)
+  - DifferenceKit/Core (1.3.0)
+  - DifferenceKit/UIKitExtension (1.3.0):
+    - DifferenceKit/Core
+  - Differentiator (5.0.0)
+  - InputBarAccessoryView (5.5.0):
+    - InputBarAccessoryView/Core (= 5.5.0)
+  - InputBarAccessoryView/Core (5.5.0)
+  - IQKeyboardManagerSwift (6.5.12)
+  - JXSegmentedView (1.3.0)
+  - Kingfisher (7.7.0)
+  - Lantern (1.1.5)
+  - Localize-Swift (3.2.0):
+    - Localize-Swift/LocalizeSwiftCore (= 3.2.0)
+    - Localize-Swift/UIKit (= 3.2.0)
+  - Localize-Swift/LocalizeSwiftCore (3.2.0)
+  - Localize-Swift/UIKit (3.2.0):
+    - Localize-Swift/LocalizeSwiftCore
+  - lottie-ios (3.5.0)
+  - MJExtension (3.4.1)
+  - MJRefresh (3.7.5)
+  - MMBAlertsPickers (1.1.93)
+  - OpenIMSDK (3.0.0):
+    - MJExtension
+    - OpenIMSDK/Callbacker (= 3.0.0)
+    - OpenIMSDK/CallbackProxy (= 3.0.0)
+    - OpenIMSDK/Interface (= 3.0.0)
+    - OpenIMSDK/Model (= 3.0.0)
+    - OpenIMSDK/Utils (= 3.0.0)
+    - OpenIMSDKCore (= 3.0.0)
+  - OpenIMSDK/Callbacker (3.0.0):
+    - MJExtension
+    - OpenIMSDK/Model
+    - OpenIMSDK/Utils
+    - OpenIMSDKCore (= 3.0.0)
+  - OpenIMSDK/CallbackProxy (3.0.0):
+    - MJExtension
+    - OpenIMSDK/Utils
+    - OpenIMSDKCore (= 3.0.0)
+  - OpenIMSDK/Interface (3.0.0):
+    - MJExtension
+    - OpenIMSDK/Callbacker
+    - OpenIMSDK/CallbackProxy
+    - OpenIMSDK/Model
+    - OpenIMSDKCore (= 3.0.0)
+  - OpenIMSDK/Model (3.0.0):
+    - MJExtension
+    - OpenIMSDK/Utils
+    - OpenIMSDKCore (= 3.0.0)
+  - OpenIMSDK/Utils (3.0.0):
+    - MJExtension
+    - OpenIMSDKCore (= 3.0.0)
+  - "OpenIMSDKCore (3.0.0+1)"
+  - OUICore (0.0.1):
+    - Alamofire (= 4.9.1)
+    - IQKeyboardManagerSwift
+    - Kingfisher (= 7.7.0)
+    - Localize-Swift (~> 3.2)
+    - lottie-ios (~> 3.0)
+    - OpenIMSDK (= 3.0.0)
+    - ProgressHUD
+    - RxCocoa (~> 6.0)
+    - RxDataSources
+    - RxKeyboard (~> 2.0)
+    - RxSwift (~> 6.5)
+    - SnapKit (~> 4.0)
+    - ZLPhotoBrowser (= 4.3.0)
+  - OUICoreView (0.0.1):
+    - Lantern
+    - OUICore
+  - OUIIM (0.0.1):
+    - ChatLayout
+    - DifferenceKit
+    - InputBarAccessoryView
+    - JXSegmentedView
+    - MJRefresh
+    - OUICore
+    - OUICoreView
+    - RxRelay
+    - RxSwift
+    - SnapKit
+  - ProgressHUD (13.7.2)
+  - RxCocoa (6.5.0):
+    - RxRelay (= 6.5.0)
+    - RxSwift (= 6.5.0)
+  - RxDataSources (5.0.0):
+    - Differentiator (~> 5.0)
+    - RxCocoa (~> 6.0)
+    - RxSwift (~> 6.0)
+  - RxGesture (4.0.4):
+    - RxCocoa (~> 6.0)
+    - RxSwift (~> 6.0)
+  - RxKeyboard (2.0.0):
+    - RxCocoa (~> 6.0)
+    - RxSwift (~> 6.0)
+  - RxRelay (6.5.0):
+    - RxSwift (= 6.5.0)
+  - RxSwift (6.5.0)
+  - SGCodeTextField (0.1.4)
+  - SnapKit (4.2.0)
+  - ZLPhotoBrowser (4.3.0):
+    - ZLPhotoBrowser/Core (= 4.3.0)
+  - ZLPhotoBrowser/Core (4.3.0)
+
+DEPENDENCIES:
+  - Localize-Swift (~> 3.2)
+  - MMBAlertsPickers
+  - OUICore (from `../`)
+  - OUICoreView (from `../`)
+  - OUIIM (from `../`)
+  - ProgressHUD
+  - RxGesture (~> 4.0.4)
+  - SGCodeTextField
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - ChatLayout
+    - DifferenceKit
+    - Differentiator
+    - InputBarAccessoryView
+    - IQKeyboardManagerSwift
+    - JXSegmentedView
+    - Kingfisher
+    - Lantern
+    - Localize-Swift
+    - lottie-ios
+    - MJExtension
+    - MJRefresh
+    - MMBAlertsPickers
+    - OpenIMSDK
+    - OpenIMSDKCore
+    - ProgressHUD
+    - RxCocoa
+    - RxDataSources
+    - RxGesture
+    - RxKeyboard
+    - RxRelay
+    - RxSwift
+    - SGCodeTextField
+    - SnapKit
+    - ZLPhotoBrowser
+
+EXTERNAL SOURCES:
+  OUICore:
+    :path: "../"
+  OUICoreView:
+    :path: "../"
+  OUIIM:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
+  ChatLayout: 9a12f3e2d446ac3096b6539c70b4654fa35f1401
+  DifferenceKit: ab185c4d7f9cef8af3fcf593e5b387fb81e999ca
+  Differentiator: e8497ceab83c1b10ca233716d547b9af21b9344d
+  InputBarAccessoryView: 1d7b0a672b36e370f01f264b3907ef39d03328e3
+  IQKeyboardManagerSwift: 371b08cb39664fb56030f5345c815a4ffc74bbc0
+  JXSegmentedView: fec0d335355b6e019c494fe2e030bde8a36d2df6
+  Kingfisher: f043ac666dfc96c1f37604f93effb45a7ee3a3e1
+  Lantern: b192e7146c6d04e15e627f37281254a6a8593703
+  Localize-Swift: 6f4475136bdb0d7b2882ea3d4ea919d70142b232
+  lottie-ios: c55158d67d0629a260625cc2ded2052b829e3c3e
+  MJExtension: 21c5f6f8c4d5d8844b7ae8fbae08fed0b501f961
+  MJRefresh: fdf5e979eb406a0341468932d1dfc8b7f9fce961
+  MMBAlertsPickers: d52d288114c7dad4e4f1282fb2b1f1189ccc117a
+  OpenIMSDK: 6fe41871340af1360008c5710248818aba1861cc
+  OpenIMSDKCore: 2e38a5b9be23e588b5049ebd378161cf277e41a0
+  OUICore: bbf773201928292188ebf7dcc5b2bdc392f97a26
+  OUICoreView: 005ec463b1f1b6346fdd85da447187a65395f337
+  OUIIM: b52a5b47396a785f7f8aad511477d49ecc0b9b66
+  ProgressHUD: 093d24ca970f191744017bee2649e37d0cd1c5b9
+  RxCocoa: 94f817b71c07517321eb4f9ad299112ca8af743b
+  RxDataSources: aa47cc1ed6c500fa0dfecac5c979b723542d79cf
+  RxGesture: f3efb47ed2d26a8082f7b660d4a59970e275a7f8
+  RxKeyboard: 4f5863f43b4ff0cbb2a20b94688d6b80c8a43c14
+  RxRelay: 1de1523e604c72b6c68feadedd1af3b1b4d0ecbd
+  RxSwift: 5710a9e6b17f3c3d6e40d6e559b9fa1e813b2ef8
+  SGCodeTextField: 6b65291a52a092c24bd08cc32873e024223b2371
+  SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
+  ZLPhotoBrowser: 7c5c3ea5e42428d26dc74a52fe821aa2a9274fa3
+
+PODFILE CHECKSUM: 976fcfbc9f09554bf6cc942541e87de8486d8399
+
+COCOAPODS: 1.12.1

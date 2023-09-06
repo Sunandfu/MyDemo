@@ -1,0 +1,428 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A6C04EB723BD8EB50093D94C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A6C04EB623BD8EB50093D94C /* AppDelegate.m */; };
+		A6C04EC023BD8EB50093D94C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6C04EBE23BD8EB50093D94C /* Main.storyboard */; };
+		A6C04EC223BD8EB90093D94C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A6C04EC123BD8EB90093D94C /* Assets.xcassets */; };
+		A6C04EC523BD8EB90093D94C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6C04EC323BD8EB90093D94C /* LaunchScreen.storyboard */; };
+		A6C04EC823BD8EB90093D94C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A6C04EC723BD8EB90093D94C /* main.m */; };
+		A6C04EE423BD8ECE0093D94C /* DragAndDropTableViewController+Drop.m in Sources */ = {isa = PBXBuildFile; fileRef = A6C04ED023BD8ECD0093D94C /* DragAndDropTableViewController+Drop.m */; };
+		A6C04EE523BD8ECE0093D94C /* DragAndDropTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6C04ED323BD8ECE0093D94C /* DragAndDropTableViewController.m */; };
+		A6C04EE623BD8ECE0093D94C /* DragAndDropTableViewController+Drag.m in Sources */ = {isa = PBXBuildFile; fileRef = A6C04ED623BD8ECE0093D94C /* DragAndDropTableViewController+Drag.m */; };
+		A6C04EE723BD8ECE0093D94C /* DragAndDropTableViewDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A6C04ED723BD8ECE0093D94C /* DragAndDropTableViewDataManager.m */; };
+		A6C04EE823BD8ECE0093D94C /* DropView.m in Sources */ = {isa = PBXBuildFile; fileRef = A6C04EDA23BD8ECE0093D94C /* DropView.m */; };
+		A6C04EE923BD8ECE0093D94C /* DragView.m in Sources */ = {isa = PBXBuildFile; fileRef = A6C04EDD23BD8ECE0093D94C /* DragView.m */; };
+		A6C04EEA23BD8ECE0093D94C /* DragAndDropViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6C04EDE23BD8ECE0093D94C /* DragAndDropViewController.m */; };
+		A6C04EEB23BD8ECE0093D94C /* TextViewDragAndDropViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6C04EE023BD8ECE0093D94C /* TextViewDragAndDropViewController.m */; };
+		A6C04EEC23BD8ECE0093D94C /* DragAndDropManger.m in Sources */ = {isa = PBXBuildFile; fileRef = A6C04EE223BD8ECE0093D94C /* DragAndDropManger.m */; };
+		A6C04EEF23BD97520093D94C /* RootTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6C04EEE23BD97520093D94C /* RootTableViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		A6C04EB223BD8EB50093D94C /* DragAndDropDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DragAndDropDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A6C04EB523BD8EB50093D94C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		A6C04EB623BD8EB50093D94C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		A6C04EBF23BD8EB50093D94C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A6C04EC123BD8EB90093D94C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A6C04EC423BD8EB90093D94C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A6C04EC623BD8EB90093D94C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A6C04EC723BD8EB90093D94C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		A6C04ED023BD8ECD0093D94C /* DragAndDropTableViewController+Drop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DragAndDropTableViewController+Drop.m"; sourceTree = "<group>"; };
+		A6C04ED123BD8ECD0093D94C /* DragAndDropTableViewDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DragAndDropTableViewDataManager.h; sourceTree = "<group>"; };
+		A6C04ED223BD8ECD0093D94C /* DragAndDropTableViewController+Drag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DragAndDropTableViewController+Drag.h"; sourceTree = "<group>"; };
+		A6C04ED323BD8ECE0093D94C /* DragAndDropTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DragAndDropTableViewController.m; sourceTree = "<group>"; };
+		A6C04ED423BD8ECE0093D94C /* DragAndDropTableViewController+Drop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DragAndDropTableViewController+Drop.h"; sourceTree = "<group>"; };
+		A6C04ED523BD8ECE0093D94C /* DragAndDropTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DragAndDropTableViewController.h; sourceTree = "<group>"; };
+		A6C04ED623BD8ECE0093D94C /* DragAndDropTableViewController+Drag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DragAndDropTableViewController+Drag.m"; sourceTree = "<group>"; };
+		A6C04ED723BD8ECE0093D94C /* DragAndDropTableViewDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DragAndDropTableViewDataManager.m; sourceTree = "<group>"; };
+		A6C04ED823BD8ECE0093D94C /* DragAndDropViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DragAndDropViewController.h; sourceTree = "<group>"; };
+		A6C04ED923BD8ECE0093D94C /* DragView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DragView.h; sourceTree = "<group>"; };
+		A6C04EDA23BD8ECE0093D94C /* DropView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DropView.m; sourceTree = "<group>"; };
+		A6C04EDC23BD8ECE0093D94C /* DragAndDropManger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DragAndDropManger.h; sourceTree = "<group>"; };
+		A6C04EDD23BD8ECE0093D94C /* DragView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DragView.m; sourceTree = "<group>"; };
+		A6C04EDE23BD8ECE0093D94C /* DragAndDropViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DragAndDropViewController.m; sourceTree = "<group>"; };
+		A6C04EE023BD8ECE0093D94C /* TextViewDragAndDropViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextViewDragAndDropViewController.m; sourceTree = "<group>"; };
+		A6C04EE123BD8ECE0093D94C /* TextViewDragAndDropViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextViewDragAndDropViewController.h; sourceTree = "<group>"; };
+		A6C04EE223BD8ECE0093D94C /* DragAndDropManger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DragAndDropManger.m; sourceTree = "<group>"; };
+		A6C04EE323BD8ECE0093D94C /* DropView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DropView.h; sourceTree = "<group>"; };
+		A6C04EED23BD97520093D94C /* RootTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootTableViewController.h; sourceTree = "<group>"; };
+		A6C04EEE23BD97520093D94C /* RootTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootTableViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A6C04EAF23BD8EB50093D94C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A6C04EA923BD8EB50093D94C = {
+			isa = PBXGroup;
+			children = (
+				A6C04EB423BD8EB50093D94C /* DragAndDropDemo */,
+				A6C04EB323BD8EB50093D94C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A6C04EB323BD8EB50093D94C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A6C04EB223BD8EB50093D94C /* DragAndDropDemo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A6C04EB423BD8EB50093D94C /* DragAndDropDemo */ = {
+			isa = PBXGroup;
+			children = (
+				A6C04EB523BD8EB50093D94C /* AppDelegate.h */,
+				A6C04EB623BD8EB50093D94C /* AppDelegate.m */,
+				A6C04EED23BD97520093D94C /* RootTableViewController.h */,
+				A6C04EEE23BD97520093D94C /* RootTableViewController.m */,
+				A6C04ECE23BD8ECD0093D94C /* DrapAndDrop */,
+				A6C04EBE23BD8EB50093D94C /* Main.storyboard */,
+				A6C04EC123BD8EB90093D94C /* Assets.xcassets */,
+				A6C04EC323BD8EB90093D94C /* LaunchScreen.storyboard */,
+				A6C04EC623BD8EB90093D94C /* Info.plist */,
+				A6C04EC723BD8EB90093D94C /* main.m */,
+			);
+			path = DragAndDropDemo;
+			sourceTree = "<group>";
+		};
+		A6C04ECE23BD8ECD0093D94C /* DrapAndDrop */ = {
+			isa = PBXGroup;
+			children = (
+				A6C04ECF23BD8ECD0093D94C /* tabaleViewDragAndDrop */,
+				A6C04EDF23BD8ECE0093D94C /* TextViewDragAndDrop */,
+				A6C04EDB23BD8ECE0093D94C /* CustomViewDragAndDrop */,
+			);
+			path = DrapAndDrop;
+			sourceTree = "<group>";
+		};
+		A6C04ECF23BD8ECD0093D94C /* tabaleViewDragAndDrop */ = {
+			isa = PBXGroup;
+			children = (
+				A6C04ED523BD8ECE0093D94C /* DragAndDropTableViewController.h */,
+				A6C04ED323BD8ECE0093D94C /* DragAndDropTableViewController.m */,
+				A6C04ED123BD8ECD0093D94C /* DragAndDropTableViewDataManager.h */,
+				A6C04ED723BD8ECE0093D94C /* DragAndDropTableViewDataManager.m */,
+				A6C04ED223BD8ECD0093D94C /* DragAndDropTableViewController+Drag.h */,
+				A6C04ED623BD8ECE0093D94C /* DragAndDropTableViewController+Drag.m */,
+				A6C04ED423BD8ECE0093D94C /* DragAndDropTableViewController+Drop.h */,
+				A6C04ED023BD8ECD0093D94C /* DragAndDropTableViewController+Drop.m */,
+			);
+			path = tabaleViewDragAndDrop;
+			sourceTree = "<group>";
+		};
+		A6C04EDB23BD8ECE0093D94C /* CustomViewDragAndDrop */ = {
+			isa = PBXGroup;
+			children = (
+				A6C04ED823BD8ECE0093D94C /* DragAndDropViewController.h */,
+				A6C04EDE23BD8ECE0093D94C /* DragAndDropViewController.m */,
+				A6C04EDC23BD8ECE0093D94C /* DragAndDropManger.h */,
+				A6C04EE223BD8ECE0093D94C /* DragAndDropManger.m */,
+				A6C04ED923BD8ECE0093D94C /* DragView.h */,
+				A6C04EDD23BD8ECE0093D94C /* DragView.m */,
+				A6C04EE323BD8ECE0093D94C /* DropView.h */,
+				A6C04EDA23BD8ECE0093D94C /* DropView.m */,
+			);
+			path = CustomViewDragAndDrop;
+			sourceTree = "<group>";
+		};
+		A6C04EDF23BD8ECE0093D94C /* TextViewDragAndDrop */ = {
+			isa = PBXGroup;
+			children = (
+				A6C04EE123BD8ECE0093D94C /* TextViewDragAndDropViewController.h */,
+				A6C04EE023BD8ECE0093D94C /* TextViewDragAndDropViewController.m */,
+			);
+			path = TextViewDragAndDrop;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A6C04EB123BD8EB50093D94C /* DragAndDropDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A6C04ECB23BD8EB90093D94C /* Build configuration list for PBXNativeTarget "DragAndDropDemo" */;
+			buildPhases = (
+				A6C04EAE23BD8EB50093D94C /* Sources */,
+				A6C04EAF23BD8EB50093D94C /* Frameworks */,
+				A6C04EB023BD8EB50093D94C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DragAndDropDemo;
+			productName = DragAndDropDemo;
+			productReference = A6C04EB223BD8EB50093D94C /* DragAndDropDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A6C04EAA23BD8EB50093D94C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1130;
+				ORGANIZATIONNAME = lotus;
+				TargetAttributes = {
+					A6C04EB123BD8EB50093D94C = {
+						CreatedOnToolsVersion = 11.3;
+					};
+				};
+			};
+			buildConfigurationList = A6C04EAD23BD8EB50093D94C /* Build configuration list for PBXProject "DragAndDropDemo" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A6C04EA923BD8EB50093D94C;
+			productRefGroup = A6C04EB323BD8EB50093D94C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A6C04EB123BD8EB50093D94C /* DragAndDropDemo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A6C04EB023BD8EB50093D94C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A6C04EC523BD8EB90093D94C /* LaunchScreen.storyboard in Resources */,
+				A6C04EC223BD8EB90093D94C /* Assets.xcassets in Resources */,
+				A6C04EC023BD8EB50093D94C /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A6C04EAE23BD8EB50093D94C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A6C04EE823BD8ECE0093D94C /* DropView.m in Sources */,
+				A6C04EE423BD8ECE0093D94C /* DragAndDropTableViewController+Drop.m in Sources */,
+				A6C04EB723BD8EB50093D94C /* AppDelegate.m in Sources */,
+				A6C04EE923BD8ECE0093D94C /* DragView.m in Sources */,
+				A6C04EEF23BD97520093D94C /* RootTableViewController.m in Sources */,
+				A6C04EC823BD8EB90093D94C /* main.m in Sources */,
+				A6C04EE523BD8ECE0093D94C /* DragAndDropTableViewController.m in Sources */,
+				A6C04EEC23BD8ECE0093D94C /* DragAndDropManger.m in Sources */,
+				A6C04EE723BD8ECE0093D94C /* DragAndDropTableViewDataManager.m in Sources */,
+				A6C04EEA23BD8ECE0093D94C /* DragAndDropViewController.m in Sources */,
+				A6C04EE623BD8ECE0093D94C /* DragAndDropTableViewController+Drag.m in Sources */,
+				A6C04EEB23BD8ECE0093D94C /* TextViewDragAndDropViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		A6C04EBE23BD8EB50093D94C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A6C04EBF23BD8EB50093D94C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		A6C04EC323BD8EB90093D94C /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A6C04EC423BD8EB90093D94C /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A6C04EC923BD8EB90093D94C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		A6C04ECA23BD8EB90093D94C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A6C04ECC23BD8EB90093D94C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = NN56R38BZT;
+				INFOPLIST_FILE = DragAndDropDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = lotus.DragAndDropDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A6C04ECD23BD8EB90093D94C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = NN56R38BZT;
+				INFOPLIST_FILE = DragAndDropDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = lotus.DragAndDropDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A6C04EAD23BD8EB50093D94C /* Build configuration list for PBXProject "DragAndDropDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A6C04EC923BD8EB90093D94C /* Debug */,
+				A6C04ECA23BD8EB90093D94C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A6C04ECB23BD8EB90093D94C /* Build configuration list for PBXNativeTarget "DragAndDropDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A6C04ECC23BD8EB90093D94C /* Debug */,
+				A6C04ECD23BD8EB90093D94C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A6C04EAA23BD8EB50093D94C /* Project object */;
+}
