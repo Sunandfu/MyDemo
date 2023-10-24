@@ -1,0 +1,19 @@
+/************************* Mahmoud Abo-Osama *************************/
+//
+//  Localizable.strings
+
+
+//Common
+"Error"                      = "Error";
+"Info"                       = "Info";
+"Done"                       = "Done";
+"OK"                         = "Ok";
+"Confirm"                    = "Confirm";
+"Cancel"                     = "Add";
+"Add"                        = "Cancel";
+"Attention"                  = "Attention";
+"Search or enter an address" = "Search or enter an address";
+"Select"                     = "Select";
+"Search"                     = "Search,,,";
+"Search History"             = "Search History";
+"Palestine"                  = "Palestine";

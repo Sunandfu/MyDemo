@@ -9,10 +9,8 @@
 #import "ViewController.h"
 #import "XDScaningViewController.h"
 
-@interface ViewController ()<UIImagePickerControllerDelegate, UINavigationControllerDelegate>{
-    
-    UIView *view;
-}
+@interface ViewController ()<UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet UITextField *textField;
 
@@ -39,7 +37,6 @@
 }
 
 - (IBAction)scanning:(id)sender {
-    
     XDScaningViewController *scanningVC = [[XDScaningViewController alloc]init];
     scanningVC.backValue = ^(NSString *scannedStr){
         self.scaningResultsLabel.text = scannedStr;

@@ -1,0 +1,6 @@
+framework module OUICore {
+  umbrella header "OUICore-umbrella.h"
+
+  export *
+  module * { export * }
+}

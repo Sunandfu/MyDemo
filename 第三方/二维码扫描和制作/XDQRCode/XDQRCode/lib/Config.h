@@ -72,7 +72,6 @@ typedef NS_ENUM(NSInteger, XDScaningWarningTone) {
 #define LineColor Color(225,0,225,.2) //扫描线的颜色，RGBA,用户可以定义任何颜色
 #define LineShadowLastInterval .4 //此属性决定扫描线后面的尾巴的长短，值越大越长，当然XDScaningLineMode必须为XDScaningLineDeafult，其他无效
 #define LineMoveSpeed 1 //扫描线移动的速度，值为每1/60秒移动的点数，数值越大移动速度越快
-#define NavigationBarHidden YES //是否隐藏导航栏（前提是有导航栏，没有导航栏此设置无效）
 
 #define ButtonSize CGSizeMake(40,40) //扫描界面所有触发事件的按钮的大小
 #define ButtonFromBottom 80 // 屏幕下面的按钮到屏幕底部的距离
